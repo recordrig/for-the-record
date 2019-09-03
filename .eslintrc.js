@@ -15,12 +15,22 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "overrides": {
+    /**
+     * Allow triple slashes `///` in this file which is generated and maintained automatically by Next.js.
+     * We want to keep the original structure intact as a [Triple-Slash Directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) is a compiler directive used by TypeScript.
+     */
+    "files": ["next-env.d.ts"],
+    "rules": {
+      "spaced-comment": "off",
+    }
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2019,
     "sourceType": "module"
   },
   "plugins": [
@@ -37,7 +47,7 @@ module.exports = {
       {
         "devDependencies": [
           "**/*.stories.tsx",
-          "**/.test.ts",
+          "**/*.test.ts",
         ]
       }
     ],
