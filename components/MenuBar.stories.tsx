@@ -1,7 +1,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import TopMenu from "./TopMenu";
+import MenuBar from "./MenuBar";
 
-storiesOf("TopMenu", module).add("TopMenu", () => <TopMenu />, {
+storiesOf("MenuBar", module).add("MenuBar", () => <MenuBar />, {
   info: { inline: true }
 });
