@@ -14,9 +14,7 @@ npm run dev
 
 Pushes to GitHub on any branch will trigger an auto-deploy to a unique URL (staging) through Now integration with GitHub.
 
-Use seperate branches of any name for your own work. Create merge requests to `develop` to integrate features.
-
-The `develop` branch may be merged into `master` to create a new release. This can only be done through a pull request in GitHub.
+Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
 
 **TODO:** Any change to the `master` branch will auto-deploy to http://recordrig.com (production).
 
