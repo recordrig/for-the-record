@@ -1,6 +1,32 @@
 import { configure } from '@storybook/react';
 import { addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { createGlobalStyle } from 'styled-components';
+import { fontStyles } from '../pages/_app';
+
+/**
+ * Styling defaults aiding consistency. May be overridden at the component level. Inherits `fontStyles`
+ * from the main application so that they are always the exact same.
+ */
+const RecordRigFontStyles = createGlobalStyle`
+  ${fontStyles}
+`;
+
+/**
+ * Custom Storybook decorator which will wrap whatever the current story is with our global styles.
+ */
+const withRecordRigFontStyles = (story) => (
+  <>
+    {story()}
+    <RecordRigFontStyles />
+  </>
+);
+
+/**
+ * Add the RecordRig globally required font styles to every story through Storybook's decorator
+ * mechanism.
+ */
+addDecorator(withRecordRigFontStyles);
 
 /**
  * Print a table with component properties automagically along with a component's defined stories.

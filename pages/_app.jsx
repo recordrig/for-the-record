@@ -3,12 +3,14 @@ import App, { Container } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
-import TopMenu from "../components/TopMenu";
+import MenuBar from "../components/MenuBar";
 
 /**
- * Styling defaults aiding consistency. May be overridden at the component level.
+ * These styles may be assumed to be included on all pages, so that font availability and rendering
+ * is guaranteed to be consistent. Additionally, this constant is exported so that utilities outside
+ * the main application, e.g. Storybook, can import and use these values as well.
  */
-const RecordRigStyling = createGlobalStyle`
+export const fontStyles = `
   @font-face {
     font-family: "IBM Plex Sans", sans-serif;
     font-style: normal;
@@ -22,16 +24,22 @@ const RecordRigStyling = createGlobalStyle`
     font-weight: 700;
     src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("/static/fonts/IBMPlexSans-Bold.woff") format("woff");
   }
-  
+
   body {
-    margin: 0;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6, p, a, li {
     font-family: "IBM Plex Sans", sans-serif;
   }
+`;
 
+/**
+ * The module `<PageTransition>` component needs these global classes to do its magic. This is
+ * an external dependency (`next-page-transitions`) and as such, we do not have a way to circumvent
+ * this requirement (unless we decide to adopt & modify the module).
+ */
+const pageTransitionStyles = `
   .page-transition-enter {
     opacity: 0;
   }
@@ -49,6 +57,21 @@ const RecordRigStyling = createGlobalStyle`
     opacity: 0;
     transition: opacity 200ms;
   }
+`;
+
+/**
+ * Styling defaults aiding consistency. May be overridden at the component level.
+ */
+const ApplicationStyles = createGlobalStyle`
+  /* A margin reset on the body prevents us from defining an entire custom layout component
+  to achieve this simple functionality. */
+  body {
+    margin: 0;
+  }
+
+  ${fontStyles}
+
+  ${pageTransitionStyles}
 
   ${loaderBarStyles}
 `;
@@ -68,7 +91,7 @@ export default class RecordRigApp extends App {
 
     return (
       <Container>
-        <TopMenu />
+        <MenuBar />
         <PageTransition
           classNames="page-transition"
           skipInitialTransition
@@ -81,7 +104,7 @@ export default class RecordRigApp extends App {
          * is NOT passed along as a prop with `PageTransition`.
          */}
         <LoaderBar />
-        <RecordRigStyling />
+        <ApplicationStyles />
       </Container>
     );
   }
