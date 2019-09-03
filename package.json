@@ -14,7 +14,6 @@
     "npm": "6.x"
   },
   "dependencies": {
-    "isomorphic-unfetch": "3.0.0",
     "mongodb": "^3.3.1",
     "next": "^9.0.5",
     "next-page-transitions": "1.0.0-beta.2",
