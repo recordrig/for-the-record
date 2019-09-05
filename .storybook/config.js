@@ -23,21 +23,8 @@ const withRecordRigFontStyles = (story) => (
 );
 
 /**
- * Print a table with component properties automagically along with a component's defined stories.
- * Uses `react-docgen-typescript-loader`, defined in Storybook's Webpack configuration, to generate
- * these tables on the basis of TypeScript types and co-located comments.
- */
-addDecorator(withInfo({
-  inline: true
-}));
-
-/**
  * Add the RecordRig globally required font styles to every story through Storybook's decorator
  * mechanism.
- * 
- * It is important that this decorator is placed AFTER the `withInfo` decorator so that these components
- * aren't auto-rendered along with the actual component source in stories.
- * For a detailed explanation, see [issue on GitHub](https://github.com/storybookjs/storybook/issues/4801).
  */
 addDecorator(withRecordRigFontStyles);
 

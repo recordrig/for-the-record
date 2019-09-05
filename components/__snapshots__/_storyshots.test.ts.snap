@@ -1,5 +1,243 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots MenuBar Default 1`] = `null`;
+exports[`Storyshots MenuBar Default 1`] = `
+<nav
+  className="MenuBar__StyledTopMenu-sc-1n2uiiq-5 bHIivz"
+>
+  <ul>
+    <li>
+      <a
+        className="MenuBar__StyledLogo-sc-1n2uiiq-0 bNPGYV"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          alt=""
+          src="/static/recordrig-logo.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="MenuBar__StyledShopButton-sc-1n2uiiq-1 kluQLd"
+        href="/shop"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Shop
+      </a>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledShoppingBagButton-sc-1n2uiiq-3 iOKgEx"
+      >
+        <img
+          alt=""
+          src="/static/icon-shopping-bag.png"
+        />
+        <span>
+          Shopping Bag
+        </span>
+      </button>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledMenuButton-sc-1n2uiiq-4 gLHVyq"
+      >
+        <img
+          alt=""
+          src="/static/icon-menu.png"
+        />
+        <span>
+          Menu
+        </span>
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
 
-exports[`Storyshots MenuBar Items in bag 1`] = `null`;
+exports[`Storyshots MenuBar Items in bag 1`] = `
+<nav
+  className="MenuBar__StyledTopMenu-sc-1n2uiiq-5 bHIivz"
+>
+  <ul>
+    <li>
+      <a
+        className="MenuBar__StyledLogo-sc-1n2uiiq-0 bNPGYV"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          alt=""
+          src="/static/recordrig-logo.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="MenuBar__StyledShopButton-sc-1n2uiiq-1 kluQLd"
+        href="/shop"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Shop
+      </a>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledShoppingBagButton-sc-1n2uiiq-3 iOKgEx"
+      >
+        <img
+          alt=""
+          src="/static/icon-shopping-bag.png"
+        />
+        <span>
+          Shopping Bag
+        </span>
+        <span
+          className="MenuBar__StyledBagIndicator-sc-1n2uiiq-2 eziWdc"
+        >
+          2
+        </span>
+      </button>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledMenuButton-sc-1n2uiiq-4 gLHVyq"
+      >
+        <img
+          alt=""
+          src="/static/icon-menu.png"
+        />
+        <span>
+          Menu
+        </span>
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots MenuBar default 1`] = `
+<nav
+  className="MenuBar__StyledTopMenu-sc-1n2uiiq-5 bHIivz"
+>
+  <ul>
+    <li>
+      <a
+        className="MenuBar__StyledLogo-sc-1n2uiiq-0 bNPGYV"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          alt=""
+          src="/static/recordrig-logo.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="MenuBar__StyledShopButton-sc-1n2uiiq-1 kluQLd"
+        href="/shop"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Shop
+      </a>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledShoppingBagButton-sc-1n2uiiq-3 iOKgEx"
+      >
+        <img
+          alt=""
+          src="/static/icon-shopping-bag.png"
+        />
+        <span>
+          Shopping Bag
+        </span>
+      </button>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledMenuButton-sc-1n2uiiq-4 gLHVyq"
+      >
+        <img
+          alt=""
+          src="/static/icon-menu.png"
+        />
+        <span>
+          Menu
+        </span>
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots MenuBar items in bag 1`] = `
+<nav
+  className="MenuBar__StyledTopMenu-sc-1n2uiiq-5 bHIivz"
+>
+  <ul>
+    <li>
+      <a
+        className="MenuBar__StyledLogo-sc-1n2uiiq-0 bNPGYV"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          alt=""
+          src="/static/recordrig-logo.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="MenuBar__StyledShopButton-sc-1n2uiiq-1 kluQLd"
+        href="/shop"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Shop
+      </a>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledShoppingBagButton-sc-1n2uiiq-3 iOKgEx"
+      >
+        <img
+          alt=""
+          src="/static/icon-shopping-bag.png"
+        />
+        <span>
+          Shopping Bag
+        </span>
+        <span
+          className="MenuBar__StyledBagIndicator-sc-1n2uiiq-2 eziWdc"
+        >
+          2
+        </span>
+      </button>
+    </li>
+    <li>
+      <button
+        className="MenuBar__StyledMenuButton-sc-1n2uiiq-4 gLHVyq"
+      >
+        <img
+          alt=""
+          src="/static/icon-menu.png"
+        />
+        <span>
+          Menu
+        </span>
+      </button>
+    </li>
+  </ul>
+</nav>
+`;
