@@ -63,7 +63,6 @@ const StyledShoppingBagButton = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  display: flex;
   font-size: 16px;
   height: 40px;
   line-height: 22px;
@@ -84,9 +83,17 @@ const StyledShoppingBagButton = styled.button`
     width: 26px;
   }
 
+  > span {
+    vertical-align: top;
+  }
+
   @media (max-width: 767.9999px) {
     overflow: hidden;
     width: 42px;
+
+    > span {
+      visibility: hidden;
+    }
   }
 `;
 
@@ -94,7 +101,6 @@ const StyledMenuButton = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  display: flex;
   font-size: 16px;
   height: 40px;
   line-height: 20px;
@@ -113,10 +119,18 @@ const StyledMenuButton = styled.button`
     width: 24px;
   }
 
+  > span {
+    vertical-align: top;
+  }
+
   @media (max-width: 767.9999px) {
     overflow: hidden;
     margin-right: 4px;
     width: 40px;
+
+    > span {
+      visibility: hidden;
+    }
   }
 
   @media (min-width: 768px) {
