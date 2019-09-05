@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TopMenu TopMenu 1`] = `null`;
+exports[`Storyshots MenuBar Default 1`] = `null`;
+
+exports[`Storyshots MenuBar Items in bag 1`] = `null`;

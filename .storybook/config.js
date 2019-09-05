@@ -27,7 +27,9 @@ const withRecordRigFontStyles = (story) => (
  * Uses `react-docgen-typescript-loader`, defined in Storybook's Webpack configuration, to generate
  * these tables on the basis of TypeScript types and co-located comments.
  */
-addDecorator(withInfo);
+addDecorator(withInfo({
+  inline: true
+}));
 
 /**
  * Add the RecordRig globally required font styles to every story through Storybook's decorator
