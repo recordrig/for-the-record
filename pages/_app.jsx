@@ -15,22 +15,22 @@ export const fontStyles = `
     font-family: "IBM Plex Sans", sans-serif;
     font-style: normal;
     font-weight: 400;
-    src: local("IBM Plex Sans"), local("IBMPlexSans"), url("/static/fonts/IBMPlexSans-Regular.woff") format("woff");
+    src: url("/static/fonts/IBMPlexSans-Regular.woff") format("woff");
   }
 
   @font-face {
     font-family: "IBM Plex Sans", sans-serif;
     font-style: normal;
     font-weight: 700;
-    src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("/static/fonts/IBMPlexSans-Bold.woff") format("woff");
+    src: url("/static/fonts/IBMPlexSans-Bold.woff") format("woff");
   }
 
   body {
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6, p, a, li {
-    font-family: "IBM Plex Sans", sans-serif;
+  h1, h2, h3, h4, h5, h6, p, a, li, button {
+    font-family: "IBM Plex Sans", sans-serif !important;
   }
 `;
 
