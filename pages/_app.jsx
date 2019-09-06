@@ -1,5 +1,5 @@
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import { createGlobalStyle } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
@@ -90,7 +90,7 @@ export default class RecordRigApp extends App {
     } = this.props;
 
     return (
-      <Container>
+      <>
         <MenuBar />
         <PageTransition
           classNames="page-transition"
@@ -105,7 +105,7 @@ export default class RecordRigApp extends App {
          */}
         <LoaderBar />
         <ApplicationStyles />
-      </Container>
+      </>
     );
   }
 }
