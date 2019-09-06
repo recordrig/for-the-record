@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots CapsHeading custom color 1`] = `
+<div
+  className="CapsHeading__StyledCapsHeading-rbzrmz-0 hbfBGJ"
+>
+  <h3>
+    60 frames per second
+  </h3>
+</div>
+`;
+
+exports[`Storyshots CapsHeading custom selector 1`] = `
+<div
+  className="CapsHeading__StyledCapsHeading-rbzrmz-0 cRUeFz"
+>
+  <h4>
+    Capture HDR gameplay videos
+  </h4>
+</div>
+`;
+
+exports[`Storyshots CapsHeading default 1`] = `
+<div
+  className="CapsHeading__StyledCapsHeading-rbzrmz-0 cRUeFz"
+>
+  <h3>
+    Capture 4K UHD gameplay
+  </h3>
+</div>
+`;
+
 exports[`Storyshots Heading centered 1`] = `
 <div
   className="Heading__StyledHeading-sc-12rv6sd-0 qtFrL"
