@@ -295,3 +295,275 @@ exports[`Storyshots Paragraph default 1`] = `
   Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
 </p>
 `;
+
+exports[`Storyshots Tile bottom image 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <div
+    className="Tile__StyledTile-sc-1xmork7-2 fJbIiT"
+  >
+    <div
+      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+    >
+      <div
+        className="CapsHeading__StyledCapsHeading-rbzrmz-0 eQRCzd"
+      >
+        <h3>
+          Record 4K HDR on Xbox One
+        </h3>
+      </div>
+      <p
+        className="Paragraph__StyledParagraph-q6tii9-0 eMSMBJ"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      <img
+        alt=""
+        src="/static/controller-xbox.png"
+        style={
+          Object {
+            "maxWidth": "100%",
+            "verticalAlign": "bottom",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tile custom colors 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <div
+    className="Tile__StyledTile-sc-1xmork7-2 fJbIiT"
+  >
+    <div
+      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+    >
+      <img
+        alt=""
+        src="/static/icon-record-blue-large.png"
+        style={
+          Object {
+            "height": "58px",
+            "marginBottom": "20px",
+            "width": "58px",
+          }
+        }
+      />
+      <div
+        className="CapsHeading__StyledCapsHeading-rbzrmz-0 kqwFmk"
+      >
+        <h3>
+          Record with the click of a button
+        </h3>
+      </div>
+      <p
+        className="Paragraph__StyledParagraph-q6tii9-0 eMSMBJ"
+      >
+        RECentral comes pre-installed and pre-configured, ready to start recording. Spend less time configuring and getting to know your tool, and more time doing what you do best: gaming.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tile default 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <div
+    className="Tile__StyledTile-sc-1xmork7-2 doOUJO"
+  >
+    <div
+      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+    >
+      <div
+        className="CapsHeading__StyledCapsHeading-rbzrmz-0 cRUeFz"
+      >
+        <h3>
+          Pay later or pay in parts
+        </h3>
+      </div>
+      <p
+        className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+      >
+        If you're located in Austria, Denmark, Finland, Germany, the Netherlands, Norway, Sweden or the United Kingdom you can use Klarna to place your order now and Pay Later, after you've received your RecordRig. Or, Slice It: pay in equal parts over a larger period of time, completely interest-free, only starting payments after having received your RecordRig.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tile link 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <a
+    className="Tile__StyledLinkTile-sc-1xmork7-1 cxICbS"
+    href="/tech-specs"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+    >
+      <div
+        className="CapsHeading__StyledCapsHeading-rbzrmz-0 jcaeaT"
+      >
+        <h3>
+          Technical specifications
+        </h3>
+      </div>
+      <p
+        style={
+          Object {
+            "fontSize": "48px",
+            "lineHeight": "56px",
+            "margin": "64px 0",
+          }
+        }
+      >
+        Get the full list of what's included with RecordRig.
+      </p>
+      <p
+        style={
+          Object {
+            "color": "#009c98",
+            "fontSize": "18px",
+            "textAlign": "right",
+          }
+        }
+      >
+        Learn more
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Tile top image 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <div
+    className="Tile__StyledTile-sc-1xmork7-2 ibUpQB"
+  >
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      <img
+        alt=""
+        src="/static/4k_hdr_god_of_war_white.jpg"
+        style={
+          Object {
+            "maxWidth": "100%",
+            "verticalAlign": "bottom",
+          }
+        }
+      />
+    </div>
+    <div
+      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+    >
+      <div
+        className="CapsHeading__StyledCapsHeading-rbzrmz-0 hbfBGJ"
+      >
+        <h3>
+          Brightest whites
+        </h3>
+      </div>
+      <p
+        className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tile wide panel with contained image 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "992px",
+    }
+  }
+>
+  <div
+    className="Tile__StyledTile-sc-1xmork7-2 fJbIiT"
+  >
+    <div
+      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+    >
+      <div
+        className="CapsHeading__StyledCapsHeading-rbzrmz-0 kqwFmk"
+      >
+        <h3>
+          Record with confidence using RECentral
+        </h3>
+      </div>
+      <p
+        className="Paragraph__StyledParagraph-q6tii9-0 eMSMBJ"
+      >
+        Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec quis mauris risus. Quisque sodales diam ut elementum ultricies. Pellentesque laoreet commodo mauris, ut condimentum nisi cursus eget. In scelerisque at elit vitae dictum.
+      </p>
+      <div
+        style={
+          Object {
+            "padding": "48px 0",
+            "textAlign": "center",
+          }
+        }
+      >
+        <img
+          alt=""
+          src="/static/4k_hdr_streaming_capturing_software.png"
+          style={
+            Object {
+              "maxWidth": "100%",
+              "verticalAlign": "bottom",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
