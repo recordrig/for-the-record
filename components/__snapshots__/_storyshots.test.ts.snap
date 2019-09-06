@@ -30,6 +30,108 @@ exports[`Storyshots CapsHeading default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Footer default 1`] = `
+<div
+  className="Footer__StyledFooter-sc-1h91qcb-4 cXeOxh"
+>
+  <div
+    className="Footer__PositionedMainMenu-sc-1h91qcb-2 gjbGnY"
+  >
+    <nav
+      className="MainMenu__StyledMainMenu-sc-1jfwqxv-2 cxIrom"
+    >
+      <ul>
+        <li>
+          <a
+            className="MainMenu__StyledLink-sc-1jfwqxv-0 fmwHXl"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Home
+            </span>
+            <img
+              alt=""
+              src="/static/icon-arrow-right.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            className="MainMenu__StyledLink-sc-1jfwqxv-0 fmwHXl"
+            href="/shop"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Shop
+            </span>
+            <img
+              alt=""
+              src="/static/icon-arrow-right.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            className="MainMenu__StyledExternalLink-sc-1jfwqxv-1 cakXWo"
+            href="https://twitter.com/RigRecord"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Twitter
+            </span>
+            <img
+              alt=""
+              src="/static/icon-arrow-up-right.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            className="MainMenu__StyledExternalLink-sc-1jfwqxv-1 cakXWo"
+            href="https://www.reddit.com/r/RecordRig/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Reddit
+            </span>
+            <img
+              alt=""
+              src="/static/icon-arrow-up-right.png"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    className="Footer__StyledInfo-sc-1h91qcb-3 feokqa"
+  >
+    <div
+      className="Footer__StyledLogo-sc-1h91qcb-1 jrNKSh"
+    >
+      <img
+        alt=""
+        src="/static/recordrig-logo.png"
+      />
+    </div>
+    <p
+      className="Footer__StyledAddress-sc-1h91qcb-0 egRMeQ"
+    >
+      Industrieweg 46
+      <br />
+      6541 TW Nijmegen
+      <br />
+      The Netherlands
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Heading centered 1`] = `
 <div
   className="Heading__StyledHeading-sc-12rv6sd-0 qtFrL"
