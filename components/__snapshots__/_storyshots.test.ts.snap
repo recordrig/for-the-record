@@ -241,3 +241,27 @@ exports[`Storyshots MenuBar items in bag 1`] = `
   </ul>
 </nav>
 `;
+
+exports[`Storyshots Paragraph custom color 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#13171a",
+    }
+  }
+>
+  <p
+    className="Paragraph__StyledParagraph-q6tii9-0 dpEDmS"
+  >
+    Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Paragraph default 1`] = `
+<p
+  className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+>
+  Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+</p>
+`;
