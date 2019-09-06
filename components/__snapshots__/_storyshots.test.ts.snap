@@ -1,121 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots MenuBar Default 1`] = `
+exports[`Storyshots MainMenu default 1`] = `
 <nav
-  className="MenuBar__StyledTopMenu-sc-1n2uiiq-5 bHIivz"
+  className="MainMenu__StyledMainMenu-sc-1jfwqxv-2 cxIrom"
 >
   <ul>
     <li>
       <a
-        className="MenuBar__StyledLogo-sc-1n2uiiq-0 bNPGYV"
+        className="MainMenu__StyledLink-sc-1jfwqxv-0 fmwHXl"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
+        <span>
+          Home
+        </span>
         <img
           alt=""
-          src="/static/recordrig-logo.png"
+          src="/static/icon-arrow-right.png"
         />
       </a>
     </li>
     <li>
       <a
-        className="MenuBar__StyledShopButton-sc-1n2uiiq-1 kluQLd"
+        className="MainMenu__StyledLink-sc-1jfwqxv-0 fmwHXl"
         href="/shop"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Shop
-      </a>
-    </li>
-    <li>
-      <button
-        className="MenuBar__StyledShoppingBagButton-sc-1n2uiiq-3 iOKgEx"
-      >
-        <img
-          alt=""
-          src="/static/icon-shopping-bag.png"
-        />
         <span>
-          Shopping Bag
+          Shop
         </span>
-      </button>
-    </li>
-    <li>
-      <button
-        className="MenuBar__StyledMenuButton-sc-1n2uiiq-4 gLHVyq"
-      >
         <img
           alt=""
-          src="/static/icon-menu.png"
-        />
-        <span>
-          Menu
-        </span>
-      </button>
-    </li>
-  </ul>
-</nav>
-`;
-
-exports[`Storyshots MenuBar Items in bag 1`] = `
-<nav
-  className="MenuBar__StyledTopMenu-sc-1n2uiiq-5 bHIivz"
->
-  <ul>
-    <li>
-      <a
-        className="MenuBar__StyledLogo-sc-1n2uiiq-0 bNPGYV"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <img
-          alt=""
-          src="/static/recordrig-logo.png"
+          src="/static/icon-arrow-right.png"
         />
       </a>
     </li>
     <li>
       <a
-        className="MenuBar__StyledShopButton-sc-1n2uiiq-1 kluQLd"
-        href="/shop"
+        className="MainMenu__StyledExternalLink-sc-1jfwqxv-1 cakXWo"
+        href="https://twitter.com/RigRecord"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Shop
+        <span>
+          Twitter
+        </span>
+        <img
+          alt=""
+          src="/static/icon-arrow-up-right.png"
+        />
       </a>
     </li>
     <li>
-      <button
-        className="MenuBar__StyledShoppingBagButton-sc-1n2uiiq-3 iOKgEx"
+      <a
+        className="MainMenu__StyledExternalLink-sc-1jfwqxv-1 cakXWo"
+        href="https://www.reddit.com/r/RecordRig/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
+        <span>
+          Reddit
+        </span>
         <img
           alt=""
-          src="/static/icon-shopping-bag.png"
+          src="/static/icon-arrow-up-right.png"
         />
-        <span>
-          Shopping Bag
-        </span>
-        <span
-          className="MenuBar__StyledBagIndicator-sc-1n2uiiq-2 eziWdc"
-        >
-          2
-        </span>
-      </button>
-    </li>
-    <li>
-      <button
-        className="MenuBar__StyledMenuButton-sc-1n2uiiq-4 gLHVyq"
-      >
-        <img
-          alt=""
-          src="/static/icon-menu.png"
-        />
-        <span>
-          Menu
-        </span>
-      </button>
+      </a>
     </li>
   </ul>
 </nav>
