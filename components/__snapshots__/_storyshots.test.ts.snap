@@ -398,6 +398,110 @@ exports[`Storyshots Paragraph default 1`] = `
 </p>
 `;
 
+exports[`Storyshots ShoppingBag 0 items 1`] = `
+<div
+  className="ShoppingBag__StyledShoppingBag-z0l3t5-3 bPAJhf"
+>
+  <p>
+    You do not have anything in your shopping bag.
+  </p>
+</div>
+`;
+
+exports[`Storyshots ShoppingBag 1 item 1`] = `
+<div
+  className="ShoppingBag__StyledShoppingBag-z0l3t5-3 bPAJhf"
+>
+  <div
+    className="ShoppingBag__StyledItem-z0l3t5-0 dZkFtX"
+  >
+    <p>
+      RecordRig - Stealth Black
+    </p>
+    <p>
+      + 2TB HDD
+    </p>
+    <p>
+      1
+    </p>
+  </div>
+  <div
+    className="ShoppingBag__StyledSubtotal-z0l3t5-1 dPFrgQ"
+  >
+    <p>
+      Subtotal:
+      <span>
+         
+        0
+         EUR
+      </span>
+    </p>
+    <p>
+      Shipping:
+      <span>
+         FREE
+      </span>
+    </p>
+  </div>
+  <button
+    className="ShoppingBag__StyledCheckoutButton-z0l3t5-2 bglkkg"
+  >
+    Checkout
+  </button>
+</div>
+`;
+
+exports[`Storyshots ShoppingBag 2 item 1`] = `
+<div
+  className="ShoppingBag__StyledShoppingBag-z0l3t5-3 bPAJhf"
+>
+  <div
+    className="ShoppingBag__StyledItem-z0l3t5-0 dZkFtX"
+  >
+    <p>
+      RecordRig - Pristine White
+    </p>
+    
+    <p>
+      1
+    </p>
+  </div>
+  <div
+    className="ShoppingBag__StyledSubtotal-z0l3t5-1 dPFrgQ"
+  >
+    <p>
+      Subtotal:
+      <span>
+         
+        0
+         EUR
+      </span>
+    </p>
+    <p>
+      Shipping:
+      <span>
+         FREE
+      </span>
+    </p>
+  </div>
+  <button
+    className="ShoppingBag__StyledCheckoutButton-z0l3t5-2 bglkkg"
+  >
+    Checkout
+  </button>
+</div>
+`;
+
+exports[`Storyshots ShoppingBag Default 1`] = `
+<div
+  className="ShoppingBag__StyledShoppingBag-z0l3t5-3 bPAJhf"
+>
+  <p>
+    You do not have anything in your shopping bag.
+  </p>
+</div>
+`;
+
 exports[`Storyshots Tile bottom image 1`] = `
 <div
   style={
