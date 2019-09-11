@@ -1,9 +1,14 @@
 import React from "react";
 import App from "next/app";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
 import MenuBar from "../components/MenuBar";
+
+const PositionedMenuBar = styled.div`
+  position: fixed;
+  width: 100%;
+`;
 
 /**
  * These styles may be assumed to be included on all pages, so that font availability and rendering
@@ -89,7 +94,9 @@ export default class RecordRigApp extends App {
 
     return (
       <>
-        <MenuBar />
+        <PositionedMenuBar>
+          <MenuBar />
+        </PositionedMenuBar>
         <PageTransition
           classNames="page-transition"
           skipInitialTransition
