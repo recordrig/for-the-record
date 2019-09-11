@@ -26,11 +26,9 @@ export const fontStyles = `
   }
 
   body {
+    font-family: "IBM Plex Sans", sans-serif;
+    -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-  }
-
-  h1, h2, h3, h4, h5, h6, p, a, li, button {
-    font-family: "IBM Plex Sans", sans-serif !important;
   }
 `;
 

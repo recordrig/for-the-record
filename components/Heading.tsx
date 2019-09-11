@@ -15,6 +15,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
     h5,
     h6 {
       color: ${fontColor};
+      margin-top: 0;
       text-align: ${center ? "center" : "left"};
     }
 
@@ -58,7 +59,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
 
     @media (min-width: 1024px) {
       span {
-        max-width: 592px;
+        max-width: 640px;
       }
     }
   `}
