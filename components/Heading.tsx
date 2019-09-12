@@ -15,6 +15,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
     h5,
     h6 {
       color: ${fontColor};
+      margin-bottom: 0;
       margin-top: 0;
       text-align: ${center ? "center" : "left"};
     }
