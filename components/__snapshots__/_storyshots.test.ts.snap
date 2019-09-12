@@ -134,7 +134,7 @@ exports[`Storyshots Footer default 1`] = `
 
 exports[`Storyshots Heading centered 1`] = `
 <div
-  className="Heading__StyledHeading-sc-12rv6sd-0 qtFrL"
+  className="Heading__StyledHeading-sc-12rv6sd-0 gzLOrg"
 >
   <h2>
     <span>
@@ -146,7 +146,7 @@ exports[`Storyshots Heading centered 1`] = `
 
 exports[`Storyshots Heading custom color 1`] = `
 <div
-  className="Heading__StyledHeading-sc-12rv6sd-0 cqkYNX"
+  className="Heading__StyledHeading-sc-12rv6sd-0 hVUZmD"
 >
   <h2>
     <span>
@@ -158,7 +158,7 @@ exports[`Storyshots Heading custom color 1`] = `
 
 exports[`Storyshots Heading custom selector 1`] = `
 <div
-  className="Heading__StyledHeading-sc-12rv6sd-0 eQKwui"
+  className="Heading__StyledHeading-sc-12rv6sd-0 djDQiS"
 >
   <h1>
     <span>
@@ -170,7 +170,7 @@ exports[`Storyshots Heading custom selector 1`] = `
 
 exports[`Storyshots Heading default 1`] = `
 <div
-  className="Heading__StyledHeading-sc-12rv6sd-0 eQKwui"
+  className="Heading__StyledHeading-sc-12rv6sd-0 djDQiS"
 >
   <h2>
     <span>
