@@ -11,4 +11,4 @@ storiesOf("Paragraph", module)
     <div style={{ backgroundColor: "#13171a" }}>
       <Paragraph text={text} fontColor="#d5d9e0" />
     </div>
-));
+  ));
