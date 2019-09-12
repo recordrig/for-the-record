@@ -15,12 +15,10 @@ const StyledFeatureNumber = styled.span`
 const StyledFeature = styled.div`
   background-color: #000000;
   color: #ffffff;
-  max-width: 296px;
 
   > p {
     border-top: 2px solid #868d95;
-    font-size: 18px;
-    line-height: 24px;
+    font-weight: bold;
     margin-bottom: 0;
     margin-top: 16px;
     padding-top: 16px;
@@ -43,33 +41,84 @@ const Feature: FunctionComponent<FeatureProps> = ({
 );
 
 const StyledSubHeading = styled.h3`
-  color: #868d95;
-  font-size: 18px;
+  color: #b9bfc7;
   font-weight: bold;
   margin: 0;
   text-align: center;
+
+  @media (max-width: 767.9999px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const PositionedImage = styled.div`
   margin: 64px 0;
   text-align: center;
+
+  > img {
+    max-width: 96%;
+  }
 `;
 
 const PositionedFeatures = styled.div`
   margin: 0 auto;
-  max-width: 656px;
   overflow: auto;
 
   > div {
-    float: left;
-  }
-
-  > div:nth-child(odd) {
-    margin-right: 64px;
-  }
-
-  > div:nth-last-child(n + 3) {
     margin-bottom: 64px;
+  }
+
+  @media (max-width: 575.9999px) {
+    > div {
+      margin-left: auto;
+      margin-right: auto;
+      width: 296px;
+    }
+
+    > div p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 767.9999px) {
+    max-width: 560px;
+
+    > div {
+      float: left;
+      width: 264px;
+    }
+
+    > div:nth-child(odd) {
+      margin-right: 32px;
+    }
+
+    > div p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    max-width: 656px;
+
+    > div {
+      float: left;
+      width: 296px;
+    }
+
+    > div:nth-child(odd) {
+      margin-right: 64px;
+    }
+
+    > div p {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 `;
 

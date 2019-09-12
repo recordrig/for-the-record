@@ -36,7 +36,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
 
       span {
-        max-width: ${center ? "90%" : "480px"};
+        max-width: ${center ? "96%" : "480px"};
       }
     }
 
