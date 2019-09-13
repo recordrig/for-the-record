@@ -398,6 +398,107 @@ exports[`Storyshots Paragraph default 1`] = `
 </p>
 `;
 
+exports[`Storyshots Section default 1`] = `
+<div
+  className="Section__StyledSection-sc-2usp0l-2 gVWZEQ"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#d5d9e0",
+        "width": "100%",
+      }
+    }
+  >
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Section rows 1`] = `
+<div
+  className="Section__StyledSection-sc-2usp0l-2 gVWZEQ"
+>
+  <div
+    className="Section__StyledSectionRow-sc-2usp0l-1 kEfRRP"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "#d5d9e0",
+          "width": "100%",
+        }
+      }
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+  <div
+    className="Section__StyledSectionRow-sc-2usp0l-1 kEfRRP"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "#d5d9e0",
+          "width": "100%",
+        }
+      }
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Section subsections 1`] = `
+<div
+  className="Section__StyledSection-sc-2usp0l-2 gVWZEQ"
+>
+  <div
+    className="Section__StyledSectionRow-sc-2usp0l-1 kEfRRP"
+  >
+    <div
+      className="Section__StyledSubSection-sc-2usp0l-0 gzjOxm"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#d5d9e0",
+            "width": "100%",
+          }
+        }
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+    <div
+      className="Section__StyledSubSection-sc-2usp0l-0 gzjOxm"
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "#d5d9e0",
+            "width": "100%",
+          }
+        }
+      >
+        <p>
+          I get the full height of my neighbour.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ShoppingBag 0 items 1`] = `
 <div
   className="ShoppingBag__StyledShoppingBag-z0l3t5-3 bPAJhf"

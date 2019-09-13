@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import Heading from "../components/Heading";
+import Section from "../components/Section";
 
 const StyledFeatureNumber = styled.span`
   border: 1px solid #ffffff;
@@ -122,18 +123,13 @@ const PositionedFeatures = styled.div`
   }
 `;
 
-const StyledSection = styled.div`
-  padding-bottom: 160px;
-  padding-top: 160px;
-`;
-
 const StyledIndexPage = styled.div`
   background-color: #000000;
 `;
 
 const IndexPage: FunctionComponent = () => (
   <StyledIndexPage>
-    <StyledSection>
+    <Section>
       <StyledSubHeading>RecordRig.</StyledSubHeading>
       <Heading
         center
@@ -165,7 +161,7 @@ const IndexPage: FunctionComponent = () => (
           number={4}
         />
       </PositionedFeatures>
-    </StyledSection>
+    </Section>
   </StyledIndexPage>
 );
 
