@@ -400,17 +400,33 @@ exports[`Storyshots Paragraph default 1`] = `
 
 exports[`Storyshots Section default 1`] = `
 <div
-  className="Section__StyledSection-sc-2usp0l-2 gVWZEQ"
+  className="Section__StyledSection-sc-2usp0l-3 gzOxNB"
+>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Section intro 1`] = `
+<div
+  className="Section__StyledSection-sc-2usp0l-3 gzOxNB"
 >
   <div
-    style={
-      Object {
-        "backgroundColor": "#d5d9e0",
-        "width": "100%",
-      }
-    }
+    className="Section__StyledSectionIntro-sc-2usp0l-1 hHNJyg"
   >
-    <p>
+    <div
+      className="Heading__StyledHeading-sc-12rv6sd-0 djDQiS"
+    >
+      <h2>
+        <span>
+          Stream your gameplay like a pro.
+        </span>
+      </h2>
+    </div>
+    <p
+      className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+    >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
   </div>
@@ -419,10 +435,10 @@ exports[`Storyshots Section default 1`] = `
 
 exports[`Storyshots Section rows 1`] = `
 <div
-  className="Section__StyledSection-sc-2usp0l-2 gVWZEQ"
+  className="Section__StyledSection-sc-2usp0l-3 gzOxNB"
 >
   <div
-    className="Section__StyledSectionRow-sc-2usp0l-1 kEfRRP"
+    className="Section__StyledSectionRow-sc-2usp0l-2 genIbo"
   >
     <div
       style={
@@ -438,7 +454,7 @@ exports[`Storyshots Section rows 1`] = `
     </div>
   </div>
   <div
-    className="Section__StyledSectionRow-sc-2usp0l-1 kEfRRP"
+    className="Section__StyledSectionRow-sc-2usp0l-2 genIbo"
   >
     <div
       style={
@@ -458,10 +474,10 @@ exports[`Storyshots Section rows 1`] = `
 
 exports[`Storyshots Section subsections 1`] = `
 <div
-  className="Section__StyledSection-sc-2usp0l-2 gVWZEQ"
+  className="Section__StyledSection-sc-2usp0l-3 gzOxNB"
 >
   <div
-    className="Section__StyledSectionRow-sc-2usp0l-1 kEfRRP"
+    className="Section__StyledSectionRow-sc-2usp0l-2 genIbo"
   >
     <div
       className="Section__StyledSubSection-sc-2usp0l-0 gzjOxm"

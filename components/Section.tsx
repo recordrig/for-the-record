@@ -22,6 +22,20 @@ export const SubSection: FunctionComponent<SubSectionProps> = ({
   children
 }: SectionProps) => <StyledSubSection>{children}</StyledSubSection>;
 
+const StyledSectionIntro = styled.div`
+  padding-bottom: 64px;
+  padding-left: 32px;
+  padding-right: 32px;
+`;
+
+type SectionIntroProps = {
+  children: ReactNode | ReactNodeArray;
+};
+
+export const SectionIntro: FunctionComponent<SectionIntroProps> = ({
+  children
+}: SectionIntroProps) => <StyledSectionIntro>{children}</StyledSectionIntro>;
+
 const StyledSectionRow = styled.div`
   display: flex; /* Immediate children will expand to full height. */
   width: 100%;
@@ -42,6 +56,8 @@ export const SectionRow: FunctionComponent<StyledSectionRowProps> = ({
 const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 16px;
+  margin-right: 16px;
   padding-bottom: 160px;
   padding-top: 160px;
 `;
