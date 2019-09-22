@@ -1,35 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CapsHeading custom color 1`] = `
-<div
-  className="CapsHeading__StyledCapsHeading-rbzrmz-0 hbfBGJ"
->
-  <h3>
-    60 frames per second
-  </h3>
-</div>
-`;
-
-exports[`Storyshots CapsHeading custom selector 1`] = `
-<div
-  className="CapsHeading__StyledCapsHeading-rbzrmz-0 cRUeFz"
->
-  <h4>
-    Capture HDR gameplay videos
-  </h4>
-</div>
-`;
-
-exports[`Storyshots CapsHeading default 1`] = `
-<div
-  className="CapsHeading__StyledCapsHeading-rbzrmz-0 cRUeFz"
->
-  <h3>
-    Capture 4K UHD gameplay
-  </h3>
-</div>
-`;
-
 exports[`Storyshots Footer default 1`] = `
 <div
   className="Footer__StyledFooter-sc-1h91qcb-4 cXeOxh"
@@ -129,54 +99,6 @@ exports[`Storyshots Footer default 1`] = `
       The Netherlands
     </p>
   </div>
-</div>
-`;
-
-exports[`Storyshots Heading centered 1`] = `
-<div
-  className="Heading__StyledHeading-sc-12rv6sd-0 gzLOrg"
->
-  <h2>
-    <span>
-      Record your gameplay in the highest quality.
-    </span>
-  </h2>
-</div>
-`;
-
-exports[`Storyshots Heading custom color 1`] = `
-<div
-  className="Heading__StyledHeading-sc-12rv6sd-0 hVUZmD"
->
-  <h2>
-    <span>
-      4K 60FPS + HDR videos are the future.
-    </span>
-  </h2>
-</div>
-`;
-
-exports[`Storyshots Heading custom selector 1`] = `
-<div
-  className="Heading__StyledHeading-sc-12rv6sd-0 djDQiS"
->
-  <h1>
-    <span>
-      RecordRig technical specifications.
-    </span>
-  </h1>
-</div>
-`;
-
-exports[`Storyshots Heading default 1`] = `
-<div
-  className="Heading__StyledHeading-sc-12rv6sd-0 djDQiS"
->
-  <h2>
-    <span>
-      Cinematic 4K HDR video example.
-    </span>
-  </h2>
 </div>
 `;
 
@@ -374,30 +296,6 @@ exports[`Storyshots MenuBar items in bag 1`] = `
 </nav>
 `;
 
-exports[`Storyshots Paragraph custom color 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#13171a",
-    }
-  }
->
-  <p
-    className="Paragraph__StyledParagraph-q6tii9-0 dpEDmS"
-  >
-    Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
-  </p>
-</div>
-`;
-
-exports[`Storyshots Paragraph default 1`] = `
-<p
-  className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
->
-  Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
-</p>
-`;
-
 exports[`Storyshots Section default 1`] = `
 <div
   className="Section__StyledSection-sc-2usp0l-3 gzOxNB"
@@ -416,7 +314,7 @@ exports[`Storyshots Section intro 1`] = `
     className="Section__StyledSectionIntro-sc-2usp0l-1 hHNJyg"
   >
     <div
-      className="Heading__StyledHeading-sc-12rv6sd-0 djDQiS"
+      className="Text__StyledHeading-kpkaxf-1 TJNDc"
     >
       <h2>
         <span>
@@ -425,7 +323,7 @@ exports[`Storyshots Section intro 1`] = `
       </h2>
     </div>
     <p
-      className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+      className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
@@ -619,6 +517,136 @@ exports[`Storyshots ShoppingBag Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Text capsheading 1`] = `
+<div
+  className="Text__StyledCapsHeading-kpkaxf-0 bXFyBC"
+>
+  <h3>
+    Capture HDR gameplay videos
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Text capsheading custom color 1`] = `
+<div
+  className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+>
+  <h3>
+    Capture HDR gameplay videos
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Text capsheading custom selector 1`] = `
+<div
+  className="Text__StyledCapsHeading-kpkaxf-0 bXFyBC"
+>
+  <h4>
+    Capture HDR gameplay videos
+  </h4>
+</div>
+`;
+
+exports[`Storyshots Text default 1`] = `
+<span
+  className="Text__StyledText-kpkaxf-3 daayYh"
+>
+  Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+</span>
+`;
+
+exports[`Storyshots Text heading 1`] = `
+<div
+  className="Text__StyledHeading-kpkaxf-1 TJNDc"
+>
+  <h2>
+    <span>
+      Cinematic 4K HDR
+      <br />
+      video example.
+    </span>
+  </h2>
+</div>
+`;
+
+exports[`Storyshots Text heading centered 1`] = `
+<div
+  className="Text__StyledHeading-kpkaxf-1 kLxHDB"
+>
+  <h2>
+    <span>
+      Record your gameplay in the highest quality.
+    </span>
+  </h2>
+</div>
+`;
+
+exports[`Storyshots Text heading custom color 1`] = `
+<div
+  className="Text__StyledHeading-kpkaxf-1 cFjrYK"
+>
+  <h2>
+    <span>
+      4K 60FPS + HDR
+      <br />
+      videos are the future.
+    </span>
+  </h2>
+</div>
+`;
+
+exports[`Storyshots Text heading custom selector 1`] = `
+<div
+  className="Text__StyledHeading-kpkaxf-1 TJNDc"
+>
+  <h1>
+    <span>
+      RecordRig technical specifications.
+    </span>
+  </h1>
+</div>
+`;
+
+exports[`Storyshots Text paragraph 1`] = `
+<p
+  className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+>
+  Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+</p>
+`;
+
+exports[`Storyshots Text paragraph custom color 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#13171a",
+    }
+  }
+>
+  <p
+    className="Text__StyledParagraph-kpkaxf-2 bOOahG"
+  >
+    Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Text text custom color 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#13171a",
+    }
+  }
+>
+  <span
+    className="Text__StyledText-kpkaxf-3 gdySNY"
+  >
+    Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+  </span>
+</div>
+`;
+
 exports[`Storyshots Tile bottom image 1`] = `
 <div
   style={
@@ -634,14 +662,14 @@ exports[`Storyshots Tile bottom image 1`] = `
       className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
     >
       <div
-        className="CapsHeading__StyledCapsHeading-rbzrmz-0 eQRCzd"
+        className="Text__StyledCapsHeading-kpkaxf-0 gAlBda"
       >
         <h3>
           Record 4K HDR on Xbox One
         </h3>
       </div>
       <p
-        className="Paragraph__StyledParagraph-q6tii9-0 eMSMBJ"
+        className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -694,16 +722,16 @@ exports[`Storyshots Tile custom colors 1`] = `
         }
       />
       <div
-        className="CapsHeading__StyledCapsHeading-rbzrmz-0 kqwFmk"
+        className="Text__StyledCapsHeading-kpkaxf-0 cnixcx"
       >
         <h3>
           Record with the click of a button
         </h3>
       </div>
       <p
-        className="Paragraph__StyledParagraph-q6tii9-0 eMSMBJ"
+        className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
       >
-        RECentral comes pre-installed and pre-configured, ready to start recording. Spend less time configuring and getting to know your tool, and more time doing what you do best: gaming.
+        RECentral comes pre-installed and pre-configured, ready to start recording.Spend less time configuring and getting to know your tool, and more time doing what you do best: gaming.
       </p>
     </div>
   </div>
@@ -725,14 +753,14 @@ exports[`Storyshots Tile default 1`] = `
       className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
     >
       <div
-        className="CapsHeading__StyledCapsHeading-rbzrmz-0 cRUeFz"
+        className="Text__StyledCapsHeading-kpkaxf-0 bXFyBC"
       >
         <h3>
           Pay later or pay in parts
         </h3>
       </div>
       <p
-        className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
       >
         If you're located in Austria, Denmark, Finland, Germany, the Netherlands, Norway, Sweden or the United Kingdom you can use Klarna to place your order now and Pay Later, after you've received your RecordRig. Or, Slice It: pay in equal parts over a larger period of time, completely interest-free, only starting payments after having received your RecordRig.
       </p>
@@ -759,7 +787,7 @@ exports[`Storyshots Tile link 1`] = `
       className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
     >
       <div
-        className="CapsHeading__StyledCapsHeading-rbzrmz-0 jcaeaT"
+        className="Text__StyledCapsHeading-kpkaxf-0 fDJqsf"
       >
         <h3>
           Technical specifications
@@ -825,14 +853,14 @@ exports[`Storyshots Tile top image 1`] = `
       className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
     >
       <div
-        className="CapsHeading__StyledCapsHeading-rbzrmz-0 hbfBGJ"
+        className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
       >
         <h3>
           Brightest whites
         </h3>
       </div>
       <p
-        className="Paragraph__StyledParagraph-q6tii9-0 bygGob"
+        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -856,14 +884,14 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
       className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
     >
       <div
-        className="CapsHeading__StyledCapsHeading-rbzrmz-0 kqwFmk"
+        className="Text__StyledCapsHeading-kpkaxf-0 cnixcx"
       >
         <h3>
           Record with confidence using RECentral
         </h3>
       </div>
       <p
-        className="Paragraph__StyledParagraph-q6tii9-0 eMSMBJ"
+        className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
       >
         Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec quis mauris risus. Quisque sodales diam ut elementum ultricies. Pellentesque laoreet commodo mauris, ut condimentum nisi cursus eget. In scelerisque at elit vitae dictum.
       </p>

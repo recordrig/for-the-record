@@ -1,8 +1,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
 import Section, { SectionIntro, SectionRow, SubSection } from "./Section";
+import { Heading, Paragraph } from "./Text";
 
 storiesOf("Section", module)
   .add("default", () => (
@@ -62,13 +61,13 @@ storiesOf("Section", module)
   .add("intro", () => (
     <Section>
       <SectionIntro>
-        <Heading text="Stream your gameplay like a pro." />
-        <Paragraph
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        <Heading>Stream your gameplay like a pro.</Heading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat."
-        />
+          aliquip ex ea commodo consequat.
+        </Paragraph>
       </SectionIntro>
     </Section>
   ));
