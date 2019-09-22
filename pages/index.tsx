@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
-import Heading from "../components/Heading";
+import { Heading } from "../components/Text";
 import Section from "../components/Section";
 
 const StyledFeatureNumber = styled.span`
@@ -131,12 +131,9 @@ const IndexPage: FunctionComponent = () => (
   <StyledIndexPage>
     <Section>
       <StyledSubHeading>RecordRig.</StyledSubHeading>
-      <Heading
-        center
-        fontColor="#ffffff"
-        selector={1}
-        text="Record your gameplay in the highest quality."
-      />
+      <Heading center color="#ffffff" h={1}>
+        Record your gameplay in the highest quality.
+      </Heading>
       <PositionedImage>
         <img
           alt="RecordRig - a dedicated streaming PC."
