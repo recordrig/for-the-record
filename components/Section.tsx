@@ -53,9 +53,15 @@ export const SectionRow: FunctionComponent<StyledSectionRowProps> = ({
   children
 }: StyledSectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
 
-const StyledSection = styled.div`
+const PositionedSectionContent = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1216px;
+`;
+
+const StyledSection = styled.div`
   margin-left: 16px;
   margin-right: 16px;
   padding-bottom: 160px;
@@ -68,6 +74,10 @@ type SectionProps = {
 
 const Section: FunctionComponent<SectionProps> = ({
   children
-}: SectionProps) => <StyledSection>{children}</StyledSection>;
+}: SectionProps) => (
+  <StyledSection>
+    <PositionedSectionContent>{children}</PositionedSectionContent>
+  </StyledSection>
+);
 
 export default Section;

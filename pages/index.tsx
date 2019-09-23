@@ -1,7 +1,14 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Heading } from "../components/Text";
-import Section from "../components/Section";
+import { Player, BigPlayButton, ControlBar } from "video-react";
+import ReactCompareImage from "react-compare-image";
+import { CapsHeading, Heading, Paragraph } from "../components/Text";
+import Section, {
+  SectionIntro,
+  SectionRow,
+  SubSection
+} from "../components/Section";
+import Tile, { Container } from "../components/Tile";
 
 const StyledFeatureNumber = styled.span`
   border: 1px solid #ffffff;
@@ -123,6 +130,24 @@ const PositionedFeatures = styled.div`
   }
 `;
 
+const StyledPlayer = styled.div`
+  .video-react .video-react-big-play-button.video-react-big-play-button-center {
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 32px;
+    height: 64px;
+    line-height: 60px;
+    margin-left: -32px;
+    margin-top: -32px;
+    width: 64px;
+  }
+
+  video {
+    outline: none;
+  }
+`;
+
 const StyledIndexPage = styled.div`
   background-color: #000000;
 `;
@@ -159,6 +184,110 @@ const IndexPage: FunctionComponent = () => (
         />
       </PositionedFeatures>
     </Section>
+    <Section>
+      <SectionIntro>
+        <Heading color="#da1e28">
+          4K 60FPS + HDR
+          <br />
+          videos are the future.
+        </Heading>
+        <Paragraph color="#d5d9e0">
+          Demand for high-quality gameplay videos is booming. Now, with
+          RecordRig, recording games in the same high quality you play them is
+          easier than ever. Capture your gameplay in its full glory and give
+          your audience the complete, immersive experience that they crave.
+        </Paragraph>
+      </SectionIntro>
+      <SectionRow>
+        <SubSection>
+          <Tile backgroundColor="#13171A">
+            <img
+              alt=""
+              src="/static/4k_hd_resolution_compared.png?v=1"
+              style={{ width: "100%", verticalAlign: "bottom" }}
+            />
+            <Container>
+              <CapsHeading color="#da1e28">Capture 4K UHD gameplay</CapsHeading>
+              <Paragraph color="#ffffff">
+                4K resolution means four times as many pixels as ordinary HD
+                resolution - a massive difference. No detail will be missed when
+                recording with RecordRig.
+              </Paragraph>
+            </Container>
+          </Tile>
+        </SubSection>
+        <SubSection>
+          <Tile backgroundColor="#13171A">
+            <StyledPlayer>
+              <Player playsInline preload="metadata">
+                <source src="/static/witcher_60fps.mp4?v=1" />
+                <BigPlayButton position="center" />
+                <ControlBar disableCompletely />
+              </Player>
+            </StyledPlayer>
+            <Container>
+              <CapsHeading color="#da1e28">60 frames per second</CapsHeading>
+              <Paragraph color="#ffffff">
+                Your gameplay will look buttery smooth as it&apos;s captured at
+                60 frames per second.
+              </Paragraph>
+            </Container>
+          </Tile>
+        </SubSection>
+      </SectionRow>
+      <SectionRow>
+        <Tile backgroundColor="#13171A">
+          <ReactCompareImage
+            leftImage="/static/god_of_war_compare_hdr_on.jpg?v=1"
+            rightImage="/static/god_of_war_compare_hdr_off.jpg?v=1"
+          />
+          <Container>
+            <CapsHeading color="#da1e28">
+              Capture HDR gameplay videos
+            </CapsHeading>
+            <Paragraph color="#ffffff">
+              With RecordRig, you gain the ability to capture the darkest
+              blacks, the brightest whites, and the full HDR (High Dynamic
+              Range) color spectrum of the original game.
+            </Paragraph>
+          </Container>
+        </Tile>
+      </SectionRow>
+      <SectionRow>
+        <SubSection>
+          <Tile backgroundColor="#13171A">
+            <img
+              alt=""
+              src="/static/god_of_war_hdr_black.jpg?v=1"
+              style={{ width: "100%", verticalAlign: "bottom" }}
+            />
+            <Container>
+              <CapsHeading color="#da1e28">Darkest blacks</CapsHeading>
+              <Paragraph color="#ffffff">
+                Capture the full atmosphere of the darkest scenes without losing
+                any visibility.
+              </Paragraph>
+            </Container>
+          </Tile>
+        </SubSection>
+        <SubSection>
+          <Tile backgroundColor="#f2f4f8">
+            <img
+              alt=""
+              src="/static/god_of_war_hdr_white.jpg?v=1"
+              style={{ width: "100%", verticalAlign: "bottom" }}
+            />
+            <Container>
+              <CapsHeading color="#da1e28">Brightest whites</CapsHeading>
+              <Paragraph>
+                Vibrant, alive scenes are a given when capturing in HDR.
+              </Paragraph>
+            </Container>
+          </Tile>
+        </SubSection>
+      </SectionRow>
+    </Section>
+    <link rel="stylesheet" href="/static/video-react.css" />
   </StyledIndexPage>
 );
 

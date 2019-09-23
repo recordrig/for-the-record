@@ -21,7 +21,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    /* Allow normal compilation. We also set ESLint to warn instead of error in ESLint's configs.
+    This is useful for e.g. modules that don't come with type declarations. (We don't want spend
+    time documenting other people's modules.) */
+    "noImplicitAny": false
   },
   "exclude": [
     "node_modules"
