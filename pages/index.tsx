@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
+import LazyLoad from "react-lazyload";
 import { Player, BigPlayButton, ControlBar } from "video-react";
 import ReactCompareImage from "react-compare-image";
 import { CapsHeading, Heading, Paragraph } from "../components/Text";
@@ -201,11 +202,13 @@ const IndexPage: FunctionComponent = () => (
       <SectionRow>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <img
-              alt=""
-              src="/static/4k_hd_resolution_compared.png?v=1"
-              style={{ width: "100%", verticalAlign: "bottom" }}
-            />
+            <LazyLoad offset={200}>
+              <img
+                alt=""
+                src="/static/4k_hd_resolution_compared.png?v=1"
+                style={{ width: "100%", verticalAlign: "bottom" }}
+              />
+            </LazyLoad>
             <Container>
               <CapsHeading color="#da1e28">Capture 4K UHD gameplay</CapsHeading>
               <Paragraph color="#ffffff">
@@ -237,10 +240,12 @@ const IndexPage: FunctionComponent = () => (
       </SectionRow>
       <SectionRow>
         <Tile backgroundColor="#13171A">
-          <ReactCompareImage
-            leftImage="/static/god_of_war_compare_hdr_on.jpg?v=1"
-            rightImage="/static/god_of_war_compare_hdr_off.jpg?v=1"
-          />
+          <LazyLoad offset={400}>
+            <ReactCompareImage
+              leftImage="/static/god_of_war_compare_hdr_on.jpg?v=1"
+              rightImage="/static/god_of_war_compare_hdr_off.jpg?v=1"
+            />
+          </LazyLoad>
           <Container>
             <CapsHeading color="#da1e28">
               Capture HDR gameplay videos
@@ -256,11 +261,13 @@ const IndexPage: FunctionComponent = () => (
       <SectionRow>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <img
-              alt=""
-              src="/static/god_of_war_hdr_black.jpg?v=1"
-              style={{ width: "100%", verticalAlign: "bottom" }}
-            />
+            <LazyLoad offset={200}>
+              <img
+                alt=""
+                src="/static/god_of_war_hdr_black.jpg?v=1"
+                style={{ width: "100%", verticalAlign: "bottom" }}
+              />
+            </LazyLoad>
             <Container>
               <CapsHeading color="#da1e28">Darkest blacks</CapsHeading>
               <Paragraph color="#ffffff">
@@ -272,11 +279,13 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
         <SubSection>
           <Tile backgroundColor="#f2f4f8">
-            <img
-              alt=""
-              src="/static/god_of_war_hdr_white.jpg?v=1"
-              style={{ width: "100%", verticalAlign: "bottom" }}
-            />
+            <LazyLoad offset={200}>
+              <img
+                alt=""
+                src="/static/god_of_war_hdr_white.jpg?v=1"
+                style={{ width: "100%", verticalAlign: "bottom" }}
+              />
+            </LazyLoad>
             <Container>
               <CapsHeading color="#da1e28">Brightest whites</CapsHeading>
               <Paragraph>
