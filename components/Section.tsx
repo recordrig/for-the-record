@@ -18,6 +18,11 @@ type SubSectionProps = {
   children: ReactNode | ReactNodeArray;
 };
 
+/**
+ * SubSection can be used to only utilise half of the available width (on larger screens).
+ * Use within SectionRow to make sure that two SubSections side by side will always fill
+ * the same height.
+ */
 export const SubSection: FunctionComponent<SubSectionProps> = ({
   children
 }: SectionProps) => <StyledSubSection>{children}</StyledSubSection>;
@@ -32,6 +37,10 @@ type SectionIntroProps = {
   children: ReactNode | ReactNodeArray;
 };
 
+/**
+ * SectionIntro provides a full-width, extra padded container. Works well with a Heading
+ * and Paragraph. Does not need any additional wrappers; use as a direct child of Section.
+ */
 export const SectionIntro: FunctionComponent<SectionIntroProps> = ({
   children
 }: SectionIntroProps) => <StyledSectionIntro>{children}</StyledSectionIntro>;
@@ -49,6 +58,10 @@ type StyledSectionRowProps = {
   children: ReactNode | ReactNodeArray;
 };
 
+/**
+ * SectionRow wraps two SubSections so that they will reach equal heights when rendered
+ * side-by-side.
+ */
 export const SectionRow: FunctionComponent<StyledSectionRowProps> = ({
   children
 }: StyledSectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
@@ -72,6 +85,10 @@ type SectionProps = {
   children: ReactNode | ReactNodeArray;
 };
 
+/**
+ * Section groups a logical subset of content together and visually separates it from other
+ * content. Intended to span the full width of any given viewport.
+ */
 const Section: FunctionComponent<SectionProps> = ({
   children
 }: SectionProps) => (
