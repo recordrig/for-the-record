@@ -2,15 +2,27 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled from "styled-components";
 
 const StyledSubSection = styled.div`
-  display: flex; /* Immediate children will expand to full height. */
-  width: 50%;
+  @media (max-width: 734.9999px) {
+    display: block;
+    width: 100%;
 
-  :nth-child(odd) {
-    margin-right: 8px;
+    /* Visually separate from its sibling on small devices. */
+    :nth-child(odd) {
+      margin-bottom: 16px;
+    }
   }
 
-  :nth-child(even) {
-    margin-left: 8px;
+  @media (min-width: 735px) {
+    display: flex; /* Immediate children will expand to full height. */
+    width: 50%;
+
+    :nth-child(odd) {
+      margin-right: 8px;
+    }
+
+    :nth-child(even) {
+      margin-left: 8px;
+    }
   }
 `;
 
@@ -46,11 +58,19 @@ export const SectionIntro: FunctionComponent<SectionIntroProps> = ({
 }: SectionIntroProps) => <StyledSectionIntro>{children}</StyledSectionIntro>;
 
 const StyledSectionRow = styled.div`
-  display: flex; /* Immediate children will expand to full height. */
   width: 100%;
 
+  /* No bottom margin on last row. */
   :nth-last-child(n + 2) {
     margin-bottom: 16px;
+  }
+
+  @media (max-width: 734.9999px) {
+    display: block;
+  }
+
+  @media (min-width: 735px) {
+    display: flex; /* Immediate children will expand to full height. */
   }
 `;
 
@@ -75,10 +95,18 @@ const PositionedSectionContent = styled.div`
 `;
 
 const StyledSection = styled.div`
-  margin-left: 16px;
-  margin-right: 16px;
   padding-bottom: 160px;
   padding-top: 160px;
+
+  @media (max-width: 734.9999px) {
+    display: block;
+  }
+
+  @media (min-width: 735px) {
+    display: flex; /* Immediate children will expand to full height. */
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 `;
 
 type SectionProps = {

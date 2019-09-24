@@ -299,13 +299,13 @@ exports[`Storyshots MenuBar items in bag 1`] = `
 exports[`Storyshots Section default 1`] = `
 Array [
   <div
-    className="Section__StyledSection-sc-2usp0l-4 jcBVxJ"
+    className="Section__StyledSection-sc-2usp0l-4 ktwUpT"
   >
     <div
       className="Section__PositionedSectionContent-sc-2usp0l-3 cGSHau"
     >
       <div
-        className="Text__StyledHeading-kpkaxf-1 TJNDc"
+        className="Text__StyledHeading-kpkaxf-1 lnrvDX"
       >
         <h2>
           <span>
@@ -314,20 +314,20 @@ Array [
         </h2>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+        className="Text__StyledParagraph-kpkaxf-2 emJOOz"
       >
         Some paragraph.
       </p>
     </div>
   </div>,
   <div
-    className="Section__StyledSection-sc-2usp0l-4 jcBVxJ"
+    className="Section__StyledSection-sc-2usp0l-4 ktwUpT"
   >
     <div
       className="Section__PositionedSectionContent-sc-2usp0l-3 cGSHau"
     >
       <div
-        className="Text__StyledHeading-kpkaxf-1 TJNDc"
+        className="Text__StyledHeading-kpkaxf-1 lnrvDX"
       >
         <h2>
           <span>
@@ -336,7 +336,7 @@ Array [
         </h2>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+        className="Text__StyledParagraph-kpkaxf-2 emJOOz"
       >
         Another paragraph.
       </p>
@@ -347,7 +347,7 @@ Array [
 
 exports[`Storyshots Section intro 1`] = `
 <div
-  className="Section__StyledSection-sc-2usp0l-4 jcBVxJ"
+  className="Section__StyledSection-sc-2usp0l-4 ktwUpT"
 >
   <div
     className="Section__PositionedSectionContent-sc-2usp0l-3 cGSHau"
@@ -356,7 +356,7 @@ exports[`Storyshots Section intro 1`] = `
       className="Section__StyledSectionIntro-sc-2usp0l-1 hHNJyg"
     >
       <div
-        className="Text__StyledHeading-kpkaxf-1 lcgmLl"
+        className="Text__StyledHeading-kpkaxf-1 OfBCO"
       >
         <h2>
           <span>
@@ -367,7 +367,7 @@ exports[`Storyshots Section intro 1`] = `
         </h2>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+        className="Text__StyledParagraph-kpkaxf-2 emJOOz"
       >
         Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
       </p>
@@ -378,13 +378,13 @@ exports[`Storyshots Section intro 1`] = `
 
 exports[`Storyshots Section rows 1`] = `
 <div
-  className="Section__StyledSection-sc-2usp0l-4 jcBVxJ"
+  className="Section__StyledSection-sc-2usp0l-4 ktwUpT"
 >
   <div
     className="Section__PositionedSectionContent-sc-2usp0l-3 cGSHau"
   >
     <div
-      className="Section__StyledSectionRow-sc-2usp0l-2 genIbo"
+      className="Section__StyledSectionRow-sc-2usp0l-2 lmNrAP"
     >
       <div
         className="Tile__StyledTile-sc-1xmork7-2 ewRUiR"
@@ -400,17 +400,17 @@ exports[`Storyshots Section rows 1`] = `
           }
         />
         <div
-          className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+          className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
         >
           <div
-            className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+            className="Text__StyledCapsHeading-kpkaxf-0 KSuVt"
           >
             <h3>
               Capture HDR gameplay videos
             </h3>
           </div>
           <p
-            className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
+            className="Text__StyledParagraph-kpkaxf-2 kNmehb"
           >
             With RecordRig, you gain the ability to capture the darkest blacks, the brightest whites, and the full HDR (High Dynamic Range) color spectrum of the original game.
           </p>
@@ -418,7 +418,7 @@ exports[`Storyshots Section rows 1`] = `
       </div>
     </div>
     <div
-      className="Section__StyledSectionRow-sc-2usp0l-2 genIbo"
+      className="Section__StyledSectionRow-sc-2usp0l-2 lmNrAP"
     >
       <div
         className="Tile__StyledTile-sc-1xmork7-2 ewRUiR"
@@ -434,17 +434,17 @@ exports[`Storyshots Section rows 1`] = `
           }
         />
         <div
-          className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+          className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
         >
           <div
-            className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+            className="Text__StyledCapsHeading-kpkaxf-0 KSuVt"
           >
             <h3>
               Capture HDR gameplay videos
             </h3>
           </div>
           <p
-            className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
+            className="Text__StyledParagraph-kpkaxf-2 kNmehb"
           >
             With RecordRig, you gain the ability to capture the darkest blacks, the brightest whites, and the full HDR (High Dynamic Range) color spectrum of the original game.
           </p>
@@ -457,16 +457,16 @@ exports[`Storyshots Section rows 1`] = `
 
 exports[`Storyshots Section subsections 1`] = `
 <div
-  className="Section__StyledSection-sc-2usp0l-4 jcBVxJ"
+  className="Section__StyledSection-sc-2usp0l-4 ktwUpT"
 >
   <div
     className="Section__PositionedSectionContent-sc-2usp0l-3 cGSHau"
   >
     <div
-      className="Section__StyledSectionRow-sc-2usp0l-2 genIbo"
+      className="Section__StyledSectionRow-sc-2usp0l-2 lmNrAP"
     >
       <div
-        className="Section__StyledSubSection-sc-2usp0l-0 gzjOxm"
+        className="Section__StyledSubSection-sc-2usp0l-0 gdnfur"
       >
         <div
           className="Tile__StyledTile-sc-1xmork7-2 ewRUiR"
@@ -482,17 +482,17 @@ exports[`Storyshots Section subsections 1`] = `
             }
           />
           <div
-            className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+            className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
           >
             <div
-              className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+              className="Text__StyledCapsHeading-kpkaxf-0 KSuVt"
             >
               <h3>
                 Darkest blacks
               </h3>
             </div>
             <p
-              className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
+              className="Text__StyledParagraph-kpkaxf-2 kNmehb"
             >
               Capture the full atmosphere of the darkest scenes without losing any visibility.
             </p>
@@ -500,7 +500,7 @@ exports[`Storyshots Section subsections 1`] = `
         </div>
       </div>
       <div
-        className="Section__StyledSubSection-sc-2usp0l-0 gzjOxm"
+        className="Section__StyledSubSection-sc-2usp0l-0 gdnfur"
       >
         <div
           className="Tile__StyledTile-sc-1xmork7-2 ibUpQB"
@@ -516,17 +516,17 @@ exports[`Storyshots Section subsections 1`] = `
             }
           />
           <div
-            className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+            className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
           >
             <div
-              className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+              className="Text__StyledCapsHeading-kpkaxf-0 KSuVt"
             >
               <h3>
                 Brightest whites
               </h3>
             </div>
             <p
-              className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+              className="Text__StyledParagraph-kpkaxf-2 emJOOz"
             >
               Vibrant, alive scenes are a given when capturing in HDR.
             </p>
@@ -644,7 +644,7 @@ exports[`Storyshots ShoppingBag Default 1`] = `
 
 exports[`Storyshots Text capsheading 1`] = `
 <div
-  className="Text__StyledCapsHeading-kpkaxf-0 bXFyBC"
+  className="Text__StyledCapsHeading-kpkaxf-0 fDqVIi"
 >
   <h3>
     Capture HDR gameplay videos
@@ -654,7 +654,7 @@ exports[`Storyshots Text capsheading 1`] = `
 
 exports[`Storyshots Text capsheading custom color 1`] = `
 <div
-  className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+  className="Text__StyledCapsHeading-kpkaxf-0 KSuVt"
 >
   <h3>
     Capture HDR gameplay videos
@@ -664,7 +664,7 @@ exports[`Storyshots Text capsheading custom color 1`] = `
 
 exports[`Storyshots Text capsheading custom selector 1`] = `
 <div
-  className="Text__StyledCapsHeading-kpkaxf-0 bXFyBC"
+  className="Text__StyledCapsHeading-kpkaxf-0 fDqVIi"
 >
   <h4>
     Capture HDR gameplay videos
@@ -674,7 +674,7 @@ exports[`Storyshots Text capsheading custom selector 1`] = `
 
 exports[`Storyshots Text default 1`] = `
 <span
-  className="Text__StyledText-kpkaxf-3 daayYh"
+  className="Text__StyledText-kpkaxf-3 exmasq"
 >
   Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
 </span>
@@ -682,7 +682,7 @@ exports[`Storyshots Text default 1`] = `
 
 exports[`Storyshots Text heading 1`] = `
 <div
-  className="Text__StyledHeading-kpkaxf-1 TJNDc"
+  className="Text__StyledHeading-kpkaxf-1 lnrvDX"
 >
   <h2>
     <span>
@@ -696,7 +696,7 @@ exports[`Storyshots Text heading 1`] = `
 
 exports[`Storyshots Text heading centered 1`] = `
 <div
-  className="Text__StyledHeading-kpkaxf-1 kLxHDB"
+  className="Text__StyledHeading-kpkaxf-1 clAVsm"
 >
   <h2>
     <span>
@@ -708,7 +708,7 @@ exports[`Storyshots Text heading centered 1`] = `
 
 exports[`Storyshots Text heading custom color 1`] = `
 <div
-  className="Text__StyledHeading-kpkaxf-1 cFjrYK"
+  className="Text__StyledHeading-kpkaxf-1 fMibUt"
 >
   <h2>
     <span>
@@ -722,7 +722,7 @@ exports[`Storyshots Text heading custom color 1`] = `
 
 exports[`Storyshots Text heading custom selector 1`] = `
 <div
-  className="Text__StyledHeading-kpkaxf-1 TJNDc"
+  className="Text__StyledHeading-kpkaxf-1 lnrvDX"
 >
   <h1>
     <span>
@@ -734,7 +734,7 @@ exports[`Storyshots Text heading custom selector 1`] = `
 
 exports[`Storyshots Text paragraph 1`] = `
 <p
-  className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+  className="Text__StyledParagraph-kpkaxf-2 emJOOz"
 >
   Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
 </p>
@@ -749,7 +749,7 @@ exports[`Storyshots Text paragraph custom color 1`] = `
   }
 >
   <p
-    className="Text__StyledParagraph-kpkaxf-2 bOOahG"
+    className="Text__StyledParagraph-kpkaxf-2 iNxyFF"
   >
     Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
   </p>
@@ -765,7 +765,7 @@ exports[`Storyshots Text text custom color 1`] = `
   }
 >
   <span
-    className="Text__StyledText-kpkaxf-3 gdySNY"
+    className="Text__StyledText-kpkaxf-3 jtMnCQ"
   >
     Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
   </span>
@@ -784,17 +784,17 @@ exports[`Storyshots Tile bottom image 1`] = `
     className="Tile__StyledTile-sc-1xmork7-2 fJbIiT"
   >
     <div
-      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+      className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
     >
       <div
-        className="Text__StyledCapsHeading-kpkaxf-0 gAlBda"
+        className="Text__StyledCapsHeading-kpkaxf-0 cyEzkH"
       >
         <h3>
           Record 4K HDR on Xbox One
         </h3>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
+        className="Text__StyledParagraph-kpkaxf-2 kNmehb"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -833,7 +833,7 @@ exports[`Storyshots Tile custom colors 1`] = `
     className="Tile__StyledTile-sc-1xmork7-2 fJbIiT"
   >
     <div
-      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+      className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
     >
       <img
         alt=""
@@ -847,14 +847,14 @@ exports[`Storyshots Tile custom colors 1`] = `
         }
       />
       <div
-        className="Text__StyledCapsHeading-kpkaxf-0 cnixcx"
+        className="Text__StyledCapsHeading-kpkaxf-0 iXzGNQ"
       >
         <h3>
           Record with the click of a button
         </h3>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
+        className="Text__StyledParagraph-kpkaxf-2 kNmehb"
       >
         RECentral comes pre-installed and pre-configured, ready to start recording.Spend less time configuring and getting to know your tool, and more time doing what you do best: gaming.
       </p>
@@ -875,17 +875,17 @@ exports[`Storyshots Tile default 1`] = `
     className="Tile__StyledTile-sc-1xmork7-2 doOUJO"
   >
     <div
-      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+      className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
     >
       <div
-        className="Text__StyledCapsHeading-kpkaxf-0 bXFyBC"
+        className="Text__StyledCapsHeading-kpkaxf-0 fDqVIi"
       >
         <h3>
           Pay later or pay in parts
         </h3>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+        className="Text__StyledParagraph-kpkaxf-2 emJOOz"
       >
         If you're located in Austria, Denmark, Finland, Germany, the Netherlands, Norway, Sweden or the United Kingdom you can use Klarna to place your order now and Pay Later, after you've received your RecordRig. Or, Slice It: pay in equal parts over a larger period of time, completely interest-free, only starting payments after having received your RecordRig.
       </p>
@@ -909,18 +909,19 @@ exports[`Storyshots Tile link 1`] = `
     onMouseEnter={[Function]}
   >
     <div
-      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+      className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
     >
       <div
-        className="Text__StyledCapsHeading-kpkaxf-0 fDJqsf"
+        className="Text__StyledCapsHeading-kpkaxf-0 cHdJhC"
       >
         <h3>
           Technical specifications
         </h3>
       </div>
-      <p
+      <span
         style={
           Object {
+            "display": "block",
             "fontSize": "48px",
             "lineHeight": "56px",
             "margin": "64px 0",
@@ -928,18 +929,19 @@ exports[`Storyshots Tile link 1`] = `
         }
       >
         Get the full list of what's included with RecordRig.
-      </p>
-      <p
+      </span>
+      <span
         style={
           Object {
             "color": "#009c98",
+            "display": "block",
             "fontSize": "18px",
             "textAlign": "right",
           }
         }
       >
         Learn more
-      </p>
+      </span>
     </div>
   </a>
 </div>
@@ -975,17 +977,17 @@ exports[`Storyshots Tile top image 1`] = `
       />
     </div>
     <div
-      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+      className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
     >
       <div
-        className="Text__StyledCapsHeading-kpkaxf-0 fIGewX"
+        className="Text__StyledCapsHeading-kpkaxf-0 KSuVt"
       >
         <h3>
           Brightest whites
         </h3>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 cOcJWv"
+        className="Text__StyledParagraph-kpkaxf-2 emJOOz"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -1006,17 +1008,17 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
     className="Tile__StyledTile-sc-1xmork7-2 fJbIiT"
   >
     <div
-      className="Tile__StyledContainer-sc-1xmork7-0 eIgsrs"
+      className="Tile__StyledContainer-sc-1xmork7-0 cvtHcL"
     >
       <div
-        className="Text__StyledCapsHeading-kpkaxf-0 cnixcx"
+        className="Text__StyledCapsHeading-kpkaxf-0 iXzGNQ"
       >
         <h3>
           Record with confidence using RECentral
         </h3>
       </div>
       <p
-        className="Text__StyledParagraph-kpkaxf-2 hCFEYT"
+        className="Text__StyledParagraph-kpkaxf-2 kNmehb"
       >
         Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec quis mauris risus. Quisque sodales diam ut elementum ultricies. Pellentesque laoreet commodo mauris, ut condimentum nisi cursus eget. In scelerisque at elit vitae dictum.
       </p>

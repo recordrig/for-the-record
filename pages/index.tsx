@@ -189,7 +189,7 @@ const IndexPage: FunctionComponent = () => (
         <Heading color="#da1e28">
           4K 60FPS + HDR
           <br />
-          videos are the future.
+          videos are the&nbsp;future.
         </Heading>
         <Paragraph color="#d5d9e0">
           Demand for high-quality gameplay videos is booming. Now, with
