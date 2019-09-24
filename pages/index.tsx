@@ -132,6 +132,8 @@ const PositionedFeatures = styled.div`
 `;
 
 const StyledPlayer = styled.div`
+  cursor: pointer;
+
   .video-react .video-react-big-play-button.video-react-big-play-button-center {
     border-radius: 50%;
     box-sizing: border-box;
@@ -142,6 +144,11 @@ const StyledPlayer = styled.div`
     margin-left: -32px;
     margin-top: -32px;
     width: 64px;
+  }
+
+  .video-react.video-react-has-started.video-react-paused
+    .video-react-big-play-button.big-play-button-hide {
+    display: block;
   }
 
   video {
