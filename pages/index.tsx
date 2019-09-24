@@ -229,7 +229,11 @@ const IndexPage: FunctionComponent = () => (
         <SubSection>
           <Tile backgroundColor="#13171A">
             <StyledPlayer>
-              <Player playsInline preload="metadata">
+              <Player
+                playsInline
+                poster="/static/witcher_60fps_thumb.jpg"
+                preload="metadata"
+              >
                 <source src="/static/witcher_60fps.mp4?v=1" />
                 <BigPlayButton position="center" />
                 <ControlBar disableCompletely />
