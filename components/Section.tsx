@@ -59,8 +59,8 @@ type StyledSectionRowProps = {
 };
 
 /**
- * SectionRow wraps two SubSections so that they will reach equal heights when rendered
- * side-by-side.
+ * SectionRow vertically seperates various parts of a Section. When used with SubSections,
+ * it will also make sure that they will reach equal heights when rendered side-by-side.
  */
 export const SectionRow: FunctionComponent<StyledSectionRowProps> = ({
   children
