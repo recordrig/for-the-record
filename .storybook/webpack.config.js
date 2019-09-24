@@ -16,13 +16,6 @@ module.exports = ({ config }) => {
           ],
         },
       },
-      {
-        /** 
-         * Generate docgen information from TypeScript React components. Shows up in Stories as a
-         * table with all the components properties.
-         */
-        loader: require.resolve('react-docgen-typescript-loader'),
-      },
     ],
   });
   config.resolve.extensions.push('.ts', '.tsx');
