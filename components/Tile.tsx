@@ -14,6 +14,10 @@ const StyledContainer = styled.div`
     vertical-align: bottom;
   }
 
+  & > p {
+    font-weight: bold;
+  }
+
   @media (max-width: 767.9999px) {
     padding-left: 24px;
     padding-right: 24px;

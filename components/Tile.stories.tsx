@@ -111,12 +111,26 @@ storiesOf("Tile", module)
       <Tile accentColor="#009c98" backgroundColor="#f2f4f8" link="/tech-specs">
         <Container>
           <CapsHeading color="#009c98">Technical specifications</CapsHeading>
-          <p style={{ fontSize: "48px", lineHeight: "56px", margin: "64px 0" }}>
+          <span
+            style={{
+              display: "block",
+              fontSize: "48px",
+              lineHeight: "56px",
+              margin: "64px 0"
+            }}
+          >
             Get the full list of what&apos;s included with RecordRig.
-          </p>
-          <p style={{ color: "#009c98", fontSize: "18px", textAlign: "right" }}>
+          </span>
+          <span
+            style={{
+              color: "#009c98",
+              display: "block",
+              fontSize: "18px",
+              textAlign: "right"
+            }}
+          >
             Learn more
-          </p>
+          </span>
         </Container>
       </Tile>
     </div>
