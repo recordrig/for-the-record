@@ -242,8 +242,10 @@ const IndexPage: FunctionComponent = () => (
         <Tile backgroundColor="#13171A">
           <LazyLoad offset={400}>
             <ReactCompareImage
+              handleSize={64}
               leftImage="/static/god_of_war_compare_hdr_on.jpg?v=1"
               rightImage="/static/god_of_war_compare_hdr_off.jpg?v=1"
+              sliderLineColor="#f2f4f8"
             />
           </LazyLoad>
           <Container>

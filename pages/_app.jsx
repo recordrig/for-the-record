@@ -8,6 +8,7 @@ import MenuBar from "../components/MenuBar";
 const PositionedMenuBar = styled.div`
   position: fixed;
   width: 100%;
+  z-index: 1;
 `;
 
 /**
