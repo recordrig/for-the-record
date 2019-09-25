@@ -77,15 +77,18 @@ const PositionedFeatures = styled.div`
   margin: 0 auto;
   overflow: auto;
 
-  > div {
-    margin-bottom: 64px;
-  }
-
+  /* Render features below each other and centered on the screen. */
   @media (max-width: 575.9999px) {
     > div {
       margin-left: auto;
       margin-right: auto;
       width: 296px;
+    }
+
+    /* Create some space in between features. Do not target the last feature
+    as that would cause a larger visual spacing between Sections. */
+    > div:nth-last-child(n + 2) {
+      margin-bottom: 64px;
     }
 
     > div p {
@@ -94,6 +97,7 @@ const PositionedFeatures = styled.div`
     }
   }
 
+  /* Render features side by side and fairly snug together. */
   @media (min-width: 576px) and (max-width: 767.9999px) {
     max-width: 560px;
 
@@ -106,12 +110,19 @@ const PositionedFeatures = styled.div`
       margin-right: 32px;
     }
 
+    /* Create some space in between features. Do not target the last two features
+    as that would cause a larger visual spacing between Sections. */
+    > div:nth-last-child(n + 3) {
+      margin-bottom: 64px;
+    }
+
     > div p {
       font-size: 18px;
       line-height: 24px;
     }
   }
 
+  /* Render features side by side with more space in between and larger fonts. */
   @media (min-width: 768px) {
     max-width: 656px;
 
@@ -122,6 +133,12 @@ const PositionedFeatures = styled.div`
 
     > div:nth-child(odd) {
       margin-right: 64px;
+    }
+
+    /* Create some space in between features. Do not target the last two features
+    as that would cause a larger visual spacing between Sections. */
+    > div:nth-last-child(n + 3) {
+      margin-bottom: 64px;
     }
 
     > div p {
@@ -195,7 +212,7 @@ const IndexPage: FunctionComponent = () => (
     <Section>
       <SectionIntro>
         <Heading color="#da1e28">
-          4K 60FPS + HDR
+          4K 60FPS HDR
           <br />
           videos are the&nbsp;future.
         </Heading>

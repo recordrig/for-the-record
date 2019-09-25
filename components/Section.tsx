@@ -95,17 +95,26 @@ const PositionedSectionContent = styled.div`
 `;
 
 const StyledSection = styled.div`
-  padding-bottom: 160px;
-  padding-top: 160px;
-
   @media (max-width: 734.9999px) {
     display: block;
+    padding-bottom: 128px;
+    padding-top: 128px;
   }
 
-  @media (min-width: 735px) {
+  @media (min-width: 735px) and (max-width: 1023.9999px) {
     display: flex; /* Immediate children will expand to full height. */
     margin-left: 16px;
     margin-right: 16px;
+    padding-bottom: 160px;
+    padding-top: 160px;
+  }
+
+  @media (min-width: 1024px) {
+    display: flex; /* Immediate children will expand to full height. */
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 256px;
+    padding-top: 256px;
   }
 `;
 
