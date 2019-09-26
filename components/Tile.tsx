@@ -59,6 +59,7 @@ type StyledTileProps = {
 const StyledTile = styled.div<StyledTileProps>`
   ${({ backgroundColor }: StyledTileProps) => css`
     background-color: ${backgroundColor};
+    width: 100%;
   `}
 `;
 

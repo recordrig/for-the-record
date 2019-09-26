@@ -86,6 +86,16 @@ module.exports = {
       }
     ],
     /**
+     * Resolve a conflict between Prettier and Airbnb's configs by disabling errors on the lack of
+     * parenthesis around multilines.
+     */
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": false,
+        "assignment": false
+      }],
+    /**
      * Disable lint errors on functional React and Styled components that don't declare a return type.
      * These components shouldn't need to declare this; TypeScript can instead infer them.
      * Community agrees; will be removed from `typescript-eslint` in a future version. See [PR on GitHub](https://github.com/typescript-eslint/typescript-eslint/pull/260).

@@ -773,6 +773,136 @@ exports[`Storyshots MenuBar items in bag 1`] = `
 </nav>
 `;
 
+exports[`Storyshots OptimizedImage custom node 1`] = `
+Array [
+  <p>
+    Scroll down for pictures.
+  </p>,
+  .c2 > img {
+  vertical-align: "bottom";
+  width: 100%;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+    style={
+      Object {
+        "maxWidth": "600px",
+        "paddingTop": "3000px",
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <div
+          className="c2"
+        >
+          <img
+            alt=""
+            src="/static/god_of_war_compare_hdr_on_lowres.jpg"
+          />
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="lazyload-placeholder"
+          style={
+            Object {
+              "height": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots OptimizedImage default 1`] = `
+Array [
+  <p>
+    Scroll down for pictures.
+  </p>,
+  .c2 > img {
+  vertical-align: "bottom";
+  width: 100%;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+    style={
+      Object {
+        "maxWidth": "600px",
+        "paddingTop": "3000px",
+      }
+    }
+  >
+    <div
+      className="c0"
+    >
+      <div
+        className="c1"
+      >
+        <div
+          className="c2"
+        >
+          <img
+            alt=""
+            src="/static/god_of_war_hdr_white_lowres.jpg"
+          />
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="lazyload-placeholder"
+          style={
+            Object {
+              "height": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots Section default 1`] = `
 Array [
   .c1 {
@@ -1311,6 +1441,7 @@ exports[`Storyshots Section rows 1`] = `
 
 .c3 {
   background-color: #13171A;
+  width: 100%;
 }
 
 @media (max-width:734.9999px) {
@@ -1561,10 +1692,12 @@ exports[`Storyshots Section subsections 1`] = `
 
 .c4 {
   background-color: #13171A;
+  width: 100%;
 }
 
 .c8 {
   background-color: #f2f4f8;
+  width: 100%;
 }
 
 @media (max-width:734.9999px) {
@@ -2543,6 +2676,7 @@ exports[`Storyshots Tile bottom image 1`] = `
 
 .c0 {
   background-color: #13171a;
+  width: 100%;
 }
 
 @media (max-width:399.9999px) {
@@ -2689,6 +2823,7 @@ exports[`Storyshots Tile custom colors 1`] = `
 
 .c0 {
   background-color: #13171a;
+  width: 100%;
 }
 
 @media (max-width:399.9999px) {
@@ -2828,6 +2963,7 @@ exports[`Storyshots Tile default 1`] = `
 
 .c0 {
   background-color: #fff;
+  width: 100%;
 }
 
 @media (max-width:399.9999px) {
@@ -3081,6 +3217,7 @@ exports[`Storyshots Tile top image 1`] = `
 
 .c0 {
   background-color: #f2f4f8;
+  width: 100%;
 }
 
 @media (max-width:399.9999px) {
@@ -3227,6 +3364,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
 
 .c0 {
   background-color: #13171a;
+  width: 100%;
 }
 
 @media (max-width:399.9999px) {
