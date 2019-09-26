@@ -1,5 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Features default 1`] = `
+.c2 {
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  width: 32px;
+}
+
+.c1 {
+  color: #ffffff;
+}
+
+.c1 > p {
+  border-top: 2px solid #868d95;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.c0 {
+  margin: 0 auto;
+  overflow: auto;
+}
+
+@media (max-width:575px) {
+  .c0 > div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 296px;
+  }
+
+  .c0 > div:nth-last-child(n + 2) {
+    margin-bottom: 64px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 > div {
+    float: left;
+  }
+
+  .c0 > div:nth-last-child(n + 3) {
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width:767px) {
+  .c0 > div p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width:576px) and (max-width:767px) {
+  .c0 {
+    max-width: 560px;
+  }
+
+  .c0 > div {
+    width: 264px;
+  }
+
+  .c0 > div:nth-child(odd) {
+    margin-right: 32px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    max-width: 656px;
+  }
+
+  .c0 > div {
+    width: 296px;
+  }
+
+  .c0 > div:nth-child(odd) {
+    margin-right: 64px;
+  }
+
+  .c0 > div p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "backgroundColor": "#000000",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <span
+        className="c2"
+      >
+        1
+      </span>
+      <p>
+        RecordRig is your dedicated gameplay recording PC.
+      </p>
+    </div>
+    <div
+      className="c1"
+    >
+      <span
+        className="c2"
+      >
+        2
+      </span>
+      <p>
+        Hook it up to your Xbox, PS4 or even your gaming PC.
+      </p>
+    </div>
+    <div
+      className="c1"
+    >
+      <span
+        className="c2"
+      >
+        3
+      </span>
+      <p>
+        Capture your gameplay videos in immersive 4K HDR quality.
+      </p>
+    </div>
+    <div
+      className="c1"
+    >
+      <span
+        className="c2"
+      >
+        4
+      </span>
+      <p>
+        Stream directly to YouTube and Twitch, or save for later.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Footer default 1`] = `
 .c3 {
   color: #000;

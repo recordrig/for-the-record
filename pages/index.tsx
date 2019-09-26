@@ -10,44 +10,7 @@ import Section, {
   SubSection
 } from "../components/Section";
 import Tile, { Container } from "../components/Tile";
-
-const StyledFeatureNumber = styled.span`
-  border: 1px solid #ffffff;
-  border-radius: 100%;
-  display: inline-block;
-  height: 32px;
-  line-height: 32px;
-  text-align: center;
-  width: 32px;
-`;
-
-const StyledFeature = styled.div`
-  background-color: #000000;
-  color: #ffffff;
-
-  > p {
-    border-top: 2px solid #868d95;
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 16px;
-    padding-top: 16px;
-  }
-`;
-
-type FeatureProps = {
-  description: string;
-  number: number;
-};
-
-const Feature: FunctionComponent<FeatureProps> = ({
-  description,
-  number
-}: FeatureProps) => (
-  <StyledFeature>
-    <StyledFeatureNumber>{number}</StyledFeatureNumber>
-    <p>{description}</p>
-  </StyledFeature>
-);
+import Features from "../components/Features";
 
 const StyledSubHeading = styled.h3`
   color: #b9bfc7;
@@ -70,81 +33,6 @@ const PositionedImage = styled.div`
 
   > img {
     max-width: 96%;
-  }
-`;
-
-const PositionedFeatures = styled.div`
-  margin: 0 auto;
-  overflow: auto;
-
-  /* Render features below each other and centered on the screen. */
-  @media (max-width: 575.9999px) {
-    > div {
-      margin-left: auto;
-      margin-right: auto;
-      width: 296px;
-    }
-
-    /* Create some space in between features. Do not target the last feature
-    as that would cause a larger visual spacing between Sections. */
-    > div:nth-last-child(n + 2) {
-      margin-bottom: 64px;
-    }
-
-    > div p {
-      font-size: 18px;
-      line-height: 24px;
-    }
-  }
-
-  /* Render features side by side and fairly snug together. */
-  @media (min-width: 576px) and (max-width: 767.9999px) {
-    max-width: 560px;
-
-    > div {
-      float: left;
-      width: 264px;
-    }
-
-    > div:nth-child(odd) {
-      margin-right: 32px;
-    }
-
-    /* Create some space in between features. Do not target the last two features
-    as that would cause a larger visual spacing between Sections. */
-    > div:nth-last-child(n + 3) {
-      margin-bottom: 64px;
-    }
-
-    > div p {
-      font-size: 18px;
-      line-height: 24px;
-    }
-  }
-
-  /* Render features side by side with more space in between and larger fonts. */
-  @media (min-width: 768px) {
-    max-width: 656px;
-
-    > div {
-      float: left;
-      width: 296px;
-    }
-
-    > div:nth-child(odd) {
-      margin-right: 64px;
-    }
-
-    /* Create some space in between features. Do not target the last two features
-    as that would cause a larger visual spacing between Sections. */
-    > div:nth-last-child(n + 3) {
-      margin-bottom: 64px;
-    }
-
-    > div p {
-      font-size: 20px;
-      line-height: 24px;
-    }
   }
 `;
 
@@ -190,24 +78,14 @@ const IndexPage: FunctionComponent = () => (
           src="/static/recordrig.png"
         />
       </PositionedImage>
-      <PositionedFeatures>
-        <Feature
-          description="RecordRig is your dedicated gameplay recording PC."
-          number={1}
-        />
-        <Feature
-          description="Hook it up to your Xbox, PS4 or even your gaming PC."
-          number={2}
-        />
-        <Feature
-          description="Capture your gameplay videos in immersive 4K HDR quality."
-          number={3}
-        />
-        <Feature
-          description="Stream directly to YouTube and Twitch, or save for later."
-          number={4}
-        />
-      </PositionedFeatures>
+      <Features
+        texts={[
+          "RecordRig is your dedicated gameplay recording PC.",
+          "Hook it up to your Xbox, PS4 or even your gaming PC.",
+          "Capture your gameplay videos in immersive 4K HDR quality.",
+          "Stream directly to YouTube and Twitch, or save for later."
+        ]}
+      />
     </Section>
     <Section>
       <SectionIntro>
