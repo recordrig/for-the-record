@@ -169,6 +169,50 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
+    <Section>
+      <SectionRow>
+        <SubSection>
+          <Tile backgroundColor="#13171A">
+            <Container>
+              <CapsHeading color="#24a148">
+                Record 4K HDR on Xbox One X
+              </CapsHeading>
+              <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
+            </Container>
+            <OptimizedImage
+              hires={<Image src="/static/controller-xbox.png?v=1" />}
+              lowres={<Image src="/static/controller-xbox_lowres.png?v=1" />}
+            />
+          </Tile>
+        </SubSection>
+        <SubSection>
+          <Tile backgroundColor="#13171A">
+            <Container>
+              <CapsHeading color="#24a148">
+                Record 4K HDR on PS4 Pro
+              </CapsHeading>
+              <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
+            </Container>
+            <OptimizedImage
+              hires={<Image src="/static/controller-ps4.png?v=1" />}
+              lowres={<Image src="/static/controller-ps4_lowres.png?v=1" />}
+            />
+          </Tile>
+        </SubSection>
+      </SectionRow>
+      <SectionRow>
+        <Tile backgroundColor="#13171A">
+          <OptimizedImage
+            hires={<Image src="/static/windows-keyboard.jpg?v=1" />}
+            lowres={<Image src="/static/windows-keyboard_lowres.jpg?v=1" />}
+          />
+          <Container>
+            <CapsHeading color="#24a148">Record 4K HDR on PC</CapsHeading>
+            <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
+          </Container>
+        </Tile>
+      </SectionRow>
+    </Section>
   </StyledIndexPage>
 );
 
