@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Player, BigPlayButton, ControlBar } from "video-react";
 import ReactCompareImage from "react-compare-image";
 import OptimizedImage, { Image } from "../components/OptimizedImage";
+import OptimizedVideo from "../components/OptimizedVideo";
 import { CapsHeading, Heading, Paragraph } from "../components/Text";
 import Section, {
   SectionIntro,
@@ -33,31 +33,6 @@ const PositionedImage = styled.div`
 
   > img {
     max-width: 96%;
-  }
-`;
-
-const StyledPlayer = styled.div`
-  cursor: pointer;
-
-  .video-react .video-react-big-play-button.video-react-big-play-button-center {
-    border-radius: 50%;
-    box-sizing: border-box;
-    color: #ffffff;
-    font-size: 32px;
-    height: 64px;
-    line-height: 60px;
-    margin-left: -32px;
-    margin-top: -32px;
-    width: 64px;
-  }
-
-  .video-react.video-react-has-started.video-react-paused
-    .video-react-big-play-button.big-play-button-hide {
-    display: block;
-  }
-
-  video {
-    outline: none;
   }
 `;
 
@@ -117,17 +92,10 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <StyledPlayer>
-              <Player
-                playsInline
-                poster="/static/witcher_60fps_thumb.jpg"
-                preload="metadata"
-              >
-                <source src="/static/witcher_60fps.mp4?v=1" />
-                <BigPlayButton position="center" />
-                <ControlBar disableCompletely />
-              </Player>
-            </StyledPlayer>
+            <OptimizedVideo
+              source="/static/witcher_60fps.mp4?v=1"
+              thumbnail="/static/witcher_60fps_thumb.jpg?v=1"
+            />
             <Container>
               <CapsHeading color="#da1e28">60 frames per second</CapsHeading>
               <Paragraph color="#ffffff">
@@ -201,7 +169,6 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
-    <link rel="stylesheet" href="/static/video-react.css" />
   </StyledIndexPage>
 );
 
