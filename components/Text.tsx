@@ -19,7 +19,7 @@ const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
       text-transform: uppercase;
     }
 
-    @media (max-width: 399.9999px) {
+    @media (max-width: 399px) {
       h1,
       h2,
       h3,
@@ -97,7 +97,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
     /* Headings stay small for longer than other types of text, because due to its
     relatively large size you quickly get into trouble with words being too long to even
     fit on the screen. */
-    @media (max-width: 575.9999px) {
+    @media (max-width: 575px) {
       h1,
       h2,
       h3,
@@ -125,7 +125,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
     }
 
-    @media (min-width: 735px) and (max-width: 1023.9999px) {
+    @media (min-width: 735px) and (max-width: 1023px) {
       span {
         max-width: ${center ? "80%" : "592px"};
       }
@@ -177,7 +177,7 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
   ${({ fontColor }: StyledParagraphProps) => css`
     color: ${fontColor};
 
-    @media (max-width: 399.9999px) {
+    @media (max-width: 399px) {
       font-size: 16px;
       line-height: 21px;
     }
@@ -187,7 +187,7 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
       line-height: 24px;
     }
 
-    @media (max-width: 1023.9999px) {
+    @media (max-width: 1023px) {
       max-width: 656px;
     }
 
@@ -217,7 +217,7 @@ const StyledText = styled.span<StyledTextProps>`
   ${({ fontColor }: StyledParagraphProps) => css`
     color: ${fontColor};
 
-    @media (max-width: 399.9999px) {
+    @media (max-width: 399px) {
       font-size: 16px;
       line-height: 21px;
     }
@@ -227,7 +227,7 @@ const StyledText = styled.span<StyledTextProps>`
       line-height: 24px;
     }
 
-    @media (max-width: 1023.9999px) {
+    @media (max-width: 1023px) {
       max-width: 656px;
     }
 

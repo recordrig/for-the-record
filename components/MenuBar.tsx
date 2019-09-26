@@ -17,7 +17,7 @@ const StyledLogo = styled.a`
     width: 123px;
   }
 
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     overflow: hidden;
     margin-left: 4px;
     width: 32px;
@@ -87,7 +87,7 @@ const StyledShoppingBagButton = styled.button`
     vertical-align: top;
   }
 
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     overflow: hidden;
     width: 42px;
 
@@ -123,7 +123,7 @@ const StyledMenuButton = styled.button`
     vertical-align: top;
   }
 
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     overflow: hidden;
     margin-right: 4px;
     width: 40px;

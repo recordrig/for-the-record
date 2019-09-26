@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled from "styled-components";
 
 const StyledSubSection = styled.div`
-  @media (max-width: 734.9999px) {
+  @media (max-width: 734px) {
     display: block;
     width: 100%;
 
@@ -65,7 +65,7 @@ const StyledSectionRow = styled.div`
     margin-bottom: 16px;
   }
 
-  @media (max-width: 734.9999px) {
+  @media (max-width: 734px) {
     display: block;
   }
 
@@ -95,13 +95,13 @@ const PositionedSectionContent = styled.div`
 `;
 
 const StyledSection = styled.div`
-  @media (max-width: 734.9999px) {
+  @media (max-width: 734px) {
     display: block;
     padding-bottom: 128px;
     padding-top: 128px;
   }
 
-  @media (min-width: 735px) and (max-width: 1023.9999px) {
+  @media (min-width: 735px) and (max-width: 1023px) {
     display: flex; /* Immediate children will expand to full height. */
     margin-left: 16px;
     margin-right: 16px;

@@ -18,7 +18,7 @@ const StyledContainer = styled.div`
     font-weight: bold;
   }
 
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     padding-left: 24px;
     padding-right: 24px;
   }

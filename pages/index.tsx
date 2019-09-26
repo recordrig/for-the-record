@@ -18,7 +18,7 @@ const StyledSubHeading = styled.h3`
   margin: 0;
   text-align: center;
 
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     font-size: 20px;
   }
 

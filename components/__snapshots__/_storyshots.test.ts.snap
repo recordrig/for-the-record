@@ -206,7 +206,7 @@ exports[`Storyshots Footer default 1`] = `
   margin-bottom: 64px;
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c7 {
     margin-left: 40px;
   }
@@ -220,7 +220,7 @@ exports[`Storyshots Footer default 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c6 > img {
     height: 32px;
     width: 123px;
@@ -234,7 +234,7 @@ exports[`Storyshots Footer default 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     margin-left: 40px;
   }
@@ -248,7 +248,7 @@ exports[`Storyshots Footer default 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c5 {
     margin-top: 64px;
   }
@@ -595,7 +595,7 @@ exports[`Storyshots MenuBar default 1`] = `
   margin-right: auto;
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     overflow: hidden;
     margin-left: 4px;
@@ -609,7 +609,7 @@ exports[`Storyshots MenuBar default 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c3 {
     overflow: hidden;
     width: 42px;
@@ -620,7 +620,7 @@ exports[`Storyshots MenuBar default 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c4 {
     overflow: hidden;
     margin-right: 4px;
@@ -820,7 +820,7 @@ exports[`Storyshots MenuBar items in bag 1`] = `
   margin-right: auto;
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     overflow: hidden;
     margin-left: 4px;
@@ -834,7 +834,7 @@ exports[`Storyshots MenuBar items in bag 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c3 {
     overflow: hidden;
     width: 42px;
@@ -845,7 +845,7 @@ exports[`Storyshots MenuBar items in bag 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c5 {
     overflow: hidden;
     margin-right: 4px;
@@ -2344,7 +2344,7 @@ Array [
   color: #000;
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c0 {
     display: block;
     padding-bottom: 128px;
@@ -2352,7 +2352,7 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2378,7 +2378,7 @@ Array [
   }
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -2406,7 +2406,7 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c2 span {
     max-width: 592px;
   }
@@ -2418,7 +2418,7 @@ Array [
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -2432,7 +2432,7 @@ Array [
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -2499,7 +2499,7 @@ Array [
   color: #000;
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c0 {
     display: block;
     padding-bottom: 128px;
@@ -2507,7 +2507,7 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2533,7 +2533,7 @@ Array [
   }
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -2561,7 +2561,7 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c2 span {
     max-width: 592px;
   }
@@ -2573,7 +2573,7 @@ Array [
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -2587,7 +2587,7 @@ Array [
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -2664,7 +2664,7 @@ exports[`Storyshots Section intro 1`] = `
   color: #000;
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c0 {
     display: block;
     padding-bottom: 128px;
@@ -2672,7 +2672,7 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2698,7 +2698,7 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c3 h1,
   .c3 h2,
   .c3 h3,
@@ -2726,7 +2726,7 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c3 span {
     max-width: 592px;
   }
@@ -2738,7 +2738,7 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c4 {
     font-size: 16px;
     line-height: 21px;
@@ -2752,7 +2752,7 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c4 {
     max-width: 656px;
   }
@@ -2850,7 +2850,7 @@ exports[`Storyshots Section rows 1`] = `
   width: 100%;
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c2 {
     display: block;
   }
@@ -2865,7 +2865,7 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c0 {
     display: block;
     padding-bottom: 128px;
@@ -2873,7 +2873,7 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2899,7 +2899,7 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c5 h1,
   .c5 h2,
   .c5 h3,
@@ -2923,7 +2923,7 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c6 {
     font-size: 16px;
     line-height: 21px;
@@ -2937,7 +2937,7 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c6 {
     max-width: 656px;
   }
@@ -2949,7 +2949,7 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c4 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3106,7 +3106,7 @@ exports[`Storyshots Section subsections 1`] = `
   width: 100%;
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c3 {
     display: block;
     width: 100%;
@@ -3135,7 +3135,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c2 {
     display: block;
   }
@@ -3150,7 +3150,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:734.9999px) {
+@media (max-width:734px) {
   .c0 {
     display: block;
     padding-bottom: 128px;
@@ -3158,7 +3158,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -3184,7 +3184,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c6 h1,
   .c6 h2,
   .c6 h3,
@@ -3208,7 +3208,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c9 {
     font-size: 16px;
     line-height: 21px;
@@ -3222,7 +3222,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c9 {
     max-width: 656px;
   }
@@ -3234,7 +3234,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c7 {
     font-size: 16px;
     line-height: 21px;
@@ -3248,7 +3248,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c7 {
     max-width: 656px;
   }
@@ -3260,7 +3260,7 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c5 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3481,7 +3481,7 @@ exports[`Storyshots Text capsheading 1`] = `
   text-transform: uppercase;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3527,7 +3527,7 @@ exports[`Storyshots Text capsheading custom color 1`] = `
   text-transform: uppercase;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3573,7 +3573,7 @@ exports[`Storyshots Text capsheading custom selector 1`] = `
   text-transform: uppercase;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3611,7 +3611,7 @@ exports[`Storyshots Text default 1`] = `
   color: #000;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 {
     font-size: 16px;
     line-height: 21px;
@@ -3625,7 +3625,7 @@ exports[`Storyshots Text default 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c0 {
     max-width: 656px;
   }
@@ -3661,7 +3661,7 @@ exports[`Storyshots Text heading 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3689,7 +3689,7 @@ exports[`Storyshots Text heading 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 span {
     max-width: 592px;
   }
@@ -3731,7 +3731,7 @@ exports[`Storyshots Text heading centered 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3759,7 +3759,7 @@ exports[`Storyshots Text heading centered 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 span {
     max-width: 80%;
   }
@@ -3799,7 +3799,7 @@ exports[`Storyshots Text heading custom color 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3827,7 +3827,7 @@ exports[`Storyshots Text heading custom color 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 span {
     max-width: 592px;
   }
@@ -3869,7 +3869,7 @@ exports[`Storyshots Text heading custom selector 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575.9999px) {
+@media (max-width:575px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -3897,7 +3897,7 @@ exports[`Storyshots Text heading custom selector 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023.9999px) {
+@media (min-width:735px) and (max-width:1023px) {
   .c0 span {
     max-width: 592px;
   }
@@ -3925,7 +3925,7 @@ exports[`Storyshots Text paragraph 1`] = `
   color: #000;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 {
     font-size: 16px;
     line-height: 21px;
@@ -3939,7 +3939,7 @@ exports[`Storyshots Text paragraph 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c0 {
     max-width: 656px;
   }
@@ -3963,7 +3963,7 @@ exports[`Storyshots Text paragraph custom color 1`] = `
   color: #d5d9e0;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 {
     font-size: 16px;
     line-height: 21px;
@@ -3977,7 +3977,7 @@ exports[`Storyshots Text paragraph custom color 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c0 {
     max-width: 656px;
   }
@@ -4009,7 +4009,7 @@ exports[`Storyshots Text text custom color 1`] = `
   color: #d5d9e0;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c0 {
     font-size: 16px;
     line-height: 21px;
@@ -4023,7 +4023,7 @@ exports[`Storyshots Text text custom color 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c0 {
     max-width: 656px;
   }
@@ -4085,7 +4085,7 @@ exports[`Storyshots Tile bottom image 1`] = `
   width: 100%;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -4109,7 +4109,7 @@ exports[`Storyshots Tile bottom image 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -4123,7 +4123,7 @@ exports[`Storyshots Tile bottom image 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -4135,7 +4135,7 @@ exports[`Storyshots Tile bottom image 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -4232,7 +4232,7 @@ exports[`Storyshots Tile custom colors 1`] = `
   width: 100%;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -4256,7 +4256,7 @@ exports[`Storyshots Tile custom colors 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -4270,7 +4270,7 @@ exports[`Storyshots Tile custom colors 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -4282,7 +4282,7 @@ exports[`Storyshots Tile custom colors 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -4372,7 +4372,7 @@ exports[`Storyshots Tile default 1`] = `
   width: 100%;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -4396,7 +4396,7 @@ exports[`Storyshots Tile default 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -4410,7 +4410,7 @@ exports[`Storyshots Tile default 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -4422,7 +4422,7 @@ exports[`Storyshots Tile default 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -4501,7 +4501,7 @@ exports[`Storyshots Tile link 1`] = `
   text-decoration: none;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -4525,7 +4525,7 @@ exports[`Storyshots Tile link 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -4626,7 +4626,7 @@ exports[`Storyshots Tile top image 1`] = `
   width: 100%;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -4650,7 +4650,7 @@ exports[`Storyshots Tile top image 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -4664,7 +4664,7 @@ exports[`Storyshots Tile top image 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -4676,7 +4676,7 @@ exports[`Storyshots Tile top image 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -4773,7 +4773,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   width: 100%;
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -4797,7 +4797,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   }
 }
 
-@media (max-width:399.9999px) {
+@media (max-width:399px) {
   .c3 {
     font-size: 16px;
     line-height: 21px;
@@ -4811,7 +4811,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   }
 }
 
-@media (max-width:1023.9999px) {
+@media (max-width:1023px) {
   .c3 {
     max-width: 656px;
   }
@@ -4823,7 +4823,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   }
 }
 
-@media (max-width:767.9999px) {
+@media (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;

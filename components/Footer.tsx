@@ -3,7 +3,7 @@ import styled from "styled-components";
 import MainMenu from "./MainMenu";
 
 const StyledAddress = styled.p`
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     margin-left: 40px;
   }
 
@@ -15,7 +15,7 @@ const StyledAddress = styled.p`
 `;
 
 const StyledLogo = styled.div`
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     > img {
       height: 32px;
       width: 123px;
@@ -31,7 +31,7 @@ const StyledLogo = styled.div`
 `;
 
 const PositionedMainMenu = styled.div`
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     margin-left: 40px;
   }
 
@@ -43,7 +43,7 @@ const PositionedMainMenu = styled.div`
 `;
 
 const StyledInfo = styled.div`
-  @media (max-width: 767.9999px) {
+  @media (max-width: 767px) {
     margin-top: 64px;
   }
 
