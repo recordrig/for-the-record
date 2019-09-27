@@ -1,13 +1,13 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { CapsHeading, Paragraph } from "./Text";
-import Tile, { Container } from "./Tile";
+import Tile, { TileContainer } from "./Tile";
 
 storiesOf("Tile", module)
   .add("default", () => (
     <div style={{ maxWidth: "488px" }}>
       <Tile>
-        <Container>
+        <TileContainer>
           <CapsHeading>Pay later or pay in parts</CapsHeading>
           <Paragraph>
             If you&apos;re located in Austria, Denmark, Finland, Germany, the
@@ -17,14 +17,14 @@ storiesOf("Tile", module)
             period of time, completely interest-free, only starting payments
             after having received your RecordRig.
           </Paragraph>
-        </Container>
+        </TileContainer>
       </Tile>
     </div>
   ))
   .add("custom colors", () => (
     <div style={{ maxWidth: "488px" }}>
       <Tile backgroundColor="#13171a">
-        <Container>
+        <TileContainer>
           <img
             alt=""
             src="/static/icon-record-blue-large.png"
@@ -38,20 +38,20 @@ storiesOf("Tile", module)
             recording.Spend less time configuring and getting to know your tool,
             and more time doing what you do best: gaming.
           </Paragraph>
-        </Container>
+        </TileContainer>
       </Tile>
     </div>
   ))
   .add("bottom image", () => (
     <div style={{ maxWidth: "488px" }}>
       <Tile backgroundColor="#13171a">
-        <Container>
+        <TileContainer>
           <CapsHeading color="#24a148">Record 4K HDR on Xbox One</CapsHeading>
           <Paragraph color="#ffffff">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Paragraph>
-        </Container>
+        </TileContainer>
         <div style={{ textAlign: "center" }}>
           <img
             alt=""
@@ -72,20 +72,20 @@ storiesOf("Tile", module)
             style={{ maxWidth: "100%", verticalAlign: "bottom" }}
           />
         </div>
-        <Container>
+        <TileContainer>
           <CapsHeading color="#da1e28">Brightest whites</CapsHeading>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Paragraph>
-        </Container>
+        </TileContainer>
       </Tile>
     </div>
   ))
   .add("wide panel with contained image", () => (
     <div style={{ maxWidth: "992px" }}>
       <Tile backgroundColor="#13171a">
-        <Container>
+        <TileContainer>
           <CapsHeading color="#408bfc">
             Record with confidence using RECentral
           </CapsHeading>
@@ -102,14 +102,14 @@ storiesOf("Tile", module)
               style={{ maxWidth: "100%", verticalAlign: "bottom" }}
             />
           </div>
-        </Container>
+        </TileContainer>
       </Tile>
     </div>
   ))
   .add("link", () => (
     <div style={{ maxWidth: "488px" }}>
       <Tile accentColor="#009c98" backgroundColor="#f2f4f8" link="/tech-specs">
-        <Container>
+        <TileContainer>
           <CapsHeading color="#009c98">Technical specifications</CapsHeading>
           <span
             style={{
@@ -131,7 +131,7 @@ storiesOf("Tile", module)
           >
             Learn more
           </span>
-        </Container>
+        </TileContainer>
       </Tile>
     </div>
   ));

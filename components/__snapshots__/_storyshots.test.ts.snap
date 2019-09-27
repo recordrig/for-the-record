@@ -2841,10 +2841,6 @@ exports[`Storyshots Section rows 1`] = `
   padding-top: 42px;
 }
 
-.c4 > img {
-  vertical-align: bottom;
-}
-
 .c4 > p {
   font-weight: bold;
 }
@@ -3091,10 +3087,6 @@ exports[`Storyshots Section subsections 1`] = `
 .c5 {
   padding-bottom: 42px;
   padding-top: 42px;
-}
-
-.c5 > img {
-  vertical-align: bottom;
 }
 
 .c5 > p {
@@ -4077,10 +4069,6 @@ exports[`Storyshots Tile bottom image 1`] = `
   padding-top: 42px;
 }
 
-.c1 > img {
-  vertical-align: bottom;
-}
-
 .c1 > p {
   font-weight: bold;
 }
@@ -4224,10 +4212,6 @@ exports[`Storyshots Tile custom colors 1`] = `
   padding-top: 42px;
 }
 
-.c1 > img {
-  vertical-align: bottom;
-}
-
 .c1 > p {
   font-weight: bold;
 }
@@ -4364,10 +4348,6 @@ exports[`Storyshots Tile default 1`] = `
   padding-top: 42px;
 }
 
-.c1 > img {
-  vertical-align: bottom;
-}
-
 .c1 > p {
   font-weight: bold;
 }
@@ -4487,10 +4467,6 @@ exports[`Storyshots Tile link 1`] = `
 .c1 {
   padding-bottom: 42px;
   padding-top: 42px;
-}
-
-.c1 > img {
-  vertical-align: bottom;
 }
 
 .c1 > p {
@@ -4616,10 +4592,6 @@ exports[`Storyshots Tile top image 1`] = `
 .c1 {
   padding-bottom: 42px;
   padding-top: 42px;
-}
-
-.c1 > img {
-  vertical-align: bottom;
 }
 
 .c1 > p {
@@ -4763,10 +4735,6 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
 .c1 {
   padding-bottom: 42px;
   padding-top: 42px;
-}
-
-.c1 > img {
-  vertical-align: bottom;
 }
 
 .c1 > p {

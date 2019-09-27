@@ -9,7 +9,7 @@ import Section, {
   SectionRow,
   SubSection
 } from "../components/Section";
-import Tile, { Container } from "../components/Tile";
+import Tile, { TileContainer } from "../components/Tile";
 import Features from "../components/Features";
 
 const StyledSubHeading = styled.h3`
@@ -80,14 +80,14 @@ const IndexPage: FunctionComponent = () => (
         <SubSection>
           <Tile backgroundColor="#13171A">
             <Image src="/static/4k_hd_resolution_compared.png?v=1" />
-            <Container>
+            <TileContainer>
               <CapsHeading color="#da1e28">Capture 4K UHD gameplay</CapsHeading>
               <Paragraph color="#ffffff">
                 4K resolution means four times as many pixels as ordinary HD
                 resolution - a massive difference. No detail will be missed when
                 recording with RecordRig.
               </Paragraph>
-            </Container>
+            </TileContainer>
           </Tile>
         </SubSection>
         <SubSection>
@@ -96,13 +96,13 @@ const IndexPage: FunctionComponent = () => (
               source="/static/witcher_60fps.mp4?v=1"
               thumbnail="/static/witcher_60fps_thumb.jpg?v=1"
             />
-            <Container>
+            <TileContainer>
               <CapsHeading color="#da1e28">60 frames per second</CapsHeading>
               <Paragraph color="#ffffff">
                 Your gameplay will look buttery smooth as it&apos;s captured at
                 60 frames per second.
               </Paragraph>
-            </Container>
+            </TileContainer>
           </Tile>
         </SubSection>
       </SectionRow>
@@ -121,7 +121,7 @@ const IndexPage: FunctionComponent = () => (
               <Image src="/static/god_of_war_compare_hdr_on_lowres.jpg" />
             }
           />
-          <Container>
+          <TileContainer>
             <CapsHeading color="#da1e28">
               Capture HDR gameplay videos
             </CapsHeading>
@@ -130,7 +130,7 @@ const IndexPage: FunctionComponent = () => (
               blacks, the brightest whites, and the full HDR (High Dynamic
               Range) color spectrum of the original game.
             </Paragraph>
-          </Container>
+          </TileContainer>
         </Tile>
       </SectionRow>
       <SectionRow>
@@ -142,13 +142,13 @@ const IndexPage: FunctionComponent = () => (
                 <Image src="/static/god_of_war_hdr_black_lowres.jpg?v=1" />
               }
             />
-            <Container>
+            <TileContainer>
               <CapsHeading color="#da1e28">Darkest blacks</CapsHeading>
               <Paragraph color="#ffffff">
                 Capture the full atmosphere of the darkest scenes without losing
                 any visibility.
               </Paragraph>
-            </Container>
+            </TileContainer>
           </Tile>
         </SubSection>
         <SubSection>
@@ -159,12 +159,12 @@ const IndexPage: FunctionComponent = () => (
                 <Image src="/static/god_of_war_hdr_white_lowres.jpg?v=1" />
               }
             />
-            <Container>
+            <TileContainer>
               <CapsHeading color="#da1e28">Brightest whites</CapsHeading>
               <Paragraph>
                 Vibrant, alive scenes are a given when capturing in HDR.
               </Paragraph>
-            </Container>
+            </TileContainer>
           </Tile>
         </SubSection>
       </SectionRow>
@@ -173,12 +173,12 @@ const IndexPage: FunctionComponent = () => (
       <SectionRow>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <Container>
+            <TileContainer>
               <CapsHeading color="#24a148">
                 Record 4K HDR on Xbox One X
               </CapsHeading>
               <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
-            </Container>
+            </TileContainer>
             <OptimizedImage
               hires={<Image src="/static/controller-xbox.png?v=1" />}
               lowres={<Image src="/static/controller-xbox_lowres.png?v=1" />}
@@ -187,12 +187,12 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <Container>
+            <TileContainer>
               <CapsHeading color="#24a148">
                 Record 4K HDR on PS4 Pro
               </CapsHeading>
               <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
-            </Container>
+            </TileContainer>
             <OptimizedImage
               hires={<Image src="/static/controller-ps4.png?v=1" />}
               lowres={<Image src="/static/controller-ps4_lowres.png?v=1" />}
@@ -206,10 +206,10 @@ const IndexPage: FunctionComponent = () => (
             hires={<Image src="/static/windows-keyboard.jpg?v=1" />}
             lowres={<Image src="/static/windows-keyboard_lowres.jpg?v=1" />}
           />
-          <Container>
+          <TileContainer>
             <CapsHeading color="#24a148">Record 4K HDR on PC</CapsHeading>
             <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
-          </Container>
+          </TileContainer>
         </Tile>
       </SectionRow>
     </Section>

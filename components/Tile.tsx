@@ -2,17 +2,9 @@ import Link from "next/link";
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css } from "styled-components";
 
-const StyledContainer = styled.div`
+const StyledTileContainer = styled.div`
   padding-bottom: 42px;
   padding-top: 42px;
-
-  /* Fix for bottom space which appears by default under images.
-   * This does NOT position an image to the bottom of the tile.
-   * Image positioning depends on placement within the contents (first, last or wherever).
-   */
-  & > img {
-    vertical-align: bottom;
-  }
 
   & > p {
     font-weight: bold;
@@ -29,13 +21,13 @@ const StyledContainer = styled.div`
   }
 `;
 
-type ContainerProps = {
+type TileContainerProps = {
   children: ReactNode | ReactNodeArray;
 };
 
-export const Container: FunctionComponent<ContainerProps> = ({
+export const TileContainer: FunctionComponent<TileContainerProps> = ({
   children
-}: ContainerProps) => <StyledContainer>{children}</StyledContainer>;
+}: TileContainerProps) => <StyledTileContainer>{children}</StyledTileContainer>;
 
 type StyledLinkTileProps = {
   accentColor: string;
