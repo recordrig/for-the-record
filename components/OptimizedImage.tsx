@@ -3,12 +3,8 @@ import styled from "styled-components";
 import LazyLoad from "react-lazyload";
 
 const StyledImage = styled.div`
-  /* This does NOT vertically align the image to the bottom of its container. Rather,
-  it gets rid of the default extra bottom spacing images get, normally reserved for
-  the parts of fonts that "stick out".
-  See https://stackoverflow.com/questions/14053952/why-is-there-padding-at-the-bottom-of-my-image */
   > img {
-    vertical-align: "bottom";
+    display: block; /* Get rid of reserved space for font descenders. */
     width: 100%;
   }
 `;

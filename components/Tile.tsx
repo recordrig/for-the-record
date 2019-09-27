@@ -39,7 +39,7 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
     background-color: ${backgroundColor};
     border-bottom: 8px solid ${accentColor};
     color: inherit;
-    display: block;
+    display: flex;
     text-decoration: none;
   `}
 `;
@@ -51,7 +51,15 @@ type StyledTileProps = {
 const StyledTile = styled.div<StyledTileProps>`
   ${({ backgroundColor }: StyledTileProps) => css`
     background-color: ${backgroundColor};
+    display: flex;
+    flex-direction: column;
     width: 100%;
+
+    /* Grow second to last child to take up entire remaining width so that the very last element
+    will be aligned to the Tile's bottom. */
+    > :nth-last-child(2) {
+      flex-grow: 1;
+    }
   `}
 `;
 
