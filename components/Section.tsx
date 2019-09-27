@@ -92,6 +92,7 @@ const PositionedSectionContent = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1216px;
+  width: 100%;
 `;
 
 const StyledSection = styled.div`
