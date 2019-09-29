@@ -170,6 +170,15 @@ const IndexPage: FunctionComponent = () => (
       </SectionRow>
     </Section>
     <Section>
+      <SectionIntro>
+        <Heading color="#24a148">Record 4K HDR on console - or PC.</Heading>
+        <Paragraph color="#d5d9e0">
+          It doesn&apos;t matter whether you&apos;re on Xbox One X, PS4 Pro or
+          even on a gaming PC, so long as your device outputs a 4K HDR video
+          signal, lorem ipsum dolor sit amet, you can record its output using
+          RecordRig.
+        </Paragraph>
+      </SectionIntro>
       <SectionRow>
         <SubSection>
           <Tile backgroundColor="#13171A">
@@ -202,14 +211,14 @@ const IndexPage: FunctionComponent = () => (
       </SectionRow>
       <SectionRow>
         <Tile backgroundColor="#13171A">
-          <OptimizedImage
-            hires={<Image src="/static/windows-keyboard.jpg?v=1" />}
-            lowres={<Image src="/static/windows-keyboard_lowres.jpg?v=1" />}
-          />
           <TileContainer>
             <CapsHeading color="#24a148">Record 4K HDR on PC</CapsHeading>
             <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
           </TileContainer>
+          <OptimizedImage
+            hires={<Image src="/static/windows-keyboard.jpg?v=1" />}
+            lowres={<Image src="/static/windows-keyboard_lowres.jpg?v=1" />}
+          />
         </Tile>
       </SectionRow>
     </Section>
