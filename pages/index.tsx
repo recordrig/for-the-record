@@ -43,12 +43,6 @@ const StyledProductImage = styled.div`
   }
 
   animation: rotateHue 12s infinite;
-  margin: 64px 0;
-  text-align: center;
-
-  > img {
-    max-width: 96%;
-  }
 `;
 
 const StyledIndexPage = styled.div`
@@ -66,6 +60,7 @@ const IndexPage: FunctionComponent = () => (
         <img
           alt="RecordRig - a dedicated streaming PC."
           src="/static/recordrig.png"
+          style={{ display: "block", margin: "64px auto" }}
         />
       </StyledProductImage>
       <Features
@@ -338,11 +333,13 @@ const IndexPage: FunctionComponent = () => (
               </Paragraph>
             </TileContainer>
             <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
-              <img
-                alt=""
-                src="/static/recordrig-black.png"
-                style={{ width: "100%" }}
-              />
+              <StyledProductImage>
+                <img
+                  alt=""
+                  src="/static/recordrig-black.png"
+                  style={{ width: "100%" }}
+                />
+              </StyledProductImage>
             </div>
           </Tile>
         </SubSection>
@@ -360,11 +357,13 @@ const IndexPage: FunctionComponent = () => (
               </Paragraph>
             </TileContainer>
             <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
-              <img
-                alt=""
-                src="/static/recordrig.png"
-                style={{ width: "100%" }}
-              />
+              <StyledProductImage>
+                <img
+                  alt=""
+                  src="/static/recordrig.png"
+                  style={{ width: "100%" }}
+                />
+              </StyledProductImage>
             </div>
           </Tile>
         </SubSection>
