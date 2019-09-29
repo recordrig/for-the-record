@@ -369,6 +369,29 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
+    <Section>
+      <SectionIntro>
+        <Heading color="#ffffff">Cinematic 4K HDR video&nbsp;example.</Heading>
+        <Paragraph color="#d5d9e0">
+          Recorded with RecordRig on PS4 Pro, this 10-minute intro clip from God
+          of War shows exactly why only 4K HDR video quality really does
+          today&apos;s games the justice they are due. Grab a cup of tea, get
+          comfortable and turn your volume and bass up high. Best viewed
+          fullscreen on a TV or monitor that supports 4K resolution and HDR
+          colors.
+        </Paragraph>
+      </SectionIntro>
+      <div style={{ paddingBottom: "56.25%", position: "relative" }}>
+        <iframe
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          frameBorder="0"
+          src="https://www.youtube.com/embed/9NIdIh3f69Q?rel=0"
+          style={{ height: "100%", position: "absolute", width: "100%" }}
+          title="God of War intro in 4K HDR, recorded with RecordRig on PS4 Pro"
+        />
+      </div>
+    </Section>
   </StyledIndexPage>
 );
 
