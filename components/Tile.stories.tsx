@@ -27,8 +27,8 @@ storiesOf("Tile", module)
         <TileContainer>
           <img
             alt=""
-            src="/static/icon-record-blue-large.png"
-            style={{ height: "58px", marginBottom: "20px", width: "58px" }}
+            src="/static/icon-large-blue-record.png"
+            style={{ height: "58px", marginBottom: "20px" }}
           />
           <CapsHeading color="#408bfc">
             Record with the click of a button

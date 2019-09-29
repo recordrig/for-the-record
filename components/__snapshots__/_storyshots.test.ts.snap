@@ -4370,12 +4370,11 @@ exports[`Storyshots Tile custom colors 1`] = `
     >
       <img
         alt=""
-        src="/static/icon-record-blue-large.png"
+        src="/static/icon-large-blue-record.png"
         style={
           Object {
             "height": "58px",
             "marginBottom": "20px",
-            "width": "58px",
           }
         }
       />

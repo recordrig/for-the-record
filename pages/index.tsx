@@ -222,6 +222,82 @@ const IndexPage: FunctionComponent = () => (
         </Tile>
       </SectionRow>
     </Section>
+    <Section>
+      <SectionIntro>
+        <Heading color="#408bfc">
+          Recording 4K HDR is easy on RecordRig.
+        </Heading>
+        <Paragraph color="#d5d9e0">Lorem ipsum.</Paragraph>
+      </SectionIntro>
+      <SectionRow>
+        <Tile backgroundColor="#13171A">
+          <TileContainer>
+            <CapsHeading color="#408bfc">
+              Record with confidence using RECentral
+            </CapsHeading>
+            <Paragraph color="#ffffff">
+              Maecenas nec neque facilisis, aliquet sem sed, placerat lorem.
+              Donec quis mauris risus. Quisque sodales diam ut elementum
+              ultricies. Pellentesque laoreet commodo mauris, ut condimentum
+              nisi cursus eget. In scelerisque at elit vitae dictum.
+            </Paragraph>
+            <div style={{ margin: "64px auto", maxWidth: "640px" }}>
+              <OptimizedImage
+                hires={
+                  <Image src="/static/4k_hdr_streaming_capturing_software.png?v=1" />
+                }
+                lowres={
+                  <Image src="/static/4k_hdr_streaming_capturing_software_lowres.png?v=1" />
+                }
+              />
+            </div>
+          </TileContainer>
+        </Tile>
+      </SectionRow>
+      <SectionRow>
+        <SubSection>
+          <Tile backgroundColor="#13171a">
+            <TileContainer>
+              <img
+                alt=""
+                src="/static/icon-large-blue-record.png"
+                style={{ height: "58px", marginBottom: "20px" }}
+              />
+              <CapsHeading color="#408bfc">
+                Record with the click of a button
+              </CapsHeading>
+              <Paragraph color="#ffffff">
+                RECentral comes pre-installed and pre-configured, ready to start
+                recording.Spend less time configuring and getting to know your
+                tool, and more time doing what you do best: gaming.
+              </Paragraph>
+            </TileContainer>
+          </Tile>
+        </SubSection>
+        <SubSection>
+          <Tile backgroundColor="#13171a">
+            <TileContainer>
+              <img
+                alt=""
+                src="/static/icon-large-blue-storage.png"
+                style={{
+                  height: "52px",
+                  marginBottom: "23px",
+                  marginTop: "3px"
+                }}
+              />
+              <CapsHeading color="#408bfc">
+                Store hundreds of hours of video
+              </CapsHeading>
+              <Paragraph color="#ffffff">
+                With configurable hard drive space of up to a whopping 10TB, you
+                can save all your favourite videos.
+              </Paragraph>
+            </TileContainer>
+          </Tile>
+        </SubSection>
+      </SectionRow>
+    </Section>
   </StyledIndexPage>
 );
 
