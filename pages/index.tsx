@@ -298,6 +298,63 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
+    <Section>
+      <SectionIntro>
+        <Heading color="#ee538b">Customise the look.</Heading>
+        <Paragraph color="#d5d9e0">
+          Always equipped with a premium steel case and tempered glass, you can
+          select the case&apos;s your colour of choice and we&apos;ll assemble
+          your personal RecordRig to order. And that&apos;s not all; you can
+          customise the LED colours completely through a user-friendly user
+          interface once you&apos;ve received your RecordRig.
+        </Paragraph>
+      </SectionIntro>
+      <SectionRow>
+        <SubSection>
+          <Tile backgroundColor="#13171A">
+            <TileContainer>
+              <CapsHeading color="#ee538b">Stealth Black</CapsHeading>
+              <Paragraph color="#ffffff">
+                It doesn&apos;t matter whether you think dark-embodied tech just
+                looks the most intimidating or there&apos;s some other reason
+                that pulls you towards the charming look of the eternal void.
+                You can&apos;t ever really go wrong with the timeless attraction
+                of a color bearing the name Stealth Black.
+              </Paragraph>
+            </TileContainer>
+            <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
+              <img
+                alt=""
+                src="/static/recordrig-black.png"
+                style={{ width: "100%" }}
+              />
+            </div>
+          </Tile>
+        </SubSection>
+        <SubSection>
+          <Tile backgroundColor="#f2f4f8">
+            <TileContainer>
+              <CapsHeading color="#ee538b">Pristine White</CapsHeading>
+              <Paragraph>
+                Perhaps you own a special edition white version of your gaming
+                console and would like to pair it side-by-side with your
+                RecordRig. Or maybe you are one of those fancy minimalists with
+                a bright, Scandinavian home interior. In that case (pun
+                intended), the Pristine White case edition of RecordRig is for
+                you.
+              </Paragraph>
+            </TileContainer>
+            <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
+              <img
+                alt=""
+                src="/static/recordrig.png"
+                style={{ width: "100%" }}
+              />
+            </div>
+          </Tile>
+        </SubSection>
+      </SectionRow>
+    </Section>
   </StyledIndexPage>
 );
 
