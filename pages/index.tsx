@@ -27,7 +27,22 @@ const StyledSubHeading = styled.h3`
   }
 `;
 
-const PositionedImage = styled.div`
+const StyledProductImage = styled.div`
+  @keyframes rotateHue {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+
+    50% {
+      filter: hue-rotate(360deg);
+    }
+
+    100% {
+      filter: hue-rotate(0deg);
+    }
+  }
+
+  animation: rotateHue 12s infinite;
   margin: 64px 0;
   text-align: center;
 
@@ -47,12 +62,12 @@ const IndexPage: FunctionComponent = () => (
       <Heading center color="#ffffff" h={1}>
         Record your gameplay in the highest quality.
       </Heading>
-      <PositionedImage>
+      <StyledProductImage>
         <img
           alt="RecordRig - a dedicated streaming PC."
           src="/static/recordrig.png"
         />
-      </PositionedImage>
+      </StyledProductImage>
       <Features
         texts={[
           "RecordRig is your dedicated gameplay recording PC.",
