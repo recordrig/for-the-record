@@ -62,7 +62,7 @@ const FadeInSubHeading = styled.div`
       transform: translateY(25px);
     }
 
-    30% {
+    35% {
       opacity: 1;
       transform: translateY(0px);
     }
@@ -89,7 +89,7 @@ const FadeInHeading = styled.div`
       transform: translateY(25px);
     }
 
-    50% {
+    40% {
       opacity: 1;
       transform: translateY(0px);
     }
@@ -110,7 +110,7 @@ const FadeInProductImage = styled.div`
       opacity: 0;
     }
 
-    40% {
+    30% {
       opacity: 0;
     }
 
@@ -130,12 +130,12 @@ const FadeInFeatures = styled.div`
       transform: translateY(25px);
     }
 
-    60% {
+    45% {
       opacity: 0;
       transform: translateY(25px);
     }
 
-    100% {
+    80% {
       opacity: 1;
       transform: translateY(0px);
     }
