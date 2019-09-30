@@ -81,15 +81,20 @@ const ApplicationStyles = createGlobalStyle`
 
 /**
  * Overrides Next.js' default `App` component which is used for page initialization.
- * `Component` refers to the active page component. Pages can access and pass down `appData`.
+ * `Component` refers to the active page component.
  */
 export default class RecordRigApp extends App {
   render() {
     const {
       /** The "Component" component refers to whatever the currently active page component is. */
       Component,
+      /**
+       * Page-specific data, the fetches of which are defined along with the page
+       * and executed from the root `RecordRigApp` component.
+       */
+      pageProps,
       /** Used to set a unique key on the page component based on the current route. */
-      pageProps
+      router
     } = this.props;
 
     return (
@@ -102,7 +107,7 @@ export default class RecordRigApp extends App {
           skipInitialTransition
           timeout={200}
         >
-          <Component {...pageProps} />
+          <Component key={router.route} {...pageProps} />
         </PageTransition>
         {/**
          * LoaderBar manages its own lifecycle based on Next's Router and as such
