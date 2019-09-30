@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import ReactCompareImage from "react-compare-image";
 import OptimizedImage, { Image } from "../components/OptimizedImage";
-import OptimizedVideo from "../components/OptimizedVideo";
+import Video from "../components/Video";
 import { CapsHeading, Heading, Paragraph } from "../components/Text";
 import Section, {
   SectionIntro,
@@ -102,7 +102,7 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <OptimizedVideo
+            <Video
               source="/static/witcher_60fps.mp4?v=1"
               thumbnail="/static/witcher_60fps_thumb.jpg?v=1"
             />

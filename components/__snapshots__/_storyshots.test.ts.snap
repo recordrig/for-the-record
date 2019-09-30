@@ -1055,7 +1055,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots OptimizedVideo default 1`] = `
+exports[`Storyshots Video default 1`] = `
 .c0 {
   cursor: pointer;
   width: 100%;

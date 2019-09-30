@@ -1,10 +1,10 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import OptimizedVideo from "./OptimizedVideo";
+import Video from "./Video";
 
-storiesOf("OptimizedVideo", module).add("default", () => (
+storiesOf("Video", module).add("default", () => (
   <div style={{ maxWidth: "600px" }}>
-    <OptimizedVideo
+    <Video
       source="/static/witcher_60fps.mp4"
       thumbnail="/static/witcher_60fps_thumb.jpg"
     />

@@ -1034,7 +1034,7 @@ const adoptedVideoStyles = `
   }  
 `;
 
-const StyledOptimizedVideo = styled.div`
+const StyledVideo = styled.div`
   ${adoptedVideoStyles}
 
   cursor: pointer;
@@ -1067,22 +1067,22 @@ const StyledOptimizedVideo = styled.div`
   }
 `;
 
-type OptimizedVideoProps = {
+type VideoProps = {
   source: string;
   thumbnail: string;
 };
 
-const OptimizedVideo: FunctionComponent<OptimizedVideoProps> = ({
+const Video: FunctionComponent<VideoProps> = ({
   source,
   thumbnail
-}: OptimizedVideoProps) => (
-  <StyledOptimizedVideo>
+}: VideoProps) => (
+  <StyledVideo>
     <Player playsInline poster={thumbnail} preload="metadata">
       <source src={source} />
       <BigPlayButton position="center" />
       <ControlBar disableCompletely />
     </Player>
-  </StyledOptimizedVideo>
+  </StyledVideo>
 );
 
-export default OptimizedVideo;
+export default Video;
