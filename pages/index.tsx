@@ -102,9 +102,14 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <Video
-              source="/static/witcher_60fps.mp4?v=1"
-              thumbnail="/static/witcher_60fps_thumb.jpg?v=1"
+            <OptimizedMedia
+              hires={
+                <Video
+                  source="/static/witcher_60fps.mp4?v=1"
+                  thumbnail="/static/witcher_60fps_thumb.jpg?v=1"
+                />
+              }
+              lowres={<Image src="/static/witcher_60fps_thumb.jpg?v=1" />}
             />
             <TileContainer>
               <CapsHeading color="#da1e28">60 frames per second</CapsHeading>
@@ -381,16 +386,21 @@ const IndexPage: FunctionComponent = () => (
           colors.
         </Paragraph>
       </SectionIntro>
-      <div style={{ paddingBottom: "56.25%", position: "relative" }}>
-        <iframe
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          frameBorder="0"
-          src="https://www.youtube.com/embed/9NIdIh3f69Q?rel=0"
-          style={{ height: "100%", position: "absolute", width: "100%" }}
-          title="God of War intro in 4K HDR, recorded with RecordRig on PS4 Pro"
-        />
-      </div>
+      <OptimizedMedia
+        hires={
+          <div style={{ paddingBottom: "56.25%", position: "relative" }}>
+            <iframe
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+              src="https://www.youtube.com/embed/9NIdIh3f69Q?rel=0"
+              style={{ height: "100%", position: "absolute", width: "100%" }}
+              title="God of War intro in 4K HDR, recorded with RecordRig on PS4 Pro"
+            />
+          </div>
+        }
+        lowres={<Image src="/static/god_of_war_4k_hdr_thumb_lowres.jpg?v=1" />}
+      />
     </Section>
   </StyledIndexPage>
 );
