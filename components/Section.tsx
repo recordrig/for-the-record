@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledSubSection = styled.div`
   @media (max-width: 734px) {
@@ -95,32 +95,42 @@ const PositionedSectionContent = styled.div`
   width: 100%;
 `;
 
-const StyledSection = styled.div`
-  @media (max-width: 734px) {
-    display: block;
-    padding-bottom: 128px;
-    padding-top: 128px;
-  }
+type StyledSectionProps = {
+  backgroundColor: string;
+};
 
-  @media (min-width: 735px) and (max-width: 1023px) {
-    display: flex; /* Immediate children will expand to full height. */
-    margin-left: 16px;
-    margin-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
-  }
+const StyledSection = styled.div<StyledSectionProps>`
+  ${({ backgroundColor }: StyledSectionProps) => css`
+    background-color: ${backgroundColor};
+    margin: 0;
 
-  @media (min-width: 1024px) {
-    display: flex; /* Immediate children will expand to full height. */
-    margin-left: 16px;
-    margin-right: 16px;
-    padding-bottom: 256px;
-    padding-top: 256px;
-  }
+    @media (max-width: 734px) {
+      display: block;
+      padding-bottom: 128px;
+      padding-top: 128px;
+    }
+
+    @media (min-width: 735px) and (max-width: 1023px) {
+      display: flex; /* Immediate children will expand to full height. */
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 160px;
+      padding-top: 160px;
+    }
+
+    @media (min-width: 1024px) {
+      display: flex; /* Immediate children will expand to full height. */
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 256px;
+      padding-top: 256px;
+    }
+  `}
 `;
 
 type SectionProps = {
   children: ReactNode | ReactNodeArray;
+  dark?: boolean;
 };
 
 /**
@@ -128,9 +138,10 @@ type SectionProps = {
  * content. Intended to span the full width of any given viewport.
  */
 const Section: FunctionComponent<SectionProps> = ({
-  children
+  children,
+  dark = false
 }: SectionProps) => (
-  <StyledSection>
+  <StyledSection backgroundColor={dark ? "#000000" : "transparent"}>
     <PositionedSectionContent>{children}</PositionedSectionContent>
   </StyledSection>
 );

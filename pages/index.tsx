@@ -145,13 +145,11 @@ const FadeInFeatures = styled.div`
   will-change: transform, opacity;
 `;
 
-const StyledIndexPage = styled.div`
-  background-color: #000000;
-`;
+const StyledIndexPage = styled.div``;
 
 const IndexPage: FunctionComponent = () => (
   <StyledIndexPage>
-    <Section>
+    <Section dark>
       <FadeInSubHeading>
         <StyledSubHeading>RecordRig.</StyledSubHeading>
       </FadeInSubHeading>
@@ -180,7 +178,7 @@ const IndexPage: FunctionComponent = () => (
         />
       </FadeInFeatures>
     </Section>
-    <Section>
+    <Section dark>
       <SectionIntro>
         <Heading color="#da1e28">
           4K 60FPS HDR
@@ -292,7 +290,7 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
-    <Section>
+    <Section dark>
       <SectionIntro>
         <Heading color="#24a148">Record 4K HDR on console - or PC.</Heading>
         <Paragraph color="#d5d9e0">
@@ -345,7 +343,7 @@ const IndexPage: FunctionComponent = () => (
         </Tile>
       </SectionRow>
     </Section>
-    <Section>
+    <Section dark>
       <SectionIntro>
         <Heading color="#408bfc">
           Recording 4K HDR is easy on RecordRig.
@@ -421,7 +419,7 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
-    <Section>
+    <Section dark>
       <SectionIntro>
         <Heading color="#ee538b">Customise the look.</Heading>
         <Paragraph color="#d5d9e0">
@@ -482,7 +480,7 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
       </SectionRow>
     </Section>
-    <Section>
+    <Section dark>
       <SectionIntro>
         <Heading color="#ffffff">Cinematic 4K HDR video&nbsp;example.</Heading>
         <Paragraph color="#d5d9e0">

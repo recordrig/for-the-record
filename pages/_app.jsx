@@ -67,9 +67,8 @@ const pageTransitionStyles = `
  * Styling defaults aiding consistency. May be overridden at the component level.
  */
 const ApplicationStyles = createGlobalStyle`
-  /* A margin reset on the body prevents us from defining an entire custom layout component
-  to achieve this simple functionality. */
   body {
+    background-color: #f2f4f8;
     margin: 0;
   }
 

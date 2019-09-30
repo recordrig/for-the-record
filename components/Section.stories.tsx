@@ -17,6 +17,18 @@ storiesOf("Section", module)
       </Section>
     </>
   ))
+  .add("dark", () => (
+    <>
+      <Section dark>
+        <Heading color="#ffffff">Some heading.</Heading>
+        <Paragraph color="#ffffff">Some paragraph.</Paragraph>
+      </Section>
+      <Section dark>
+        <Heading color="#ffffff">Another heading.</Heading>
+        <Paragraph color="#ffffff">Another paragraph.</Paragraph>
+      </Section>
+    </>
+  ))
   .add("intro", () => (
     <Section>
       <SectionIntro>
