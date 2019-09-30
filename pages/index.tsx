@@ -43,6 +43,10 @@ const StyledProductImage = styled.div`
   }
 
   animation: rotateHue 12s infinite;
+
+  > img {
+    max-width: 100%;
+  }
 `;
 
 const StyledIndexPage = styled.div`
@@ -58,7 +62,7 @@ const IndexPage: FunctionComponent = () => (
       </Heading>
       <StyledProductImage>
         <img
-          alt="RecordRig - a dedicated streaming PC."
+          alt="Gameplay can be recorded in 4K HDR with this streaming PC."
           src="/static/recordrig.png"
           style={{ display: "block", margin: "64px auto" }}
         />
