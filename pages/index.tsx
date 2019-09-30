@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import ReactCompareImage from "react-compare-image";
-import OptimizedImage, { Image } from "../components/OptimizedImage";
+import OptimizedMedia, { Image } from "../components/OptimizedMedia";
 import Video from "../components/Video";
 import { CapsHeading, Heading, Paragraph } from "../components/Text";
 import Section, {
@@ -118,7 +118,7 @@ const IndexPage: FunctionComponent = () => (
       </SectionRow>
       <SectionRow>
         <Tile backgroundColor="#13171A">
-          <OptimizedImage
+          <OptimizedMedia
             hires={
               <ReactCompareImage
                 handleSize={64}
@@ -146,7 +146,7 @@ const IndexPage: FunctionComponent = () => (
       <SectionRow>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <OptimizedImage
+            <OptimizedMedia
               hires={<Image src="/static/god_of_war_hdr_black.jpg?v=1" />}
               lowres={
                 <Image src="/static/god_of_war_hdr_black_lowres.jpg?v=1" />
@@ -163,7 +163,7 @@ const IndexPage: FunctionComponent = () => (
         </SubSection>
         <SubSection>
           <Tile backgroundColor="#f2f4f8">
-            <OptimizedImage
+            <OptimizedMedia
               hires={<Image src="/static/god_of_war_hdr_white.jpg?v=1" />}
               lowres={
                 <Image src="/static/god_of_war_hdr_white_lowres.jpg?v=1" />
@@ -198,7 +198,7 @@ const IndexPage: FunctionComponent = () => (
               </CapsHeading>
               <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
             </TileContainer>
-            <OptimizedImage
+            <OptimizedMedia
               hires={<Image src="/static/controller-xbox.png?v=1" />}
               lowres={<Image src="/static/controller-xbox_lowres.png?v=1" />}
             />
@@ -212,7 +212,7 @@ const IndexPage: FunctionComponent = () => (
               </CapsHeading>
               <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
             </TileContainer>
-            <OptimizedImage
+            <OptimizedMedia
               hires={<Image src="/static/controller-ps4.png?v=1" />}
               lowres={<Image src="/static/controller-ps4_lowres.png?v=1" />}
             />
@@ -225,7 +225,7 @@ const IndexPage: FunctionComponent = () => (
             <CapsHeading color="#24a148">Record 4K HDR on PC</CapsHeading>
             <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
           </TileContainer>
-          <OptimizedImage
+          <OptimizedMedia
             hires={<Image src="/static/windows-keyboard.jpg?v=1" />}
             lowres={<Image src="/static/windows-keyboard_lowres.jpg?v=1" />}
           />
@@ -252,7 +252,7 @@ const IndexPage: FunctionComponent = () => (
               nisi cursus eget. In scelerisque at elit vitae dictum.
             </Paragraph>
             <div style={{ margin: "64px auto", maxWidth: "640px" }}>
-              <OptimizedImage
+              <OptimizedMedia
                 hires={
                   <Image src="/static/4k_hdr_streaming_capturing_software.png?v=1" />
                 }

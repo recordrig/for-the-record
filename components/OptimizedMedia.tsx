@@ -21,7 +21,7 @@ type ImageProps = {
 
 /**
  * Provides a ready-for-use Image node which sets some common sense base styles.
- * When using this node with `OptimizedImage`, it'll also make sure that they
+ * When using this node with `OptimizedMedia`, it'll also make sure that they
  * take up the same size so long as they are of equal aspect ratios.
  */
 export const Image: FunctionComponent<ImageProps> = ({
@@ -33,41 +33,41 @@ export const Image: FunctionComponent<ImageProps> = ({
   </StyledImage>
 );
 
-const StyledLowresOptimizedImage = styled.div`
+const StyledLowresOptimizedMedia = styled.div`
   width: 100%;
 `;
 
-const StyledHiresOptimizedImage = styled.div`
+const StyledHiresOptimizedMedia = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
 `;
 
-const StyledOptimizedImage = styled.div`
+const StyledOptimizedMedia = styled.div`
   position: relative;
   width: 100%;
 `;
 
-type OptimizedImageProps = {
+type OptimizedMediaProps = {
   hires: ReactNode;
   lowres: ReactNode;
 };
 
 /**
- * OptimizedImage takes a low quality image (or other React Node) and high quality
+ * OptimizedMedia takes a low quality image (or other React Node) and high quality
  * image/node as input. It'll show the low quality image by default, overlay it with
  * the high quality node when the distance to the viewport is 600px (lazyloading).
  */
-const OptimizedImage: FunctionComponent<OptimizedImageProps> = ({
+const OptimizedMedia: FunctionComponent<OptimizedMediaProps> = ({
   hires,
   lowres
-}: OptimizedImageProps) => (
-  <StyledOptimizedImage>
-    <StyledLowresOptimizedImage>{lowres}</StyledLowresOptimizedImage>
-    <StyledHiresOptimizedImage>
+}: OptimizedMediaProps) => (
+  <StyledOptimizedMedia>
+    <StyledLowresOptimizedMedia>{lowres}</StyledLowresOptimizedMedia>
+    <StyledHiresOptimizedMedia>
       <LazyLoad offset={600}>{hires}</LazyLoad>
-    </StyledHiresOptimizedImage>
-  </StyledOptimizedImage>
+    </StyledHiresOptimizedMedia>
+  </StyledOptimizedMedia>
 );
 
-export default OptimizedImage;
+export default OptimizedMedia;

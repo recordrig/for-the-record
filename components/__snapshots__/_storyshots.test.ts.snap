@@ -925,7 +925,7 @@ exports[`Storyshots MenuBar items in bag 1`] = `
 </nav>
 `;
 
-exports[`Storyshots OptimizedImage custom node 1`] = `
+exports[`Storyshots OptimizedMedia custom node 1`] = `
 Array [
   <p>
     Scroll down for pictures.
@@ -990,7 +990,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots OptimizedImage default 1`] = `
+exports[`Storyshots OptimizedMedia default 1`] = `
 Array [
   <p>
     Scroll down for pictures.

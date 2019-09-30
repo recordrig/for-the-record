@@ -1,14 +1,14 @@
 import * as React from "react";
 import ReactCompareImage from "react-compare-image";
 import { storiesOf } from "@storybook/react";
-import OptimizedImage, { Image } from "./OptimizedImage";
+import OptimizedMedia, { Image } from "./OptimizedMedia";
 
-storiesOf("OptimizedImage", module)
+storiesOf("OptimizedMedia", module)
   .add("default", () => (
     <>
       <p>Scroll down for pictures.</p>
       <div style={{ paddingTop: "3000px", maxWidth: "600px" }}>
-        <OptimizedImage
+        <OptimizedMedia
           hires={<Image src="/static/god_of_war_hdr_white.jpg" />}
           lowres={<Image src="/static/god_of_war_hdr_white_lowres.jpg" />}
         />
@@ -19,7 +19,7 @@ storiesOf("OptimizedImage", module)
     <>
       <p>Scroll down for pictures.</p>
       <div style={{ paddingTop: "3000px", maxWidth: "600px" }}>
-        <OptimizedImage
+        <OptimizedMedia
           hires={
             <ReactCompareImage
               leftImage="/static/god_of_war_compare_hdr_on.jpg"
