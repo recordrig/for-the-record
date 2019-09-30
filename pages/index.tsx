@@ -49,6 +49,102 @@ const StyledProductImage = styled.div`
   }
 `;
 
+const FadeInSubHeading = styled.div`
+  /* Due to bad results with animation-delay, we'll implement delays using keyframes instead. */
+  @keyframes revealSubHeading {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    15% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    30% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  animation: revealSubHeading 3s;
+  will-change: transform, opacity;
+`;
+
+const FadeInHeading = styled.div`
+  @keyframes revealHeading {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    20% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    50% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  animation: revealHeading 3s;
+  will-change: transform, opacity;
+`;
+
+const FadeInProductImage = styled.div`
+  @keyframes revealProduct {
+    0% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    80% {
+      opacity: 1;
+    }
+  }
+
+  animation: revealProduct 3s;
+  will-change: opacity;
+`;
+
+const FadeInFeatures = styled.div`
+  @keyframes revealFeatures {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    60% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  animation: revealFeatures 3s;
+  will-change: transform, opacity;
+`;
+
 const StyledIndexPage = styled.div`
   background-color: #000000;
 `;
@@ -56,25 +152,33 @@ const StyledIndexPage = styled.div`
 const IndexPage: FunctionComponent = () => (
   <StyledIndexPage>
     <Section>
-      <StyledSubHeading>RecordRig.</StyledSubHeading>
-      <Heading center color="#ffffff" h={1}>
-        Record your gameplay in the highest quality.
-      </Heading>
-      <StyledProductImage>
-        <img
-          alt="Gameplay can be recorded in 4K HDR with this streaming PC."
-          src="/static/recordrig.png"
-          style={{ display: "block", margin: "64px auto" }}
+      <FadeInSubHeading>
+        <StyledSubHeading>RecordRig.</StyledSubHeading>
+      </FadeInSubHeading>
+      <FadeInHeading>
+        <Heading center color="#ffffff" h={1}>
+          Record your gameplay in the highest quality.
+        </Heading>
+      </FadeInHeading>
+      <FadeInProductImage>
+        <StyledProductImage>
+          <img
+            alt="Gameplay can be recorded in 4K HDR with this streaming PC."
+            src="/static/recordrig.png"
+            style={{ display: "block", margin: "64px auto" }}
+          />
+        </StyledProductImage>
+      </FadeInProductImage>
+      <FadeInFeatures>
+        <Features
+          texts={[
+            "RecordRig is your dedicated gameplay recording PC.",
+            "Hook it up to your Xbox, PS4 or even your gaming PC.",
+            "Capture your gameplay videos in immersive 4K HDR quality.",
+            "Stream directly to YouTube and Twitch, or save for later."
+          ]}
         />
-      </StyledProductImage>
-      <Features
-        texts={[
-          "RecordRig is your dedicated gameplay recording PC.",
-          "Hook it up to your Xbox, PS4 or even your gaming PC.",
-          "Capture your gameplay videos in immersive 4K HDR quality.",
-          "Stream directly to YouTube and Twitch, or save for later."
-        ]}
-      />
+      </FadeInFeatures>
     </Section>
     <Section>
       <SectionIntro>
