@@ -3,8 +3,10 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css } from "styled-components";
 
 const StyledTileContainer = styled.div`
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 
   & > p {
     font-weight: bold;

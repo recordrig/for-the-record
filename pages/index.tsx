@@ -145,6 +145,49 @@ const FadeInFeatures = styled.div`
   will-change: transform, opacity;
 `;
 
+const StyledSideBySideProducts = styled.div`
+  position: relative;
+
+  img {
+    position: absolute;
+    left: 50%;
+  }
+
+  @media (max-width: 767px) {
+    height: 350px;
+
+    img:nth-child(1) {
+      margin-left: -144px;
+      width: 200px;
+      top: 32px;
+      z-index: 1;
+    }
+
+    img:nth-child(2) {
+      margin-left: -20px;
+      top: 54px;
+      width: 161px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: 700px;
+
+    img:nth-child(1) {
+      margin-left: -300px;
+      width: 400px;
+      top: 64px;
+      z-index: 1;
+    }
+
+    img:nth-child(2) {
+      margin-left: -23px;
+      top: 110px;
+      width: 320px;
+    }
+  }
+`;
+
 const StyledIndexPage = styled.div``;
 
 const IndexPage: FunctionComponent = () => (
@@ -507,6 +550,38 @@ const IndexPage: FunctionComponent = () => (
         }
         lowres={<Image src="/static/god_of_war_4k_hdr_thumb_lowres.jpg?v=1" />}
       />
+    </Section>
+    <Section>
+      <Tile accentColor="#0062ff" backgroundColor="#ffffff" link="/shop">
+        <TileContainer>
+          <div style={{ marginBottom: "32px", marginTop: "64px" }}>
+            <Heading center>RecordRig.</Heading>
+            <p
+              style={{
+                fontSize: "18px",
+                fontWeight: "normal",
+                textAlign: "center"
+              }}
+            >
+              Available now.
+            </p>
+          </div>
+          <StyledSideBySideProducts>
+            <img alt="" src="/static/recordrig.png" />
+            <img alt="" src="/static/recordrig-black.png" />
+          </StyledSideBySideProducts>
+          <span
+            style={{
+              color: "#0062ff",
+              display: "block",
+              fontSize: "18px",
+              textAlign: "right"
+            }}
+          >
+            Choose your RecordRig &gt;
+          </span>
+        </TileContainer>
+      </Tile>
     </Section>
   </StyledIndexPage>
 );

@@ -1930,8 +1930,10 @@ exports[`Storyshots Section rows 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c4 > p {
@@ -2197,8 +2199,10 @@ exports[`Storyshots Section subsections 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c5 > p {
@@ -3205,8 +3209,10 @@ exports[`Storyshots Tile bottom image 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c1 > p {
@@ -3362,8 +3368,10 @@ exports[`Storyshots Tile custom colors 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c1 > p {
@@ -3511,8 +3519,10 @@ exports[`Storyshots Tile default 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c1 > p {
@@ -3646,8 +3656,10 @@ exports[`Storyshots Tile link 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c1 > p {
@@ -3774,8 +3786,10 @@ exports[`Storyshots Tile top image 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c1 > p {
@@ -3931,8 +3945,10 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   padding-bottom: 42px;
   padding-top: 42px;
+  width: 100%;
 }
 
 .c1 > p {
