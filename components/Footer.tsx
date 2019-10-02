@@ -3,6 +3,8 @@ import styled from "styled-components";
 import MainMenu from "./MainMenu";
 
 const StyledAddress = styled.p`
+  padding-bottom: 64px;
+
   @media (max-width: 767px) {
     margin-left: 40px;
   }
@@ -18,14 +20,12 @@ const StyledLogo = styled.div`
   @media (max-width: 767px) {
     > img {
       height: 32px;
-      width: 123px;
     }
   }
 
   @media (min-width: 768px) {
     > img {
       height: 64px;
-      width: 246px;
     }
   }
 `;
@@ -36,7 +36,6 @@ const PositionedMainMenu = styled.div`
   }
 
   @media (min-width: 768px) {
-    float: right;
     margin-left: 8px;
     width: 50%;
   }
@@ -48,13 +47,26 @@ const StyledInfo = styled.div`
   }
 
   @media (min-width: 768px) {
-    float: left;
     margin-top: 16px;
+    width: 50%;
   }
 `;
 
 const StyledFooter = styled.div`
-  margin-bottom: 64px;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1216px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+    padding-bottom: 64px;
+  }
 `;
 
 const Footer: FunctionComponent = () => (

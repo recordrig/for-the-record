@@ -62,24 +62,8 @@ const MainMenu: FunctionComponent = () => (
       </li>
       <li>
         <Link href="/shop" passHref>
-          <StyledLink>
+          <StyledExternalLink>
             <span>Shop</span>
-            <img alt="" src="/static/icon-arrow-right.png" />
-          </StyledLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://twitter.com/RigRecord" passHref>
-          <StyledExternalLink>
-            <span>Twitter</span>
-            <img alt="" src="/static/icon-arrow-up-right.png" />
-          </StyledExternalLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="https://www.reddit.com/r/RecordRig/" passHref>
-          <StyledExternalLink>
-            <span>Reddit</span>
             <img alt="" src="/static/icon-arrow-up-right.png" />
           </StyledExternalLink>
         </Link>
