@@ -352,10 +352,20 @@ const IndexPage: FunctionComponent = () => (
               </CapsHeading>
               <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
             </TileContainer>
-            <OptimizedMedia
-              hires={<Image src="/static/controller-xbox.png?v=1" />}
-              lowres={<Image src="/static/controller-xbox_lowres.png?v=1" />}
-            />
+            <div
+              style={{
+                boxSizing: "border-box",
+                margin: "0 auto",
+                maxWidth: "506px",
+                padding: "0 16px",
+                width: "100%"
+              }}
+            >
+              <OptimizedMedia
+                hires={<Image src="/static/controller-xbox.png?v=1" />}
+                lowres={<Image src="/static/controller-xbox_lowres.png?v=1" />}
+              />
+            </div>
           </Tile>
         </SubSection>
         <SubSection>
@@ -366,10 +376,20 @@ const IndexPage: FunctionComponent = () => (
               </CapsHeading>
               <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
             </TileContainer>
-            <OptimizedMedia
-              hires={<Image src="/static/controller-ps4.png?v=1" />}
-              lowres={<Image src="/static/controller-ps4_lowres.png?v=1" />}
-            />
+            <div
+              style={{
+                boxSizing: "border-box",
+                margin: "0 auto",
+                maxWidth: "506px",
+                padding: "0 16px",
+                width: "100%"
+              }}
+            >
+              <OptimizedMedia
+                hires={<Image src="/static/controller-ps4.png?v=1" />}
+                lowres={<Image src="/static/controller-ps4_lowres.png?v=1" />}
+              />
+            </div>
           </Tile>
         </SubSection>
       </SectionRow>
