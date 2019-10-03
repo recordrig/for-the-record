@@ -43,6 +43,7 @@ const StyledProductImage = styled.div`
   }
 
   animation: rotateHue 12s infinite;
+  animation-delay: 4s;
 
   > img {
     max-width: 100%;
@@ -57,12 +58,12 @@ const FadeInSubHeading = styled.div`
       transform: translateY(25px);
     }
 
-    15% {
+    35% {
       opacity: 0;
       transform: translateY(25px);
     }
 
-    35% {
+    55% {
       opacity: 1;
       transform: translateY(0px);
     }
@@ -73,7 +74,7 @@ const FadeInSubHeading = styled.div`
     }
   }
 
-  animation: revealSubHeading 3s;
+  animation: revealSubHeading 4s;
   will-change: transform, opacity;
 `;
 
@@ -84,12 +85,12 @@ const FadeInHeading = styled.div`
       transform: translateY(25px);
     }
 
-    20% {
+    40% {
       opacity: 0;
       transform: translateY(25px);
     }
 
-    40% {
+    60% {
       opacity: 1;
       transform: translateY(0px);
     }
@@ -100,7 +101,7 @@ const FadeInHeading = styled.div`
     }
   }
 
-  animation: revealHeading 3s;
+  animation: revealHeading 4s;
   will-change: transform, opacity;
 `;
 
@@ -110,16 +111,16 @@ const FadeInProductImage = styled.div`
       opacity: 0;
     }
 
-    30% {
+    60% {
       opacity: 0;
     }
 
-    80% {
+    100% {
       opacity: 1;
     }
   }
 
-  animation: revealProduct 3s;
+  animation: revealProduct 4s;
   will-change: opacity;
 `;
 
@@ -130,18 +131,18 @@ const FadeInFeatures = styled.div`
       transform: translateY(25px);
     }
 
-    45% {
+    65% {
       opacity: 0;
       transform: translateY(25px);
     }
 
-    80% {
+    100% {
       opacity: 1;
       transform: translateY(0px);
     }
   }
 
-  animation: revealFeatures 3s;
+  animation: revealFeatures 4s;
   will-change: transform, opacity;
 `;
 
