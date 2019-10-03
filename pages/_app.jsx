@@ -1,5 +1,6 @@
 import React from "react";
 import App from "next/app";
+import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 import Footer from "../components/Footer";
@@ -100,6 +101,9 @@ export default class RecordRigApp extends App {
 
     return (
       <>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <PositionedMenuBar>
           <MenuBar />
         </PositionedMenuBar>

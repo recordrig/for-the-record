@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import Head from "next/head";
 import styled from "styled-components";
 import ReactCompareImage from "react-compare-image";
 import OptimizedMedia, { Image } from "../components/OptimizedMedia";
@@ -193,6 +194,16 @@ const StyledIndexPage = styled.div``;
 
 const IndexPage: FunctionComponent = () => (
   <StyledIndexPage>
+    <Head>
+      <title>
+        Record 4K HDR on PS4 Pro and Xbox One with RecordRig, your dedicated
+        gameplay streaming PC.
+      </title>
+      <meta
+        name="description"
+        content="Recording and streaming 4K HDR on PS4 Pro and Xbox One is finally here - buy RecordRig to share gameplay in UHD."
+      />
+    </Head>
     <Section dark>
       <FadeInSubHeading>
         <StyledSubHeading>RecordRig.</StyledSubHeading>
