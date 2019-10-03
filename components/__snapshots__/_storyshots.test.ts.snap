@@ -1057,6 +1057,20 @@ Array [
   color: #ffffff;
 }
 
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -1065,27 +1079,24 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -1218,6 +1229,20 @@ Array [
   color: #ffffff;
 }
 
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -1226,27 +1251,24 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -1384,6 +1406,20 @@ Array [
   color: #000;
 }
 
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -1392,27 +1428,24 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -1545,6 +1578,20 @@ Array [
   color: #000;
 }
 
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -1553,27 +1600,24 @@ Array [
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -1673,8 +1717,6 @@ Array [
 exports[`Storyshots Section intro 1`] = `
 .c2 {
   padding-bottom: 64px;
-  padding-left: 32px;
-  padding-right: 32px;
 }
 
 .c1 {
@@ -1716,6 +1758,34 @@ exports[`Storyshots Section intro 1`] = `
   color: #000;
 }
 
+@media (max-width:474px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c2 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -1724,27 +1794,24 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -1935,6 +2002,20 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -1943,27 +2024,24 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -2019,7 +2097,14 @@ exports[`Storyshots Section rows 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c4 {
     padding-left: 24px;
     padding-right: 24px;
@@ -2252,6 +2337,20 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media (max-width:734px) {
   .c0 {
     display: block;
@@ -2260,27 +2359,24 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (min-width:735px) and (max-width:1023px) {
+@media (min-width:735px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 160px;
-    padding-top: 160px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
   }
 }
 
 @media (min-width:1024px) {
   .c0 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-left: 16px;
-    padding-right: 16px;
     padding-bottom: 256px;
     padding-top: 256px;
   }
@@ -2362,7 +2458,14 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c5 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c5 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3249,7 +3352,14 @@ exports[`Storyshots Tile bottom image 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3408,7 +3518,14 @@ exports[`Storyshots Tile custom colors 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3559,7 +3676,14 @@ exports[`Storyshots Tile default 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3663,7 +3787,14 @@ exports[`Storyshots Tile link 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3826,7 +3957,14 @@ exports[`Storyshots Tile top image 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;
@@ -3985,7 +4123,14 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   }
 }
 
-@media (max-width:767px) {
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
   .c1 {
     padding-left: 24px;
     padding-right: 24px;

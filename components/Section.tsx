@@ -41,8 +41,16 @@ export const SubSection: FunctionComponent<SubSectionProps> = ({
 
 const StyledSectionIntro = styled.div`
   padding-bottom: 64px;
-  padding-left: 32px;
-  padding-right: 32px;
+
+  @media (max-width: 474px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 475px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 `;
 
 type SectionIntroProps = {
@@ -104,24 +112,32 @@ const StyledSection = styled.div<StyledSectionProps>`
     background-color: ${backgroundColor};
     margin: 0;
 
+    @media (max-width: 474px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media (min-width: 475px) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
     @media (max-width: 734px) {
       display: block;
       padding-bottom: 128px;
       padding-top: 128px;
     }
 
-    @media (min-width: 735px) and (max-width: 1023px) {
+    @media (min-width: 735px) {
       display: flex; /* Immediate children will expand to full height. */
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-bottom: 160px;
-      padding-top: 160px;
+    }
+
+    @media (min-width: 735px) and (max-width: 1023px) {
+      padding-bottom: 192px;
+      padding-top: 192px;
     }
 
     @media (min-width: 1024px) {
-      display: flex; /* Immediate children will expand to full height. */
-      padding-left: 16px;
-      padding-right: 16px;
       padding-bottom: 256px;
       padding-top: 256px;
     }

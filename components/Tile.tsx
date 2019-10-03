@@ -12,7 +12,12 @@ const StyledTileContainer = styled.div`
     font-weight: bold;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 474px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 475px) and (max-width: 767px) {
     padding-left: 24px;
     padding-right: 24px;
   }
