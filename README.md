@@ -1,6 +1,6 @@
 # RecordRig
 
-Website + shop.
+Site for RecordRig.
 
 ## Getting Started
 
