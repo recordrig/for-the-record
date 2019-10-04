@@ -328,6 +328,22 @@ exports[`Storyshots Footer default 1`] = `
             />
           </a>
         </li>
+        <li>
+          <a
+            className="c3"
+            href="/contact"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Contact
+            </span>
+            <img
+              alt=""
+              src="/static/icon-arrow-right.png"
+            />
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -438,6 +454,22 @@ exports[`Storyshots MainMenu default 1`] = `
         <img
           alt=""
           src="/static/icon-arrow-up-right.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="c1"
+        href="/contact"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span>
+          Contact
+        </span>
+        <img
+          alt=""
+          src="/static/icon-arrow-right.png"
         />
       </a>
     </li>

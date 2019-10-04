@@ -68,6 +68,14 @@ const MainMenu: FunctionComponent = () => (
           </StyledExternalLink>
         </Link>
       </li>
+      <li>
+        <Link href="/contact" passHref>
+          <StyledLink>
+            <span>Contact</span>
+            <img alt="" src="/static/icon-arrow-right.png" />
+          </StyledLink>
+        </Link>
+      </li>
     </ul>
   </StyledMainMenu>
 );
