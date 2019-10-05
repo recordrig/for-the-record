@@ -1,15 +1,17 @@
-name: Continuous integration tests
+name: Quality Assurance
 
 on:
+  # Auto-run when PR's are opened targeted to the master branch.
   pull_request:
     branches:
     - master
-  push:
-    branches:    
-    - master
+
+  # Auto-run every day at 05:00 UTC. Always targets the base branch (= master).
+  schedule:
+    - cron:  "0 5 * * *"
 
 jobs:
-  ci_tests:
+  qa:
 
     runs-on: ubuntu-latest
 
@@ -26,6 +28,9 @@ jobs:
     - name: Install dependencies
       run: |
         npm install
+    - name: Run linter
+      run: |
+        npm run lint
     - name: Run unit tests
       run: |
         npm run test
