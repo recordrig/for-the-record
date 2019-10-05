@@ -81,10 +81,19 @@ const Footer: FunctionComponent = () => (
       <StyledAddress>
         Industrieweg 46
         <br />
-        6541 TW Nijmegen
+        6541TW Nijmegen
         <br />
         The Netherlands
       </StyledAddress>
+      <span
+        style={{
+          color: "#50565b",
+          fontSize: "14px",
+          paddingBottom: "32px"
+        }}
+      >
+        Registered with the Netherlands Chamber of Commerce under ID 67196802.
+      </span>
     </StyledInfo>
   </StyledFooter>
 );
