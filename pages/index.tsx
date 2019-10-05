@@ -217,7 +217,7 @@ const IndexPage: FunctionComponent = () => (
         <StyledProductImage>
           <img
             alt="Gameplay can be recorded in 4K HDR with this streaming PC."
-            src="/static/recordrig.png"
+            src="/recordrig.png"
             style={{ display: "block", margin: "64px auto" }}
           />
         </StyledProductImage>
@@ -250,7 +250,7 @@ const IndexPage: FunctionComponent = () => (
       <SectionRow>
         <SubSection>
           <Tile backgroundColor="#13171A">
-            <Image src="/static/4k_hd_resolution_compared.png?v=1" />
+            <Image src="/4k_hd_resolution_compared.png?v=1" />
             <TileContainer>
               <CapsHeading color="#da1e28">Capture 4K UHD gameplay</CapsHeading>
               <Paragraph color="#ffffff">
@@ -266,11 +266,11 @@ const IndexPage: FunctionComponent = () => (
             <OptimizedMedia
               hires={
                 <Video
-                  source="/static/witcher_60fps.mp4?v=1"
-                  thumbnail="/static/witcher_60fps_thumb.jpg?v=1"
+                  source="/witcher_60fps.mp4?v=1"
+                  thumbnail="/witcher_60fps_thumb.jpg?v=1"
                 />
               }
-              lowres={<Image src="/static/witcher_60fps_thumb.jpg?v=1" />}
+              lowres={<Image src="/witcher_60fps_thumb.jpg?v=1" />}
             />
             <TileContainer>
               <CapsHeading color="#da1e28">60 frames per second</CapsHeading>
@@ -288,13 +288,13 @@ const IndexPage: FunctionComponent = () => (
             hires={
               <ReactCompareImage
                 handleSize={64}
-                leftImage="/static/god_of_war_compare_hdr_on.jpg?v=1"
-                rightImage="/static/god_of_war_compare_hdr_off.jpg?v=1"
+                leftImage="/god_of_war_compare_hdr_on.jpg?v=1"
+                rightImage="/god_of_war_compare_hdr_off.jpg?v=1"
                 sliderLineColor="#f2f4f8"
               />
             }
             lowres={
-              <Image src="/static/god_of_war_compare_hdr_on_lowres.jpg" />
+              <Image src="/god_of_war_compare_hdr_on_lowres.jpg" />
             }
           />
           <TileContainer>
@@ -313,9 +313,9 @@ const IndexPage: FunctionComponent = () => (
         <SubSection>
           <Tile backgroundColor="#13171A">
             <OptimizedMedia
-              hires={<Image src="/static/god_of_war_hdr_black.jpg?v=1" />}
+              hires={<Image src="/god_of_war_hdr_black.jpg?v=1" />}
               lowres={
-                <Image src="/static/god_of_war_hdr_black_lowres.jpg?v=1" />
+                <Image src="/god_of_war_hdr_black_lowres.jpg?v=1" />
               }
             />
             <TileContainer>
@@ -330,9 +330,9 @@ const IndexPage: FunctionComponent = () => (
         <SubSection>
           <Tile backgroundColor="#f2f4f8">
             <OptimizedMedia
-              hires={<Image src="/static/god_of_war_hdr_white.jpg?v=1" />}
+              hires={<Image src="/god_of_war_hdr_white.jpg?v=1" />}
               lowres={
-                <Image src="/static/god_of_war_hdr_white_lowres.jpg?v=1" />
+                <Image src="/god_of_war_hdr_white_lowres.jpg?v=1" />
               }
             />
             <TileContainer>
@@ -374,8 +374,8 @@ const IndexPage: FunctionComponent = () => (
               }}
             >
               <OptimizedMedia
-                hires={<Image src="/static/controller-xbox.png?v=1" />}
-                lowres={<Image src="/static/controller-xbox_lowres.png?v=1" />}
+                hires={<Image src="/controller-xbox.png?v=1" />}
+                lowres={<Image src="/controller-xbox_lowres.png?v=1" />}
               />
             </div>
           </Tile>
@@ -398,8 +398,8 @@ const IndexPage: FunctionComponent = () => (
               }}
             >
               <OptimizedMedia
-                hires={<Image src="/static/controller-ps4.png?v=1" />}
-                lowres={<Image src="/static/controller-ps4_lowres.png?v=1" />}
+                hires={<Image src="/controller-ps4.png?v=1" />}
+                lowres={<Image src="/controller-ps4_lowres.png?v=1" />}
               />
             </div>
           </Tile>
@@ -412,8 +412,8 @@ const IndexPage: FunctionComponent = () => (
             <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
           </TileContainer>
           <OptimizedMedia
-            hires={<Image src="/static/windows-keyboard.jpg?v=1" />}
-            lowres={<Image src="/static/windows-keyboard_lowres.jpg?v=1" />}
+            hires={<Image src="/windows-keyboard.jpg?v=1" />}
+            lowres={<Image src="/windows-keyboard_lowres.jpg?v=1" />}
           />
         </Tile>
       </SectionRow>
@@ -440,10 +440,10 @@ const IndexPage: FunctionComponent = () => (
             <div style={{ margin: "64px auto", maxWidth: "640px" }}>
               <OptimizedMedia
                 hires={
-                  <Image src="/static/4k_hdr_streaming_capturing_software.png?v=1" />
+                  <Image src="/4k_hdr_streaming_capturing_software.png?v=1" />
                 }
                 lowres={
-                  <Image src="/static/4k_hdr_streaming_capturing_software_lowres.png?v=1" />
+                  <Image src="/4k_hdr_streaming_capturing_software_lowres.png?v=1" />
                 }
               />
             </div>
@@ -456,7 +456,7 @@ const IndexPage: FunctionComponent = () => (
             <TileContainer>
               <img
                 alt=""
-                src="/static/icon-large-blue-record.png"
+                src="/icon-large-blue-record.png"
                 style={{ height: "58px", marginBottom: "20px" }}
               />
               <CapsHeading color="#408bfc">
@@ -475,7 +475,7 @@ const IndexPage: FunctionComponent = () => (
             <TileContainer>
               <img
                 alt=""
-                src="/static/icon-large-blue-storage.png"
+                src="/icon-large-blue-storage.png"
                 style={{
                   height: "52px",
                   marginBottom: "23px",
@@ -522,7 +522,7 @@ const IndexPage: FunctionComponent = () => (
               <StyledProductImage>
                 <img
                   alt=""
-                  src="/static/recordrig-black.png"
+                  src="/recordrig-black.png"
                   style={{ width: "100%" }}
                 />
               </StyledProductImage>
@@ -546,7 +546,7 @@ const IndexPage: FunctionComponent = () => (
               <StyledProductImage>
                 <img
                   alt=""
-                  src="/static/recordrig.png"
+                  src="/recordrig.png"
                   style={{ width: "100%" }}
                 />
               </StyledProductImage>
@@ -580,7 +580,7 @@ const IndexPage: FunctionComponent = () => (
             />
           </div>
         }
-        lowres={<Image src="/static/god_of_war_4k_hdr_thumb_lowres.jpg?v=1" />}
+        lowres={<Image src="/god_of_war_4k_hdr_thumb_lowres.jpg?v=1" />}
       />
     </Section>
     <Section>
@@ -599,8 +599,8 @@ const IndexPage: FunctionComponent = () => (
             </p>
           </div>
           <StyledSideBySideProducts>
-            <img alt="" src="/static/recordrig.png" />
-            <img alt="" src="/static/recordrig-black.png" />
+            <img alt="" src="/recordrig.png" />
+            <img alt="" src="/recordrig-black.png" />
           </StyledSideBySideProducts>
           <span
             style={{

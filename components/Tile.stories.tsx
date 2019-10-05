@@ -27,7 +27,7 @@ storiesOf("Tile", module)
         <TileContainer>
           <img
             alt=""
-            src="/static/icon-large-blue-record.png"
+            src="/icon-large-blue-record.png"
             style={{ height: "58px", marginBottom: "20px" }}
           />
           <CapsHeading color="#408bfc">
@@ -55,7 +55,7 @@ storiesOf("Tile", module)
         <div style={{ textAlign: "center" }}>
           <img
             alt=""
-            src="/static/controller-xbox.png"
+            src="/controller-xbox.png"
             style={{ maxWidth: "100%", verticalAlign: "bottom" }}
           />
         </div>
@@ -68,7 +68,7 @@ storiesOf("Tile", module)
         <div style={{ textAlign: "center" }}>
           <img
             alt=""
-            src="/static/4k_hdr_god_of_war_white.jpg"
+            src="/4k_hdr_god_of_war_white.jpg"
             style={{ maxWidth: "100%", verticalAlign: "bottom" }}
           />
         </div>
@@ -98,7 +98,7 @@ storiesOf("Tile", module)
           <div style={{ padding: "48px 0", textAlign: "center" }}>
             <img
               alt=""
-              src="/static/4k_hdr_streaming_capturing_software.png"
+              src="/4k_hdr_streaming_capturing_software.png"
               style={{ maxWidth: "100%", verticalAlign: "bottom" }}
             />
           </div>

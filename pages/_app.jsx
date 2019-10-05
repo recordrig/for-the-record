@@ -22,14 +22,14 @@ export const fontStyles = `
     font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 400;
-    src: url("/static/fonts/IBMPlexSans-Regular.woff") format("woff");
+    src: url("/IBMPlexSans-Regular.woff") format("woff");
   }
 
   @font-face {
     font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 700;
-    src: url("/static/fonts/IBMPlexSans-Bold.woff") format("woff");
+    src: url("/IBMPlexSans-Bold.woff") format("woff");
   }
 
   body {

@@ -76,7 +76,7 @@ const Footer: FunctionComponent = () => (
     </PositionedMainMenu>
     <StyledInfo>
       <StyledLogo>
-        <img alt="" src="/static/recordrig-logo.png" />
+        <img alt="" src="/recordrig-logo.png" />
       </StyledLogo>
       <StyledAddress>
         Industrieweg 46

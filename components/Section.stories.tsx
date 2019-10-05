@@ -52,7 +52,7 @@ storiesOf("Section", module)
         <Tile backgroundColor="#13171A">
           <img
             alt=""
-            src="/static/god_of_war_compare_hdr_on.jpg?v=1"
+            src="/god_of_war_compare_hdr_on.jpg?v=1"
             style={{ width: "100%", verticalAlign: "bottom" }}
           />
           <TileContainer>
@@ -71,7 +71,7 @@ storiesOf("Section", module)
         <Tile backgroundColor="#13171A">
           <img
             alt=""
-            src="/static/god_of_war_compare_hdr_off.jpg?v=1"
+            src="/god_of_war_compare_hdr_off.jpg?v=1"
             style={{ width: "100%", verticalAlign: "bottom" }}
           />
           <TileContainer>
@@ -95,7 +95,7 @@ storiesOf("Section", module)
           <Tile backgroundColor="#13171A">
             <img
               alt=""
-              src="/static/god_of_war_hdr_black.jpg?v=1"
+              src="/god_of_war_hdr_black.jpg?v=1"
               style={{ width: "100%", verticalAlign: "bottom" }}
             />
             <TileContainer>
@@ -111,7 +111,7 @@ storiesOf("Section", module)
           <Tile backgroundColor="#f2f4f8">
             <img
               alt=""
-              src="/static/god_of_war_hdr_white.jpg?v=1"
+              src="/god_of_war_hdr_white.jpg?v=1"
               style={{ width: "100%", verticalAlign: "bottom" }}
             />
             <TileContainer>

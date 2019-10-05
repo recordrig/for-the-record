@@ -75,7 +75,7 @@ const MenuBar: FunctionComponent = () => (
       <li>
         <Link href="/" passHref>
           <StyledLogo>
-            <img alt="" src="/static/recordrig-logo.png" />
+            <img alt="" src="/recordrig-logo.png" />
           </StyledLogo>
         </Link>
       </li>

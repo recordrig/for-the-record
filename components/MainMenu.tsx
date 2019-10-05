@@ -56,7 +56,7 @@ const MainMenu: FunctionComponent = () => (
         <Link href="/" passHref>
           <StyledLink>
             <span>Home</span>
-            <img alt="" src="/static/icon-arrow-right.png" />
+            <img alt="" src="/icon-arrow-right.png" />
           </StyledLink>
         </Link>
       </li>
@@ -64,7 +64,7 @@ const MainMenu: FunctionComponent = () => (
         <Link href="/shop" passHref>
           <StyledExternalLink>
             <span>Shop</span>
-            <img alt="" src="/static/icon-arrow-up-right.png" />
+            <img alt="" src="/icon-arrow-up-right.png" />
           </StyledExternalLink>
         </Link>
       </li>
@@ -72,7 +72,7 @@ const MainMenu: FunctionComponent = () => (
         <Link href="/contact" passHref>
           <StyledLink>
             <span>Contact</span>
-            <img alt="" src="/static/icon-arrow-right.png" />
+            <img alt="" src="/icon-arrow-right.png" />
           </StyledLink>
         </Link>
       </li>

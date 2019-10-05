@@ -308,7 +308,7 @@ exports[`Storyshots Footer default 1`] = `
             </span>
             <img
               alt=""
-              src="/static/icon-arrow-right.png"
+              src="/icon-arrow-right.png"
             />
           </a>
         </li>
@@ -324,7 +324,7 @@ exports[`Storyshots Footer default 1`] = `
             </span>
             <img
               alt=""
-              src="/static/icon-arrow-up-right.png"
+              src="/icon-arrow-up-right.png"
             />
           </a>
         </li>
@@ -340,7 +340,7 @@ exports[`Storyshots Footer default 1`] = `
             </span>
             <img
               alt=""
-              src="/static/icon-arrow-right.png"
+              src="/icon-arrow-right.png"
             />
           </a>
         </li>
@@ -355,7 +355,7 @@ exports[`Storyshots Footer default 1`] = `
     >
       <img
         alt=""
-        src="/static/recordrig-logo.png"
+        src="/recordrig-logo.png"
       />
     </div>
     <p
@@ -437,7 +437,7 @@ exports[`Storyshots MainMenu default 1`] = `
         </span>
         <img
           alt=""
-          src="/static/icon-arrow-right.png"
+          src="/icon-arrow-right.png"
         />
       </a>
     </li>
@@ -453,7 +453,7 @@ exports[`Storyshots MainMenu default 1`] = `
         </span>
         <img
           alt=""
-          src="/static/icon-arrow-up-right.png"
+          src="/icon-arrow-up-right.png"
         />
       </a>
     </li>
@@ -469,7 +469,7 @@ exports[`Storyshots MainMenu default 1`] = `
         </span>
         <img
           alt=""
-          src="/static/icon-arrow-right.png"
+          src="/icon-arrow-right.png"
         />
       </a>
     </li>
@@ -570,7 +570,7 @@ exports[`Storyshots MenuBar default 1`] = `
       >
         <img
           alt=""
-          src="/static/recordrig-logo.png"
+          src="/recordrig-logo.png"
         />
       </a>
     </li>
@@ -632,7 +632,7 @@ Array [
         >
           <img
             alt=""
-            src="/static/god_of_war_compare_hdr_on_lowres.jpg"
+            src="/god_of_war_compare_hdr_on_lowres.jpg"
           />
         </div>
       </div>
@@ -697,7 +697,7 @@ Array [
         >
           <img
             alt=""
-            src="/static/god_of_war_hdr_white_lowres.jpg"
+            src="/god_of_war_hdr_white_lowres.jpg"
           />
         </div>
       </div>
@@ -1834,7 +1834,7 @@ exports[`Storyshots Section rows 1`] = `
       >
         <img
           alt=""
-          src="/static/god_of_war_compare_hdr_on.jpg?v=1"
+          src="/god_of_war_compare_hdr_on.jpg?v=1"
           style={
             Object {
               "verticalAlign": "bottom",
@@ -1868,7 +1868,7 @@ exports[`Storyshots Section rows 1`] = `
       >
         <img
           alt=""
-          src="/static/god_of_war_compare_hdr_off.jpg?v=1"
+          src="/god_of_war_compare_hdr_off.jpg?v=1"
           style={
             Object {
               "verticalAlign": "bottom",
@@ -2198,7 +2198,7 @@ exports[`Storyshots Section subsections 1`] = `
         >
           <img
             alt=""
-            src="/static/god_of_war_hdr_black.jpg?v=1"
+            src="/god_of_war_hdr_black.jpg?v=1"
             style={
               Object {
                 "verticalAlign": "bottom",
@@ -2232,7 +2232,7 @@ exports[`Storyshots Section subsections 1`] = `
         >
           <img
             alt=""
-            src="/static/god_of_war_hdr_white.jpg?v=1"
+            src="/god_of_war_hdr_white.jpg?v=1"
             style={
               Object {
                 "verticalAlign": "bottom",
@@ -2998,7 +2998,7 @@ exports[`Storyshots Tile bottom image 1`] = `
     >
       <img
         alt=""
-        src="/static/controller-xbox.png"
+        src="/controller-xbox.png"
         style={
           Object {
             "maxWidth": "100%",
@@ -3144,7 +3144,7 @@ exports[`Storyshots Tile custom colors 1`] = `
     >
       <img
         alt=""
-        src="/static/icon-large-blue-record.png"
+        src="/icon-large-blue-record.png"
         style={
           Object {
             "height": "58px",
@@ -3587,7 +3587,7 @@ exports[`Storyshots Tile top image 1`] = `
     >
       <img
         alt=""
-        src="/static/4k_hdr_god_of_war_white.jpg"
+        src="/4k_hdr_god_of_war_white.jpg"
         style={
           Object {
             "maxWidth": "100%",
@@ -3769,7 +3769,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
       >
         <img
           alt=""
-          src="/static/4k_hdr_streaming_capturing_software.png"
+          src="/4k_hdr_streaming_capturing_software.png"
           style={
             Object {
               "maxWidth": "100%",
@@ -5003,7 +5003,7 @@ exports[`Storyshots Video default 1`] = `
         onVolumeChange={[Function]}
         onWaiting={[Function]}
         playsInline={true}
-        poster="/static/witcher_60fps_thumb.jpg"
+        poster="/witcher_60fps_thumb.jpg"
         preload="metadata"
         tabIndex="-1"
       />
@@ -5012,7 +5012,7 @@ exports[`Storyshots Video default 1`] = `
         onClick={[Function]}
         style={
           Object {
-            "backgroundImage": "url(\\"/static/witcher_60fps_thumb.jpg\\")",
+            "backgroundImage": "url(\\"/witcher_60fps_thumb.jpg\\")",
           }
         }
       />
