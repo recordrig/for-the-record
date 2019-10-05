@@ -2,7 +2,6 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
-import { PageTransition } from "next-page-transitions";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
 import MenuBar from "../components/MenuBar";
@@ -133,13 +132,7 @@ export default class RecordRigApp extends App {
         <PositionedMenuBar>
           <MenuBar />
         </PositionedMenuBar>
-        <PageTransition
-          classNames="page-transition"
-          skipInitialTransition
-          timeout={200}
-        >
-          <Component key={router.route} {...pageProps} />
-        </PageTransition>
+        <Component key={router.route} {...pageProps} />
         <Footer />
         {/**
          * LoaderBar manages its own lifecycle based on Next's Router and as such
