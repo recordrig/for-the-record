@@ -293,9 +293,7 @@ const IndexPage: FunctionComponent = () => (
                 sliderLineColor="#f2f4f8"
               />
             }
-            lowres={
-              <Image src="/god_of_war_compare_hdr_on_lowres.jpg" />
-            }
+            lowres={<Image src="/god_of_war_compare_hdr_on_lowres.jpg" />}
           />
           <TileContainer>
             <CapsHeading color="#da1e28">
@@ -314,9 +312,7 @@ const IndexPage: FunctionComponent = () => (
           <Tile backgroundColor="#13171A">
             <OptimizedMedia
               hires={<Image src="/god_of_war_hdr_black.jpg?v=1" />}
-              lowres={
-                <Image src="/god_of_war_hdr_black_lowres.jpg?v=1" />
-              }
+              lowres={<Image src="/god_of_war_hdr_black_lowres.jpg?v=1" />}
             />
             <TileContainer>
               <CapsHeading color="#da1e28">Darkest blacks</CapsHeading>
@@ -331,9 +327,7 @@ const IndexPage: FunctionComponent = () => (
           <Tile backgroundColor="#f2f4f8">
             <OptimizedMedia
               hires={<Image src="/god_of_war_hdr_white.jpg?v=1" />}
-              lowres={
-                <Image src="/god_of_war_hdr_white_lowres.jpg?v=1" />
-              }
+              lowres={<Image src="/god_of_war_hdr_white_lowres.jpg?v=1" />}
             />
             <TileContainer>
               <CapsHeading color="#da1e28">Brightest whites</CapsHeading>
@@ -544,11 +538,7 @@ const IndexPage: FunctionComponent = () => (
             </TileContainer>
             <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
               <StyledProductImage>
-                <img
-                  alt=""
-                  src="/recordrig.png"
-                  style={{ width: "100%" }}
-                />
+                <img alt="" src="/recordrig.png" style={{ width: "100%" }} />
               </StyledProductImage>
             </div>
           </Tile>
