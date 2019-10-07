@@ -578,15 +578,24 @@ const IndexPage: FunctionComponent = () => (
         <TileContainer>
           <div style={{ marginBottom: "32px", marginTop: "64px" }}>
             <Heading center>RecordRig.</Heading>
-            <p
-              style={{
-                fontSize: "18px",
-                fontWeight: "normal",
-                textAlign: "center"
-              }}
-            >
-              Available now.
-            </p>
+            <div style={{ paddingTop: "12px", textAlign: "center" }}>
+              <span
+                style={{
+                  border: "1px solid #FF5500",
+                  borderRadius: "2px",
+                  color: "#FF5500",
+                  display: "inline-block",
+                  fontSize: "14px",
+                  fontWeight: "normal",
+                  margin: "0 auto",
+                  padding: "4px 8px",
+                  textAlign: "center",
+                  textTransform: "uppercase"
+                }}
+              >
+                Coming Soon
+              </span>
+            </div>
           </div>
           <StyledSideBySideProducts>
             <img alt="" src="/recordrig.png" />
