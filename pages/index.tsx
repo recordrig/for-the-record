@@ -221,7 +221,7 @@ const IndexPage: FunctionComponent = () => (
       </FadeInSubHeading>
       <FadeInHeading>
         <Heading center color="#ffffff" h={1}>
-          Record your gameplay in the highest quality.
+          Share your gameplay in the highest quality.
         </Heading>
       </FadeInHeading>
       <FadeInProductImage>
@@ -246,11 +246,7 @@ const IndexPage: FunctionComponent = () => (
     </Section>
     <Section dark>
       <SectionIntro>
-        <Heading color="#da1e28">
-          4K 60FPS HDR
-          <br />
-          videos are the&nbsp;future.
-        </Heading>
+        <Heading color="#da1e28">4K HDR videos are the&nbsp;future.</Heading>
         <Paragraph color="#d5d9e0">
           Demand for high-quality gameplay videos is booming. Now, with
           RecordRig, recording games in the same high quality you play them is
@@ -263,7 +259,7 @@ const IndexPage: FunctionComponent = () => (
           <Tile backgroundColor="#13171A">
             <Image src="/4k_hd_resolution_compared.png?v=1" />
             <TileContainer>
-              <CapsHeading color="#da1e28">Capture 4K UHD gameplay</CapsHeading>
+              <CapsHeading color="#da1e28">Capture 4K gameplay.</CapsHeading>
               <Paragraph color="#ffffff">
                 4K resolution means four times as many pixels as ordinary HD
                 resolution - a massive difference. No detail will be missed when
@@ -284,7 +280,9 @@ const IndexPage: FunctionComponent = () => (
               lowres={<Image src="/witcher_60fps_thumb.jpg?v=1" />}
             />
             <TileContainer>
-              <CapsHeading color="#da1e28">60 frames per second</CapsHeading>
+              <CapsHeading color="#da1e28">
+                60 frames per second? Naturally.
+              </CapsHeading>
               <Paragraph color="#ffffff">
                 Your gameplay will look buttery smooth as it&apos;s captured at
                 60 frames per second.
@@ -308,7 +306,7 @@ const IndexPage: FunctionComponent = () => (
           />
           <TileContainer>
             <CapsHeading color="#da1e28">
-              Capture HDR gameplay videos
+              HDR colors make all the difference.
             </CapsHeading>
             <Paragraph color="#ffffff">
               With RecordRig, you gain the ability to capture the darkest
@@ -326,10 +324,10 @@ const IndexPage: FunctionComponent = () => (
               lowres={<Image src="/god_of_war_hdr_black_lowres.jpg?v=1" />}
             />
             <TileContainer>
-              <CapsHeading color="#da1e28">Darkest blacks</CapsHeading>
+              <CapsHeading color="#da1e28">The darkest blacks.</CapsHeading>
               <Paragraph color="#ffffff">
-                Capture the full atmosphere of the darkest scenes without losing
-                any visibility.
+                Capture the full atmosphere of the darkest scenes without
+                sacrificing visibility.
               </Paragraph>
             </TileContainer>
           </Tile>
@@ -341,9 +339,11 @@ const IndexPage: FunctionComponent = () => (
               lowres={<Image src="/god_of_war_hdr_white_lowres.jpg?v=1" />}
             />
             <TileContainer>
-              <CapsHeading color="#da1e28">Brightest whites</CapsHeading>
+              <CapsHeading color="#da1e28">
+                And the brightest whites.
+              </CapsHeading>
               <Paragraph>
-                Vibrant, alive scenes are a given when capturing in HDR.
+                Vibrant, immersive scenes are a given when capturing in HDR.
               </Paragraph>
             </TileContainer>
           </Tile>
@@ -356,8 +356,7 @@ const IndexPage: FunctionComponent = () => (
         <Paragraph color="#d5d9e0">
           It doesn&apos;t matter whether you&apos;re on Xbox One X, PS4 Pro or
           even on a gaming PC, so long as your device outputs a 4K HDR video
-          signal, lorem ipsum dolor sit amet, you can record its output using
-          RecordRig.
+          signal, you can record its output using RecordRig.
         </Paragraph>
       </SectionIntro>
       <SectionRow>
@@ -365,9 +364,14 @@ const IndexPage: FunctionComponent = () => (
           <Tile backgroundColor="#13171A">
             <TileContainer>
               <CapsHeading color="#24a148">
-                Record 4K HDR on Xbox One X
+                Record 4K HDR on Xbox One X.
               </CapsHeading>
-              <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
+              <Paragraph color="#ffffff">
+                With RecordRig, you are no longer limited to your Xbox One
+                X&apos;s max streaming resolution of ordinary HD. Hook it up,
+                and finally share your gameplay in 4K HDR, the same quality you
+                play in.
+              </Paragraph>
             </TileContainer>
             <div
               style={{
@@ -389,9 +393,13 @@ const IndexPage: FunctionComponent = () => (
           <Tile backgroundColor="#13171A">
             <TileContainer>
               <CapsHeading color="#24a148">
-                Record 4K HDR on PS4 Pro
+                Record 4K HDR on PS4 Pro.
               </CapsHeading>
-              <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
+              <Paragraph color="#ffffff">
+                Finally share gameplay of amazing games such as God of War or
+                Horizon: Zero Dawn the way they deserve to be shared -- in full,
+                vibrant 4K HDR.
+              </Paragraph>
             </TileContainer>
             <div
               style={{
@@ -413,8 +421,14 @@ const IndexPage: FunctionComponent = () => (
       <SectionRow>
         <Tile backgroundColor="#13171A">
           <TileContainer>
-            <CapsHeading color="#24a148">Record 4K HDR on PC</CapsHeading>
-            <Paragraph color="#ffffff">Lorem ipsum.</Paragraph>
+            <CapsHeading color="#24a148">Record 4K HDR on PC.</CapsHeading>
+            <Paragraph color="#ffffff">
+              No longer suffer framedrops and performance issues while recording
+              on your gaming PC. Get yourself a dedicated streaming PC which is
+              specialised in recording 4K HDR + 60FPS gameplay -- a RecordRig.
+              Hook up RecordRig to your gaming PC, and share your gameplay in
+              the very highest possible quality. Zero compromises.
+            </Paragraph>
           </TileContainer>
           <OptimizedMedia
             hires={<Image src="/windows-keyboard.jpg?v=1" />}
@@ -428,19 +442,24 @@ const IndexPage: FunctionComponent = () => (
         <Heading color="#408bfc">
           Recording 4K HDR is easy on RecordRig.
         </Heading>
-        <Paragraph color="#d5d9e0">Lorem ipsum.</Paragraph>
+        <Paragraph color="#d5d9e0">
+          Your RecordRig will arrive ready-to-go, running Microsoft Windows and
+          exactly the software and drivers you need to record and share your
+          gameplay, at no extra costs to you.
+        </Paragraph>
       </SectionIntro>
       <SectionRow>
         <Tile backgroundColor="#13171A">
           <TileContainer>
             <CapsHeading color="#408bfc">
-              Record with confidence using RECentral
+              Comes with RECentral capturing software.
             </CapsHeading>
             <Paragraph color="#ffffff">
-              Maecenas nec neque facilisis, aliquet sem sed, placerat lorem.
-              Donec quis mauris risus. Quisque sodales diam ut elementum
-              ultricies. Pellentesque laoreet commodo mauris, ut condimentum
-              nisi cursus eget. In scelerisque at elit vitae dictum.
+              Stream, record and share with complete control over those
+              configurations that matter to you the most. RECentral is a
+              powerful yet user-friendly live streaming and recording tool here
+              to help you produce your greatest video creations in the simplest
+              way.
             </Paragraph>
             <div style={{ margin: "64px auto", maxWidth: "640px" }}>
               <OptimizedMedia
@@ -465,11 +484,11 @@ const IndexPage: FunctionComponent = () => (
                 style={{ height: "58px", marginBottom: "20px" }}
               />
               <CapsHeading color="#408bfc">
-                Record with the click of a button
+                Record with the click of a button.
               </CapsHeading>
               <Paragraph color="#ffffff">
                 RECentral comes pre-installed and pre-configured, ready to start
-                recording.Spend less time configuring and getting to know your
+                recording. Spend less time configuring and getting to know your
                 tool, and more time doing what you do best: gaming.
               </Paragraph>
             </TileContainer>
@@ -488,11 +507,12 @@ const IndexPage: FunctionComponent = () => (
                 }}
               />
               <CapsHeading color="#408bfc">
-                Store hundreds of hours of video
+                Store hundreds of hours of video.
               </CapsHeading>
               <Paragraph color="#ffffff">
-                With configurable hard drive space of up to a whopping 10TB, you
-                can save all your favourite videos.
+                With storage space of a whopping 10TB, you&apos;ll be able to
+                leave nothing to chance and save all of your gaming adventures
+                right here on your RecordRig.
               </Paragraph>
             </TileContainer>
           </Tile>
