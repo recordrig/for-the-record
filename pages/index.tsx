@@ -574,7 +574,7 @@ const IndexPage: FunctionComponent = () => (
       />
     </Section>
     <Section>
-      <Tile accentColor="#0062ff" backgroundColor="#ffffff" link="/shop">
+      <Tile accentColor="#0062ff" backgroundColor="#ffffff">
         <TileContainer>
           <div style={{ marginBottom: "32px", marginTop: "64px" }}>
             <Heading center>RecordRig.</Heading>
@@ -592,16 +592,6 @@ const IndexPage: FunctionComponent = () => (
             <img alt="" src="/recordrig.png" />
             <img alt="" src="/recordrig-black.png" />
           </StyledSideBySideProducts>
-          <span
-            style={{
-              color: "#0062ff",
-              display: "block",
-              fontSize: "18px",
-              textAlign: "right"
-            }}
-          >
-            Choose your RecordRig &gt;
-          </span>
         </TileContainer>
       </Tile>
     </Section>

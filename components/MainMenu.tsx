@@ -20,24 +20,6 @@ const StyledLink = styled.a`
   }
 `;
 
-const StyledExternalLink = styled.a`
-  color: #000;
-  font-size: 24px;
-  height: 64px;
-  line-height: 64px;
-  text-decoration: none;
-
-  > img {
-    height: 16px;
-    margin-left: 8px;
-    width: 16px;
-  }
-
-  > span {
-    vertical-align: top;
-  }
-`;
-
 const StyledMainMenu = styled.nav`
   height: 100%;
   width: 100%;
@@ -58,14 +40,6 @@ const MainMenu: FunctionComponent = () => (
             <span>Home</span>
             <img alt="" src="/icon-arrow-right.png" />
           </StyledLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="/shop" passHref>
-          <StyledExternalLink>
-            <span>Shop</span>
-            <img alt="" src="/icon-arrow-up-right.png" />
-          </StyledExternalLink>
         </Link>
       </li>
       <li>

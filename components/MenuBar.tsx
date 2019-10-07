@@ -28,30 +28,6 @@ const StyledLogo = styled.a`
   }
 `;
 
-const StyledShopButton = styled.a`
-  border: 1px solid #0062ff;
-  color: #0062ff;
-  display: block;
-  font-size: 16px;
-  height: 16px;
-  line-height: 16px;
-  padding-left: 19px;
-  padding-right: 19px;
-  padding-bottom: 13px;
-  padding-top: 11px;
-  margin-bottom: 11px;
-  margin-top: 11px;
-  text-decoration: none;
-
-  @media (max-width: 767px) {
-    margin-right: 12px;
-  }
-
-  @media (min-width: 768px) {
-    margin-right: 16px;
-  }
-`;
-
 const StyledTopMenu = styled.nav`
   background-color: #fff;
   height: 64px;
@@ -77,11 +53,6 @@ const MenuBar: FunctionComponent = () => (
           <StyledLogo>
             <img alt="" src="/recordrig-logo.png" />
           </StyledLogo>
-        </Link>
-      </li>
-      <li>
-        <Link href="/shop" passHref>
-          <StyledShopButton>Shop</StyledShopButton>
         </Link>
       </li>
     </ul>

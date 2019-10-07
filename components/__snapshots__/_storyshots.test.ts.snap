@@ -172,25 +172,6 @@ exports[`Storyshots Footer default 1`] = `
   vertical-align: top;
 }
 
-.c4 {
-  color: #000;
-  font-size: 24px;
-  height: 64px;
-  line-height: 64px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c4 > img {
-  height: 16px;
-  margin-left: 8px;
-  width: 16px;
-}
-
-.c4 > span {
-  vertical-align: top;
-}
-
 .c2 {
   height: 100%;
   width: 100%;
@@ -202,7 +183,7 @@ exports[`Storyshots Footer default 1`] = `
   padding: 0;
 }
 
-.c7 {
+.c6 {
   padding-bottom: 64px;
 }
 
@@ -218,13 +199,13 @@ exports[`Storyshots Footer default 1`] = `
 }
 
 @media (max-width:767px) {
-  .c7 {
+  .c6 {
     margin-left: 40px;
   }
 }
 
 @media (min-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 20px;
     line-height: 32px;
     margin-left: 82px;
@@ -232,13 +213,13 @@ exports[`Storyshots Footer default 1`] = `
 }
 
 @media (max-width:767px) {
-  .c6 > img {
+  .c5 > img {
     height: 32px;
   }
 }
 
 @media (min-width:768px) {
-  .c6 > img {
+  .c5 > img {
     height: 64px;
   }
 }
@@ -257,13 +238,13 @@ exports[`Storyshots Footer default 1`] = `
 }
 
 @media (max-width:767px) {
-  .c5 {
+  .c4 {
     margin-top: 64px;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c4 {
     margin-top: 16px;
     width: 50%;
   }
@@ -314,22 +295,6 @@ exports[`Storyshots Footer default 1`] = `
         </li>
         <li>
           <a
-            className="c4"
-            href="/shop"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <span>
-              Shop
-            </span>
-            <img
-              alt=""
-              src="/icon-arrow-up-right.png"
-            />
-          </a>
-        </li>
-        <li>
-          <a
             className="c3"
             href="/contact"
             onClick={[Function]}
@@ -348,10 +313,10 @@ exports[`Storyshots Footer default 1`] = `
     </nav>
   </div>
   <div
-    className="c5"
+    className="c4"
   >
     <div
-      className="c6"
+      className="c5"
     >
       <img
         alt=""
@@ -359,11 +324,11 @@ exports[`Storyshots Footer default 1`] = `
       />
     </div>
     <p
-      className="c7"
+      className="c6"
     >
       Industrieweg 46
       <br />
-      6541 TW Nijmegen
+      6541TW Nijmegen
       <br />
       The Netherlands
     </p>
@@ -402,25 +367,6 @@ exports[`Storyshots MainMenu default 1`] = `
   vertical-align: top;
 }
 
-.c2 {
-  color: #000;
-  font-size: 24px;
-  height: 64px;
-  line-height: 64px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c2 > img {
-  height: 16px;
-  margin-left: 8px;
-  width: 16px;
-}
-
-.c2 > span {
-  vertical-align: top;
-}
-
 .c0 {
   height: 100%;
   width: 100%;
@@ -449,22 +395,6 @@ exports[`Storyshots MainMenu default 1`] = `
         <img
           alt=""
           src="/icon-arrow-right.png"
-        />
-      </a>
-    </li>
-    <li>
-      <a
-        className="c2"
-        href="/shop"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <span>
-          Shop
-        </span>
-        <img
-          alt=""
-          src="/icon-arrow-up-right.png"
         />
       </a>
     </li>
@@ -505,23 +435,6 @@ exports[`Storyshots MenuBar default 1`] = `
   width: 123px;
 }
 
-.c2 {
-  border: 1px solid #0062ff;
-  color: #0062ff;
-  display: block;
-  font-size: 16px;
-  height: 16px;
-  line-height: 16px;
-  padding-left: 19px;
-  padding-right: 19px;
-  padding-bottom: 13px;
-  padding-top: 11px;
-  margin-bottom: 11px;
-  margin-top: 11px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
 .c0 {
   background-color: #fff;
   height: 64px;
@@ -556,18 +469,6 @@ exports[`Storyshots MenuBar default 1`] = `
   }
 }
 
-@media (max-width:767px) {
-  .c2 {
-    margin-right: 12px;
-  }
-}
-
-@media (min-width:768px) {
-  .c2 {
-    margin-right: 16px;
-  }
-}
-
 <nav
   className="c0"
 >
@@ -583,16 +484,6 @@ exports[`Storyshots MenuBar default 1`] = `
           alt=""
           src="/recordrig-logo.png"
         />
-      </a>
-    </li>
-    <li>
-      <a
-        className="c2"
-        href="/shop"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Shop
       </a>
     </li>
   </ul>
