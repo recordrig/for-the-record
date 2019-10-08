@@ -196,8 +196,8 @@ const IndexPage: FunctionComponent = () => (
   <StyledIndexPage>
     <Head>
       <title>
-        Record 4K HDR on PS4 Pro and Xbox One with RecordRig, your dedicated
-        gameplay streaming PC.
+        Record 4K HDR gameplay on PS4, Xbox and PC with RecordRig, your
+        dedicated gameplay streaming PC.
       </title>
       <meta
         name="description"
@@ -624,7 +624,7 @@ const IndexPage: FunctionComponent = () => (
                   textTransform: "uppercase"
                 }}
               >
-                Coming Soon
+                Coming This Fall
               </span>
             </div>
           </div>
