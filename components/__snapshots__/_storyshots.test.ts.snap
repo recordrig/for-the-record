@@ -1671,7 +1671,7 @@ exports[`Storyshots Section rows 1`] = `
   .c5 h5,
   .c5 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -2006,7 +2006,7 @@ exports[`Storyshots Section subsections 1`] = `
   .c6 h5,
   .c6 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -2198,7 +2198,7 @@ exports[`Storyshots Text capsheading 1`] = `
   .c0 h5,
   .c0 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -2244,7 +2244,7 @@ exports[`Storyshots Text capsheading custom color 1`] = `
   .c0 h5,
   .c0 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -2290,7 +2290,7 @@ exports[`Storyshots Text capsheading custom selector 1`] = `
   .c0 h5,
   .c0 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -2814,7 +2814,7 @@ exports[`Storyshots Tile bottom image 1`] = `
   .c2 h5,
   .c2 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -2980,7 +2980,7 @@ exports[`Storyshots Tile custom colors 1`] = `
   .c2 h5,
   .c2 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -3138,7 +3138,7 @@ exports[`Storyshots Tile default 1`] = `
   .c2 h5,
   .c2 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -3275,7 +3275,7 @@ exports[`Storyshots Tile link 1`] = `
   .c2 h5,
   .c2 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -3419,7 +3419,7 @@ exports[`Storyshots Tile top image 1`] = `
   .c2 h5,
   .c2 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 
@@ -3585,7 +3585,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   .c2 h5,
   .c2 h6 {
     font-size: 16px;
-    line-height: 16px;
+    line-height: 21px;
   }
 }
 

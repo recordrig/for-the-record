@@ -39,7 +39,7 @@ const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
       h5,
       h6 {
         font-size: 16px;
-        line-height: 16px;
+        line-height: 21px;
       }
     }
   `}
