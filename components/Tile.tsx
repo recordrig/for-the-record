@@ -62,9 +62,8 @@ const StyledTile = styled.div<StyledTileProps>`
     flex-direction: column;
     width: 100%;
 
-    /* Grow second to last child to take up entire remaining width so that the very last element
-    will be aligned to the Tile's bottom. */
-    > :nth-last-child(2) {
+    /* Grow the last child to take up entire remaining width so that it will be aligned to the Tile's bottom. */
+    > :last-child {
       flex-grow: 1;
     }
   `}

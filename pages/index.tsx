@@ -376,6 +376,9 @@ const IndexPage: FunctionComponent = () => (
             <div
               style={{
                 boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
                 margin: "0 auto",
                 maxWidth: "506px",
                 padding: "0 16px",
@@ -404,6 +407,9 @@ const IndexPage: FunctionComponent = () => (
             <div
               style={{
                 boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
                 margin: "0 auto",
                 maxWidth: "506px",
                 padding: "0 16px",
