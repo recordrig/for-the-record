@@ -246,7 +246,7 @@ const IndexPage: FunctionComponent = () => (
     </Section>
     <Section dark>
       <SectionIntro>
-        <Heading color="#da1e28">4K HDR videos are the&nbsp;future.</Heading>
+        <Heading color="#da1e28">4K HDR videos are the future.</Heading>
         <Paragraph color="#d5d9e0">
           Demand for high-quality gameplay videos is booming. Now, with
           RecordRig, recording games in the same high quality you play them is
@@ -584,7 +584,7 @@ const IndexPage: FunctionComponent = () => (
     </Section>
     <Section dark>
       <SectionIntro>
-        <Heading color="#ffffff">Cinematic 4K HDR video&nbsp;example.</Heading>
+        <Heading color="#ffffff">Cinematic 4K HDR video example.</Heading>
         <Paragraph color="#d5d9e0">
           Recorded with RecordRig on PS4 Pro, this 10-minute intro clip from God
           of War shows exactly why only 4K HDR video quality really does
