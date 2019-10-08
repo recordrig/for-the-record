@@ -549,7 +549,15 @@ const IndexPage: FunctionComponent = () => (
                 of a color bearing the name Stealth Black.
               </Paragraph>
             </TileContainer>
-            <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                margin: "0 auto 64px",
+                maxWidth: "320px"
+              }}
+            >
               <StyledProductImage>
                 <img
                   alt=""
@@ -573,7 +581,15 @@ const IndexPage: FunctionComponent = () => (
                 you.
               </Paragraph>
             </TileContainer>
-            <div style={{ margin: "0 auto 64px", maxWidth: "320px" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                margin: "0 auto 64px",
+                maxWidth: "320px"
+              }}
+            >
               <StyledProductImage>
                 <img alt="" src="/recordrig.png" style={{ width: "100%" }} />
               </StyledProductImage>

@@ -16,6 +16,7 @@ const StyledFormRow = styled.div`
 
 const StyledSendButton = styled.button`
   background-color: #0062ff;
+  border-radius: 2px;
   border: 0;
   color: #ffffff;
   display: block;
@@ -55,7 +56,10 @@ const StyledForm = styled.form`
   textarea {
     background-color: #f2f4f8;
     border: 2px solid transparent;
+    border-radius: 0;
+    box-shadow: none;
     box-sizing: border-box;
+    outline: none;
     padding-left: 12px;
     padding-right: 12px;
     width: 100%;
