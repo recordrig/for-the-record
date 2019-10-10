@@ -16,7 +16,7 @@ Pushes to GitHub on any branch will trigger an auto-deploy to a unique URL (stag
 
 Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
 
-**TODO:** Any change to the `master` branch will auto-deploy to http://recordrig.com (production).
+Any change to the `master` branch will auto-deploy to http://recordrig.com (production).
 
 ## Core Functionality
 
