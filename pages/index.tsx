@@ -530,8 +530,8 @@ const IndexPage: FunctionComponent = () => (
         <Heading color="#ee538b">Customise the look.</Heading>
         <Paragraph color="#d5d9e0">
           Always equipped with a premium steel case and tempered glass, you can
-          select the case&apos;s your colour of choice and we&apos;ll assemble
-          your personal RecordRig to order. And that&apos;s not all; you can
+          select your case&apos;s colour of choice and we&apos;ll assemble your
+          personal RecordRig to order. And that&apos;s not all; you can
           customise the LED colours completely through a user-friendly user
           interface once you&apos;ve received your RecordRig.
         </Paragraph>
@@ -546,7 +546,7 @@ const IndexPage: FunctionComponent = () => (
                 looks the most intimidating or there&apos;s some other reason
                 that pulls you towards the charming look of the eternal void.
                 You can&apos;t ever really go wrong with the timeless attraction
-                of a color bearing the name Stealth Black.
+                of a colour bearing the name Stealth Black.
               </Paragraph>
             </TileContainer>
             <div
@@ -576,9 +576,8 @@ const IndexPage: FunctionComponent = () => (
                 Perhaps you own a special edition white version of your gaming
                 console and would like to pair it side-by-side with your
                 RecordRig. Or maybe you are one of those fancy minimalists with
-                a bright, Scandinavian home interior. In that case (pun
-                intended), the Pristine White case edition of RecordRig is for
-                you.
+                a bright, minimalist home interior. In that case (pun intended),
+                the Pristine White case edition of RecordRig is for you.
               </Paragraph>
             </TileContainer>
             <div
