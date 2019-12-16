@@ -14,7 +14,7 @@
     "npm": "6.x"
   },
   "dependencies": {
-    "next": "^9.0.5",
+    "next": "^9.1.5",
     "nprogress": "0.2.0",
     "react": "^16.9.0",
     "react-compare-image": "^1.4.1",
