@@ -49,6 +49,30 @@ export const addProduct = (
   });
 };
 
+export const removeProduct = (
+  shoppingBag: ShoppingBag,
+  productId: ShoppingBagProduct["id"]
+): ShoppingBag => {
+  validateShoppingBag(shoppingBag);
+
+  // If at least 2 of these products are already in the shopping bag, we'll decrease its quantity.
+  if (productId in shoppingBag && shoppingBag[productId].quantity >= 2) {
+    return {
+      ...shoppingBag,
+      [productId]: {
+        id: productId,
+        quantity: shoppingBag[productId].quantity - 1
+      }
+    };
+  }
+
+  // Remove the product from the shopping bag by splitting it in two, and only returning the
+  // remaining products that do not match the productId we were looking for.
+  const { [productId]: product, ...newShoppingBag } = shoppingBag;
+
+  return newShoppingBag;
+};
+
 // TODO: reducer
 const reducer = {};
 
