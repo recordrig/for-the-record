@@ -9,6 +9,8 @@ import initializeStore from ".";
  * on the client-side.
  *
  * See [the official Next.js example](https://github.com/zeit/next.js/tree/canary/examples/with-redux).
+ *
+ * NB Don't bother converting adopted code to TS.
  */
 const withRedux = (PageComponent, { ssr = true } = {}) => {
   // eslint-disable-next-line react/prop-types
