@@ -8,7 +8,8 @@ module.exports = {
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": [
     "airbnb",
@@ -26,16 +27,6 @@ module.exports = {
         "spaced-comment": "off",
       }
     },
-    /**
-     * Enable Jest-specific keywords (like `toEqual`, `test`) in files ending in `test.ts`.
-     */
-    {
-      "files": ["**/*.test.ts"],
-      "env": {
-        "jest": true
-      },
-      "plugins": ["jest/recommended"]
-    }
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

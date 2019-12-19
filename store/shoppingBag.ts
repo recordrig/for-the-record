@@ -4,13 +4,20 @@ interface ShoppingBagItem {
 }
 
 export const addItem = (
-  prevShoppingBag: ShoppingBagItem[],
+  shoppingBag: ShoppingBagItem[],
   productId: ShoppingBagItem["id"]
 ): ShoppingBagItem[] => {
   // If the shopping bag is empty, return it early with the freshly stuffed in product.
-  if (prevShoppingBag.length === 0) return [{ id: productId, quantity: 1 }];
+  if (shoppingBag.length === 0) return [{ id: productId, quantity: 1 }];
 
-  return prevShoppingBag.map(product => {
+  // If the shopping bag does NOT contain this item yet, add it to the end of the list.
+  if (!shoppingBag.some(product => product.id === productId)) {
+    return {
+      ...shoppingBag
+    };
+  }
+
+  return shoppingBag.map(product => {
     // If the product is already in the shopping bag, replace it with updated quantity.
     if (product.id === productId) {
       return { ...product, quantity: product.quantity + 1 };
