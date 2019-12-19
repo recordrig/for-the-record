@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import styled from "styled-components";
-import withRedux from "../../store/withRedux";
+import withRedux from "../../store/_withRedux";
 import Section from "../../components/Section";
 
 const StyledBuyRecordRigPage = styled.div``;
