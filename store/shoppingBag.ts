@@ -1,29 +1,51 @@
-interface ShoppingBagItem {
+export interface ShoppingBagProduct {
   id: string;
   quantity: number;
 }
 
-export const addItem = (
-  shoppingBag: ShoppingBagItem[],
-  productId: ShoppingBagItem["id"]
-): ShoppingBagItem[] => {
-  // If the shopping bag is empty, return it early with the freshly stuffed in product.
-  if (shoppingBag.length === 0) return [{ id: productId, quantity: 1 }];
+export interface ShoppingBag {
+  [key: string]: ShoppingBagProduct;
+}
 
-  // If the shopping bag does NOT contain this item yet, add it to the end of the list.
-  if (!shoppingBag.some(product => product.id === productId)) {
+/**
+ * Check if all product ID's match their corresponding object key.
+ */
+export const validateShoppingBag = (shoppingBag: ShoppingBag): boolean => {
+  Object.entries(shoppingBag).forEach(([objKey, product]) => {
+    if (objKey !== product.id) {
+      throw new Error(
+        `Shopping bag data is invalid:
+        Product ID (${product.id}) does not match its object's key (${objKey}).`
+      );
+    }
+  });
+  return true;
+};
+
+export const addProduct = (
+  shoppingBag: ShoppingBag,
+  productId: ShoppingBagProduct["id"]
+): ShoppingBag => {
+  validateShoppingBag(shoppingBag);
+
+  // If the shopping bag is empty or if the shopping bag does NOT contain this item yet,
+  // add it to the collection.
+  if (Object.keys(shoppingBag).length === 0 || !(productId in shoppingBag)) {
     return {
-      ...shoppingBag
+      ...shoppingBag,
+      [productId]: {
+        id: productId,
+        quantity: 1
+      }
     };
   }
 
-  return shoppingBag.map(product => {
-    // If the product is already in the shopping bag, replace it with updated quantity.
-    if (product.id === productId) {
-      return { ...product, quantity: product.quantity + 1 };
+  // Find the product which should be present already, and update its quantity.
+  return Object.assign({}, shoppingBag, {
+    [productId]: {
+      id: productId,
+      quantity: shoppingBag[productId].quantity + 1
     }
-    // If this is not the product we were looking for, keep this product as it is.
-    return product;
   });
 };
 
