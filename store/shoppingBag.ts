@@ -3,14 +3,13 @@ interface ShoppingBagItem {
   quantity: number;
 }
 
-interface ShoppingBag extends Array<ShoppingBagItem> {}
-
 export const addItem = (
-  prevShoppingBag: ShoppingBag,
+  prevShoppingBag: ShoppingBagItem[],
   productId: ShoppingBagItem["id"]
-): ShoppingBag => {
+): ShoppingBagItem[] => {
   // If the shopping bag is empty, return it early with the freshly stuffed in product.
   if (prevShoppingBag.length === 0) return [{ id: productId, quantity: 1 }];
+
   return prevShoppingBag.map(product => {
     // If the product is already in the shopping bag, replace it with updated quantity.
     if (product.id === productId) {
