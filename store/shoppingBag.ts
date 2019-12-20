@@ -1,9 +1,9 @@
-export interface ShoppingBagProduct {
+interface ShoppingBagProduct {
   id: string;
   quantity: number;
 }
 
-export interface ShoppingBag {
+interface ShoppingBag {
   [key: string]: ShoppingBagProduct;
 }
 
@@ -73,7 +73,50 @@ export const removeProduct = (
   return newShoppingBag;
 };
 
-// TODO: reducer
-const reducer = {};
+const actionTypes = {
+  ADD_PRODUCT: "shoppingBag/ADD_PRODUCT",
+  REMOVE_PRODUCT: "shoppingBag/REMOVE_PRODUCT"
+};
 
-export default reducer;
+interface AddProductAction {
+  type: typeof actionTypes.ADD_PRODUCT;
+  /**
+   * The Product ID of the to-be added product.
+   */
+  payload: {
+    id: string;
+  };
+}
+
+interface RemoveProductAction {
+  type: typeof actionTypes.REMOVE_PRODUCT;
+  /**
+   * The Product ID of the to-be removed product.
+   */
+  payload: {
+    id: string;
+  };
+}
+
+type ShoppingBagActionTypes = AddProductAction | RemoveProductAction;
+
+const initialState: ShoppingBag = {};
+
+/**
+ * Shopping bag reducer.
+ */
+const shoppingBag = (
+  state = initialState,
+  action: ShoppingBagActionTypes
+): ShoppingBag => {
+  switch (action.type) {
+    case actionTypes.ADD_PRODUCT:
+      return addProduct(state, action.payload.id);
+    case actionTypes.REMOVE_PRODUCT:
+      return removeProduct(state, action.payload.id);
+    default:
+      return state;
+  }
+};
+
+export default shoppingBag;
