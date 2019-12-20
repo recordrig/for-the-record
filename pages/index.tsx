@@ -645,7 +645,7 @@ const IndexPage: FunctionComponent = () => (
                   textTransform: "uppercase"
                 }}
               >
-                Coming This Fall
+                Coming Soon
               </span>
             </div>
           </div>
