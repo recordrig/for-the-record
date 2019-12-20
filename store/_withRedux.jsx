@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import App from "next/app";
-import initializeStore from ".";
+import initializeStore from "./_initializeStore";
 
 /**
  * Helper for connecting Redux with Next.js. Wrap all pages with this helper to make the Redux
