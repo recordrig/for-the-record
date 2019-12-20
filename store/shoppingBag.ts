@@ -98,17 +98,14 @@ interface RemoveProductAction {
   };
 }
 
-type ShoppingBagActionTypes = AddProductAction | RemoveProductAction;
+type Action = AddProductAction | RemoveProductAction;
 
 const initialState: ShoppingBag = {};
 
 /**
  * Shopping bag reducer.
  */
-const shoppingBag = (
-  state = initialState,
-  action: ShoppingBagActionTypes
-): ShoppingBag => {
+const shoppingBag = (state = initialState, action: Action): ShoppingBag => {
   switch (action.type) {
     case actionTypes.ADD_PRODUCT:
       return addProduct(state, action.payload.id);
