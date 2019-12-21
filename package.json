@@ -15,6 +15,9 @@
     "npm": "6.x"
   },
   "dependencies": {
+    "@sentry/browser": "^5.10.2",
+    "@sentry/node": "^5.10.2",
+    "@zeit/next-source-maps": "0.0.4-canary.1",
     "next": "^9.1.5",
     "nprogress": "0.2.0",
     "react": "^16.9.0",

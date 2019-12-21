@@ -2,6 +2,7 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
+import * as Sentry from "@sentry/node";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
 import MenuBar from "../components/MenuBar";
@@ -81,6 +82,14 @@ const ApplicationStyles = createGlobalStyle`
 `;
 
 /**
+ * Initialize Sentry, our error logging tool (but not during development).
+ */
+Sentry.init({
+  dsn: "https://fa43df39e992475094d25e8b0f56d014@sentry.io/1863682",
+  enabled: process.env.NODE_ENV === "production"
+});
+
+/**
  * Overrides Next.js' default `App` component which is used for page initialization.
  * `Component` refers to the active page component.
  */
@@ -97,6 +106,10 @@ export default class RecordRigApp extends App {
       /** Used to set a unique key on the page component based on the current route. */
       router
     } = this.props;
+
+    // Workaround for https://github.com/zeit/next.js/issues/8592 (needed for Sentry)
+    const { err } = this.props;
+    const modifiedPageProps = { ...pageProps, err };
 
     return (
       <>
@@ -132,7 +145,7 @@ export default class RecordRigApp extends App {
         <PositionedMenuBar>
           <MenuBar />
         </PositionedMenuBar>
-        <Component key={router.route} {...pageProps} />
+        <Component key={router.route} {...modifiedPageProps} />
         <Footer />
         {/**
          * LoaderBar manages its own lifecycle based on Next's Router and as such
