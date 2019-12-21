@@ -147,6 +147,7 @@ export default class RecordRigApp extends App {
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="theme-color" content="#ffffff" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <script src="https://js.stripe.com/v3/" />
         </Head>
         <PositionedMenuBar>
           <MenuBar />
