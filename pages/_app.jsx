@@ -2,7 +2,6 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
-import * as Sentry from "@sentry/node";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
 import MenuBar from "../components/MenuBar";
@@ -82,12 +81,19 @@ const ApplicationStyles = createGlobalStyle`
 `;
 
 /**
- * Initialize Sentry, our error logging tool (but not during development).
+ * If in prod, initialize Sentry, our error logging tool.
+ *
+ * We import it conditionally because other tools importing from this file might break otherwise.
+ * For example, Storybook imports styles from this file but its Webpack config isn't prepared for
+ * Sentry, which it'll try to initialise nevertheless.
  */
-Sentry.init({
-  dsn: "https://fa43df39e992475094d25e8b0f56d014@sentry.io/1863682",
-  enabled: process.env.NODE_ENV === "production"
-});
+if (process.env.NODE_ENV === "production") {
+  const Sentry = require("@sentry/node"); // eslint-disable-line
+
+  Sentry.init({
+    dsn: "https://fa43df39e992475094d25e8b0f56d014@sentry.io/1863682"
+  });
+}
 
 /**
  * Overrides Next.js' default `App` component which is used for page initialization.
