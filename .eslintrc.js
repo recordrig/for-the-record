@@ -8,8 +8,7 @@ module.exports = {
   "env": {
     "browser": true,
     "es6": true,
-    "node": true,
-    "jest": true
+    "node": true
   },
   "extends": [
     "airbnb",
@@ -18,6 +17,15 @@ module.exports = {
   ],
   "overrides": [
     /**
+     * Allow jest-specific variabled in test files.
+     */
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "env": {
+        "jest": true
+      }
+    },
+     /**
      * Allow triple slashes `///` in this file which is generated and maintained automatically by Next.js.
      * We want to keep the original structure intact as a [Triple-Slash Directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) is a compiler directive used by TypeScript.
      */
