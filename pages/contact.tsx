@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import Head from "next/head";
 import styled from "styled-components";
+import withRedux from "../store/_withRedux";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
 import Tile, { TileContainer } from "../components/Tile";
@@ -226,4 +227,4 @@ const ContactPage: FunctionComponent = () => {
   );
 };
 
-export default ContactPage;
+export default withRedux(ContactPage);

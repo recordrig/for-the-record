@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import Head from "next/head";
 import styled from "styled-components";
 import ReactCompareImage from "react-compare-image";
+import withRedux from "../store/_withRedux";
 import OptimizedMedia, { Image } from "../components/OptimizedMedia";
 import Video from "../components/Video";
 import { CapsHeading, Heading, Paragraph } from "../components/Text";
@@ -659,4 +660,4 @@ const IndexPage: FunctionComponent = () => (
   </StyledIndexPage>
 );
 
-export default IndexPage;
+export default withRedux(IndexPage);

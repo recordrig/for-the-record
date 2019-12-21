@@ -8,23 +8,26 @@ module.exports = {
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "overrides": {
+  "overrides": [
     /**
      * Allow triple slashes `///` in this file which is generated and maintained automatically by Next.js.
      * We want to keep the original structure intact as a [Triple-Slash Directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) is a compiler directive used by TypeScript.
      */
-    "files": ["next-env.d.ts"],
-    "rules": {
-      "spaced-comment": "off",
-    }
-  },
+    {
+      "files": ["next-env.d.ts"],
+      "rules": {
+        "spaced-comment": "off",
+      }
+    },
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
