@@ -6,17 +6,29 @@ Site for RecordRig.
 
 You'll need a local installation of [Node + NPM](https://nodejs.org/en/).
 
-Run locally:
+If it's the first time you're running the application, first install dependencies:
+
+```
+npm install
+```
+
+Then run the application:
 
 ```
 npm run dev
 ```
 
-Pushes to GitHub on any branch will trigger an auto-deploy to a unique URL (staging) through Now integration with GitHub.
+## CI/CD Pipeline
+
+Pushes to on any branch will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. If the QA passes, GitHub will auto-deploy to a unique URL (staging) through Now integration with GitHub.
 
 Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
 
 Any change to the `master` branch will auto-deploy to http://recordrig.com (production).
+
+## Error Monitoring
+
+Any errors occurring on the live site will be logged with [Sentry](https://sentry.io/).
 
 ## Core Functionality
 
@@ -87,7 +99,3 @@ One section of global styles in defined in `./pages/_app.js`. Global styles shou
 The main font is IBM Plex Sans. We include it as an NPM dependency to make sure not to lose it in the future, and to know which version is currently active, but don't import it from the package directly. Rather, we straight-up copy the files found in `node_modules/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff` (only the Bold and Regular types) into our `public` folder, so that we can use them with CSS's @font-face which is well-supported by web browsers.
 
 As for units of measurement, [just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a goddamn calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
-
-## Errors
-
-Any errors occurring on the live site will be logged with [Sentry](https://sentry.io/).

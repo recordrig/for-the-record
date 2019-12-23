@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "build": {
+    "env": {
+      "STRIPE_PUBLISHABLE_KEY": "@stripe-publishable-key",
+      "STRIPE_SECRET_KEY": "@stripe-secret-key"
+    }
+  }
+}
