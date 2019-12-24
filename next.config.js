@@ -1,10 +1,6 @@
 const withSourceMaps = require("@zeit/next-source-maps")();
 
 module.exports = withSourceMaps({
-  experimental: {
-    /* Enable use of the /public folder to serve files at the site root. */
-    publicDirectory: true
-  },
   webpack: (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/node. While
     // @sentry/browser will run in a Node.js environment, @sentry/node will use
