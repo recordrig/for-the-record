@@ -1,12 +1,12 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
 type StyledCapsHeadingProps = {
   fontColor: string;
 };
 
 const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
-  ${({ fontColor }: StyledCapsHeadingProps) => css`
+  ${({ fontColor }: StyledCapsHeadingProps): FlattenSimpleInterpolation => css`
     h1,
     h2,
     h3,
@@ -77,7 +77,10 @@ type StyledHeadingProps = {
 };
 
 const StyledHeading = styled.div<StyledHeadingProps>`
-  ${({ center, fontColor }: StyledHeadingProps) => css`
+  ${({
+    center,
+    fontColor
+  }: StyledHeadingProps): FlattenSimpleInterpolation => css`
     h1,
     h2,
     h3,
@@ -174,7 +177,7 @@ type StyledParagraphProps = {
 };
 
 const StyledParagraph = styled.p<StyledParagraphProps>`
-  ${({ fontColor }: StyledParagraphProps) => css`
+  ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
     color: ${fontColor};
 
     @media (max-width: 399px) {
@@ -214,7 +217,7 @@ type StyledTextProps = {
 };
 
 const StyledText = styled.span<StyledTextProps>`
-  ${({ fontColor }: StyledParagraphProps) => css`
+  ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
     color: ${fontColor};
 
     @media (max-width: 399px) {

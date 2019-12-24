@@ -25,6 +25,28 @@ module.exports = {
         "jest": true
       }
     },
+    {
+      /** 
+       * For TypeScript files, we want to be strict. We turned these rules off further
+       * down, but that's intended just for JavaScript files, for which we want to be
+       * more lax as we've usually adopted these from other codebases (and as such, we
+       * consider them maintained by others).
+       */
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/jsx-props-no-spreading": ["error"],
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      }
+    },
+    /**
+     * Allow ordinary module imports in config files which are not transpiled.
+     */
+    {
+      "files": ["next.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
      /**
      * Allow triple slashes `///` in this file which is generated and maintained automatically by Next.js.
      * We want to keep the original structure intact as a [Triple-Slash Directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) is a compiler directive used by TypeScript.
@@ -39,7 +61,8 @@ module.exports = {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "project": "./tsconfig.json"
     },
     "ecmaVersion": 2019,
     "sourceType": "module"
@@ -111,6 +134,11 @@ module.exports = {
         "extensions": [".jsx", ".tsx"]
       }
     ],
+    /** 
+     * We turn this off here so that we can use this in (usually adopted) JavaScript files, but turn
+     * this back on for `.ts` and `.tsx` files further up, which are written and maintained by ourselves.
+     */
+    "react/jsx-props-no-spreading": "off",
     /**
      * Resolve a conflict between Prettier and Airbnb's configs by disabling errors on the lack of
      * parenthesis around multilines.
@@ -140,7 +168,13 @@ module.exports = {
      * Rule has [no right to exist](https://github.com/typescript-eslint/typescript-eslint/issues/433).
      * Will be removed from `typescript-eslint` in a future major version (since it's a breaking change). For now we'll disable manually.
      */ 
-    "@typescript-eslint/prefer-interface": 0
+    "@typescript-eslint/prefer-interface": 0,
+    /**
+     * Disable in general, but we turn this back on for `.ts` and `.tsx` files in the "overrides"
+     * section further up. We just want it disabled for `.js` and `.jsx` files as it doesn't _do_
+     * type declarations and such.
+     */
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
   "settings": {
     "import/resolver": {

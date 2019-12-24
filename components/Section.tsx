@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
 const StyledSubSection = styled.div`
   @media (max-width: 734px) {
@@ -108,7 +108,9 @@ type StyledSectionProps = {
 };
 
 const StyledSection = styled.div<StyledSectionProps>`
-  ${({ backgroundColor }: StyledSectionProps) => css`
+  ${({
+    backgroundColor
+  }: StyledSectionProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     margin: 0;
 

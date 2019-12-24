@@ -41,12 +41,13 @@ export const addProduct = (
   }
 
   // Find the product which should be present already, and update its quantity.
-  return Object.assign({}, shoppingBag, {
+  return {
+    ...shoppingBag,
     [productId]: {
       id: productId,
       quantity: shoppingBag[productId].quantity + 1
     }
-  });
+  };
 };
 
 export const removeProduct = (

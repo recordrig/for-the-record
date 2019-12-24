@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
 const StyledTileContainer = styled.div`
   box-sizing: border-box;
@@ -42,7 +42,10 @@ type StyledLinkTileProps = {
 };
 
 const StyledLinkTile = styled.a<StyledLinkTileProps>`
-  ${({ accentColor, backgroundColor }: StyledLinkTileProps) => css`
+  ${({
+    accentColor,
+    backgroundColor
+  }: StyledLinkTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-bottom: 8px solid ${accentColor};
     color: inherit;
@@ -56,7 +59,7 @@ type StyledTileProps = {
 };
 
 const StyledTile = styled.div<StyledTileProps>`
-  ${({ backgroundColor }: StyledTileProps) => css`
+  ${({ backgroundColor }: StyledTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     display: flex;
     flex-direction: column;
