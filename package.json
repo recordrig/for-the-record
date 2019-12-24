@@ -1,8 +1,8 @@
 {
   "scripts": {
     "build": "next build",
+    "cypress": "cypress open",
     "dev": "next",
-    "e2e": "cypress open",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "storybook": "start-storybook -s ./public -p 6006",

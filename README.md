@@ -64,10 +64,10 @@ Use Jest, which will run all files bearing the name suffix "`.test`", including 
 npm run test
 ```
 
-For end to end test, first make sure the application is running locally in dev mode, and then launch Cypress:
+For integration test, first make sure the application is running locally in dev mode, and then launch Cypress:
 
 ```bash
-npm run e2e
+npm run cypress
 ```
 
 Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./.cypress/integration`.
