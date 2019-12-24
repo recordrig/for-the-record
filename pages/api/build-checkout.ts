@@ -10,7 +10,7 @@ const stripe = Stripe(STRIPE_SECRET_KEY);
  * Initiate the Stripe checkout process. It returns the Session ID, which
  * ought to be used when redirecting to the checkout.
  */
-export default async (req, res) => {
+export default async (_req, res) => {
   const session = await stripe.checkout.sessions.create({
     billing_address_collection: "required",
     payment_method_types: ["card", "ideal"],
