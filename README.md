@@ -20,7 +20,7 @@ npm run dev
 
 ## CI/CD Pipeline
 
-Pushes to on any branch will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. If the QA passes, GitHub will auto-deploy to a unique URL (staging) through Now integration with GitHub.
+Pushes to any branch will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. If the QA passes, GitHub will auto-deploy to a unique URL (staging) through Now integration with GitHub.
 
 Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
 
