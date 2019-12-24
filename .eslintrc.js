@@ -50,6 +50,21 @@ module.exports = {
     "react"
   ],
   "rules": {
+    /** 
+     * Airbnb's config assumes `js` and `jsx` files to be supported natively, but doesn't
+     * know about `ts` and `tsx` files on its own. We want to allow e.g. `import "./myModule"`
+     * without having to suffix with `ts`.
+     */
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     /**
      * Allow imports from packages listed under `devDependencies` for dev and test files.
      */
