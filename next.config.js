@@ -1,6 +1,18 @@
 const withSourceMaps = require("@zeit/next-source-maps")();
+require("dotenv").config();
 
 module.exports = withSourceMaps({
+  env: {
+    /**
+     * Add support for listed environment variables when running with `npm run dev`,
+     * which is our usual method for running the app locally.
+     *
+     * NB Keys listed in `now.json` only affect Now's environments (`now dev` and when
+     * running in the Now production environment).
+     */
+    STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
+    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY
+  },
   webpack: (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/node. While
     // @sentry/browser will run in a Node.js environment, @sentry/node will use

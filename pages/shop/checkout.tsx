@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
-import { STRIPE_PUBLISHABLE_KEY } from "../../constants";
 import withRedux from "../../store/_withRedux";
 import Section from "../../components/Section";
 
@@ -27,7 +26,10 @@ const CheckoutPage: NextPage<CheckoutPageProps> = ({
   /**
    * Set our globally available Stripe object to our `stripe` state
    */
-  useEffect(() => setStripe(window.Stripe(STRIPE_PUBLISHABLE_KEY)), []);
+  useEffect(
+    () => setStripe(window.Stripe(process.env.STRIPE_PUBLISHABLE_KEY)),
+    []
+  );
 
   const goToCheckout = (): void => {
     stripe

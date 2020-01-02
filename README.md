@@ -12,7 +12,14 @@ If it's the first time you're running the application, first install dependencie
 npm install
 ```
 
-Then run the application:
+Then create a file called `.env` in the root of your project and insert your Stripe TEST API keys:
+
+```
+STRIPE_PUBLISHABLE_KEY=pk_test_xyz
+STRIPE_SECRET_KEY=sk_test_xyz
+```
+
+Now you can run the application:
 
 ```
 npm run dev

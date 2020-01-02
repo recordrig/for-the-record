@@ -2,9 +2,8 @@
 // which follows a different convention for key names.
 /* eslint-disable @typescript-eslint/camelcase */
 import Stripe from "stripe";
-import { STRIPE_SECRET_KEY } from "../../constants";
 
-const stripe = Stripe(STRIPE_SECRET_KEY);
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 /**
  * Initiate the Stripe checkout process. It returns the Session ID, which
