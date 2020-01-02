@@ -1,10 +1,26 @@
-// For a detailed explanation regarding each configuration property, visit:
-// https://jestjs.io/docs/en/configuration.html
-
 module.exports = {
   /**
-   * The directory where Jest should output its coverage files.
+   * We collect coverage reports for files which 1) are not adopted and left in their original
+   * (non-TS) language; 2) are not config files; 3) are not files that are better tested using
+   * integration tests, e.g. pages and code that ties other code together.
+   *
+   * This leaves our components and our store's logic.
    */
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "./components/**/*.{ts,tsx}",
+    "./store/**/*.{ts,tsx}",
+    "!./store/_initializeStore.ts",
+    "!**/node_modules/**"
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80
+    }
+  },
   coverageDirectory: ".jest/coverage",
 
   /**

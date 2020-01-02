@@ -10,7 +10,7 @@ interface ShoppingBag {
 /**
  * Check if all product ID's match their corresponding object key.
  */
-export const validateShoppingBag = (shoppingBag: ShoppingBag): boolean => {
+const validateShoppingBag = (shoppingBag: ShoppingBag): boolean => {
   Object.entries(shoppingBag).forEach(([objKey, product]) => {
     if (objKey !== product.id) {
       throw new Error(
@@ -22,7 +22,7 @@ export const validateShoppingBag = (shoppingBag: ShoppingBag): boolean => {
   return true;
 };
 
-export const addProduct = (
+const addProduct = (
   shoppingBag: ShoppingBag,
   productId: ShoppingBagProduct["id"]
 ): ShoppingBag => {
@@ -50,7 +50,7 @@ export const addProduct = (
   };
 };
 
-export const removeProduct = (
+const removeProduct = (
   shoppingBag: ShoppingBag,
   productId: ShoppingBagProduct["id"]
 ): ShoppingBag => {
@@ -74,7 +74,10 @@ export const removeProduct = (
   return newShoppingBag;
 };
 
-const actionTypes = {
+/**
+ * All available shopping bag actions.
+ */
+export const actionTypes = {
   ADD_PRODUCT: "shoppingBag/ADD_PRODUCT",
   REMOVE_PRODUCT: "shoppingBag/REMOVE_PRODUCT"
 };
@@ -107,6 +110,8 @@ const initialState: ShoppingBag = {};
  * Shopping bag reducer.
  */
 const shoppingBag = (state = initialState, action: Action): ShoppingBag => {
+  validateShoppingBag(state);
+
   switch (action.type) {
     case actionTypes.ADD_PRODUCT:
       return addProduct(state, action.payload.id);
