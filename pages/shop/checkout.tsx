@@ -53,7 +53,7 @@ const CheckoutPage: NextPage<CheckoutPageProps> = ({
 
 CheckoutPage.getInitialProps = async ({ req }): Promise<CheckoutPageProps> => {
   const { origin } = absoluteUrl(req);
-  const res = await fetch(`${origin}/api/build-checkout`);
+  const res = await fetch(`${origin}/api/checkout/create`);
   const data = await res.json();
 
   return {
