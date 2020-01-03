@@ -8,8 +8,11 @@ module.exports = {
    */
   collectCoverage: true,
   collectCoverageFrom: [
+    // Include:
     "./components/**/*.{ts,tsx}",
     "./store/**/*.{ts,tsx}",
+    // Exlude:
+    "!./components/**/*.stories.tsx",
     "!./store/_initializeStore.ts",
     "!**/node_modules/**"
   ],

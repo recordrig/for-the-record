@@ -74,12 +74,14 @@ const removeProduct = (
   return newShoppingBag;
 };
 
+const prefix = "shoppingBag";
+
 /**
  * All available shopping bag actions.
  */
 export const actionTypes = {
-  ADD_PRODUCT: "shoppingBag/ADD_PRODUCT",
-  REMOVE_PRODUCT: "shoppingBag/REMOVE_PRODUCT"
+  ADD_PRODUCT: `${prefix}/ADD_PRODUCT`,
+  REMOVE_PRODUCT: `${prefix}/REMOVE_PRODUCT`
 };
 
 interface AddProductAction {
