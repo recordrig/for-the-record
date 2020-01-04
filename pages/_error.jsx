@@ -17,6 +17,9 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
 /**
  * Integrate Next.js's error handling with Sentry, our error logging tool.
  * See the [Next.js Sentry example](https://github.com/zeit/next.js/tree/canary/examples/with-sentry-simple)
+ *
+ * NB This page is only rendered in production. As such, we can assume Sentry
+ * to be defined (via `_app.js`).
  */
 MyError.getInitialProps = async ({ res, err, asPath }) => {
   const errorInitialProps = await Error.getInitialProps({ res, err });
