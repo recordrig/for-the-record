@@ -397,6 +397,18 @@ exports[`Storyshots Form default 1`] = `
   padding-top: 0;
 }
 
+.c2 select {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIyLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9Imljb24iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAzMiAzMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO30KPC9zdHlsZT4KPHBvbHlnb24gcG9pbnRzPSIxNiwyMiA2LDEyIDcuNCwxMC42IDE2LDE5LjIgMjQuNiwxMC42IDI2LDEyICIvPgo8cmVjdCBpZD0iX3gzQ19UcmFuc3BhcmVudF9SZWN0YW5nbGVfeDNFXyIgY2xhc3M9InN0MCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIi8+Cjwvc3ZnPgo=");
+  background-position: right 4px center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  display: block;
+  font-size: 16px;
+  height: 42px;
+  line-height: 20px;
+  padding-top: 0;
+}
+
 .c2 textarea {
   height: 160px;
   font-size: 16px;
@@ -406,6 +418,7 @@ exports[`Storyshots Form default 1`] = `
 }
 
 .c2 input,
+.c2 select,
 .c2 textarea {
   background-color: #f2f4f8;
   border: 2px solid transparent;
@@ -416,10 +429,12 @@ exports[`Storyshots Form default 1`] = `
   padding-left: 12px;
   padding-right: 12px;
   width: 100%;
+  -moz-appearance: none;
   -webkit-appearance: none;
 }
 
 .c2 input:focus,
+.c2 select:focus,
 .c2 textarea:focus {
   border: 2px solid #0062ff;
   box-shadow: none;
@@ -507,6 +522,47 @@ exports[`Storyshots Form default 1`] = `
                 required={true}
                 type="email"
               />
+            </label>
+          </div>
+          <div
+            className="c3"
+          >
+            <label
+              htmlFor="contact-category"
+            >
+              Category
+              <select
+                id="info-category"
+                name="category"
+                required={true}
+              >
+                <option
+                  disabled={true}
+                  selected={true}
+                >
+                  Select...
+                </option>
+                <option
+                  value="compliment"
+                >
+                  Compliment
+                </option>
+                <option
+                  value="complaint"
+                >
+                  Complaint
+                </option>
+                <option
+                  value="question"
+                >
+                  Question
+                </option>
+                <option
+                  value="other"
+                >
+                  Other
+                </option>
+              </select>
             </label>
           </div>
           <div

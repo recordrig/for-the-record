@@ -1,30 +1,276 @@
-import React, { useState, useEffect } from "react";
-import { NextPage } from "next";
-import fetch from "isomorphic-unfetch";
-import absoluteUrl from "next-absolute-url";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  FunctionComponent,
+  useState
+} from "react";
+import Head from "next/head";
 import withRedux from "../../../store/_withRedux";
-import Section from "../../../components/Section";
+import { Heading } from "../../../components/Text";
+import Section, { SectionIntro } from "../../../components/Section";
+import Tile, { TileContainer } from "../../../components/Tile";
+import Form, { FormRow } from "../../../components/Form";
 
-type CheckoutInformationPageProps = {
-  myVar: string;
-};
+const CheckoutInformationPage: FunctionComponent = () => {
+  // TODO: Redirect to buy-recordrig if shopping bag is empty.
+  // useEffect(() => {
+  //   if (!shoppingBagItems) {
+  //     Router.push("/shop/buy-recordrig");
+  //   }
+  // });
 
-const CheckoutInformationPage: NextPage<CheckoutInformationPageProps> = ({
-  myVar
-}: CheckoutInformationPageProps) => {
-  return <Section>Personal Info</Section>;
-};
+  const [information, setInformation] = useState({
+    name: "",
+    addressLine1: "",
+    addressLine2: "",
+    honeypot: "",
+    postalCode: "",
+    city: "",
+    country: "",
+    email: "",
+    phone: ""
+  });
 
-CheckoutInformationPage.getInitialProps = async ({
-  req
-}): Promise<CheckoutInformationPageProps> => {
-  const { origin } = absoluteUrl(req);
-  const res = await fetch(`${origin}/api/checkout/create`);
-  const data = await res.json();
+  const [response, setResponse] = useState({
+    type: "",
+    message: ""
+  });
 
-  return {
-    customerId: data.id
+  const countries = [
+    "Austria",
+    "Belgium",
+    "Bulgaria",
+    "Croatia",
+    "Cyprus",
+    "Czechia",
+    "Denmark",
+    "Estonia",
+    "Finland",
+    "France",
+    "Germany",
+    "Greece",
+    "Hungary",
+    "Ireland",
+    "Italy",
+    "Latvia",
+    "Lithuania",
+    "Luxembourg",
+    "Malta",
+    "Netherlands",
+    "Poland",
+    "Portugal",
+    "Romania",
+    "Slovakia",
+    "Slovenia",
+    "Spain",
+    "Sweden",
+    "United Kingdom"
+  ];
+
+  const handleChange = (
+    // Various linter rules collide here so we disable one.
+    // eslint-disable-next-line prettier/prettier
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ): void =>
+    setInformation({ ...information, [event.target.name]: event.target.value });
+
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    event.preventDefault();
+    try {
+      const res = await fetch("/api/customer/create", {
+        method: "POST",
+        body: JSON.stringify(information),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        setResponse({
+          type: "success",
+          message: "✅👍 Customer created"
+        });
+      } else {
+        setResponse({
+          type: "error",
+          message: `❌😵 Hmm... some error occurred on the server. It says: "${json.message}".`
+        });
+      }
+    } catch (error) {
+      setResponse({
+        type: "error",
+        message: `❌😵 Hmm... an error occurred while submitting the form: "${error}".`
+      });
+    }
   };
+  return (
+    <>
+      <Head>
+        <title>Your information.</title>
+        <meta
+          name="description"
+          content="Questions, thoughts, or something else you'd like to share? Fill out this form, and we'll get back to you."
+        />
+      </Head>
+      <Section>
+        <SectionIntro>
+          <Heading h={1}>Your information.</Heading>
+        </SectionIntro>
+        <div style={{ maxWidth: "784px" }}>
+          <Tile>
+            <TileContainer>
+              <Form>
+                <form
+                  action="/api/customer/create"
+                  method="post"
+                  onSubmit={handleSubmit}
+                >
+                  <FormRow>
+                    <label htmlFor="info-name">
+                      Name
+                      <input
+                        id="info-name"
+                        maxLength={32}
+                        name="name"
+                        onChange={handleChange}
+                        required
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="info-addressline1">
+                      Address Line 1
+                      <input
+                        id="info-addressline1"
+                        maxLength={32}
+                        name="addressline1"
+                        onChange={handleChange}
+                        required
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="info-addressline2">
+                      Address Line 2 (optional)
+                      <input
+                        id="info-addressline2"
+                        maxLength={32}
+                        name="addressline2"
+                        onChange={handleChange}
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <input
+                    name="honeypot"
+                    style={{ display: "none" }}
+                    onChange={handleChange}
+                    type="text"
+                  />
+                  <FormRow>
+                    <label htmlFor="info-postalcode">
+                      Postal code
+                      <input
+                        id="info-postalcode"
+                        maxLength={12}
+                        name="postalcode"
+                        onChange={handleChange}
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="info-city">
+                      City
+                      <input
+                        id="info-city"
+                        maxLength={29}
+                        name="city"
+                        onChange={handleChange}
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="info-country">
+                      Country
+                      <select
+                        id="info-country"
+                        name="country"
+                        onChange={handleChange}
+                        required
+                      >
+                        <option disabled selected>
+                          Select...
+                        </option>
+                        {countries.map(country => (
+                          <option value={country}>{country}</option>
+                        ))}
+                      </select>
+                    </label>
+                  </FormRow>
+                  <div style={{ minHeight: "32px", paddingBottom: "12px" }}>
+                    <span style={{ color: "#697077", fontSize: "14px" }}>
+                      Please note that at this time we are only able to ship to
+                      EU countries.
+                    </span>
+                  </div>
+                  <FormRow>
+                    <label htmlFor="info-email">
+                      Email
+                      <input
+                        id="info-email"
+                        minLength={5}
+                        maxLength={150}
+                        name="email"
+                        onChange={handleChange}
+                        required
+                        type="email"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="info-phone">
+                      Phone
+                      <input
+                        id="info-phone"
+                        maxLength={14}
+                        minLength={9}
+                        name="phone"
+                        onChange={handleChange}
+                        required
+                        type="tel"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <button style={{ marginTop: "4px" }} type="submit">
+                      Next
+                    </button>
+                  </FormRow>
+                  <div style={{ height: "48px", fontWeight: "bold" }}>
+                    <span
+                      style={
+                        response.type === "error"
+                          ? { color: "#da1e28" }
+                          : { color: "#24a148" }
+                      }
+                    >
+                      {response.message}
+                    </span>
+                  </div>
+                </form>
+              </Form>
+            </TileContainer>
+          </Tile>
+        </div>
+      </Section>
+    </>
+  );
 };
 
 export default withRedux(CheckoutInformationPage);

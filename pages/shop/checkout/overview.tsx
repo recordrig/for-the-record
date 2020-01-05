@@ -12,6 +12,13 @@ type CheckoutPageProps = {
 const CheckoutPage: NextPage<CheckoutPageProps> = ({
   sessionId
 }: CheckoutPageProps) => {
+  // TODO: Redirect to information page if customerId is not set.
+  // useEffect(() => {
+  //   if (!customerId) {
+  //     Router.push("/shop/checkout/information");
+  //   }
+  // });
+
   /*
    * We assume that the Stripe client side script will be available in the
    * frontend so that we can set a state variable `stripe` that'll refer to

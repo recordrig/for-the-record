@@ -22,6 +22,20 @@ storiesOf("Form", module).add("default", () => (
               </label>
             </FormRow>
             <FormRow>
+              <label htmlFor="contact-category">
+                Category
+                <select id="info-category" name="category" required>
+                  <option disabled selected>
+                    Select...
+                  </option>
+                  <option value="compliment">Compliment</option>
+                  <option value="complaint">Complaint</option>
+                  <option value="question">Question</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+            </FormRow>
+            <FormRow>
               <label htmlFor="contact-subject">
                 Subject
                 <input id="contact-subject" name="subject" type="text" />
