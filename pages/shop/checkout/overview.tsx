@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
-import withRedux from "../../store/_withRedux";
-import Section from "../../components/Section";
+import withRedux from "../../../store/_withRedux";
+import Section from "../../../components/Section";
 
 type CheckoutPageProps = {
   sessionId: string;

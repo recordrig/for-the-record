@@ -11,7 +11,6 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
  */
 export default async (_req, res): Promise<void> => {
   const session = await stripe.checkout.sessions.create({
-    billing_address_collection: "required",
     payment_method_types: ["card"],
     line_items: [
       {

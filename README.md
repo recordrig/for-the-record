@@ -19,10 +19,26 @@ STRIPE_PUBLISHABLE_KEY=pk_test_xyz
 STRIPE_SECRET_KEY=sk_test_xyz
 ```
 
-Now you can run the application:
+Now you can run the development server:
 
 ```
 npm run dev
+```
+
+## Optional: Local development with the Now CLI
+
+If you'd like to use [Now's CLI](https://zeit.co/blog/now-dev) to run the application, you will need to define an extra file named `.env.build` and define Stripe's publishable TEST API key in here as well:
+
+```
+STRIPE_PUBLISHABLE_KEY=pk_test_xyz
+```
+
+This is because `now dev` will use its own mechanism for making env vars available in the application. It doesn't use Dotenv like the ordinary dev server, but instead reads `now.json` to know which env vars to set, and then looks for build-only dev vars inside `.env.build`.
+
+After setting the publishable TEST key in `.env.build`, you will be able to run the application using Now's CLI:
+
+```
+now dev
 ```
 
 ## CI/CD Pipeline
@@ -108,21 +124,3 @@ One section of global styles in defined in `./pages/_app.js`. Global styles shou
 The main font is IBM Plex Sans. We include it as an NPM dependency to make sure not to lose it in the future, and to know which version is currently active, but don't import it from the package directly. Rather, we straight-up copy the files found in `node_modules/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff` (only the Bold and Regular types) into our `public` folder, so that we can use them with CSS's @font-face which is well-supported by web browsers.
 
 As for units of measurement, [just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a goddamn calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
-
-## Notes on local development & env vars
-
-Though `npm run dev` will usually suffice, there are also other ways to run the application locally if you need to do advanced debugging, performance tweaking, etc.
-
-Run locally using the Now CLI:
-
-```
-now dev
-```
-
-This will create a build similar to how Now would run in its live environment. Note that if you'd like to use `now dev`, you will need to define an extra file named `.env.build` and define Stripe's publishable TEST API key in here as well.
-
-```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyz
-```
-
-This is because `now dev` will use its own mechanism for making env vars available in the application. It doesn't use Dotenv like the ordinary dev server (`npm run dev` uses `next.config.js`) but instead uses `now.json` to set env vars and, as a result, looks for build-only dev vars inside `.env.build`.
