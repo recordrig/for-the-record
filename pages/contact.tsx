@@ -5,75 +5,11 @@ import React, {
   useState
 } from "react";
 import Head from "next/head";
-import styled from "styled-components";
 import withRedux from "../store/_withRedux";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
 import Tile, { TileContainer } from "../components/Tile";
-
-const StyledFormRow = styled.div`
-  padding-bottom: 12px;
-`;
-
-const StyledSendButton = styled.button`
-  background-color: #0062ff;
-  border-radius: 2px;
-  border: 0;
-  color: #ffffff;
-  display: block;
-  font-size: 18px;
-  height: 48px;
-  outline: none;
-  padding-left: 32px;
-  padding-right: 32px;
-  text-decoration: none;
-`;
-
-const StyledForm = styled.form`
-  label {
-    color: #50565b;
-    font-size: 14px;
-    line-height: 28px;
-    margin-bottom: 4px;
-  }
-
-  input {
-    display: block;
-    font-size: 16px;
-    height: 42px;
-    line-height: 16px;
-    padding-top: 0;
-  }
-
-  textarea {
-    height: 160px;
-    font-size: 16px;
-    line-height: 21px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-
-  input,
-  textarea {
-    background-color: #f2f4f8;
-    border: 2px solid transparent;
-    border-radius: 0;
-    box-shadow: none;
-    box-sizing: border-box;
-    outline: none;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 100%;
-    -webkit-appearance: none;
-  }
-
-  input:focus,
-  textarea:focus {
-    border: 2px solid #0062ff;
-    box-shadow: none;
-    outline: none;
-  }
-`;
+import Form, { FormRow } from "../components/Form";
 
 const ContactPage: FunctionComponent = () => {
   const [contact, setContact] = useState({
@@ -147,78 +83,80 @@ const ContactPage: FunctionComponent = () => {
         <div style={{ maxWidth: "784px" }}>
           <Tile>
             <TileContainer>
-              <StyledForm
-                action="https://api.staticforms.xyz/submit"
-                method="post"
-                onSubmit={handleSubmit}
-              >
-                <StyledFormRow>
-                  <label htmlFor="contact-name">
-                    Name
-                    <input
-                      id="contact-name"
-                      name="name"
-                      onChange={handleChange}
-                      required
-                      type="text"
-                    />
-                  </label>
-                </StyledFormRow>
-                <StyledFormRow>
-                  <label htmlFor="contact-email">
-                    Email
-                    <input
-                      id="contact-email"
-                      name="email"
-                      onChange={handleChange}
-                      required
-                      type="email"
-                    />
-                  </label>
-                </StyledFormRow>
-                <StyledFormRow>
-                  <label htmlFor="contact-subject">
-                    Subject
-                    <input
-                      id="contact-subject"
-                      name="subject"
-                      onChange={handleChange}
-                      type="text"
-                    />
-                  </label>
-                </StyledFormRow>
-                <input
-                  name="honeypot"
-                  style={{ display: "none" }}
-                  onChange={handleChange}
-                  type="text"
-                />
-                <StyledFormRow>
-                  <label htmlFor="contact-message">
-                    Message
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      onChange={handleChange}
-                      required
-                    />
-                  </label>
-                </StyledFormRow>
-                <StyledFormRow>
-                  <StyledSendButton type="submit">Send</StyledSendButton>
-                </StyledFormRow>
-                <div style={{ height: "48px", fontWeight: "bold" }}>
-                  <span
-                    style={
-                      response.type === "error"
-                        ? { color: "#da1e28" }
-                        : { color: "#24a148" }
-                    }
-                  >
-                    {response.message}
-                  </span>
-                </div>
-              </StyledForm>
+              <Form>
+                <form
+                  action="https://api.staticforms.xyz/submit"
+                  method="post"
+                  onSubmit={handleSubmit}
+                >
+                  <FormRow>
+                    <label htmlFor="contact-name">
+                      Name
+                      <input
+                        id="contact-name"
+                        name="name"
+                        onChange={handleChange}
+                        required
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="contact-email">
+                      Email
+                      <input
+                        id="contact-email"
+                        name="email"
+                        onChange={handleChange}
+                        required
+                        type="email"
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <label htmlFor="contact-subject">
+                      Subject
+                      <input
+                        id="contact-subject"
+                        name="subject"
+                        onChange={handleChange}
+                        type="text"
+                      />
+                    </label>
+                  </FormRow>
+                  <input
+                    name="honeypot"
+                    style={{ display: "none" }}
+                    onChange={handleChange}
+                    type="text"
+                  />
+                  <FormRow>
+                    <label htmlFor="contact-message">
+                      Message
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        onChange={handleChange}
+                        required
+                      />
+                    </label>
+                  </FormRow>
+                  <FormRow>
+                    <button type="submit">Send</button>
+                  </FormRow>
+                  <div style={{ height: "48px", fontWeight: "bold" }}>
+                    <span
+                      style={
+                        response.type === "error"
+                          ? { color: "#da1e28" }
+                          : { color: "#24a148" }
+                      }
+                    >
+                      {response.message}
+                    </span>
+                  </div>
+                </form>
+              </Form>
             </TileContainer>
           </Tile>
         </div>
