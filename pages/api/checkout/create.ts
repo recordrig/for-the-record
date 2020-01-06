@@ -1,6 +1,3 @@
-// We allow non-camelcase since we are dealing with an external API here
-// which follows a different convention for key names.
-/* eslint-disable @typescript-eslint/camelcase */
 import Stripe from "stripe";
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);

@@ -39,6 +39,16 @@ module.exports = {
       }
     },
     /**
+     * Allow non-camelcase in files that communicate with external API's (and have to
+     * abide by their rules).
+     */
+    {
+      "files": ["./pages/api/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/camelcase": "off"
+      }
+    },
+    /**
      * Allow ordinary module imports in config files which are not transpiled.
      */
     {

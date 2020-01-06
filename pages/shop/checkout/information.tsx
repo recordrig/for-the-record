@@ -21,10 +21,10 @@ const CheckoutInformationPage: FunctionComponent = () => {
 
   const [information, setInformation] = useState({
     name: "",
-    addressLine1: "",
-    addressLine2: "",
+    addressline1: "",
+    addressline2: "",
     honeypot: "",
-    postalCode: "",
+    postalcode: "",
     city: "",
     country: "",
     email: "",
@@ -78,6 +78,9 @@ const CheckoutInformationPage: FunctionComponent = () => {
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
+    console.log("handle submit...");
+    console.log("information:", information);
+    console.log("json information:", JSON.stringify(information));
     try {
       const res = await fetch("/api/customer/create", {
         method: "POST",
@@ -87,10 +90,10 @@ const CheckoutInformationPage: FunctionComponent = () => {
 
       const json = await res.json();
 
-      if (json.success) {
+      if (json.object === "customer") {
         setResponse({
           type: "success",
-          message: "✅👍 Customer created"
+          message: `✅👍 Customer created: ${json}`
         });
       } else {
         setResponse({
@@ -145,6 +148,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                       Address Line 1
                       <input
                         id="info-addressline1"
+                        minLength={5}
                         maxLength={32}
                         name="addressline1"
                         onChange={handleChange}
@@ -179,6 +183,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                         maxLength={12}
                         name="postalcode"
                         onChange={handleChange}
+                        required
                         type="text"
                       />
                     </label>
@@ -191,6 +196,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                         maxLength={29}
                         name="city"
                         onChange={handleChange}
+                        required
                         type="text"
                       />
                     </label>
@@ -208,13 +214,24 @@ const CheckoutInformationPage: FunctionComponent = () => {
                           Select...
                         </option>
                         {countries.map(country => (
-                          <option value={country}>{country}</option>
+                          <option
+                            value={country}
+                            key={`info-country-${country}`}
+                          >
+                            {country}
+                          </option>
                         ))}
                       </select>
                     </label>
                   </FormRow>
                   <div style={{ minHeight: "32px", paddingBottom: "12px" }}>
-                    <span style={{ color: "#697077", fontSize: "14px" }}>
+                    <span
+                      style={{
+                        color: "#697077",
+                        fontSize: "13px",
+                        lineHeight: "18px"
+                      }}
+                    >
                       Please note that at this time we are only able to ship to
                       EU countries.
                     </span>
@@ -273,4 +290,5 @@ const CheckoutInformationPage: FunctionComponent = () => {
   );
 };
 
+// TODO: If there's already a customerId in state, fetch customer and prefill values.
 export default withRedux(CheckoutInformationPage);
