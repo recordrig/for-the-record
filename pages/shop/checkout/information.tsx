@@ -8,13 +8,20 @@ import Head from "next/head";
 import { connect } from "react-redux";
 import { State } from "../../../store/_initializeStore";
 import withRedux from "../../../store/_withRedux";
-import { actionTypes } from "../../../store/account";
+import { actions } from "../../../store/account";
 import { Heading } from "../../../components/Text";
 import Section, { SectionIntro } from "../../../components/Section";
 import Tile, { TileContainer } from "../../../components/Tile";
 import Form, { FormRow } from "../../../components/Form";
 
-const CheckoutInformationPage: FunctionComponent = () => {
+type CheckoutInformationPageProps = {
+  dispatch: (x) => void;
+};
+
+const CheckoutInformationPage: FunctionComponent<CheckoutInformationPageProps> = ({
+  // eslint-disable-next-line react/prop-types
+  dispatch
+}) => {
   // TODO: Redirect to buy-recordrig if shopping bag is empty.
   // useEffect(() => {
   //   if (!shoppingBagItems) {
@@ -98,6 +105,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
           type: "success",
           message: `✅👍 Customer created: ${json}`
         });
+        dispatch(actions.updateCustomerId("HELLO"));
       } else {
         setResponse({
           type: "error",
@@ -289,38 +297,13 @@ const CheckoutInformationPage: FunctionComponent = () => {
   );
 };
 
-interface StateFromProps {
-  account: State["account"];
-}
-
-interface DispatchFromProps {
-  updateCustomerId: () => void;
-}
-
-const mapStateToProps = (state: State): StateFromProps => ({
+const mapStateToProps = (state: State) => ({
   account: state.account
-});
-
-type ActionA = {
-  type: string;
-  payload: string;
-};
-
-type Action = ActionA;
-
-type Dispatch = (action: Action) => void;
-
-const mapDispatchToProps = (dispatch: Dispatch): DispatchFromProps => ({
-  updateCustomerId: (): Dispatch =>
-    dispatch({
-      type: actionTypes.UPDATE_CUSTOMER_ID,
-      payload: "HELLO_WORLD"
-    })
 });
 
 const ConnectedCheckoutInformationPage = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(CheckoutInformationPage);
 
 // TODO: If there's already a customerId in state, fetch customer and prefill values.

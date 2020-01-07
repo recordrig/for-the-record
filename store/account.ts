@@ -11,7 +11,7 @@ const prefix = "account";
 /**
  * All available account actions.
  */
-export const actionTypes = {
+const actionTypes = {
   UPDATE_CUSTOMER_ID: `${prefix}/UPDATE_CUSTOMER_ID`
 };
 
@@ -22,11 +22,35 @@ interface UpdateCustomerIdAction {
   };
 }
 
-type Action = UpdateCustomerIdAction;
+/**
+ * Action creator for updating the customer ID in the local state.
+ */
+const updateCustomerId = (
+  id: UpdateCustomerIdAction["payload"]["id"]
+): UpdateCustomerIdAction => {
+  return {
+    type: actionTypes.UPDATE_CUSTOMER_ID,
+    payload: {
+      id
+    }
+  };
+};
+
+/**
+ * All available account actions ("action creators").
+ */
+export const actions = {
+  updateCustomerId
+};
 
 const initialState: Account = {
   customerId: null
 };
+
+/**
+ * All potential action inputs for the account reducer.
+ */
+type Action = UpdateCustomerIdAction;
 
 /**
  * Account reducer.

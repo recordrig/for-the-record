@@ -49,6 +49,16 @@ module.exports = {
       }
     },
     /**
+     * Do not require the explicit definition of return types in these folders where we often
+     * integrate with 3rd party interfaces/API's.
+     */
+    {
+      "files": ["./components/**/*.tsx", "./pages/**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    },
+    /**
      * Allow ordinary module imports in config files which are not transpiled.
      */
     {
