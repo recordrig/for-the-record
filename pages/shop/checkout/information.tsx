@@ -5,7 +5,10 @@ import React, {
   useState
 } from "react";
 import Head from "next/head";
+import { connect } from "react-redux";
+import { State } from "../../../store/_initializeStore";
 import withRedux from "../../../store/_withRedux";
+import { actionTypes } from "../../../store/account";
 import { Heading } from "../../../components/Text";
 import Section, { SectionIntro } from "../../../components/Section";
 import Tile, { TileContainer } from "../../../components/Tile";
@@ -286,5 +289,39 @@ const CheckoutInformationPage: FunctionComponent = () => {
   );
 };
 
+interface StateFromProps {
+  account: State["account"];
+}
+
+interface DispatchFromProps {
+  updateCustomerId: () => void;
+}
+
+const mapStateToProps = (state: State): StateFromProps => ({
+  account: state.account
+});
+
+type ActionA = {
+  type: string;
+  payload: string;
+};
+
+type Action = ActionA;
+
+type Dispatch = (action: Action) => void;
+
+const mapDispatchToProps = (dispatch: Dispatch): DispatchFromProps => ({
+  updateCustomerId: (): Dispatch =>
+    dispatch({
+      type: actionTypes.UPDATE_CUSTOMER_ID,
+      payload: "HELLO_WORLD"
+    })
+});
+
+const ConnectedCheckoutInformationPage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CheckoutInformationPage);
+
 // TODO: If there's already a customerId in state, fetch customer and prefill values.
-export default withRedux(CheckoutInformationPage);
+export default withRedux(ConnectedCheckoutInformationPage);

@@ -7,7 +7,7 @@ import shoppingBag from "./shoppingBag";
  * The entire application's state tree structure. Only lists top-level items. Individual
  * reducer's structures are defined in their own modules.
  */
-interface State {
+export interface State {
   account: {};
   shoppingBag: {};
 }
