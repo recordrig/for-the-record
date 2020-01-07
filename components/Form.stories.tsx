@@ -14,8 +14,6 @@ storiesOf("Form", module).add("default", () => (
                 Name
                 <input id="contact-name" name="name" required type="text" />
               </label>
-            </FormRow>
-            <FormRow>
               <label htmlFor="contact-email">
                 Email
                 <input id="contact-email" name="email" required type="email" />

@@ -2,19 +2,26 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled from "styled-components";
 
 const StyledFormRow = styled.div`
-  padding-bottom: 12px;
+  @media (min-width: 768px) {
+    display: flex;
+    /* Negates the box's visual side margins which are present due to the magin set on
+    the label element. */
+    margin-left: -12px;
+    margin-right: -12px;
+  }
 `;
 
 const StyledForm = styled.div`
   label {
     color: #50565b;
+    display: block;
     font-size: 14px;
     line-height: 28px;
-    margin-bottom: 4px;
+    padding-bottom: 12px;
+    width: 100%;
   }
 
   input {
-    display: block;
     font-size: 16px;
     height: 42px;
     line-height: 16px;
@@ -26,7 +33,6 @@ const StyledForm = styled.div`
     background-position: right 4px center;
     background-repeat: no-repeat;
     background-size: 24px;
-    display: block;
     font-size: 16px;
     height: 42px;
     line-height: 20px;
@@ -70,13 +76,34 @@ const StyledForm = styled.div`
     border-radius: 2px;
     border: 0;
     color: #ffffff;
+    cursor: pointer;
     display: block;
     font-size: 18px;
     height: 48px;
+    margin-top: 20px;
     outline: none;
-    padding-left: 32px;
-    padding-right: 32px;
     text-decoration: none;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    /* We assume labels an buttons to be FormRow's direct children. (Labels are assumed to
+    always wrap other form elements). */
+    label,
+    button {
+      /* Takes care of spacing in between elements, for when multiple elements appear on
+      one row. Also adds margin spacing to the far sides (left and right of the containing
+      box), but this margin is visually negated through negative margins set on its parent. */
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+
+    button {
+      display: inline-block;
+      padding-left: 32px;
+      padding-right: 32px;
+      width: unset;
+    }
   }
 `;
 

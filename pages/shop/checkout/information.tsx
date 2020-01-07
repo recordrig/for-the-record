@@ -145,7 +145,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                   </FormRow>
                   <FormRow>
                     <label htmlFor="info-addressline1">
-                      Address Line 1
+                      Address line 1
                       <input
                         id="info-addressline1"
                         minLength={5}
@@ -159,7 +159,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                   </FormRow>
                   <FormRow>
                     <label htmlFor="info-addressline2">
-                      Address Line 2 (optional)
+                      Address line 2 (optional)
                       <input
                         id="info-addressline2"
                         maxLength={32}
@@ -187,8 +187,6 @@ const CheckoutInformationPage: FunctionComponent = () => {
                         type="text"
                       />
                     </label>
-                  </FormRow>
-                  <FormRow>
                     <label htmlFor="info-city">
                       City
                       <input
@@ -255,7 +253,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                       Phone
                       <input
                         id="info-phone"
-                        maxLength={14}
+                        maxLength={16}
                         minLength={9}
                         name="phone"
                         onChange={handleChange}
@@ -265,9 +263,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                     </label>
                   </FormRow>
                   <FormRow>
-                    <button style={{ marginTop: "4px" }} type="submit">
-                      Next
-                    </button>
+                    <button type="submit">Next</button>
                   </FormRow>
                   <div style={{ height: "48px", fontWeight: "bold" }}>
                     <span
