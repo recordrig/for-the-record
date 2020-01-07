@@ -1,11 +1,14 @@
 import { applyMiddleware, combineReducers, createStore, Store } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
+import account from "./account";
 import shoppingBag from "./shoppingBag";
 
 /**
- * The entire application's state tree structure.
+ * The entire application's state tree structure. Only lists top-level items. Individual
+ * reducer's structures are defined in their own modules.
  */
 interface State {
+  account: {};
   shoppingBag: {};
 }
 
@@ -13,6 +16,7 @@ interface State {
  * The app's state when the store has just been instantiated. It presets some key names.
  */
 const initialState: State = {
+  account: {},
   shoppingBag: {}
 };
 
@@ -23,6 +27,7 @@ const initialState: State = {
  * Each "sub"-reducer only impacts its own section of the state.
  */
 const reducer = combineReducers({
+  account,
   shoppingBag
 });
 
