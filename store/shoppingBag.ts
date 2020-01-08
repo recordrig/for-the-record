@@ -74,18 +74,14 @@ const removeProduct = (
   return newShoppingBag;
 };
 
-const prefix = "shoppingBag";
-
-/**
- * All available shopping bag actions.
- */
-export const actionTypes = {
-  ADD_PRODUCT: `${prefix}/ADD_PRODUCT`,
-  REMOVE_PRODUCT: `${prefix}/REMOVE_PRODUCT`
-};
+// All available shopping bag actions.
+enum ActionTypes {
+  ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
+  REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT"
+}
 
 interface AddProductAction {
-  type: typeof actionTypes.ADD_PRODUCT;
+  type: ActionTypes.ADD_PRODUCT;
   /**
    * The Product ID of the to-be added product.
    */
@@ -95,7 +91,7 @@ interface AddProductAction {
 }
 
 interface RemoveProductAction {
-  type: typeof actionTypes.REMOVE_PRODUCT;
+  type: ActionTypes.REMOVE_PRODUCT;
   /**
    * The Product ID of the to-be removed product.
    */
@@ -108,16 +104,14 @@ type Action = AddProductAction | RemoveProductAction;
 
 const initialState: ShoppingBag = {};
 
-/**
- * Shopping bag reducer.
- */
+// Shopping bag reducer.
 const shoppingBag = (state = initialState, action: Action): ShoppingBag => {
   validateShoppingBag(state);
 
   switch (action.type) {
-    case actionTypes.ADD_PRODUCT:
+    case ActionTypes.ADD_PRODUCT:
       return addProduct(state, action.payload.id);
-    case actionTypes.REMOVE_PRODUCT:
+    case ActionTypes.REMOVE_PRODUCT:
       return removeProduct(state, action.payload.id);
     default:
       return state;

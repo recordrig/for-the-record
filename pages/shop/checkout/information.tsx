@@ -7,7 +7,7 @@ import React, {
 import Head from "next/head";
 import { connect } from "react-redux";
 import withRedux from "../../../store/_withRedux";
-import { actions } from "../../../store/account";
+import { updateCustomerIdAction } from "../../../store/account";
 import { Heading } from "../../../components/Text";
 import Section, { SectionIntro } from "../../../components/Section";
 import Tile, { TileContainer } from "../../../components/Tile";
@@ -17,7 +17,7 @@ type Props = {
   //  `updateCustomerId` should be made available through `connect`ing this component.
   //  NB actions cannot be imported and used directly, because they need to fire through
   //  Redux's store, which is what `connect()` takes care of.
-  updateCustomerId: typeof actions.updateCustomerId;
+  updateCustomerId: typeof updateCustomerIdAction;
 };
 
 const CheckoutInformationPage: FunctionComponent<Props> = ({
@@ -291,7 +291,7 @@ const CheckoutInformationPage: FunctionComponent<Props> = ({
 // Required actions are mapped to functions of the same name that will be available for
 // `dispatch`ing to the store.
 const mapDispatch = {
-  updateCustomerId: actions.updateCustomerId
+  updateCustomerId: updateCustomerIdAction
 };
 
 // In order to be able to dispatch actions using the `store`, it is important to `connect`

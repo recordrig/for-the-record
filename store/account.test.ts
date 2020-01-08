@@ -1,4 +1,4 @@
-import account, { actions } from "./account";
+import account, { updateCustomerIdAction } from "./account";
 
 describe("account reducer", () => {
   describe("updateCustomerId", () => {
@@ -7,7 +7,7 @@ describe("account reducer", () => {
         customerId: null
       };
 
-      const action = actions.updateCustomerId("CUSTOMERID");
+      const action = updateCustomerIdAction("CUSTOMERID");
 
       const newState = {
         customerId: "CUSTOMERID"
@@ -23,7 +23,7 @@ describe("account reducer", () => {
         bar: "beer"
       };
 
-      const action = actions.updateCustomerId("CUSTOMERID");
+      const action = updateCustomerIdAction("CUSTOMERID");
 
       const newState = {
         foo: "bar",
@@ -39,7 +39,7 @@ describe("account reducer", () => {
         customerId: "CUSTOMERID"
       };
 
-      const action = actions.updateCustomerId(null);
+      const action = updateCustomerIdAction(null);
 
       const newState = {
         customerId: null

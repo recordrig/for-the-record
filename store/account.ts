@@ -19,7 +19,7 @@ interface UpdateCustomerIdAction {
   };
 }
 
-const updateCustomerId = (
+export const updateCustomerIdAction = (
   id: UpdateCustomerIdAction["payload"]["id"]
 ): UpdateCustomerIdAction => {
   return {
@@ -28,11 +28,6 @@ const updateCustomerId = (
       id
     }
   };
-};
-
-// All available account actions ("action creators").
-export const actions = {
-  updateCustomerId
 };
 
 const initialState: Account = {
