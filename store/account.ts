@@ -8,9 +8,6 @@ interface Account {
 
 const prefix = "account";
 
-/**
- * All available account actions.
- */
 const actionTypes = {
   UPDATE_CUSTOMER_ID: `${prefix}/UPDATE_CUSTOMER_ID`
 };
@@ -22,9 +19,6 @@ interface UpdateCustomerIdAction {
   };
 }
 
-/**
- * Action creator for updating the customer ID in the local state.
- */
 const updateCustomerId = (
   id: UpdateCustomerIdAction["payload"]["id"]
 ): UpdateCustomerIdAction => {
@@ -36,9 +30,7 @@ const updateCustomerId = (
   };
 };
 
-/**
- * All available account actions ("action creators").
- */
+// All available account actions ("action creators").
 export const actions = {
   updateCustomerId
 };
@@ -47,14 +39,10 @@ const initialState: Account = {
   customerId: null
 };
 
-/**
- * All potential action inputs for the account reducer.
- */
+// All potential action inputs for the account reducer.
 type Action = UpdateCustomerIdAction;
 
-/**
- * Account reducer.
- */
+// Account reducer.
 const account = (state = initialState, action: Action): Account => {
   switch (action.type) {
     case actionTypes.UPDATE_CUSTOMER_ID:

@@ -168,7 +168,13 @@ module.exports = {
       {
         "declaration": false,
         "assignment": false
-      }],
+      }
+    ],
+    /**
+     * We use TypeScript to declare a component's parameters ("props") and as such have no need for
+     * React prop types.
+     */
+    "react/prop-types": "off",
     /**
      * Disable lint errors on functional React and Styled components that don't declare a return type.
      * These components shouldn't need to declare this; TypeScript can instead infer them.

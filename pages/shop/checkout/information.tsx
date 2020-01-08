@@ -6,7 +6,6 @@ import React, {
 } from "react";
 import Head from "next/head";
 import { connect } from "react-redux";
-import { State } from "../../../store/_initializeStore";
 import withRedux from "../../../store/_withRedux";
 import { actions } from "../../../store/account";
 import { Heading } from "../../../components/Text";
@@ -14,21 +13,16 @@ import Section, { SectionIntro } from "../../../components/Section";
 import Tile, { TileContainer } from "../../../components/Tile";
 import Form, { FormRow } from "../../../components/Form";
 
-type CheckoutInformationPageProps = {
-  dispatch: (x) => void;
+type Props = {
+  //  `updateCustomerId` should be made available through `connect`ing this component.
+  //  NB actions cannot be imported and used directly, because they need to fire through
+  //  Redux's store, which is what `connect()` takes care of.
+  updateCustomerId: typeof actions.updateCustomerId;
 };
 
-const CheckoutInformationPage: FunctionComponent<CheckoutInformationPageProps> = ({
-  // eslint-disable-next-line react/prop-types
-  dispatch
+const CheckoutInformationPage: FunctionComponent<Props> = ({
+  updateCustomerId
 }) => {
-  // TODO: Redirect to buy-recordrig if shopping bag is empty.
-  // useEffect(() => {
-  //   if (!shoppingBagItems) {
-  //     Router.push("/shop/buy-recordrig");
-  //   }
-  // });
-
   const [information, setInformation] = useState({
     name: "",
     addressline1: "",
@@ -88,9 +82,6 @@ const CheckoutInformationPage: FunctionComponent<CheckoutInformationPageProps> =
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    console.log("handle submit...");
-    console.log("information:", information);
-    console.log("json information:", JSON.stringify(information));
     try {
       const res = await fetch("/api/customer/create", {
         method: "POST",
@@ -105,7 +96,7 @@ const CheckoutInformationPage: FunctionComponent<CheckoutInformationPageProps> =
           type: "success",
           message: `✅👍 Customer created: ${json}`
         });
-        dispatch(actions.updateCustomerId("HELLO"));
+        updateCustomerId(json.id);
       } else {
         setResponse({
           type: "error",
@@ -297,14 +288,15 @@ const CheckoutInformationPage: FunctionComponent<CheckoutInformationPageProps> =
   );
 };
 
-const mapStateToProps = (state: State) => ({
-  account: state.account
-});
+// Required actions are mapped to functions of the same name that will be available for
+// `dispatch`ing to the store.
+const mapDispatch = {
+  updateCustomerId: actions.updateCustomerId
+};
 
-const ConnectedCheckoutInformationPage = connect(
-  mapStateToProps,
-  null
-)(CheckoutInformationPage);
+// In order to be able to dispatch actions using the `store`, it is important to `connect`
+// our component and map the required state and actions so that they'll be available inside
+// the component (and always up to date, because it's connected).
+const connector = connect(null, mapDispatch);
 
-// TODO: If there's already a customerId in state, fetch customer and prefill values.
-export default withRedux(ConnectedCheckoutInformationPage);
+export default withRedux(connector(CheckoutInformationPage));
