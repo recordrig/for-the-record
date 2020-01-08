@@ -378,19 +378,16 @@ exports[`Storyshots Form default 1`] = `
   flex-grow: 1;
 }
 
-.c3 {
-  padding-bottom: 12px;
-}
-
 .c2 label {
   color: #50565b;
+  display: block;
   font-size: 14px;
   line-height: 28px;
-  margin-bottom: 4px;
+  padding-bottom: 12px;
+  width: 100%;
 }
 
 .c2 input {
-  display: block;
   font-size: 16px;
   height: 42px;
   line-height: 16px;
@@ -402,7 +399,6 @@ exports[`Storyshots Form default 1`] = `
   background-position: right 4px center;
   background-repeat: no-repeat;
   background-size: 24px;
-  display: block;
   font-size: 16px;
   height: 42px;
   line-height: 20px;
@@ -446,14 +442,15 @@ exports[`Storyshots Form default 1`] = `
   border-radius: 2px;
   border: 0;
   color: #ffffff;
+  cursor: pointer;
   display: block;
   font-size: 18px;
   height: 48px;
+  margin-top: 20px;
   outline: none;
-  padding-left: 32px;
-  padding-right: 32px;
   -webkit-text-decoration: none;
   text-decoration: none;
+  width: 100%;
 }
 
 @media (max-width:474px) {
@@ -474,6 +471,32 @@ exports[`Storyshots Form default 1`] = `
   .c1 {
     padding-left: 32px;
     padding-right: 32px;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 label,
+  .c2 button {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .c2 button {
+    display: inline-block;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: unset;
   }
 }
 
@@ -508,10 +531,6 @@ exports[`Storyshots Form default 1`] = `
                 type="text"
               />
             </label>
-          </div>
-          <div
-            className="c3"
-          >
             <label
               htmlFor="contact-email"
             >

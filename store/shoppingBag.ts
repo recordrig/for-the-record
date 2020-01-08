@@ -1,3 +1,6 @@
+// Shared interfaces.
+// -----------------------------------------------------------/
+
 interface ShoppingBagProduct {
   id: string;
   quantity: number;
@@ -6,6 +9,62 @@ interface ShoppingBagProduct {
 interface ShoppingBag {
   [key: string]: ShoppingBagProduct;
 }
+
+// Action types.
+// -----------------------------------------------------------/
+
+enum ActionTypes {
+  ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
+  REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT"
+}
+
+// Action creators.
+// -----------------------------------------------------------/
+
+interface AddProductAction {
+  type: ActionTypes.ADD_PRODUCT;
+  /**
+   * The Product ID of the to-be added product.
+   */
+  payload: {
+    id: string;
+  };
+}
+
+export const addProductAction = (
+  id: AddProductAction["payload"]["id"]
+): AddProductAction => {
+  return {
+    type: ActionTypes.ADD_PRODUCT,
+    payload: {
+      id
+    }
+  };
+};
+
+interface RemoveProductAction {
+  type: ActionTypes.REMOVE_PRODUCT;
+  /**
+   * The Product ID of the to-be removed product.
+   */
+  payload: {
+    id: string;
+  };
+}
+
+export const removeProductAction = (
+  id: AddProductAction["payload"]["id"]
+): RemoveProductAction => {
+  return {
+    type: ActionTypes.REMOVE_PRODUCT,
+    payload: {
+      id
+    }
+  };
+};
+
+// Reducer helper functions.
+// -----------------------------------------------------------/
 
 /**
  * Check if all product ID's match their corresponding object key.
@@ -70,54 +129,23 @@ const removeProduct = (
   // Remove the product from the shopping bag by splitting it in two, and only returning the
   // remaining products that do not match the productId we were looking for.
   const { [productId]: product, ...newShoppingBag } = shoppingBag;
-
   return newShoppingBag;
 };
 
-const prefix = "shoppingBag";
-
-/**
- * All available shopping bag actions.
- */
-export const actionTypes = {
-  ADD_PRODUCT: `${prefix}/ADD_PRODUCT`,
-  REMOVE_PRODUCT: `${prefix}/REMOVE_PRODUCT`
-};
-
-interface AddProductAction {
-  type: typeof actionTypes.ADD_PRODUCT;
-  /**
-   * The Product ID of the to-be added product.
-   */
-  payload: {
-    id: string;
-  };
-}
-
-interface RemoveProductAction {
-  type: typeof actionTypes.REMOVE_PRODUCT;
-  /**
-   * The Product ID of the to-be removed product.
-   */
-  payload: {
-    id: string;
-  };
-}
+// Reducer.
+// -----------------------------------------------------------/
 
 type Action = AddProductAction | RemoveProductAction;
 
 const initialState: ShoppingBag = {};
 
-/**
- * Shopping bag reducer.
- */
 const shoppingBag = (state = initialState, action: Action): ShoppingBag => {
   validateShoppingBag(state);
 
   switch (action.type) {
-    case actionTypes.ADD_PRODUCT:
+    case ActionTypes.ADD_PRODUCT:
       return addProduct(state, action.payload.id);
-    case actionTypes.REMOVE_PRODUCT:
+    case ActionTypes.REMOVE_PRODUCT:
       return removeProduct(state, action.payload.id);
     default:
       return state;

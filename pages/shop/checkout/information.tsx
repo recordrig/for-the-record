@@ -5,20 +5,24 @@ import React, {
   useState
 } from "react";
 import Head from "next/head";
+import { connect } from "react-redux";
 import withRedux from "../../../store/_withRedux";
+import { updateCustomerIdAction } from "../../../store/account";
 import { Heading } from "../../../components/Text";
 import Section, { SectionIntro } from "../../../components/Section";
 import Tile, { TileContainer } from "../../../components/Tile";
 import Form, { FormRow } from "../../../components/Form";
 
-const CheckoutInformationPage: FunctionComponent = () => {
-  // TODO: Redirect to buy-recordrig if shopping bag is empty.
-  // useEffect(() => {
-  //   if (!shoppingBagItems) {
-  //     Router.push("/shop/buy-recordrig");
-  //   }
-  // });
+type Props = {
+  //  `updateCustomerId` should be made available through `connect`ing this component.
+  //  NB actions cannot be imported and used directly, because they need to fire through
+  //  Redux's store, which is what `connect()` takes care of.
+  updateCustomerId: typeof updateCustomerIdAction;
+};
 
+const CheckoutInformationPage: FunctionComponent<Props> = ({
+  updateCustomerId
+}) => {
   const [information, setInformation] = useState({
     name: "",
     addressline1: "",
@@ -78,9 +82,6 @@ const CheckoutInformationPage: FunctionComponent = () => {
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-    console.log("handle submit...");
-    console.log("information:", information);
-    console.log("json information:", JSON.stringify(information));
     try {
       const res = await fetch("/api/customer/create", {
         method: "POST",
@@ -95,6 +96,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
           type: "success",
           message: `✅👍 Customer created: ${json}`
         });
+        updateCustomerId(json.id);
       } else {
         setResponse({
           type: "error",
@@ -145,7 +147,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                   </FormRow>
                   <FormRow>
                     <label htmlFor="info-addressline1">
-                      Address Line 1
+                      Address line 1
                       <input
                         id="info-addressline1"
                         minLength={5}
@@ -159,7 +161,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                   </FormRow>
                   <FormRow>
                     <label htmlFor="info-addressline2">
-                      Address Line 2 (optional)
+                      Address line 2 (optional)
                       <input
                         id="info-addressline2"
                         maxLength={32}
@@ -187,8 +189,6 @@ const CheckoutInformationPage: FunctionComponent = () => {
                         type="text"
                       />
                     </label>
-                  </FormRow>
-                  <FormRow>
                     <label htmlFor="info-city">
                       City
                       <input
@@ -255,7 +255,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                       Phone
                       <input
                         id="info-phone"
-                        maxLength={14}
+                        maxLength={16}
                         minLength={9}
                         name="phone"
                         onChange={handleChange}
@@ -265,9 +265,7 @@ const CheckoutInformationPage: FunctionComponent = () => {
                     </label>
                   </FormRow>
                   <FormRow>
-                    <button style={{ marginTop: "4px" }} type="submit">
-                      Next
-                    </button>
+                    <button type="submit">Next</button>
                   </FormRow>
                   <div style={{ height: "48px", fontWeight: "bold" }}>
                     <span
@@ -290,5 +288,15 @@ const CheckoutInformationPage: FunctionComponent = () => {
   );
 };
 
-// TODO: If there's already a customerId in state, fetch customer and prefill values.
-export default withRedux(CheckoutInformationPage);
+// Required actions are mapped to functions of the same name that will be available for
+// `dispatch`ing to the store.
+const mapDispatch = {
+  updateCustomerId: updateCustomerIdAction
+};
+
+// In order to be able to dispatch actions using the `store`, it is important to `connect`
+// our component and map the required state and actions so that they'll be available inside
+// the component (and always up to date, because it's connected).
+const connector = connect(null, mapDispatch);
+
+export default withRedux(connector(CheckoutInformationPage));

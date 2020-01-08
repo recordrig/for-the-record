@@ -9,7 +9,7 @@ const StyledImage = styled.div`
   }
 `;
 
-type ImageProps = {
+interface ImageProps {
   /**
    * Image description for screen readers. An empty image tag will be included by default
    * to prevent screen reader's behaviour of reading out full URL's when the alt tag is omitted.
@@ -17,7 +17,7 @@ type ImageProps = {
    */
   alt?: string;
   src: string;
-};
+}
 
 /**
  * Provides a ready-for-use Image node which sets some common sense base styles.
@@ -48,10 +48,10 @@ const StyledOptimizedMedia = styled.div`
   width: 100%;
 `;
 
-type OptimizedMediaProps = {
+interface OptimizedMediaProps {
   hires: ReactNode;
   lowres: ReactNode;
-};
+}
 
 /**
  * OptimizedMedia takes a low quality image (or other React Node) and high quality

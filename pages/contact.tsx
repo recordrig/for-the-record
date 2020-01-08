@@ -100,8 +100,6 @@ const ContactPage: FunctionComponent = () => {
                         type="text"
                       />
                     </label>
-                  </FormRow>
-                  <FormRow>
                     <label htmlFor="contact-email">
                       Email
                       <input

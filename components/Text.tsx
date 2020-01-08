@@ -1,9 +1,9 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
-type StyledCapsHeadingProps = {
+interface StyledCapsHeadingProps {
   fontColor: string;
-};
+}
 
 const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
   ${({ fontColor }: StyledCapsHeadingProps): FlattenSimpleInterpolation => css`
@@ -45,11 +45,11 @@ const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
   `}
 `;
 
-type CapsHeadingProps = {
+interface CapsHeadingProps {
   children: string;
   color?: string;
   h?: 1 | 2 | 3 | 4 | 5 | 6;
-};
+}
 
 export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
   children,
@@ -71,10 +71,10 @@ export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
   );
 };
 
-type StyledHeadingProps = {
+interface StyledHeadingProps {
   center: boolean;
   fontColor: string;
-};
+}
 
 const StyledHeading = styled.div<StyledHeadingProps>`
   ${({
@@ -142,12 +142,12 @@ const StyledHeading = styled.div<StyledHeadingProps>`
   `}
 `;
 
-type HeadingProps = {
+interface HeadingProps {
   center?: boolean;
   children: string | ReactNode | ReactNodeArray;
   color?: string;
   h?: 1 | 2 | 3 | 4 | 5 | 6;
-};
+}
 
 export const Heading: FunctionComponent<HeadingProps> = ({
   center = false,
@@ -172,9 +172,9 @@ export const Heading: FunctionComponent<HeadingProps> = ({
   );
 };
 
-type StyledParagraphProps = {
+interface StyledParagraphProps {
   fontColor: string;
-};
+}
 
 const StyledParagraph = styled.p<StyledParagraphProps>`
   ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
@@ -200,10 +200,10 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
   `}
 `;
 
-type ParagraphProps = {
+interface ParagraphProps {
   children: string;
   color?: string;
-};
+}
 
 export const Paragraph: FunctionComponent<ParagraphProps> = ({
   children,
@@ -212,9 +212,9 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   <StyledParagraph fontColor={color}>{children}</StyledParagraph>
 );
 
-type StyledTextProps = {
+interface StyledTextProps {
   fontColor: string;
-};
+}
 
 const StyledText = styled.span<StyledTextProps>`
   ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
@@ -240,10 +240,10 @@ const StyledText = styled.span<StyledTextProps>`
   `}
 `;
 
-type TextProps = {
+interface TextProps {
   children: string;
   color?: string;
-};
+}
 
 const Text: FunctionComponent<TextProps> = ({
   children,

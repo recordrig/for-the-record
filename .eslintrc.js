@@ -49,6 +49,16 @@ module.exports = {
       }
     },
     /**
+     * Do not require the explicit definition of return types in these folders where we often
+     * integrate with 3rd party interfaces/API's.
+     */
+    {
+      "files": ["./components/**/*.tsx", "./pages/**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    },
+    /**
      * Allow ordinary module imports in config files which are not transpiled.
      */
     {
@@ -158,7 +168,13 @@ module.exports = {
       {
         "declaration": false,
         "assignment": false
-      }],
+      }
+    ],
+    /**
+     * We use TypeScript to declare a component's parameters ("props") and as such have no need for
+     * React prop types.
+     */
+    "react/prop-types": "off",
     /**
      * Disable lint errors on functional React and Styled components that don't declare a return type.
      * These components shouldn't need to declare this; TypeScript can instead infer them.

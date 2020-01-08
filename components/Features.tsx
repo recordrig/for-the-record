@@ -23,10 +23,10 @@ const StyledFeature = styled.div`
   }
 `;
 
-type FeatureProps = {
+interface FeatureProps {
   description: string;
   number: number;
-};
+}
 
 const Feature: FunctionComponent<FeatureProps> = ({
   description,
@@ -109,9 +109,9 @@ const StyledFeatures = styled.div`
   }
 `;
 
-type FeaturesProps = {
+interface FeaturesProps {
   texts: [string, string, string, string];
-};
+}
 
 /**
  * Exactly four features that will render along with a number as a group. Side-by-side on large

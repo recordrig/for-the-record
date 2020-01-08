@@ -28,18 +28,18 @@ const StyledTileContainer = styled.div`
   }
 `;
 
-type TileContainerProps = {
+interface TileContainerProps {
   children: ReactNode | ReactNodeArray;
-};
+}
 
 export const TileContainer: FunctionComponent<TileContainerProps> = ({
   children
 }: TileContainerProps) => <StyledTileContainer>{children}</StyledTileContainer>;
 
-type StyledLinkTileProps = {
+interface StyledLinkTileProps {
   accentColor: string;
   backgroundColor: string;
-};
+}
 
 const StyledLinkTile = styled.a<StyledLinkTileProps>`
   ${({
@@ -54,9 +54,9 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
   `}
 `;
 
-type StyledTileProps = {
+interface StyledTileProps {
   backgroundColor: string;
-};
+}
 
 const StyledTile = styled.div<StyledTileProps>`
   ${({ backgroundColor }: StyledTileProps): FlattenSimpleInterpolation => css`
@@ -72,12 +72,12 @@ const StyledTile = styled.div<StyledTileProps>`
   `}
 `;
 
-type TileProps = {
+interface TileProps {
   accentColor?: string;
   backgroundColor?: string;
   children: ReactNode | ReactNodeArray;
   link?: string;
-};
+}
 
 const Tile: FunctionComponent<TileProps> = ({
   accentColor = "#000",

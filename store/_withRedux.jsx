@@ -4,9 +4,9 @@ import App from "next/app";
 import initializeStore from "./_initializeStore";
 
 /**
- * Helper for connecting Redux with Next.js. Wrap all pages with this helper to make the Redux
- * store available on all pages. It uses SSR on the first render and after that all updates happen
- * on the client-side.
+ * Helper for connecting Redux with Next.js through its `<Provider>` component. Wrap all pages with
+ * this helper to make the Redux store available on all pages. It uses SSR on the first render and
+ * after that all updates happen on the client-side.
  *
  * See [the official Next.js example](https://github.com/zeit/next.js/tree/canary/examples/with-redux).
  *
