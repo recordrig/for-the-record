@@ -1,7 +1,7 @@
 import account, { updateCustomerIdAction } from "./account";
 
 describe("account reducer", () => {
-  describe("updateCustomerId", () => {
+  describe("Update customer ID", () => {
     test("Update customer ID in otherwise empty state object", () => {
       const state = {
         customerId: null

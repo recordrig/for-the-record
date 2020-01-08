@@ -1,4 +1,7 @@
-import shoppingBag, { actionTypes } from "./shoppingBag";
+import shoppingBag, {
+  addProductAction,
+  removeProductAction
+} from "./shoppingBag";
 
 describe("shoppingBag reducer", () => {
   test("Check the shoppingBag data structure and throw if invalid", () => {
@@ -9,28 +12,18 @@ describe("shoppingBag reducer", () => {
       }
     };
 
-    const action = {
-      type: actionTypes.ADD_PRODUCT,
-      payload: {
-        id: "PRODUCTID"
-      }
-    };
+    const action = addProductAction("PRODUCTID");
 
     expect(() => {
       shoppingBag(faultyState, action);
     }).toThrow();
   });
 
-  describe(actionTypes.ADD_PRODUCT, () => {
+  describe("Add product", () => {
     test("Add product to empty shopping bag", () => {
       const state = {};
 
-      const action = {
-        type: actionTypes.ADD_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = addProductAction("PRODUCTID");
 
       const newState = {
         PRODUCTID: {
@@ -54,12 +47,7 @@ describe("shoppingBag reducer", () => {
         }
       };
 
-      const action = {
-        type: actionTypes.ADD_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = addProductAction("PRODUCTID");
 
       const newState = {
         PRODORP: {
@@ -87,12 +75,7 @@ describe("shoppingBag reducer", () => {
         }
       };
 
-      const action = {
-        type: actionTypes.ADD_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = addProductAction("PRODUCTID");
 
       const newState = {
         PRODUCTID: {
@@ -120,12 +103,7 @@ describe("shoppingBag reducer", () => {
         }
       };
 
-      const action = {
-        type: actionTypes.ADD_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = addProductAction("PRODUCTID");
 
       const newState = {
         PRODORP: {
@@ -146,7 +124,7 @@ describe("shoppingBag reducer", () => {
     });
   });
 
-  describe(actionTypes.REMOVE_PRODUCT, () => {
+  describe("Remove product", () => {
     test("Remove product from shopping bag when it's the only product", () => {
       const state = {
         PRODUCTID: {
@@ -155,12 +133,7 @@ describe("shoppingBag reducer", () => {
         }
       };
 
-      const action = {
-        type: actionTypes.REMOVE_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = removeProductAction("PRODUCTID");
 
       const newState = {};
 
@@ -183,12 +156,7 @@ describe("shoppingBag reducer", () => {
         }
       };
 
-      const action = {
-        type: actionTypes.REMOVE_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = removeProductAction("PRODUCTID");
 
       const newState = {
         PRODORP: {
@@ -220,12 +188,7 @@ describe("shoppingBag reducer", () => {
         }
       };
 
-      const action = {
-        type: actionTypes.REMOVE_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = removeProductAction("PRODUCTID");
 
       const newState = {
         PRODORP: {
@@ -244,12 +207,7 @@ describe("shoppingBag reducer", () => {
     test("Removing a product from empty shopping bag does NOT error but just returns the original empty object", () => {
       const state = {};
 
-      const action = {
-        type: actionTypes.REMOVE_PRODUCT,
-        payload: {
-          id: "PRODUCTID"
-        }
-      };
+      const action = removeProductAction("PRODUCTID");
 
       const newState = {};
 

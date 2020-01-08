@@ -1,3 +1,6 @@
+// Shared interfaces.
+// -----------------------------------------------------------/
+
 interface ShoppingBagProduct {
   id: string;
   quantity: number;
@@ -6,6 +9,62 @@ interface ShoppingBagProduct {
 interface ShoppingBag {
   [key: string]: ShoppingBagProduct;
 }
+
+// Action types.
+// -----------------------------------------------------------/
+
+enum ActionTypes {
+  ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
+  REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT"
+}
+
+// Action creators.
+// -----------------------------------------------------------/
+
+interface AddProductAction {
+  type: ActionTypes.ADD_PRODUCT;
+  /**
+   * The Product ID of the to-be added product.
+   */
+  payload: {
+    id: string;
+  };
+}
+
+export const addProductAction = (
+  id: AddProductAction["payload"]["id"]
+): AddProductAction => {
+  return {
+    type: ActionTypes.ADD_PRODUCT,
+    payload: {
+      id
+    }
+  };
+};
+
+interface RemoveProductAction {
+  type: ActionTypes.REMOVE_PRODUCT;
+  /**
+   * The Product ID of the to-be removed product.
+   */
+  payload: {
+    id: string;
+  };
+}
+
+export const removeProductAction = (
+  id: AddProductAction["payload"]["id"]
+): RemoveProductAction => {
+  return {
+    type: ActionTypes.REMOVE_PRODUCT,
+    payload: {
+      id
+    }
+  };
+};
+
+// Reducer helper functions.
+// -----------------------------------------------------------/
 
 /**
  * Check if all product ID's match their corresponding object key.
@@ -74,37 +133,13 @@ const removeProduct = (
   return newShoppingBag;
 };
 
-// All available shopping bag actions.
-enum ActionTypes {
-  ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
-  REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT"
-}
-
-interface AddProductAction {
-  type: ActionTypes.ADD_PRODUCT;
-  /**
-   * The Product ID of the to-be added product.
-   */
-  payload: {
-    id: string;
-  };
-}
-
-interface RemoveProductAction {
-  type: ActionTypes.REMOVE_PRODUCT;
-  /**
-   * The Product ID of the to-be removed product.
-   */
-  payload: {
-    id: string;
-  };
-}
+// Reducer.
+// -----------------------------------------------------------/
 
 type Action = AddProductAction | RemoveProductAction;
 
 const initialState: ShoppingBag = {};
 
-// Shopping bag reducer.
 const shoppingBag = (state = initialState, action: Action): ShoppingBag => {
   validateShoppingBag(state);
 

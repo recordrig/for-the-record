@@ -1,3 +1,6 @@
+// Shared interfaces.
+// -----------------------------------------------------------/
+
 interface Account {
   /**
    * The customer ID from Stripe, or `null` if no Stripe customer ID is associated
@@ -6,14 +9,18 @@ interface Account {
   customerId: string | null;
 }
 
-const prefix = "account";
+// Action types.
+// -----------------------------------------------------------/
 
-const actionTypes = {
-  UPDATE_CUSTOMER_ID: `${prefix}/UPDATE_CUSTOMER_ID`
-};
+enum ActionTypes {
+  UPDATE_CUSTOMER_ID = "account/UPDATE_CUSTOMER_ID"
+}
+
+// Action creators.
+// -----------------------------------------------------------/
 
 interface UpdateCustomerIdAction {
-  type: typeof actionTypes.UPDATE_CUSTOMER_ID;
+  type: typeof ActionTypes.UPDATE_CUSTOMER_ID;
   payload: {
     id: string | null;
   };
@@ -23,12 +30,15 @@ export const updateCustomerIdAction = (
   id: UpdateCustomerIdAction["payload"]["id"]
 ): UpdateCustomerIdAction => {
   return {
-    type: actionTypes.UPDATE_CUSTOMER_ID,
+    type: ActionTypes.UPDATE_CUSTOMER_ID,
     payload: {
       id
     }
   };
 };
+
+// Reducer.
+// -----------------------------------------------------------/
 
 const initialState: Account = {
   customerId: null
@@ -40,7 +50,7 @@ type Action = UpdateCustomerIdAction;
 // Account reducer.
 const account = (state = initialState, action: Action): Account => {
   switch (action.type) {
-    case actionTypes.UPDATE_CUSTOMER_ID:
+    case ActionTypes.UPDATE_CUSTOMER_ID:
       return {
         ...state,
         customerId: action.payload.id
