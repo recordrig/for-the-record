@@ -129,7 +129,6 @@ const removeProduct = (
   // Remove the product from the shopping bag by splitting it in two, and only returning the
   // remaining products that do not match the productId we were looking for.
   const { [productId]: product, ...newShoppingBag } = shoppingBag;
-
   return newShoppingBag;
 };
 

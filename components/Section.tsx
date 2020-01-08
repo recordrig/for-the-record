@@ -26,9 +26,9 @@ const StyledSubSection = styled.div`
   }
 `;
 
-type SubSectionProps = {
+interface SubSectionProps {
   children: ReactNode | ReactNodeArray;
-};
+}
 
 /**
  * SubSection can be used to only utilise half of the available width (on larger screens).
@@ -53,9 +53,9 @@ const StyledSectionIntro = styled.div`
   }
 `;
 
-type SectionIntroProps = {
+interface SectionIntroProps {
   children: ReactNode | ReactNodeArray;
-};
+}
 
 /**
  * SectionIntro provides a full-width, extra padded container. Works well with a Heading
@@ -82,9 +82,9 @@ const StyledSectionRow = styled.div`
   }
 `;
 
-type StyledSectionRowProps = {
+interface StyledSectionRowProps {
   children: ReactNode | ReactNodeArray;
-};
+}
 
 /**
  * SectionRow vertically seperates various parts of a Section. When used with SubSections,
@@ -103,9 +103,9 @@ const PositionedSectionContent = styled.div`
   width: 100%;
 `;
 
-type StyledSectionProps = {
+interface StyledSectionProps {
   backgroundColor: string;
-};
+}
 
 const StyledSection = styled.div<StyledSectionProps>`
   ${({
@@ -146,10 +146,10 @@ const StyledSection = styled.div<StyledSectionProps>`
   `}
 `;
 
-type SectionProps = {
+interface SectionProps {
   children: ReactNode | ReactNodeArray;
   dark?: boolean;
-};
+}
 
 /**
  * Section groups a logical subset of content together and visually separates it from other
