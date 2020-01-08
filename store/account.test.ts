@@ -1,18 +1,13 @@
-import account, { actionTypes } from "./account";
+import account, { actions } from "./account";
 
 describe("account reducer", () => {
-  describe(actionTypes.UPDATE_CUSTOMER_ID, () => {
+  describe("updateCustomerId", () => {
     test("Update customer ID in otherwise empty state object", () => {
       const state = {
         customerId: null
       };
 
-      const action = {
-        type: actionTypes.UPDATE_CUSTOMER_ID,
-        payload: {
-          id: "CUSTOMERID"
-        }
-      };
+      const action = actions.updateCustomerId("CUSTOMERID");
 
       const newState = {
         customerId: "CUSTOMERID"
@@ -28,12 +23,7 @@ describe("account reducer", () => {
         bar: "beer"
       };
 
-      const action = {
-        type: actionTypes.UPDATE_CUSTOMER_ID,
-        payload: {
-          id: "CUSTOMERID"
-        }
-      };
+      const action = actions.updateCustomerId("CUSTOMERID");
 
       const newState = {
         foo: "bar",
@@ -49,12 +39,7 @@ describe("account reducer", () => {
         customerId: "CUSTOMERID"
       };
 
-      const action = {
-        type: actionTypes.UPDATE_CUSTOMER_ID,
-        payload: {
-          id: null
-        }
-      };
+      const action = actions.updateCustomerId(null);
 
       const newState = {
         customerId: null
