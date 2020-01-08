@@ -79,6 +79,9 @@ interface TileProps {
   link?: string;
 }
 
+/**
+ * Visual wrapper for related elements to make an informative whole.
+ */
 const Tile: FunctionComponent<TileProps> = ({
   accentColor = "#000",
   backgroundColor = "#fff",

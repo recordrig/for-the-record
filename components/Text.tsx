@@ -56,7 +56,7 @@ export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
   color = "#000",
   h = 3
 }: CapsHeadingProps) => {
-  /**
+  /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
    * As a workaround we explicitely assign the `any` type so that it won't error on `<TagElem>`.
    * See [issue on GitHub](https://github.com/microsoft/TypeScript/issues/28768)
@@ -155,7 +155,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({
   color = "#000",
   h = 2
 }: HeadingProps) => {
-  /**
+  /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
    * As a workaround we explicitely assign the `any` type so that it won't error on `<TagElem>`.
    * See [issue on GitHub](https://github.com/microsoft/TypeScript/issues/28768)

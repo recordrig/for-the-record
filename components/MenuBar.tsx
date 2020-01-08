@@ -45,6 +45,11 @@ const StyledTopMenu = styled.nav`
   }
 `;
 
+/**
+ * Full width menu bar.
+ *
+ * NB positioning within a page should be taken care of by the component that includes it.
+ */
 const MenuBar: FunctionComponent = () => (
   <StyledTopMenu>
     <ul>

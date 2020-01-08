@@ -2,7 +2,7 @@
 const withSourceMaps = require("@zeit/next-source-maps")();
 
 // Enable development with env vars using `npm run dev`. (`now dev` does not need Dotenv.)
-require("dotenv").config(); // eslint-disable-line
+require("dotenv").config();
 
 module.exports = withSourceMaps({
   // Expose keys CLIENT-SIDE.

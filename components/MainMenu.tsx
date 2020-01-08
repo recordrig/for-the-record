@@ -31,6 +31,9 @@ const StyledMainMenu = styled.nav`
   }
 `;
 
+/**
+ * List of all core menu items (most important pages).
+ */
 const MainMenu: FunctionComponent = () => (
   <StyledMainMenu>
     <ul>

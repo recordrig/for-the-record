@@ -1,4 +1,4 @@
-/**
+/*
  * Import original airbnbStyleRules to override some rules set by other packages
  * e.g. `@typescript-eslint`'s indentation settings (4 spaces vs 2).
  */
@@ -16,7 +16,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended"
   ],
   "overrides": [
-    /**
+    /*
      * Allow jest-specific variabled in test files.
      */
     {
@@ -26,7 +26,7 @@ module.exports = {
       }
     },
     {
-      /** 
+      /*
        * For TypeScript files, we want to be strict. We turned these rules off further
        * down, but that's intended just for JavaScript files, for which we want to be
        * more lax as we've usually adopted these from other codebases (and as such, we
@@ -38,7 +38,7 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": ["error"]
       }
     },
-    /**
+    /*
      * Allow non-camelcase in files that communicate with external API's (and have to
      * abide by their rules).
      */
@@ -48,7 +48,7 @@ module.exports = {
         "@typescript-eslint/camelcase": "off"
       }
     },
-    /**
+    /*
      * Do not require the explicit definition of return types in these folders where we often
      * integrate with 3rd party interfaces/API's.
      */
@@ -58,7 +58,7 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": "off"
       }
     },
-    /**
+    /*
      * Allow ordinary module imports in config files which are not transpiled.
      */
     {
@@ -67,7 +67,7 @@ module.exports = {
         "@typescript-eslint/no-var-requires": "off"
       }
     },
-     /**
+    /*
      * Allow triple slashes `///` in this file which is generated and maintained automatically by Next.js.
      * We want to keep the original structure intact as a [Triple-Slash Directive](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) is a compiler directive used by TypeScript.
      */
@@ -93,7 +93,7 @@ module.exports = {
     "react"
   ],
   "rules": {
-    /** 
+    /*
      * Airbnb's config assumes `js` and `jsx` files to be supported natively, but doesn't
      * know about `ts` and `tsx` files on its own. We want to allow e.g. `import "./myModule"`
      * without having to suffix with `ts`.
@@ -108,7 +108,7 @@ module.exports = {
         "tsx": "never"
       }
     ],
-    /**
+    /*
      * Allow imports from packages listed under `devDependencies` for dev and test files.
      */
     "import/no-extraneous-dependencies": [
@@ -120,7 +120,7 @@ module.exports = {
         ]
       }
     ],
-    /**
+    /*
      * Custom rule to support Next.js' present-day Link API.
      * See [related issue on GitHub](https://github.com/zeit/next.js/issues/5533).
      */
@@ -140,11 +140,11 @@ module.exports = {
         ]
       }
     ],
-    /**
+    /*
      * ESLint should error when it finds issues related to the Prettier config which was extended.
      */
     "prettier/prettier": ["error"],
-    /**
+    /*
      * Airbnb's config doesn't account for any TypeScript configuration so we need to tell it
      * that it's ok if we encounter JSX in `.tsx` files.
      */
@@ -154,12 +154,12 @@ module.exports = {
         "extensions": [".jsx", ".tsx"]
       }
     ],
-    /** 
+    /*
      * We turn this off here so that we can use this in (usually adopted) JavaScript files, but turn
      * this back on for `.ts` and `.tsx` files further up, which are written and maintained by ourselves.
      */
     "react/jsx-props-no-spreading": "off",
-    /**
+    /*
      * Resolve a conflict between Prettier and Airbnb's configs by disabling errors on the lack of
      * parenthesis around multilines.
      */
@@ -170,12 +170,12 @@ module.exports = {
         "assignment": false
       }
     ],
-    /**
+    /*
      * We use TypeScript to declare a component's parameters ("props") and as such have no need for
      * React prop types.
      */
     "react/prop-types": "off",
-    /**
+    /*
      * Disable lint errors on functional React and Styled components that don't declare a return type.
      * These components shouldn't need to declare this; TypeScript can instead infer them.
      * Community agrees; will be removed from `typescript-eslint` in a future version. See [PR on GitHub](https://github.com/typescript-eslint/typescript-eslint/pull/260).
@@ -185,17 +185,17 @@ module.exports = {
       "allowExpressions": true, // Styled components
       "allowTypedFunctionExpressions": true // React components
     }],
-    /**
+    /*
      * Keep original indent preferences (2-space basis and others) (opinionated) instead of
      * TypeScript's 4-space indentation.
      */
     "@typescript-eslint/indent": airbnbStyleRules.indent,
-    /**
+    /*
      * Rule has [no right to exist](https://github.com/typescript-eslint/typescript-eslint/issues/433).
      * Will be removed from `typescript-eslint` in a future major version (since it's a breaking change). For now we'll disable manually.
      */ 
     "@typescript-eslint/prefer-interface": 0,
-    /**
+    /*
      * Disable in general, but we turn this back on for `.ts` and `.tsx` files in the "overrides"
      * section further up. We just want it disabled for `.js` and `.jsx` files as it doesn't _do_
      * type declarations and such.

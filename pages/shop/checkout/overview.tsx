@@ -30,7 +30,7 @@ const CheckoutPage: NextPage<CheckoutPageProps> = ({
    */
   const [stripe, setStripe] = useState<Window["Stripe"] | null>(null);
 
-  /**
+  /*
    * Set our globally available Stripe object to our `stripe` state
    */
   useEffect(

@@ -21,10 +21,8 @@ const withRecordRigFontStyles = (story) => (
   </>
 );
 
-/**
- * Add the RecordRig globally required font styles to every story through Storybook's decorator
- * mechanism.
- */
+// Add the RecordRig globally required font styles to every story through Storybook's decorator
+// mechanism.
 addDecorator(withRecordRigFontStyles);
 
 /**

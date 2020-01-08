@@ -2,7 +2,13 @@ import React from "react";
 import Error from "next/error";
 import * as Sentry from "@sentry/node";
 
-// eslint-disable-next-line react/prop-types
+/**
+ * Define a custom error page in order to integrage Next.js's error handling with
+ * Sentry, our error logging tool. See the [Next.js Sentry example](https://github.com/zeit/next.js/tree/canary/examples/with-sentry-simple)
+ *
+ * NB This page is only rendered in production. As such, we can assume Sentry
+ * to be defined (via `_app.js`).
+ */
 const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
   if (!hasGetInitialPropsRun && err) {
     // getInitialProps is not called in case of
@@ -14,13 +20,6 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
   return <Error statusCode={statusCode} />;
 };
 
-/**
- * Integrate Next.js's error handling with Sentry, our error logging tool.
- * See the [Next.js Sentry example](https://github.com/zeit/next.js/tree/canary/examples/with-sentry-simple)
- *
- * NB This page is only rendered in production. As such, we can assume Sentry
- * to be defined (via `_app.js`).
- */
 MyError.getInitialProps = async ({ res, err, asPath }) => {
   const errorInitialProps = await Error.getInitialProps({ res, err });
 

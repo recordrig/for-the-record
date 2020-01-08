@@ -119,6 +119,9 @@ interface FormProps {
   children: ReactNode | ReactNodeArray;
 }
 
+/**
+ * Defines a styled parend component that takes care of the styling of common form elements.
+ */
 const Form: FunctionComponent<FormProps> = ({ children }: FormProps) => (
   <StyledForm>{children}</StyledForm>
 );

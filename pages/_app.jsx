@@ -80,7 +80,7 @@ const ApplicationStyles = createGlobalStyle`
   ${loaderBarStyles}
 `;
 
-/**
+/*
  * If in prod, initialize Sentry, our error logging tool.
  *
  * We import it conditionally because other tools importing from this file might break otherwise.
@@ -154,7 +154,7 @@ export default class RecordRigApp extends App {
         </PositionedMenuBar>
         <Component key={router.route} {...modifiedPageProps} />
         <Footer />
-        {/**
+        {/*
          * LoaderBar manages its own lifecycle based on Next's Router and as such
          * is NOT passed along as a prop with `PageTransition`.
          */}
