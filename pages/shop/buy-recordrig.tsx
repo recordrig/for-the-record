@@ -1,5 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import styled from "styled-components";
 import withRedux from "../../store/_withRedux";
 import Section from "../../components/Section";
@@ -17,7 +18,7 @@ const StyledRecordRigOptions = styled.div`
     font-weight: bold;
   }
 
-  button {
+  a {
     background-color: #0062ff;
     border-radius: 2px;
     border: 0;
@@ -26,8 +27,10 @@ const StyledRecordRigOptions = styled.div`
     display: block;
     font-size: 18px;
     height: 48px;
+    line-height: 48px;
     margin-top: 12px;
     outline: none;
+    text-align: center;
     text-decoration: none;
     width: 100%;
   }
@@ -134,38 +137,103 @@ const StyledRecordRigOptions = styled.div`
 
 const StyledBuyRecordRigPage = styled.div``;
 
-const BuyRecordRigPage: NextPage = () => (
+interface BuyRecordRigPageProps {
+  description: string;
+  heading: string;
+  selectedColor: string | null;
+  title: string;
+}
+
+const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
+  description,
+  heading,
+  selectedColor,
+  title
+}) => (
   <StyledBuyRecordRigPage>
+    <Head>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+    </Head>
     <Section>
-      <Heading center>Choose your RecordRig.</Heading>
-      <StyledRecordRigOptions>
-        <Tile>
-          <TileContainer>
-            <img alt="" src="/recordrig-black.png" />
-            <p>
-              RecordRig -&nbsp;
-              <br />
-              <i>Stealth Black</i>
-            </p>
-            <span>From € 2299</span>
-            <button type="button">Select</button>
-          </TileContainer>
-        </Tile>
-        <Tile>
-          <TileContainer>
-            <img alt="" src="/recordrig.png" />
-            <p>
-              RecordRig -&nbsp;
-              <br />
-              <i>Pristine White</i>
-            </p>
-            <span>From € 2299</span>
-            <button type="button">Select</button>
-          </TileContainer>
-        </Tile>
-      </StyledRecordRigOptions>
+      <Heading center={selectedColor === null}>{heading}</Heading>
+      {selectedColor === null ? (
+        <StyledRecordRigOptions>
+          <Tile>
+            <TileContainer>
+              <img alt="" src="/recordrig-black.png" />
+              <p>
+                RecordRig -&nbsp;
+                <br />
+                <i>Stealth Black</i>
+              </p>
+              <span>From € 2299</span>
+              <a href="/shop/buy-recordrig?color=stealth-black">Select</a>
+            </TileContainer>
+          </Tile>
+          <Tile>
+            <TileContainer>
+              <img alt="" src="/recordrig.png" />
+              <p>
+                RecordRig -&nbsp;
+                <br />
+                <i>Pristine White</i>
+              </p>
+              <span>From € 2299</span>
+              <a href="/shop/buy-recordrig?color=pristine-white">Select</a>
+            </TileContainer>
+          </Tile>
+        </StyledRecordRigOptions>
+      ) : (
+        <p>{selectedColor}</p>
+      )}
     </Section>
   </StyledBuyRecordRigPage>
 );
+
+BuyRecordRigPage.getInitialProps = async ({ query }) => {
+  const blackSelected = query.color === "stealth-black";
+  const whiteSelected = query.color === "pristine-white";
+
+  const getTitle = () => {
+    if (blackSelected) return "Buy RecordRig in Stealth Black.";
+    if (whiteSelected) return "Buy RecordRig in Pristine White.";
+    return "Buy RecordRig - dedicated gameplay streaming PC.";
+  };
+
+  const getDescription = () => {
+    if (blackSelected || whiteSelected)
+      return "Fully customisable LEDs. Always equipped with a premium steel case and tempered glass.";
+    return "Recording and streaming your gameplay in 4K 60FPS + HDR colours is possible with RecordRig high-end dedicated streaming PC. Buy now with free shipping.";
+  };
+
+  const getHeading = () => {
+    if (blackSelected)
+      return "Your new RecordRig - Stealth Black specs and options.";
+    if (whiteSelected)
+      return "Your new RecordRig - Pristine White specs and options.";
+    return "Choose your RecordRig.";
+  };
+
+  const getColor = () => {
+    if (blackSelected) return "stealth-black";
+    if (whiteSelected) return "pristine-white";
+    return null;
+  };
+
+  // Page contents that we want to be able to render server-side are listed here.
+  // Aids SEO and non-JS browsers.
+  const title = getTitle();
+  const description = getDescription();
+  const heading = getHeading();
+  const selectedColor = getColor();
+
+  return {
+    description,
+    heading,
+    selectedColor,
+    title
+  };
+};
 
 export default withRedux(BuyRecordRigPage);
