@@ -171,6 +171,11 @@ module.exports = {
       }
     ],
     /*
+     * This rule often collides with Prettier's rules so we'll turn it off. Prettier takes care of JSX
+     * formatting adequately on its own.
+     */
+    "react/jsx-one-expression-per-line": "off",
+    /*
      * We use TypeScript to declare a component's parameters ("props") and as such have no need for
      * React prop types.
      */
