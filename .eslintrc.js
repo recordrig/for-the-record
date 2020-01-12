@@ -205,7 +205,12 @@ module.exports = {
      * section further up. We just want it disabled for `.js` and `.jsx` files as it doesn't _do_
      * type declarations and such.
      */
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+     /*
+     * Error instead of warn on unused vars in order to align with TS (TS will not compile if
+     * there are unused vars).
+     */
+    "@typescript-eslint/no-unused-vars": "error"
   },
   "settings": {
     "import/resolver": {

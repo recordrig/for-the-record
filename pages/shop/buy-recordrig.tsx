@@ -5,9 +5,68 @@ import Link from "next/link";
 import Router from "next/router";
 import styled, { css } from "styled-components";
 import withRedux from "../../store/_withRedux";
-import Section from "../../components/Section";
+import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
-import { Heading } from "../../components/Text";
+import { Heading, CapsHeading } from "../../components/Text";
+
+const StyledRecordRigOverview = styled.div`
+  margin-top: 64px;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 12px;
+
+    li {
+      padding-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 399px) {
+    > div:last-child {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  @media (min-width: 400px) and (max-width: 655px) {
+    > div:last-child {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+  @media (min-width: 656px) {
+    > div:last-child {
+      max-width: 66%;
+      padding-left: 48px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    > div:last-child {
+      margin-top: 192px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    margin-left: -8px;
+    margin-right: -8px;
+
+    > div {
+      margin-left: 8px;
+      margin-right: 8px;
+      width: 50%;
+    }
+
+    > div:last-child {
+      box-sizing: border-box;
+      padding-left: 42px;
+      padding-right: 42px;
+    }
+  }
+`;
 
 const StyledRecordRigOptions = styled.div`
   img {
@@ -72,7 +131,7 @@ const StyledRecordRigOptions = styled.div`
 
   @media (min-width: 656px) {
     display: flex;
-    margin-top: 128px;
+    margin-top: 64px;
     margin-left: -8px;
     margin-right: -8px;
 
@@ -109,7 +168,6 @@ const StyledRecordRigOptions = styled.div`
 
   @media (min-width: 1024px) {
     display: flex;
-    margin-top: 128px;
     margin-left: -8px;
     margin-right: -8px;
 
@@ -246,9 +304,11 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
         <meta name="description" content={description} />
       </Head>
       <Section>
+      <SectionIntro>
         <Heading h={1} center={selectedColor === null}>
           {heading}
         </Heading>
+      </SectionIntro>
         {selectedColor === null ? (
           <StyledRecordRigOptions>
             <Tile>
@@ -281,39 +341,89 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
             </Tile>
           </StyledRecordRigOptions>
         ) : (
-          <div style={{ marginTop: "64px", maxWidth: "calc(50% - 12px)" }}>
-            <Tile>
-              <TileContainer>
-                <img
-                  alt=""
-                  style={{
-                    display: "block",
-                    margin: "0 auto",
-                    maxWidth: "70%"
-                  }}
-                  src={
-                    selectedColor === "stealth-black"
-                      ? "/recordrig-black.png"
-                      : "/recordrig.png"
-                  }
-                />
-              </TileContainer>
-            </Tile>
-            <StyledColorSelector selectedColor={selectedColor}>
-              <a
-                href={stealthBlackHref}
-                onClick={handleColorChangeClick(stealthBlackHref)}
-              >
-                <span>Stealth Black</span>
-              </a>
-              <a
-                href={pristineWhiteHref}
-                onClick={handleColorChangeClick(pristineWhiteHref)}
-              >
-                <span>Pristine White</span>
-              </a>
-            </StyledColorSelector>
-          </div>
+          <StyledRecordRigOverview>
+            <div>
+              <Tile>
+                <TileContainer>
+                  <img
+                    alt=""
+                    style={{
+                      display: "block",
+                      margin: "0 auto",
+                      maxWidth: "70%"
+                    }}
+                    src={
+                      selectedColor === "stealth-black"
+                        ? "/recordrig-black.png"
+                        : "/recordrig.png"
+                    }
+                  />
+                </TileContainer>
+              </Tile>
+              <StyledColorSelector selectedColor={selectedColor}>
+                <a
+                  href={stealthBlackHref}
+                  onClick={handleColorChangeClick(stealthBlackHref)}
+                >
+                  <span>Stealth Black</span>
+                </a>
+                <a
+                  href={pristineWhiteHref}
+                  onClick={handleColorChangeClick(pristineWhiteHref)}
+                >
+                  <span>Pristine White</span>
+                </a>
+              </StyledColorSelector>
+            </div>
+            <div>
+              <CapsHeading>Technical specifications</CapsHeading>
+              <ul>
+                <li>
+                  3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to 4.3GHz,
+                  with 4MB L2 cache and 16MB L3 cache, support for 16 threads
+                  (multithreading).
+                </li>
+                <li>
+                  2TB high-speed SSD with up to 550MB/s sequential read speeds
+                  and 520MB/s sequential write speeds[1].
+                </li>
+                <li>
+                  8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for storing
+                  hundreds of hours of recorded 4K video.
+                </li>
+                <li>
+                  Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory
+                  Overclocked (&quot;OC&quot;) or equivalent[2].
+                </li>
+                <li>
+                  AVerMedia Live Gamer 4K GC573 internal game capture card with
+                  support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR, 1440p144,
+                  1080p240 recording <em>and</em> pass-through.
+                </li>
+                <li>
+                  Intel® 802.11ac WiFi Module, supports IEEE 802.11a/b/g/n/ac,
+                  Dual-Band (2.4/5 GHz), high speed wireless connections up to
+                  433Mbps.
+                </li>
+                <li>
+                  Integrated Bluetooth 4.2 and/or 3.0 without need for an
+                  external adapter.
+                </li>
+                <li>
+                  Pre-installed and configured Microsoft Windows 10 (English).
+                </li>
+                <li>
+                  Pre-installed and configured RECentral 4K 60FPS + HDR gameplay
+                  recording and streaming software.
+                </li>
+                <li>
+                  All-steel case body with tempered glass removable side panel
+                  for easy-access to all core components[3].
+                </li>
+                <li>Customisable RGB LEDs.</li>
+              </ul>
+            </div>
+          </StyledRecordRigOverview>
         )}
       </Section>
     </StyledBuyRecordRigPage>
