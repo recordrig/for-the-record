@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import withRedux from "../../store/_withRedux";
 import Section from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
@@ -137,25 +137,79 @@ const StyledRecordRigOptions = styled.div`
   }
 `;
 
-const StyledColorSelector = styled.div`
-  a {
-    border: 1px solid #121619;
-    border-radius: 2px;
-    outline: none;
+interface StyledColorSelectorProps {
+  selectedColor: string;
+}
 
-    > span {
+const StyledColorSelector = styled.a<StyledColorSelectorProps>`
+  ${({ selectedColor }) => css`
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+
+    a {
+      border: 2px solid #697077;
+      border-radius: 4px;
+      color: #121619;
+      display: inline-block;
+      height: 42px;
+      margin-right: 12px;
+      outline: none;
       position: relative;
-      top: 30px;
+      text-decoration: none;
+      width: 42px;
+
+      &:after {
+        border-style: solid;
+        border-radius: 6px;
+        border-width: 1px;
+        content: "";
+        display: block;
+        height: 54px;
+        left: -7px;
+        position: absolute;
+        top: -7px;
+        width: 54px;
+      }
+
+      > span {
+        display: block;
+        left: -54px;
+        position: relative;
+        text-align: center;
+        top: 60px;
+        width: 150px;
+      }
     }
-  }
 
-  a:first-child {
-    background-color: #121619;
-  }
+    a:first-child {
+      background-color: #121619;
+      cursor: ${selectedColor === "pristine-white" ? "pointer" : "default"};
 
-  a:last-child {
-    background-color: #ffffff;
-  }
+      &:after {
+        border: 1px solid
+          ${selectedColor === "pristine-white" ? "transparent" : "#4589ff"};
+      }
+
+      > span {
+        opacity: ${selectedColor === "pristine-white" ? 0 : 1};
+      }
+    }
+
+    a:last-child {
+      background-color: #ffffff;
+      cursor: ${selectedColor === "stealth-black" ? "pointer" : "default"};
+
+      &:after {
+        border: 1px solid
+          ${selectedColor === "stealth-black" ? "transparent" : "#4589ff"};
+      }
+
+      > span {
+        opacity: ${selectedColor === "stealth-black" ? 0 : 1};
+      }
+    }
+  `}
 `;
 
 const StyledBuyRecordRigPage = styled.div``;
@@ -169,7 +223,7 @@ interface BuyRecordRigPageProps {
 
 /**
  * On client-side we link programmatically. Using this instead of Next's `Link` will also
- * prevent thepage from auto-scrolling to the top.
+ * prevent the page from auto-scrolling to the top.
  */
 const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
   e.preventDefault();
@@ -245,26 +299,16 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                 />
               </TileContainer>
             </Tile>
-            <StyledColorSelector>
+            <StyledColorSelector selectedColor={selectedColor}>
               <a
                 href={stealthBlackHref}
                 onClick={handleColorChangeClick(stealthBlackHref)}
-                style={
-                  selectedColor === "pristine-white"
-                    ? { cursor: "pointer" }
-                    : { cursor: "default" }
-                }
               >
                 <span>Stealth Black</span>
               </a>
               <a
                 href={pristineWhiteHref}
                 onClick={handleColorChangeClick(pristineWhiteHref)}
-                style={
-                  selectedColor === "stealth-black"
-                    ? { cursor: "pointer" }
-                    : { cursor: "default" }
-                }
               >
                 <span>Pristine White</span>
               </a>
