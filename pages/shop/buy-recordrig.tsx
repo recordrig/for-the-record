@@ -1,6 +1,8 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import Router from "next/router";
 import styled from "styled-components";
 import withRedux from "../../store/_withRedux";
 import Section from "../../components/Section";
@@ -135,6 +137,27 @@ const StyledRecordRigOptions = styled.div`
   }
 `;
 
+const StyledColorSelector = styled.div`
+  a {
+    border: 1px solid #121619;
+    border-radius: 2px;
+    outline: none;
+
+    > span {
+      position: relative;
+      top: 30px;
+    }
+  }
+
+  a:first-child {
+    background-color: #121619;
+  }
+
+  a:last-child {
+    background-color: #ffffff;
+  }
+`;
+
 const StyledBuyRecordRigPage = styled.div``;
 
 interface BuyRecordRigPageProps {
@@ -144,52 +167,114 @@ interface BuyRecordRigPageProps {
   title: string;
 }
 
+/**
+ * On client-side we link programmatically. Using this instead of Next's `Link` will also
+ * prevent thepage from auto-scrolling to the top.
+ */
+const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
+  e.preventDefault();
+  Router.push(href);
+};
+
 const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
   description,
   heading,
   selectedColor,
   title
-}) => (
-  <StyledBuyRecordRigPage>
-    <Head>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-    </Head>
-    <Section>
-      <Heading center={selectedColor === null}>{heading}</Heading>
-      {selectedColor === null ? (
-        <StyledRecordRigOptions>
-          <Tile>
-            <TileContainer>
-              <img alt="" src="/recordrig-black.png" />
-              <p>
-                RecordRig -&nbsp;
-                <br />
-                <i>Stealth Black</i>
-              </p>
-              <span>From € 2299</span>
-              <a href="/shop/buy-recordrig?color=stealth-black">Select</a>
-            </TileContainer>
-          </Tile>
-          <Tile>
-            <TileContainer>
-              <img alt="" src="/recordrig.png" />
-              <p>
-                RecordRig -&nbsp;
-                <br />
-                <i>Pristine White</i>
-              </p>
-              <span>From € 2299</span>
-              <a href="/shop/buy-recordrig?color=pristine-white">Select</a>
-            </TileContainer>
-          </Tile>
-        </StyledRecordRigOptions>
-      ) : (
-        <p>{selectedColor}</p>
-      )}
-    </Section>
-  </StyledBuyRecordRigPage>
-);
+}) => {
+  const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
+  const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
+
+  return (
+    <StyledBuyRecordRigPage>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Head>
+      <Section>
+        <Heading h={1} center={selectedColor === null}>
+          {heading}
+        </Heading>
+        {selectedColor === null ? (
+          <StyledRecordRigOptions>
+            <Tile>
+              <TileContainer>
+                <img alt="" src="/recordrig-black.png" />
+                <p>
+                  RecordRig -&nbsp;
+                  <br />
+                  <i>Stealth Black</i>
+                </p>
+                <span>From € 2299</span>
+                <Link href={stealthBlackHref}>
+                  <a>Select</a>
+                </Link>
+              </TileContainer>
+            </Tile>
+            <Tile>
+              <TileContainer>
+                <img alt="" src="/recordrig.png" />
+                <p>
+                  RecordRig -&nbsp;
+                  <br />
+                  <i>Pristine White</i>
+                </p>
+                <span>From € 2299</span>
+                <Link href={pristineWhiteHref}>
+                  <a>Select</a>
+                </Link>
+              </TileContainer>
+            </Tile>
+          </StyledRecordRigOptions>
+        ) : (
+          <div style={{ marginTop: "64px", maxWidth: "calc(50% - 12px)" }}>
+            <Tile>
+              <TileContainer>
+                <img
+                  alt=""
+                  style={{
+                    display: "block",
+                    margin: "0 auto",
+                    maxWidth: "70%"
+                  }}
+                  src={
+                    selectedColor === "stealth-black"
+                      ? "/recordrig-black.png"
+                      : "/recordrig.png"
+                  }
+                />
+              </TileContainer>
+            </Tile>
+            <StyledColorSelector>
+              <a
+                href={stealthBlackHref}
+                onClick={handleColorChangeClick(stealthBlackHref)}
+                style={
+                  selectedColor === "pristine-white"
+                    ? { cursor: "pointer" }
+                    : { cursor: "default" }
+                }
+              >
+                <span>Stealth Black</span>
+              </a>
+              <a
+                href={pristineWhiteHref}
+                onClick={handleColorChangeClick(pristineWhiteHref)}
+                style={
+                  selectedColor === "stealth-black"
+                    ? { cursor: "pointer" }
+                    : { cursor: "default" }
+                }
+              >
+                <span>Pristine White</span>
+              </a>
+            </StyledColorSelector>
+          </div>
+        )}
+      </Section>
+    </StyledBuyRecordRigPage>
+  );
+};
 
 BuyRecordRigPage.getInitialProps = async ({ query }) => {
   const blackSelected = query.color === "stealth-black";

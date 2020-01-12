@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import withRedux from "../../../store/_withRedux";
