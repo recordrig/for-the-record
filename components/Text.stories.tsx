@@ -1,6 +1,6 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import Text, { Heading, CapsHeading, Paragraph } from "./Text";
+import Text, { Heading, InlineHeading, CapsHeading, Paragraph } from "./Text";
 
 const text =
   "Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.";
@@ -37,6 +37,12 @@ storiesOf("Text", module)
   ))
   .add("heading centered", () => (
     <Heading center>Record your gameplay in the highest quality.</Heading>
+  ))
+  .add("inline heading", () => (
+    <InlineHeading>Technical Specifications</InlineHeading>
+  ))
+  .add("inline heading custom color", () => (
+    <InlineHeading>Technical Specifications</InlineHeading>
   ))
   .add("capsheading", () => (
     <CapsHeading>Capture HDR gameplay videos</CapsHeading>

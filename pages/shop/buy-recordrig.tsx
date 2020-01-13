@@ -7,7 +7,7 @@ import styled, { css } from "styled-components";
 import withRedux from "../../store/_withRedux";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
-import { Heading, CapsHeading } from "../../components/Text";
+import { Heading, InlineHeading } from "../../components/Text";
 
 const StyledRecordRigOverview = styled.div`
   margin-top: 64px;
@@ -376,7 +376,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
               </StyledColorSelector>
             </div>
             <div>
-              <CapsHeading>Technical specifications</CapsHeading>
+              <InlineHeading>Technical Specifications</InlineHeading>
               <ul>
                 <li>
                   3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to 4.3GHz,

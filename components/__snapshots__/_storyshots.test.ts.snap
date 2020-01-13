@@ -2898,6 +2898,140 @@ exports[`Storyshots Text heading custom selector 1`] = `
 </div>
 `;
 
+exports[`Storyshots Text inline heading 1`] = `
+.c0 h1,
+.c0 h2,
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  color: #000000;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c0 span {
+  display: inline-block;
+}
+
+@media (max-width:575px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .c0 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 span {
+    max-width: 592px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 span {
+    max-width: 640px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    <span>
+      Technical Specifications
+    </span>
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Text inline heading custom color 1`] = `
+.c0 h1,
+.c0 h2,
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  color: #000000;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c0 span {
+  display: inline-block;
+}
+
+@media (max-width:575px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .c0 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 span {
+    max-width: 592px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 span {
+    max-width: 640px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    <span>
+      Technical Specifications
+    </span>
+  </h3>
+</div>
+`;
+
 exports[`Storyshots Text paragraph 1`] = `
 .c0 {
   color: #000;
