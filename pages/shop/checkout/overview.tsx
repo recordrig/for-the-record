@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
+import Head from "next/head";
 import fetch from "isomorphic-unfetch";
 import absoluteUrl from "next-absolute-url";
 import withRedux from "../../../store/_withRedux";
@@ -50,11 +51,16 @@ const CheckoutPage: NextPage<CheckoutPageProps> = ({
   };
 
   return (
-    <Section>
-      <button onClick={goToCheckout} type="button">
-        Pay
-      </button>
-    </Section>
+    <>
+      <Head>
+        <script src="https://js.stripe.com/v3/" />
+      </Head>
+      <Section>
+        <button onClick={goToCheckout} type="button">
+          Pay
+        </button>
+      </Section>
+    </>
   );
 };
 
