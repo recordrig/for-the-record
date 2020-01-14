@@ -617,7 +617,7 @@ const IndexPage: FunctionComponent = () => (
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               frameBorder="0"
-              src="https://www.youtube.com/embed/9NIdIh3f69Q?rel=0"
+              src="https://www.youtube-nocookie.com/embed/9NIdIh3f69Q?rel=0"
               style={{ height: "100%", position: "absolute", width: "100%" }}
               title="God of War intro in 4K HDR, recorded with RecordRig on PS4 Pro"
             />
