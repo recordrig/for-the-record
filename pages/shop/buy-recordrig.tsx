@@ -8,6 +8,7 @@ import withRedux from "../../store/_withRedux";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
 import { Heading, InlineHeading } from "../../components/Text";
+import Footnotes from "../../components/Footnotes";
 
 const StyledRecordRigOverview = styled.div`
   margin-top: 64px;
@@ -384,8 +385,8 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                   (multithreading).
                 </li>
                 <li>
-                  2TB high-speed SSD with up to 550MB/s sequential read speeds
-                  and 520MB/s sequential write speeds.<sup>1</sup>
+                  2TB high-speed SSD with 530MB/s sequential read speeds and
+                  500MB/s sequential write speeds.<sup>1</sup>
                 </li>
                 <li>
                   8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for storing
@@ -426,6 +427,31 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
           </StyledRecordRigOverview>
         )}
       </Section>
+      <Footnotes>
+        <p>
+          1. Rounded results of independent benchmark testing. Unrounded results
+          are 527.29 MB/s read and 498.90 MB/s write. Supplier reported speeds
+          are 550MB/s read and 520MB/s write. Performance may vary based on
+          system hardware and configuration.
+        </p>
+        <p>
+          2. Slotted graphics cards might vary. Graphics cards are selected
+          based on performance and independent benchmark testing. Some traits
+          are prioritised over others, e.g. Nvidia is our brand of choice due to
+          RECentral&apos;s (gameplay recording software) capability of using
+          these graphics card for better performance when recording. RecordRig
+          always makes sure to slot a graphics card that performs well for
+          RecordRig dedicated streaming PC&apos;s core use cases: recording and
+          streaming in 4K 60FPS + HDR.
+        </p>
+        <p>
+          3. Opening the case within the first year of buying will void your
+          warranty. Upgradeability is mainly intended to be used after the
+          1-year mark, to lessen the need to buy an entirely new system when
+          some components start getting noticeably older in terms of performance
+          compared to newer components.
+        </p>
+      </Footnotes>
     </StyledBuyRecordRigPage>
   );
 };
