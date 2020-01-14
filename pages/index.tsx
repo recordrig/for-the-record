@@ -204,17 +204,6 @@ const IndexPage: FunctionComponent = () => (
         name="description"
         content="Recording and streaming 4K HDR on PS4 Pro and Xbox One is finally here - buy RecordRig to share gameplay in UHD."
       />
-      <script
-        data-dojo-config="usePlainJson: true, isDebug: false"
-        src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js"
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"8f581f23cd5c1496c751b2f82","lid":"e87990c606","uniqueMethods":true}) })
-          `
-        }}
-      />
     </Head>
     <Section dark>
       <FadeInSubHeading>
