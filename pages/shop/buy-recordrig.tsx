@@ -35,11 +35,24 @@ const StyledRecordRigOverview = styled.div`
 
   @media (min-width: 736px) and (max-width: 1023px) {
     > div:last-child {
-      margin-top: 192px;
-      margin-left: auto;
-      margin-right: auto;
+      box-sizing: border-box;
+      display: flex;
+      margin-top: 256px;
+      max-width: 1216px;
       padding-left: 32px;
       padding-right: 32px;
+      width: 100%;
+
+      ul {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      > div:first-child {
+        flex-basis: 288px;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
     }
   }
 
@@ -101,7 +114,9 @@ const StyledInTheBox = styled.div`
     width: 100%;
 
     > div:first-child {
-      width: 320px;
+      flex-basis: 288px;
+      flex-grow: 0;
+      flex-shrink: 0;
     }
 
     > div:last-child {
