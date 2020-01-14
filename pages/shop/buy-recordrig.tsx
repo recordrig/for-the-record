@@ -304,11 +304,11 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
         <meta name="description" content={description} />
       </Head>
       <Section>
-      <SectionIntro>
-        <Heading h={1} center={selectedColor === null}>
-          {heading}
-        </Heading>
-      </SectionIntro>
+        <SectionIntro>
+          <Heading h={1} center={selectedColor === null}>
+            {heading}
+          </Heading>
+        </SectionIntro>
         {selectedColor === null ? (
           <StyledRecordRigOptions>
             <Tile>
@@ -385,7 +385,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                 </li>
                 <li>
                   2TB high-speed SSD with up to 550MB/s sequential read speeds
-                  and 520MB/s sequential write speeds[1].
+                  and 520MB/s sequential write speeds.<sup>1</sup>
                 </li>
                 <li>
                   8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for storing
@@ -393,7 +393,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                 </li>
                 <li>
                   Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory
-                  Overclocked (&quot;OC&quot;) or equivalent[2].
+                  Overclocked (&quot;OC&quot;) or equivalent.<sup>2</sup>
                 </li>
                 <li>
                   AVerMedia Live Gamer 4K GC573 internal game capture card with
@@ -418,7 +418,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                 </li>
                 <li>
                   All-steel case body with tempered glass removable side panel
-                  for easy-access to all core components[3].
+                  for easy-access to all core components.<sup>3</sup>
                 </li>
                 <li>Customisable RGB LEDs.</li>
               </ul>

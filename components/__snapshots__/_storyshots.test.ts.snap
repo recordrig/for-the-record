@@ -347,6 +347,61 @@ exports[`Storyshots Footer default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Footnotes default 1`] = `
+.c0 {
+  color: #6f6f6f;
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width:734px) {
+  .c0 {
+    font-size: 10px;
+    padding-bottom: 12px;
+    padding-top: 32px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    font-size: 11px;
+    padding-bottom: 32px;
+    padding-top: 64px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    font-size: 12px;
+    padding-bottom: 64px;
+    padding-top: 128px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p>
+    1. Nam elit diam, laoreet lobortis sagittis vitae, eleifend in purus. Nullam luctus odio eu velit euismod porttitor. Praesent mattis tortor vitae feugiat pharetra. Aenean interdum eget massa sit amet fermentum. In enim lectus, pretium dictum leo sit amet, placerat semper nibh. In lobortis, dolor quis convallis ultrices, enim ante viverra tortor, vitae placerat justo massa rhoncus quam. Aenean pellentesque massa mi, ut aliquet lacus elementum nec. Nulla vulputate felis tortor, sit amet interdum dui facilisis in. Suspendisse eget arcu ultricies, dignissim quam ac, porta sapien. Suspendisse tellus orci, vehicula rutrum semper nec, molestie vitae metus. Vivamus dapibus maximus efficitur. Phasellus auctor cursus ornare.
+  </p>
+  <p>
+    2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus orci at lectus commodo dictum. Donec id metus purus. Ut quis urna gravida velit porttitor convallis ac at nisl. In vitae tortor sed erat convallis molestie in non turpis. Pellentesque venenatis est eu nulla dignissim fermentum.
+  </p>
+</div>
+`;
+
 exports[`Storyshots Form default 1`] = `
 .c1 {
   box-sizing: border-box;
