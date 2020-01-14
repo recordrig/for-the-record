@@ -427,31 +427,33 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
           </StyledRecordRigOverview>
         )}
       </Section>
-      <Footnotes>
-        <p>
-          1. Rounded results of independent benchmark testing. Unrounded results
-          are 527.29 MB/s read and 498.90 MB/s write. Supplier reported speeds
-          are 550MB/s read and 520MB/s write. Performance may vary based on
-          system hardware and configuration.
-        </p>
-        <p>
-          2. Slotted graphics cards might vary. Graphics cards are selected
-          based on performance and independent benchmark testing. Some traits
-          are prioritised over others, e.g. Nvidia is our brand of choice due to
-          RECentral&apos;s (gameplay recording software) capability of using
-          these graphics card for better performance when recording. RecordRig
-          always makes sure to slot a graphics card that performs well for
-          RecordRig dedicated streaming PC&apos;s core use cases: recording and
-          streaming in 4K 60FPS + HDR.
-        </p>
-        <p>
-          3. Opening the case within the first year of buying will void your
-          warranty. Upgradeability is mainly intended to be used after the
-          1-year mark, to lessen the need to buy an entirely new system when
-          some components start getting noticeably older in terms of performance
-          compared to newer components.
-        </p>
-      </Footnotes>
+      {selectedColor !== null && (
+        <Footnotes>
+          <p>
+            1. Rounded results of independent benchmark testing. Unrounded
+            results are 527.29 MB/s read and 498.90 MB/s write. Supplier
+            reported speeds are 550MB/s read and 520MB/s write. Performance may
+            vary based on system hardware and configuration.
+          </p>
+          <p>
+            2. Slotted graphics cards might vary. Graphics cards are selected
+            based on performance and independent benchmark testing. Some traits
+            are prioritised over others, e.g. Nvidia is our brand of choice due
+            to RECentral&apos;s (gameplay recording software) capability of
+            using these graphics card for better performance when recording.
+            RecordRig always makes sure to slot a graphics card that performs
+            well for RecordRig dedicated streaming PC&apos;s core use cases:
+            recording and streaming in 4K 60FPS + HDR.
+          </p>
+          <p>
+            3. Opening the case within the first year of buying will void your
+            warranty. Upgradeability is mainly intended to be used after the
+            1-year mark, to lessen the need to buy an entirely new system when
+            some components start getting noticeably older in terms of
+            performance compared to newer components.
+          </p>
+        </Footnotes>
+      )}
     </StyledBuyRecordRigPage>
   );
 };
