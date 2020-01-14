@@ -142,6 +142,96 @@ const StyledHeading = styled.div<StyledHeadingProps>`
   `}
 `;
 
+const StyledSubHeading = styled.div`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  @media (max-width: 575px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    span {
+      max-width: 480px;
+    }
+  }
+
+  @media (min-width: 576px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  @media (min-width: 735px) and (max-width: 1023px) {
+    span {
+      max-width: 592px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    span {
+      max-width: 640px;
+    }
+  }
+`;
+
+interface SubHeadingProps {
+  children: string | ReactNode | ReactNodeArray;
+  h?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+export const SubHeading: FunctionComponent<SubHeadingProps> = ({
+  children,
+  h = 3
+}: InlineHeadingProps) => {
+  /*
+   * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
+   * As a workaround we explicitely assign the `any` type so that it won't error on `<TagElem>`.
+   * See [issue on GitHub](https://github.com/microsoft/TypeScript/issues/28768)
+   * and also [this issue](https://github.com/Microsoft/TypeScript/issues/28892).
+   */
+  const TagElem: any = `h${h}`;
+
+  return (
+    <StyledSubHeading>
+      <TagElem>
+        <span>{children}</span>
+      </TagElem>
+    </StyledSubHeading>
+  );
+};
+
+interface HeadingProps {
+  center?: boolean;
+  children: string | ReactNode | ReactNodeArray;
+  color?: string;
+  h?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
 const StyledInlineHeading = styled.div`
   h1,
   h2,
@@ -209,7 +299,7 @@ interface InlineHeadingProps {
 
 export const InlineHeading: FunctionComponent<InlineHeadingProps> = ({
   children,
-  h = 3
+  h = 4
 }: InlineHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.

@@ -7,7 +7,7 @@ import styled, { css } from "styled-components";
 import withRedux from "../../store/_withRedux";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
-import { Heading, InlineHeading } from "../../components/Text";
+import { Heading, SubHeading } from "../../components/Text";
 import Footnotes from "../../components/Footnotes";
 
 const StyledRecordRigOverview = styled.div`
@@ -23,30 +23,23 @@ const StyledRecordRigOverview = styled.div`
     }
   }
 
-  @media (max-width: 399px) {
+  @media (max-width: 735px) {
     > div:last-child {
+      margin-top: 192px;
+      margin-left: auto;
+      margin-right: auto;
       padding-left: 12px;
       padding-right: 12px;
     }
   }
 
-  @media (min-width: 400px) and (max-width: 655px) {
-    > div:last-child {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-  }
-
-  @media (min-width: 656px) {
-    > div:last-child {
-      max-width: 66%;
-      padding-left: 48px;
-    }
-  }
-
-  @media (max-width: 1023px) {
+  @media (min-width: 736px) and (max-width: 1023px) {
     > div:last-child {
       margin-top: 192px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 32px;
+      padding-right: 32px;
     }
   }
 
@@ -64,7 +57,67 @@ const StyledRecordRigOverview = styled.div`
     > div:last-child {
       box-sizing: border-box;
       padding-left: 42px;
-      padding-right: 42px;
+    }
+  }
+`;
+
+const StyledInTheBox = styled.div`
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 32px;
+
+    li {
+      padding-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 735px) {
+    margin-top: 128px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+
+    img {
+      margin-top: 32px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 736px) {
+    display: flex;
+    margin-top: 256px;
+    max-width: 1216px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+
+    > div:first-child {
+      width: 320px;
+    }
+
+    > div:last-child {
+      flex-grow: 1;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    ul {
+      margin-top: 32px;
+    }
+
+    li {
+      font-size: 18px;
     }
   }
 `;
@@ -342,89 +395,115 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
             </Tile>
           </StyledRecordRigOptions>
         ) : (
-          <StyledRecordRigOverview>
-            <div>
-              <Tile>
-                <TileContainer>
-                  <img
-                    alt=""
-                    style={{
-                      display: "block",
-                      margin: "0 auto",
-                      maxWidth: "70%"
-                    }}
-                    src={
-                      selectedColor === "stealth-black"
-                        ? "/recordrig-black.png"
-                        : "/recordrig.png"
-                    }
-                  />
-                </TileContainer>
-              </Tile>
-              <StyledColorSelector selectedColor={selectedColor}>
-                <a
-                  href={stealthBlackHref}
-                  onClick={handleColorChangeClick(stealthBlackHref)}
-                >
-                  <span>Stealth Black</span>
-                </a>
-                <a
-                  href={pristineWhiteHref}
-                  onClick={handleColorChangeClick(pristineWhiteHref)}
-                >
-                  <span>Pristine White</span>
-                </a>
-              </StyledColorSelector>
-            </div>
-            <div>
-              <InlineHeading>Technical Specifications</InlineHeading>
-              <ul>
-                <li>
-                  3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to 4.3GHz,
-                  with 4MB L2 cache and 16MB L3 cache, support for 16 threads
-                  (multithreading).
-                </li>
-                <li>
-                  2TB high-speed SSD with 530MB/s sequential read speeds and
-                  500MB/s sequential write speeds.<sup>1</sup>
-                </li>
-                <li>
-                  8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for storing
-                  hundreds of hours of recorded 4K video.
-                </li>
-                <li>
-                  Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory
-                  Overclocked (&quot;OC&quot;) or equivalent.<sup>2</sup>
-                </li>
-                <li>
-                  AVerMedia Live Gamer 4K GC573 internal game capture card with
-                  support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR, 1440p144,
-                  1080p240 recording <em>and</em> pass-through.
-                </li>
-                <li>
-                  Intel® 802.11ac WiFi Module, supports IEEE 802.11a/b/g/n/ac,
-                  Dual-Band (2.4/5 GHz), high speed wireless connections up to
-                  433Mbps.
-                </li>
-                <li>
-                  Integrated Bluetooth 4.2 and/or 3.0 without need for an
-                  external adapter.
-                </li>
-                <li>
-                  Pre-installed and configured Microsoft Windows 10 (English).
-                </li>
-                <li>
-                  Pre-installed and configured RECentral 4K 60FPS + HDR gameplay
-                  recording and streaming software.
-                </li>
-                <li>
-                  All-steel case body with tempered glass removable side panel
-                  for easy-access to all core components.<sup>3</sup>
-                </li>
-                <li>Customisable RGB LEDs.</li>
-              </ul>
-            </div>
-          </StyledRecordRigOverview>
+          <>
+            <StyledRecordRigOverview>
+              <div>
+                <Tile>
+                  <TileContainer>
+                    <img
+                      alt=""
+                      style={{
+                        display: "block",
+                        margin: "0 auto",
+                        maxWidth: "70%"
+                      }}
+                      src={
+                        selectedColor === "stealth-black"
+                          ? "/recordrig-black.png"
+                          : "/recordrig.png"
+                      }
+                    />
+                  </TileContainer>
+                </Tile>
+                <StyledColorSelector selectedColor={selectedColor}>
+                  <a
+                    href={stealthBlackHref}
+                    onClick={handleColorChangeClick(stealthBlackHref)}
+                  >
+                    <span>Stealth Black</span>
+                  </a>
+                  <a
+                    href={pristineWhiteHref}
+                    onClick={handleColorChangeClick(pristineWhiteHref)}
+                  >
+                    <span>Pristine White</span>
+                  </a>
+                </StyledColorSelector>
+              </div>
+              <div>
+                <div>
+                  <SubHeading>Technical specifications</SubHeading>
+                </div>
+                <div>
+                  <ul>
+                    <li>
+                      3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to 4.3GHz,
+                      with 4MB L2 cache and 16MB L3 cache, support for 16
+                      threads (multithreading).
+                    </li>
+                    <li>
+                      2TB high-speed SSD with 530MB/s sequential read speeds and
+                      500MB/s sequential write speeds.<sup>1</sup>
+                    </li>
+                    <li>
+                      8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for
+                      storing hundreds of hours of recorded 4K video.
+                    </li>
+                    <li>
+                      Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics,
+                      Factory Overclocked (&quot;OC&quot;) or equivalent.
+                      <sup>2</sup>
+                    </li>
+                    <li>
+                      AVerMedia Live Gamer 4K GC573 internal game capture card
+                      with support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR,
+                      1440p144, 1080p240 recording <em>and</em> pass-through.
+                    </li>
+                    <li>
+                      Intel® 802.11ac WiFi Module, supports IEEE
+                      802.11a/b/g/n/ac, Dual-Band (2.4/5 GHz), high speed
+                      wireless connections up to 433Mbps.
+                    </li>
+                    <li>
+                      Integrated Bluetooth 4.2 and/or 3.0 without need for an
+                      external adapter.
+                    </li>
+                    <li>
+                      Pre-installed and configured Microsoft Windows 10
+                      (English).
+                    </li>
+                    <li>
+                      Pre-installed and configured RECentral 4K 60FPS + HDR
+                      gameplay recording and streaming software.
+                    </li>
+                    <li>
+                      All-steel case body with tempered glass removable side
+                      panel for easy-access to all core components.<sup>3</sup>
+                    </li>
+                    <li>Customisable RGB LEDs.</li>
+                  </ul>
+                </div>
+              </div>
+            </StyledRecordRigOverview>
+            <StyledInTheBox>
+              <div>
+                <SubHeading>In the box</SubHeading>
+              </div>
+              <div>
+                <img alt="" src="/in-the-box.svg" />
+                <ul>
+                  <li>
+                    RecordRig dedicated streaming PC in{" "}
+                    {selectedColor === "stealth-black"
+                      ? "Stealth Black"
+                      : "Pristine White"}
+                  </li>
+                  <li>Power cord for Type F plugs (European)</li>
+                  <li>3 HDMI 2.1 (high-bandwith) cables</li>
+                </ul>
+              </div>
+            </StyledInTheBox>
+          </>
         )}
       </Section>
       {selectedColor !== null && (

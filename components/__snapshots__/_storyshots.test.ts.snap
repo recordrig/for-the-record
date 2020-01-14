@@ -2993,11 +2993,11 @@ exports[`Storyshots Text inline heading 1`] = `
 <div
   className="c0"
 >
-  <h3>
+  <h4>
     <span>
       Technical Specifications
     </span>
-  </h3>
+  </h4>
 </div>
 `;
 
@@ -3060,11 +3060,11 @@ exports[`Storyshots Text inline heading custom color 1`] = `
 <div
   className="c0"
 >
-  <h3>
+  <h4>
     <span>
       Technical Specifications
     </span>
-  </h3>
+  </h4>
 </div>
 `;
 
@@ -3149,6 +3149,73 @@ exports[`Storyshots Text paragraph custom color 1`] = `
   >
     Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
   </p>
+</div>
+`;
+
+exports[`Storyshots Text subheading 1`] = `
+.c0 h1,
+.c0 h2,
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  color: #000000;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c0 span {
+  display: inline-block;
+}
+
+@media (max-width:575px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .c0 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 span {
+    max-width: 592px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 span {
+    max-width: 640px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h3>
+    <span>
+      In the box
+    </span>
+  </h3>
 </div>
 `;
 
