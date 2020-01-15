@@ -124,6 +124,7 @@ const StyledInTheBox = styled.div`
     }
 
     img {
+      max-width: 700px;
       width: 100%;
     }
 
