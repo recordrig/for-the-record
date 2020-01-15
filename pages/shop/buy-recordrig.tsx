@@ -358,6 +358,10 @@ const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
   Router.push(href);
 };
 
+const handleAddToBagClick = (color: string) => () => {
+  console.log("handleAddToBagClick", color);
+};
+
 const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
   description,
   heading,
@@ -389,7 +393,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                   <br />
                   <i>Stealth Black</i>
                 </p>
-                <span>From € 2299</span>
+                <span>From € 2399</span>
                 <Link href={stealthBlackHref}>
                   <a>Select</a>
                 </Link>
@@ -403,7 +407,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                   <br />
                   <i>Pristine White</i>
                 </p>
-                <span>From € 2299</span>
+                <span>From € 2399</span>
                 <Link href={pristineWhiteHref}>
                   <a>Select</a>
                 </Link>
@@ -501,6 +505,68 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                 </div>
               </div>
             </StyledRecordRigOverview>
+            <div
+              style={{
+                marginTop: "128px"
+              }}
+            >
+              <Tile>
+                <TileContainer>
+                  <div
+                    style={{
+                      backgroundImage: "url(/eu.png)",
+                      backgroundPosition: "center 10px",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "236px",
+                      textAlign: "center"
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "32px",
+                        fontWeight: "bold",
+                        paddingBottom: "92px",
+                        paddingTop: "92px"
+                      }}
+                    >
+                      FREE DELIVERY
+                      <br />
+                      <span style={{ color: "#4d5358", fontSize: "24px" }}>
+                        in the EU
+                      </span>
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "32px",
+                        fontWeight: "bold",
+                        marginBottom: "12px"
+                      }}
+                    >
+                      € 2,399.00
+                    </p>
+                    <button
+                      onClick={handleAddToBagClick(selectedColor)}
+                      style={{
+                        backgroundColor: "#0062ff",
+                        borderRadius: "4px",
+                        border: 0,
+                        color: "#ffffff",
+                        cursor: "pointer",
+                        fontSize: "24px",
+                        lineHeight: "64px",
+                        maxWidth: "536px",
+                        outline: "none",
+                        textAlign: "center",
+                        width: "100%"
+                      }}
+                      type="button"
+                    >
+                      Add to Bag
+                    </button>
+                  </div>
+                </TileContainer>
+              </Tile>
+            </div>
             <StyledInTheBox>
               <div>
                 <SubHeading>In the box</SubHeading>
