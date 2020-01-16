@@ -4,7 +4,10 @@ import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
 import styled, { css } from "styled-components";
+// import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import withRedux from "../../store/_withRedux";
+import { addProductAction } from "../../store/shoppingBag";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
 import { Heading, SubHeading } from "../../components/Text";
@@ -343,6 +346,9 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
 const StyledBuyRecordRigPage = styled.div``;
 
 interface BuyRecordRigPageProps {
+  // NB this prop isn't actually optional, but TS complains if the props supplied by
+  // `getInitialProps` don't exactly match.
+  // addProduct: typeof addProductAction;
   description: string;
   heading: string;
   selectedColor: string | null;
@@ -358,16 +364,27 @@ const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
   Router.push(href);
 };
 
-const handleAddToBagClick = (color: string) => () => {
-  console.log("handleAddToBagClick", color);
-};
-
 const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
+  // addProduct,
   description,
   heading,
   selectedColor,
   title
 }) => {
+  // let addToBagColor = "#0062ff";
+  // const handleAddToBagClick = (color: string) => () => {
+  //   console.log("handleAddToBagClick", color, selectedColor);
+  //   console.log("addToBagColor:", addToBagColor);
+  //   addToBagColor = "#24a148";
+  //   console.log("addToBagColor:", addToBagColor);
+  //   addProductAction(`RR20-${selectedColor}`);
+  // };
+
+  // console.log(addProduct);
+
+  const dispatch = useDispatch();
+  const addProduct = () => dispatch(addProductAction("TEST"));
+
   const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
   const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
 
@@ -545,9 +562,9 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                       € 2,399.00
                     </p>
                     <button
-                      onClick={handleAddToBagClick(selectedColor)}
+                      onClick={addProduct}
                       style={{
-                        backgroundColor: "#0062ff",
+                        backgroundColor: "blue",
                         borderRadius: "4px",
                         border: 0,
                         color: "#ffffff",
@@ -557,6 +574,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                         maxWidth: "536px",
                         outline: "none",
                         textAlign: "center",
+                        transition: "background-color 0.5s linear",
                         width: "100%"
                       }}
                       type="button"
@@ -655,13 +673,28 @@ BuyRecordRigPage.getInitialProps = async ({ query }) => {
   const description = getDescription();
   const heading = getHeading();
   const selectedColor = getColor();
+  // const addProduct = addProductAction;
 
   return {
+    // addProduct,
     description,
     heading,
     selectedColor,
     title
   };
 };
+
+// Required actions are mapped to functions of the same name that will be available for
+// `dispatch`ing to the store.
+// const mapDispatch = {
+//   addProduct: addProductAction
+// };
+
+// In order to be able to dispatch actions using the `store`, it is important to `connect`
+// our component and map the required state and actions so that they'll be available inside
+// the component (and always up to date, because it's connected).
+// const connector = connect(null, null);
+
+// export default withRedux(connector(BuyRecordRigPage));
 
 export default withRedux(BuyRecordRigPage);
