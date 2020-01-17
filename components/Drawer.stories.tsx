@@ -5,18 +5,15 @@ import Drawer from "./Drawer";
 const SomeContainer = () => {
   const [open, setOpen] = useState(false);
 
-  const toggleDrawer = () => {
-    console.log("toglleDrawer");
-    setOpen(!open);
-  };
+  const toggleDrawer = () => setOpen(!open);
 
   return (
     <>
-      <button onClick={toggleDrawer} type="button">
+      <button onClick={toggleDrawer} type="button" style={{ fontSize: "24px" }}>
         Open drawer
       </button>
       <Drawer onClose={toggleDrawer} open={open}>
-        <p style={{ margin: "120px 0", textAlign: "center" }}>
+        <p style={{ padding: "120px 0", textAlign: "center" }}>
           Some drawer content.
           {open}
         </p>

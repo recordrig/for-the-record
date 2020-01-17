@@ -1,31 +1,65 @@
-import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
+import React, {
+  FunctionComponent,
+  ReactNode,
+  ReactNodeArray,
+  useRef
+} from "react";
 import styled, { css } from "styled-components";
 
-// interface StyledDrawerContentProps {
-//   open: boolean;
-// }
-
-// const StyledDrawerContent = styled.span<StyledDrawerContentProps>`
-//   ${({ open }) => css`
-//     position: absolute;
-
-//     @media (max-width: 575px) {
-//       bottom: bottom: ${open ? "500px" : 0};
-//     }
-//   `}
-// `;
+const AttentionSeeker = styled.div`
+  background-color: #000000;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 9;
+`;
 
 interface StyledDrawerProps {
+  neededHeight: number;
   open: boolean;
 }
 
-const StyledDrawer = styled.span<StyledDrawerProps>`
-  ${({ open }) => css`
-    background-color: ${open ? "pink" : "red"};
+const StyledDrawer = styled.div<StyledDrawerProps>`
+  ${({ neededHeight, open }) => css`
+    background-color: #ffffff;
     position: absolute;
+    will-change: transform;
+    z-index: 10;
+
+    > button {
+      background-color: transparent;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      float: right;
+      font-size: 32px;
+      line-height: 50px;
+      outline: none;
+      width: 50px;
+    }
+
+    > div {
+      max-height: calc(100% - 128px);
+    }
 
     @media (max-width: 575px) {
-      bottom: bottom: ${open ? "500px" : 0};
+      border-radius: 12px 12px 0 0;
+      top: 100%;
+      transform: translateY(${open ? `-${neededHeight}px` : 0});
+      transition: transform 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    @media (min-width: 576px) {
+      height: 100%;
+      left: 100vw;
+      top: 0;
+      transform: translateX(${open ? "-500px" : 0});
+      transition: transform 0.3s ease-in-out;
+      width: 500px;
     }
   `}
 `;
@@ -49,18 +83,24 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   open,
   onClose
 }) => {
-  const handleCloseClick = () => {
-    console.log("handleCloseClick");
-    onClose();
-  };
+  const handleCloseClick = () => onClose();
+  const drawerContentElement = useRef<null | HTMLDivElement>(null);
+
+  let neededHeight = 0;
+  if (drawerContentElement.current !== null) {
+    neededHeight = drawerContentElement.current.offsetHeight;
+  }
 
   return (
-    <StyledDrawer open={open}>
-      <button onClick={handleCloseClick} type="button">
-        X
-      </button>
-      {children}
-    </StyledDrawer>
+    <>
+      <StyledDrawer neededHeight={neededHeight} open={open}>
+        <button onClick={handleCloseClick} type="button">
+          &#x2715;
+        </button>
+        <div ref={drawerContentElement}>{children}</div>
+      </StyledDrawer>
+      {open && <AttentionSeeker onClick={handleCloseClick} />}
+    </>
   );
 };
 
