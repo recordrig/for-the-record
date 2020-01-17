@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Drawer default 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Open drawer
+  </button>,
+  .c0 {
+  background-color: red;
+  position: absolute;
+}
+
+@media (max-width:575px) {
+  .c0 {
+    bottom: bottom:0;
+  }
+}
+
+<span
+    className="c0"
+    open={false}
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      X
+    </button>
+    <p
+      style={
+        Object {
+          "margin": "120px 0",
+          "textAlign": "center",
+        }
+      }
+    >
+      Some drawer content.
+    </p>
+  </span>,
+]
+`;
+
 exports[`Storyshots Features default 1`] = `
 .c2 {
   border: 1px solid #ffffff;
