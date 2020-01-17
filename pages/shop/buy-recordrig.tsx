@@ -279,7 +279,7 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
 
     a {
       border: 2px solid #697077;
-      border-radius: 4px;
+      border-radius: 8px;
       color: #121619;
       display: inline-block;
       height: 42px;
@@ -291,20 +291,20 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
 
       &:after {
         border-style: solid;
-        border-radius: 6px;
+        border-radius: 12px;
         border-width: 1px;
         content: "";
         display: block;
         height: 54px;
-        left: -7px;
+        left: -8px;
         position: absolute;
-        top: -7px;
+        top: -8px;
         width: 54px;
       }
 
       > span {
         display: block;
-        left: -54px;
+        left: -56px;
         position: relative;
         text-align: center;
         top: 60px;
@@ -317,7 +317,7 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
       cursor: ${selectedColor === "pristine-white" ? "pointer" : "default"};
 
       &:after {
-        border: 1px solid
+        border: 2px solid
           ${selectedColor === "pristine-white" ? "transparent" : "#4589ff"};
       }
 
@@ -331,7 +331,7 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
       cursor: ${selectedColor === "stealth-black" ? "pointer" : "default"};
 
       &:after {
-        border: 1px solid
+        border: 2px solid
           ${selectedColor === "stealth-black" ? "transparent" : "#4589ff"};
       }
 
