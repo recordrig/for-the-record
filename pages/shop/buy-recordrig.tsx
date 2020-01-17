@@ -153,7 +153,7 @@ const StyledRecordRigOptions = styled.div`
 
   a {
     background-color: #0062ff;
-    border-radius: 2px;
+    border-radius: 8px;
     border: 0;
     color: #ffffff;
     cursor: pointer;
@@ -562,7 +562,7 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
                       onClick={handleAddToBagClick}
                       style={{
                         backgroundColor: addToBagColor,
-                        borderRadius: "4px",
+                        borderRadius: "12px",
                         border: 0,
                         color: "#ffffff",
                         cursor: "pointer",
