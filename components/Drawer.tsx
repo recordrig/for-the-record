@@ -91,8 +91,10 @@ const Drawer: FunctionComponent<DrawerProps> = ({
     neededHeight = drawerContentElement.current.offsetHeight;
   }
 
-  if (open) document.body.style.overflow = "hidden";
-  if (!open) document.body.style.overflow = "unset";
+  if (typeof window !== "undefined") {
+    if (open) document.body.style.overflow = "hidden";
+    if (!open) document.body.style.overflow = "unset";
+  }
 
   return (
     <>
