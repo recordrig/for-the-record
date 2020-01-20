@@ -1,6 +1,6 @@
 # RecordRig
 
-Site for RecordRig.
+Website for RecordRig - dedicated gameplay streaming PC.
 
 ## Getting Started
 
