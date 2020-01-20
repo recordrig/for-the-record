@@ -1,9 +1,3 @@
-/*
- * Import original airbnbStyleRules to override some rules set by other packages
- * e.g. `@typescript-eslint`'s indentation settings (4 spaces vs 2).
- */
-const airbnbStyleRules = require('eslint-config-airbnb-base/rules/style').rules;
-
 module.exports = {
   "env": {
     "browser": true,
@@ -191,10 +185,9 @@ module.exports = {
       "allowTypedFunctionExpressions": true // React components
     }],
     /*
-     * Keep original indent preferences (2-space basis and others) (opinionated) instead of
-     * TypeScript's 4-space indentation.
+     * Manage indentation with Prettier instead.
      */
-    "@typescript-eslint/indent": airbnbStyleRules.indent,
+    "@typescript-eslint/indent": "off",
     /*
      * Rule has [no right to exist](https://github.com/typescript-eslint/typescript-eslint/issues/433).
      * Will be removed from `typescript-eslint` in a future major version (since it's a breaking change). For now we'll disable manually.

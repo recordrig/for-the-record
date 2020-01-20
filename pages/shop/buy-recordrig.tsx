@@ -1,10 +1,10 @@
-import React, { MouseEvent, useState } from "react";
-import { NextPage } from "next";
+import React, { Component, MouseEvent } from "react";
+import { NextPageContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
 import styled, { css } from "styled-components";
-import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import withRedux from "../../store/_withRedux";
 import { addProductAction } from "../../store/shoppingBag";
 import Section, { SectionIntro } from "../../components/Section";
@@ -346,10 +346,17 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
 const StyledBuyRecordRigPage = styled.div``;
 
 interface BuyRecordRigPageProps {
+  addProduct: Function;
   description: string;
   heading: string;
   selectedColor: string | null;
+  shoppingBag: {};
   title: string;
+}
+
+interface BuyRecordRigPageState {
+  addToBagColor: string;
+  openDrawer: boolean;
 }
 
 /**
@@ -361,333 +368,360 @@ const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
   Router.push(href);
 };
 
-const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
-  description,
-  heading,
-  selectedColor,
-  title
-}) => {
-  const dispatch = useDispatch();
-  const addProduct = () => dispatch(addProductAction(`RR20-${selectedColor}`));
+class BuyRecordRigPage extends Component<
+  BuyRecordRigPageProps,
+  BuyRecordRigPageState
+> {
+  static async getInitialProps({ query }: NextPageContext) {
+    const blackSelected = query.color === "stealth-black";
+    const whiteSelected = query.color === "pristine-white";
 
-  const [addToBagColor, setAddToBagColor] = useState("#0062ff");
-  const [openDrawer, setOpenDrawer] = useState(false);
+    const getTitle = () => {
+      if (blackSelected) return "Buy RecordRig in Stealth Black.";
+      if (whiteSelected) return "Buy RecordRig in Pristine White.";
+      return "Buy RecordRig - dedicated gameplay streaming PC.";
+    };
 
-  const toggleDrawer = () => setOpenDrawer(!openDrawer);
+    const getDescription = () => {
+      if (blackSelected || whiteSelected)
+        return "Fully customisable LEDs. Always equipped with a premium steel case and tempered glass.";
+      return "Recording and streaming your gameplay in 4K 60FPS + HDR colours is possible with RecordRig high-end dedicated streaming PC. Buy now with free shipping.";
+    };
 
-  const handleAddToBagClick = () => {
-    setAddToBagColor("#a6c8ff");
-    addProduct();
-    setTimeout(() => {
-      toggleDrawer();
-    }, 300);
-    setTimeout(() => {
-      setAddToBagColor("#0062ff");
-    }, 400);
-  };
+    const getHeading = () => {
+      if (blackSelected)
+        return "Your new RecordRig - Stealth Black specs and options.";
+      if (whiteSelected)
+        return "Your new RecordRig - Pristine White specs and options.";
+      return "Choose your RecordRig.";
+    };
 
-  const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
-  const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
+    const getColor = () => {
+      if (blackSelected) return "stealth-black";
+      if (whiteSelected) return "pristine-white";
+      return null;
+    };
 
-  return (
-    <StyledBuyRecordRigPage>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Head>
-      <Section>
-        <SectionIntro>
-          <Heading h={1} center={selectedColor === null}>
-            {heading}
-          </Heading>
-        </SectionIntro>
-        {selectedColor === null ? (
-          <StyledRecordRigOptions>
-            <Tile>
-              <TileContainer>
-                <img alt="" src="/recordrig-black.png" />
-                <p>
-                  RecordRig -&nbsp;
-                  <br />
-                  <i>Stealth Black</i>
-                </p>
-                <span>From € 2399</span>
-                <Link href={stealthBlackHref}>
-                  <a>Select</a>
-                </Link>
-              </TileContainer>
-            </Tile>
-            <Tile>
-              <TileContainer>
-                <img alt="" src="/recordrig.png" />
-                <p>
-                  RecordRig -&nbsp;
-                  <br />
-                  <i>Pristine White</i>
-                </p>
-                <span>From € 2399</span>
-                <Link href={pristineWhiteHref}>
-                  <a>Select</a>
-                </Link>
-              </TileContainer>
-            </Tile>
-          </StyledRecordRigOptions>
-        ) : (
-          <>
-            <StyledRecordRigOverview>
-              <div>
-                <Tile>
-                  <TileContainer>
-                    <img
-                      alt=""
-                      style={{
-                        display: "block",
-                        margin: "0 auto",
-                        maxWidth: "70%"
-                      }}
-                      src={
-                        selectedColor === "stealth-black"
-                          ? "/recordrig-black.png"
-                          : "/recordrig.png"
-                      }
-                    />
-                  </TileContainer>
-                </Tile>
-                <StyledColorSelector selectedColor={selectedColor}>
-                  <a
-                    href={stealthBlackHref}
-                    onClick={handleColorChangeClick(stealthBlackHref)}
-                  >
-                    <span>Stealth Black</span>
-                  </a>
-                  <a
-                    href={pristineWhiteHref}
-                    onClick={handleColorChangeClick(pristineWhiteHref)}
-                  >
-                    <span>Pristine White</span>
-                  </a>
-                </StyledColorSelector>
-              </div>
-              <div>
-                <div>
-                  <SubHeading>Technical specifications</SubHeading>
-                </div>
-                <div>
-                  <ul>
-                    <li>
-                      3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to 4.3GHz,
-                      with 4MB L2 cache and 16MB L3 cache, support for 16
-                      threads (multithreading).
-                    </li>
-                    <li>
-                      2TB high-speed SSD with 530MB/s sequential read speeds and
-                      500MB/s sequential write speeds.<sup>1</sup>
-                    </li>
-                    <li>
-                      8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for
-                      storing hundreds of hours of recorded 4K video.
-                    </li>
-                    <li>
-                      Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics,
-                      Factory Overclocked (&quot;OC&quot;) or equivalent.
-                      <sup>2</sup>
-                    </li>
-                    <li>
-                      AVerMedia Live Gamer 4K GC573 internal game capture card
-                      with support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR,
-                      1440p144, 1080p240 recording <em>and</em> pass-through.
-                    </li>
-                    <li>
-                      Intel® 802.11ac WiFi Module, supports IEEE
-                      802.11a/b/g/n/ac, Dual-Band (2.4/5 GHz), high speed
-                      wireless connections up to 433Mbps.
-                    </li>
-                    <li>
-                      Integrated Bluetooth 4.2 and/or 3.0 without need for an
-                      external adapter.
-                    </li>
-                    <li>
-                      Pre-installed and configured Microsoft Windows 10
-                      (English).
-                    </li>
-                    <li>
-                      Pre-installed and configured RECentral 4K 60FPS + HDR
-                      gameplay recording and streaming software.
-                    </li>
-                    <li>
-                      All-steel case body with tempered glass removable side
-                      panel for easy-access to all core components.<sup>3</sup>
-                    </li>
-                    <li>Customisable RGB LEDs.</li>
-                  </ul>
-                </div>
-              </div>
-            </StyledRecordRigOverview>
-            <div
-              style={{
-                marginTop: "128px"
-              }}
-            >
+    // Page contents that we want to be able to render server-side are listed here.
+    // Aids SEO and non-JS browsers.
+    const title = getTitle();
+    const description = getDescription();
+    const heading = getHeading();
+    const selectedColor = getColor();
+
+    return {
+      description,
+      heading,
+      selectedColor,
+      title
+    };
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      addToBagColor: "#0062ff",
+      openDrawer: false
+    };
+  }
+
+  render() {
+    const {
+      addProduct,
+      description,
+      heading,
+      selectedColor,
+      shoppingBag,
+      title
+    } = this.props;
+
+    const { addToBagColor, openDrawer } = this.state;
+
+    const toggleDrawer = () => this.setState({ openDrawer: !openDrawer });
+
+    const handleAddToBagClick = () => {
+      this.setState({ addToBagColor: "#a6c8ff" });
+      addProduct(`RR20-${selectedColor}`);
+      setTimeout(() => {
+        toggleDrawer();
+      }, 300);
+      setTimeout(() => {
+        this.setState({ addToBagColor: "#0062ff" });
+      }, 400);
+    };
+
+    const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
+    const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
+    return (
+      <StyledBuyRecordRigPage>
+        <Head>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+        </Head>
+        <Section>
+          <SectionIntro>
+            <Heading h={1} center={selectedColor === null}>
+              {heading}
+            </Heading>
+          </SectionIntro>
+          {selectedColor === null ? (
+            <StyledRecordRigOptions>
               <Tile>
                 <TileContainer>
-                  <div
-                    style={{
-                      backgroundImage: "url(/eu.png)",
-                      backgroundPosition: "center 10px",
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "236px",
-                      textAlign: "center"
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: "32px",
-                        fontWeight: "bold",
-                        paddingBottom: "92px",
-                        paddingTop: "92px"
-                      }}
-                    >
-                      FREE DELIVERY
-                      <br />
-                      <span style={{ color: "#4d5358", fontSize: "24px" }}>
-                        in the EU
-                      </span>
-                    </p>
-                    <p
-                      style={{
-                        fontSize: "32px",
-                        fontWeight: "bold",
-                        marginBottom: "12px"
-                      }}
-                    >
-                      € 2.399,00
-                    </p>
-                    <button
-                      onClick={handleAddToBagClick}
-                      style={{
-                        backgroundColor: addToBagColor,
-                        borderRadius: "12px",
-                        border: 0,
-                        color: "#ffffff",
-                        cursor: "pointer",
-                        fontSize: "24px",
-                        lineHeight: "64px",
-                        maxWidth: "536px",
-                        outline: "none",
-                        textAlign: "center",
-                        transition: "background-color 0.2s ease",
-                        width: "100%"
-                      }}
-                      type="button"
-                    >
-                      Add to Bag
-                    </button>
-                  </div>
+                  <img alt="" src="/recordrig-black.png" />
+                  <p>
+                    RecordRig -&nbsp;
+                    <br />
+                    <i>Stealth Black</i>
+                  </p>
+                  <span>From € 2399</span>
+                  <Link href={stealthBlackHref}>
+                    <a>Select</a>
+                  </Link>
                 </TileContainer>
               </Tile>
-            </div>
-            <StyledInTheBox>
-              <div>
-                <SubHeading>In the box</SubHeading>
+              <Tile>
+                <TileContainer>
+                  <img alt="" src="/recordrig.png" />
+                  <p>
+                    RecordRig -&nbsp;
+                    <br />
+                    <i>Pristine White</i>
+                  </p>
+                  <span>From € 2399</span>
+                  <Link href={pristineWhiteHref}>
+                    <a>Select</a>
+                  </Link>
+                </TileContainer>
+              </Tile>
+            </StyledRecordRigOptions>
+          ) : (
+            <>
+              <StyledRecordRigOverview>
+                <div>
+                  <Tile>
+                    <TileContainer>
+                      <img
+                        alt=""
+                        style={{
+                          display: "block",
+                          margin: "0 auto",
+                          maxWidth: "70%"
+                        }}
+                        src={
+                          selectedColor === "stealth-black"
+                            ? "/recordrig-black.png"
+                            : "/recordrig.png"
+                        }
+                      />
+                    </TileContainer>
+                  </Tile>
+                  <StyledColorSelector selectedColor={selectedColor}>
+                    <a
+                      href={stealthBlackHref}
+                      onClick={handleColorChangeClick(stealthBlackHref)}
+                    >
+                      <span>Stealth Black</span>
+                    </a>
+                    <a
+                      href={pristineWhiteHref}
+                      onClick={handleColorChangeClick(pristineWhiteHref)}
+                    >
+                      <span>Pristine White</span>
+                    </a>
+                  </StyledColorSelector>
+                </div>
+                <div>
+                  <div>
+                    <SubHeading>Technical specifications</SubHeading>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>
+                        3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to
+                        4.3GHz, with 4MB L2 cache and 16MB L3 cache, support for
+                        16 threads (multithreading).
+                      </li>
+                      <li>
+                        2TB high-speed SSD with 530MB/s sequential read speeds
+                        and 500MB/s sequential write speeds.<sup>1</sup>
+                      </li>
+                      <li>
+                        8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for
+                        storing hundreds of hours of recorded 4K video.
+                      </li>
+                      <li>
+                        Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics,
+                        Factory Overclocked (&quot;OC&quot;) or equivalent.
+                        <sup>2</sup>
+                      </li>
+                      <li>
+                        AVerMedia Live Gamer 4K GC573 internal game capture card
+                        with support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR,
+                        1440p144, 1080p240 recording <em>and</em> pass-through.
+                      </li>
+                      <li>
+                        Intel® 802.11ac WiFi Module, supports IEEE
+                        802.11a/b/g/n/ac, Dual-Band (2.4/5 GHz), high speed
+                        wireless connections up to 433Mbps.
+                      </li>
+                      <li>
+                        Integrated Bluetooth 4.2 and/or 3.0 without need for an
+                        external adapter.
+                      </li>
+                      <li>
+                        Pre-installed and configured Microsoft Windows 10
+                        (English).
+                      </li>
+                      <li>
+                        Pre-installed and configured RECentral 4K 60FPS + HDR
+                        gameplay recording and streaming software.
+                      </li>
+                      <li>
+                        All-steel case body with tempered glass removable side
+                        panel for easy-access to all core components.
+                        <sup>3</sup>
+                      </li>
+                      <li>Customisable RGB LEDs.</li>
+                    </ul>
+                  </div>
+                </div>
+              </StyledRecordRigOverview>
+              <div
+                style={{
+                  marginTop: "128px"
+                }}
+              >
+                <Tile>
+                  <TileContainer>
+                    <div
+                      style={{
+                        backgroundImage: "url(/eu.png)",
+                        backgroundPosition: "center 10px",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "236px",
+                        textAlign: "center"
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontSize: "32px",
+                          fontWeight: "bold",
+                          paddingBottom: "92px",
+                          paddingTop: "92px"
+                        }}
+                      >
+                        FREE DELIVERY
+                        <br />
+                        <span style={{ color: "#4d5358", fontSize: "24px" }}>
+                          in the EU
+                        </span>
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "32px",
+                          fontWeight: "bold",
+                          marginBottom: "12px"
+                        }}
+                      >
+                        € 2.399,00
+                      </p>
+                      <button
+                        onClick={handleAddToBagClick}
+                        style={{
+                          backgroundColor: addToBagColor,
+                          borderRadius: "12px",
+                          border: 0,
+                          color: "#ffffff",
+                          cursor: "pointer",
+                          fontSize: "24px",
+                          lineHeight: "64px",
+                          maxWidth: "536px",
+                          outline: "none",
+                          textAlign: "center",
+                          transition: "background-color 0.2s ease",
+                          width: "100%"
+                        }}
+                        type="button"
+                      >
+                        Add to Bag
+                      </button>
+                    </div>
+                  </TileContainer>
+                </Tile>
               </div>
-              <div>
-                <img alt="" src="/in-the-box.svg" />
-                <ul>
-                  <li>
-                    RecordRig dedicated streaming PC in{" "}
-                    {selectedColor === "stealth-black"
-                      ? "Stealth Black"
-                      : "Pristine White"}
-                  </li>
-                  <li>Power cord for Type F plugs (European)</li>
-                  <li>3 HDMI 2.1 (high-bandwith) cables</li>
-                </ul>
-              </div>
-            </StyledInTheBox>
-          </>
+              <StyledInTheBox>
+                <div>
+                  <SubHeading>In the box</SubHeading>
+                </div>
+                <div>
+                  <img alt="" src="/in-the-box.svg" />
+                  <ul>
+                    <li>
+                      RecordRig dedicated streaming PC in{" "}
+                      {selectedColor === "stealth-black"
+                        ? "Stealth Black"
+                        : "Pristine White"}
+                    </li>
+                    <li>Power cord for Type F plugs (European)</li>
+                    <li>3 HDMI 2.1 (high-bandwith) cables</li>
+                  </ul>
+                </div>
+              </StyledInTheBox>
+            </>
+          )}
+        </Section>
+        {selectedColor !== null && (
+          <Footnotes>
+            <p>
+              1. Rounded results of independent benchmark testing. Unrounded
+              results are 527.29 MB/s read and 498.90 MB/s write. Supplier
+              reported speeds are 550MB/s read and 520MB/s write. Performance
+              may vary based on system hardware and configuration.
+            </p>
+            <p>
+              2. Slotted graphics cards might vary. Graphics cards are selected
+              based on performance and independent benchmark testing. Some
+              traits are prioritised over others, e.g. Nvidia is our brand of
+              choice due to RECentral&apos;s (gameplay recording software)
+              capability of using these graphics card for better performance
+              when recording. RecordRig always makes sure to slot a graphics
+              card that performs well for RecordRig dedicated streaming
+              PC&apos;s core use cases: recording and streaming in 4K 60FPS +
+              HDR.
+            </p>
+            <p>
+              3. Opening the case within the first year of buying will void your
+              warranty. Upgradeability is mainly intended to be used after the
+              1-year mark, to lessen the need to buy an entirely new system when
+              some components start getting noticeably older in terms of
+              performance compared to newer components.
+            </p>
+          </Footnotes>
         )}
-      </Section>
-      {selectedColor !== null && (
-        <Footnotes>
-          <p>
-            1. Rounded results of independent benchmark testing. Unrounded
-            results are 527.29 MB/s read and 498.90 MB/s write. Supplier
-            reported speeds are 550MB/s read and 520MB/s write. Performance may
-            vary based on system hardware and configuration.
-          </p>
-          <p>
-            2. Slotted graphics cards might vary. Graphics cards are selected
-            based on performance and independent benchmark testing. Some traits
-            are prioritised over others, e.g. Nvidia is our brand of choice due
-            to RECentral&apos;s (gameplay recording software) capability of
-            using these graphics card for better performance when recording.
-            RecordRig always makes sure to slot a graphics card that performs
-            well for RecordRig dedicated streaming PC&apos;s core use cases:
-            recording and streaming in 4K 60FPS + HDR.
-          </p>
-          <p>
-            3. Opening the case within the first year of buying will void your
-            warranty. Upgradeability is mainly intended to be used after the
-            1-year mark, to lessen the need to buy an entirely new system when
-            some components start getting noticeably older in terms of
-            performance compared to newer components.
-          </p>
-        </Footnotes>
-      )}
-      {selectedColor !== null && (
-        <Drawer open={openDrawer} onClose={toggleDrawer}>
-          <p style={{ padding: "120px 0", textAlign: "center" }}>
-            Shopping Bag contents
-          </p>
-        </Drawer>
-      )}
-    </StyledBuyRecordRigPage>
-  );
-};
+        {selectedColor !== null && (
+          <Drawer open={openDrawer} onClose={toggleDrawer}>
+            <p style={{ padding: "120px 0" }}>{shoppingBag.toString()}</p>
+          </Drawer>
+        )}
+      </StyledBuyRecordRigPage>
+    );
+  }
+}
 
-BuyRecordRigPage.getInitialProps = async ({ query }) => {
-  const blackSelected = query.color === "stealth-black";
-  const whiteSelected = query.color === "pristine-white";
-
-  const getTitle = () => {
-    if (blackSelected) return "Buy RecordRig in Stealth Black.";
-    if (whiteSelected) return "Buy RecordRig in Pristine White.";
-    return "Buy RecordRig - dedicated gameplay streaming PC.";
-  };
-
-  const getDescription = () => {
-    if (blackSelected || whiteSelected)
-      return "Fully customisable LEDs. Always equipped with a premium steel case and tempered glass.";
-    return "Recording and streaming your gameplay in 4K 60FPS + HDR colours is possible with RecordRig high-end dedicated streaming PC. Buy now with free shipping.";
-  };
-
-  const getHeading = () => {
-    if (blackSelected)
-      return "Your new RecordRig - Stealth Black specs and options.";
-    if (whiteSelected)
-      return "Your new RecordRig - Pristine White specs and options.";
-    return "Choose your RecordRig.";
-  };
-
-  const getColor = () => {
-    if (blackSelected) return "stealth-black";
-    if (whiteSelected) return "pristine-white";
-    return null;
-  };
-
-  // Page contents that we want to be able to render server-side are listed here.
-  // Aids SEO and non-JS browsers.
-  const title = getTitle();
-  const description = getDescription();
-  const heading = getHeading();
-  const selectedColor = getColor();
-
+const mapStateToProps = state => {
   return {
-    description,
-    heading,
-    selectedColor,
-    title
+    shoppingBag: state.shoppingBag
   };
 };
 
-export default withRedux(BuyRecordRigPage);
+const mapDispatchToProps = {
+  addProduct: addProductAction
+};
+
+const ConnectedBuyRecordRigPage = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BuyRecordRigPage);
+
+export default withRedux(ConnectedBuyRecordRigPage);

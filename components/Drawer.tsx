@@ -65,7 +65,7 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
 `;
 
 interface DrawerProps {
-  children: ReactNode | ReactNodeArray;
+  children: ReactNode | ReactNodeArray | Element | void;
   onClose: Function;
   open: boolean;
 }
