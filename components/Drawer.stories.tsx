@@ -23,3 +23,16 @@ const SomeContainer = () => {
 };
 
 storiesOf("Drawer", module).add("default", () => <SomeContainer />);
+
+storiesOf("Drawer", module)
+  .add("default", () => <SomeContainer />)
+  .add("open", () => (
+    <Drawer open onClose={jest.fn()}>
+      <p>Content</p>
+    </Drawer>
+  ))
+  .add("closed", () => (
+    <Drawer open={false} onClose={jest.fn()}>
+      <p>Content</p>
+    </Drawer>
+  ));

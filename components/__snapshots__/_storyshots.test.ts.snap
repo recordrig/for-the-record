@@ -1,5 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Drawer closed 1`] = `
+.c0 {
+  background-color: #ffffff;
+  position: fixed;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 32px;
+  line-height: 50px;
+  outline: none;
+  width: 50px;
+}
+
+.c0 > div {
+  max-height: calc(100% - 128px);
+}
+
+@media (max-width:575px) {
+  .c0 {
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+}
+
+<div
+  className="c0"
+  open={false}
+>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    ✕
+  </button>
+  <div>
+    <p>
+      Content
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Drawer default 1`] = `
 Array [
   <button
@@ -15,7 +87,7 @@ Array [
   </button>,
   .c0 {
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   will-change: transform;
   z-index: 10;
 }
@@ -89,6 +161,94 @@ Array [
       </p>
     </div>
   </div>,
+]
+`;
+
+exports[`Storyshots Drawer open 1`] = `
+Array [
+  .c0 {
+  background-color: #ffffff;
+  position: fixed;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 32px;
+  line-height: 50px;
+  outline: none;
+  width: 50px;
+}
+
+.c0 > div {
+  max-height: calc(100% - 128px);
+}
+
+@media (max-width:575px) {
+  .c0 {
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(-0px);
+    -ms-transform: translateY(-0px);
+    transform: translateY(-0px);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(-500px);
+    -ms-transform: translateX(-500px);
+    transform: translateX(-500px);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+}
+
+<div
+    className="c0"
+    open={true}
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      ✕
+    </button>
+    <div>
+      <p>
+        Content
+      </p>
+    </div>
+  </div>,
+  .c0 {
+  background-color: #000000;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.2;
+  z-index: 9;
+}
+
+<div
+    className="c0"
+    onClick={[Function]}
+  />,
 ]
 `;
 

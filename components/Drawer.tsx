@@ -9,7 +9,7 @@ import styled, { css } from "styled-components";
 const AttentionSeeker = styled.div`
   background-color: #000000;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   opacity: 0.2;
@@ -24,7 +24,7 @@ interface StyledDrawerProps {
 const StyledDrawer = styled.div<StyledDrawerProps>`
   ${({ neededHeight, open }) => css`
     background-color: #ffffff;
-    position: absolute;
+    position: fixed;
     will-change: transform;
     z-index: 10;
 
@@ -90,6 +90,9 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   if (drawerContentElement.current !== null) {
     neededHeight = drawerContentElement.current.offsetHeight;
   }
+
+  if (open) document.body.style.overflow = "hidden";
+  if (!open) document.body.style.overflow = "unset";
 
   return (
     <>

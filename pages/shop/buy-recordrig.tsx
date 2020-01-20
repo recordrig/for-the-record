@@ -10,6 +10,7 @@ import { addProductAction } from "../../store/shoppingBag";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
 import { Heading, SubHeading } from "../../components/Text";
+import Drawer from "../../components/Drawer";
 import Footnotes from "../../components/Footnotes";
 
 const StyledRecordRigOverview = styled.div`
@@ -370,16 +371,19 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
   const addProduct = () => dispatch(addProductAction(`RR20-${selectedColor}`));
 
   const [addToBagColor, setAddToBagColor] = useState("#0062ff");
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const toggleDrawer = () => setOpenDrawer(!openDrawer);
 
   const handleAddToBagClick = () => {
     setAddToBagColor("#a6c8ff");
     addProduct();
     setTimeout(() => {
-      Router.push("/shop/checkout/information");
-    }, 500);
+      toggleDrawer();
+    }, 300);
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 600);
+      setAddToBagColor("#0062ff");
+    }, 400);
   };
 
   const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
@@ -629,6 +633,13 @@ const BuyRecordRigPage: NextPage<BuyRecordRigPageProps> = ({
             performance compared to newer components.
           </p>
         </Footnotes>
+      )}
+      {selectedColor !== null && (
+        <Drawer open={openDrawer} onClose={toggleDrawer}>
+          <p style={{ padding: "120px 0", textAlign: "center" }}>
+            Shopping Bag contents
+          </p>
+        </Drawer>
       )}
     </StyledBuyRecordRigPage>
   );

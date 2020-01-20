@@ -20,7 +20,7 @@ module.exports = {
      * Allow jest-specific variabled in test files.
      */
     {
-      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "files": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"],
       "env": {
         "jest": true
       }
