@@ -4,22 +4,69 @@ exports[`Storyshots Drawer default 1`] = `
 Array [
   <button
     onClick={[Function]}
+    style={
+      Object {
+        "fontSize": "24px",
+      }
+    }
     type="button"
   >
     Open drawer
   </button>,
   .c0 {
-  background-color: red;
+  background-color: #ffffff;
   position: absolute;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 32px;
+  line-height: 50px;
+  outline: none;
+  width: 50px;
+}
+
+.c0 > div {
+  max-height: calc(100% - 128px);
 }
 
 @media (max-width:575px) {
   .c0 {
-    bottom: bottom:0;
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
   }
 }
 
-<span
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+}
+
+<div
     className="c0"
     open={false}
   >
@@ -27,19 +74,21 @@ Array [
       onClick={[Function]}
       type="button"
     >
-      X
+      ✕
     </button>
-    <p
-      style={
-        Object {
-          "margin": "120px 0",
-          "textAlign": "center",
+    <div>
+      <p
+        style={
+          Object {
+            "padding": "120px 0",
+            "textAlign": "center",
+          }
         }
-      }
-    >
-      Some drawer content.
-    </p>
-  </span>,
+      >
+        Some drawer content.
+      </p>
+    </div>
+  </div>,
 ]
 `;
 

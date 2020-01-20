@@ -12,7 +12,7 @@ const AttentionSeeker = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: 9;
 `;
 
