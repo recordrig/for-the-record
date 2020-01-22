@@ -15,8 +15,8 @@ npm install
 Then create a file called `.env` in the root of your project and insert your Stripe TEST API keys:
 
 ```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyz
-STRIPE_SECRET_KEY=sk_test_xyz
+STRIPE_PUBLISHABLE_KEY=pk_test_xyzabcetcbbq
+STRIPE_SECRET_KEY=sk_test_xyzabcetcbbq
 ```
 
 Now you can run the development server:
@@ -30,7 +30,7 @@ npm run dev
 If you'd like to use [Now's CLI](https://zeit.co/blog/now-dev) to run the application, you will need to define an extra file named `.env.build` and define Stripe's publishable TEST API key in here as well:
 
 ```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyz
+STRIPE_PUBLISHABLE_KEY=pk_test_xyzabcetcbbq
 ```
 
 This is because `now dev` will use its own mechanism for making env vars available in the application. It doesn't use Dotenv like the ordinary dev server, but instead reads `now.json` to know which env vars to set, and then looks for build-only dev vars inside `.env.build`.
