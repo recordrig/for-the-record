@@ -701,6 +701,22 @@ class BuyRecordRigPage extends Component<
         )}
         {selectedColor !== null && (
           <Drawer open={openDrawer} onClose={toggleDrawer}>
+            <ul>
+              <li>
+                <img style={{ height: "100px" }} alt="" src="/recordrig.png" />
+                <p style={{ fontWeight: "bold" }}>RecordRig - Pristine White</p>
+                <span>2x</span>
+              </li>
+              <li>
+                <img
+                  style={{ height: "100px" }}
+                  alt=""
+                  src="/recordrig-black.png"
+                />
+                <p>RecordRig - Stealth Black</p>
+                <span>2x</span>
+              </li>
+            </ul>
             <p style={{ padding: "120px 0" }}>{shoppingBag.toString()}</p>
           </Drawer>
         )}
