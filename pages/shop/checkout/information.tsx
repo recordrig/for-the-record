@@ -17,7 +17,7 @@ type Props = {
   //  `updateCustomerId` should be made available through `connect`ing this component.
   //  NB actions cannot be imported and used directly, because they need to fire through
   //  Redux's store, which is what `connect()` takes care of.
-  updateCustomerId: typeof updateCustomerIdAction;
+  readonly updateCustomerId: typeof updateCustomerIdAction;
 };
 
 const CheckoutInformationPage: FunctionComponent<Props> = ({

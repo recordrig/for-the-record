@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import styled, { css } from "styled-components";
 
 interface StyledProductListProps {
-  indicateAddition: boolean;
+  readonly indicateAddition: boolean;
 }
 
 const StyledProductList = styled.div<StyledProductListProps>`
@@ -92,8 +92,8 @@ const StyledProductList = styled.div<StyledProductListProps>`
 `;
 
 interface Product {
-  id: string;
-  quantity: number;
+  readonly id: string;
+  readonly quantity: number;
 }
 
 interface ProductListProps {
@@ -101,8 +101,8 @@ interface ProductListProps {
    * Pass products as an array in order to guarantee that their order will be correct.
    * The most recently added product should be listed at the top.
    */
-  products: Product[];
-  indicateAddition?: boolean;
+  readonly products: readonly Product[];
+  readonly indicateAddition?: boolean;
 }
 
 /**
@@ -117,7 +117,7 @@ const ProductList: FunctionComponent<ProductListProps> = ({
   products,
   indicateAddition = false
 }) => {
-  let productsToRender: Product[] = [];
+  let productsToRender: readonly Product[] = [];
   let remainingProductsAmount = 0;
   if (products.length > 3) {
     productsToRender = [products[0], products[1], products[2]];

@@ -29,7 +29,7 @@ const StyledTileContainer = styled.div`
 `;
 
 interface TileContainerProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 export const TileContainer: FunctionComponent<TileContainerProps> = ({
@@ -37,8 +37,8 @@ export const TileContainer: FunctionComponent<TileContainerProps> = ({
 }: TileContainerProps) => <StyledTileContainer>{children}</StyledTileContainer>;
 
 interface StyledLinkTileProps {
-  accentColor: string;
-  backgroundColor: string;
+  readonly accentColor: string;
+  readonly backgroundColor: string;
 }
 
 const StyledLinkTile = styled.a<StyledLinkTileProps>`
@@ -55,7 +55,7 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
 `;
 
 interface StyledTileProps {
-  backgroundColor: string;
+  readonly backgroundColor: string;
 }
 
 const StyledTile = styled.div<StyledTileProps>`
@@ -73,10 +73,10 @@ const StyledTile = styled.div<StyledTileProps>`
 `;
 
 interface TileProps {
-  accentColor?: string;
-  backgroundColor?: string;
-  children: ReactNode | ReactNodeArray;
-  link?: string;
+  readonly accentColor?: string;
+  readonly backgroundColor?: string;
+  readonly children: ReactNode | ReactNodeArray;
+  readonly link?: string;
 }
 
 /**

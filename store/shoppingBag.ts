@@ -2,12 +2,8 @@
 // -----------------------------------------------------------/
 
 interface ShoppingBagProduct {
-  id: string;
-  quantity: number;
-}
-
-interface ShoppingBag {
-  [key: string]: ShoppingBagProduct;
+  readonly id: string;
+  readonly quantity: number;
 }
 
 // Action types.
@@ -22,12 +18,12 @@ enum ActionTypes {
 // -----------------------------------------------------------/
 
 interface AddProductAction {
-  type: ActionTypes.ADD_PRODUCT;
+  readonly type: ActionTypes.ADD_PRODUCT;
   /**
    * The Product ID of the to-be added product.
    */
-  payload: {
-    id: string;
+  readonly payload: {
+    readonly id: string;
   };
 }
 
@@ -43,12 +39,12 @@ export const addProductAction = (
 };
 
 interface RemoveProductAction {
-  type: ActionTypes.REMOVE_PRODUCT;
+  readonly type: ActionTypes.REMOVE_PRODUCT;
   /**
    * The Product ID of the to-be removed product.
    */
-  payload: {
-    id: string;
+  readonly payload: {
+    readonly id: string;
   };
 }
 
@@ -66,64 +62,58 @@ export const removeProductAction = (
 // Reducer helper functions.
 // -----------------------------------------------------------/
 
-/**
- * Check if all product ID's match their corresponding object key.
- */
-const validateShoppingBag = (shoppingBag: ShoppingBag): boolean => {
-  Object.entries(shoppingBag).forEach(([objKey, product]) => {
-    if (objKey !== product.id) {
-      throw new Error(
-        `Shopping bag data is invalid:
-        Product ID (${product.id}) does not match its object's key (${objKey}).`
-      );
-    }
-  });
-  return true;
-};
-
 const addProduct = (
-  shoppingBag: ShoppingBag,
+  shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
-): ShoppingBag => {
-  validateShoppingBag(shoppingBag);
-
+): readonly ShoppingBagProduct[] => {
   // If the shopping bag is empty or if the shopping bag does NOT contain this item yet,
-  // add it to the collection.
-  if (Object.keys(shoppingBag).length === 0 || !(productId in shoppingBag)) {
-    return {
-      ...shoppingBag,
-      [productId]: {
+  // add it to the start of the collection.
+  if (
+    shoppingBag.length === 0 ||
+    !shoppingBag.find(product => product.id === productId)
+  ) {
+    return [
+      {
         id: productId,
         quantity: 1
-      }
-    };
+      },
+      ...shoppingBag
+    ];
   }
 
-  // Find the product which should be present already, and update its quantity.
-  return {
-    ...shoppingBag,
-    [productId]: {
+  // Find the product which should be present already, and update its quantity, moving the
+  // item to the start of the collection.
+  const arrayPosition = shoppingBag.findIndex(
+    product => product.id === productId
+  );
+
+  return [
+    {
       id: productId,
-      quantity: shoppingBag[productId].quantity + 1
-    }
-  };
+      quantity: shoppingBag[arrayPosition].quantity + 1
+    },
+    ...shoppingBag
+  ];
 };
 
 const removeProduct = (
-  shoppingBag: ShoppingBag,
+  shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
-): ShoppingBag => {
-  validateShoppingBag(shoppingBag);
-
-  // If at least 2 of these products are already in the shopping bag, we'll decrease its quantity.
-  if (productId in shoppingBag && shoppingBag[productId].quantity >= 2) {
-    return {
+): readonly ShoppingBagProduct[] => {
+  // If at least 2 of these products are already in the shopping bag, we'll decrease its quantity,
+  // leaving the original array order intact.
+  if (
+    shoppingBag.find(product => product.id === productId) &&
+    shoppingBag[shoppingBag.findIndex(product => product.id === productId)]
+      .quantity >= 2
+  ) {
+    return [
       ...shoppingBag,
-      [productId]: {
+      {
         id: productId,
         quantity: shoppingBag[productId].quantity - 1
       }
-    };
+    ];
   }
 
   const newShoppingBag = Object.fromEntries(
@@ -138,11 +128,12 @@ const removeProduct = (
 
 type Action = AddProductAction | RemoveProductAction;
 
-const initialState: ShoppingBag = {};
+const initialState: readonly ShoppingBagProduct[] = [];
 
-const shoppingBag = (state = initialState, action: Action): ShoppingBag => {
-  validateShoppingBag(state);
-
+const shoppingBag = (
+  state = initialState,
+  action: Action
+): readonly ShoppingBagProduct[] => {
   switch (action.type) {
     case ActionTypes.ADD_PRODUCT:
       return addProduct(state, action.payload.id);

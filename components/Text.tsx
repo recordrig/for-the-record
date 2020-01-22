@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 
 interface StyledCapsHeadingProps {
-  fontColor: string;
+  readonly fontColor: string;
 }
 
 const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
@@ -46,9 +46,9 @@ const StyledCapsHeading = styled.div<StyledCapsHeadingProps>`
 `;
 
 interface CapsHeadingProps {
-  children: string;
-  color?: string;
-  h?: 1 | 2 | 3 | 4 | 5 | 6;
+  readonly children: string;
+  readonly color?: string;
+  readonly h?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
@@ -72,8 +72,8 @@ export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
 };
 
 interface StyledHeadingProps {
-  center: boolean;
-  fontColor: string;
+  readonly center: boolean;
+  readonly fontColor: string;
 }
 
 const StyledHeading = styled.div<StyledHeadingProps>`
@@ -200,8 +200,8 @@ const StyledSubHeading = styled.div`
 `;
 
 interface SubHeadingProps {
-  children: string | ReactNode | ReactNodeArray;
-  h?: 1 | 2 | 3 | 4 | 5 | 6;
+  readonly children: string | ReactNode | ReactNodeArray;
+  readonly h?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export const SubHeading: FunctionComponent<SubHeadingProps> = ({
@@ -226,10 +226,10 @@ export const SubHeading: FunctionComponent<SubHeadingProps> = ({
 };
 
 interface HeadingProps {
-  center?: boolean;
-  children: string | ReactNode | ReactNodeArray;
-  color?: string;
-  h?: 1 | 2 | 3 | 4 | 5 | 6;
+  readonly center?: boolean;
+  readonly children: string | ReactNode | ReactNodeArray;
+  readonly color?: string;
+  readonly h?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 const StyledInlineHeading = styled.div`
@@ -293,8 +293,8 @@ const StyledInlineHeading = styled.div`
 `;
 
 interface InlineHeadingProps {
-  children: string | ReactNode | ReactNodeArray;
-  h?: 1 | 2 | 3 | 4 | 5 | 6;
+  readonly children: string | ReactNode | ReactNodeArray;
+  readonly h?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export const InlineHeading: FunctionComponent<InlineHeadingProps> = ({
@@ -319,10 +319,10 @@ export const InlineHeading: FunctionComponent<InlineHeadingProps> = ({
 };
 
 interface HeadingProps {
-  center?: boolean;
-  children: string | ReactNode | ReactNodeArray;
-  color?: string;
-  h?: 1 | 2 | 3 | 4 | 5 | 6;
+  readonly center?: boolean;
+  readonly children: string | ReactNode | ReactNodeArray;
+  readonly color?: string;
+  readonly h?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export const Heading: FunctionComponent<HeadingProps> = ({
@@ -349,7 +349,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({
 };
 
 interface StyledParagraphProps {
-  fontColor: string;
+  readonly fontColor: string;
 }
 
 const StyledParagraph = styled.p<StyledParagraphProps>`
@@ -377,8 +377,8 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
 `;
 
 interface ParagraphProps {
-  children: string;
-  color?: string;
+  readonly children: string;
+  readonly color?: string;
 }
 
 export const Paragraph: FunctionComponent<ParagraphProps> = ({
@@ -389,7 +389,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
 );
 
 interface StyledTextProps {
-  fontColor: string;
+  readonly fontColor: string;
 }
 
 const StyledText = styled.span<StyledTextProps>`
@@ -417,8 +417,8 @@ const StyledText = styled.span<StyledTextProps>`
 `;
 
 interface TextProps {
-  children: string;
-  color?: string;
+  readonly children: string;
+  readonly color?: string;
 }
 
 const Text: FunctionComponent<TextProps> = ({

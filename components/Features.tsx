@@ -24,8 +24,8 @@ const StyledFeature = styled.div`
 `;
 
 interface FeatureProps {
-  description: string;
-  number: number;
+  readonly description: string;
+  readonly number: number;
 }
 
 const Feature: FunctionComponent<FeatureProps> = ({
@@ -110,7 +110,7 @@ const StyledFeatures = styled.div`
 `;
 
 interface FeaturesProps {
-  texts: [string, string, string, string];
+  readonly texts: readonly [string, string, string, string];
 }
 
 /**

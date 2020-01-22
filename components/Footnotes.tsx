@@ -21,7 +21,7 @@ const StyledFootnotes = styled.div`
 `;
 
 interface SectionProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 /**

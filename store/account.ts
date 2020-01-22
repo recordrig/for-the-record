@@ -6,7 +6,7 @@ interface Account {
    * The customer ID from Stripe, or `null` if no Stripe customer ID is associated
    * with this account.
    */
-  customerId: string | null;
+  readonly customerId: string | null;
 }
 
 // Action types.
@@ -20,9 +20,9 @@ enum ActionTypes {
 // -----------------------------------------------------------/
 
 interface UpdateCustomerIdAction {
-  type: typeof ActionTypes.UPDATE_CUSTOMER_ID;
-  payload: {
-    id: string | null;
+  readonly type: typeof ActionTypes.UPDATE_CUSTOMER_ID;
+  readonly payload: {
+    readonly id: string | null;
   };
 }
 

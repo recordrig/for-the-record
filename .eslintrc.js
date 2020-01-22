@@ -7,7 +7,8 @@ module.exports = {
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:functional/no-mutations"
   ],
   "overrides": [
     /*
@@ -53,12 +54,13 @@ module.exports = {
       }
     },
     /*
-     * Allow ordinary module imports in config files which are not transpiled.
+     * Be more lax in config files which are not transpiled.
      */
     {
-      "files": ["next.config.js"],
+      "files": ["**.config.js"],
       "rules": {
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "functional/immutable-data": "off"
       }
     },
     /*
@@ -84,7 +86,8 @@ module.exports = {
   "plugins": [
     "@typescript-eslint",
     "prettier",
-    "react"
+    "react",
+    "functional"
   ],
   "rules": {
     /*

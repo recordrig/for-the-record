@@ -1068,8 +1068,8 @@ const StyledVideo = styled.div`
 `;
 
 type VideoProps = {
-  source: string;
-  thumbnail: string;
+  readonly source: string;
+  readonly thumbnail: string;
 };
 
 const Video: FunctionComponent<VideoProps> = ({

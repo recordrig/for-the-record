@@ -17,8 +17,8 @@ const AttentionSeeker = styled.div`
 `;
 
 interface StyledDrawerProps {
-  neededHeight: number;
-  open: boolean;
+  readonly neededHeight: number;
+  readonly open: boolean;
 }
 
 const StyledDrawer = styled.div<StyledDrawerProps>`
@@ -65,9 +65,9 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
 `;
 
 interface DrawerProps {
-  children: ReactNode | ReactNodeArray | Element | void;
-  onClose: Function;
-  open: boolean;
+  readonly children: ReactNode | ReactNodeArray | Element | void;
+  readonly onClose: Function;
+  readonly open: boolean;
 }
 
 /**

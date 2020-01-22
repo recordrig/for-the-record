@@ -27,7 +27,7 @@ const StyledSubSection = styled.div`
 `;
 
 interface SubSectionProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 /**
@@ -54,7 +54,7 @@ const StyledSectionIntro = styled.div`
 `;
 
 interface SectionIntroProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 /**
@@ -83,7 +83,7 @@ const StyledSectionRow = styled.div`
 `;
 
 interface StyledSectionRowProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 /**
@@ -104,7 +104,7 @@ const PositionedSectionContent = styled.div`
 `;
 
 interface StyledSectionProps {
-  backgroundColor: string;
+  readonly backgroundColor: string;
 }
 
 const StyledSection = styled.div<StyledSectionProps>`
@@ -147,8 +147,8 @@ const StyledSection = styled.div<StyledSectionProps>`
 `;
 
 interface SectionProps {
-  children: ReactNode | ReactNodeArray;
-  dark?: boolean;
+  readonly children: ReactNode | ReactNodeArray;
+  readonly dark?: boolean;
 }
 
 /**

@@ -15,8 +15,8 @@ interface ImageProps {
    * to prevent screen reader's behaviour of reading out full URL's when the alt tag is omitted.
    * @default ""
    */
-  alt?: string;
-  src: string;
+  readonly alt?: string;
+  readonly src: string;
 }
 
 /**
@@ -49,8 +49,8 @@ const StyledOptimizedMedia = styled.div`
 `;
 
 interface OptimizedMediaProps {
-  hires: ReactNode;
-  lowres: ReactNode;
+  readonly hires: ReactNode;
+  readonly lowres: ReactNode;
 }
 
 /**

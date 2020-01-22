@@ -7,7 +7,7 @@ import withRedux from "../../../store/_withRedux";
 import Section from "../../../components/Section";
 
 type CheckoutPageProps = {
-  sessionId: string;
+  readonly sessionId: string;
 };
 
 const CheckoutPage: NextPage<CheckoutPageProps> = ({

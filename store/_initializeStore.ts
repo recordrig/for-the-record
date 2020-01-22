@@ -8,8 +8,8 @@ import shoppingBag from "./shoppingBag";
  * reducer's structures are defined in their own modules.
  */
 export interface State {
-  account: {};
-  shoppingBag: {};
+  readonly account: {};
+  readonly shoppingBag: {};
 }
 
 /**

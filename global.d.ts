@@ -10,6 +10,6 @@ declare global {
      * but we've found them to be buggy at the time of writing (they're still in
      * alpha) so we won't bother typing Stripe for now.
      */
-    Stripe: any;
+    readonly Stripe: any;
   }
 }

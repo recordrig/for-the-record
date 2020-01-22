@@ -108,7 +108,7 @@ const StyledForm = styled.div`
 `;
 
 interface FormRowProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 export const FormRow: FunctionComponent<FormRowProps> = ({
@@ -116,7 +116,7 @@ export const FormRow: FunctionComponent<FormRowProps> = ({
 }: FormRowProps) => <StyledFormRow>{children}</StyledFormRow>;
 
 interface FormProps {
-  children: ReactNode | ReactNodeArray;
+  readonly children: ReactNode | ReactNodeArray;
 }
 
 /**

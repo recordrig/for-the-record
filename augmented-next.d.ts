@@ -7,6 +7,6 @@ import { Store } from "redux";
  */
 declare module "next" {
   export interface NextPageContext {
-    reduxStore: Store;
+    readonly reduxStore: Store;
   }
 }

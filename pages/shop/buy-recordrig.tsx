@@ -269,7 +269,7 @@ const StyledRecordRigOptions = styled.div`
 `;
 
 interface StyledColorSelectorProps {
-  selectedColor: string;
+  readonly selectedColor: string;
 }
 
 const StyledColorSelector = styled.a<StyledColorSelectorProps>`
@@ -346,17 +346,17 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
 const StyledBuyRecordRigPage = styled.div``;
 
 interface BuyRecordRigPageProps {
-  addProduct: Function;
-  description: string;
-  heading: string;
-  selectedColor: string | null;
-  shoppingBag: {};
-  title: string;
+  readonly addProduct: Function;
+  readonly description: string;
+  readonly heading: string;
+  readonly selectedColor: string | null;
+  readonly shoppingBag: {};
+  readonly title: string;
 }
 
 interface BuyRecordRigPageState {
-  addToBagColor: string;
-  openDrawer: boolean;
+  readonly addToBagColor: string;
+  readonly openDrawer: boolean;
 }
 
 /**
