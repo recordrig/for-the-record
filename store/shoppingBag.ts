@@ -62,6 +62,8 @@ export const removeProductAction = (
 // Reducer helper functions.
 // -----------------------------------------------------------/
 
+// Add product to Shopping Bag by ID. A new product will put it first in the list.
+// In the case of quantity modifications, the original order is left intact.
 const addProduct = (
   shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
@@ -81,19 +83,11 @@ const addProduct = (
     ];
   }
 
-  // Find the product which should be present already, and update its quantity, moving the
-  // item to the start of the collection.
-  const arrayPosition = shoppingBag.findIndex(
-    product => product.id === productId
+  return shoppingBag.map(product =>
+    product.id === productId
+      ? { ...product, quantity: product.quantity + 1 }
+      : product
   );
-
-  return [
-    {
-      id: productId,
-      quantity: shoppingBag[arrayPosition].quantity + 1
-    },
-    ...shoppingBag
-  ];
 };
 
 const removeProduct = (

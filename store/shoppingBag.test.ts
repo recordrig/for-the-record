@@ -52,7 +52,7 @@ describe("shoppingBag reducer", () => {
       expect(shoppingBag(state, action)).toEqual(newState);
     });
 
-    test("Add product to shopping bag which already contains that product (increase quantity) - should move it to top of arr", () => {
+    test("Add product to shopping bag which already contains that product (increase quantity) - should leave order intact", () => {
       const state = [
         {
           id: "PRODORP",
@@ -72,12 +72,12 @@ describe("shoppingBag reducer", () => {
 
       const newState = [
         {
-          id: "PRODUCTID",
-          quantity: 2
-        },
-        {
           id: "PRODORP",
           quantity: 1
+        },
+        {
+          id: "PRODUCTID",
+          quantity: 2
         },
         {
           id: "PRODUCTTT",
