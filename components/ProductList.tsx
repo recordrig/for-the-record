@@ -117,14 +117,11 @@ const ProductList: FunctionComponent<ProductListProps> = ({
   products,
   indicateAddition = false
 }) => {
-  let productsToRender: readonly Product[] = [];
-  let remainingProductsAmount = 0;
-  if (products.length > 3) {
-    productsToRender = [products[0], products[1], products[2]];
-    remainingProductsAmount = products.length - 3;
-  } else {
-    productsToRender = products;
-  }
+  const productsToRender =
+    products.length > 3 ? [products[0], products[1], products[2]] : [];
+
+  const remainingProductsAmount = products.length > 3 ? products.length - 3 : 0;
+
   return (
     <StyledProductList indicateAddition={indicateAddition}>
       <ul>

@@ -29,6 +29,8 @@ module.exports = {
        */
       "files": ["*.ts", "*.tsx"],
       "rules": {
+        "functional/immutable-data": "warn",
+        "functional/no-let": "error",
         "react/jsx-props-no-spreading": ["error"],
         "@typescript-eslint/explicit-function-return-type": ["error"]
       }
@@ -90,6 +92,11 @@ module.exports = {
     "functional"
   ],
   "rules": {
+    /*
+     * Turn off until we have better alternatives. (Set to "warn" and "error" in TS/TSX files.)
+     */
+    "functional/immutable-data": "off",
+    "functional/no-let": "off",
     /*
      * Airbnb's config assumes `js` and `jsx` files to be supported natively, but doesn't
      * know about `ts` and `tsx` files on its own. We want to allow e.g. `import "./myModule"`

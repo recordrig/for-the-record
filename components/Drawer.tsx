@@ -86,10 +86,10 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   const handleCloseClick = () => onClose();
   const drawerContentElement = useRef<null | HTMLDivElement>(null);
 
-  let neededHeight = 0;
-  if (drawerContentElement.current !== null) {
-    neededHeight = drawerContentElement.current.offsetHeight;
-  }
+  const neededHeight =
+    drawerContentElement.current !== null
+      ? drawerContentElement.current.offsetHeight
+      : 0;
 
   if (typeof window !== "undefined") {
     if (open) document.body.style.overflow = "hidden";
