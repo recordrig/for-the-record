@@ -1,7 +1,7 @@
 // Shared interfaces.
 // -----------------------------------------------------------/
 
-interface Account {
+export interface Account {
   /**
    * The customer ID from Stripe, or `null` if no Stripe customer ID is associated
    * with this account.
