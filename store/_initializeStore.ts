@@ -9,7 +9,7 @@ import shoppingBag from "./shoppingBag";
  */
 export interface State {
   readonly account: {};
-  readonly shoppingBag: {};
+  readonly shoppingBag: readonly [];
 }
 
 /**
@@ -17,7 +17,7 @@ export interface State {
  */
 const initialState: State = {
   account: {},
-  shoppingBag: {}
+  shoppingBag: []
 };
 
 /**
