@@ -6,7 +6,7 @@ import Router from "next/router";
 import styled, { css } from "styled-components";
 import { connect } from "react-redux";
 import withRedux from "../../store/_withRedux";
-import { addProductAction } from "../../store/shoppingBag";
+import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
 import { Heading, SubHeading } from "../../components/Text";
@@ -350,7 +350,7 @@ interface BuyRecordRigPageProps {
   readonly description: string;
   readonly heading: string;
   readonly selectedColor: string | null;
-  readonly shoppingBag: {};
+  readonly shoppingBag: readonly ShoppingBagProduct[];
   readonly title: string;
 }
 
@@ -365,6 +365,7 @@ interface BuyRecordRigPageState {
  */
 const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
   e.preventDefault();
+  // eslint-disable-next-line functional/immutable-data
   Router.push(href);
 };
 
@@ -441,10 +442,16 @@ class BuyRecordRigPage extends Component<
 
     const handleAddToBagClick = () => {
       this.setState({ addToBagColor: "#a6c8ff" });
-      addProduct(`RR20-${selectedColor}`);
-      setTimeout(() => {
-        toggleDrawer();
-      }, 300);
+      const productId = `RR20-${selectedColor}`;
+      addProduct(productId);
+
+      // If it's not a quantity update, open the drawer with a link to the shoppingBag overview.
+      if (!shoppingBag.find(product => product.id === productId)) {
+        setTimeout(() => {
+          toggleDrawer();
+        }, 300);
+      }
+
       setTimeout(() => {
         this.setState({ addToBagColor: "#0062ff" });
       }, 400);

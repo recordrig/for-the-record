@@ -1,7 +1,7 @@
 // Shared interfaces.
 // -----------------------------------------------------------/
 
-interface ShoppingBagProduct {
+export interface ShoppingBagProduct {
   readonly id: string;
   readonly quantity: number;
 }
