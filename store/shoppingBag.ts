@@ -101,20 +101,14 @@ const removeProduct = (
     shoppingBag[shoppingBag.findIndex(product => product.id === productId)]
       .quantity >= 2
   ) {
-    return [
-      ...shoppingBag,
-      {
-        id: productId,
-        quantity: shoppingBag[productId].quantity - 1
-      }
-    ];
+    return shoppingBag.map(product =>
+      product.id === productId
+        ? { ...product, quantity: product.quantity - 1 }
+        : product
+    );
   }
 
-  const newShoppingBag = Object.fromEntries(
-    Object.entries(shoppingBag).filter(([key]) => key !== productId)
-  );
-
-  return newShoppingBag;
+  return shoppingBag.filter(product => product.id !== productId);
 };
 
 // Reducer.
