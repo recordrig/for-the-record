@@ -118,7 +118,7 @@ const ProductList: FunctionComponent<ProductListProps> = ({
   indicateAddition = false
 }) => {
   const productsToRender =
-    products.length > 3 ? [products[0], products[1], products[2]] : [];
+    products.length > 3 ? [products[0], products[1], products[2]] : products;
 
   const remainingProductsAmount = products.length > 3 ? products.length - 3 : 0;
 
