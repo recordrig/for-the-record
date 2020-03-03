@@ -11,6 +11,7 @@ import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
 import { Heading, SubHeading } from "../../components/Text";
 import Drawer from "../../components/Drawer";
+import ProductList from "../../components/ProductList";
 import Footnotes from "../../components/Footnotes";
 
 const StyledRecordRigOverview = styled.div`
@@ -708,23 +709,7 @@ class BuyRecordRigPage extends Component<
         )}
         {selectedColor !== null && (
           <Drawer open={openDrawer} onClose={toggleDrawer}>
-            <ul>
-              <li>
-                <img style={{ height: "100px" }} alt="" src="/recordrig.png" />
-                <p style={{ fontWeight: "bold" }}>RecordRig - Pristine White</p>
-                <span>2x</span>
-              </li>
-              <li>
-                <img
-                  style={{ height: "100px" }}
-                  alt=""
-                  src="/recordrig-black.png"
-                />
-                <p>RecordRig - Stealth Black</p>
-                <span>2x</span>
-              </li>
-            </ul>
-            <p style={{ padding: "120px 0" }}>{shoppingBag.toString()}</p>
+            <ProductList indicateAddition products={shoppingBag} />
           </Drawer>
         )}
       </StyledBuyRecordRigPage>

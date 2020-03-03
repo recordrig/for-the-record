@@ -38,6 +38,8 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
       font-size: 32px;
       line-height: 50px;
       outline: none;
+      position: absolute;
+      right: 0;
       width: 50px;
     }
 
