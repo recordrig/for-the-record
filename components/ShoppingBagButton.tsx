@@ -1,31 +1,85 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
-const StyledShoppingBagButton = styled.div`
-  object {
-    height: 50px;
-    width: 50px;
+interface StyledShoppingBagIconProps {
+  readonly animate: boolean;
+}
+
+const fadeOutIcon = keyframes`
+  0% {
+    opacity: 1;
+  }
+
+  /* Delay fade out so that the icons will overlap. */
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
   }
 `;
 
-interface ShoppingBagButtonProps {
+const fadeInIcon = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
+const StyledShoppingBagIconStill = styled.object<StyledShoppingBagIconProps>`
+  position: absolute;
+  width: inherit;
+
+  ${({ animate }) => css`
+    animation: ${animate && fadeOutIcon} 1.4s; /* Slightly shorter so that it is visible again. */
+  `}
+`;
+
+const StyledShoppingBagIconAnimated = styled.object<StyledShoppingBagIconProps>`
+  position: absolute;
+  width: inherit;
+
+  ${({ animate }) => css`
+    animation: ${animate ? fadeInIcon : fadeOutIcon} 1.5s;
+  `}
+`;
+
+const StyledShoppingBagIcon = styled.div`
+  > div {
+    position: relative;
+    width: 32px;
+  }
+`;
+
+interface ShoppingBagIconProps {
   readonly amount: number;
 }
 
-const ShoppingBagButton: FunctionComponent<ShoppingBagButtonProps> = ({
+const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
   amount
 }) => {
   // Set the local amount once from props.
   const [stateAmount, setStateAmount] = useState(amount);
 
-  const [svgLink, setSvgLink] = useState("/shopping-bag-still.svg");
-  const removeSvgAnimation = () => setSvgLink("/shopping-bag-still.svg");
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     // Animate addition if needed.
     if (amount > stateAmount) {
-      setSvgLink("/shopping-bag-add-animation.svg");
-      setTimeout(removeSvgAnimation, 1500);
+      setAnimate(true);
+      setTimeout(() => setAnimate(false), 1500);
     }
 
     // Sync state amount.
@@ -35,13 +89,26 @@ const ShoppingBagButton: FunctionComponent<ShoppingBagButtonProps> = ({
   }, [amount]);
 
   return (
-    <StyledShoppingBagButton>
+    <StyledShoppingBagIcon>
       <div>
-        <object aria-label="" type="image/svg+xml" data={svgLink} />
+        <StyledShoppingBagIconStill
+          animate={animate}
+          aria-label=""
+          type="image/svg+xml"
+          data="/shopping-bag-still.svg"
+        />
+        {animate && (
+          <StyledShoppingBagIconAnimated
+            animate={animate}
+            aria-label=""
+            type="image/svg+xml"
+            data="/shopping-bag-add-animation.svg"
+          />
+        )}
       </div>
       <span>{amount}</span>
-    </StyledShoppingBagButton>
+    </StyledShoppingBagIcon>
   );
 };
 
-export default ShoppingBagButton;
+export default ShoppingBagIcon;
