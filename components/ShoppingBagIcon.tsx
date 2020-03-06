@@ -39,6 +39,7 @@ const fadeInIcon = keyframes`
 `;
 
 const StyledShoppingBagIconStill = styled.object<StyledShoppingBagIconProps>`
+  bottom: 0;
   position: absolute;
   width: inherit;
 
@@ -48,6 +49,7 @@ const StyledShoppingBagIconStill = styled.object<StyledShoppingBagIconProps>`
 `;
 
 const StyledShoppingBagIconAnimated = styled.object<StyledShoppingBagIconProps>`
+  bottom: 0;
   position: absolute;
   width: inherit;
 
@@ -56,10 +58,48 @@ const StyledShoppingBagIconAnimated = styled.object<StyledShoppingBagIconProps>`
   `}
 `;
 
+const bulge = keyframes`
+  0% {
+    transform: scale(.1, .1);
+  }
+
+  75% {
+    transform: scale(.1, .1);
+  }
+
+  85% {
+    transform: scale(1.1, 1.1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+`;
+
 const StyledShoppingBagIcon = styled.div`
+  height: inherit;
+
   > div {
+    height: inherit;
+    overflow: hidden;
     position: relative;
     width: 32px;
+  }
+
+  > div > span {
+    animation: ${bulge} 1.5s ease;
+    bottom: 1px;
+    color: #ffffff;
+    background-color: #ff4e28;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: bold;
+    min-width: 12px;
+    padding: 1px 2px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    z-index: 1;
   }
 `;
 
@@ -67,6 +107,11 @@ interface ShoppingBagIconProps {
   readonly amount: number;
 }
 
+/**
+ * Shopping bag with amount indicater.
+ *
+ * Animates whenever an addition is made. Inherits parent height and aligns to its bottom side.
+ */
 const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
   amount
 }) => {
@@ -105,8 +150,8 @@ const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
             data="/shopping-bag-add-animation.svg"
           />
         )}
+        {amount > 0 && <span>{amount}</span>}
       </div>
-      <span>{amount}</span>
     </StyledShoppingBagIcon>
   );
 };

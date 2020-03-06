@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import ShoppingBagButton from "./ShoppingBagButton";
+import ShoppingBagIcon from "./ShoppingBagIcon";
 
 const ChangeAmount = () => {
   const [amount, setAmount] = useState(0);
 
   return (
     <div>
-      <ShoppingBagButton amount={amount} />
+      <div style={{ border: "2px solid black", height: "64px" }}>
+        <div style={{ height: "50px" }}>
+          <ShoppingBagIcon amount={amount} />
+        </div>
+      </div>
       <button onClick={() => setAmount(amount - 1)} type="button">
         -1
       </button>
@@ -19,6 +23,6 @@ const ChangeAmount = () => {
 };
 
 storiesOf("ShoppingBagButton", module)
-  .add("No items", () => <ShoppingBagButton amount={0} />)
-  .add("2 items", () => <ShoppingBagButton amount={2} />)
+  .add("No items", () => <ShoppingBagIcon amount={0} />)
+  .add("2 items", () => <ShoppingBagIcon amount={2} />)
   .add("change amount", () => <ChangeAmount />);

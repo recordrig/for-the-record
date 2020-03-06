@@ -3146,9 +3146,40 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBagButton 2 items 1`] = `
-.c0 object {
-  height: 50px;
-  width: 50px;
+.c1 {
+  bottom: 0;
+  position: absolute;
+  width: inherit;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c0 {
+  height: inherit;
+}
+
+.c0 > div {
+  height: inherit;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+}
+
+.c0 > div > span {
+  -webkit-animation: jHaNoP 1.5s ease;
+  animation: jHaNoP 1.5s ease;
+  bottom: 1px;
+  color: #ffffff;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  z-index: 1;
 }
 
 <div
@@ -3157,20 +3188,52 @@ exports[`Storyshots ShoppingBagButton 2 items 1`] = `
   <div>
     <object
       aria-label=""
+      className="c1"
       data="/shopping-bag-still.svg"
       type="image/svg+xml"
     />
+    <span>
+      2
+    </span>
   </div>
-  <span>
-    2
-  </span>
 </div>
 `;
 
 exports[`Storyshots ShoppingBagButton No items 1`] = `
-.c0 object {
-  height: 50px;
-  width: 50px;
+.c1 {
+  bottom: 0;
+  position: absolute;
+  width: inherit;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c0 {
+  height: inherit;
+}
+
+.c0 > div {
+  height: inherit;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+}
+
+.c0 > div > span {
+  -webkit-animation: jHaNoP 1.5s ease;
+  animation: jHaNoP 1.5s ease;
+  bottom: 1px;
+  color: #ffffff;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  z-index: 1;
 }
 
 <div
@@ -3179,36 +3242,80 @@ exports[`Storyshots ShoppingBagButton No items 1`] = `
   <div>
     <object
       aria-label=""
+      className="c1"
       data="/shopping-bag-still.svg"
       type="image/svg+xml"
     />
   </div>
-  <span>
-    0
-  </span>
 </div>
 `;
 
 exports[`Storyshots ShoppingBagButton change amount 1`] = `
-.c0 object {
-  height: 50px;
-  width: 50px;
+.c1 {
+  bottom: 0;
+  position: absolute;
+  width: inherit;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c0 {
+  height: inherit;
+}
+
+.c0 > div {
+  height: inherit;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+}
+
+.c0 > div > span {
+  -webkit-animation: jHaNoP 1.5s ease;
+  animation: jHaNoP 1.5s ease;
+  bottom: 1px;
+  color: #ffffff;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  z-index: 1;
 }
 
 <div>
   <div
-    className="c0"
+    style={
+      Object {
+        "border": "2px solid black",
+        "height": "64px",
+      }
+    }
   >
-    <div>
-      <object
-        aria-label=""
-        data="/shopping-bag-still.svg"
-        type="image/svg+xml"
-      />
+    <div
+      style={
+        Object {
+          "height": "50px",
+        }
+      }
+    >
+      <div
+        className="c0"
+      >
+        <div>
+          <object
+            aria-label=""
+            className="c1"
+            data="/shopping-bag-still.svg"
+            type="image/svg+xml"
+          />
+        </div>
+      </div>
     </div>
-    <span>
-      0
-    </span>
   </div>
   <button
     onClick={[Function]}
