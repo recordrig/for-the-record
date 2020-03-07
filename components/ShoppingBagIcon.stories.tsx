@@ -22,7 +22,7 @@ const ChangeAmount = () => {
   );
 };
 
-storiesOf("ShoppingBagButton", module)
+storiesOf("ShoppingBagIcon", module)
   .add("No items", () => <ShoppingBagIcon amount={0} />)
   .add("2 items", () => <ShoppingBagIcon amount={2} />)
   .add("change amount", () => <ChangeAmount />);

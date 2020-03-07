@@ -1,6 +1,9 @@
 import Link from "next/link";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
+import Drawer from "./Drawer";
+import ProductList from "./ProductList";
+import ShoppingBagIcon from "./ShoppingBagIcon";
 
 const StyledLogo = styled.a`
   display: block;
@@ -28,10 +31,30 @@ const StyledLogo = styled.a`
   }
 `;
 
-const StyledTopMenu = styled.nav`
+const ShoppingBagMenuItem = styled.li`
+  line-height: 64px;
+
+  > a {
+    display: inline-block;
+  }
+
+  > a > div {
+    display: inline-block;
+    margin-right: 6px;
+    position: relative;
+    top: 10px;
+  }
+`;
+
+const StyledMenuBar = styled.nav`
   background-color: #fff;
   height: 64px;
   width: 100%;
+
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
 
   > ul {
     display: flex;
@@ -45,23 +68,53 @@ const StyledTopMenu = styled.nav`
   }
 `;
 
+interface MenuBarProps {
+  readonly products: readonly {
+    readonly id: string;
+    readonly quantity: number;
+  }[];
+}
+
 /**
  * Full width menu bar.
  *
  * NB positioning within a page should be taken care of by the component that includes it.
  */
-const MenuBar: FunctionComponent = () => (
-  <StyledTopMenu>
-    <ul>
-      <li>
-        <Link href="/" passHref>
-          <StyledLogo>
-            <img alt="" src="/recordrig-logo.png" />
-          </StyledLogo>
-        </Link>
-      </li>
-    </ul>
-  </StyledTopMenu>
-);
+const MenuBar: FunctionComponent<MenuBarProps> = () => {
+  const [openShoppingBag, setOpenShoppingBag] = useState(false);
+
+  const toggleDrawer = () => setOpenShoppingBag(!openShoppingBag);
+
+  return (
+    <>
+      <StyledMenuBar>
+        <ul>
+          <li>
+            <Link href="/" passHref>
+              <StyledLogo>
+                <img alt="" src="/recordrig-logo.png" />
+              </StyledLogo>
+            </Link>
+          </li>
+          <ShoppingBagMenuItem>
+            <Link href="/shop/shopping-bag">
+              <a>
+                <div>
+                  <ShoppingBagIcon amount={0} />
+                </div>
+                Shopping Bag
+              </a>
+            </Link>
+          </ShoppingBagMenuItem>
+        </ul>
+      </StyledMenuBar>
+      <Drawer onClose={toggleDrawer} open={openShoppingBag}>
+        <ProductList products={[]} />
+        <Link href="/shop/checkout">Check Out</Link>
+        <Link href="/shop/shopping-bag">Review Bag</Link>
+      </Drawer>
+    </>
+  );
+};
 
 export default MenuBar;

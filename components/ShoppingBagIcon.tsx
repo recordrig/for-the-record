@@ -78,9 +78,11 @@ const bulge = keyframes`
 
 const StyledShoppingBagIcon = styled.div`
   height: inherit;
+  min-height: 32px;
 
   > div {
     height: inherit;
+    min-height: 32px;
     overflow: hidden;
     position: relative;
     width: 32px;
