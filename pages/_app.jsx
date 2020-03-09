@@ -1,16 +1,9 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
-import MenuBar from "../components/MenuBar";
-
-const PositionedMenuBar = styled.div`
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-`;
 
 /**
  * These styles may be assumed to be included on all pages, so that font availability and rendering
@@ -148,9 +141,6 @@ export default class RecordRigApp extends App {
           <meta name="theme-color" content="#ffffff" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <PositionedMenuBar>
-          <MenuBar products={[]} />
-        </PositionedMenuBar>
         <Component key={router.route} {...modifiedPageProps} />
         <Footer />
         {/*
