@@ -952,7 +952,8 @@ Array [
   min-height: 32px;
 }
 
-.c3 > div {
+.c3 > span {
+  display: inline-block;
   height: inherit;
   min-height: 32px;
   overflow: hidden;
@@ -960,13 +961,14 @@ Array [
   width: 32px;
 }
 
-.c3 > div > span {
+.c3 > span > span {
   -webkit-animation: jHaNoP 1.5s ease;
   animation: jHaNoP 1.5s ease;
-  bottom: 1px;
-  color: #ffffff;
   background-color: #ff4e28;
   border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
   font-size: 10px;
   font-weight: bold;
   min-width: 12px;
@@ -997,11 +999,19 @@ Array [
   line-height: 64px;
 }
 
-.c2 > a {
-  display: inline-block;
+.c2 > button {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 64px;
+  outline: none;
+  padding: 0;
+  text-align: left;
 }
 
-.c2 > a > div {
+.c2 > button > span {
   display: inline-block;
   margin-right: 6px;
   position: relative;
@@ -1030,7 +1040,11 @@ Array [
   padding: 0;
 }
 
-.c0 > ul > li:first-child {
+.c0 > ul li {
+  font-size: 16px;
+}
+
+.c0 > ul li:first-child {
   margin-right: auto;
 }
 
@@ -1068,27 +1082,275 @@ Array [
       <li
         className="c2"
       >
-        <a
-          href="/shop/shopping-bag"
+        <button
           onClick={[Function]}
-          onMouseEnter={[Function]}
+          type="button"
         >
-          <div>
+          <span>
             <div
               className="c3"
             >
-              <div>
+              <span>
                 <object
                   aria-label=""
                   className="c4"
                   data="/shopping-bag-still.svg"
                   type="image/svg+xml"
                 />
-              </div>
+              </span>
             </div>
-          </div>
+          </span>
           Shopping Bag
+        </button>
+      </li>
+    </ul>
+  </nav>,
+  .c0 {
+  background-color: #ffffff;
+  position: fixed;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 32px;
+  line-height: 50px;
+  outline: none;
+  position: absolute;
+  right: 0;
+  width: 50px;
+}
+
+.c0 > div {
+  max-height: calc(100% - 128px);
+}
+
+@media (max-width:575px) {
+  .c0 {
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+}
+
+<div
+    className="c0"
+    open={false}
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      ✕
+    </button>
+    <div>
+      <p
+        style={
+          Object {
+            "padding": "120px 0",
+            "textAlign": "center",
+          }
+        }
+      >
+        Your Shopping Bag is empty.
+      </p>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots MenuBar products 1`] = `
+Array [
+  .c4 {
+  bottom: 0;
+  position: absolute;
+  width: inherit;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c3 {
+  height: inherit;
+  min-height: 32px;
+}
+
+.c3 > span {
+  display: inline-block;
+  height: inherit;
+  min-height: 32px;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+}
+
+.c3 > span > span {
+  -webkit-animation: jHaNoP 1.5s ease;
+  animation: jHaNoP 1.5s ease;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  z-index: 1;
+}
+
+.c1 {
+  display: block;
+  height: 32px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.c1 > img {
+  height: 32px;
+  width: 123px;
+}
+
+.c2 {
+  line-height: 64px;
+}
+
+.c2 > button {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 64px;
+  outline: none;
+  padding: 0;
+  text-align: left;
+}
+
+.c2 > button > span {
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  top: 10px;
+}
+
+.c0 {
+  background-color: #fff;
+  height: 64px;
+  width: 100%;
+}
+
+.c0 a {
+  color: #000000;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 > ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 > ul li {
+  font-size: 16px;
+}
+
+.c0 > ul li:first-child {
+  margin-right: auto;
+}
+
+@media (max-width:767px) {
+  .c1 {
+    overflow: hidden;
+    margin-left: 4px;
+    width: 32px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    margin-left: 8px;
+  }
+}
+
+<nav
+    className="c0"
+  >
+    <ul>
+      <li>
+        <a
+          className="c1"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <img
+            alt=""
+            src="/recordrig-logo.png"
+          />
         </a>
+      </li>
+      <li
+        className="c2"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            <div
+              className="c3"
+            >
+              <span>
+                <object
+                  aria-label=""
+                  className="c4"
+                  data="/shopping-bag-still.svg"
+                  type="image/svg+xml"
+                />
+              </span>
+            </div>
+          </span>
+          Shopping Bag
+        </button>
       </li>
     </ul>
   </nav>,
@@ -1150,7 +1412,7 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 128px;
+  height: 100px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 24px;
@@ -1159,13 +1421,13 @@ Array [
 
 .c1 li > div {
   box-sizing: border-box;
-  height: 100px;
+  height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
 .c1 li img {
-  height: 100px;
+  height: 64px;
 }
 
 .c1 li p {
@@ -1182,6 +1444,28 @@ Array [
   -webkit-animation: none;
   animation: none;
   will-change: unset;
+}
+
+.c2 {
+  background-color: #0062ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 8px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: calc(100% - 16px);
+}
+
+.c3 {
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
 }
 
 @media (max-width:575px) {
@@ -1227,22 +1511,93 @@ Array [
       <div
         className="c1"
       >
-        <ul />
+        <ul>
+          <li>
+            <img
+              alt=""
+              src="/recordrig-black.png"
+            />
+            <div>
+              <p>
+                RecordRig -
+                 
+                Stealth Black
+              </p>
+            </div>
+          </li>
+          <li>
+            <img
+              alt=""
+              src="/recordrig.png"
+            />
+            <div>
+              <p>
+                RecordRig -
+                 
+                Pristine White
+              </p>
+            </div>
+          </li>
+          <li>
+            <img
+              alt=""
+              src="/recordrig-black.png"
+            />
+            <div>
+              <p>
+                RecordRig -
+                 
+                Stealth Black
+              </p>
+              <span>
+                3
+                x
+              </span>
+            </div>
+          </li>
+        </ul>
+        <div>
+          <span>
+            3
+             more item
+            s
+             in your Bag
+          </span>
+        </div>
       </div>
       <a
+        className="c2"
         href="/shop/checkout"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Check Out
+        Check Out 
+        <span
+          style={
+            Object {
+              "fontSize": "20px",
+            }
+          }
+        >
+           →
+        </span>
       </a>
-      <a
-        href="/shop/shopping-bag"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+      <p
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
       >
-        Review Bag
-      </a>
+        <a
+          className="c3"
+          href="/shop/shopping-bag"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Review Bag
+        </a>
+      </p>
     </div>
   </div>,
 ]
@@ -1411,7 +1766,7 @@ exports[`Storyshots ProductList 1 more item 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 128px;
+  height: 100px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 24px;
@@ -1420,13 +1775,13 @@ exports[`Storyshots ProductList 1 more item 1`] = `
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 100px;
+  height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
 .c0 li img {
-  height: 100px;
+  height: 64px;
 }
 
 .c0 li p {
@@ -1536,7 +1891,7 @@ exports[`Storyshots ProductList 3 more items 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 128px;
+  height: 100px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 24px;
@@ -1545,13 +1900,13 @@ exports[`Storyshots ProductList 3 more items 1`] = `
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 100px;
+  height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
 .c0 li img {
-  height: 100px;
+  height: 64px;
 }
 
 .c0 li p {
@@ -1662,7 +2017,7 @@ exports[`Storyshots ProductList default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 128px;
+  height: 100px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 24px;
@@ -1671,13 +2026,13 @@ exports[`Storyshots ProductList default 1`] = `
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 100px;
+  height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
 .c0 li img {
-  height: 100px;
+  height: 64px;
 }
 
 .c0 li p {
@@ -1767,7 +2122,7 @@ exports[`Storyshots ProductList indicate addition 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 128px;
+  height: 100px;
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 24px;
@@ -1776,13 +2131,13 @@ exports[`Storyshots ProductList indicate addition 1`] = `
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 100px;
+  height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
 .c0 li img {
-  height: 100px;
+  height: 64px;
 }
 
 .c0 li p {
@@ -3398,7 +3753,8 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
   min-height: 32px;
 }
 
-.c0 > div {
+.c0 > span {
+  display: inline-block;
   height: inherit;
   min-height: 32px;
   overflow: hidden;
@@ -3406,13 +3762,14 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
   width: 32px;
 }
 
-.c0 > div > span {
+.c0 > span > span {
   -webkit-animation: jHaNoP 1.5s ease;
   animation: jHaNoP 1.5s ease;
-  bottom: 1px;
-  color: #ffffff;
   background-color: #ff4e28;
   border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
   font-size: 10px;
   font-weight: bold;
   min-width: 12px;
@@ -3426,7 +3783,7 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <span>
     <object
       aria-label=""
       className="c1"
@@ -3436,7 +3793,7 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
     <span>
       2
     </span>
-  </div>
+  </span>
 </div>
 `;
 
@@ -3454,7 +3811,8 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
   min-height: 32px;
 }
 
-.c0 > div {
+.c0 > span {
+  display: inline-block;
   height: inherit;
   min-height: 32px;
   overflow: hidden;
@@ -3462,13 +3820,14 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
   width: 32px;
 }
 
-.c0 > div > span {
+.c0 > span > span {
   -webkit-animation: jHaNoP 1.5s ease;
   animation: jHaNoP 1.5s ease;
-  bottom: 1px;
-  color: #ffffff;
   background-color: #ff4e28;
   border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
   font-size: 10px;
   font-weight: bold;
   min-width: 12px;
@@ -3482,14 +3841,14 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <span>
     <object
       aria-label=""
       className="c1"
       data="/shopping-bag-still.svg"
       type="image/svg+xml"
     />
-  </div>
+  </span>
 </div>
 `;
 
@@ -3507,7 +3866,8 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
   min-height: 32px;
 }
 
-.c0 > div {
+.c0 > span {
+  display: inline-block;
   height: inherit;
   min-height: 32px;
   overflow: hidden;
@@ -3515,13 +3875,14 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
   width: 32px;
 }
 
-.c0 > div > span {
+.c0 > span > span {
   -webkit-animation: jHaNoP 1.5s ease;
   animation: jHaNoP 1.5s ease;
-  bottom: 1px;
-  color: #ffffff;
   background-color: #ff4e28;
   border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
   font-size: 10px;
   font-weight: bold;
   min-width: 12px;
@@ -3551,14 +3912,14 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
       <div
         className="c0"
       >
-        <div>
+        <span>
           <object
             aria-label=""
             className="c1"
             data="/shopping-bag-still.svg"
             type="image/svg+xml"
           />
-        </div>
+        </span>
       </div>
     </div>
   </div>

@@ -80,7 +80,8 @@ const StyledShoppingBagIcon = styled.div`
   height: inherit;
   min-height: 32px;
 
-  > div {
+  > span {
+    display: inline-block;
     height: inherit;
     min-height: 32px;
     overflow: hidden;
@@ -88,12 +89,13 @@ const StyledShoppingBagIcon = styled.div`
     width: 32px;
   }
 
-  > div > span {
+  > span > span {
     animation: ${bulge} 1.5s ease;
-    bottom: 1px;
-    color: #ffffff;
     background-color: #ff4e28;
     border-radius: 8px;
+    bottom: 1px;
+    color: #ffffff;
+    display: inline-block;
     font-size: 10px;
     font-weight: bold;
     min-width: 12px;
@@ -137,7 +139,7 @@ const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
 
   return (
     <StyledShoppingBagIcon>
-      <div>
+      <span>
         <StyledShoppingBagIconStill
           animate={animate}
           aria-label=""
@@ -153,7 +155,7 @@ const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
           />
         )}
         {amount > 0 && <span>{amount}</span>}
-      </div>
+      </span>
     </StyledShoppingBagIcon>
   );
 };

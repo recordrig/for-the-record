@@ -31,14 +31,43 @@ const StyledLogo = styled.a`
   }
 `;
 
+const StyledCheckoutLink = styled.a`
+  background-color: #0062ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 8px;
+  text-align: center;
+  text-decoration: none;
+  width: calc(100% - 16px);
+`;
+
+const StyledReviewBagLink = styled.a`
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+`;
+
 const ShoppingBagMenuItem = styled.li`
   line-height: 64px;
 
-  > a {
-    display: inline-block;
+  > button {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 64px;
+    outline: none;
+    padding: 0;
+    text-align: left;
   }
 
-  > a > div {
+  > button > span {
     display: inline-block;
     margin-right: 6px;
     position: relative;
@@ -61,10 +90,14 @@ const StyledMenuBar = styled.nav`
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
 
-  > ul > li :first-child {
-    margin-right: auto;
+    li {
+      font-size: 16px;
+    }
+
+    li:first-child {
+      margin-right: auto;
+    }
   }
 `;
 
@@ -80,7 +113,7 @@ interface MenuBarProps {
  *
  * NB positioning within a page should be taken care of by the component that includes it.
  */
-const MenuBar: FunctionComponent<MenuBarProps> = () => {
+const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
   const [openShoppingBag, setOpenShoppingBag] = useState(false);
 
   const toggleDrawer = () => setOpenShoppingBag(!openShoppingBag);
@@ -97,21 +130,35 @@ const MenuBar: FunctionComponent<MenuBarProps> = () => {
             </Link>
           </li>
           <ShoppingBagMenuItem>
-            <Link href="/shop/shopping-bag">
-              <a>
-                <div>
-                  <ShoppingBagIcon amount={0} />
-                </div>
-                Shopping Bag
-              </a>
-            </Link>
+            <button onClick={toggleDrawer} type="button">
+              <span>
+                <ShoppingBagIcon amount={0} />
+              </span>
+              Shopping Bag
+            </button>
           </ShoppingBagMenuItem>
         </ul>
       </StyledMenuBar>
       <Drawer onClose={toggleDrawer} open={openShoppingBag}>
-        <ProductList products={[]} />
-        <Link href="/shop/checkout">Check Out</Link>
-        <Link href="/shop/shopping-bag">Review Bag</Link>
+        {products.length > 0 ? (
+          <>
+            <ProductList products={products} />
+            <Link href="/shop/checkout" passHref>
+              <StyledCheckoutLink>
+                Check Out <span style={{ fontSize: "20px" }}>&nbsp;&rarr;</span>
+              </StyledCheckoutLink>
+            </Link>
+            <p style={{ textAlign: "center" }}>
+              <Link href="/shop/shopping-bag" passHref>
+                <StyledReviewBagLink>Review Bag</StyledReviewBagLink>
+              </Link>
+            </p>
+          </>
+        ) : (
+          <p style={{ padding: "120px 0", textAlign: "center" }}>
+            Your Shopping Bag is empty.
+          </p>
+        )}
       </Drawer>
     </>
   );

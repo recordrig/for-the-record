@@ -33,7 +33,7 @@ const StyledProductList = styled.div<StyledProductListProps>`
     border-bottom: 1px solid #dde1e6;
     box-sizing: border-box;
     display: flex;
-    height: 128px;
+    height: 100px;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 24px;
@@ -41,13 +41,13 @@ const StyledProductList = styled.div<StyledProductListProps>`
 
     > div {
       box-sizing: border-box;
-      height: 100px;
+      height: 64px;
       padding-top: 16px;
       padding-left: 24px;
     }
 
     img {
-      height: 100px;
+      height: 64px;
     }
 
     p {

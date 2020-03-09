@@ -149,7 +149,7 @@ export default class RecordRigApp extends App {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <PositionedMenuBar>
-          <MenuBar />
+          <MenuBar products={[]} />
         </PositionedMenuBar>
         <Component key={router.route} {...modifiedPageProps} />
         <Footer />
