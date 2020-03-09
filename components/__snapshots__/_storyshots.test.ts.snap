@@ -939,7 +939,7 @@ exports[`Storyshots MainMenu default 1`] = `
 
 exports[`Storyshots MenuBar default 1`] = `
 Array [
-  .c4 {
+  .c5 {
   bottom: 0;
   position: absolute;
   width: inherit;
@@ -947,12 +947,12 @@ Array [
   animation: 1.4s;
 }
 
-.c3 {
+.c4 {
   height: inherit;
   min-height: 32px;
 }
 
-.c3 > span {
+.c4 > span {
   display: inline-block;
   height: inherit;
   min-height: 32px;
@@ -961,7 +961,7 @@ Array [
   width: 32px;
 }
 
-.c3 > span > span {
+.c4 > span > span {
   -webkit-animation: jHaNoP 1.5s ease;
   animation: jHaNoP 1.5s ease;
   background-color: #ff4e28;
@@ -996,10 +996,24 @@ Array [
 }
 
 .c2 {
+  border: 1px solid #0062ff;
+  box-sizing: border-box;
+  color: #0062ff;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  margin: 8px 16px;
+  padding: 0 16px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 {
   line-height: 64px;
 }
 
-.c2 > button {
+.c3 > button {
   background: none;
   border: 0;
   border-radius: 0;
@@ -1007,11 +1021,12 @@ Array [
   font-size: 16px;
   line-height: 64px;
   outline: none;
+  margin: 0 8px;
   padding: 0;
   text-align: left;
 }
 
-.c2 > button > span {
+.c3 > button > span {
   display: inline-block;
   margin-right: 6px;
   position: relative;
@@ -1025,7 +1040,6 @@ Array [
 }
 
 .c0 a {
-  color: #000000;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1062,6 +1076,13 @@ Array [
   }
 }
 
+@media (max-width:575px) {
+  .c3 button {
+    color: pink !important;
+    font-size: 0;
+  }
+}
+
 <nav
     className="c0"
   >
@@ -1079,8 +1100,18 @@ Array [
           />
         </a>
       </li>
+      <li>
+        <a
+          className="c2"
+          href="/shop"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Shop
+        </a>
+      </li>
       <li
-        className="c2"
+        className="c3"
       >
         <button
           onClick={[Function]}
@@ -1088,12 +1119,12 @@ Array [
         >
           <span>
             <div
-              className="c3"
+              className="c4"
             >
               <span>
                 <object
                   aria-label=""
-                  className="c4"
+                  className="c5"
                   data="/shopping-bag-still.svg"
                   type="image/svg+xml"
                 />
@@ -1188,7 +1219,7 @@ Array [
 
 exports[`Storyshots MenuBar products 1`] = `
 Array [
-  .c4 {
+  .c5 {
   bottom: 0;
   position: absolute;
   width: inherit;
@@ -1196,12 +1227,12 @@ Array [
   animation: 1.4s;
 }
 
-.c3 {
+.c4 {
   height: inherit;
   min-height: 32px;
 }
 
-.c3 > span {
+.c4 > span {
   display: inline-block;
   height: inherit;
   min-height: 32px;
@@ -1210,7 +1241,7 @@ Array [
   width: 32px;
 }
 
-.c3 > span > span {
+.c4 > span > span {
   -webkit-animation: jHaNoP 1.5s ease;
   animation: jHaNoP 1.5s ease;
   background-color: #ff4e28;
@@ -1245,10 +1276,24 @@ Array [
 }
 
 .c2 {
+  border: 1px solid #0062ff;
+  box-sizing: border-box;
+  color: #0062ff;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  margin: 8px 16px;
+  padding: 0 16px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 {
   line-height: 64px;
 }
 
-.c2 > button {
+.c3 > button {
   background: none;
   border: 0;
   border-radius: 0;
@@ -1256,11 +1301,12 @@ Array [
   font-size: 16px;
   line-height: 64px;
   outline: none;
+  margin: 0 8px;
   padding: 0;
   text-align: left;
 }
 
-.c2 > button > span {
+.c3 > button > span {
   display: inline-block;
   margin-right: 6px;
   position: relative;
@@ -1274,7 +1320,6 @@ Array [
 }
 
 .c0 a {
-  color: #000000;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -1311,6 +1356,13 @@ Array [
   }
 }
 
+@media (max-width:575px) {
+  .c3 button {
+    color: pink !important;
+    font-size: 0;
+  }
+}
+
 <nav
     className="c0"
   >
@@ -1328,8 +1380,18 @@ Array [
           />
         </a>
       </li>
+      <li>
+        <a
+          className="c2"
+          href="/shop"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Shop
+        </a>
+      </li>
       <li
-        className="c2"
+        className="c3"
       >
         <button
           onClick={[Function]}
@@ -1337,12 +1399,12 @@ Array [
         >
           <span>
             <div
-              className="c3"
+              className="c4"
             >
               <span>
                 <object
                   aria-label=""
-                  className="c4"
+                  className="c5"
                   data="/shopping-bag-still.svg"
                   type="image/svg+xml"
                 />
@@ -1455,7 +1517,7 @@ Array [
   height: 64px;
   font-size: 19px;
   line-height: 64px;
-  margin: 0 8px;
+  margin: 0 16px;
   text-align: center;
   -webkit-text-decoration: none;
   text-decoration: none;

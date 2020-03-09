@@ -31,6 +31,19 @@ const StyledLogo = styled.a`
   }
 `;
 
+const StyledShopLink = styled.a`
+  border: 1px solid #0062ff;
+  box-sizing: border-box;
+  color: #0062ff;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  margin: 8px 16px;
+  padding: 0 16px;
+  text-align: center;
+  text-decoration: none;
+`;
+
 const StyledCheckoutLink = styled.a`
   background-color: #0062ff;
   border-radius: 10px;
@@ -40,7 +53,7 @@ const StyledCheckoutLink = styled.a`
   height: 64px;
   font-size: 19px;
   line-height: 64px;
-  margin: 0 8px;
+  margin: 0 16px;
   text-align: center;
   text-decoration: none;
   width: calc(100% - 16px);
@@ -63,6 +76,7 @@ const ShoppingBagMenuItem = styled.li`
     font-size: 16px;
     line-height: 64px;
     outline: none;
+    margin: 0 8px;
     padding: 0;
     text-align: left;
   }
@@ -73,6 +87,13 @@ const ShoppingBagMenuItem = styled.li`
     position: relative;
     top: 10px;
   }
+
+  @media (max-width: 575px) {
+    button {
+      color: pink !important;
+      font-size: 0;
+    }
+  }
 `;
 
 const StyledMenuBar = styled.nav`
@@ -81,7 +102,6 @@ const StyledMenuBar = styled.nav`
   width: 100%;
 
   a {
-    color: #000000;
     text-decoration: none;
   }
 
@@ -127,6 +147,11 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
               <StyledLogo>
                 <img alt="" src="/recordrig-logo.png" />
               </StyledLogo>
+            </Link>
+          </li>
+          <li>
+            <Link href="/shop" passHref>
+              <StyledShopLink>Shop</StyledShopLink>
             </Link>
           </li>
           <ShoppingBagMenuItem>
