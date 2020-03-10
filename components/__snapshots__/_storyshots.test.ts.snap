@@ -3801,6 +3801,200 @@ exports[`Storyshots Section subsections 1`] = `
 </div>
 `;
 
+exports[`Storyshots ShoppingBag default 1`] = `
+Array [
+  .c0 {
+  max-width: 575px;
+  width: 100%;
+}
+
+.c0 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c0 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c0 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.c0 li {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c0 li > div {
+  box-sizing: border-box;
+  height: 64px;
+  padding-top: 16px;
+  padding-left: 24px;
+}
+
+.c0 li img {
+  height: 64px;
+}
+
+.c0 li p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c0 li span {
+  color: #697077;
+  font-size: 12px;
+}
+
+<div
+    className="c0"
+  >
+    <ul>
+      <li>
+        <img
+          alt=""
+          src="/recordrig-black.png"
+        />
+        <div>
+          <p>
+            RecordRig -
+             
+            Stealth Black
+          </p>
+          <p>
+            Estimated delivery: 2 weeks
+          </p>
+          <p>
+            1
+          </p>
+          <p>
+            € 2.399,00
+          </p>
+          <p>
+            Remove
+          </p>
+        </div>
+      </li>
+      <li>
+        <img
+          alt=""
+          src="/recordrig.png"
+        />
+        <div>
+          <p>
+            RecordRig -
+             
+            Pristine White
+          </p>
+          <p>
+            Estimated delivery: 2 weeks
+          </p>
+          <p>
+            2
+          </p>
+          <p>
+            € 2.399,00
+          </p>
+          <p>
+            Remove
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>,
+  .c0 {
+  background-color: #0062ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 16px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: calc(100% - 16px);
+}
+
+<div
+    className=""
+  >
+    <p>
+      <span>
+        Subtotal:
+      </span>
+       
+      <span>
+        € 1.982,64
+      </span>
+    </p>
+    <p>
+      <span>
+        Tax (21%):
+      </span>
+       
+      <span>
+        € 416,36
+      </span>
+    </p>
+    <p>
+      <span>
+        Shipping:
+      </span>
+       
+      <span>
+        FREE
+      </span>
+    </p>
+    <p>
+      <span>
+        Total:
+      </span>
+       
+      <span>
+        € 2.399,00
+      </span>
+    </p>
+    <a
+      className="c0"
+      href="/shop/checkout"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Check Out 
+      <span
+        style={
+          Object {
+            "fontSize": "20px",
+          }
+        }
+      >
+         →
+      </span>
+    </a>
+  </div>,
+]
+`;
+
 exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
 .c1 {
   bottom: 0;
