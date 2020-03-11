@@ -68,13 +68,50 @@ const StyledCheckoutLink = styled.a`
   height: 64px;
   font-size: 19px;
   line-height: 64px;
-  margin: 0 16px;
   text-align: center;
   text-decoration: none;
-  width: calc(100% - 16px);
+  width: 100%;
 `;
 
-const StyledTotals = styled.div``;
+const StyledTotals = styled.div`
+  p {
+    color: #4d5358;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    > span {
+      display: block;
+      float: left;
+    }
+
+    > span:nth-child(2) {
+      float: right;
+    }
+  }
+
+  p:last-of-type {
+    border-top: 1px solid #dde1e6;
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    padding-top: 8px;
+  }
+
+  @media (min-width: 450px) and (max-width: 640px) {
+    padding-left: 33%;
+  }
+
+  @media (min-width: 641px) {
+    padding-left: 50%;
+  }
+`;
+
+const StyledShoppingBag = styled.div`
+  margin: 0 auto;
+  max-width: 758px;
+`;
 
 interface Product {
   readonly id: string;
@@ -103,7 +140,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({ products }) => {
   // TODO: Remove product
 
   return (
-    <>
+    <StyledShoppingBag>
       <StyledProductList>
         <ul>
           {products.map(product => (
@@ -151,7 +188,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({ products }) => {
           </StyledCheckoutLink>
         </Link>
       </StyledTotals>
-    </>
+    </StyledShoppingBag>
   );
 };
 

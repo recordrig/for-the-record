@@ -3802,19 +3802,18 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
-Array [
-  .c0 {
+.c1 {
   max-width: 575px;
   width: 100%;
 }
 
-.c0 > div {
+.c1 > div {
   bottom: 28px;
   position: relative;
   text-align: center;
 }
 
-.c0 > div > span {
+.c1 > div > span {
   background-color: #ffffff;
   color: #697077;
   display: inline-block;
@@ -3823,12 +3822,12 @@ Array [
   padding-right: 12px;
 }
 
-.c0 ul {
+.c1 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-.c0 li {
+.c1 li {
   border-bottom: 1px solid #dde1e6;
   box-sizing: border-box;
   display: -webkit-box;
@@ -3842,29 +3841,89 @@ Array [
   padding-right: 24px;
 }
 
-.c0 li > div {
+.c1 li > div {
   box-sizing: border-box;
   height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
-.c0 li img {
+.c1 li img {
   height: 64px;
 }
 
-.c0 li p {
+.c1 li p {
   font-weight: bold;
   margin: 0;
 }
 
-.c0 li span {
+.c1 li span {
   color: #697077;
   font-size: 12px;
 }
 
+.c3 {
+  background-color: #0062ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+}
+
+.c2 p {
+  color: #4d5358;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.c2 p > span {
+  display: block;
+  float: left;
+}
+
+.c2 p > span:nth-child(2) {
+  float: right;
+}
+
+.c2 p:last-of-type {
+  border-top: 1px solid #dde1e6;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  padding-top: 8px;
+}
+
+.c0 {
+  margin: 0 auto;
+  max-width: 758px;
+}
+
+@media (min-width:450px) and (max-width:640px) {
+  .c2 {
+    padding-left: 33%;
+  }
+}
+
+@media (min-width:641px) {
+  .c2 {
+    padding-left: 50%;
+  }
+}
+
 <div
-    className="c0"
+  className="c0"
+>
+  <div
+    className="c1"
   >
     <ul>
       <li>
@@ -3918,25 +3977,9 @@ Array [
         </div>
       </li>
     </ul>
-  </div>,
-  .c0 {
-  background-color: #0062ff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
-  margin: 0 16px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: calc(100% - 16px);
-}
-
-<div
-    className=""
+  </div>
+  <div
+    className="c2"
   >
     <p>
       <span>
@@ -3975,7 +4018,7 @@ Array [
       </span>
     </p>
     <a
-      className="c0"
+      className="c3"
       href="/shop/checkout"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -3991,8 +4034,8 @@ Array [
          →
       </span>
     </a>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
