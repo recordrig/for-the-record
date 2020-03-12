@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const StyledProductList = styled.div`
-  max-width: 575px;
   width: 100%;
 
   > div {
@@ -30,31 +29,44 @@ const StyledProductList = styled.div`
     border-bottom: 1px solid #dde1e6;
     box-sizing: border-box;
     display: flex;
-    height: 100px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
     > div {
       box-sizing: border-box;
+      flex-grow: 1;
       height: 64px;
       padding-top: 16px;
       padding-left: 24px;
     }
 
     img {
-      height: 64px;
+      height: 160px;
     }
 
     p {
+      font-size: 24px;
       font-weight: bold;
       margin: 0;
     }
 
-    span {
-      color: #697077;
-      font-size: 12px;
+    p:nth-child(2) {
+      color: #4d5358;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    p:nth-child(4) {
+      text-align: right;
+    }
+
+    button {
+      background: none;
+      border: none;
+      float: right;
+      font-size: 15px;
+      padding: 0;
+      text-decoration: underline;
     }
   }
 `;
@@ -163,7 +175,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({ products }) => {
                 <p>Estimated delivery: 2 weeks</p>
                 <p>{product.quantity}</p>
                 <p>€ 2.399,00</p>
-                <p>Remove</p>
+                <button>Remove</button>
               </div>
             </li>
           ))}
