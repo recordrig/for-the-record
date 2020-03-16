@@ -3803,7 +3803,6 @@ exports[`Storyshots Section subsections 1`] = `
 
 exports[`Storyshots ShoppingBag default 1`] = `
 .c1 {
-  max-width: 575px;
   width: 100%;
 }
 
@@ -3834,32 +3833,70 @@ exports[`Storyshots ShoppingBag default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .c1 li > div {
   box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   height: 64px;
   padding-top: 16px;
   padding-left: 24px;
 }
 
 .c1 li img {
-  height: 64px;
+  height: 160px;
 }
 
 .c1 li p {
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
 
-.c1 li span {
-  color: #697077;
-  font-size: 12px;
+.c1 li p:nth-child(2) {
+  color: #4d5358;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c1 li p:nth-child(4) {
+  text-align: right;
+}
+
+.c1 li select {
+  background-color: transparent;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
+  background-position: right 4px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  top: 30px;
+  width: 48px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.c1 li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+  outline: none;
+  padding: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c3 {
@@ -3940,15 +3977,49 @@ exports[`Storyshots ShoppingBag default 1`] = `
           <p>
             Estimated delivery: 2 weeks
           </p>
-          <p>
-            1
-          </p>
+          <select
+            id="RR20-stealth-black-quantity"
+            onChange={[Function]}
+          >
+            <option
+              selected={true}
+              value={1}
+            >
+              1
+            </option>
+            <option
+              selected={false}
+              value={2}
+            >
+              2
+            </option>
+            <option
+              selected={false}
+              value={3}
+            >
+              3
+            </option>
+            <option
+              selected={false}
+              value={4}
+            >
+              4
+            </option>
+            <option
+              disabled={true}
+              selected={true}
+            >
+              1
+            </option>
+          </select>
           <p>
             € 2.399,00
           </p>
-          <p>
+          <button
+            type="button"
+          >
             Remove
-          </p>
+          </button>
         </div>
       </li>
       <li>
@@ -3965,15 +4036,49 @@ exports[`Storyshots ShoppingBag default 1`] = `
           <p>
             Estimated delivery: 2 weeks
           </p>
-          <p>
-            2
-          </p>
+          <select
+            id="RR20-pristine-white-quantity"
+            onChange={[Function]}
+          >
+            <option
+              selected={false}
+              value={1}
+            >
+              1
+            </option>
+            <option
+              selected={true}
+              value={2}
+            >
+              2
+            </option>
+            <option
+              selected={false}
+              value={3}
+            >
+              3
+            </option>
+            <option
+              selected={false}
+              value={4}
+            >
+              4
+            </option>
+            <option
+              disabled={true}
+              selected={true}
+            >
+              2
+            </option>
+          </select>
           <p>
             € 2.399,00
           </p>
-          <p>
+          <button
+            type="button"
+          >
             Remove
-          </p>
+          </button>
         </div>
       </li>
     </ul>

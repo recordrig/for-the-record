@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { ChangeEvent, FunctionComponent } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -60,11 +60,32 @@ const StyledProductList = styled.div`
       text-align: right;
     }
 
+    select {
+      background-color: transparent;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
+      background-position: right 4px center;
+      background-repeat: no-repeat;
+      background-size: 18px;
+      border: 0;
+      box-shadow: none;
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      outline: none;
+      position: relative;
+      top: 30px;
+      width: 48px;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+
     button {
       background: none;
       border: none;
+      cursor: pointer;
       float: right;
       font-size: 15px;
+      outline: none;
       padding: 0;
       text-decoration: underline;
     }
@@ -131,24 +152,34 @@ interface Product {
 }
 
 interface ShoppingBagProps {
+  readonly updateProductQuantity: Function;
   /**
    * Pass products as an array in order to guarantee that their order will be correct.
    * The most recently added product should be listed at the top.
    *
    * The passed collection should hold at least 1 product.
    */
-  readonly products: readonly Product[] & { readonly 0: Product };
-  readonly indicateAddition?: boolean;
+  readonly products: readonly Product[];
 }
 
 /**
  * Expansive list of all passed `products`. Includes sum total and button to Checkout.
  */
-const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({ products }) => {
+const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
+  updateProductQuantity,
+  products
+}) => {
   // So long as RecordRigs are the only thing we sell, the price is always the same.
   const PRICE = 239900;
 
   // TODO: Update qty
+  const handleChangeQuantity = (
+    productId: Product["id"],
+    desiredQuantity: string
+  ) => {
+    updateProductQuantity(productId, desiredQuantity);
+  };
+
   // TODO: Remove product
 
   return (
@@ -173,9 +204,26 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({ products }) => {
                     : "Pristine White"}
                 </p>
                 <p>Estimated delivery: 2 weeks</p>
-                <p>{product.quantity}</p>
+                <select
+                  id={`${product.id}-quantity`}
+                  onChange={e =>
+                    handleChangeQuantity(product.id, e.currentTarget.value)
+                  }
+                >
+                  {[1, 2, 3, 4].map(option => (
+                    <option
+                      selected={product.quantity === option}
+                      value={option}
+                    >
+                      {option}
+                    </option>
+                  ))}
+                  <option disabled selected>
+                    {product.quantity}
+                  </option>
+                </select>
                 <p>€ 2.399,00</p>
-                <button>Remove</button>
+                <button type="button">Remove</button>
               </div>
             </li>
           ))}

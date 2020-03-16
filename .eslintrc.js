@@ -149,6 +149,10 @@ module.exports = {
      */
     "prettier/prettier": ["error"],
     /*
+     * Turn off because it conflicts with Prettier.
+     */
+    "react/jsx-curly-newline": "off",
+    /*
      * Airbnb's config doesn't account for any TypeScript configuration so we need to tell it
      * that it's ok if we encounter JSX in `.tsx` files.
      */
