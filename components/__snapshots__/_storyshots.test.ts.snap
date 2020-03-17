@@ -3802,6 +3802,85 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
+.c2 {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  -webkit-animation: 1.2s;
+  animation: 1.2s;
+}
+
+.c2 > div {
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 64px;
+  padding-top: 16px;
+  padding-left: 24px;
+}
+
+.c2 img {
+  height: 160px;
+}
+
+.c2 p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.c2 p:nth-child(2) {
+  color: #4d5358;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c2 p:nth-child(4) {
+  text-align: right;
+}
+
+.c2 select {
+  background-color: transparent;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
+  background-position: right 4px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  top: 30px;
+  width: 48px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.c2 button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+  margin-top: 4px;
+  outline: none;
+  padding: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 .c1 {
   width: 100%;
 }
@@ -3826,80 +3905,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-left: 0;
 }
 
-.c1 li {
-  border-bottom: 1px solid #dde1e6;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.c1 li > div {
-  box-sizing: border-box;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 64px;
-  padding-top: 16px;
-  padding-left: 24px;
-}
-
-.c1 li img {
-  height: 160px;
-}
-
-.c1 li p {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.c1 li p:nth-child(2) {
-  color: #4d5358;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.c1 li p:nth-child(4) {
-  text-align: right;
-}
-
-.c1 li select {
-  background-color: transparent;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
-  background-position: right 4px center;
-  background-repeat: no-repeat;
-  background-size: 18px;
-  border: 0;
-  box-shadow: none;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-  outline: none;
-  position: relative;
-  top: 30px;
-  width: 48px;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
-.c1 li button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  float: right;
-  font-size: 15px;
-  outline: none;
-  padding: 0;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c3 {
+.c4 {
   background-color: #0062ff;
   border-radius: 10px;
   box-sizing: border-box;
@@ -3914,22 +3920,22 @@ exports[`Storyshots ShoppingBag default 1`] = `
   width: 100%;
 }
 
-.c2 p {
+.c3 p {
   color: #4d5358;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
-.c2 p > span {
+.c3 p > span {
   display: block;
   float: left;
 }
 
-.c2 p > span:nth-child(2) {
+.c3 p > span:nth-child(2) {
   float: right;
 }
 
-.c2 p:last-of-type {
+.c3 p:last-of-type {
   border-top: 1px solid #dde1e6;
   color: #000000;
   font-size: 24px;
@@ -3945,13 +3951,13 @@ exports[`Storyshots ShoppingBag default 1`] = `
 }
 
 @media (min-width:450px) and (max-width:640px) {
-  .c2 {
+  .c3 {
     padding-left: 33%;
   }
 }
 
 @media (min-width:641px) {
-  .c2 {
+  .c3 {
     padding-left: 50%;
   }
 }
@@ -3963,7 +3969,9 @@ exports[`Storyshots ShoppingBag default 1`] = `
     className="c1"
   >
     <ul>
-      <li>
+      <li
+        className="c2"
+      >
         <img
           alt=""
           src="/recordrig-black.png"
@@ -4016,13 +4024,16 @@ exports[`Storyshots ShoppingBag default 1`] = `
             € 2.399,00
           </p>
           <button
+            onClick={[Function]}
             type="button"
           >
             Remove
           </button>
         </div>
       </li>
-      <li>
+      <li
+        className="c2"
+      >
         <img
           alt=""
           src="/recordrig.png"
@@ -4075,6 +4086,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
             € 2.399,00
           </p>
           <button
+            onClick={[Function]}
             type="button"
           >
             Remove
@@ -4084,7 +4096,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
     </ul>
   </div>
   <div
-    className="c2"
+    className="c3"
   >
     <p>
       <span>
@@ -4123,7 +4135,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       </span>
     </p>
     <a
-      className="c3"
+      className="c4"
       href="/shop/checkout"
       onClick={[Function]}
       onMouseEnter={[Function]}

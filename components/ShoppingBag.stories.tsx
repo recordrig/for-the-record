@@ -24,16 +24,19 @@ const ShoppingBagDefaultContainer = () => {
     );
   };
 
+  const removeProduct = productId => {
+    setProducts(products.filter(product => product.id !== productId));
+  };
+
   return (
     <ShoppingBag
       products={products}
       updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
     />
   );
 };
 
 storiesOf("ShoppingBag", module).add("default", () => (
-  <>
-    <ShoppingBagDefaultContainer />
-  </>
+  <ShoppingBagDefaultContainer />
 ));
