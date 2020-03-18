@@ -29,11 +29,19 @@ const ShoppingBagDefaultContainer = () => {
   };
 
   return (
-    <ShoppingBag
-      products={products}
-      updateProductQuantity={updateProductQuantity}
-      removeProduct={removeProduct}
-    />
+    <>
+      {products.length > 0 ? (
+        <ShoppingBag
+          products={products}
+          updateProductQuantity={updateProductQuantity}
+          removeProduct={removeProduct}
+        />
+      ) : (
+        <p style={{ margin: "32px" }}>
+          [Render something else incase of empty shopping bag.]
+        </p>
+      )}
+    </>
   );
 };
 
