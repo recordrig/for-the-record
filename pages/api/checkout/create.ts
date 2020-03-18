@@ -14,6 +14,8 @@ export default async (_req, res): Promise<void> => {
         name: "RecordRig - Stealth Black",
         description: "Description",
         images: ["https://example.com/t-shirt.png"],
+        // TODO: Calculate amount based on product ID's (do not blindly accept
+        // numbers sent from the frontend - these could have been tampered with).
         amount: 239900,
         currency: "eur",
         quantity: 1
