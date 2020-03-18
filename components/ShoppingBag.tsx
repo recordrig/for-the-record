@@ -252,7 +252,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
           {products.map(product => (
             <StyledProduct
               animateRemoval={animateRemoval === product.id}
-              key={product.id}
+              key={`product-${product.id}`}
             >
               <img
                 alt=""
@@ -275,22 +275,17 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   onChange={e =>
                     handleChangeQuantity(product.id, e.currentTarget.value)
                   }
+                  value={product.quantity}
                 >
                   {[1, 2, 3, 4].map(option => (
-                    <option
-                      selected={product.quantity === option}
-                      value={option}
-                    >
+                    <option key={`amount-${option}`} value={option}>
                       {option}
                     </option>
                   ))}
-                  <option disabled selected>
-                    {product.quantity}
-                  </option>
                 </select>
                 <p>€ 2.399,00</p>
                 <button
-                  onClick={e => handleRemoveProduct(product.id)}
+                  onClick={() => handleRemoveProduct(product.id)}
                   type="button"
                 >
                   Remove
