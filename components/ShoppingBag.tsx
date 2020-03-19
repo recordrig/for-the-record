@@ -228,7 +228,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   products,
   removeProduct
 }) => {
-  const prices = products.map(product => product.price);
+  const prices = products.map(product => product.price * product.quantity);
   const total = prices.reduce((a, b) => a + b);
   const preTaxTotal = Math.round(total / 1.21);
   const taxTotal = total - preTaxTotal;
@@ -291,7 +291,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     </option>
                   ))}
                 </select>
-                <p>{formatCurrency(price)}</p>
+                <p>{formatCurrency(price * quantity)}</p>
                 <button onClick={() => handleRemoveProduct(id)} type="button">
                   Remove
                 </button>
