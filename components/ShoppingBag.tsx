@@ -233,6 +233,13 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   const preTaxTotal = Math.round(total / 1.21);
   const taxTotal = total - preTaxTotal;
 
+  const formatCurrency = (intPrice: number) =>
+    (intPrice / 100).toLocaleString("nl-NL", {
+      currency: "EUR",
+      minimumFractionDigits: 2,
+      style: "currency"
+    });
+
   // Set to a particular Product ID to animate that Product into oblivion.
   const [animateRemoval, setAnimateRemoval] = useState("");
 
@@ -284,7 +291,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     </option>
                   ))}
                 </select>
-                <p>{price}</p>
+                <p>{formatCurrency(price)}</p>
                 <button onClick={() => handleRemoveProduct(id)} type="button">
                   Remove
                 </button>
@@ -295,16 +302,16 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
       </StyledProductList>
       <StyledTotals>
         <p>
-          <span>Subtotal:</span>&nbsp;<span>{preTaxTotal}</span>
+          <span>Subtotal:</span>&nbsp;<span>{formatCurrency(preTaxTotal)}</span>
         </p>
         <p>
-          <span>Tax (21%):</span>&nbsp;<span>{taxTotal}</span>
+          <span>Tax (21%):</span>&nbsp;<span>{formatCurrency(taxTotal)}</span>
         </p>
         <p>
           <span>Shipping:</span>&nbsp;<span>FREE</span>
         </p>
         <p>
-          <span>Total:</span>&nbsp;<span>{total}</span>
+          <span>Total:</span>&nbsp;<span>{formatCurrency(total)}</span>
         </p>
         <Link href="/shop/checkout" passHref>
           <StyledCheckoutLink>
