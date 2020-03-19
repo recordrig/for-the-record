@@ -202,6 +202,7 @@ const StyledShoppingBag = styled.div`
 
 interface Product {
   readonly id: string;
+  readonly price: number;
   readonly quantity: number;
 }
 
@@ -227,8 +228,10 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   products,
   removeProduct
 }) => {
-  // So long as RecordRigs are the only thing we sell, the price is always the same.
-  const PRICE = 239900;
+  const prices = products.map(product => product.price);
+  const total = prices.reduce((a, b) => a + b);
+  const preTaxTotal = Math.round(total / 1.21);
+  const taxTotal = total - preTaxTotal;
 
   // Set to a particular Product ID to animate that Product into oblivion.
   const [animateRemoval, setAnimateRemoval] = useState("");
@@ -249,15 +252,15 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     <StyledShoppingBag>
       <StyledProductList>
         <ul>
-          {products.map(product => (
+          {products.map(({ id, price, quantity }) => (
             <StyledProduct
-              animateRemoval={animateRemoval === product.id}
-              key={`product-${product.id}`}
+              animateRemoval={animateRemoval === id}
+              key={`product-${id}`}
             >
               <img
                 alt=""
                 src={
-                  product.id.endsWith("black")
+                  id.endsWith("black")
                     ? "/recordrig-black.png"
                     : "/recordrig.png"
                 }
@@ -265,17 +268,15 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
               <div>
                 <p>
                   RecordRig -{" "}
-                  {product.id.endsWith("black")
-                    ? "Stealth Black"
-                    : "Pristine White"}
+                  {id.endsWith("black") ? "Stealth Black" : "Pristine White"}
                 </p>
                 <p>Estimated delivery: 2 weeks</p>
                 <select
-                  id={`${product.id}-quantity`}
+                  id={`${id}-quantity`}
                   onChange={e =>
-                    handleChangeQuantity(product.id, e.currentTarget.value)
+                    handleChangeQuantity(id, e.currentTarget.value)
                   }
-                  value={product.quantity}
+                  value={quantity}
                 >
                   {[1, 2, 3, 4].map(option => (
                     <option key={`amount-${option}`} value={option}>
@@ -283,11 +284,8 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     </option>
                   ))}
                 </select>
-                <p>€ 2.399,00</p>
-                <button
-                  onClick={() => handleRemoveProduct(product.id)}
-                  type="button"
-                >
+                <p>{price}</p>
+                <button onClick={() => handleRemoveProduct(id)} type="button">
                   Remove
                 </button>
               </div>
@@ -297,16 +295,16 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
       </StyledProductList>
       <StyledTotals>
         <p>
-          <span>Subtotal:</span>&nbsp;<span>€ 1.982,64</span>
+          <span>Subtotal:</span>&nbsp;<span>{preTaxTotal}</span>
         </p>
         <p>
-          <span>Tax (21%):</span>&nbsp;<span>€ 416,36</span>
+          <span>Tax (21%):</span>&nbsp;<span>{taxTotal}</span>
         </p>
         <p>
           <span>Shipping:</span>&nbsp;<span>FREE</span>
         </p>
         <p>
-          <span>Total:</span>&nbsp;<span>€ 2.399,00</span>
+          <span>Total:</span>&nbsp;<span>{total}</span>
         </p>
         <Link href="/shop/checkout" passHref>
           <StyledCheckoutLink>

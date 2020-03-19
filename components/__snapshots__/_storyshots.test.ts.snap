@@ -4012,7 +4012,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
             </option>
           </select>
           <p>
-            € 2.399,00
+            239900
           </p>
           <button
             onClick={[Function]}
@@ -4065,7 +4065,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
             </option>
           </select>
           <p>
-            € 2.399,00
+            239900
           </p>
           <button
             onClick={[Function]}
@@ -4086,7 +4086,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       </span>
        
       <span>
-        € 1.982,64
+        396529
       </span>
     </p>
     <p>
@@ -4095,7 +4095,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       </span>
        
       <span>
-        € 416,36
+        83271
       </span>
     </p>
     <p>
@@ -4113,7 +4113,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       </span>
        
       <span>
-        € 2.399,00
+        479800
       </span>
     </p>
     <a

@@ -6,10 +6,12 @@ const ShoppingBagDefaultContainer = () => {
   const [products, setProducts] = useState([
     {
       id: "RR20-stealth-black",
+      price: 239900,
       quantity: 1
     },
     {
       id: "RR20-pristine-white",
+      price: 239900,
       quantity: 2
     }
   ]);
