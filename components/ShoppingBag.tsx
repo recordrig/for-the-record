@@ -51,12 +51,11 @@ const removeProductAnimation = keyframes`
 const StyledProduct = styled.li<StyledProductProps>`
   border-bottom: 1px solid #dde1e6;
   box-sizing: border-box;
-  display: flex;
   max-height: 500px; /* Will change on removal animation. */
   opacity: 1; /* Will change on removal animation. */
   overflow: hidden;
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
 
   ${({ animateRemoval }) => css`
     animation: ${animateRemoval && removeProductAnimation} 1.2s;
@@ -67,15 +66,9 @@ const StyledProduct = styled.li<StyledProductProps>`
     flex-grow: 1;
     height: 64px;
     padding-top: 16px;
-    padding-left: 24px;
-  }
-
-  img {
-    height: 160px;
   }
 
   p {
-    font-size: 24px;
     font-weight: bold;
     margin: 0;
   }
@@ -99,7 +92,6 @@ const StyledProduct = styled.li<StyledProductProps>`
     border: 0;
     box-shadow: none;
     cursor: pointer;
-    font-size: 24px;
     font-weight: bold;
     outline: none;
     position: relative;
@@ -119,6 +111,36 @@ const StyledProduct = styled.li<StyledProductProps>`
     outline: none;
     padding: 0;
     text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    p,
+    select {
+      font-size: 20px;
+    }
+
+    img {
+      display: block;
+      margin: 16px auto;
+      width: 240px;
+    }
+  }
+
+  @media (min-width: 641px) {
+    display: flex;
+
+    > div {
+      padding-left: 24px;
+    }
+
+    p,
+    select {
+      font-size: 24px;
+    }
+
+    img {
+      height: 200px;
+    }
   }
 `;
 
@@ -179,7 +201,6 @@ const StyledTotals = styled.div`
   p:last-of-type {
     border-top: 1px solid #dde1e6;
     color: #000000;
-    font-size: 24px;
     font-weight: bold;
     margin-top: 16px;
     margin-bottom: 32px;
@@ -190,8 +211,18 @@ const StyledTotals = styled.div`
     padding-left: 33%;
   }
 
+  @media (max-width: 640px) {
+    p:last-of-type {
+      font-size: 20px;
+    }
+  }
+
   @media (min-width: 641px) {
     padding-left: 50%;
+
+    p:last-of-type {
+      font-size: 24px;
+    }
   }
 `;
 
