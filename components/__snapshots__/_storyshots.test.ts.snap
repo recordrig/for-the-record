@@ -3804,11 +3804,6 @@ exports[`Storyshots Section subsections 1`] = `
 exports[`Storyshots ShoppingBag default 1`] = `
 .c2 {
   border-bottom: 1px solid #dde1e6;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   max-height: 500px;
   opacity: 1;
   overflow: hidden;
@@ -3826,15 +3821,9 @@ exports[`Storyshots ShoppingBag default 1`] = `
   flex-grow: 1;
   height: 64px;
   padding-top: 16px;
-  padding-left: 24px;
-}
-
-.c2 img {
-  height: 160px;
 }
 
 .c2 p {
-  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
@@ -3858,11 +3847,9 @@ exports[`Storyshots ShoppingBag default 1`] = `
   border: 0;
   box-shadow: none;
   cursor: pointer;
-  font-size: 24px;
   font-weight: bold;
   outline: none;
   position: relative;
-  top: 30px;
   width: 48px;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -3871,6 +3858,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
 .c2 button {
   background: none;
   border: none;
+  clear: both;
   cursor: pointer;
   float: right;
   font-size: 15px;
@@ -3938,7 +3926,6 @@ exports[`Storyshots ShoppingBag default 1`] = `
 .c3 p:last-of-type {
   border-top: 1px solid #dde1e6;
   color: #000000;
-  font-size: 24px;
   font-weight: bold;
   margin-top: 16px;
   margin-bottom: 32px;
@@ -3950,15 +3937,72 @@ exports[`Storyshots ShoppingBag default 1`] = `
   max-width: 758px;
 }
 
+@media (max-width:640px) {
+  .c2 p,
+  .c2 select {
+    font-size: 20px;
+  }
+
+  .c2 select {
+    top: 24px;
+  }
+
+  .c2 img {
+    display: block;
+    margin: 16px auto;
+    width: 240px;
+  }
+}
+
+@media (min-width:641px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c2 > div {
+    padding-left: 32px;
+  }
+
+  .c2 p,
+  .c2 select {
+    font-size: 24px;
+  }
+
+  .c2 select {
+    top: 30px;
+  }
+
+  .c2 img {
+    height: 200px;
+  }
+
+  .c2 p:nth-child(2) {
+    margin-bottom: 32px;
+  }
+}
+
 @media (min-width:450px) and (max-width:640px) {
   .c3 {
     padding-left: 33%;
   }
 }
 
+@media (max-width:640px) {
+  .c3 p:last-of-type {
+    font-size: 20px;
+  }
+}
+
 @media (min-width:641px) {
   .c3 {
     padding-left: 50%;
+  }
+
+  .c3 p:last-of-type {
+    font-size: 24px;
   }
 }
 

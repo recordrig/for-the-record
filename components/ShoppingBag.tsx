@@ -50,12 +50,11 @@ const removeProductAnimation = keyframes`
 
 const StyledProduct = styled.li<StyledProductProps>`
   border-bottom: 1px solid #dde1e6;
-  box-sizing: border-box;
   max-height: 500px; /* Will change on removal animation. */
   opacity: 1; /* Will change on removal animation. */
   overflow: hidden;
   padding-top: 24px;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
 
   ${({ animateRemoval }) => css`
     animation: ${animateRemoval && removeProductAnimation} 1.2s;
@@ -95,7 +94,6 @@ const StyledProduct = styled.li<StyledProductProps>`
     font-weight: bold;
     outline: none;
     position: relative;
-    top: 30px;
     width: 48px;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -104,6 +102,7 @@ const StyledProduct = styled.li<StyledProductProps>`
   button {
     background: none;
     border: none;
+    clear: both;
     cursor: pointer;
     float: right;
     font-size: 15px;
@@ -119,6 +118,10 @@ const StyledProduct = styled.li<StyledProductProps>`
       font-size: 20px;
     }
 
+    select {
+      top: 24px;
+    }
+
     img {
       display: block;
       margin: 16px auto;
@@ -130,7 +133,7 @@ const StyledProduct = styled.li<StyledProductProps>`
     display: flex;
 
     > div {
-      padding-left: 24px;
+      padding-left: 32px;
     }
 
     p,
@@ -138,8 +141,16 @@ const StyledProduct = styled.li<StyledProductProps>`
       font-size: 24px;
     }
 
+    select {
+      top: 30px;
+    }
+
     img {
       height: 200px;
+    }
+
+    p:nth-child(2) {
+      margin-bottom: 32px;
     }
   }
 `;
