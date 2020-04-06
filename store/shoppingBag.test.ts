@@ -1,6 +1,7 @@
 import shoppingBag, {
   addProductAction,
-  removeProductAction
+  removeProductAction,
+  updateProductQuantityAction
 } from "./shoppingBag";
 
 describe("shoppingBag reducer", () => {
@@ -175,6 +176,36 @@ describe("shoppingBag reducer", () => {
       const action = removeProductAction("PRODUCTID");
 
       const newState = [];
+
+      expect(shoppingBag(state, action)).toEqual(newState);
+    });
+  });
+
+  describe("Update product quantity", () => {
+    test("The correct product is updated with the supplied number", () => {
+      const state = [
+        {
+          id: "PRODUCTID",
+          quantity: 3
+        },
+        {
+          id: "PRODORP",
+          quantity: 1
+        }
+      ];
+
+      const action = updateProductQuantityAction("PRODUCTID", 1);
+
+      const newState = [
+        {
+          id: "PRODUCTID",
+          quantity: 1
+        },
+        {
+          id: "PRODORP",
+          quantity: 1
+        }
+      ];
 
       expect(shoppingBag(state, action)).toEqual(newState);
     });

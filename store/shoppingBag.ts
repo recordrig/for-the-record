@@ -11,7 +11,8 @@ export interface ShoppingBagProduct {
 
 enum ActionTypes {
   ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
-  REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT"
+  REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT",
+  UPDATE_PRODUCT_QUANTITY = "shoppingBag/UPDATE_PRODUCT_QUANTITY"
 }
 
 // Action creators.
@@ -55,6 +56,30 @@ export const removeProductAction = (
     type: ActionTypes.REMOVE_PRODUCT,
     payload: {
       id
+    }
+  };
+};
+
+interface UpdateProductQuantityAction {
+  readonly type: ActionTypes.UPDATE_PRODUCT_QUANTITY;
+  readonly payload: {
+    /**
+     * The Product ID of the to-be updated product.
+     */
+    readonly id: string;
+    readonly newQuantity: number;
+  };
+}
+
+export const updateProductQuantityAction = (
+  id: UpdateProductQuantityAction["payload"]["id"],
+  newQuantity: UpdateProductQuantityAction["payload"]["newQuantity"]
+): UpdateProductQuantityAction => {
+  return {
+    type: ActionTypes.UPDATE_PRODUCT_QUANTITY,
+    payload: {
+      id,
+      newQuantity
     }
   };
 };
@@ -111,10 +136,22 @@ const removeProduct = (
   return shoppingBag.filter(product => product.id !== productId);
 };
 
+const updateProductQuantity = (
+  shoppingBag: readonly ShoppingBagProduct[],
+  productId: ShoppingBagProduct["id"],
+  newQuantity: ShoppingBagProduct["quantity"]
+): readonly ShoppingBagProduct[] =>
+  shoppingBag.map(product =>
+    product.id === productId ? { ...product, quantity: newQuantity } : product
+  );
+
 // Reducer.
 // -----------------------------------------------------------/
 
-type Action = AddProductAction | RemoveProductAction;
+type Action =
+  | AddProductAction
+  | RemoveProductAction
+  | UpdateProductQuantityAction;
 
 const initialState: readonly ShoppingBagProduct[] = [];
 
@@ -127,6 +164,12 @@ const shoppingBag = (
       return addProduct(state, action.payload.id);
     case ActionTypes.REMOVE_PRODUCT:
       return removeProduct(state, action.payload.id);
+    case ActionTypes.UPDATE_PRODUCT_QUANTITY:
+      return updateProductQuantity(
+        state,
+        action.payload.id,
+        action.payload.newQuantity
+      );
     default:
       return state;
   }
