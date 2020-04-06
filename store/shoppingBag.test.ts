@@ -95,7 +95,7 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODUCTID",
-          quantity: 1
+          quantity: 2
         }
       ];
 
@@ -106,7 +106,7 @@ describe("shoppingBag reducer", () => {
       expect(shoppingBag(state, action)).toEqual(newState);
     });
 
-    test("Remove product from shopping bag which contains multiple of that product (decrease quantity) - order should stay the same", () => {
+    test("Remove product from shopping bag which contains multiple products - order should stay the same", () => {
       const state = [
         {
           id: "PRODORP",
@@ -127,10 +127,6 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODORP",
-          quantity: 1
-        },
-        {
-          id: "PRODUCTID",
           quantity: 1
         },
         {

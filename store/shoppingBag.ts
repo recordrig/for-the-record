@@ -118,23 +118,8 @@ const addProduct = (
 const removeProduct = (
   shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
-): readonly ShoppingBagProduct[] => {
-  // If at least 2 of these products are already in the shopping bag, we'll decrease its quantity,
-  // leaving the original array order intact.
-  if (
-    shoppingBag.find(product => product.id === productId) &&
-    shoppingBag[shoppingBag.findIndex(product => product.id === productId)]
-      .quantity >= 2
-  ) {
-    return shoppingBag.map(product =>
-      product.id === productId
-        ? { ...product, quantity: product.quantity - 1 }
-        : product
-    );
-  }
-
-  return shoppingBag.filter(product => product.id !== productId);
-};
+): readonly ShoppingBagProduct[] =>
+  shoppingBag.filter(product => product.id !== productId);
 
 const updateProductQuantity = (
   shoppingBag: readonly ShoppingBagProduct[],
