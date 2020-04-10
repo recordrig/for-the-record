@@ -13,15 +13,7 @@ import Section, { SectionIntro } from "../../components/Section";
 import ShoppingBag from "../../components/ShoppingBag";
 import { Heading } from "../../components/Text";
 
-const StyledShoppingBagPage = styled.div``;
-
-interface ShoppingBagPageProps {
-  readonly removeProduct: Function;
-  readonly updateProductQuantity: Function;
-  readonly shoppingBag: readonly ShoppingBagProduct[];
-}
-
-const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
+const ShoppingBagContainer = ({
   removeProduct,
   updateProductQuantity,
   shoppingBag
@@ -39,30 +31,52 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   const total = prices.reduce((a, b) => a + b);
 
   return (
+    <Section>
+      <SectionIntro>
+        <Heading center h={1}>
+          Your bag total is {total}.
+        </Heading>
+        <p>Get free shipping on all EU orders.</p>
+      </SectionIntro>
+      <ShoppingBag
+        products={products}
+        updateProductQuantity={updateProductQuantity}
+        removeProduct={removeProduct}
+      />
+    </Section>
+  );
+};
+
+const StyledShoppingBagPage = styled.div``;
+
+interface ShoppingBagPageProps {
+  readonly removeProduct: Function;
+  readonly updateProductQuantity: Function;
+  readonly shoppingBag: readonly ShoppingBagProduct[];
+}
+
+const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
+  removeProduct,
+  updateProductQuantity,
+  shoppingBag
+}) => {
+  return (
     <StyledShoppingBagPage>
       <Head>
         <title>Shopping Bag</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <Section>
-        <SectionIntro>
-          <Heading center h={1}>
-            Your bag total is {total}.
-          </Heading>
-          <p>Get free shipping on all EU orders.</p>
-        </SectionIntro>
+      {shoppingBag.length > 0 ? (
+        <ShoppingBagContainer
+          removeProduct={removeProduct}
+          updateProductQuantity={updateProductQuantity}
+          shoppingBag={shoppingBag}
+        />
+      ) : (
         <Section>
-          {shoppingBag.length > 0 ? (
-            <ShoppingBag
-              products={products}
-              updateProductQuantity={updateProductQuantity}
-              removeProduct={removeProduct}
-            />
-          ) : (
-            <p>Get free shipping on all EU orders.</p>
-          )}
+          <p>Your bag is empty.</p>
         </Section>
-      </Section>
+      )}
     </StyledShoppingBagPage>
   );
 };
