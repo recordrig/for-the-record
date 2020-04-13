@@ -5,7 +5,6 @@ import Link from "next/link";
 import Router from "next/router";
 import styled, { css } from "styled-components";
 import { connect } from "react-redux";
-import withRedux from "../../store/_withRedux";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
 import Section, { SectionIntro } from "../../components/Section";
 import Tile, { TileContainer } from "../../components/Tile";
@@ -732,4 +731,4 @@ const ConnectedBuyRecordRigPage = connect(
   mapDispatchToProps
 )(BuyRecordRigPage);
 
-export default withRedux(ConnectedBuyRecordRigPage);
+export default ConnectedBuyRecordRigPage;

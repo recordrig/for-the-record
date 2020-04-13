@@ -1,8 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import { NextPage } from "next";
 import Router from "next/router";
 import Section from "../../components/Section";
-import withRedux from "../../store/_withRedux";
 
 const ShopPage: NextPage = () => (
   <Section>
@@ -24,4 +24,6 @@ ShopPage.getInitialProps = async ({ res }) => {
   return {};
 };
 
-export default withRedux(ShopPage);
+const ConnectedShopPage = connect(null, null)(ShopPage);
+
+export default ConnectedShopPage;

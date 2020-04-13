@@ -1,7 +1,12 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
+import withRedux from "next-redux-wrapper";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import { createGlobalStyle } from "styled-components";
+import rootReducer from "../store/_rootReducer";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
 import MenuBar from "../components/MenuBar";
@@ -90,10 +95,47 @@ if (process.env.NODE_ENV === "production") {
 }
 
 /**
+ * The app's state when the store has just been instantiated. It presets some key names.
+ */
+const initialStatePreset = {
+  account: {
+    customerId: null
+  },
+  shoppingBag: []
+};
+
+/**
+ * Creates a Redux store with this app's presets and the devtools. Use the paired
+ * `withRedux()` helper function around a Page component to initialize the store
+ * when a page is requested.
+ *
+ * @param initialState The store's initial state (on the client side, the state of
+ * the server-side store is passed here).
+ */
+const makeStore = (initialState = initialStatePreset) => {
+  return createStore(
+    rootReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware())
+  );
+};
+
+/**
  * Overrides Next.js' default `App` component which is used for page initialization.
  * `Component` refers to the active page component.
  */
-export default class RecordRigApp extends App {
+class RecordRigApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    // We can dispatch from here too
+    // ctx.store.dispatch({ type: "FOO", payload: "foo" });
+
+    const pageProps = Component.getInitialProps
+      ? await Component.getInitialProps(ctx)
+      : {};
+
+    return { pageProps };
+  }
+
   render() {
     const {
       /** The "Component" component refers to whatever the currently active page component is. */
@@ -104,15 +146,17 @@ export default class RecordRigApp extends App {
        */
       pageProps,
       /** Used to set a unique key on the page component based on the current route. */
-      router
+      router,
+      /** Application's store made available through connecting with Redux. */
+      store
     } = this.props;
 
-    // Workaround for https://github.com/zeit/next.js/issues/8592 (needed for Sentry)
+    // Workaround for https://github.com/zeit/next.js/issues/8592 (needed for Sentry).
     const { err } = this.props;
     const modifiedPageProps = { ...pageProps, err };
 
     return (
-      <>
+      <Provider store={store}>
         <Head>
           <link
             rel="apple-touch-icon"
@@ -151,7 +195,9 @@ export default class RecordRigApp extends App {
         <LoaderBar />
         <MenuBar products={[]} />
         <ApplicationStyles />
-      </>
+      </Provider>
     );
   }
 }
+
+export default withRedux(makeStore)(RecordRigApp);

@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import withRedux from "../../store/_withRedux";
 import {
   ShoppingBagProduct,
   removeProductAction,
@@ -97,4 +96,4 @@ const ConnectedShoppingBagPage = connect(
   mapDispatchToProps
 )(ShoppingBagPage);
 
-export default withRedux(ConnectedShoppingBagPage);
+export default ConnectedShoppingBagPage;
