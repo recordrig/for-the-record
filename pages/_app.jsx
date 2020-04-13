@@ -4,6 +4,7 @@ import Head from "next/head";
 import { createGlobalStyle } from "styled-components";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
+import MenuBar from "../components/MenuBar";
 
 /**
  * These styles may be assumed to be included on all pages, so that font availability and rendering
@@ -148,6 +149,7 @@ export default class RecordRigApp extends App {
          * is NOT passed along as a prop with `PageTransition`.
          */}
         <LoaderBar />
+        <MenuBar products={[]} />
         <ApplicationStyles />
       </>
     );

@@ -76,7 +76,7 @@ const ShoppingBagMenuItem = styled.li`
     font-size: 16px;
     line-height: 64px;
     outline: none;
-    margin: 0 8px;
+    margin: 0 16px 0 8px;
     padding: 0;
     text-align: left;
   }
@@ -99,6 +99,8 @@ const ShoppingBagMenuItem = styled.li`
 const StyledMenuBar = styled.nav`
   background-color: #fff;
   height: 64px;
+  position: fixed;
+  top: 0;
   width: 100%;
 
   a {
@@ -130,8 +132,6 @@ interface MenuBarProps {
 
 /**
  * Full width menu bar.
- *
- * NB positioning within a page should be taken care of by the component that includes it.
  */
 const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
   const [openShoppingBag, setOpenShoppingBag] = useState(false);
