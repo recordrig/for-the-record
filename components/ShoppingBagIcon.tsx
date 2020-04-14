@@ -98,6 +98,8 @@ const StyledShoppingBagIcon = styled.div`
     display: inline-block;
     font-size: 10px;
     font-weight: bold;
+    height: 14px;
+    line-height: 13px;
     min-width: 12px;
     padding: 1px 2px;
     position: absolute;

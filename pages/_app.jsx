@@ -9,7 +9,7 @@ import { createGlobalStyle } from "styled-components";
 import rootReducer from "../store/_rootReducer";
 import Footer from "../components/Footer";
 import LoaderBar, { loaderBarStyles } from "../components/LoaderBar";
-import MenuBar from "../components/MenuBar";
+import ConnectedMenuBar from "../components/MenuBarContainer";
 
 /**
  * These styles may be assumed to be included on all pages, so that font availability and rendering
@@ -193,7 +193,7 @@ class RecordRigApp extends App {
          * is NOT passed along as a prop with `PageTransition`.
          */}
         <LoaderBar />
-        <MenuBar products={[]} />
+        <ConnectedMenuBar />
         <ApplicationStyles />
       </Provider>
     );

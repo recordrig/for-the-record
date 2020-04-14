@@ -971,6 +971,8 @@ Array [
   display: inline-block;
   font-size: 10px;
   font-weight: bold;
+  height: 14px;
+  line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
@@ -1253,6 +1255,8 @@ Array [
   display: inline-block;
   font-size: 10px;
   font-weight: bold;
+  height: 14px;
+  line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
@@ -1412,6 +1416,9 @@ Array [
                   data="/shopping-bag-still.svg"
                   type="image/svg+xml"
                 />
+                <span>
+                  9
+                </span>
               </span>
             </div>
           </span>
@@ -4218,6 +4225,8 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
   display: inline-block;
   font-size: 10px;
   font-weight: bold;
+  height: 14px;
+  line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
@@ -4276,6 +4285,8 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
   display: inline-block;
   font-size: 10px;
   font-weight: bold;
+  height: 14px;
+  line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
@@ -4331,6 +4342,8 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
   display: inline-block;
   font-size: 10px;
   font-weight: bold;
+  height: 14px;
+  line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;

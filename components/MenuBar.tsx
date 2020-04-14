@@ -138,6 +138,12 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
 
   const toggleDrawer = () => setOpenShoppingBag(!openShoppingBag);
 
+  const amount = products
+    .map(product => product.quantity)
+    .reduce((acc, cur) => {
+      return acc + cur;
+    }, 0);
+
   return (
     <>
       <StyledMenuBar>
@@ -157,7 +163,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
           <ShoppingBagMenuItem>
             <button onClick={toggleDrawer} type="button">
               <span>
-                <ShoppingBagIcon amount={0} />
+                <ShoppingBagIcon amount={amount} />
               </span>
               Shopping Bag
             </button>
