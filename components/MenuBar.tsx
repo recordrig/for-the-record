@@ -76,8 +76,8 @@ const ShoppingBagMenuItem = styled.li`
     font-size: 16px;
     line-height: 64px;
     outline: none;
-    margin: 0 16px 0 8px;
-    padding: 0;
+    margin: 0;
+    padding: 0 16px 0 40px;
     text-align: left;
   }
 
@@ -85,13 +85,15 @@ const ShoppingBagMenuItem = styled.li`
     display: inline-block;
     margin-right: 6px;
     position: relative;
+    right: 32px;
     top: 10px;
+    z-index: -1; /* Fixes issue with icon part of button not being clickable. */
   }
 
   @media (max-width: 575px) {
     button {
-      color: pink !important;
       font-size: 0;
+      padding: 0 16px 0 32px;
     }
   }
 `;

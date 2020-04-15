@@ -41,7 +41,7 @@ const fadeInIcon = keyframes`
 const StyledShoppingBagIconStill = styled.object<StyledShoppingBagIconProps>`
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
 
   ${({ animate }) => css`
     animation: ${animate && fadeOutIcon} 1.4s; /* Slightly shorter so that it is visible again. */
@@ -51,7 +51,7 @@ const StyledShoppingBagIconStill = styled.object<StyledShoppingBagIconProps>`
 const StyledShoppingBagIconAnimated = styled.object<StyledShoppingBagIconProps>`
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
 
   ${({ animate }) => css`
     animation: ${animate ? fadeInIcon : fadeOutIcon} 1.5s;
@@ -84,9 +84,8 @@ const StyledShoppingBagIcon = styled.div`
     display: inline-block;
     height: inherit;
     min-height: 32px;
-    overflow: hidden;
     position: relative;
-    width: 32px;
+    width: 0;
   }
 
   > span > span {
@@ -99,11 +98,11 @@ const StyledShoppingBagIcon = styled.div`
     font-size: 10px;
     font-weight: bold;
     height: 14px;
+    left: 16px;
     line-height: 13px;
     min-width: 12px;
     padding: 1px 2px;
     position: absolute;
-    right: 1px;
     text-align: center;
     z-index: 1;
   }

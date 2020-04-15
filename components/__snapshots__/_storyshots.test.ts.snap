@@ -942,7 +942,7 @@ Array [
   .c5 {
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
   -webkit-animation: 1.4s;
   animation: 1.4s;
 }
@@ -956,9 +956,8 @@ Array [
   display: inline-block;
   height: inherit;
   min-height: 32px;
-  overflow: hidden;
   position: relative;
-  width: 32px;
+  width: 0;
 }
 
 .c4 > span > span {
@@ -972,11 +971,11 @@ Array [
   font-size: 10px;
   font-weight: bold;
   height: 14px;
+  left: 16px;
   line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
-  right: 1px;
   text-align: center;
   z-index: 1;
 }
@@ -1023,8 +1022,8 @@ Array [
   font-size: 16px;
   line-height: 64px;
   outline: none;
-  margin: 0 16px 0 8px;
-  padding: 0;
+  margin: 0;
+  padding: 0 16px 0 40px;
   text-align: left;
 }
 
@@ -1032,7 +1031,9 @@ Array [
   display: inline-block;
   margin-right: 6px;
   position: relative;
+  right: 32px;
   top: 10px;
+  z-index: -1;
 }
 
 .c0 {
@@ -1082,8 +1083,8 @@ Array [
 
 @media (max-width:575px) {
   .c3 button {
-    color: pink !important;
     font-size: 0;
+    padding: 0 16px 0 32px;
   }
 }
 
@@ -1226,7 +1227,7 @@ Array [
   .c5 {
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
   -webkit-animation: 1.4s;
   animation: 1.4s;
 }
@@ -1240,9 +1241,8 @@ Array [
   display: inline-block;
   height: inherit;
   min-height: 32px;
-  overflow: hidden;
   position: relative;
-  width: 32px;
+  width: 0;
 }
 
 .c4 > span > span {
@@ -1256,11 +1256,11 @@ Array [
   font-size: 10px;
   font-weight: bold;
   height: 14px;
+  left: 16px;
   line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
-  right: 1px;
   text-align: center;
   z-index: 1;
 }
@@ -1307,8 +1307,8 @@ Array [
   font-size: 16px;
   line-height: 64px;
   outline: none;
-  margin: 0 16px 0 8px;
-  padding: 0;
+  margin: 0;
+  padding: 0 16px 0 40px;
   text-align: left;
 }
 
@@ -1316,7 +1316,9 @@ Array [
   display: inline-block;
   margin-right: 6px;
   position: relative;
+  right: 32px;
   top: 10px;
+  z-index: -1;
 }
 
 .c0 {
@@ -1366,8 +1368,8 @@ Array [
 
 @media (max-width:575px) {
   .c3 button {
-    color: pink !important;
     font-size: 0;
+    padding: 0 16px 0 32px;
   }
 }
 
@@ -4196,7 +4198,7 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
 .c1 {
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
   -webkit-animation: 1.4s;
   animation: 1.4s;
 }
@@ -4210,9 +4212,8 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
   display: inline-block;
   height: inherit;
   min-height: 32px;
-  overflow: hidden;
   position: relative;
-  width: 32px;
+  width: 0;
 }
 
 .c0 > span > span {
@@ -4226,11 +4227,11 @@ exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
   font-size: 10px;
   font-weight: bold;
   height: 14px;
+  left: 16px;
   line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
-  right: 1px;
   text-align: center;
   z-index: 1;
 }
@@ -4256,7 +4257,7 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
 .c1 {
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
   -webkit-animation: 1.4s;
   animation: 1.4s;
 }
@@ -4270,9 +4271,8 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
   display: inline-block;
   height: inherit;
   min-height: 32px;
-  overflow: hidden;
   position: relative;
-  width: 32px;
+  width: 0;
 }
 
 .c0 > span > span {
@@ -4286,11 +4286,11 @@ exports[`Storyshots ShoppingBagIcon No items 1`] = `
   font-size: 10px;
   font-weight: bold;
   height: 14px;
+  left: 16px;
   line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
-  right: 1px;
   text-align: center;
   z-index: 1;
 }
@@ -4313,7 +4313,7 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
 .c1 {
   bottom: 0;
   position: absolute;
-  width: inherit;
+  width: 32px;
   -webkit-animation: 1.4s;
   animation: 1.4s;
 }
@@ -4327,9 +4327,8 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
   display: inline-block;
   height: inherit;
   min-height: 32px;
-  overflow: hidden;
   position: relative;
-  width: 32px;
+  width: 0;
 }
 
 .c0 > span > span {
@@ -4343,11 +4342,11 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
   font-size: 10px;
   font-weight: bold;
   height: 14px;
+  left: 16px;
   line-height: 13px;
   min-width: 12px;
   padding: 1px 2px;
   position: absolute;
-  right: 1px;
   text-align: center;
   z-index: 1;
 }
@@ -4358,6 +4357,7 @@ exports[`Storyshots ShoppingBagIcon change amount 1`] = `
       Object {
         "border": "2px solid black",
         "height": "64px",
+        "overflow": "hidden",
       }
     }
   >

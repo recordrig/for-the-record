@@ -7,7 +7,13 @@ const ChangeAmount = () => {
 
   return (
     <div>
-      <div style={{ border: "2px solid black", height: "64px" }}>
+      <div
+        style={{
+          border: "2px solid black",
+          height: "64px",
+          overflow: "hidden"
+        }}
+      >
         <div style={{ height: "50px" }}>
           <ShoppingBagIcon amount={amount} />
         </div>
