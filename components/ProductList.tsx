@@ -33,21 +33,12 @@ const StyledProductList = styled.div<StyledProductListProps>`
     border-bottom: 1px solid #dde1e6;
     box-sizing: border-box;
     display: flex;
-    height: 100px;
-    padding-top: 12px;
-    padding-bottom: 12px;
     padding-left: 24px;
     padding-right: 24px;
 
     > div {
       box-sizing: border-box;
-      height: 64px;
-      padding-top: 16px;
       padding-left: 24px;
-    }
-
-    img {
-      height: 64px;
     }
 
     p {
@@ -89,6 +80,40 @@ const StyledProductList = styled.div<StyledProductListProps>`
       will-change: ${indicateAddition ? "background-color" : "unset"};
     }
   `}
+
+  @media (max-width: 575px) {
+    li {
+      height: 92px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      > div {
+        height: 60px;
+        padding-top: 8px;
+      }
+
+      img {
+        height: 60px;
+      }
+    }
+  }
+
+  @media (min-width: 576px) {
+    li {
+      height: 146px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+
+      > div {
+        height: 96px;
+        padding-top: 16px;
+      }
+
+      img {
+        height: 96px;
+      }
+    }
+  }
 `;
 
 interface Product {

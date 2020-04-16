@@ -1487,22 +1487,13 @@ Array [
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
 }
 
 .c1 li > div {
   box-sizing: border-box;
-  height: 64px;
-  padding-top: 16px;
   padding-left: 24px;
-}
-
-.c1 li img {
-  height: 64px;
 }
 
 .c1 li p {
@@ -1569,6 +1560,40 @@ Array [
     -webkit-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     width: 500px;
+  }
+}
+
+@media (max-width:575px) {
+  .c1 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c1 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c1 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c1 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c1 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c1 li img {
+    height: 96px;
   }
 }
 
@@ -1841,22 +1866,13 @@ exports[`Storyshots ProductList 1 more item 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
 }
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 64px;
-  padding-top: 16px;
   padding-left: 24px;
-}
-
-.c0 li img {
-  height: 64px;
 }
 
 .c0 li p {
@@ -1873,6 +1889,40 @@ exports[`Storyshots ProductList 1 more item 1`] = `
   -webkit-animation: none;
   animation: none;
   will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
 }
 
 <div
@@ -1966,22 +2016,13 @@ exports[`Storyshots ProductList 3 more items 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
 }
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 64px;
-  padding-top: 16px;
   padding-left: 24px;
-}
-
-.c0 li img {
-  height: 64px;
 }
 
 .c0 li p {
@@ -1998,6 +2039,40 @@ exports[`Storyshots ProductList 3 more items 1`] = `
   -webkit-animation: none;
   animation: none;
   will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
 }
 
 <div
@@ -2092,22 +2167,13 @@ exports[`Storyshots ProductList default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
 }
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 64px;
-  padding-top: 16px;
   padding-left: 24px;
-}
-
-.c0 li img {
-  height: 64px;
 }
 
 .c0 li p {
@@ -2124,6 +2190,40 @@ exports[`Storyshots ProductList default 1`] = `
   -webkit-animation: none;
   animation: none;
   will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
 }
 
 <div
@@ -2197,22 +2297,13 @@ exports[`Storyshots ProductList indicate addition 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 24px;
   padding-right: 24px;
 }
 
 .c0 li > div {
   box-sizing: border-box;
-  height: 64px;
-  padding-top: 16px;
   padding-left: 24px;
-}
-
-.c0 li img {
-  height: 64px;
 }
 
 .c0 li p {
@@ -2229,6 +2320,40 @@ exports[`Storyshots ProductList indicate addition 1`] = `
   -webkit-animation: flash 1.5s;
   animation: flash 1.5s;
   will-change: background-color;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
 }
 
 <div
