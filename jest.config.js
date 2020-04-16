@@ -13,7 +13,8 @@ module.exports = {
     "./store/**/*.{ts,tsx}",
     // Exlude:
     "!./components/**/*.stories.tsx",
-    "!./store/_initializeStore.ts",
+    "!./components/**/*Container.tsx",
+    "!./store/_rootReducer.ts",
     "!**/node_modules/**"
   ],
   coverageThreshold: {
