@@ -190,9 +190,17 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </p>
           </>
         ) : (
-          <p style={{ padding: "120px 0", textAlign: "center" }}>
-            Your Shopping Bag is empty.
-          </p>
+          <>
+            <p style={{ padding: "64px 0 16px", textAlign: "center" }}>
+              Your Shopping Bag is empty.
+            </p>
+            <Link href="/shop/buy-recordrig" passHref>
+              <StyledCheckoutLink onClick={() => toggleDrawer()}>
+                Shop RecordRig{" "}
+                <span style={{ fontSize: "20px" }}>&nbsp;&rarr;</span>
+              </StyledCheckoutLink>
+            </Link>
+          </>
         )}
       </Drawer>
     </>
