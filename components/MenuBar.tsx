@@ -158,7 +158,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </Link>
           </li>
           <li>
-            <Link href="/shop" passHref>
+            <Link href="/shop/buy-recordrig" passHref>
               <StyledShopLink>Shop</StyledShopLink>
             </Link>
           </li>
