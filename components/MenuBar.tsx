@@ -56,7 +56,7 @@ const StyledCheckoutLink = styled.a`
   margin: 0 16px;
   text-align: center;
   text-decoration: none;
-  width: calc(100% - 16px);
+  width: calc(100% - 32px);
 `;
 
 const StyledReviewBagLink = styled.a`
