@@ -177,13 +177,15 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
           <>
             <ProductList products={products} />
             <Link href="/shop/checkout" passHref>
-              <StyledCheckoutLink>
+              <StyledCheckoutLink onClick={() => toggleDrawer()}>
                 Check Out <span style={{ fontSize: "20px" }}>&nbsp;&rarr;</span>
               </StyledCheckoutLink>
             </Link>
             <p style={{ textAlign: "center" }}>
               <Link href="/shop/shopping-bag" passHref>
-                <StyledReviewBagLink>Review Bag</StyledReviewBagLink>
+                <StyledReviewBagLink onClick={() => toggleDrawer()}>
+                  Review Bag
+                </StyledReviewBagLink>
               </Link>
             </p>
           </>

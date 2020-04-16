@@ -343,6 +343,31 @@ const StyledColorSelector = styled.a<StyledColorSelectorProps>`
   `}
 `;
 
+const StyledReviewBagLink = styled.a`
+  background-color: #0062ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 16px;
+  text-align: center;
+  text-decoration: none;
+  width: calc(100% - 32px);
+`;
+
+const StyledContinueShoppingButton = styled.button`
+  color: #000000;
+  background: none;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  text-align: center;
+  text-decoration: underline;
+`;
+
 const StyledBuyRecordRigPage = styled.div``;
 
 interface BuyRecordRigPageProps {
@@ -707,8 +732,18 @@ class BuyRecordRigPage extends Component<
           </Footnotes>
         )}
         {selectedColor !== null && (
-          <Drawer open={openDrawer} onClose={toggleDrawer}>
+          <Drawer onClose={toggleDrawer} open={openDrawer}>
             <ProductList indicateAddition products={shoppingBag} />
+            <Link href="/shop/shopping-bag" passHref>
+              <StyledReviewBagLink onClick={() => toggleDrawer()}>
+                I&apos;m ready to order
+              </StyledReviewBagLink>
+            </Link>
+            <p style={{ textAlign: "center" }}>
+              <StyledContinueShoppingButton onClick={() => toggleDrawer()}>
+                Continue shopping
+              </StyledContinueShoppingButton>
+            </p>
           </Drawer>
         )}
       </StyledBuyRecordRigPage>
