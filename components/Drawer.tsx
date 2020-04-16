@@ -2,18 +2,27 @@ import React, {
   FunctionComponent,
   ReactNode,
   ReactNodeArray,
-  useRef
+  useRef,
+  useEffect,
+  useState
 } from "react";
 import styled, { css } from "styled-components";
 
-const AttentionSeeker = styled.div`
+interface AttentionSeekerProps {
+  readonly visible: boolean;
+}
+
+const AttentionSeeker = styled.div<AttentionSeekerProps>`
   background-color: #000000;
   height: 100%;
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.2;
-  z-index: 9;
+  transition: opacity 0.2s ease-in-out;
+
+  ${({ visible }) => css`
+    opacity: ${visible ? 0.2 : 0};
+  `}
 `;
 
 interface StyledDrawerProps {
@@ -24,6 +33,7 @@ interface StyledDrawerProps {
 const StyledDrawer = styled.div<StyledDrawerProps>`
   ${({ neededHeight, open }) => css`
     background-color: #ffffff;
+    box-shadow: 0 0 64px 0 rgba(0, 0, 0, ${open ? 0.1 : 0});
     position: fixed;
     will-change: transform;
     z-index: 10;
@@ -93,12 +103,26 @@ const Drawer: FunctionComponent<DrawerProps> = ({
       ? drawerContentElement.current.offsetHeight + 32
       : 0;
 
-  console.log("neededHeight:", neededHeight);
-
   if (typeof window !== "undefined") {
     if (open) document.body.style.overflow = "hidden";
     if (!open) document.body.style.overflow = "unset";
   }
+
+  // The darkened BG uses various delays based on the core "open" prop to achieve smooth fade-in and fade-out effects.
+  const [renderBackground, setRenderBackground] = useState(false);
+  const [bgVisible, setBgVisible] = useState(false);
+
+  useEffect(() => {
+    if (open === true) {
+      setRenderBackground(true); // If opened, immediately mount the component.
+      setTimeout(() => setBgVisible(true), 1); // Wait 1ms so it gets a chance to start at its default state and animate the change.
+    }
+
+    if (open === false) {
+      setTimeout(() => setRenderBackground(false), 200); // Delay unmount so it has a chance to animate a fade-out.
+      setTimeout(() => setBgVisible(false), 1);
+    }
+  }, [open]);
 
   return (
     <>
@@ -108,7 +132,9 @@ const Drawer: FunctionComponent<DrawerProps> = ({
         </button>
         <div ref={drawerContentElement}>{children}</div>
       </StyledDrawer>
-      {open && <AttentionSeeker onClick={handleCloseClick} />}
+      {renderBackground && (
+        <AttentionSeeker onClick={handleCloseClick} visible={bgVisible} />
+      )}
     </>
   );
 };

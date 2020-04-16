@@ -15,6 +15,7 @@ Array [
   </button>,
   .c0 {
   background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0);
   position: fixed;
   will-change: transform;
   z-index: 10;
@@ -109,6 +110,7 @@ Array [
   </button>,
   .c0 {
   background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0.1);
   position: fixed;
   will-change: transform;
   z-index: 10;
@@ -185,20 +187,6 @@ Array [
       </p>
     </div>
   </div>,
-  .c0 {
-  background-color: #000000;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  opacity: 0.2;
-  z-index: 9;
-}
-
-<div
-    className="c0"
-    onClick={[Function]}
-  />,
 ]
 `;
 
@@ -1143,6 +1131,7 @@ Array [
   </nav>,
   .c0 {
   background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0);
   position: fixed;
   will-change: transform;
   z-index: 10;
@@ -1431,6 +1420,7 @@ Array [
   </nav>,
   .c0 {
   background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0);
   position: fixed;
   will-change: transform;
   z-index: 10;
