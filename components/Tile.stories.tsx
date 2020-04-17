@@ -148,4 +148,18 @@ storiesOf("Tile", module)
         </TileContainer>
       </Tile>
     </div>
+  ))
+  .add("floating", () => (
+    <div style={{ maxWidth: "992px", padding: "64px" }}>
+      <Tile backgroundColor="#ffffff" floating rounded>
+        <TileContainer>
+          <Paragraph color="#000000">
+            Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec
+            quis mauris risus. Quisque sodales diam ut elementum ultricies.
+            Pellentesque laoreet commodo mauris, ut condimentum nisis cursus
+            eget. In scelerisque at elit vitae dictum.
+          </Paragraph>
+        </TileContainer>
+      </Tile>
+    </div>
   ));

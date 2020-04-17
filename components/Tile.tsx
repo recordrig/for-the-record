@@ -39,6 +39,7 @@ export const TileContainer: FunctionComponent<TileContainerProps> = ({
 interface StyledLinkTileProps {
   readonly accentColor: string;
   readonly backgroundColor: string;
+  readonly floating: boolean;
   readonly rounded: boolean;
 }
 
@@ -46,11 +47,13 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
   ${({
     accentColor,
     backgroundColor,
+    floating,
     rounded
   }: StyledLinkTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-bottom: 8px solid ${accentColor};
     border-radius: ${rounded ? "12px" : 0};
+    box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, ${floating ? 0.25 : 0});
     color: inherit;
     display: flex;
     text-decoration: none;
@@ -59,16 +62,19 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
 
 interface StyledTileProps {
   readonly backgroundColor: string;
+  readonly floating: boolean;
   readonly rounded: boolean;
 }
 
 const StyledTile = styled.div<StyledTileProps>`
   ${({
     backgroundColor,
+    floating,
     rounded
   }: StyledTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-radius: ${rounded ? "12px" : 0};
+    box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, ${floating ? 0.25 : 0});
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -84,6 +90,7 @@ interface TileProps {
   readonly accentColor?: string;
   readonly backgroundColor?: string;
   readonly children: ReactNode | ReactNodeArray;
+  readonly floating?: boolean;
   readonly link?: string;
   readonly rounded?: boolean;
 }
@@ -95,6 +102,7 @@ const Tile: FunctionComponent<TileProps> = ({
   accentColor = "#000",
   backgroundColor = "#fff",
   children,
+  floating = false,
   link,
   rounded = false
 }: TileProps) => (
@@ -104,13 +112,18 @@ const Tile: FunctionComponent<TileProps> = ({
         <StyledLinkTile
           accentColor={accentColor}
           backgroundColor={backgroundColor}
+          floating={floating}
           rounded={rounded}
         >
           {children}
         </StyledLinkTile>
       </Link>
     ) : (
-      <StyledTile backgroundColor={backgroundColor} rounded={rounded}>
+      <StyledTile
+        backgroundColor={backgroundColor}
+        floating={floating}
+        rounded={rounded}
+      >
         {children}
       </StyledTile>
     )}
