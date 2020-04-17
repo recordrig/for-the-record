@@ -589,6 +589,7 @@ exports[`Storyshots Form default 1`] = `
   background-color: #fff;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -597,6 +598,16 @@ exports[`Storyshots Form default 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -3333,6 +3344,7 @@ exports[`Storyshots Section rows 1`] = `
   background-color: #13171A;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3341,6 +3353,16 @@ exports[`Storyshots Section rows 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c3:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c3 >:last-child {
@@ -3618,6 +3640,7 @@ exports[`Storyshots Section subsections 1`] = `
   background-color: #13171A;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3626,6 +3649,16 @@ exports[`Storyshots Section subsections 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c4:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c4 >:last-child {
@@ -3639,6 +3672,7 @@ exports[`Storyshots Section subsections 1`] = `
   background-color: #f2f4f8;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3647,6 +3681,16 @@ exports[`Storyshots Section subsections 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c8:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c8 >:last-child {
@@ -5353,6 +5397,7 @@ exports[`Storyshots Tile bottom image 1`] = `
   background-color: #13171a;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5361,6 +5406,16 @@ exports[`Storyshots Tile bottom image 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -5505,6 +5560,157 @@ exports[`Storyshots Tile bottom image 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tile click handler 1`] = `
+.c1 {
+  box-sizing: border-box;
+  padding-bottom: 42px;
+  padding-top: 42px;
+  width: 100%;
+}
+
+.c1 > p {
+  font-weight: bold;
+}
+
+.c0 {
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
+  z-index: 1;
+}
+
+.c0 >:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c2 h1,
+.c2 h2,
+.c2 h3,
+.c2 h4,
+.c2 h5,
+.c2 h6 {
+  color: #009c98;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
+  .c1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:399px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (min-width:400px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <div
+    className="c0"
+    onClick={[Function]}
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <h3>
+          Technical specifications
+        </h3>
+      </div>
+      <span
+        style={
+          Object {
+            "display": "block",
+            "fontSize": "48px",
+            "lineHeight": "56px",
+            "margin": "64px 0",
+          }
+        }
+      >
+        Get the full list of what's included with RecordRig.
+      </span>
+      <span
+        style={
+          Object {
+            "color": "#009c98",
+            "display": "block",
+            "fontSize": "18px",
+            "textAlign": "right",
+          }
+        }
+      >
+        Learn more
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Tile custom colors 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -5521,6 +5727,7 @@ exports[`Storyshots Tile custom colors 1`] = `
   background-color: #13171a;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5529,6 +5736,16 @@ exports[`Storyshots Tile custom colors 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -5681,6 +5898,7 @@ exports[`Storyshots Tile default 1`] = `
   background-color: #fff;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5689,6 +5907,16 @@ exports[`Storyshots Tile default 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -5831,6 +6059,7 @@ exports[`Storyshots Tile floating 1`] = `
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0.25);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5839,6 +6068,16 @@ exports[`Storyshots Tile floating 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -5936,7 +6175,7 @@ exports[`Storyshots Tile link 1`] = `
 }
 
 .c0 {
-  background-color: #f2f4f8;
+  background-color: #ffffff;
   border-bottom: 8px solid #009c98;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
@@ -5947,6 +6186,161 @@ exports[`Storyshots Tile link 1`] = `
   display: flex;
   -webkit-text-decoration: none;
   text-decoration: none;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
+  z-index: 1;
+}
+
+.c2 h1,
+.c2 h2,
+.c2 h3,
+.c2 h4,
+.c2 h5,
+.c2 h6 {
+  color: #009c98;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
+  .c1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:399px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (min-width:400px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "maxWidth": "488px",
+    }
+  }
+>
+  <a
+    className="c0"
+    href="/tech-specs"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+      >
+        <h3>
+          Technical specifications
+        </h3>
+      </div>
+      <span
+        style={
+          Object {
+            "display": "block",
+            "fontSize": "48px",
+            "lineHeight": "56px",
+            "margin": "64px 0",
+          }
+        }
+      >
+        Get the full list of what's included with RecordRig.
+      </span>
+      <span
+        style={
+          Object {
+            "color": "#009c98",
+            "display": "block",
+            "fontSize": "18px",
+            "textAlign": "right",
+          }
+        }
+      >
+        Learn more
+      </span>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Tile link and click handler 1`] = `
+.c1 {
+  box-sizing: border-box;
+  padding-bottom: 42px;
+  padding-top: 42px;
+  width: 100%;
+}
+
+.c1 > p {
+  font-weight: bold;
+}
+
+.c0 {
+  background-color: #ffffff;
+  border-bottom: 8px solid #009c98;
+  border-radius: 0;
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  color: inherit;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
+  z-index: 1;
 }
 
 .c2 h1,
@@ -6074,6 +6468,7 @@ exports[`Storyshots Tile rounded 1`] = `
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6082,6 +6477,16 @@ exports[`Storyshots Tile rounded 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -6182,6 +6587,7 @@ exports[`Storyshots Tile top image 1`] = `
   background-color: #f2f4f8;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6190,6 +6596,16 @@ exports[`Storyshots Tile top image 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {
@@ -6350,6 +6766,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   background-color: #13171a;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6358,6 +6775,16 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
 }
 
 .c0 >:last-child {

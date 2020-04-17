@@ -57,12 +57,19 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
     color: inherit;
     display: flex;
     text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.025);
+      z-index: 1;
+    }
   `}
 `;
 
 interface StyledTileProps {
   readonly backgroundColor: string;
   readonly floating: boolean;
+  readonly hoverState: boolean;
   readonly rounded: boolean;
 }
 
@@ -70,14 +77,22 @@ const StyledTile = styled.div<StyledTileProps>`
   ${({
     backgroundColor,
     floating,
+    hoverState,
     rounded
   }: StyledTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-radius: ${rounded ? "12px" : 0};
     box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, ${floating ? 0.25 : 0});
+    cursor: ${hoverState ? "pointer" : "default"};
     display: flex;
     flex-direction: column;
     width: 100%;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(${hoverState ? 1.025 : 1});
+      z-index: 1;
+    }
 
     /* Grow the last child to take up entire remaining width so that it will be aligned to the Tile's bottom. */
     > :last-child {
@@ -90,6 +105,7 @@ interface TileProps {
   readonly accentColor?: string;
   readonly backgroundColor?: string;
   readonly children: ReactNode | ReactNodeArray;
+  readonly clickHandler?: Function;
   readonly floating?: boolean;
   readonly link?: string;
   readonly rounded?: boolean;
@@ -102,6 +118,7 @@ const Tile: FunctionComponent<TileProps> = ({
   accentColor = "#000",
   backgroundColor = "#fff",
   children,
+  clickHandler,
   floating = false,
   link,
   rounded = false
@@ -113,6 +130,7 @@ const Tile: FunctionComponent<TileProps> = ({
           accentColor={accentColor}
           backgroundColor={backgroundColor}
           floating={floating}
+          onClick={clickHandler && (() => clickHandler())}
           rounded={rounded}
         >
           {children}
@@ -122,6 +140,8 @@ const Tile: FunctionComponent<TileProps> = ({
       <StyledTile
         backgroundColor={backgroundColor}
         floating={floating}
+        hoverState={!!clickHandler}
+        onClick={clickHandler && (() => clickHandler())}
         rounded={rounded}
       >
         {children}

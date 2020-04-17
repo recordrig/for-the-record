@@ -106,9 +106,76 @@ storiesOf("Tile", module)
       </Tile>
     </div>
   ))
+  .add("click handler", () => (
+    <div style={{ maxWidth: "488px" }}>
+      <Tile
+        accentColor="#009c98"
+        backgroundColor="#ffffff"
+        clickHandler={() => alert("Clicked!")}
+      >
+        <TileContainer>
+          <CapsHeading color="#009c98">Technical specifications</CapsHeading>
+          <span
+            style={{
+              display: "block",
+              fontSize: "48px",
+              lineHeight: "56px",
+              margin: "64px 0"
+            }}
+          >
+            Get the full list of what&apos;s included with RecordRig.
+          </span>
+          <span
+            style={{
+              color: "#009c98",
+              display: "block",
+              fontSize: "18px",
+              textAlign: "right"
+            }}
+          >
+            Learn more
+          </span>
+        </TileContainer>
+      </Tile>
+    </div>
+  ))
   .add("link", () => (
     <div style={{ maxWidth: "488px" }}>
-      <Tile accentColor="#009c98" backgroundColor="#f2f4f8" link="/tech-specs">
+      <Tile accentColor="#009c98" backgroundColor="#ffffff" link="/tech-specs">
+        <TileContainer>
+          <CapsHeading color="#009c98">Technical specifications</CapsHeading>
+          <span
+            style={{
+              display: "block",
+              fontSize: "48px",
+              lineHeight: "56px",
+              margin: "64px 0"
+            }}
+          >
+            Get the full list of what&apos;s included with RecordRig.
+          </span>
+          <span
+            style={{
+              color: "#009c98",
+              display: "block",
+              fontSize: "18px",
+              textAlign: "right"
+            }}
+          >
+            Learn more
+          </span>
+        </TileContainer>
+      </Tile>
+    </div>
+  ))
+  .add("link and click handler", () => (
+    <div style={{ maxWidth: "488px" }}>
+      <Tile
+        accentColor="#009c98"
+        backgroundColor="#ffffff"
+        clickHandler={() => alert("Clicked!")}
+        link="/tech-specs"
+      >
         <TileContainer>
           <CapsHeading color="#009c98">Technical specifications</CapsHeading>
           <span
