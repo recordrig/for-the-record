@@ -39,15 +39,18 @@ export const TileContainer: FunctionComponent<TileContainerProps> = ({
 interface StyledLinkTileProps {
   readonly accentColor: string;
   readonly backgroundColor: string;
+  readonly rounded: boolean;
 }
 
 const StyledLinkTile = styled.a<StyledLinkTileProps>`
   ${({
     accentColor,
-    backgroundColor
+    backgroundColor,
+    rounded
   }: StyledLinkTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-bottom: 8px solid ${accentColor};
+    border-radius: ${rounded ? "12px" : 0};
     color: inherit;
     display: flex;
     text-decoration: none;
@@ -56,11 +59,16 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
 
 interface StyledTileProps {
   readonly backgroundColor: string;
+  readonly rounded: boolean;
 }
 
 const StyledTile = styled.div<StyledTileProps>`
-  ${({ backgroundColor }: StyledTileProps): FlattenSimpleInterpolation => css`
+  ${({
+    backgroundColor,
+    rounded
+  }: StyledTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
+    border-radius: ${rounded ? "12px" : 0};
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -77,6 +85,7 @@ interface TileProps {
   readonly backgroundColor?: string;
   readonly children: ReactNode | ReactNodeArray;
   readonly link?: string;
+  readonly rounded?: boolean;
 }
 
 /**
@@ -86,7 +95,8 @@ const Tile: FunctionComponent<TileProps> = ({
   accentColor = "#000",
   backgroundColor = "#fff",
   children,
-  link
+  link,
+  rounded = false
 }: TileProps) => (
   <>
     {link ? (
@@ -94,12 +104,15 @@ const Tile: FunctionComponent<TileProps> = ({
         <StyledLinkTile
           accentColor={accentColor}
           backgroundColor={backgroundColor}
+          rounded={rounded}
         >
           {children}
         </StyledLinkTile>
       </Link>
     ) : (
-      <StyledTile backgroundColor={backgroundColor}>{children}</StyledTile>
+      <StyledTile backgroundColor={backgroundColor} rounded={rounded}>
+        {children}
+      </StyledTile>
     )}
   </>
 );

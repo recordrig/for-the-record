@@ -587,6 +587,7 @@ exports[`Storyshots Form default 1`] = `
 
 .c0 {
   background-color: #fff;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1096,7 +1097,7 @@ Array [
       <li>
         <a
           className="c2"
-          href="/shop"
+          href="/shop/buy-recordrig"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -1156,6 +1157,22 @@ Array [
   max-height: calc(100% - 128px);
 }
 
+.c1 {
+  background-color: #0062ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 16px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: calc(100% - 32px);
+}
+
 @media (max-width:575px) {
   .c0 {
     border-radius: 12px 12px 0 0;
@@ -1199,13 +1216,31 @@ Array [
       <p
         style={
           Object {
-            "padding": "120px 0",
+            "padding": "64px 0 16px",
             "textAlign": "center",
           }
         }
       >
         Your Shopping Bag is empty.
       </p>
+      <a
+        className="c1"
+        href="/shop/buy-recordrig"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Shop RecordRig
+         
+        <span
+          style={
+            Object {
+              "fontSize": "20px",
+            }
+          }
+        >
+           →
+        </span>
+      </a>
     </div>
   </div>,
 ]
@@ -1382,7 +1417,7 @@ Array [
       <li>
         <a
           className="c2"
-          href="/shop"
+          href="/shop/buy-recordrig"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -3295,6 +3330,7 @@ exports[`Storyshots Section rows 1`] = `
 
 .c3 {
   background-color: #13171A;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3578,6 +3614,7 @@ exports[`Storyshots Section subsections 1`] = `
 
 .c4 {
   background-color: #13171A;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3597,6 +3634,7 @@ exports[`Storyshots Section subsections 1`] = `
 
 .c8 {
   background-color: #f2f4f8;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5309,6 +5347,7 @@ exports[`Storyshots Tile bottom image 1`] = `
 
 .c0 {
   background-color: #13171a;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5475,6 +5514,7 @@ exports[`Storyshots Tile custom colors 1`] = `
 
 .c0 {
   background-color: #13171a;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5633,6 +5673,7 @@ exports[`Storyshots Tile default 1`] = `
 
 .c0 {
   background-color: #fff;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5782,6 +5823,7 @@ exports[`Storyshots Tile link 1`] = `
 .c0 {
   background-color: #f2f4f8;
   border-bottom: 8px solid #009c98;
+  border-radius: 0;
   color: inherit;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5900,6 +5942,113 @@ exports[`Storyshots Tile link 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tile rounded 1`] = `
+.c1 {
+  box-sizing: border-box;
+  padding-bottom: 42px;
+  padding-top: 42px;
+  width: 100%;
+}
+
+.c1 > p {
+  font-weight: bold;
+}
+
+.c0 {
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0 >:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c2 {
+  color: #000000;
+}
+
+@media (max-width:474px) {
+  .c1 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
+  .c1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:399px) {
+  .c2 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width:400px) {
+  .c2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width:1023px) {
+  .c2 {
+    max-width: 656px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    max-width: 720px;
+  }
+}
+
+<div
+  style={
+    Object {
+      "maxWidth": "992px",
+      "padding": "64px",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <p
+        className="c2"
+      >
+        Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec quis mauris risus. Quisque sodales diam ut elementum ultricies. Pellentesque laoreet commodo mauris, ut condimentum nisis cursus eget. In scelerisque at elit vitae dictum.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Tile top image 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -5914,6 +6063,7 @@ exports[`Storyshots Tile top image 1`] = `
 
 .c0 {
   background-color: #f2f4f8;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6080,6 +6230,7 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
 
 .c0 {
   background-color: #13171a;
+  border-radius: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
