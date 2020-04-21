@@ -2,7 +2,11 @@ import React, { FunctionComponent } from "react";
 import styled, { css } from "styled-components";
 import Tile from "./Tile";
 
-const StyledContent = styled.div`
+interface StyledContentProps {
+  readonly step2: boolean;
+}
+
+const StyledContent = styled.div<StyledContentProps>`
   display: flex;
   min-height: 240px;
 
@@ -28,39 +32,50 @@ const StyledContent = styled.div`
   }
 `;
 
-const StyledOption = styled.div`
-  height: 100%;
+interface StyledOptionProps {
+  readonly chosen: boolean;
+  readonly step2: boolean;
+}
 
-  > div {
-    height: 100%; /* Targets the Tile. */
-  }
+const StyledOption = styled.div<StyledOptionProps>`
+  ${({ chosen, step2 }) => css`
+    display: ${chosen || !step2 ? "block" : "none"};
+    height: 100%;
 
-  @media (max-width: 350px) {
-    width: calc(50% - 4px);
-
-    &:last-child {
-      margin-left: 8px;
+    > div {
+      height: 100%; /* Targets the Tile. */
     }
-  }
 
-  @media (min-width: 351px) and (max-width: 767px) {
-    width: calc(50% - 8px);
+    @media (max-width: 350px) {
+      width: ${chosen && step2 ? "100%" : "calc(50% - 4px)"};
 
-    &:last-child {
-      margin-left: 16px;
+      &:last-child {
+        margin-left: ${chosen && step2 ? "0px" : "8px"};
+      }
     }
-  }
 
-  @media (min-width: 768px) {
-    width: calc(50% - 16px);
+    @media (min-width: 351px) and (max-width: 767px) {
+      width: ${chosen && step2 ? "100%" : "calc(50% - 8px)"};
 
-    &:last-child {
-      margin-left: 32px;
+      &:last-child {
+        margin-left: ${chosen && step2 ? "0px" : "16px"};
+      }
     }
-  }
+
+    @media (min-width: 768px) {
+      width: ${chosen && step2 ? "100%" : "calc(50% - 16px)"};
+
+      &:last-child {
+        margin-left: ${chosen && step2 ? "0px" : "32px"};
+      }
+    }
+  `}
 `;
 
 const StyledContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-sizing: border-box;
   height: inherit;
   width: 100%;
@@ -120,12 +135,13 @@ const StyledImageContainer = styled.div`
 `;
 
 interface StyledRecordRigConfiguratorProps {
+  readonly step2: boolean;
 }
 
 const StyledRecordRigConfigurator = styled.div<
   StyledRecordRigConfiguratorProps
 >`
-  ${() => css`
+  ${({ step2 }) => css`
     max-width: 902px;
 
     h1 {
@@ -134,12 +150,13 @@ const StyledRecordRigConfigurator = styled.div<
     }
 
     h2 {
+      display: ${step2 ? "none" : "block"};
       box-sizing: border-box;
       margin: 0;
     }
 
     span {
-      display: inline-block;
+      display: ${step2 ? "none" : "inline-block"};
     }
 
     button {
@@ -147,6 +164,7 @@ const StyledRecordRigConfigurator = styled.div<
       border-radius: 16px;
       border-width: 0;
       color: #ffffff;
+      display: ${step2 ? "none" : "inline-block"};
       float: right;
       font-weight: bold;
       outline: 0;
@@ -165,9 +183,8 @@ const StyledRecordRigConfigurator = styled.div<
 
       h2 {
         font-size: 14px;
-        height: 64px;
         line-height: 18px;
-        padding-top: 12px;
+        padding-top: 8px;
         padding-bottom: 12px;
       }
 
@@ -196,14 +213,13 @@ const StyledRecordRigConfigurator = styled.div<
 
       h2 {
         font-size: 14px;
-        height: 84px;
         line-height: 18px;
-        padding-top: 24px;
-        padding-bottom: 20px;
+        padding-top: 8px;
+        padding-bottom: 22px;
       }
 
       span {
-        font-size: 11px;
+        font-size: 13px;
         margin-top: 38px;
       }
 
@@ -228,14 +244,13 @@ const StyledRecordRigConfigurator = styled.div<
 
       h2 {
         font-size: 18px;
-        height: 104px;
         line-height: 24px;
-        padding-top: 32px;
-        padding-bottom: 24px;
+        padding-top: 12px;
+        padding-bottom: 16px;
       }
 
       span {
-        font-size: 13px;
+        font-size: 15px;
         margin-top: 44px;
       }
 
@@ -269,12 +284,15 @@ interface RecordRigConfiguratorProps {
 const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   configuration = undefined
 }) => {
+  const step2 = configuration !== undefined;
+  const blackChosen = configuration === "black";
+  const whiteChosen = configuration === "white";
   return (
-    <StyledRecordRigConfigurator>
+    <StyledRecordRigConfigurator step2={step2}>
       <h1>Choose your RecordRig.</h1>
-      <StyledContent>
-        <StyledOption>
-          <Tile floating rounded>
+      <StyledContent step2={step2}>
+        <StyledOption chosen={blackChosen} step2={step2}>
+          <Tile floating={!blackChosen} rounded={!blackChosen}>
             <StyledContentContainer>
               <h2>
                 RecordRig -&nbsp;
@@ -284,13 +302,15 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <StyledImageContainer>
                 <img alt="" src="/recordrig-black.png" />
               </StyledImageContainer>
-              <span>€ 2399</span>
-              <button type="button">Select</button>
+              <div>
+                <span>€ 2399</span>
+                <button type="button">Select</button>
+              </div>
             </StyledContentContainer>
           </Tile>
         </StyledOption>
-        <StyledOption>
-          <Tile floating rounded>
+        <StyledOption chosen={whiteChosen} step2={step2}>
+          <Tile floating={!whiteChosen} rounded={!whiteChosen}>
             <StyledContentContainer>
               <h2>
                 RecordRig -&nbsp;
@@ -300,8 +320,10 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <StyledImageContainer>
                 <img alt="" src="/recordrig.png" />
               </StyledImageContainer>
-              <span>€ 2399</span>
-              <button type="button">Select</button>
+              <div>
+                <span>€ 2399</span>
+                <button type="button">Select</button>
+              </div>
             </StyledContentContainer>
           </Tile>
         </StyledOption>
