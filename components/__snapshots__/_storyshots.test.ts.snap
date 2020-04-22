@@ -2561,6 +2561,82 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   margin-right: auto;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.c8 button {
+  background: none;
+  border: 2px solid #697077;
+  border-radius: 8px;
+  color: #121619;
+  display: inline-block;
+  height: 46px;
+  margin-right: 12px;
+  outline: none;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 46px;
+}
+
+.c8 button:after {
+  border-style: solid;
+  border-radius: 12px;
+  border-width: 1px;
+  content: "";
+  display: block;
+  height: 54px;
+  left: -8px;
+  position: absolute;
+  top: -8px;
+  width: 54px;
+}
+
+.c8 button > span {
+  display: block;
+  font-size: 15px;
+  left: -62px;
+  position: relative;
+  text-align: center;
+  top: 60px;
+  width: 150px;
+}
+
+.c8 button:first-child {
+  background-color: #121619;
+  cursor: default;
+}
+
+.c8 button:first-child:after {
+  border: 2px solid #4589ff;
+}
+
+.c8 button:first-child > span {
+  opacity: 1;
+}
+
+.c8 button:last-child {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.c8 button:last-child:after {
+  border: 2px solid transparent;
+}
+
+.c8 button:last-child > span {
+  opacity: 0;
+}
+
 .c0 {
   max-width: 902px;
 }
@@ -2574,22 +2650,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   display: none;
   box-sizing: border-box;
   margin: 0;
-}
-
-.c0 span {
-  display: none;
-}
-
-.c0 button {
-  background-color: #0062ff;
-  border-radius: 16px;
-  border-width: 0;
-  color: #ffffff;
-  display: none;
-  float: right;
-  font-weight: bold;
-  outline: 0;
-  text-transform: uppercase;
 }
 
 @media (max-device-width:767px) and (orientation:portrait) {
@@ -2746,19 +2806,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     padding-top: 8px;
     padding-bottom: 12px;
   }
-
-  .c0 span {
-    font-size: 11px;
-    margin-top: 26px;
-  }
-
-  .c0 button {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
 }
 
 @media (min-width:350px) and (max-width:767px) {
@@ -2777,19 +2824,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     line-height: 18px;
     padding-top: 8px;
     padding-bottom: 22px;
-  }
-
-  .c0 span {
-    font-size: 13px;
-    margin-top: 38px;
-  }
-
-  .c0 button {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 28px;
-    padding-left: 8px;
-    padding-right: 8px;
   }
 }
 
@@ -2810,19 +2844,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     line-height: 24px;
     padding-top: 12px;
     padding-bottom: 16px;
-  }
-
-  .c0 span {
-    font-size: 15px;
-    margin-top: 44px;
-  }
-
-  .c0 button {
-    font-size: 13px;
-    height: 32px;
-    margin-top: 28px;
-    padding-left: 12px;
-    padding-right: 12px;
   }
 }
 
@@ -2866,16 +2887,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
               src="/recordrig-black.png"
             />
           </div>
-          <div>
-            <span>
-              € 2399
-            </span>
-            <button
-              type="button"
-            >
-              Select
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -2903,19 +2914,29 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
               src="/recordrig.png"
             />
           </div>
-          <div>
-            <span>
-              € 2399
-            </span>
-            <button
-              type="button"
-            >
-              Select
-            </button>
-          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    className="c8"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Stealth Black
+      </span>
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Pristine White
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -3009,6 +3030,21 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   margin-right: auto;
 }
 
+.c7 {
+  background-color: #0062ff;
+  border-radius: 16px;
+  border-width: 0;
+  color: #ffffff;
+  float: right;
+  font-weight: bold;
+  outline: 0;
+  text-transform: uppercase;
+}
+
+.c6 {
+  display: inline-block;
+}
+
 .c0 {
   max-width: 902px;
 }
@@ -3022,22 +3058,6 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   display: block;
   box-sizing: border-box;
   margin: 0;
-}
-
-.c0 span {
-  display: inline-block;
-}
-
-.c0 button {
-  background-color: #0062ff;
-  border-radius: 16px;
-  border-width: 0;
-  color: #ffffff;
-  display: inline-block;
-  float: right;
-  font-weight: bold;
-  outline: 0;
-  text-transform: uppercase;
 }
 
 @media (max-device-width:767px) and (orientation:portrait) {
@@ -3148,6 +3168,57 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 @media (max-width:350px) {
+  .c7 {
+    font-size: 11px;
+    height: 24px;
+    margin-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c7 {
+    font-size: 11px;
+    height: 24px;
+    margin-top: 28px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    font-size: 13px;
+    height: 32px;
+    margin-top: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width:350px) {
+  .c6 {
+    font-size: 11px;
+    margin-top: 26px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c6 {
+    font-size: 13px;
+    margin-top: 38px;
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    font-size: 15px;
+    margin-top: 44px;
+  }
+}
+
+@media (max-width:350px) {
   .c0 {
     margin: 0 4px;
   }
@@ -3163,19 +3234,6 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     line-height: 18px;
     padding-top: 8px;
     padding-bottom: 12px;
-  }
-
-  .c0 span {
-    font-size: 11px;
-    margin-top: 26px;
-  }
-
-  .c0 button {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
   }
 }
 
@@ -3196,19 +3254,6 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     padding-top: 8px;
     padding-bottom: 22px;
   }
-
-  .c0 span {
-    font-size: 13px;
-    margin-top: 38px;
-  }
-
-  .c0 button {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 28px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
 }
 
 @media (min-width:768px) {
@@ -3228,19 +3273,6 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     line-height: 24px;
     padding-top: 12px;
     padding-bottom: 16px;
-  }
-
-  .c0 span {
-    font-size: 15px;
-    margin-top: 44px;
-  }
-
-  .c0 button {
-    font-size: 13px;
-    height: 32px;
-    margin-top: 28px;
-    padding-left: 12px;
-    padding-right: 12px;
   }
 }
 
@@ -3285,10 +3317,13 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
             />
           </div>
           <div>
-            <span>
+            <span
+              className="c6"
+            >
               € 2399
             </span>
             <button
+              className="c7"
               type="button"
             >
               Select
@@ -3322,10 +3357,13 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
             />
           </div>
           <div>
-            <span>
+            <span
+              className="c6"
+            >
               € 2399
             </span>
             <button
+              className="c7"
               type="button"
             >
               Select
@@ -3468,6 +3506,82 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   margin-right: auto;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.c8 button {
+  background: none;
+  border: 2px solid #697077;
+  border-radius: 8px;
+  color: #121619;
+  display: inline-block;
+  height: 46px;
+  margin-right: 12px;
+  outline: none;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 46px;
+}
+
+.c8 button:after {
+  border-style: solid;
+  border-radius: 12px;
+  border-width: 1px;
+  content: "";
+  display: block;
+  height: 54px;
+  left: -8px;
+  position: absolute;
+  top: -8px;
+  width: 54px;
+}
+
+.c8 button > span {
+  display: block;
+  font-size: 15px;
+  left: -62px;
+  position: relative;
+  text-align: center;
+  top: 60px;
+  width: 150px;
+}
+
+.c8 button:first-child {
+  background-color: #121619;
+  cursor: pointer;
+}
+
+.c8 button:first-child:after {
+  border: 2px solid transparent;
+}
+
+.c8 button:first-child > span {
+  opacity: 0;
+}
+
+.c8 button:last-child {
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.c8 button:last-child:after {
+  border: 2px solid #4589ff;
+}
+
+.c8 button:last-child > span {
+  opacity: 1;
+}
+
 .c0 {
   max-width: 902px;
 }
@@ -3481,22 +3595,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   display: none;
   box-sizing: border-box;
   margin: 0;
-}
-
-.c0 span {
-  display: none;
-}
-
-.c0 button {
-  background-color: #0062ff;
-  border-radius: 16px;
-  border-width: 0;
-  color: #ffffff;
-  display: none;
-  float: right;
-  font-weight: bold;
-  outline: 0;
-  text-transform: uppercase;
 }
 
 @media (max-device-width:767px) and (orientation:portrait) {
@@ -3653,19 +3751,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     padding-top: 8px;
     padding-bottom: 12px;
   }
-
-  .c0 span {
-    font-size: 11px;
-    margin-top: 26px;
-  }
-
-  .c0 button {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
 }
 
 @media (min-width:350px) and (max-width:767px) {
@@ -3684,19 +3769,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     line-height: 18px;
     padding-top: 8px;
     padding-bottom: 22px;
-  }
-
-  .c0 span {
-    font-size: 13px;
-    margin-top: 38px;
-  }
-
-  .c0 button {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 28px;
-    padding-left: 8px;
-    padding-right: 8px;
   }
 }
 
@@ -3717,19 +3789,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     line-height: 24px;
     padding-top: 12px;
     padding-bottom: 16px;
-  }
-
-  .c0 span {
-    font-size: 15px;
-    margin-top: 44px;
-  }
-
-  .c0 button {
-    font-size: 13px;
-    height: 32px;
-    margin-top: 28px;
-    padding-left: 12px;
-    padding-right: 12px;
   }
 }
 
@@ -3773,16 +3832,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
               src="/recordrig-black.png"
             />
           </div>
-          <div>
-            <span>
-              € 2399
-            </span>
-            <button
-              type="button"
-            >
-              Select
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -3810,19 +3859,29 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
               src="/recordrig.png"
             />
           </div>
-          <div>
-            <span>
-              € 2399
-            </span>
-            <button
-              type="button"
-            >
-              Select
-            </button>
-          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    className="c8"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Stealth Black
+      </span>
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Pristine White
+      </span>
+    </button>
   </div>
 </div>
 `;

@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 import styled, { css } from "styled-components";
 import Tile from "./Tile";
 
-interface StyledContentProps {
+interface StyledOptionsProps {
   readonly step2: boolean;
 }
 
-const StyledContent = styled.div<StyledContentProps>`
+const StyledOptions = styled.div<StyledOptionsProps>`
   display: flex;
   min-height: 240px;
 
@@ -134,6 +134,137 @@ const StyledImageContainer = styled.div`
   }
 `;
 
+interface StyledColorSelectorProps {
+  readonly selectedColor: "black" | "white";
+}
+
+const StyledColorSelector = styled.div<StyledColorSelectorProps>`
+  ${({ selectedColor }) => css`
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+
+    button {
+      background: none;
+      border: 2px solid #697077;
+      border-radius: 8px;
+      color: #121619;
+      display: inline-block;
+      height: 46px;
+      margin-right: 12px;
+      outline: none;
+      position: relative;
+      text-decoration: none;
+      width: 46px;
+
+      &:after {
+        border-style: solid;
+        border-radius: 12px;
+        border-width: 1px;
+        content: "";
+        display: block;
+        height: 54px;
+        left: -8px;
+        position: absolute;
+        top: -8px;
+        width: 54px;
+      }
+
+      > span {
+        display: block;
+        font-size: 15px;
+        left: -62px;
+        position: relative;
+        text-align: center;
+        top: 60px;
+        width: 150px;
+      }
+    }
+
+    button:first-child {
+      background-color: #121619;
+      cursor: ${selectedColor === "white" ? "pointer" : "default"};
+
+      &:after {
+        border: 2px solid
+          ${selectedColor === "white" ? "transparent" : "#4589ff"};
+      }
+
+      > span {
+        opacity: ${selectedColor === "white" ? 0 : 1};
+      }
+    }
+
+    button:last-child {
+      background-color: #ffffff;
+      cursor: ${selectedColor === "black" ? "pointer" : "default"};
+
+      &:after {
+        border: 2px solid
+          ${selectedColor === "black" ? "transparent" : "#4589ff"};
+      }
+
+      > span {
+        opacity: ${selectedColor === "black" ? 0 : 1};
+      }
+    }
+  `}
+`;
+
+const StyledSelectButton = styled.button`
+  background-color: #0062ff;
+  border-radius: 16px;
+  border-width: 0;
+  color: #ffffff;
+  float: right;
+  font-weight: bold;
+  outline: 0;
+  text-transform: uppercase;
+
+  @media (max-width: 350px) {
+    font-size: 11px;
+    height: 24px;
+    margin-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  @media (min-width: 350px) and (max-width: 767px) {
+    font-size: 11px;
+    height: 24px;
+    margin-top: 28px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 13px;
+    height: 32px;
+    margin-top: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+`;
+
+const StyledPrice = styled.span`
+  display: inline-block;
+
+  @media (max-width: 350px) {
+    font-size: 11px;
+    margin-top: 26px;
+  }
+
+  @media (min-width: 350px) and (max-width: 767px) {
+    font-size: 13px;
+    margin-top: 38px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+    margin-top: 44px;
+  }
+`;
+
 interface StyledRecordRigConfiguratorProps {
   readonly step2: boolean;
 }
@@ -155,22 +286,6 @@ const StyledRecordRigConfigurator = styled.div<
       margin: 0;
     }
 
-    span {
-      display: ${step2 ? "none" : "inline-block"};
-    }
-
-    button {
-      background-color: #0062ff;
-      border-radius: 16px;
-      border-width: 0;
-      color: #ffffff;
-      display: ${step2 ? "none" : "inline-block"};
-      float: right;
-      font-weight: bold;
-      outline: 0;
-      text-transform: uppercase;
-    }
-
     /* Pretty much just legacy iPhone SE/5/very old Androids. */
     @media (max-width: 350px) {
       margin: 0 4px;
@@ -186,19 +301,6 @@ const StyledRecordRigConfigurator = styled.div<
         line-height: 18px;
         padding-top: 8px;
         padding-bottom: 12px;
-      }
-
-      span {
-        font-size: 11px;
-        margin-top: 26px;
-      }
-
-      button {
-        font-size: 11px;
-        height: 24px;
-        margin-top: 16px;
-        padding-left: 8px;
-        padding-right: 8px;
       }
     }
 
@@ -217,19 +319,6 @@ const StyledRecordRigConfigurator = styled.div<
         padding-top: 8px;
         padding-bottom: 22px;
       }
-
-      span {
-        font-size: 13px;
-        margin-top: 38px;
-      }
-
-      button {
-        font-size: 11px;
-        height: 24px;
-        margin-top: 28px;
-        padding-left: 8px;
-        padding-right: 8px;
-      }
     }
 
     @media (min-width: 768px) {
@@ -247,19 +336,6 @@ const StyledRecordRigConfigurator = styled.div<
         line-height: 24px;
         padding-top: 12px;
         padding-bottom: 16px;
-      }
-
-      span {
-        font-size: 15px;
-        margin-top: 44px;
-      }
-
-      button {
-        font-size: 13px;
-        height: 32px;
-        margin-top: 28px;
-        padding-left: 12px;
-        padding-right: 12px;
       }
     }
 
@@ -287,10 +363,21 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const step2 = configuration !== undefined;
   const blackChosen = configuration === "black";
   const whiteChosen = configuration === "white";
+
+  const [selectedColor, setSelectedColor] = useState(configuration);
+
+  const handleColorChangeClick = (color: "black" | "white") => {
+    setSelectedColor(color);
+    // TODO: Add method for updating the URL?
+    // e.preventDefault();
+    // eslint-disable-next-line functional/immutable-data
+    // Router.push(href);
+  };
+
   return (
     <StyledRecordRigConfigurator step2={step2}>
       <h1>Choose your RecordRig.</h1>
-      <StyledContent step2={step2}>
+      <StyledOptions step2={step2}>
         <StyledOption chosen={blackChosen} step2={step2}>
           <Tile floating={!blackChosen} rounded={!blackChosen}>
             <StyledContentContainer>
@@ -302,10 +389,12 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <StyledImageContainer>
                 <img alt="" src="/recordrig-black.png" />
               </StyledImageContainer>
-              <div>
-                <span>€ 2399</span>
-                <button type="button">Select</button>
-              </div>
+              {!configuration && (
+                <div>
+                  <StyledPrice>€ 2399</StyledPrice>
+                  <StyledSelectButton type="button">Select</StyledSelectButton>
+                </div>
+              )}
             </StyledContentContainer>
           </Tile>
         </StyledOption>
@@ -320,14 +409,26 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <StyledImageContainer>
                 <img alt="" src="/recordrig.png" />
               </StyledImageContainer>
-              <div>
-                <span>€ 2399</span>
-                <button type="button">Select</button>
-              </div>
+              {!configuration && (
+                <div>
+                  <StyledPrice>€ 2399</StyledPrice>
+                  <StyledSelectButton type="button">Select</StyledSelectButton>
+                </div>
+              )}
             </StyledContentContainer>
           </Tile>
         </StyledOption>
-      </StyledContent>
+      </StyledOptions>
+      {configuration && (
+        <StyledColorSelector selectedColor={selectedColor || "black"}>
+          <button onClick={() => handleColorChangeClick("black")} type="button">
+            <span>Stealth Black</span>
+          </button>
+          <button onClick={() => handleColorChangeClick("white")} type="button">
+            <span>Pristine White</span>
+          </button>
+        </StyledColorSelector>
+      )}
     </StyledRecordRigConfigurator>
   );
 };
