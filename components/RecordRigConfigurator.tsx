@@ -360,11 +360,11 @@ interface RecordRigConfiguratorProps {
 const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   configuration = undefined
 }) => {
-  const step2 = configuration !== undefined;
-  const blackChosen = configuration === "black";
-  const whiteChosen = configuration === "white";
-
   const [selectedColor, setSelectedColor] = useState(configuration);
+  const step2 = configuration !== undefined;
+  const blackChosen = selectedColor === "black";
+  const whiteChosen = selectedColor === "white";
+  console.log("blackChosen:", blackChosen);
 
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
@@ -378,46 +378,54 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
     <StyledRecordRigConfigurator step2={step2}>
       <h1>Choose your RecordRig.</h1>
       <StyledOptions step2={step2}>
-        <StyledOption chosen={blackChosen} step2={step2}>
-          <Tile floating={!blackChosen} rounded={!blackChosen}>
-            <StyledContentContainer>
-              <h2>
-                RecordRig -&nbsp;
-                <br />
-                <i>Stealth Black</i>
-              </h2>
-              <StyledImageContainer>
-                <img alt="" src="/recordrig-black.png" />
-              </StyledImageContainer>
-              {!configuration && (
-                <div>
-                  <StyledPrice>€ 2399</StyledPrice>
-                  <StyledSelectButton type="button">Select</StyledSelectButton>
-                </div>
-              )}
-            </StyledContentContainer>
-          </Tile>
-        </StyledOption>
-        <StyledOption chosen={whiteChosen} step2={step2}>
-          <Tile floating={!whiteChosen} rounded={!whiteChosen}>
-            <StyledContentContainer>
-              <h2>
-                RecordRig -&nbsp;
-                <br />
-                <i>Pristine White</i>
-              </h2>
-              <StyledImageContainer>
-                <img alt="" src="/recordrig.png" />
-              </StyledImageContainer>
-              {!configuration && (
-                <div>
-                  <StyledPrice>€ 2399</StyledPrice>
-                  <StyledSelectButton type="button">Select</StyledSelectButton>
-                </div>
-              )}
-            </StyledContentContainer>
-          </Tile>
-        </StyledOption>
+        {(!configuration || blackChosen) && (
+          <StyledOption chosen={blackChosen} step2={step2}>
+            <Tile floating={!blackChosen} rounded={!blackChosen}>
+              <StyledContentContainer>
+                <h2>
+                  RecordRig -&nbsp;
+                  <br />
+                  <i>Stealth Black</i>
+                </h2>
+                <StyledImageContainer>
+                  <img alt="" src="/recordrig-black.png" />
+                </StyledImageContainer>
+                {!configuration && (
+                  <div>
+                    <StyledPrice>€ 2399</StyledPrice>
+                    <StyledSelectButton type="button">
+                      Select
+                    </StyledSelectButton>
+                  </div>
+                )}
+              </StyledContentContainer>
+            </Tile>
+          </StyledOption>
+        )}
+        {(!configuration || whiteChosen) && (
+          <StyledOption chosen={whiteChosen} step2={step2}>
+            <Tile floating={!whiteChosen} rounded={!whiteChosen}>
+              <StyledContentContainer>
+                <h2>
+                  RecordRig -&nbsp;
+                  <br />
+                  <i>Pristine White</i>
+                </h2>
+                <StyledImageContainer>
+                  <img alt="" src="/recordrig.png" />
+                </StyledImageContainer>
+                {!configuration && (
+                  <div>
+                    <StyledPrice>€ 2399</StyledPrice>
+                    <StyledSelectButton type="button">
+                      Select
+                    </StyledSelectButton>
+                  </div>
+                )}
+              </StyledContentContainer>
+            </Tile>
+          </StyledOption>
+        )}
       </StyledOptions>
       {configuration && (
         <StyledColorSelector selectedColor={selectedColor || "black"}>
