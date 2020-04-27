@@ -2801,6 +2801,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     >
       <div
         className="c2"
+        onClick={[Function]}
       >
         <div
           className="c3"
@@ -3208,6 +3209,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     >
       <div
         className="c2"
+        onClick={[Function]}
       >
         <div
           className="c3"
@@ -3248,6 +3250,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
       </div>
       <div
         className="c2"
+        onClick={[Function]}
       >
         <div
           className="c3"
@@ -3661,6 +3664,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     >
       <div
         className="c2"
+        onClick={[Function]}
       >
         <div
           className="c3"

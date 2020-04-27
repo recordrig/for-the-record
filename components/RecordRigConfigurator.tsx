@@ -367,10 +367,12 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   configuration = undefined
 }) => {
   const [selectedColor, setSelectedColor] = useState(configuration);
-  const step2 = configuration !== undefined;
   const blackChosen = selectedColor === "black";
   const whiteChosen = selectedColor === "white";
+  const step2 = blackChosen || whiteChosen;
   console.log("blackChosen:", blackChosen);
+  console.log("whiteChosen:", blackChosen);
+  console.log("step2:", step2);
 
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
@@ -385,8 +387,12 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       <h1>Choose your RecordRig.</h1>
       <StyledContent>
         <StyledOptions step2={step2}>
-          {(!configuration || blackChosen) && (
-            <StyledOption chosen={blackChosen} step2={step2}>
+          {(!step2 || blackChosen) && (
+            <StyledOption
+              chosen={blackChosen}
+              onClick={() => handleColorChangeClick("black")}
+              step2={step2}
+            >
               <Tile floating={!blackChosen} rounded={!blackChosen}>
                 <StyledContentContainer>
                   <h2>
@@ -397,7 +403,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   <StyledImageContainer>
                     <img alt="" src="/recordrig-black.png" />
                   </StyledImageContainer>
-                  {!configuration && (
+                  {!step2 && (
                     <div>
                       <StyledPrice>€ 2399</StyledPrice>
                       <StyledSelectButton type="button">
@@ -409,8 +415,12 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </Tile>
             </StyledOption>
           )}
-          {(!configuration || whiteChosen) && (
-            <StyledOption chosen={whiteChosen} step2={step2}>
+          {(!step2 || whiteChosen) && (
+            <StyledOption
+              chosen={whiteChosen}
+              onClick={() => handleColorChangeClick("white")}
+              step2={step2}
+            >
               <Tile floating={!whiteChosen} rounded={!whiteChosen}>
                 <StyledContentContainer>
                   <h2>
@@ -421,7 +431,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   <StyledImageContainer>
                     <img alt="" src="/recordrig.png" />
                   </StyledImageContainer>
-                  {!configuration && (
+                  {!step2 && (
                     <div>
                       <StyledPrice>€ 2399</StyledPrice>
                       <StyledSelectButton type="button">
@@ -433,7 +443,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </Tile>
             </StyledOption>
           )}
-          {configuration && (
+          {step2 && (
             <StyledColorSelector selectedColor={selectedColor || "black"}>
               <button
                 onClick={() => handleColorChangeClick("black")}
