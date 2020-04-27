@@ -2469,7 +2469,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 240px;
+  position: relative;
 }
 
 .c2 {
@@ -2530,6 +2530,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 32px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
 }
 
 .c6 button {
@@ -2597,6 +2600,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c0 {
+  padding-bottom: 128px;
   max-width: 902px;
 }
 
@@ -2790,55 +2794,59 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     Choose your RecordRig.
   </h1>
   <div
-    className="c1"
+    className=""
   >
     <div
-      className="c2"
+      className="c1"
     >
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4"
+          className="c3"
         >
-          <h2>
-            RecordRig - 
-            <br />
-            <i>
-              Stealth Black
-            </i>
-          </h2>
           <div
-            className="c5"
+            className="c4"
           >
-            <img
-              alt=""
-              src="/recordrig-black.png"
-            />
+            <h2>
+              RecordRig - 
+              <br />
+              <i>
+                Stealth Black
+              </i>
+            </h2>
+            <div
+              className="c5"
+            >
+              <img
+                alt=""
+                src="/recordrig-black.png"
+              />
+            </div>
           </div>
         </div>
       </div>
+      <div
+        className="c6"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Stealth Black
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Pristine White
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    className="c6"
-  >
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Stealth Black
-      </span>
-    </button>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Pristine White
-      </span>
-    </button>
   </div>
 </div>
 `;
@@ -2881,7 +2889,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 240px;
+  position: relative;
 }
 
 .c2 {
@@ -2948,6 +2956,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 .c0 {
+  padding-bottom: 128px;
   max-width: 902px;
 }
 
@@ -3192,84 +3201,88 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     Choose your RecordRig.
   </h1>
   <div
-    className="c1"
+    className=""
   >
     <div
-      className="c2"
+      className="c1"
     >
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4"
+          className="c3"
         >
-          <h2>
-            RecordRig - 
-            <br />
-            <i>
-              Stealth Black
-            </i>
-          </h2>
           <div
-            className="c5"
+            className="c4"
           >
-            <img
-              alt=""
-              src="/recordrig-black.png"
-            />
-          </div>
-          <div>
-            <span
-              className="c6"
+            <h2>
+              RecordRig - 
+              <br />
+              <i>
+                Stealth Black
+              </i>
+            </h2>
+            <div
+              className="c5"
             >
-              € 2399
-            </span>
-            <button
-              className="c7"
-              type="button"
-            >
-              Select
-            </button>
+              <img
+                alt=""
+                src="/recordrig-black.png"
+              />
+            </div>
+            <div>
+              <span
+                className="c6"
+              >
+                € 2399
+              </span>
+              <button
+                className="c7"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      className="c2"
-    >
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4"
+          className="c3"
         >
-          <h2>
-            RecordRig - 
-            <br />
-            <i>
-              Pristine White
-            </i>
-          </h2>
           <div
-            className="c5"
+            className="c4"
           >
-            <img
-              alt=""
-              src="/recordrig.png"
-            />
-          </div>
-          <div>
-            <span
-              className="c6"
+            <h2>
+              RecordRig - 
+              <br />
+              <i>
+                Pristine White
+              </i>
+            </h2>
+            <div
+              className="c5"
             >
-              € 2399
-            </span>
-            <button
-              className="c7"
-              type="button"
-            >
-              Select
-            </button>
+              <img
+                alt=""
+                src="/recordrig.png"
+              />
+            </div>
+            <div>
+              <span
+                className="c6"
+              >
+                € 2399
+              </span>
+              <button
+                className="c7"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -3316,7 +3329,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 240px;
+  position: relative;
 }
 
 .c2 {
@@ -3377,6 +3390,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 32px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
 }
 
 .c6 button {
@@ -3444,6 +3460,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c0 {
+  padding-bottom: 128px;
   max-width: 902px;
 }
 
@@ -3637,55 +3654,59 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     Choose your RecordRig.
   </h1>
   <div
-    className="c1"
+    className=""
   >
     <div
-      className="c2"
+      className="c1"
     >
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4"
+          className="c3"
         >
-          <h2>
-            RecordRig - 
-            <br />
-            <i>
-              Pristine White
-            </i>
-          </h2>
           <div
-            className="c5"
+            className="c4"
           >
-            <img
-              alt=""
-              src="/recordrig.png"
-            />
+            <h2>
+              RecordRig - 
+              <br />
+              <i>
+                Pristine White
+              </i>
+            </h2>
+            <div
+              className="c5"
+            >
+              <img
+                alt=""
+                src="/recordrig.png"
+              />
+            </div>
           </div>
         </div>
       </div>
+      <div
+        className="c6"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Stealth Black
+          </span>
+        </button>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Pristine White
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    className="c6"
-  >
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Stealth Black
-      </span>
-    </button>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      <span>
-        Pristine White
-      </span>
-    </button>
   </div>
 </div>
 `;

@@ -2,13 +2,15 @@ import React, { FunctionComponent, useState } from "react";
 import styled, { css } from "styled-components";
 import Tile from "./Tile";
 
+const StyledContent = styled.div``;
+
 interface StyledOptionsProps {
   readonly step2: boolean;
 }
 
 const StyledOptions = styled.div<StyledOptionsProps>`
   display: flex;
-  min-height: 240px;
+  position: relative; /* Necessary for StyledColorSelector. */
 
   @media (max-device-width: 767px) and (orientation: portrait) {
     /* Total screen height minus two browser bars and two custom app bars/additional content. */
@@ -143,6 +145,9 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
     display: flex;
     justify-content: center;
     margin-top: 32px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
 
     button {
       background: none;
@@ -273,6 +278,7 @@ const StyledRecordRigConfigurator = styled.div<
   StyledRecordRigConfiguratorProps
 >`
   ${({ step2 }) => css`
+    padding-bottom: 128px; /* Reserves space for color selection buttons. */
     max-width: 902px;
 
     h1 {
@@ -377,66 +383,74 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   return (
     <StyledRecordRigConfigurator step2={step2}>
       <h1>Choose your RecordRig.</h1>
-      <StyledOptions step2={step2}>
-        {(!configuration || blackChosen) && (
-          <StyledOption chosen={blackChosen} step2={step2}>
-            <Tile floating={!blackChosen} rounded={!blackChosen}>
-              <StyledContentContainer>
-                <h2>
-                  RecordRig -&nbsp;
-                  <br />
-                  <i>Stealth Black</i>
-                </h2>
-                <StyledImageContainer>
-                  <img alt="" src="/recordrig-black.png" />
-                </StyledImageContainer>
-                {!configuration && (
-                  <div>
-                    <StyledPrice>€ 2399</StyledPrice>
-                    <StyledSelectButton type="button">
-                      Select
-                    </StyledSelectButton>
-                  </div>
-                )}
-              </StyledContentContainer>
-            </Tile>
-          </StyledOption>
-        )}
-        {(!configuration || whiteChosen) && (
-          <StyledOption chosen={whiteChosen} step2={step2}>
-            <Tile floating={!whiteChosen} rounded={!whiteChosen}>
-              <StyledContentContainer>
-                <h2>
-                  RecordRig -&nbsp;
-                  <br />
-                  <i>Pristine White</i>
-                </h2>
-                <StyledImageContainer>
-                  <img alt="" src="/recordrig.png" />
-                </StyledImageContainer>
-                {!configuration && (
-                  <div>
-                    <StyledPrice>€ 2399</StyledPrice>
-                    <StyledSelectButton type="button">
-                      Select
-                    </StyledSelectButton>
-                  </div>
-                )}
-              </StyledContentContainer>
-            </Tile>
-          </StyledOption>
-        )}
-      </StyledOptions>
-      {configuration && (
-        <StyledColorSelector selectedColor={selectedColor || "black"}>
-          <button onClick={() => handleColorChangeClick("black")} type="button">
-            <span>Stealth Black</span>
-          </button>
-          <button onClick={() => handleColorChangeClick("white")} type="button">
-            <span>Pristine White</span>
-          </button>
-        </StyledColorSelector>
-      )}
+      <StyledContent>
+        <StyledOptions step2={step2}>
+          {(!configuration || blackChosen) && (
+            <StyledOption chosen={blackChosen} step2={step2}>
+              <Tile floating={!blackChosen} rounded={!blackChosen}>
+                <StyledContentContainer>
+                  <h2>
+                    RecordRig -&nbsp;
+                    <br />
+                    <i>Stealth Black</i>
+                  </h2>
+                  <StyledImageContainer>
+                    <img alt="" src="/recordrig-black.png" />
+                  </StyledImageContainer>
+                  {!configuration && (
+                    <div>
+                      <StyledPrice>€ 2399</StyledPrice>
+                      <StyledSelectButton type="button">
+                        Select
+                      </StyledSelectButton>
+                    </div>
+                  )}
+                </StyledContentContainer>
+              </Tile>
+            </StyledOption>
+          )}
+          {(!configuration || whiteChosen) && (
+            <StyledOption chosen={whiteChosen} step2={step2}>
+              <Tile floating={!whiteChosen} rounded={!whiteChosen}>
+                <StyledContentContainer>
+                  <h2>
+                    RecordRig -&nbsp;
+                    <br />
+                    <i>Pristine White</i>
+                  </h2>
+                  <StyledImageContainer>
+                    <img alt="" src="/recordrig.png" />
+                  </StyledImageContainer>
+                  {!configuration && (
+                    <div>
+                      <StyledPrice>€ 2399</StyledPrice>
+                      <StyledSelectButton type="button">
+                        Select
+                      </StyledSelectButton>
+                    </div>
+                  )}
+                </StyledContentContainer>
+              </Tile>
+            </StyledOption>
+          )}
+          {configuration && (
+            <StyledColorSelector selectedColor={selectedColor || "black"}>
+              <button
+                onClick={() => handleColorChangeClick("black")}
+                type="button"
+              >
+                <span>Stealth Black</span>
+              </button>
+              <button
+                onClick={() => handleColorChangeClick("white")}
+                type="button"
+              >
+                <span>Pristine White</span>
+              </button>
+            </StyledColorSelector>
+          )}
+        </StyledOptions>
+      </StyledContent>
     </StyledRecordRigConfigurator>
   );
 };
