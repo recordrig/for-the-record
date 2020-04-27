@@ -2537,8 +2537,13 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 32px;
+  opacity: 1;
   position: absolute;
   top: 100%;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
   width: 100%;
 }
 
@@ -2567,6 +2572,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   left: -8px;
   position: absolute;
   top: -8px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
   width: 54px;
 }
 
@@ -2577,6 +2584,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   position: relative;
   text-align: center;
   top: 60px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   width: 150px;
 }
 
@@ -3422,8 +3431,13 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 32px;
+  opacity: 1;
   position: absolute;
   top: 100%;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
   width: 100%;
 }
 
@@ -3452,6 +3466,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   left: -8px;
   position: absolute;
   top: -8px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
   width: 54px;
 }
 
@@ -3462,6 +3478,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   position: relative;
   text-align: center;
   top: 60px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   width: 150px;
 }
 

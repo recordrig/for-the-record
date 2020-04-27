@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import Tile from "./Tile";
 
@@ -137,15 +137,19 @@ const StyledImageContainer = styled.div<StyledImageContainerProps>`
 
 interface StyledColorSelectorProps {
   readonly selectedColor: "black" | "white";
+  readonly visible: boolean;
 }
 
 const StyledColorSelector = styled.div<StyledColorSelectorProps>`
-  ${({ selectedColor }) => css`
+  ${({ selectedColor, visible }) => css`
     display: flex;
     justify-content: center;
     margin-top: 32px;
+    opacity: ${visible ? 1 : 0};
     position: absolute;
     top: 100%;
+    transition: opacity 0.4s ease-in-out;
+    transition-delay: 0.8s;
     width: 100%;
 
     button {
@@ -171,6 +175,7 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
         left: -8px;
         position: absolute;
         top: -8px;
+        transition: border-color 0.2s ease-in-out;
         width: 54px;
       }
 
@@ -181,6 +186,7 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
         position: relative;
         text-align: center;
         top: 60px;
+        transition: opacity 0.2s ease-in-out;
         width: 150px;
       }
     }
@@ -370,9 +376,6 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const blackChosen = selectedColor === "black";
   const whiteChosen = selectedColor === "white";
   const step2 = blackChosen || whiteChosen;
-  console.log("blackChosen:", blackChosen);
-  console.log("whiteChosen:", blackChosen);
-  console.log("step2:", step2);
 
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
@@ -381,6 +384,26 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
     // eslint-disable-next-line functional/immutable-data
     // Router.push(href);
   };
+
+  // Color selector initial rendering and visibility depends on initial config state.
+  const [renderSelector, setRenderSelector] = useState(step2);
+  const [selectorVisible, setSelectorVisible] = useState(step2);
+
+  console.log("renderSelector:", renderSelector);
+  console.log("selectorVisible:", selectorVisible);
+
+  // Detect changes in state (after initial rendering) to determine transitions.
+  useEffect(() => {
+    if (step2 === true) {
+      setRenderSelector(true);
+      setTimeout(() => setSelectorVisible(true), 50);
+    }
+
+    if (step2 === false) {
+      setTimeout(() => setRenderSelector(false), 200);
+      // setTimeout(() => setSelectorVisible(false), 1);
+    }
+  }, [step2]);
 
   return (
     <StyledRecordRigConfigurator step2={step2}>
@@ -447,8 +470,11 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </Tile>
             </StyledOption>
           )}
-          {step2 && (
-            <StyledColorSelector selectedColor={selectedColor || "black"}>
+          {renderSelector && (
+            <StyledColorSelector
+              selectedColor={selectedColor || "black"}
+              visible={selectorVisible}
+            >
               <button
                 onClick={() => handleColorChangeClick("black")}
                 type="button"
