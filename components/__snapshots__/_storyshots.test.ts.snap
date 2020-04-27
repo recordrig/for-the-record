@@ -598,9 +598,9 @@ exports[`Storyshots Form default 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -2445,9 +2445,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c3:hover {
@@ -2473,8 +2473,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c2 {
-  display: block;
   height: 100%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .c2 > div {
@@ -2511,6 +2514,10 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .c5 img {
@@ -2645,29 +2652,17 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c2 {
     width: 100%;
   }
-
-  .c2:last-child {
-    margin-left: 0px;
-  }
 }
 
 @media (min-width:351px) and (max-width:767px) {
   .c2 {
     width: 100%;
   }
-
-  .c2:last-child {
-    margin-left: 0px;
-  }
 }
 
 @media (min-width:768px) {
   .c2 {
     width: 100%;
-  }
-
-  .c2:last-child {
-    margin-left: 0px;
   }
 }
 
@@ -2694,7 +2689,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (max-width:350px) {
   .c5 {
-    height: calc(100% - 114px);
+    height: calc(100% - 84px);
   }
 
   .c5 img {
@@ -2704,7 +2699,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c5 {
-    height: calc(100% - 148px);
+    height: calc(100% - 116px);
   }
 
   .c5 img {
@@ -2714,7 +2709,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-width:768px) {
   .c5 {
-    height: calc(100% - 194px);
+    height: calc(100% - 130px);
   }
 
   .c5 img {
@@ -2801,7 +2796,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     >
       <div
         className="c2"
-        onClick={[Function]}
       >
         <div
           className="c3"
@@ -2857,7 +2851,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0.25);
-  cursor: default;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2866,15 +2860,15 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c3:hover {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
   z-index: 1;
 }
 
@@ -2894,11 +2888,27 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 .c2 {
-  display: block;
   height: 100%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .c2 > div {
+  height: 100%;
+}
+
+.c8 {
+  height: 100%;
+  margin-left: auto;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.c8 > div {
   height: 100%;
 }
 
@@ -2932,6 +2942,10 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .c5 img {
@@ -2946,6 +2960,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   border-radius: 16px;
   border-width: 0;
   color: #ffffff;
+  cursor: pointer;
   float: right;
   font-weight: bold;
   outline: 0;
@@ -3002,19 +3017,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   .c2 {
     width: calc(50% - 4px);
   }
-
-  .c2:last-child {
-    margin-left: 8px;
-  }
 }
 
 @media (min-width:351px) and (max-width:767px) {
   .c2 {
     width: calc(50% - 8px);
-  }
-
-  .c2:last-child {
-    margin-left: 16px;
   }
 }
 
@@ -3022,9 +3029,23 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   .c2 {
     width: calc(50% - 16px);
   }
+}
 
-  .c2:last-child {
-    margin-left: 32px;
+@media (max-width:350px) {
+  .c8 {
+    width: calc(50% - 4px);
+  }
+}
+
+@media (min-width:351px) and (max-width:767px) {
+  .c8 {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: calc(50% - 16px);
   }
 }
 
@@ -3209,10 +3230,10 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     >
       <div
         className="c2"
-        onClick={[Function]}
       >
         <div
           className="c3"
+          onClick={[Function]}
         >
           <div
             className="c4"
@@ -3249,11 +3270,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
         </div>
       </div>
       <div
-        className="c2"
-        onClick={[Function]}
+        className="c8"
       >
         <div
           className="c3"
+          onClick={[Function]}
         >
           <div
             className="c4"
@@ -3308,9 +3329,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c3:hover {
@@ -3336,8 +3357,12 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c2 {
-  display: block;
   height: 100%;
+  margin-left: auto;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .c2 > div {
@@ -3374,6 +3399,10 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .c5 img {
@@ -3508,29 +3537,17 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c2 {
     width: 100%;
   }
-
-  .c2:last-child {
-    margin-left: 0px;
-  }
 }
 
 @media (min-width:351px) and (max-width:767px) {
   .c2 {
     width: 100%;
   }
-
-  .c2:last-child {
-    margin-left: 0px;
-  }
 }
 
 @media (min-width:768px) {
   .c2 {
     width: 100%;
-  }
-
-  .c2:last-child {
-    margin-left: 0px;
   }
 }
 
@@ -3557,7 +3574,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (max-width:350px) {
   .c5 {
-    height: calc(100% - 114px);
+    height: calc(100% - 84px);
   }
 
   .c5 img {
@@ -3567,7 +3584,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c5 {
-    height: calc(100% - 148px);
+    height: calc(100% - 116px);
   }
 
   .c5 img {
@@ -3577,7 +3594,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-width:768px) {
   .c5 {
-    height: calc(100% - 194px);
+    height: calc(100% - 130px);
   }
 
   .c5 img {
@@ -3664,7 +3681,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     >
       <div
         className="c2"
-        onClick={[Function]}
       >
         <div
           className="c3"
@@ -4637,9 +4653,9 @@ exports[`Storyshots Section rows 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c3:hover {
@@ -4933,9 +4949,9 @@ exports[`Storyshots Section subsections 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c4:hover {
@@ -4965,9 +4981,9 @@ exports[`Storyshots Section subsections 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c8:hover {
@@ -6690,9 +6706,9 @@ exports[`Storyshots Tile bottom image 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -6869,9 +6885,9 @@ exports[`Storyshots Tile click handler 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7020,9 +7036,9 @@ exports[`Storyshots Tile custom colors 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7191,9 +7207,9 @@ exports[`Storyshots Tile default 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7352,9 +7368,9 @@ exports[`Storyshots Tile floating 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7470,9 +7486,9 @@ exports[`Storyshots Tile link 1`] = `
   display: flex;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7615,9 +7631,9 @@ exports[`Storyshots Tile link and click handler 1`] = `
   display: flex;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7761,9 +7777,9 @@ exports[`Storyshots Tile rounded 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -7880,9 +7896,9 @@ exports[`Storyshots Tile top image 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {
@@ -8059,9 +8075,9 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
 .c0:hover {

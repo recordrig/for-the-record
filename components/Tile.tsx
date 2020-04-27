@@ -57,7 +57,8 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
     color: inherit;
     display: flex;
     text-decoration: none;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, border-radius 0.5s ease-in-out,
+      box-shadow 0.5s ease-in-out;
 
     &:hover {
       transform: scale(1.025);
@@ -87,7 +88,8 @@ const StyledTile = styled.div<StyledTileProps>`
     display: flex;
     flex-direction: column;
     width: 100%;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, border-radius 0.5s ease-in-out,
+      box-shadow 0.5s ease-in-out;
 
     &:hover {
       transform: scale(${hoverState ? 1.025 : 1});

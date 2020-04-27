@@ -10,7 +10,7 @@ interface StyledOptionsProps {
 
 const StyledOptions = styled.div<StyledOptionsProps>`
   display: flex;
-  position: relative; /* Necessary for StyledColorSelector. */
+  position: relative; /* Necessary for children. */
 
   @media (max-device-width: 767px) and (orientation: portrait) {
     /* Total screen height minus two browser bars and two custom app bars/additional content. */
@@ -35,14 +35,17 @@ const StyledOptions = styled.div<StyledOptionsProps>`
 `;
 
 interface StyledOptionProps {
+  readonly alignRight: boolean;
   readonly chosen: boolean;
   readonly step2: boolean;
 }
 
 const StyledOption = styled.div<StyledOptionProps>`
-  ${({ chosen, step2 }) => css`
-    display: ${chosen || !step2 ? "block" : "none"};
+  ${({ alignRight, chosen, step2 }) => css`
     height: 100%;
+    margin-left: ${alignRight && "auto"};
+    transition: width 0.4s ease-in-out;
+    transition-delay: 0.4s;
 
     > div {
       height: 100%; /* Targets the Tile. */
@@ -50,26 +53,14 @@ const StyledOption = styled.div<StyledOptionProps>`
 
     @media (max-width: 350px) {
       width: ${chosen && step2 ? "100%" : "calc(50% - 4px)"};
-
-      &:last-child {
-        margin-left: ${chosen && step2 ? "0px" : "8px"};
-      }
     }
 
     @media (min-width: 351px) and (max-width: 767px) {
       width: ${chosen && step2 ? "100%" : "calc(50% - 8px)"};
-
-      &:last-child {
-        margin-left: ${chosen && step2 ? "0px" : "16px"};
-      }
     }
 
     @media (min-width: 768px) {
       width: ${chosen && step2 ? "100%" : "calc(50% - 16px)"};
-
-      &:last-child {
-        margin-left: ${chosen && step2 ? "0px" : "32px"};
-      }
     }
   `}
 `;
@@ -98,10 +89,16 @@ const StyledContentContainer = styled.div`
   }
 `;
 
-const StyledImageContainer = styled.div`
+interface StyledImageContainerProps {
+  readonly largeImage: boolean;
+}
+
+const StyledImageContainer = styled.div<StyledImageContainerProps>`
   align-items: center;
   display: flex;
   justify-content: center;
+  transition: height 0.4s ease-in-out;
+  transition-delay: 0.4s;
 
   img {
     display: block;
@@ -110,30 +107,32 @@ const StyledImageContainer = styled.div`
     margin-right: auto;
   }
 
-  @media (max-width: 350px) {
-    /* Total available card height minus other content heights. */
-    height: calc(100% - 114px);
+  ${({ largeImage }) => css`
+    @media (max-width: 350px) {
+      /* Total available card height minus other content heights. */
+      height: calc(100% - ${largeImage ? "84px" : "114px"});
 
-    img {
-      max-width: calc(100% - 8px);
+      img {
+        max-width: calc(100% - 8px);
+      }
     }
-  }
 
-  @media (min-width: 350px) and (max-width: 767px) {
-    height: calc(100% - 148px);
+    @media (min-width: 350px) and (max-width: 767px) {
+      height: calc(100% - ${largeImage ? "116px" : "148px"});
 
-    img {
-      max-width: calc(100% - 32px);
+      img {
+        max-width: calc(100% - 32px);
+      }
     }
-  }
 
-  @media (min-width: 768px) {
-    height: calc(100% - 194px);
+    @media (min-width: 768px) {
+      height: calc(100% - ${largeImage ? "130px" : "194px"});
 
-    img {
-      max-width: calc(100% - 64px);
+      img {
+        max-width: calc(100% - 64px);
+      }
     }
-  }
+  `}
 `;
 
 interface StyledColorSelectorProps {
@@ -221,6 +220,7 @@ const StyledSelectButton = styled.button`
   border-radius: 16px;
   border-width: 0;
   color: #ffffff;
+  cursor: pointer;
   float: right;
   font-weight: bold;
   outline: 0;
@@ -388,19 +388,21 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       <StyledContent>
         <StyledOptions step2={step2}>
           {(!step2 || blackChosen) && (
-            <StyledOption
-              chosen={blackChosen}
-              onClick={() => handleColorChangeClick("black")}
-              step2={step2}
-            >
-              <Tile floating={!blackChosen} rounded={!blackChosen}>
+            <StyledOption alignRight={false} chosen={blackChosen} step2={step2}>
+              <Tile
+                floating={!blackChosen}
+                clickHandler={
+                  !step2 ? () => handleColorChangeClick("black") : undefined
+                }
+                rounded={!blackChosen}
+              >
                 <StyledContentContainer>
                   <h2>
                     RecordRig -&nbsp;
                     <br />
                     <i>Stealth Black</i>
                   </h2>
-                  <StyledImageContainer>
+                  <StyledImageContainer largeImage={blackChosen}>
                     <img alt="" src="/recordrig-black.png" />
                   </StyledImageContainer>
                   {!step2 && (
@@ -416,19 +418,21 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             </StyledOption>
           )}
           {(!step2 || whiteChosen) && (
-            <StyledOption
-              chosen={whiteChosen}
-              onClick={() => handleColorChangeClick("white")}
-              step2={step2}
-            >
-              <Tile floating={!whiteChosen} rounded={!whiteChosen}>
+            <StyledOption alignRight chosen={whiteChosen} step2={step2}>
+              <Tile
+                floating={!whiteChosen}
+                clickHandler={
+                  !step2 ? () => handleColorChangeClick("white") : undefined
+                }
+                rounded={!whiteChosen}
+              >
                 <StyledContentContainer>
                   <h2>
                     RecordRig -&nbsp;
                     <br />
                     <i>Pristine White</i>
                   </h2>
-                  <StyledImageContainer>
+                  <StyledImageContainer largeImage={whiteChosen}>
                     <img alt="" src="/recordrig.png" />
                   </StyledImageContainer>
                   {!step2 && (
