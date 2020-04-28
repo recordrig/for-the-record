@@ -4,6 +4,52 @@ import Tile from "./Tile";
 
 const StyledContent = styled.div``;
 
+interface StyledHeadingProps {
+  readonly visible: boolean;
+}
+
+const StyledHeading = styled.div<StyledHeadingProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-weight: normal;
+    text-align: center;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  ${({ visible }) => css`
+    h1 {
+      opacity: ${visible ? 1 : 0};
+    }
+  `}
+
+  @media (max-width: 350px) {
+    height: 64px;
+
+    h1 {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 350px) and (max-width: 767px) {
+    height: 64px;
+
+    h1 {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: 128px;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+`;
+
 interface StyledOptionsProps {
   readonly step2: boolean;
 }
@@ -287,11 +333,6 @@ const StyledRecordRigConfigurator = styled.div<
     padding-bottom: 128px; /* Reserves space for color selection buttons. */
     max-width: 902px;
 
-    h1 {
-      font-weight: normal;
-      text-align: center;
-    }
-
     h2 {
       display: ${step2 ? "none" : "block"};
       box-sizing: border-box;
@@ -301,12 +342,6 @@ const StyledRecordRigConfigurator = styled.div<
     /* Pretty much just legacy iPhone SE/5/very old Androids. */
     @media (max-width: 350px) {
       margin: 0 4px;
-
-      h1 {
-        font-size: 16px;
-        height: 56px;
-        line-height: 56px;
-      }
 
       h2 {
         font-size: 14px;
@@ -319,12 +354,6 @@ const StyledRecordRigConfigurator = styled.div<
     @media (min-width: 350px) and (max-width: 767px) {
       margin: 0 8px;
 
-      h1 {
-        font-size: 16px;
-        height: 56px;
-        line-height: 56px;
-      }
-
       h2 {
         font-size: 14px;
         line-height: 18px;
@@ -336,12 +365,6 @@ const StyledRecordRigConfigurator = styled.div<
     @media (min-width: 768px) {
       margin: 0 auto;
       width: 700px;
-
-      h1 {
-        font-size: 24px;
-        height: 92px;
-        line-height: 92px;
-      }
 
       h2 {
         font-size: 18px;
@@ -377,37 +400,51 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const whiteChosen = selectedColor === "white";
   const step2 = blackChosen || whiteChosen;
 
+  const getHeading = (_configuration: "black" | "white" | null) => {
+    if (_configuration === "black")
+      return (
+        <h1>
+          Your&nbsp;RecordRig&nbsp;- <i>Stealth&nbsp;Black</i>
+          <br />
+          &nbsp;specs&nbsp;and&nbsp;options.
+        </h1>
+      );
+    if (_configuration === "white")
+      return (
+        <h1>
+          Your&nbsp;RecordRig&nbsp;- <i>Pristine&nbsp;White</i>
+          <br />
+          &nbsp;specs&nbsp;and&nbsp;options.
+        </h1>
+      );
+    return <h1>Choose your RecordRig.</h1>;
+  };
+
+  const [heading, setHeading] = useState(getHeading(configuration || null));
+  const [headingVisible, setHeadingVisible] = useState(true);
+
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
-    // TODO: Add method for updating the URL?
-    // e.preventDefault();
-    // eslint-disable-next-line functional/immutable-data
-    // Router.push(href);
+    setHeadingVisible(false);
+    setTimeout(() => setHeading(getHeading(color)), 300);
+    setTimeout(() => setHeadingVisible(true), 500);
   };
 
   // Color selector initial rendering and visibility depends on initial config state.
   const [renderSelector, setRenderSelector] = useState(step2);
   const [selectorVisible, setSelectorVisible] = useState(step2);
 
-  console.log("renderSelector:", renderSelector);
-  console.log("selectorVisible:", selectorVisible);
-
-  // Detect changes in state (after initial rendering) to determine transitions.
+  // Detect changes in state (after initial rendering) to determine transitions from step 1 to 2.
   useEffect(() => {
     if (step2 === true) {
       setRenderSelector(true);
       setTimeout(() => setSelectorVisible(true), 50);
     }
-
-    if (step2 === false) {
-      setTimeout(() => setRenderSelector(false), 200);
-      // setTimeout(() => setSelectorVisible(false), 1);
-    }
   }, [step2]);
 
   return (
     <StyledRecordRigConfigurator step2={step2}>
-      <h1>Choose your RecordRig.</h1>
+      <StyledHeading visible={headingVisible}>{heading}</StyledHeading>
       <StyledContent>
         <StyledOptions step2={step2}>
           {(!step2 || blackChosen) && (
