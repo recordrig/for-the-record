@@ -82,12 +82,11 @@ const StyledOptions = styled.div<StyledOptionsProps>`
 
 interface StyledOptionProps {
   readonly alignRight: boolean;
-  readonly chosen: boolean;
   readonly step2: boolean;
 }
 
 const StyledOption = styled.div<StyledOptionProps>`
-  ${({ alignRight, chosen, step2 }) => css`
+  ${({ alignRight, step2 }) => css`
     height: 100%;
     margin-left: ${alignRight && "auto"};
     transition: width 0.4s ease-in-out;
@@ -98,15 +97,15 @@ const StyledOption = styled.div<StyledOptionProps>`
     }
 
     @media (max-width: 350px) {
-      width: ${chosen && step2 ? "100%" : "calc(50% - 4px)"};
+      width: ${step2 ? "100%" : "calc(50% - 4px)"};
     }
 
     @media (min-width: 351px) and (max-width: 767px) {
-      width: ${chosen && step2 ? "100%" : "calc(50% - 8px)"};
+      width: ${step2 ? "100%" : "calc(50% - 8px)"};
     }
 
     @media (min-width: 768px) {
-      width: ${chosen && step2 ? "100%" : "calc(50% - 16px)"};
+      width: ${step2 ? "100%" : "calc(50% - 16px)"};
     }
   `}
 `;
@@ -137,14 +136,19 @@ const StyledContentContainer = styled.div`
 
 interface StyledImageContainerProps {
   readonly largeImage: boolean;
+  readonly visible: boolean;
 }
 
 const StyledImageContainer = styled.div<StyledImageContainerProps>`
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: height 0.4s ease-in-out;
-  transition-delay: 0.4s;
+  transition: height 0.4s ease-in-out, opacity 0.2s ease-in-out;
+  transition-delay: 0.4s, 0s;
+
+  ${({ visible }) => css`
+    opacity: ${visible ? 1 : 0};
+  `}
 
   img {
     display: block;
@@ -422,12 +426,22 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
 
   const [heading, setHeading] = useState(getHeading(configuration || null));
   const [headingVisible, setHeadingVisible] = useState(true);
+  const [renderBlack, setRenderBlack] = useState(!step2 || blackChosen);
+  const [renderWhite, setRenderWhite] = useState(!step2 || whiteChosen);
 
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
     setHeadingVisible(false);
     setTimeout(() => setHeading(getHeading(color)), 300);
     setTimeout(() => setHeadingVisible(true), 500);
+
+    if (color === "black") {
+      setRenderBlack(true);
+      setTimeout(() => setRenderWhite(false), 500);
+    } else {
+      setRenderWhite(true);
+      setTimeout(() => setRenderBlack(false), 500);
+    }
   };
 
   // Color selector initial rendering and visibility depends on initial config state.
@@ -447,14 +461,14 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       <StyledHeading visible={headingVisible}>{heading}</StyledHeading>
       <StyledContent>
         <StyledOptions step2={step2}>
-          {(!step2 || blackChosen) && (
-            <StyledOption alignRight={false} chosen={blackChosen} step2={step2}>
+          {renderBlack && (
+            <StyledOption alignRight={false} step2={step2}>
               <Tile
-                floating={!blackChosen}
+                floating={!step2 && !blackChosen}
                 clickHandler={
                   !step2 ? () => handleColorChangeClick("black") : undefined
                 }
-                rounded={!blackChosen}
+                rounded={!step2 && !blackChosen}
               >
                 <StyledContentContainer>
                   <h2>
@@ -462,7 +476,10 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                     <br />
                     <i>Stealth Black</i>
                   </h2>
-                  <StyledImageContainer largeImage={blackChosen}>
+                  <StyledImageContainer
+                    largeImage={step2}
+                    visible={!step2 || blackChosen}
+                  >
                     <img alt="" src="/recordrig-black.png" />
                   </StyledImageContainer>
                   {!step2 && (
@@ -477,14 +494,14 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </Tile>
             </StyledOption>
           )}
-          {(!step2 || whiteChosen) && (
-            <StyledOption alignRight chosen={whiteChosen} step2={step2}>
+          {renderWhite && (
+            <StyledOption alignRight step2={step2}>
               <Tile
-                floating={!whiteChosen}
+                floating={!step2 && !whiteChosen}
                 clickHandler={
                   !step2 ? () => handleColorChangeClick("white") : undefined
                 }
-                rounded={!whiteChosen}
+                rounded={!step2 && !whiteChosen}
               >
                 <StyledContentContainer>
                   <h2>
@@ -492,7 +509,10 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                     <br />
                     <i>Pristine White</i>
                   </h2>
-                  <StyledImageContainer largeImage={whiteChosen}>
+                  <StyledImageContainer
+                    largeImage={step2}
+                    visible={!step2 || whiteChosen}
+                  >
                     <img alt="" src="/recordrig.png" />
                   </StyledImageContainer>
                   {!step2 && (
