@@ -546,12 +546,14 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               visible={selectorVisible}
             >
               <button
+                disabled={blackChosen}
                 onClick={() => handleColorChangeClick("black")}
                 type="button"
               >
                 <span>Stealth Black</span>
               </button>
               <button
+                disabled={whiteChosen}
                 onClick={() => handleColorChangeClick("white")}
                 type="button"
               >

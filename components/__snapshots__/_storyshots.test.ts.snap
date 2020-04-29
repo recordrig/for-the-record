@@ -2882,6 +2882,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         className="c7"
       >
         <button
+          disabled={true}
           onClick={[Function]}
           type="button"
         >
@@ -2890,6 +2891,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
           </span>
         </button>
         <button
+          disabled={false}
           onClick={[Function]}
           type="button"
         >
@@ -3867,6 +3869,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         className="c7"
       >
         <button
+          disabled={false}
           onClick={[Function]}
           type="button"
         >
@@ -3875,6 +3878,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
           </span>
         </button>
         <button
+          disabled={true}
           onClick={[Function]}
           type="button"
         >
