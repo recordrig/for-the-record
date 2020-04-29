@@ -2491,6 +2491,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c2 {
+  background-color: #ffffff;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2540,10 +2545,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: height 0.4s ease-in-out;
-  transition: height 0.4s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+  -webkit-transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition-delay: 0.4s,0s;
+  transition-delay: 0.4s,0s;
+  opacity: 1;
 }
 
 .c6 img {
@@ -2957,6 +2963,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 .c2 {
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3019,10 +3030,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: height 0.4s ease-in-out;
-  transition: height 0.4s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+  -webkit-transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition-delay: 0.4s,0s;
+  transition-delay: 0.4s,0s;
+  opacity: 1;
 }
 
 .c6 img {
@@ -3463,6 +3475,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c2 {
+  background-color: #ffffff;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3513,10 +3530,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: height 0.4s ease-in-out;
-  transition: height 0.4s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+  -webkit-transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition-delay: 0.4s,0s;
+  transition-delay: 0.4s,0s;
+  opacity: 1;
 }
 
 .c6 img {

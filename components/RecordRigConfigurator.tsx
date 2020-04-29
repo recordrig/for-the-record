@@ -55,6 +55,13 @@ interface StyledOptionsProps {
 }
 
 const StyledOptions = styled.div<StyledOptionsProps>`
+  /* Matches Tile's background color to make the transition between colours smooth. */
+  ${({ step2 }) => css`
+    background-color: ${step2 ? "#ffffff" : "transparent"};
+    transition: background-color 0.2s;
+    transition-delay: 0.3s;
+  `}
+
   display: flex;
   position: relative; /* Necessary for children. */
 
@@ -428,6 +435,8 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const [headingVisible, setHeadingVisible] = useState(true);
   const [renderBlack, setRenderBlack] = useState(!step2 || blackChosen);
   const [renderWhite, setRenderWhite] = useState(!step2 || whiteChosen);
+  const [blackVisible, setBlackVisible] = useState(!step2 || blackChosen);
+  const [whiteVisible, setWhiteVisible] = useState(!step2 || whiteChosen);
 
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
@@ -436,11 +445,15 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
     setTimeout(() => setHeadingVisible(true), 500);
 
     if (color === "black") {
-      setRenderBlack(true);
-      setTimeout(() => setRenderWhite(false), 500);
+      setWhiteVisible(false);
+      setTimeout(() => setRenderWhite(false), 400);
+      setTimeout(() => setRenderBlack(true), 500);
+      setTimeout(() => setBlackVisible(true), 550);
     } else {
-      setRenderWhite(true);
-      setTimeout(() => setRenderBlack(false), 500);
+      setBlackVisible(false);
+      setTimeout(() => setRenderBlack(false), 400);
+      setTimeout(() => setRenderWhite(true), 500);
+      setTimeout(() => setWhiteVisible(true), 550);
     }
   };
 
@@ -478,7 +491,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   </h2>
                   <StyledImageContainer
                     largeImage={step2}
-                    visible={!step2 || blackChosen}
+                    visible={blackVisible}
                   >
                     <img alt="" src="/recordrig-black.png" />
                   </StyledImageContainer>
@@ -511,7 +524,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   </h2>
                   <StyledImageContainer
                     largeImage={step2}
-                    visible={!step2 || whiteChosen}
+                    visible={whiteVisible}
                   >
                     <img alt="" src="/recordrig.png" />
                   </StyledImageContainer>
