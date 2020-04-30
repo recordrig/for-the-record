@@ -2480,14 +2480,10 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c1 h1 {
-  font-weight: normal;
+  opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-}
-
-.c1 h1 {
-  opacity: 1;
 }
 
 .c2 {
@@ -2648,7 +2644,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c0 {
-  padding-bottom: 128px;
   max-width: 902px;
 }
 
@@ -2670,7 +2665,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c1 {
-    height: 64px;
+    height: 96px;
   }
 
   .c1 h1 {
@@ -2678,13 +2673,40 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:768px) and (max-width:1024px) {
   .c1 {
     height: 128px;
   }
 
   .c1 h1 {
     font-size: 24px;
+  }
+}
+
+@media (min-width:1025px) and (max-width:1280px) {
+  .c1 {
+    height: 192px;
+  }
+
+  .c1 h1 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width:1281px) {
+  .c1 {
+    height: 128px;
+    max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 156px;
+    padding-bottom: 64px;
+  }
+
+  .c1 h1 {
+    font-size: 42px;
   }
 }
 
@@ -2780,6 +2802,12 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
   .c6 img {
     max-width: calc(100% - 64px);
+  }
+}
+
+@media (max-width:1023px) {
+  .c8 {
+    padding-top: 192px;
   }
 }
 
@@ -2901,6 +2929,63 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         </button>
       </div>
     </div>
+    <div
+      className="c8"
+    >
+      <h3>
+        Tech specs
+      </h3>
+      <ul>
+        <li>
+          Processor
+        </li>
+        <li>
+          Storage
+        </li>
+        <li>
+          Graphics card
+        </li>
+        <li>
+          Capture card
+        </li>
+        <li>
+          Another feature
+        </li>
+        <li>
+          Another feature
+        </li>
+      </ul>
+      <h3>
+        Delivery
+      </h3>
+      <p>
+        Lorem ipsum.
+      </p>
+      <h3>
+        Guarantee and returns
+      </h3>
+      <p>
+        Lorem ipsum.
+      </p>
+      <hr />
+      <h3>
+        RecordRig streaming PC in
+         
+        Stealth Black
+      </h3>
+      <p>
+        € 2399
+      </p>
+      <p>
+        Expected delivery: within 14 days
+      </p>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Add to Bag
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -2954,14 +3039,10 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 .c1 h1 {
-  font-weight: normal;
+  opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-}
-
-.c1 h1 {
-  opacity: 1;
 }
 
 .c2 {
@@ -3063,7 +3144,6 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 .c0 {
-  padding-bottom: 128px;
   max-width: 902px;
 }
 
@@ -3085,7 +3165,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c1 {
-    height: 64px;
+    height: 96px;
   }
 
   .c1 h1 {
@@ -3093,13 +3173,40 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:768px) and (max-width:1024px) {
   .c1 {
     height: 128px;
   }
 
   .c1 h1 {
     font-size: 24px;
+  }
+}
+
+@media (min-width:1025px) and (max-width:1280px) {
+  .c1 {
+    height: 192px;
+  }
+
+  .c1 h1 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width:1281px) {
+  .c1 {
+    height: 128px;
+    max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 156px;
+    padding-bottom: 64px;
+  }
+
+  .c1 h1 {
+    font-size: 42px;
   }
 }
 
@@ -3466,14 +3573,10 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c1 h1 {
-  font-weight: normal;
+  opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-}
-
-.c1 h1 {
-  opacity: 1;
 }
 
 .c2 {
@@ -3635,7 +3738,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c0 {
-  padding-bottom: 128px;
   max-width: 902px;
 }
 
@@ -3657,7 +3759,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c1 {
-    height: 64px;
+    height: 96px;
   }
 
   .c1 h1 {
@@ -3665,13 +3767,40 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:768px) and (max-width:1024px) {
   .c1 {
     height: 128px;
   }
 
   .c1 h1 {
     font-size: 24px;
+  }
+}
+
+@media (min-width:1025px) and (max-width:1280px) {
+  .c1 {
+    height: 192px;
+  }
+
+  .c1 h1 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width:1281px) {
+  .c1 {
+    height: 128px;
+    max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 156px;
+    padding-bottom: 64px;
+  }
+
+  .c1 h1 {
+    font-size: 42px;
   }
 }
 
@@ -3767,6 +3896,12 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
   .c6 img {
     max-width: calc(100% - 64px);
+  }
+}
+
+@media (max-width:1023px) {
+  .c8 {
+    padding-top: 192px;
   }
 }
 
@@ -3887,6 +4022,63 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
           </span>
         </button>
       </div>
+    </div>
+    <div
+      className="c8"
+    >
+      <h3>
+        Tech specs
+      </h3>
+      <ul>
+        <li>
+          Processor
+        </li>
+        <li>
+          Storage
+        </li>
+        <li>
+          Graphics card
+        </li>
+        <li>
+          Capture card
+        </li>
+        <li>
+          Another feature
+        </li>
+        <li>
+          Another feature
+        </li>
+      </ul>
+      <h3>
+        Delivery
+      </h3>
+      <p>
+        Lorem ipsum.
+      </p>
+      <h3>
+        Guarantee and returns
+      </h3>
+      <p>
+        Lorem ipsum.
+      </p>
+      <hr />
+      <h3>
+        RecordRig streaming PC in
+         
+        Pristine White
+      </h3>
+      <p>
+        € 2399
+      </p>
+      <p>
+        Expected delivery: within 14 days
+      </p>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Add to Bag
+      </button>
     </div>
   </div>
 </div>

@@ -5,49 +5,69 @@ import Tile from "./Tile";
 const StyledContent = styled.div``;
 
 interface StyledHeadingProps {
+  readonly step2: boolean;
   readonly visible: boolean;
 }
 
 const StyledHeading = styled.div<StyledHeadingProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${({ step2, visible }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  h1 {
-    font-weight: normal;
-    text-align: center;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  ${({ visible }) => css`
     h1 {
       opacity: ${visible ? 1 : 0};
+      text-align: center;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    @media (max-width: 350px) {
+      height: 64px;
+
+      h1 {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 350px) and (max-width: 767px) {
+      height: 96px;
+
+      h1 {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      height: 128px;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      height: 192px;
+
+      h1 {
+        font-size: 32px;
+      }
+    }
+
+    @media (min-width: 1281px) {
+      height: 128px;
+      max-width: 1216px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 156px;
+      padding-bottom: 64px;
+
+      h1 {
+        font-size: 42px;
+      }
     }
   `}
-
-  @media (max-width: 350px) {
-    height: 64px;
-
-    h1 {
-      font-size: 16px;
-    }
-  }
-
-  @media (min-width: 350px) and (max-width: 767px) {
-    height: 64px;
-
-    h1 {
-      font-size: 16px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    height: 128px;
-
-    h1 {
-      font-size: 24px;
-    }
-  }
 `;
 
 interface StyledOptionsProps {
@@ -333,6 +353,12 @@ const StyledPrice = styled.span`
   }
 `;
 
+const StyledDeviceContent = styled.div`
+  @media (max-width: 1023px) {
+    padding-top: 192px;
+  }
+`;
+
 interface StyledRecordRigConfiguratorProps {
   readonly step2: boolean;
 }
@@ -341,7 +367,6 @@ const StyledRecordRigConfigurator = styled.div<
   StyledRecordRigConfiguratorProps
 >`
   ${({ step2 }) => css`
-    padding-bottom: 128px; /* Reserves space for color selection buttons. */
     max-width: 902px;
 
     h2 {
@@ -395,6 +420,7 @@ const StyledRecordRigConfigurator = styled.div<
 `;
 
 interface RecordRigConfiguratorProps {
+  readonly addToBag: Function;
   /** Optional configuration starting point. */
   readonly configuration?: "black" | "white";
 }
@@ -404,6 +430,7 @@ interface RecordRigConfiguratorProps {
  * configure their device as they see fit.
  */
 const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
+  addToBag,
   configuration = undefined
 }) => {
   const [selectedColor, setSelectedColor] = useState(configuration);
@@ -471,7 +498,9 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
 
   return (
     <StyledRecordRigConfigurator step2={step2}>
-      <StyledHeading visible={headingVisible}>{heading}</StyledHeading>
+      <StyledHeading step2={step2} visible={headingVisible}>
+        {heading}
+      </StyledHeading>
       <StyledContent>
         <StyledOptions step2={step2}>
           {renderBlack && (
@@ -562,6 +591,33 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             </StyledColorSelector>
           )}
         </StyledOptions>
+        {step2 && (
+          <StyledDeviceContent>
+            <h3>Tech specs</h3>
+            <ul>
+              <li>Processor</li>
+              <li>Storage</li>
+              <li>Graphics card</li>
+              <li>Capture card</li>
+              <li>Another feature</li>
+              <li>Another feature</li>
+            </ul>
+            <h3>Delivery</h3>
+            <p>Lorem ipsum.</p>
+            <h3>Guarantee and returns</h3>
+            <p>Lorem ipsum.</p>
+            <hr />
+            <h3>
+              RecordRig streaming PC in{" "}
+              {selectedColor === "black" ? "Stealth Black" : "Pristine White"}
+            </h3>
+            <p>€ 2399</p>
+            <p>Expected delivery: within 14 days</p>
+            <button onClick={() => addToBag(selectedColor)} type="button">
+              Add to Bag
+            </button>
+          </StyledDeviceContent>
+        )}
       </StyledContent>
     </StyledRecordRigConfigurator>
   );
