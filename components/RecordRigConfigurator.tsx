@@ -355,10 +355,10 @@ const StyledRecordRigConfigurator = styled.div<
       margin: 0 4px;
 
       h2 {
-        font-size: 14px;
-        line-height: 18px;
-        padding-top: 8px;
-        padding-bottom: 12px;
+        font-size: 13px;
+        line-height: 16px;
+        padding-top: 0px;
+        padding-bottom: 8px;
       }
     }
 
@@ -368,8 +368,8 @@ const StyledRecordRigConfigurator = styled.div<
       h2 {
         font-size: 14px;
         line-height: 18px;
-        padding-top: 8px;
-        padding-bottom: 22px;
+        padding-top: 0px;
+        padding-bottom: 17px;
       }
     }
 
@@ -380,8 +380,8 @@ const StyledRecordRigConfigurator = styled.div<
       h2 {
         font-size: 18px;
         line-height: 24px;
-        padding-top: 12px;
-        padding-bottom: 16px;
+        padding-top: 7px;
+        padding-bottom: 9px;
       }
     }
 

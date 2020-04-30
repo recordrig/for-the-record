@@ -2789,10 +2789,10 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 
   .c0 h2 {
-    font-size: 14px;
-    line-height: 18px;
-    padding-top: 8px;
-    padding-bottom: 12px;
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 0px;
+    padding-bottom: 8px;
   }
 }
 
@@ -2804,8 +2804,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c0 h2 {
     font-size: 14px;
     line-height: 18px;
-    padding-top: 8px;
-    padding-bottom: 22px;
+    padding-top: 0px;
+    padding-bottom: 17px;
   }
 }
 
@@ -2818,8 +2818,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c0 h2 {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 12px;
-    padding-bottom: 16px;
+    padding-top: 7px;
+    padding-bottom: 9px;
   }
 }
 
@@ -3273,10 +3273,10 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   }
 
   .c0 h2 {
-    font-size: 14px;
-    line-height: 18px;
-    padding-top: 8px;
-    padding-bottom: 12px;
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 0px;
+    padding-bottom: 8px;
   }
 }
 
@@ -3288,8 +3288,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   .c0 h2 {
     font-size: 14px;
     line-height: 18px;
-    padding-top: 8px;
-    padding-bottom: 22px;
+    padding-top: 0px;
+    padding-bottom: 17px;
   }
 }
 
@@ -3302,8 +3302,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   .c0 h2 {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 12px;
-    padding-bottom: 16px;
+    padding-top: 7px;
+    padding-bottom: 9px;
   }
 }
 
@@ -3776,10 +3776,10 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 
   .c0 h2 {
-    font-size: 14px;
-    line-height: 18px;
-    padding-top: 8px;
-    padding-bottom: 12px;
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 0px;
+    padding-bottom: 8px;
   }
 }
 
@@ -3791,8 +3791,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c0 h2 {
     font-size: 14px;
     line-height: 18px;
-    padding-top: 8px;
-    padding-bottom: 22px;
+    padding-top: 0px;
+    padding-bottom: 17px;
   }
 }
 
@@ -3805,8 +3805,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c0 h2 {
     font-size: 18px;
     line-height: 24px;
-    padding-top: 12px;
-    padding-bottom: 16px;
+    padding-top: 7px;
+    padding-bottom: 9px;
   }
 }
 
