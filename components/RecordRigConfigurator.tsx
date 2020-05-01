@@ -2,7 +2,14 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import Tile from "./Tile";
 
-const StyledContent = styled.div``;
+const StyledContent = styled.div`
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+`;
 
 interface StyledHeadingProps {
   readonly step2: boolean;
@@ -10,7 +17,7 @@ interface StyledHeadingProps {
 }
 
 const StyledHeading = styled.div<StyledHeadingProps>`
-  ${({ step2, visible }) => css`
+  ${({ visible }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +44,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
     }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       height: 128px;
 
       h1 {
@@ -45,7 +52,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
     }
 
-    @media (min-width: 1025px) and (max-width: 1280px) {
+    @media (min-width: 1024px) and (max-width: 1279px) {
       height: 192px;
 
       h1 {
@@ -53,7 +60,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
     }
 
-    @media (min-width: 1281px) {
+    @media (min-width: 1280px) {
       height: 128px;
       max-width: 1216px;
       margin-left: auto;
@@ -78,33 +85,41 @@ const StyledOptions = styled.div<StyledOptionsProps>`
   /* Matches Tile's background color to make the transition between colours smooth. */
   ${({ step2 }) => css`
     background-color: ${step2 ? "#ffffff" : "transparent"};
-    transition: background-color 0.2s;
-    transition-delay: 0.3s;
+    display: flex;
+    position: relative; /* Necessary for children. */
+    transition-delay: 0.3s, 0.4s;
+    transition-duration: 0.3s, 1s;
+    transition-property: background-color, width;
+
+    @media (max-device-width: 767px) and (orientation: portrait) {
+      /* Total screen height minus two browser bars and two custom app bars/additional content. */
+      height: calc(100vh - 256px);
+      max-height: 300px;
+      width: 100%;
+    }
+
+    /* For people with small devices who insist on using landscape orientation,
+    we insist that they scroll if available height is not sufficient. */
+    @media (max-device-width: 767px) and (orientation: landscape) {
+      height: 300px;
+      width: 100%;
+    }
+
+    @media (min-device-width: 768px) {
+      height: calc(100vh - 320px);
+      max-height: 512px;
+      width: 100%;
+    }
+
+    @media (min-device-width: 768px) and (orientation: landscape) {
+      min-height: 400px;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      width: ${step2 ? "50% !important" : "100%"};
+    }
   `}
-
-  display: flex;
-  position: relative; /* Necessary for children. */
-
-  @media (max-device-width: 767px) and (orientation: portrait) {
-    /* Total screen height minus two browser bars and two custom app bars/additional content. */
-    height: calc(100vh - 256px);
-    max-height: 300px;
-  }
-
-  /* For people with small devices who insist on using landscape orientation,
-  we insist that they scroll if available height is not sufficient. */
-  @media (max-device-width: 767px) and (orientation: landscape) {
-    height: 300px;
-  }
-
-  @media (min-device-width: 768px) {
-    height: calc(100vh - 320px);
-    max-height: 512px;
-  }
-
-  @media (min-device-width: 768px) and (orientation: landscape) {
-    min-height: 400px;
-  }
 `;
 
 interface StyledOptionProps {
@@ -353,10 +368,22 @@ const StyledPrice = styled.span`
   }
 `;
 
-const StyledDeviceContent = styled.div`
-  @media (max-width: 1023px) {
-    padding-top: 192px;
-  }
+interface StyledDeviceContentProps {
+  readonly visible: boolean;
+}
+
+const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
+  ${({ visible }) => css`
+    opacity: ${visible ? 1 : 0};
+    transition-delay: 1.2s, 0.8s;
+    transition-duration: 0.5s, 0.5s;
+    transition-property: opacity, width;
+    width: ${visible ? "calc(50% - 48px)" : "0%"};
+
+    @media (max-width: 1023px) {
+      padding-top: 192px;
+    }
+  `}
 `;
 
 interface StyledRecordRigConfiguratorProps {
@@ -367,8 +394,6 @@ const StyledRecordRigConfigurator = styled.div<
   StyledRecordRigConfiguratorProps
 >`
   ${({ step2 }) => css`
-    max-width: 902px;
-
     h2 {
       display: ${step2 ? "none" : "block"};
       box-sizing: border-box;
@@ -400,7 +425,9 @@ const StyledRecordRigConfigurator = styled.div<
 
     @media (min-width: 768px) {
       margin: 0 auto;
-      width: 700px;
+      transition: width 0.3s;
+      transition-delay: 0.7s;
+      width: ${step2 ? "100%" : "700px"};
 
       h2 {
         font-size: 18px;
@@ -408,6 +435,14 @@ const StyledRecordRigConfigurator = styled.div<
         padding-top: 7px;
         padding-bottom: 9px;
       }
+    }
+
+    @media (min-width: 1024px) {
+      width: ${step2 ? "100%" : "700px"};
+    }
+
+    @media (min-width: 1248px) {
+      width: ${step2 ? "1216px" : "700px"};
     }
 
     /* For people with small devices who insist on using landscape orientation,
@@ -464,12 +499,15 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const [renderWhite, setRenderWhite] = useState(!step2 || whiteChosen);
   const [blackVisible, setBlackVisible] = useState(!step2 || blackChosen);
   const [whiteVisible, setWhiteVisible] = useState(!step2 || whiteChosen);
+  const [deviceContentVisible, setDeviceContentVisible] = useState(step2);
 
   const handleColorChangeClick = (color: "black" | "white") => {
     setSelectedColor(color);
     setHeadingVisible(false);
+    setTimeout(() => setDeviceContentVisible(true), 300);
     setTimeout(() => setHeading(getHeading(color)), 300);
     setTimeout(() => setHeadingVisible(true), 500);
+    setTimeout(() => setDeviceContentVisible(true), 500);
 
     if (color === "black") {
       setWhiteVisible(false);
@@ -592,7 +630,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
           )}
         </StyledOptions>
         {step2 && (
-          <StyledDeviceContent>
+          <StyledDeviceContent visible={deviceContentVisible}>
             <h3>Tech specs</h3>
             <ul>
               <li>Processor</li>

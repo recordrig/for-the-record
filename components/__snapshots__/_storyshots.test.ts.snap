@@ -2432,7 +2432,7 @@ exports[`Storyshots ProductList indicate addition 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator black 1`] = `
-.c4 {
+.c5 {
   background-color: #fff;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
@@ -2450,14 +2450,14 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
-.c4:hover {
+.c5:hover {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   z-index: 1;
 }
 
-.c4 >:last-child {
+.c5 >:last-child {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -2486,20 +2486,22 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   transition: opacity 0.2s ease-in-out;
 }
 
-.c2 {
+.c3 {
   background-color: #ffffff;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-transition-delay: 0.3s,0.4s;
+  transition-delay: 0.3s,0.4s;
+  -webkit-transition-duration: 0.3s,1s;
+  transition-duration: 0.3s,1s;
+  -webkit-transition-property: background-color,width;
+  transition-property: background-color,width;
 }
 
-.c3 {
+.c4 {
   height: 100%;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
@@ -2507,11 +2509,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   transition-delay: 0.4s;
 }
 
-.c3 > div {
+.c4 > div {
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2528,7 +2530,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2548,14 +2550,14 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   opacity: 1;
 }
 
-.c6 img {
+.c7 img {
   display: block;
   max-height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2575,7 +2577,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   width: 100%;
 }
 
-.c7 button {
+.c8 button {
   background: none;
   border: 2px solid #697077;
   border-radius: 8px;
@@ -2590,7 +2592,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   width: 46px;
 }
 
-.c7 button:after {
+.c8 button:after {
   border-style: solid;
   border-radius: 12px;
   border-width: 1px;
@@ -2605,7 +2607,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   width: 54px;
 }
 
-.c7 button > span {
+.c8 button > span {
   display: block;
   font-size: 15px;
   left: -62px;
@@ -2617,40 +2619,62 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   width: 150px;
 }
 
-.c7 button:first-child {
+.c8 button:first-child {
   background-color: #121619;
   cursor: default;
 }
 
-.c7 button:first-child:after {
+.c8 button:first-child:after {
   border: 2px solid #4589ff;
 }
 
-.c7 button:first-child > span {
+.c8 button:first-child > span {
   opacity: 1;
 }
 
-.c7 button:last-child {
+.c8 button:last-child {
   background-color: #ffffff;
   cursor: pointer;
 }
 
-.c7 button:last-child:after {
+.c8 button:last-child:after {
   border: 2px solid transparent;
 }
 
-.c7 button:last-child > span {
+.c8 button:last-child > span {
   opacity: 0;
 }
 
-.c0 {
-  max-width: 902px;
+.c9 {
+  opacity: 1;
+  -webkit-transition-delay: 1.2s,0.8s;
+  transition-delay: 1.2s,0.8s;
+  -webkit-transition-duration: 0.5s,0.5s;
+  transition-duration: 0.5s,0.5s;
+  -webkit-transition-property: opacity,width;
+  transition-property: opacity,width;
+  width: calc(50% - 48px);
 }
 
 .c0 h2 {
   display: none;
   box-sizing: border-box;
   margin: 0;
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 @media (max-width:350px) {
@@ -2673,7 +2697,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
-@media (min-width:768px) and (max-width:1024px) {
+@media (min-width:768px) and (max-width:1023px) {
   .c1 {
     height: 128px;
   }
@@ -2683,7 +2707,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
-@media (min-width:1025px) and (max-width:1280px) {
+@media (min-width:1024px) and (max-width:1279px) {
   .c1 {
     height: 192px;
   }
@@ -2693,7 +2717,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
-@media (min-width:1281px) {
+@media (min-width:1280px) {
   .c1 {
     height: 128px;
     max-width: 1216px;
@@ -2711,102 +2735,112 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 @media (max-device-width:767px) and (orientation:portrait) {
-  .c2 {
+  .c3 {
     height: calc(100vh - 256px);
     max-height: 300px;
+    width: 100%;
   }
 }
 
 @media (max-device-width:767px) and (orientation:landscape) {
-  .c2 {
+  .c3 {
     height: 300px;
+    width: 100%;
   }
 }
 
 @media (min-device-width:768px) {
-  .c2 {
+  .c3 {
     height: calc(100vh - 320px);
     max-height: 512px;
+    width: 100%;
   }
 }
 
 @media (min-device-width:768px) and (orientation:landscape) {
-  .c2 {
+  .c3 {
     min-height: 400px;
+    width: 100%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    width: 50% !important;
   }
 }
 
 @media (max-width:350px) {
-  .c3 {
+  .c4 {
     width: 100%;
   }
 }
 
 @media (min-width:351px) and (max-width:767px) {
-  .c3 {
+  .c4 {
     width: 100%;
   }
 }
 
 @media (min-width:768px) {
-  .c3 {
+  .c4 {
     width: 100%;
   }
 }
 
 @media (max-width:350px) {
-  .c5 {
+  .c6 {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c5 {
+  .c6 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
 @media (max-width:350px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 84px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 8px);
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 116px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 32px);
   }
 }
 
 @media (min-width:768px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 130px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 64px);
   }
 }
 
 @media (max-width:1023px) {
-  .c8 {
+  .c9 {
     padding-top: 192px;
   }
 }
@@ -2840,7 +2874,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 @media (min-width:768px) {
   .c0 {
     margin: 0 auto;
-    width: 700px;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-transition-delay: 0.7s;
+    transition-delay: 0.7s;
+    width: 100%;
   }
 
   .c0 h2 {
@@ -2848,6 +2886,18 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     line-height: 24px;
     padding-top: 7px;
     padding-bottom: 9px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 100%;
+  }
+}
+
+@media (min-width:1248px) {
+  .c0 {
+    width: 1216px;
   }
 }
 
@@ -2874,19 +2924,19 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     </h1>
   </div>
   <div
-    className=""
+    className="c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
       >
         <div
-          className="c4"
+          className="c5"
         >
           <div
-            className="c5"
+            className="c6"
           >
             <h2>
               RecordRig - 
@@ -2896,7 +2946,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
               </i>
             </h2>
             <div
-              className="c6"
+              className="c7"
             >
               <img
                 alt=""
@@ -2907,7 +2957,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         </div>
       </div>
       <div
-        className="c7"
+        className="c8"
       >
         <button
           disabled={true}
@@ -2930,7 +2980,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      className="c9"
     >
       <h3>
         Tech specs
@@ -2991,7 +3041,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator default 1`] = `
-.c4 {
+.c5 {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0.25);
@@ -3009,14 +3059,14 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
-.c4:hover {
+.c5:hover {
   -webkit-transform: scale(1.025);
   -ms-transform: scale(1.025);
   transform: scale(1.025);
   z-index: 1;
 }
 
-.c4 >:last-child {
+.c5 >:last-child {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3045,20 +3095,22 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   transition: opacity 0.2s ease-in-out;
 }
 
-.c2 {
+.c3 {
   background-color: transparent;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-transition-delay: 0.3s,0.4s;
+  transition-delay: 0.3s,0.4s;
+  -webkit-transition-duration: 0.3s,1s;
+  transition-duration: 0.3s,1s;
+  -webkit-transition-property: background-color,width;
+  transition-property: background-color,width;
 }
 
-.c3 {
+.c4 {
   height: 100%;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
@@ -3066,11 +3118,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   transition-delay: 0.4s;
 }
 
-.c3 > div {
+.c4 > div {
   height: 100%;
 }
 
-.c9 {
+.c10 {
   height: 100%;
   margin-left: auto;
   -webkit-transition: width 0.4s ease-in-out;
@@ -3079,11 +3131,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   transition-delay: 0.4s;
 }
 
-.c9 > div {
+.c10 > div {
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3100,7 +3152,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3120,14 +3172,14 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   opacity: 1;
 }
 
-.c6 img {
+.c7 img {
   display: block;
   max-height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c8 {
+.c9 {
   background-color: #0062ff;
   border-radius: 16px;
   border-width: 0;
@@ -3139,18 +3191,29 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   text-transform: uppercase;
 }
 
-.c7 {
+.c8 {
   display: inline-block;
-}
-
-.c0 {
-  max-width: 902px;
 }
 
 .c0 h2 {
   display: block;
   box-sizing: border-box;
   margin: 0;
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 @media (max-width:350px) {
@@ -3173,7 +3236,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   }
 }
 
-@media (min-width:768px) and (max-width:1024px) {
+@media (min-width:768px) and (max-width:1023px) {
   .c1 {
     height: 128px;
   }
@@ -3183,7 +3246,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   }
 }
 
-@media (min-width:1025px) and (max-width:1280px) {
+@media (min-width:1024px) and (max-width:1279px) {
   .c1 {
     height: 192px;
   }
@@ -3193,7 +3256,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   }
 }
 
-@media (min-width:1281px) {
+@media (min-width:1280px) {
   .c1 {
     height: 128px;
     max-width: 1216px;
@@ -3211,120 +3274,130 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 @media (max-device-width:767px) and (orientation:portrait) {
-  .c2 {
+  .c3 {
     height: calc(100vh - 256px);
     max-height: 300px;
+    width: 100%;
   }
 }
 
 @media (max-device-width:767px) and (orientation:landscape) {
-  .c2 {
+  .c3 {
     height: 300px;
+    width: 100%;
   }
 }
 
 @media (min-device-width:768px) {
-  .c2 {
+  .c3 {
     height: calc(100vh - 320px);
     max-height: 512px;
+    width: 100%;
   }
 }
 
 @media (min-device-width:768px) and (orientation:landscape) {
-  .c2 {
+  .c3 {
     min-height: 400px;
+    width: 100%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    width: 100%;
   }
 }
 
 @media (max-width:350px) {
-  .c3 {
+  .c4 {
     width: calc(50% - 4px);
   }
 }
 
 @media (min-width:351px) and (max-width:767px) {
-  .c3 {
+  .c4 {
     width: calc(50% - 8px);
   }
 }
 
 @media (min-width:768px) {
-  .c3 {
+  .c4 {
     width: calc(50% - 16px);
   }
 }
 
 @media (max-width:350px) {
-  .c9 {
+  .c10 {
     width: calc(50% - 4px);
   }
 }
 
 @media (min-width:351px) and (max-width:767px) {
-  .c9 {
+  .c10 {
     width: calc(50% - 8px);
   }
 }
 
 @media (min-width:768px) {
-  .c9 {
+  .c10 {
     width: calc(50% - 16px);
   }
 }
 
 @media (max-width:350px) {
-  .c5 {
+  .c6 {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c5 {
+  .c6 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
 @media (max-width:350px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 114px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 8px);
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 148px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 32px);
   }
 }
 
 @media (min-width:768px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 194px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 64px);
   }
 }
 
 @media (max-width:350px) {
-  .c8 {
+  .c9 {
     font-size: 11px;
     height: 24px;
     margin-top: 16px;
@@ -3334,7 +3407,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c8 {
+  .c9 {
     font-size: 11px;
     height: 24px;
     margin-top: 28px;
@@ -3344,7 +3417,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 @media (min-width:768px) {
-  .c8 {
+  .c9 {
     font-size: 13px;
     height: 32px;
     margin-top: 28px;
@@ -3354,21 +3427,21 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 }
 
 @media (max-width:350px) {
-  .c7 {
+  .c8 {
     font-size: 11px;
     margin-top: 26px;
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c7 {
+  .c8 {
     font-size: 13px;
     margin-top: 38px;
   }
 }
 
 @media (min-width:768px) {
-  .c7 {
+  .c8 {
     font-size: 15px;
     margin-top: 44px;
   }
@@ -3403,6 +3476,10 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 @media (min-width:768px) {
   .c0 {
     margin: 0 auto;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-transition-delay: 0.7s;
+    transition-delay: 0.7s;
     width: 700px;
   }
 
@@ -3411,6 +3488,18 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     line-height: 24px;
     padding-top: 7px;
     padding-bottom: 9px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 700px;
+  }
+}
+
+@media (min-width:1248px) {
+  .c0 {
+    width: 700px;
   }
 }
 
@@ -3432,20 +3521,20 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     </h1>
   </div>
   <div
-    className=""
+    className="c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
       >
         <div
-          className="c4"
+          className="c5"
           onClick={[Function]}
         >
           <div
-            className="c5"
+            className="c6"
           >
             <h2>
               RecordRig - 
@@ -3455,7 +3544,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
               </i>
             </h2>
             <div
-              className="c6"
+              className="c7"
             >
               <img
                 alt=""
@@ -3464,12 +3553,12 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
             </div>
             <div>
               <span
-                className="c7"
+                className="c8"
               >
                 € 2399
               </span>
               <button
-                className="c8"
+                className="c9"
                 type="button"
               >
                 Select
@@ -3479,14 +3568,14 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
         </div>
       </div>
       <div
-        className="c9"
+        className="c10"
       >
         <div
-          className="c4"
+          className="c5"
           onClick={[Function]}
         >
           <div
-            className="c5"
+            className="c6"
           >
             <h2>
               RecordRig - 
@@ -3496,7 +3585,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
               </i>
             </h2>
             <div
-              className="c6"
+              className="c7"
             >
               <img
                 alt=""
@@ -3505,12 +3594,12 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
             </div>
             <div>
               <span
-                className="c7"
+                className="c8"
               >
                 € 2399
               </span>
               <button
-                className="c8"
+                className="c9"
                 type="button"
               >
                 Select
@@ -3525,7 +3614,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator white 1`] = `
-.c4 {
+.c5 {
   background-color: #fff;
   border-radius: 0;
   box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
@@ -3543,14 +3632,14 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
 }
 
-.c4:hover {
+.c5:hover {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   z-index: 1;
 }
 
-.c4 >:last-child {
+.c5 >:last-child {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -3579,20 +3668,22 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   transition: opacity 0.2s ease-in-out;
 }
 
-.c2 {
+.c3 {
   background-color: #ffffff;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-transition-delay: 0.3s,0.4s;
+  transition-delay: 0.3s,0.4s;
+  -webkit-transition-duration: 0.3s,1s;
+  transition-duration: 0.3s,1s;
+  -webkit-transition-property: background-color,width;
+  transition-property: background-color,width;
 }
 
-.c3 {
+.c4 {
   height: 100%;
   margin-left: auto;
   -webkit-transition: width 0.4s ease-in-out;
@@ -3601,11 +3692,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   transition-delay: 0.4s;
 }
 
-.c3 > div {
+.c4 > div {
   height: 100%;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3622,7 +3713,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   width: 100%;
 }
 
-.c6 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3642,14 +3733,14 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   opacity: 1;
 }
 
-.c6 img {
+.c7 img {
   display: block;
   max-height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3669,7 +3760,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   width: 100%;
 }
 
-.c7 button {
+.c8 button {
   background: none;
   border: 2px solid #697077;
   border-radius: 8px;
@@ -3684,7 +3775,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   width: 46px;
 }
 
-.c7 button:after {
+.c8 button:after {
   border-style: solid;
   border-radius: 12px;
   border-width: 1px;
@@ -3699,7 +3790,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   width: 54px;
 }
 
-.c7 button > span {
+.c8 button > span {
   display: block;
   font-size: 15px;
   left: -62px;
@@ -3711,40 +3802,62 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   width: 150px;
 }
 
-.c7 button:first-child {
+.c8 button:first-child {
   background-color: #121619;
   cursor: pointer;
 }
 
-.c7 button:first-child:after {
+.c8 button:first-child:after {
   border: 2px solid transparent;
 }
 
-.c7 button:first-child > span {
+.c8 button:first-child > span {
   opacity: 0;
 }
 
-.c7 button:last-child {
+.c8 button:last-child {
   background-color: #ffffff;
   cursor: default;
 }
 
-.c7 button:last-child:after {
+.c8 button:last-child:after {
   border: 2px solid #4589ff;
 }
 
-.c7 button:last-child > span {
+.c8 button:last-child > span {
   opacity: 1;
 }
 
-.c0 {
-  max-width: 902px;
+.c9 {
+  opacity: 1;
+  -webkit-transition-delay: 1.2s,0.8s;
+  transition-delay: 1.2s,0.8s;
+  -webkit-transition-duration: 0.5s,0.5s;
+  transition-duration: 0.5s,0.5s;
+  -webkit-transition-property: opacity,width;
+  transition-property: opacity,width;
+  width: calc(50% - 48px);
 }
 
 .c0 h2 {
   display: none;
   box-sizing: border-box;
   margin: 0;
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 @media (max-width:350px) {
@@ -3767,7 +3880,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
-@media (min-width:768px) and (max-width:1024px) {
+@media (min-width:768px) and (max-width:1023px) {
   .c1 {
     height: 128px;
   }
@@ -3777,7 +3890,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
-@media (min-width:1025px) and (max-width:1280px) {
+@media (min-width:1024px) and (max-width:1279px) {
   .c1 {
     height: 192px;
   }
@@ -3787,7 +3900,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
-@media (min-width:1281px) {
+@media (min-width:1280px) {
   .c1 {
     height: 128px;
     max-width: 1216px;
@@ -3805,102 +3918,112 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 @media (max-device-width:767px) and (orientation:portrait) {
-  .c2 {
+  .c3 {
     height: calc(100vh - 256px);
     max-height: 300px;
+    width: 100%;
   }
 }
 
 @media (max-device-width:767px) and (orientation:landscape) {
-  .c2 {
+  .c3 {
     height: 300px;
+    width: 100%;
   }
 }
 
 @media (min-device-width:768px) {
-  .c2 {
+  .c3 {
     height: calc(100vh - 320px);
     max-height: 512px;
+    width: 100%;
   }
 }
 
 @media (min-device-width:768px) and (orientation:landscape) {
-  .c2 {
+  .c3 {
     min-height: 400px;
+    width: 100%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    width: 50% !important;
   }
 }
 
 @media (max-width:350px) {
-  .c3 {
+  .c4 {
     width: 100%;
   }
 }
 
 @media (min-width:351px) and (max-width:767px) {
-  .c3 {
+  .c4 {
     width: 100%;
   }
 }
 
 @media (min-width:768px) {
-  .c3 {
+  .c4 {
     width: 100%;
   }
 }
 
 @media (max-width:350px) {
-  .c5 {
+  .c6 {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c5 {
+  .c6 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
 @media (max-width:350px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 84px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 8px);
   }
 }
 
 @media (min-width:350px) and (max-width:767px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 116px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 32px);
   }
 }
 
 @media (min-width:768px) {
-  .c6 {
+  .c7 {
     height: calc(100% - 130px);
   }
 
-  .c6 img {
+  .c7 img {
     max-width: calc(100% - 64px);
   }
 }
 
 @media (max-width:1023px) {
-  .c8 {
+  .c9 {
     padding-top: 192px;
   }
 }
@@ -3934,7 +4057,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 @media (min-width:768px) {
   .c0 {
     margin: 0 auto;
-    width: 700px;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-transition-delay: 0.7s;
+    transition-delay: 0.7s;
+    width: 100%;
   }
 
   .c0 h2 {
@@ -3942,6 +4069,18 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     line-height: 24px;
     padding-top: 7px;
     padding-bottom: 9px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 100%;
+  }
+}
+
+@media (min-width:1248px) {
+  .c0 {
+    width: 1216px;
   }
 }
 
@@ -3968,19 +4107,19 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     </h1>
   </div>
   <div
-    className=""
+    className="c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
       >
         <div
-          className="c4"
+          className="c5"
         >
           <div
-            className="c5"
+            className="c6"
           >
             <h2>
               RecordRig - 
@@ -3990,7 +4129,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
               </i>
             </h2>
             <div
-              className="c6"
+              className="c7"
             >
               <img
                 alt=""
@@ -4001,7 +4140,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         </div>
       </div>
       <div
-        className="c7"
+        className="c8"
       >
         <button
           disabled={false}
@@ -4024,7 +4163,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      className="c9"
     >
       <h3>
         Tech specs
