@@ -378,12 +378,78 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
     transition-delay: 1.2s, 0.8s;
     transition-duration: 0.5s, 0.5s;
     transition-property: opacity, width;
-    width: ${visible ? "calc(50% - 48px)" : "0%"};
+
+    h3 {
+      margin-top: 32px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        color: #50565b;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+    }
+
+    hr {
+      color: #50565b;
+      opacity: 0.5;
+      margin: 32px 0;
+    }
 
     @media (max-width: 1023px) {
       padding-top: 192px;
+      width: ${visible ? "calc(100% - 48px)" : "0%"};
+    }
+
+    @media (min-width: 1024px) {
+      width: ${visible ? "calc(50% - 48px)" : "0%"};
     }
   `}
+`;
+
+interface StyledAddToBagProps {
+  readonly visible: boolean;
+}
+
+const StyledAddToBag = styled.div<StyledAddToBagProps>`
+  h3 {
+    margin-bottom: 6px;
+  }
+
+  p:first-of-type {
+    color: #000000;
+    font-size: 17px;
+    margin-top: 0;
+  }
+
+  p {
+    color: #50565b;
+    font-size: 14px;
+
+    span {
+      color: #24a148;
+      font-weight: bold;
+    }
+  }
+
+  button {
+    background-color: rgb(0, 98, 255);
+    border-radius: 12px;
+    border: 0px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 64px;
+    max-width: 536px;
+    outline: none;
+    text-align: center;
+    transition: background-color 0.2s ease 0s;
+    width: 100%;
+  }
 `;
 
 interface StyledRecordRigConfiguratorProps {
@@ -631,29 +697,80 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
         </StyledOptions>
         {step2 && (
           <StyledDeviceContent visible={deviceContentVisible}>
-            <h3>Tech specs</h3>
-            <ul>
-              <li>Processor</li>
-              <li>Storage</li>
-              <li>Graphics card</li>
-              <li>Capture card</li>
-              <li>Another feature</li>
-              <li>Another feature</li>
-            </ul>
-            <h3>Delivery</h3>
-            <p>Lorem ipsum.</p>
-            <h3>Guarantee and returns</h3>
-            <p>Lorem ipsum.</p>
+            <h3>Product description</h3>
+            <p>
+              With RecordRig as your dedicated gameplay streaming and recording
+              PC, you&apos;ll share your gameplay in 4K 60FPS and HDR colours
+              with ease. Hook it up to your Xbox, PS4 or even your gaming PC and
+              stream directly to YouTube and Twitch, or save up to hundreds of
+              hours of UHD video for local use.
+            </p>
+            <StyledAddToBag>
+              <h3>
+                RecordRig in{" "}
+                {selectedColor === "black" ? "Stealth Black" : "Pristine White"}
+              </h3>
+              <p>€ 2399,-</p>
+              <p>
+                Expected delivery: within <span>14 days</span>
+              </p>
+              <button onClick={() => addToBag(selectedColor)} type="button">
+                Add to Bag
+              </button>
+            </StyledAddToBag>
             <hr />
-            <h3>
-              RecordRig streaming PC in{" "}
-              {selectedColor === "black" ? "Stealth Black" : "Pristine White"}
-            </h3>
-            <p>€ 2399</p>
-            <p>Expected delivery: within 14 days</p>
-            <button onClick={() => addToBag(selectedColor)} type="button">
-              Add to Bag
-            </button>
+            <h3>Technical specifications</h3>
+            <ul>
+              <li>
+                3.7GHz 8‑core AMD Ryzen 2700X Processor, Max Boost up to 4.3GHz
+              </li>
+              <li>2TB high-speed SSD storage</li>
+              <li>8TB &quot;BigStorage&quot; 7200 RPM HDD</li>
+              <li>
+                GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory
+                Overclocked (&quot;OC&quot;) or equivalent<sup>1</sup>
+              </li>
+              <li>AVerMedia Live Gamer 4K GC573 internal game capture card</li>
+              <li>
+                Pre-installed and configured Microsoft Windows 10 (English)
+              </li>
+              <li>
+                Pre-installed and configured RECentral 4K 60FPS + HDR gameplay
+                recording and streaming software
+              </li>
+              <li>
+                All-steel case body with tempered glass removable side panel for
+                easy-access to all core components<sup>2</sup>
+              </li>
+              <li>Customisable RGB LEDs</li>
+            </ul>
+            <h3>Shipment and delivery</h3>
+            <p>
+              Our products are shipped from the Netherlands, Germany, Belgium or
+              Luxembourg to any country within the EU. We are usually able to
+              deliver your product within 14 days of ordering. We&apos;ll keep
+              you up-to-date of your order status through email.
+            </p>
+            <h3>Warranty and repairs</h3>
+            <p>
+              You&apos;ll have a warranty of at least 1 year on manufacturing
+              defects on all parts. If damage does occur under normal usage,
+              we&apos;ll repair or replace your product free of charge.
+            </p>
+            <h3>Right of withdrawal</h3>
+            <p>
+              Sometimes, you and your product simply won’t see eye to eye. In
+              this case, you can send the product back within 14 days after
+              receiving the product.
+            </p>
+            <p>
+              To get the full purchase amount back, it&apos;s important to
+              return your product in its original condition and make sure
+              it&apos;s undamaged. That way, we can make someone else happy with
+              this product.
+            </p>
+            <p>You’ll receive your payment back within 7 days.</p>
+            <p>NB: We accept ‘just because’ as a reason for returning, too.</p>
           </StyledDeviceContent>
         )}
       </StyledContent>
