@@ -40,7 +40,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       height: 96px;
 
       h1 {
-        font-size: 16px;
+        font-size: 18px;
       }
     }
 
@@ -400,9 +400,36 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
       margin: 32px 0;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 450px) {
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 767px) {
       padding-top: 192px;
-      width: ${visible ? "calc(100% - 48px)" : "0%"};
+      width: ${visible ? "100%" : "0%"};
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      padding-left: 16px;
+      padding-top: 192px;
+      width: ${visible ? "calc(100% - 322px)" : "0%"};
+
+      hr {
+        display: none;
+      }
+
+      p,
+      ul {
+        left: 288px;
+        position: relative;
+        top: -42px;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -422,13 +449,15 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
 
   p:first-of-type {
     color: #000000;
-    font-size: 17px;
+    font-size: 32px;
     margin-top: 0;
+    margin-bottom: 6px;
   }
 
   p {
     color: #50565b;
     font-size: 14px;
+    margin-bottom: 8px;
 
     span {
       color: #24a148;
@@ -438,17 +467,127 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
 
   button {
     background-color: rgb(0, 98, 255);
-    border-radius: 12px;
-    border: 0px;
+    border-radius: 4px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 3px solid #002d9c;
     color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: 24px;
     line-height: 64px;
-    max-width: 536px;
     outline: none;
+    padding: 0;
     text-align: center;
     transition: background-color 0.2s ease 0s;
     width: 100%;
+  }
+
+  @media (max-width: 1023px) {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    border-top: 1px solid #dde1e6;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    padding: 4px 8px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+
+    h3 {
+      margin-top: 12px;
+      margin-bottom: 2px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    button {
+      margin: 0 auto;
+      width: calc(100vw - 16px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    p:first-of-type {
+      position: absolute;
+      right: 8px;
+      top: 12px;
+    }
+  }
+
+  @media (max-width: 449px) {
+    h3 {
+      font-size: 14px;
+    }
+
+    p:first-of-type {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 11px;
+    }
+
+    button {
+      font-size: 18px;
+      line-height: 48px;
+    }
+  }
+
+  @media (min-width: 450px) and (max-width: 1023px) {
+    h3 {
+      font-size: 18px;
+    }
+
+    p:first-of-type {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    button {
+      font-size: 18px;
+      line-height: 48px;
+    }
+  }
+
+  @media (min-width: 550px) and (max-width: 1023px) {
+    button {
+      font-size: 24px;
+      line-height: 64px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    height: 116px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    p:first-of-type {
+      left: 16px;
+      position: absolute;
+      top: 42px;
+    }
+
+    p {
+      top: -26px;
+    }
+
+    button {
+      font-size: 24px;
+      margin-left: auto;
+      line-height: 64px;
+      position: absolute;
+      top: 40px;
+      right: 16px;
+      width: calc(100vw - 320px);
+    }
   }
 `;
 
@@ -761,15 +900,9 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             <p>
               Sometimes, you and your product simply won’t see eye to eye. In
               this case, you can send the product back within 14 days after
-              receiving the product.
+              receiving the product. You’ll receive your payment back within 7
+              days.
             </p>
-            <p>
-              To get the full purchase amount back, it&apos;s important to
-              return your product in its original condition and make sure
-              it&apos;s undamaged. That way, we can make someone else happy with
-              this product.
-            </p>
-            <p>You’ll receive your payment back within 7 days.</p>
             <p>NB: We accept ‘just because’ as a reason for returning, too.</p>
           </StyledDeviceContent>
         )}

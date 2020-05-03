@@ -2682,13 +2682,15 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 .c10 p:first-of-type {
   color: #000000;
-  font-size: 17px;
+  font-size: 32px;
   margin-top: 0;
+  margin-bottom: 6px;
 }
 
 .c10 p {
   color: #50565b;
   font-size: 14px;
+  margin-bottom: 8px;
 }
 
 .c10 p span {
@@ -2698,14 +2700,17 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 .c10 button {
   background-color: rgb(0,98,255);
-  border-radius: 12px;
-  border: 0px;
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 3px solid #002d9c;
   color: rgb(255,255,255);
   cursor: pointer;
   font-size: 24px;
   line-height: 64px;
-  max-width: 536px;
   outline: none;
+  padding: 0;
   text-align: center;
   -webkit-transition: background-color 0.2s ease 0s;
   transition: background-color 0.2s ease 0s;
@@ -2749,7 +2754,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 
   .c1 h1 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -2895,16 +2900,157 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
-@media (max-width:1023px) {
+@media (max-width:450px) {
+  .c9 h3 {
+    font-size: 16px;
+  }
+
+  .c9 p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:767px) {
   .c9 {
     padding-top: 192px;
-    width: calc(100% - 48px);
+    width: 100%;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c9 {
+    padding-left: 16px;
+    padding-top: 192px;
+    width: calc(100% - 322px);
+  }
+
+  .c9 hr {
+    display: none;
+  }
+
+  .c9 p,
+  .c9 ul {
+    left: 288px;
+    position: relative;
+    top: -42px;
   }
 }
 
 @media (min-width:1024px) {
   .c9 {
     width: calc(50% - 48px);
+  }
+}
+
+@media (max-width:1023px) {
+  .c10 {
+    background-color: rgba(255,255,255,0.8);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+    border-top: 1px solid #dde1e6;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    padding: 4px 8px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .c10 h3 {
+    margin-top: 12px;
+    margin-bottom: 2px;
+  }
+
+  .c10 p {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .c10 button {
+    margin: 0 auto;
+    width: calc(100vw - 16px);
+  }
+}
+
+@media (max-width:767px) {
+  .c10 p:first-of-type {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+  }
+}
+
+@media (max-width:449px) {
+  .c10 h3 {
+    font-size: 14px;
+  }
+
+  .c10 p:first-of-type {
+    font-size: 24px;
+  }
+
+  .c10 p {
+    font-size: 11px;
+  }
+
+  .c10 button {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c10 h3 {
+    font-size: 18px;
+  }
+
+  .c10 p:first-of-type {
+    font-size: 28px;
+  }
+
+  .c10 p {
+    font-size: 14px;
+  }
+
+  .c10 button {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c10 button {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c10 {
+    height: 116px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .c10 p:first-of-type {
+    left: 16px;
+    position: absolute;
+    top: 42px;
+  }
+
+  .c10 p {
+    top: -26px;
+  }
+
+  .c10 button {
+    font-size: 24px;
+    margin-left: auto;
+    line-height: 64px;
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    width: calc(100vw - 320px);
   }
 }
 
@@ -3130,13 +3276,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         Right of withdrawal
       </h3>
       <p>
-        Sometimes, you and your product simply won’t see eye to eye. In this case, you can send the product back within 14 days after receiving the product.
-      </p>
-      <p>
-        To get the full purchase amount back, it's important to return your product in its original condition and make sure it's undamaged. That way, we can make someone else happy with this product.
-      </p>
-      <p>
-        You’ll receive your payment back within 7 days.
+        Sometimes, you and your product simply won’t see eye to eye. In this case, you can send the product back within 14 days after receiving the product. You’ll receive your payment back within 7 days.
       </p>
       <p>
         NB: We accept ‘just because’ as a reason for returning, too.
@@ -3338,7 +3478,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   }
 
   .c1 h1 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -3971,13 +4111,15 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 .c10 p:first-of-type {
   color: #000000;
-  font-size: 17px;
+  font-size: 32px;
   margin-top: 0;
+  margin-bottom: 6px;
 }
 
 .c10 p {
   color: #50565b;
   font-size: 14px;
+  margin-bottom: 8px;
 }
 
 .c10 p span {
@@ -3987,14 +4129,17 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 .c10 button {
   background-color: rgb(0,98,255);
-  border-radius: 12px;
-  border: 0px;
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 3px solid #002d9c;
   color: rgb(255,255,255);
   cursor: pointer;
   font-size: 24px;
   line-height: 64px;
-  max-width: 536px;
   outline: none;
+  padding: 0;
   text-align: center;
   -webkit-transition: background-color 0.2s ease 0s;
   transition: background-color 0.2s ease 0s;
@@ -4038,7 +4183,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 
   .c1 h1 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -4184,16 +4329,157 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
-@media (max-width:1023px) {
+@media (max-width:450px) {
+  .c9 h3 {
+    font-size: 16px;
+  }
+
+  .c9 p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:767px) {
   .c9 {
     padding-top: 192px;
-    width: calc(100% - 48px);
+    width: 100%;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c9 {
+    padding-left: 16px;
+    padding-top: 192px;
+    width: calc(100% - 322px);
+  }
+
+  .c9 hr {
+    display: none;
+  }
+
+  .c9 p,
+  .c9 ul {
+    left: 288px;
+    position: relative;
+    top: -42px;
   }
 }
 
 @media (min-width:1024px) {
   .c9 {
     width: calc(50% - 48px);
+  }
+}
+
+@media (max-width:1023px) {
+  .c10 {
+    background-color: rgba(255,255,255,0.8);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+    border-top: 1px solid #dde1e6;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    padding: 4px 8px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .c10 h3 {
+    margin-top: 12px;
+    margin-bottom: 2px;
+  }
+
+  .c10 p {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .c10 button {
+    margin: 0 auto;
+    width: calc(100vw - 16px);
+  }
+}
+
+@media (max-width:767px) {
+  .c10 p:first-of-type {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+  }
+}
+
+@media (max-width:449px) {
+  .c10 h3 {
+    font-size: 14px;
+  }
+
+  .c10 p:first-of-type {
+    font-size: 24px;
+  }
+
+  .c10 p {
+    font-size: 11px;
+  }
+
+  .c10 button {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c10 h3 {
+    font-size: 18px;
+  }
+
+  .c10 p:first-of-type {
+    font-size: 28px;
+  }
+
+  .c10 p {
+    font-size: 14px;
+  }
+
+  .c10 button {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c10 button {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c10 {
+    height: 116px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .c10 p:first-of-type {
+    left: 16px;
+    position: absolute;
+    top: 42px;
+  }
+
+  .c10 p {
+    top: -26px;
+  }
+
+  .c10 button {
+    font-size: 24px;
+    margin-left: auto;
+    line-height: 64px;
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    width: calc(100vw - 320px);
   }
 }
 
@@ -4419,13 +4705,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         Right of withdrawal
       </h3>
       <p>
-        Sometimes, you and your product simply won’t see eye to eye. In this case, you can send the product back within 14 days after receiving the product.
-      </p>
-      <p>
-        To get the full purchase amount back, it's important to return your product in its original condition and make sure it's undamaged. That way, we can make someone else happy with this product.
-      </p>
-      <p>
-        You’ll receive your payment back within 7 days.
+        Sometimes, you and your product simply won’t see eye to eye. In this case, you can send the product back within 14 days after receiving the product. You’ll receive your payment back within 7 days.
       </p>
       <p>
         NB: We accept ‘just because’ as a reason for returning, too.
