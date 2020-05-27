@@ -86,7 +86,7 @@ const StyledOptions = styled.div<StyledOptionsProps>`
   ${({ step2 }) => css`
     background-color: ${step2 ? "#ffffff" : "transparent"};
     display: flex;
-    position: relative; /* Necessary for children. */
+    position: relative; /* Necessary for children. Sticky in step2 on desktops. */
     transition-delay: 0.3s, 0.4s;
     transition-duration: 0.3s, 1s;
     transition-property: background-color, width;
@@ -117,6 +117,8 @@ const StyledOptions = styled.div<StyledOptionsProps>`
     }
 
     @media (min-width: 1024px) {
+      position: ${step2 ? "sticky" : "relative"};
+      top: ${step2 ? "64px" : 0};
       width: ${step2 ? "50% !important" : "100%"};
     }
   `}

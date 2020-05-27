@@ -2827,6 +2827,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-width:1024px) {
   .c3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 64px;
     width: 50% !important;
   }
 }
@@ -3551,6 +3554,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 @media (min-width:1024px) {
   .c3 {
+    position: relative;
+    top: 0;
     width: 100%;
   }
 }
@@ -4256,6 +4261,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-width:1024px) {
   .c3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 64px;
     width: 50% !important;
   }
 }
