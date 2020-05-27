@@ -2432,6 +2432,13 @@ exports[`Storyshots ProductList indicate addition 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator black 1`] = `
+.c15 {
+  color: #6f6f6f;
+  margin: 0 auto;
+  max-width: 1216px;
+  padding-bottom: 64px;
+}
+
 .c5 {
   background-color: #fff;
   border-radius: 0;
@@ -2462,6 +2469,40 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1216px;
+  width: 100%;
+}
+
+.c11 {
+  background-color: transparent;
+  margin: 0;
+}
+
+.c14 h1,
+.c14 h2,
+.c14 h3,
+.c14 h4,
+.c14 h5,
+.c14 h6 {
+  color: #000000;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c14 span {
+  display: inline-block;
 }
 
 .c1 {
@@ -2711,10 +2752,131 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   width: 100%;
 }
 
+.c13 {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c13 img {
+  max-width: 100%;
+}
+
+.c13 ul {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 32px;
+}
+
+.c13 ul li {
+  padding-bottom: 16px;
+}
+
 .c0 h2 {
   display: none;
   box-sizing: border-box;
   margin: 0;
+}
+
+@media (max-width:767px) {
+  .c15 {
+    font-size: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:768px) {
+  .c15 {
+    font-size: 11px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:474px) {
+  .c11 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c11 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width:734px) {
+  .c11 {
+    display: block;
+    padding-bottom: 128px;
+    padding-top: 128px;
+  }
+}
+
+@media (min-width:735px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c11 {
+    padding-bottom: 192px;
+    padding-top: 192px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c11 {
+    padding-bottom: 256px;
+    padding-top: 256px;
+  }
+}
+
+@media (max-width:575px) {
+  .c14 h1,
+  .c14 h2,
+  .c14 h3,
+  .c14 h4,
+  .c14 h5,
+  .c14 h6 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .c14 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:576px) {
+  .c14 h1,
+  .c14 h2,
+  .c14 h3,
+  .c14 h4,
+  .c14 h5,
+  .c14 h6 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c14 span {
+    max-width: 592px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c14 span {
+    max-width: 640px;
+  }
 }
 
 @media (min-width:1024px) {
@@ -3073,6 +3235,67 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
+@media (max-width:735px) {
+  .c13 {
+    margin-top: 128px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+  }
+
+  .c13 img {
+    margin-top: 32px;
+    width: 100%;
+  }
+}
+
+@media (min-width:736px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 256px;
+    max-width: 1216px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+  }
+
+  .c13 > div:first-child {
+    -webkit-flex-basis: 288px;
+    -ms-flex-preferred-size: 288px;
+    flex-basis: 288px;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
+  .c13 > div:last-child {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+
+  .c13 img {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .c13 ul {
+    margin-top: 32px;
+  }
+
+  .c13 li {
+    font-size: 18px;
+  }
+}
+
 @media (max-width:350px) {
   .c0 {
     margin: 0 4px;
@@ -3300,6 +3523,61 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         NB: We accept ‘just because’ as a reason for returning, too.
       </p>
     </div>
+  </div>
+  <div
+    className="c11"
+  >
+    <div
+      className="c12"
+    >
+      <div
+        className="c13"
+      >
+        <div>
+          <div
+            className="c14"
+          >
+            <h3>
+              <span>
+                In the box
+              </span>
+            </h3>
+          </div>
+        </div>
+        <div>
+          <img
+            alt=""
+            src="/in-the-box.svg"
+          />
+          <ul>
+            <li>
+              RecordRig dedicated streaming PC in
+               
+              Stealth Black
+            </li>
+            <li>
+              Power cord for Type F plugs (European)
+            </li>
+            <li>
+              3 HDMI 2.1 (high-bandwith) cables
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c15"
+  >
+    <p>
+      1. Rounded results of independent benchmark testing. Unrounded results are 527.29 MB/s read and 498.90 MB/s write. Supplier reported speeds are 550MB/s read and 520MB/s write. Performance may vary based on system hardware and configuration.
+    </p>
+    <p>
+      2. Slotted graphics cards might vary. Graphics cards are selected based on performance and independent benchmark testing. Some traits are prioritised over others, e.g. Nvidia is our brand of choice due to RECentral's (gameplay recording software) capability of using these graphics card for better performance when recording. RecordRig always makes sure to slot a graphics card that performs well for RecordRig dedicated streaming PC's core use cases: recording and streaming in 4K 60FPS + HDR.
+    </p>
+    <p>
+      3. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
+    </p>
   </div>
 </div>
 `;
@@ -3880,6 +4158,13 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator white 1`] = `
+.c15 {
+  color: #6f6f6f;
+  margin: 0 auto;
+  max-width: 1216px;
+  padding-bottom: 64px;
+}
+
 .c5 {
   background-color: #fff;
   border-radius: 0;
@@ -3910,6 +4195,40 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1216px;
+  width: 100%;
+}
+
+.c11 {
+  background-color: transparent;
+  margin: 0;
+}
+
+.c14 h1,
+.c14 h2,
+.c14 h3,
+.c14 h4,
+.c14 h5,
+.c14 h6 {
+  color: #000000;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c14 span {
+  display: inline-block;
 }
 
 .c1 {
@@ -4160,10 +4479,131 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   width: 100%;
 }
 
+.c13 {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c13 img {
+  max-width: 100%;
+}
+
+.c13 ul {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 32px;
+}
+
+.c13 ul li {
+  padding-bottom: 16px;
+}
+
 .c0 h2 {
   display: none;
   box-sizing: border-box;
   margin: 0;
+}
+
+@media (max-width:767px) {
+  .c15 {
+    font-size: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:768px) {
+  .c15 {
+    font-size: 11px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:474px) {
+  .c11 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c11 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width:734px) {
+  .c11 {
+    display: block;
+    padding-bottom: 128px;
+    padding-top: 128px;
+  }
+}
+
+@media (min-width:735px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c11 {
+    padding-bottom: 192px;
+    padding-top: 192px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c11 {
+    padding-bottom: 256px;
+    padding-top: 256px;
+  }
+}
+
+@media (max-width:575px) {
+  .c14 h1,
+  .c14 h2,
+  .c14 h3,
+  .c14 h4,
+  .c14 h5,
+  .c14 h6 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .c14 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:576px) {
+  .c14 h1,
+  .c14 h2,
+  .c14 h3,
+  .c14 h4,
+  .c14 h5,
+  .c14 h6 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c14 span {
+    max-width: 592px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c14 span {
+    max-width: 640px;
+  }
 }
 
 @media (min-width:1024px) {
@@ -4522,6 +4962,67 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
+@media (max-width:735px) {
+  .c13 {
+    margin-top: 128px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+  }
+
+  .c13 img {
+    margin-top: 32px;
+    width: 100%;
+  }
+}
+
+@media (min-width:736px) {
+  .c13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 256px;
+    max-width: 1216px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+  }
+
+  .c13 > div:first-child {
+    -webkit-flex-basis: 288px;
+    -ms-flex-preferred-size: 288px;
+    flex-basis: 288px;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
+  .c13 > div:last-child {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+
+  .c13 img {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .c13 ul {
+    margin-top: 32px;
+  }
+
+  .c13 li {
+    font-size: 18px;
+  }
+}
+
 @media (max-width:350px) {
   .c0 {
     margin: 0 4px;
@@ -4749,6 +5250,61 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         NB: We accept ‘just because’ as a reason for returning, too.
       </p>
     </div>
+  </div>
+  <div
+    className="c11"
+  >
+    <div
+      className="c12"
+    >
+      <div
+        className="c13"
+      >
+        <div>
+          <div
+            className="c14"
+          >
+            <h3>
+              <span>
+                In the box
+              </span>
+            </h3>
+          </div>
+        </div>
+        <div>
+          <img
+            alt=""
+            src="/in-the-box.svg"
+          />
+          <ul>
+            <li>
+              RecordRig dedicated streaming PC in
+               
+              Pristine White
+            </li>
+            <li>
+              Power cord for Type F plugs (European)
+            </li>
+            <li>
+              3 HDMI 2.1 (high-bandwith) cables
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c15"
+  >
+    <p>
+      1. Rounded results of independent benchmark testing. Unrounded results are 527.29 MB/s read and 498.90 MB/s write. Supplier reported speeds are 550MB/s read and 520MB/s write. Performance may vary based on system hardware and configuration.
+    </p>
+    <p>
+      2. Slotted graphics cards might vary. Graphics cards are selected based on performance and independent benchmark testing. Some traits are prioritised over others, e.g. Nvidia is our brand of choice due to RECentral's (gameplay recording software) capability of using these graphics card for better performance when recording. RecordRig always makes sure to slot a graphics card that performs well for RecordRig dedicated streaming PC's core use cases: recording and streaming in 4K 60FPS + HDR.
+    </p>
+    <p>
+      3. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
+    </p>
   </div>
 </div>
 `;

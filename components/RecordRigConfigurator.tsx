@@ -1,5 +1,8 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css } from "styled-components";
+import Footnotes from "./Footnotes";
+import Section from "./Section";
+import { SubHeading } from "./Text";
 import Tile from "./Tile";
 
 const StyledContent = styled.div`
@@ -606,6 +609,70 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
   }
 `;
 
+const StyledInTheBox = styled.div`
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 32px;
+
+    li {
+      padding-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 735px) {
+    margin-top: 128px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+
+    img {
+      margin-top: 32px;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 736px) {
+    display: flex;
+    margin-top: 256px;
+    max-width: 1216px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+
+    > div:first-child {
+      flex-basis: 288px;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    > div:last-child {
+      flex-grow: 1;
+    }
+
+    img {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    ul {
+      margin-top: 32px;
+    }
+
+    li {
+      font-size: 18px;
+    }
+  }
+`;
+
 interface StyledRecordRigConfiguratorProps {
   readonly step2: boolean;
 }
@@ -921,6 +988,54 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
           </StyledDeviceContent>
         )}
       </StyledContent>
+      {step2 && (
+        <>
+          <Section>
+            <StyledInTheBox>
+              <div>
+                <SubHeading>In the box</SubHeading>
+              </div>
+              <div>
+                <img alt="" src="/in-the-box.svg" />
+                <ul>
+                  <li>
+                    RecordRig dedicated streaming PC in{" "}
+                    {blackChosen ? "Stealth Black" : "Pristine White"}
+                  </li>
+                  <li>Power cord for Type F plugs (European)</li>
+                  <li>3 HDMI 2.1 (high-bandwith) cables</li>
+                </ul>
+              </div>
+            </StyledInTheBox>
+          </Section>
+          <Footnotes>
+            <p>
+              1. Rounded results of independent benchmark testing. Unrounded
+              results are 527.29 MB/s read and 498.90 MB/s write. Supplier
+              reported speeds are 550MB/s read and 520MB/s write. Performance
+              may vary based on system hardware and configuration.
+            </p>
+            <p>
+              2. Slotted graphics cards might vary. Graphics cards are selected
+              based on performance and independent benchmark testing. Some
+              traits are prioritised over others, e.g. Nvidia is our brand of
+              choice due to RECentral&apos;s (gameplay recording software)
+              capability of using these graphics card for better performance
+              when recording. RecordRig always makes sure to slot a graphics
+              card that performs well for RecordRig dedicated streaming
+              PC&apos;s core use cases: recording and streaming in 4K 60FPS +
+              HDR.
+            </p>
+            <p>
+              3. Opening the case within the first year of buying will void your
+              warranty. Upgradeability is mainly intended to be used after the
+              1-year mark, to lessen the need to buy an entirely new system when
+              some components start getting noticeably older in terms of
+              performance compared to newer components.
+            </p>
+          </Footnotes>
+        </>
+      )}
     </StyledRecordRigConfigurator>
   );
 };
