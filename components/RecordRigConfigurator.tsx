@@ -396,12 +396,6 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
       }
     }
 
-    hr {
-      color: #50565b;
-      opacity: 0.5;
-      margin: 32px 0;
-    }
-
     @media (max-width: 450px) {
       h3 {
         font-size: 16px;
@@ -421,10 +415,6 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
       padding-left: 16px;
       padding-top: 192px;
       width: ${visible ? "calc(100% - 322px)" : "0%"};
-
-      hr {
-        display: none;
-      }
 
       p,
       ul {
@@ -589,6 +579,29 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
       top: 40px;
       right: 16px;
       width: calc(100vw - 320px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    background-color: #f2f4f8;
+    border-bottom: 1px solid #c1c7cd;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    position: sticky;
+    top: 64px;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    &:after {
+      background: linear-gradient(to bottom, #f2f4f8 0%, transparent 100%);
+      bottom: -49px;
+      content: "";
+      display: block;
+      height: 48px;
+      position: absolute;
+      width: 100%;
     }
   }
 `;
@@ -859,7 +872,6 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                 Add to Bag
               </button>
             </StyledAddToBag>
-            <hr />
             <h3>Technical specifications</h3>
             <ul>
               <li>
