@@ -671,7 +671,6 @@ const StyledInTheBox = styled.div`
     width: 100%;
 
     h3 {
-      font-size: 28px;
       margin-top: 0;
       margin-left: 16px;
     }
@@ -703,6 +702,10 @@ const StyledInTheBox = styled.div`
 
   @media (min-width: 1024px) {
     margin-top: 448px;
+
+    h3 {
+      font-size: 28px;
+    }
   }
 `;
 
