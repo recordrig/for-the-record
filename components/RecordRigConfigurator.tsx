@@ -418,7 +418,7 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
       padding-left: 0;
 
       li {
-        color: #50565b;
+        color: #697077;
         font-size: 14px;
         margin-bottom: 12px;
       }
@@ -471,7 +471,7 @@ const StyledAddToBag = styled.div`
   }
 
   p {
-    color: #50565b;
+    color: #697077;
     font-size: 14px;
     margin-bottom: 8px;
 
@@ -500,8 +500,7 @@ const StyledAddToBag = styled.div`
   }
 
   @media (max-width: 1023px) {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(24px);
+    background-color: #ffffff;
     border-top: 1px solid #dde1e6;
     bottom: 0;
     box-sizing: border-box;
@@ -645,7 +644,7 @@ const StyledInTheBox = styled.div`
     padding-left: 0;
 
     li {
-      color: #50565b;
+      color: #697077;
       font-size: 14px;
       margin-bottom: 12px;
     }
@@ -1043,24 +1042,26 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             </div>
           </StyledInTheBox>
           <Footnotes>
-            <p>
-              1. Slotted graphics cards might vary. Graphics cards are selected
-              based on performance and independent benchmark testing. Some
-              traits are prioritised over others, e.g. Nvidia is our brand of
-              choice due to RECentral&apos;s (gameplay recording software)
-              capability of using these graphics card for better performance
-              when recording. RecordRig always makes sure to slot a graphics
-              card that performs well for RecordRig dedicated streaming
-              PC&apos;s core use cases: recording and streaming in 4K 60FPS +
-              HDR.
-            </p>
-            <p>
-              2. Opening the case within the first year of buying will void your
-              warranty. Upgradeability is mainly intended to be used after the
-              1-year mark, to lessen the need to buy an entirely new system when
-              some components start getting noticeably older in terms of
-              performance compared to newer components.
-            </p>
+            <div style={{ margin: "0 8px" }}>
+              <p>
+                1. Slotted graphics cards might vary. Graphics cards are
+                selected based on performance and independent benchmark testing.
+                Some traits are prioritised over others, e.g. Nvidia is our
+                brand of choice due to RECentral&apos;s (gameplay recording
+                software) capability of using these graphics card for better
+                performance when recording. RecordRig always makes sure to slot
+                a graphics card that performs well for RecordRig dedicated
+                streaming PC&apos;s core use cases: recording and streaming in
+                4K 60FPS + HDR.
+              </p>
+              <p>
+                2. Opening the case within the first year of buying will void
+                your warranty. Upgradeability is mainly intended to be used
+                after the 1-year mark, to lessen the need to buy an entirely new
+                system when some components start getting noticeably older in
+                terms of performance compared to newer components.
+              </p>
+            </div>
           </Footnotes>
         </>
       )}

@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled from "styled-components";
 
 const StyledFootnotes = styled.div`
-  color: #6f6f6f;
+  color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
 

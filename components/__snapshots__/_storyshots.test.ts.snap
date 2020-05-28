@@ -539,7 +539,7 @@ exports[`Storyshots Footer default 1`] = `
 
 exports[`Storyshots Footnotes default 1`] = `
 .c0 {
-  color: #6f6f6f;
+  color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
 }
@@ -2428,7 +2428,7 @@ exports[`Storyshots ProductList indicate addition 1`] = `
 
 exports[`Storyshots RecordRigConfigurator black 1`] = `
 .c12 {
-  color: #6f6f6f;
+  color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
 }
@@ -2666,7 +2666,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c9 ul li {
-  color: #50565b;
+  color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
 }
@@ -2683,7 +2683,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c10 p {
-  color: #50565b;
+  color: #697077;
   font-size: 14px;
   margin-bottom: 8px;
 }
@@ -2729,7 +2729,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c11 ul li {
-  color: #50565b;
+  color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
 }
@@ -2972,9 +2972,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (max-width:1023px) {
   .c10 {
-    background-color: rgba(255,255,255,0.8);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
+    background-color: #ffffff;
     border-top: 1px solid #dde1e6;
     bottom: 0;
     box-sizing: border-box;
@@ -3443,12 +3441,20 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   <div
     className="c12"
   >
-    <p>
-      1. Slotted graphics cards might vary. Graphics cards are selected based on performance and independent benchmark testing. Some traits are prioritised over others, e.g. Nvidia is our brand of choice due to RECentral's (gameplay recording software) capability of using these graphics card for better performance when recording. RecordRig always makes sure to slot a graphics card that performs well for RecordRig dedicated streaming PC's core use cases: recording and streaming in 4K 60FPS + HDR.
-    </p>
-    <p>
-      2. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
-    </p>
+    <div
+      style={
+        Object {
+          "margin": "0 8px",
+        }
+      }
+    >
+      <p>
+        1. Slotted graphics cards might vary. Graphics cards are selected based on performance and independent benchmark testing. Some traits are prioritised over others, e.g. Nvidia is our brand of choice due to RECentral's (gameplay recording software) capability of using these graphics card for better performance when recording. RecordRig always makes sure to slot a graphics card that performs well for RecordRig dedicated streaming PC's core use cases: recording and streaming in 4K 60FPS + HDR.
+      </p>
+      <p>
+        2. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -4030,7 +4036,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 exports[`Storyshots RecordRigConfigurator white 1`] = `
 .c12 {
-  color: #6f6f6f;
+  color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
 }
@@ -4269,7 +4275,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c9 ul li {
-  color: #50565b;
+  color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
 }
@@ -4286,7 +4292,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c10 p {
-  color: #50565b;
+  color: #697077;
   font-size: 14px;
   margin-bottom: 8px;
 }
@@ -4332,7 +4338,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c11 ul li {
-  color: #50565b;
+  color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
 }
@@ -4575,9 +4581,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (max-width:1023px) {
   .c10 {
-    background-color: rgba(255,255,255,0.8);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
+    background-color: #ffffff;
     border-top: 1px solid #dde1e6;
     bottom: 0;
     box-sizing: border-box;
@@ -5046,12 +5050,20 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   <div
     className="c12"
   >
-    <p>
-      1. Slotted graphics cards might vary. Graphics cards are selected based on performance and independent benchmark testing. Some traits are prioritised over others, e.g. Nvidia is our brand of choice due to RECentral's (gameplay recording software) capability of using these graphics card for better performance when recording. RecordRig always makes sure to slot a graphics card that performs well for RecordRig dedicated streaming PC's core use cases: recording and streaming in 4K 60FPS + HDR.
-    </p>
-    <p>
-      2. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
-    </p>
+    <div
+      style={
+        Object {
+          "margin": "0 8px",
+        }
+      }
+    >
+      <p>
+        1. Slotted graphics cards might vary. Graphics cards are selected based on performance and independent benchmark testing. Some traits are prioritised over others, e.g. Nvidia is our brand of choice due to RECentral's (gameplay recording software) capability of using these graphics card for better performance when recording. RecordRig always makes sure to slot a graphics card that performs well for RecordRig dedicated streaming PC's core use cases: recording and streaming in 4K 60FPS + HDR.
+      </p>
+      <p>
+        2. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
+      </p>
+    </div>
   </div>
 </div>
 `;
