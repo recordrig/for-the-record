@@ -1,9 +1,34 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import styled, { css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import Footnotes from "./Footnotes";
-import Section from "./Section";
-import { SubHeading } from "./Text";
 import Tile from "./Tile";
+
+// When on small screens, we must reserve bottom space for the overlaying "Add to Bag" section.
+const GlobalStyle = createGlobalStyle`
+  @media (max-width: 449px) {
+    body {
+      padding-bottom: 109px;
+    }
+  }
+
+  @media (min-width: 450px) and (max-width: 549px) {
+    body {
+      padding-bottom: 118px;
+    }
+  }
+
+  @media (min-width: 550px) and (max-width: 699px) {
+    body {
+      padding-bottom: 134px;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1023px) {
+    body {
+      padding-bottom: 107px;
+    }
+  }
+`;
 
 const StyledContent = styled.div`
   @media (min-width: 1024px) {
@@ -1036,6 +1061,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
           </Footnotes>
         </>
       )}
+      <GlobalStyle />
     </StyledRecordRigConfigurator>
   );
 };
