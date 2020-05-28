@@ -409,19 +409,19 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 699px) {
       padding-top: 192px;
       width: ${visible ? "100%" : "0%"};
     }
 
-    @media (min-width: 768px) and (max-width: 1023px) {
+    @media (min-width: 700px) and (max-width: 1023px) {
       padding-left: 16px;
       padding-top: 192px;
-      width: ${visible ? "calc(100% - 322px)" : "0%"};
+      width: ${visible ? "calc(100% - 300px)" : "0%"};
 
       p,
       ul {
-        left: 288px;
+        left: 270px;
         position: relative;
         top: -42px;
       }
@@ -433,11 +433,7 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
   `}
 `;
 
-interface StyledAddToBagProps {
-  readonly visible: boolean;
-}
-
-const StyledAddToBag = styled.div<StyledAddToBagProps>`
+const StyledAddToBag = styled.div`
   h3 {
     margin-bottom: 6px;
   }
@@ -506,7 +502,7 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 699px) {
     p:first-of-type {
       position: absolute;
       right: 8px;
@@ -559,7 +555,7 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 700px) and (max-width: 1023px) {
     height: 116px;
     padding-left: 16px;
     padding-right: 16px;
@@ -581,7 +577,7 @@ const StyledAddToBag = styled.div<StyledAddToBagProps>`
       position: absolute;
       top: 40px;
       right: 16px;
-      width: calc(100vw - 320px);
+      width: calc(100vw - 302px);
     }
   }
 
@@ -620,33 +616,40 @@ const StyledInTheBox = styled.div`
 
   ul {
     list-style-type: none;
+    margin-top: 32px;
     padding-left: 0;
-    padding-top: 32px;
 
     li {
-      padding-bottom: 16px;
+      color: #50565b;
+      font-size: 14px;
+      margin-bottom: 12px;
     }
   }
 
-  @media (max-width: 735px) {
-    margin-top: 128px;
-    padding-left: 12px;
-    padding-right: 12px;
+  @media (max-width: 699px) {
+    margin-bottom: 256px;
     width: 100%;
 
-    img {
+    h3 {
       margin-top: 32px;
+    }
+
+    img {
       width: 100%;
     }
   }
 
-  @media (min-width: 736px) {
+  @media (min-width: 700px) {
     display: flex;
-    margin-top: 256px;
+    margin-bottom: 256px;
     max-width: 1216px;
-    padding-left: 32px;
-    padding-right: 32px;
     width: 100%;
+
+    h3 {
+      font-size: 28px;
+      margin-top: 0;
+      margin-left: 16px;
+    }
 
     > div:first-child {
       flex-basis: 288px;
@@ -656,20 +659,25 @@ const StyledInTheBox = styled.div`
 
     > div:last-child {
       flex-grow: 1;
+      padding-right: 16px;
     }
 
     img {
-      max-width: 700px;
+      max-width: 696px;
       width: 100%;
     }
 
     ul {
-      margin-top: 32px;
+      margin-top: 48px;
     }
 
     li {
       font-size: 18px;
     }
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 448px;
   }
 `;
 
@@ -990,33 +998,25 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       </StyledContent>
       {step2 && (
         <>
-          <Section>
-            <StyledInTheBox>
-              <div>
-                <SubHeading>In the box</SubHeading>
-              </div>
-              <div>
-                <img alt="" src="/in-the-box.svg" />
-                <ul>
-                  <li>
-                    RecordRig dedicated streaming PC in{" "}
-                    {blackChosen ? "Stealth Black" : "Pristine White"}
-                  </li>
-                  <li>Power cord for Type F plugs (European)</li>
-                  <li>3 HDMI 2.1 (high-bandwith) cables</li>
-                </ul>
-              </div>
-            </StyledInTheBox>
-          </Section>
+          <StyledInTheBox>
+            <div>
+              <h3>In the box</h3>
+            </div>
+            <div>
+              <img alt="" src="/in-the-box.svg" />
+              <ul>
+                <li>
+                  RecordRig dedicated streaming PC in{" "}
+                  {blackChosen ? "Stealth Black" : "Pristine White"}
+                </li>
+                <li>Power cord for Type F plugs (European)</li>
+                <li>3 HDMI 2.1 (high-bandwidth) cables</li>
+              </ul>
+            </div>
+          </StyledInTheBox>
           <Footnotes>
             <p>
-              1. Rounded results of independent benchmark testing. Unrounded
-              results are 527.29 MB/s read and 498.90 MB/s write. Supplier
-              reported speeds are 550MB/s read and 520MB/s write. Performance
-              may vary based on system hardware and configuration.
-            </p>
-            <p>
-              2. Slotted graphics cards might vary. Graphics cards are selected
+              1. Slotted graphics cards might vary. Graphics cards are selected
               based on performance and independent benchmark testing. Some
               traits are prioritised over others, e.g. Nvidia is our brand of
               choice due to RECentral&apos;s (gameplay recording software)
@@ -1027,7 +1027,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               HDR.
             </p>
             <p>
-              3. Opening the case within the first year of buying will void your
+              2. Opening the case within the first year of buying will void your
               warranty. Upgradeability is mainly intended to be used after the
               1-year mark, to lessen the need to buy an entirely new system when
               some components start getting noticeably older in terms of
