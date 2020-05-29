@@ -2427,7 +2427,7 @@ exports[`Storyshots ProductList indicate addition 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator black 1`] = `
-.c12 {
+.c13 {
   color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
@@ -2671,6 +2671,28 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   margin-bottom: 12px;
 }
 
+.c11 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  font-size: 24px;
+  line-height: 64px;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 4px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .c10 h3 {
   margin-bottom: 6px;
 }
@@ -2693,42 +2715,23 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   font-weight: bold;
 }
 
-.c10 button {
-  background-color: rgb(0,98,255);
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 3px solid #002d9c;
-  color: rgb(255,255,255);
-  cursor: pointer;
-  font-size: 24px;
-  line-height: 64px;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: background-color 0.2s ease 0s;
-  transition: background-color 0.2s ease 0s;
-  width: 100%;
-}
-
-.c11 {
+.c12 {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c11 img {
+.c12 img {
   max-width: 100%;
 }
 
-.c11 ul {
+.c12 ul {
   list-style-type: none;
   margin-top: 32px;
   padding-left: 0;
 }
 
-.c11 ul li {
+.c12 ul li {
   color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
@@ -2741,13 +2744,13 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 @media (max-width:767px) {
-  .c12 {
+  .c13 {
     font-size: 10px;
   }
 }
 
 @media (min-width:768px) {
-  .c12 {
+  .c13 {
     font-size: 11px;
   }
 }
@@ -2971,6 +2974,46 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 @media (max-width:1023px) {
+  .c11 {
+    margin: 0 auto;
+    width: calc(100vw - 16px);
+  }
+}
+
+@media (max-width:449px) {
+  .c11 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c11 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c11 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:700px) and (max-width:1023px) {
+  .c11 {
+    font-size: 24px;
+    margin-left: auto;
+    line-height: 64px;
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    width: calc(100vw - 302px);
+  }
+}
+
+@media (max-width:1023px) {
   .c10 {
     background-color: #ffffff;
     border-top: 1px solid #dde1e6;
@@ -2991,11 +3034,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c10 p {
     margin-top: 0;
     margin-bottom: 12px;
-  }
-
-  .c10 button {
-    margin: 0 auto;
-    width: calc(100vw - 16px);
   }
 }
 
@@ -3019,11 +3057,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c10 p {
     font-size: 11px;
   }
-
-  .c10 button {
-    font-size: 18px;
-    line-height: 48px;
-  }
 }
 
 @media (min-width:450px) and (max-width:1023px) {
@@ -3037,18 +3070,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
   .c10 p {
     font-size: 14px;
-  }
-
-  .c10 button {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c10 button {
-    font-size: 24px;
-    line-height: 64px;
   }
 }
 
@@ -3067,16 +3088,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
   .c10 p {
     top: -26px;
-  }
-
-  .c10 button {
-    font-size: 24px;
-    margin-left: auto;
-    line-height: 64px;
-    position: absolute;
-    top: 40px;
-    right: 16px;
-    width: calc(100vw - 302px);
   }
 }
 
@@ -3107,22 +3118,22 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 @media (max-width:699px) {
-  .c11 {
+  .c12 {
     margin-bottom: 256px;
     width: 100%;
   }
 
-  .c11 h3 {
+  .c12 h3 {
     margin-top: 32px;
   }
 
-  .c11 img {
+  .c12 img {
     width: 100%;
   }
 }
 
 @media (min-width:700px) {
-  .c11 {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3132,12 +3143,12 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     width: 100%;
   }
 
-  .c11 h3 {
+  .c12 h3 {
     margin-top: 0;
     margin-left: 16px;
   }
 
-  .c11 > div:first-child {
+  .c12 > div:first-child {
     -webkit-flex-basis: 288px;
     -ms-flex-preferred-size: 288px;
     flex-basis: 288px;
@@ -3150,7 +3161,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     flex-shrink: 0;
   }
 
-  .c11 > div:last-child {
+  .c12 > div:last-child {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -3158,26 +3169,26 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     padding-right: 16px;
   }
 
-  .c11 img {
+  .c12 img {
     max-width: 696px;
     width: 100%;
   }
 
-  .c11 ul {
+  .c12 ul {
     margin-top: 48px;
   }
 
-  .c11 li {
+  .c12 li {
     font-size: 18px;
   }
 }
 
 @media (min-width:1024px) {
-  .c11 {
+  .c12 {
     margin-top: 448px;
   }
 
-  .c11 h3 {
+  .c12 h3 {
     font-size: 28px;
   }
 }
@@ -3343,8 +3354,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
           </span>
         </p>
         <button
+          className="c11"
+          disabled={false}
           onClick={[Function]}
-          type="button"
         >
           Add to Bag
         </button>
@@ -3411,7 +3423,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     </div>
   </div>
   <div
-    className="c11"
+    className="c12"
   >
     <div>
       <h3>
@@ -3439,7 +3451,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className="c13"
   >
     <div
       style={
@@ -4035,7 +4047,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator white 1`] = `
-.c12 {
+.c13 {
   color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
@@ -4280,6 +4292,28 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   margin-bottom: 12px;
 }
 
+.c11 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  font-size: 24px;
+  line-height: 64px;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 4px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .c10 h3 {
   margin-bottom: 6px;
 }
@@ -4302,42 +4336,23 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   font-weight: bold;
 }
 
-.c10 button {
-  background-color: rgb(0,98,255);
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 3px solid #002d9c;
-  color: rgb(255,255,255);
-  cursor: pointer;
-  font-size: 24px;
-  line-height: 64px;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: background-color 0.2s ease 0s;
-  transition: background-color 0.2s ease 0s;
-  width: 100%;
-}
-
-.c11 {
+.c12 {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c11 img {
+.c12 img {
   max-width: 100%;
 }
 
-.c11 ul {
+.c12 ul {
   list-style-type: none;
   margin-top: 32px;
   padding-left: 0;
 }
 
-.c11 ul li {
+.c12 ul li {
   color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
@@ -4350,13 +4365,13 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 @media (max-width:767px) {
-  .c12 {
+  .c13 {
     font-size: 10px;
   }
 }
 
 @media (min-width:768px) {
-  .c12 {
+  .c13 {
     font-size: 11px;
   }
 }
@@ -4580,6 +4595,46 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 @media (max-width:1023px) {
+  .c11 {
+    margin: 0 auto;
+    width: calc(100vw - 16px);
+  }
+}
+
+@media (max-width:449px) {
+  .c11 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c11 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c11 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:700px) and (max-width:1023px) {
+  .c11 {
+    font-size: 24px;
+    margin-left: auto;
+    line-height: 64px;
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    width: calc(100vw - 302px);
+  }
+}
+
+@media (max-width:1023px) {
   .c10 {
     background-color: #ffffff;
     border-top: 1px solid #dde1e6;
@@ -4600,11 +4655,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c10 p {
     margin-top: 0;
     margin-bottom: 12px;
-  }
-
-  .c10 button {
-    margin: 0 auto;
-    width: calc(100vw - 16px);
   }
 }
 
@@ -4628,11 +4678,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c10 p {
     font-size: 11px;
   }
-
-  .c10 button {
-    font-size: 18px;
-    line-height: 48px;
-  }
 }
 
 @media (min-width:450px) and (max-width:1023px) {
@@ -4646,18 +4691,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
   .c10 p {
     font-size: 14px;
-  }
-
-  .c10 button {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c10 button {
-    font-size: 24px;
-    line-height: 64px;
   }
 }
 
@@ -4676,16 +4709,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
   .c10 p {
     top: -26px;
-  }
-
-  .c10 button {
-    font-size: 24px;
-    margin-left: auto;
-    line-height: 64px;
-    position: absolute;
-    top: 40px;
-    right: 16px;
-    width: calc(100vw - 302px);
   }
 }
 
@@ -4716,22 +4739,22 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 @media (max-width:699px) {
-  .c11 {
+  .c12 {
     margin-bottom: 256px;
     width: 100%;
   }
 
-  .c11 h3 {
+  .c12 h3 {
     margin-top: 32px;
   }
 
-  .c11 img {
+  .c12 img {
     width: 100%;
   }
 }
 
 @media (min-width:700px) {
-  .c11 {
+  .c12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4741,12 +4764,12 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     width: 100%;
   }
 
-  .c11 h3 {
+  .c12 h3 {
     margin-top: 0;
     margin-left: 16px;
   }
 
-  .c11 > div:first-child {
+  .c12 > div:first-child {
     -webkit-flex-basis: 288px;
     -ms-flex-preferred-size: 288px;
     flex-basis: 288px;
@@ -4759,7 +4782,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     flex-shrink: 0;
   }
 
-  .c11 > div:last-child {
+  .c12 > div:last-child {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -4767,26 +4790,26 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     padding-right: 16px;
   }
 
-  .c11 img {
+  .c12 img {
     max-width: 696px;
     width: 100%;
   }
 
-  .c11 ul {
+  .c12 ul {
     margin-top: 48px;
   }
 
-  .c11 li {
+  .c12 li {
     font-size: 18px;
   }
 }
 
 @media (min-width:1024px) {
-  .c11 {
+  .c12 {
     margin-top: 448px;
   }
 
-  .c11 h3 {
+  .c12 h3 {
     font-size: 28px;
   }
 }
@@ -4952,8 +4975,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
           </span>
         </p>
         <button
+          className="c11"
+          disabled={false}
           onClick={[Function]}
-          type="button"
         >
           Add to Bag
         </button>
@@ -5020,7 +5044,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     </div>
   </div>
   <div
-    className="c11"
+    className="c12"
   >
     <div>
       <h3>
@@ -5048,7 +5072,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className="c13"
   >
     <div
       style={

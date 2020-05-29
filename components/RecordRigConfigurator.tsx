@@ -458,6 +458,64 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
   `}
 `;
 
+interface StyledAddToBagButtonProps {
+  readonly clicked: boolean;
+}
+
+const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  font-size: 24px;
+  line-height: 64px;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s ease 0s;
+  width: 100%;
+
+  @media (max-width: 1023px) {
+    margin: 0 auto;
+    width: calc(100vw - 16px);
+  }
+
+  @media (max-width: 449px) {
+    font-size: 18px;
+    line-height: 48px;
+  }
+
+  @media (min-width: 450px) and (max-width: 1023px) {
+    font-size: 18px;
+    line-height: 48px;
+  }
+
+  @media (min-width: 550px) and (max-width: 1023px) {
+    font-size: 24px;
+    line-height: 64px;
+  }
+
+  @media (min-width: 700px) and (max-width: 1023px) {
+    font-size: 24px;
+    margin-left: auto;
+    line-height: 64px;
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    width: calc(100vw - 302px);
+  }
+
+  ${({ clicked }) => css`
+    background-color: ${clicked ? "transparent" : "#0f62fe"};
+    border-bottom: ${clicked ? "2px solid #a2a9b0" : "4px solid #002d9c"};
+    border-top: ${clicked ? "2px solid #a2a9b0" : 0};
+    border-right: ${clicked ? "2px solid #a2a9b0" : 0};
+    border-left: ${clicked ? "2px solid #a2a9b0" : 0};
+    color: ${clicked ? "#24a148" : "#ffffff"};
+    cursor: ${clicked ? "default" : "pointer"};
+  `}
+`;
+
 const StyledAddToBag = styled.div`
   h3 {
     margin-bottom: 6px;
@@ -481,24 +539,6 @@ const StyledAddToBag = styled.div`
     }
   }
 
-  button {
-    background-color: rgb(0, 98, 255);
-    border-radius: 4px;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    border-bottom: 3px solid #002d9c;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    font-size: 24px;
-    line-height: 64px;
-    outline: none;
-    padding: 0;
-    text-align: center;
-    transition: background-color 0.2s ease 0s;
-    width: 100%;
-  }
-
   @media (max-width: 1023px) {
     background-color: #ffffff;
     border-top: 1px solid #dde1e6;
@@ -518,11 +558,6 @@ const StyledAddToBag = styled.div`
     p {
       margin-top: 0;
       margin-bottom: 12px;
-    }
-
-    button {
-      margin: 0 auto;
-      width: calc(100vw - 16px);
     }
   }
 
@@ -546,11 +581,6 @@ const StyledAddToBag = styled.div`
     p {
       font-size: 11px;
     }
-
-    button {
-      font-size: 18px;
-      line-height: 48px;
-    }
   }
 
   @media (min-width: 450px) and (max-width: 1023px) {
@@ -564,18 +594,6 @@ const StyledAddToBag = styled.div`
 
     p {
       font-size: 14px;
-    }
-
-    button {
-      font-size: 18px;
-      line-height: 48px;
-    }
-  }
-
-  @media (min-width: 550px) and (max-width: 1023px) {
-    button {
-      font-size: 24px;
-      line-height: 64px;
     }
   }
 
@@ -592,16 +610,6 @@ const StyledAddToBag = styled.div`
 
     p {
       top: -26px;
-    }
-
-    button {
-      font-size: 24px;
-      margin-left: auto;
-      line-height: 64px;
-      position: absolute;
-      top: 40px;
-      right: 16px;
-      width: calc(100vw - 302px);
     }
   }
 
@@ -815,6 +823,14 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
     return <h1>Choose your RecordRig.</h1>;
   };
 
+  // Visually update the button to indicate to the user that it has indeed been pressed.
+  const [addToBagButtonClicked, setAddToBagButtonClicked] = useState(false);
+
+  const handleAddToBagClick = () => {
+    setAddToBagButtonClicked(true);
+    addToBag(selectedColor);
+  };
+
   const [heading, setHeading] = useState(getHeading(configuration || null));
   const [headingVisible, setHeadingVisible] = useState(true);
   const [renderBlack, setRenderBlack] = useState(!step2 || blackChosen);
@@ -824,6 +840,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const [deviceContentVisible, setDeviceContentVisible] = useState(step2);
 
   const handleColorChangeClick = (color: "black" | "white") => {
+    setAddToBagButtonClicked(false); // Back to default visual state.
     setSelectedColor(color);
     setHeadingVisible(false);
     setTimeout(() => setDeviceContentVisible(true), 300);
@@ -970,9 +987,13 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <p>
                 Expected delivery: within <span>14 days</span>
               </p>
-              <button onClick={() => addToBag(selectedColor)} type="button">
-                Add to Bag
-              </button>
+              <StyledAddToBagButton
+                clicked={addToBagButtonClicked}
+                disabled={addToBagButtonClicked}
+                onClick={() => handleAddToBagClick()}
+              >
+                {addToBagButtonClicked ? `✔ Added to Bag` : "Add to Bag"}
+              </StyledAddToBagButton>
             </StyledAddToBag>
             <h3>Technical specifications</h3>
             <ul>
