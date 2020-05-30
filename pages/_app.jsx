@@ -5,6 +5,10 @@ import withRedux from "next-redux-wrapper";
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
+import {
+  createStateSyncMiddleware,
+  initStateWithPrevTab
+} from "redux-state-sync";
 import rootReducer from "../store/_rootReducer";
 import Footer from "../components/Footer";
 import LoaderBar from "../components/LoaderBar";
@@ -33,19 +37,31 @@ const initialStatePreset = {
 };
 
 /**
- * Creates a Redux store with this app's presets and the devtools. Use the paired
- * `withRedux()` helper function around a Page component to initialize the store
- * when a page is requested.
+ * Creates a Redux store with this app's presets and the devtools.
  *
  * @param initialState The store's initial state (on the client side, the state of
  * the server-side store is passed here).
  */
 const makeStore = (initialState = initialStatePreset) => {
-  return createStore(
+  // Server side, we don't want to attempt to sync state across browser tabs.
+  if (typeof window === "undefined") {
+    return createStore(
+      rootReducer,
+      initialState,
+      composeWithDevTools(applyMiddleware())
+    );
+  }
+
+  const middlewares = [createStateSyncMiddleware()];
+
+  const store = createStore(
     rootReducer,
     initialState,
-    composeWithDevTools(applyMiddleware())
+    composeWithDevTools(applyMiddleware(...middlewares))
   );
+
+  initStateWithPrevTab(store);
+  return store;
 };
 
 /**
@@ -54,7 +70,7 @@ const makeStore = (initialState = initialStatePreset) => {
  */
 class RecordRigApp extends App {
   static async getInitialProps({ Component, ctx }) {
-    // We can dispatch from here too
+    // We can dispatch from here too;
     // ctx.store.dispatch({ type: "FOO", payload: "foo" });
 
     const pageProps = Component.getInitialProps

@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import { withReduxStateSync } from "redux-state-sync";
 import account from "./account";
 import shoppingBag from "./shoppingBag";
 
@@ -13,4 +14,4 @@ const rootReducer = combineReducers({
   shoppingBag
 });
 
-export default rootReducer;
+export default withReduxStateSync(rootReducer);
