@@ -95,7 +95,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       margin-right: auto;
       padding-left: 32px;
       padding-right: 32px;
-      padding-top: 156px;
+      padding-top: 96px;
       padding-bottom: 64px;
 
       h1 {
@@ -724,6 +724,8 @@ const StyledRecordRigConfigurator = styled.div<
   StyledRecordRigConfiguratorProps
 >`
   ${({ step2 }) => css`
+    margin-top: 64px;
+
     h2 {
       display: ${step2 ? "none" : "block"};
       box-sizing: border-box;
@@ -732,7 +734,8 @@ const StyledRecordRigConfigurator = styled.div<
 
     /* Pretty much just legacy iPhone SE/5/very old Androids. */
     @media (max-width: 350px) {
-      margin: 0 4px;
+      margin-left: 4px;
+      margin-right: 4px;
 
       h2 {
         font-size: 13px;
@@ -743,7 +746,8 @@ const StyledRecordRigConfigurator = styled.div<
     }
 
     @media (min-width: 350px) and (max-width: 767px) {
-      margin: 0 8px;
+      margin-left: 8px;
+      margin-right: 8px;
 
       h2 {
         font-size: 14px;
@@ -754,7 +758,8 @@ const StyledRecordRigConfigurator = styled.div<
     }
 
     @media (min-width: 768px) {
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       transition: width 0.3s;
       transition-delay: 0.7s;
       width: ${step2 ? "100%" : "700px"};
@@ -778,7 +783,8 @@ const StyledRecordRigConfigurator = styled.div<
     /* For people with small devices who insist on using landscape orientation,
     we'll just give the whole thing a fixed, smaller width to prevent ugly distortions. */
     @media (min-device-width: 351px) and (max-device-width: 767px) and (orientation: landscape) {
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       width: 350px;
     }
   `}

@@ -2737,6 +2737,10 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   margin-bottom: 12px;
 }
 
+.c0 {
+  margin-top: 64px;
+}
+
 .c0 h2 {
   display: none;
   box-sizing: border-box;
@@ -2818,7 +2822,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     margin-right: auto;
     padding-left: 32px;
     padding-right: 32px;
-    padding-top: 156px;
+    padding-top: 96px;
     padding-bottom: 64px;
   }
 
@@ -3195,7 +3199,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (max-width:350px) {
   .c0 {
-    margin: 0 4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 
   .c0 h2 {
@@ -3208,7 +3213,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c0 {
-    margin: 0 8px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   .c0 h2 {
@@ -3221,7 +3227,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-transition: width 0.3s;
     transition: width 0.3s;
     -webkit-transition-delay: 0.7s;
@@ -3251,7 +3258,8 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 @media (min-device-width:351px) and (max-device-width:767px) and (orientation:landscape) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 350px;
   }
 }
@@ -3626,6 +3634,10 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   display: inline-block;
 }
 
+.c0 {
+  margin-top: 64px;
+}
+
 .c0 h2 {
   display: block;
   box-sizing: border-box;
@@ -3695,7 +3707,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     margin-right: auto;
     padding-left: 32px;
     padding-right: 32px;
-    padding-top: 156px;
+    padding-top: 96px;
     padding-bottom: 64px;
   }
 
@@ -3882,7 +3894,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 @media (max-width:350px) {
   .c0 {
-    margin: 0 4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 
   .c0 h2 {
@@ -3895,7 +3908,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c0 {
-    margin: 0 8px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   .c0 h2 {
@@ -3908,7 +3922,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-transition: width 0.3s;
     transition: width 0.3s;
     -webkit-transition-delay: 0.7s;
@@ -3938,7 +3953,8 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
 @media (min-device-width:351px) and (max-device-width:767px) and (orientation:landscape) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 350px;
   }
 }
@@ -4201,6 +4217,10 @@ exports[`Storyshots RecordRigConfigurator on select 1`] = `
   display: inline-block;
 }
 
+.c0 {
+  margin-top: 64px;
+}
+
 .c0 h2 {
   display: block;
   box-sizing: border-box;
@@ -4270,7 +4290,7 @@ exports[`Storyshots RecordRigConfigurator on select 1`] = `
     margin-right: auto;
     padding-left: 32px;
     padding-right: 32px;
-    padding-top: 156px;
+    padding-top: 96px;
     padding-bottom: 64px;
   }
 
@@ -4457,7 +4477,8 @@ exports[`Storyshots RecordRigConfigurator on select 1`] = `
 
 @media (max-width:350px) {
   .c0 {
-    margin: 0 4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 
   .c0 h2 {
@@ -4470,7 +4491,8 @@ exports[`Storyshots RecordRigConfigurator on select 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c0 {
-    margin: 0 8px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   .c0 h2 {
@@ -4483,7 +4505,8 @@ exports[`Storyshots RecordRigConfigurator on select 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-transition: width 0.3s;
     transition: width 0.3s;
     -webkit-transition-delay: 0.7s;
@@ -4513,7 +4536,8 @@ exports[`Storyshots RecordRigConfigurator on select 1`] = `
 
 @media (min-device-width:351px) and (max-device-width:767px) and (orientation:landscape) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 350px;
   }
 }
@@ -4933,6 +4957,10 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   margin-bottom: 12px;
 }
 
+.c0 {
+  margin-top: 64px;
+}
+
 .c0 h2 {
   display: none;
   box-sizing: border-box;
@@ -5014,7 +5042,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     margin-right: auto;
     padding-left: 32px;
     padding-right: 32px;
-    padding-top: 156px;
+    padding-top: 96px;
     padding-bottom: 64px;
   }
 
@@ -5391,7 +5419,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (max-width:350px) {
   .c0 {
-    margin: 0 4px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 
   .c0 h2 {
@@ -5404,7 +5433,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-width:350px) and (max-width:767px) {
   .c0 {
-    margin: 0 8px;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   .c0 h2 {
@@ -5417,7 +5447,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-width:768px) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-transition: width 0.3s;
     transition: width 0.3s;
     -webkit-transition-delay: 0.7s;
@@ -5447,7 +5478,8 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 @media (min-device-width:351px) and (max-device-width:767px) and (orientation:landscape) {
   .c0 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 350px;
   }
 }
