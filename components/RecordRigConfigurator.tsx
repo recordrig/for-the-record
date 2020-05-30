@@ -788,6 +788,8 @@ interface RecordRigConfiguratorProps {
   readonly addToBag: Function;
   /** Optional configuration starting point. */
   readonly configuration?: "black" | "white";
+  /** Optional callback function to be called when the colour changes. */
+  readonly onSelectColor?: Function;
 }
 
 /**
@@ -796,7 +798,8 @@ interface RecordRigConfiguratorProps {
  */
 const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   addToBag,
-  configuration = undefined
+  configuration = undefined,
+  onSelectColor = undefined
 }) => {
   const [selectedColor, setSelectedColor] = useState(configuration);
   const blackChosen = selectedColor === "black";
@@ -859,6 +862,8 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       setTimeout(() => setRenderWhite(true), 500);
       setTimeout(() => setWhiteVisible(true), 550);
     }
+
+    if (onSelectColor) onSelectColor(color);
   };
 
   // Color selector initial rendering and visibility depends on initial config state.
