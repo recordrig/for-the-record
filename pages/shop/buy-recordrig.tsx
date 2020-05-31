@@ -35,7 +35,9 @@ const StyledContinueShoppingButton = styled.button`
   text-decoration: underline;
 `;
 
-const StyledBuyRecordRigPage = styled.div``;
+const StyledBuyRecordRigPage = styled.div`
+  min-height: 100vh;
+`;
 
 interface BuyRecordRigPageProps {
   /** The addProduct function should update the Shopping Bag in global app state. */

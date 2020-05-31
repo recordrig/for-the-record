@@ -7,25 +7,25 @@ import Tile from "./Tile";
 const GlobalStyle = createGlobalStyle`
   @media (max-width: 449px) {
     body {
-      padding-bottom: 109px;
+      padding-bottom: 129px;
     }
   }
 
   @media (min-width: 450px) and (max-width: 549px) {
     body {
-      padding-bottom: 118px;
+      padding-bottom: 138px;
     }
   }
 
   @media (min-width: 550px) and (max-width: 699px) {
     body {
-      padding-bottom: 134px;
+      padding-bottom: 154px;
     }
   }
 
   @media (min-width: 700px) and (max-width: 1023px) {
     body {
-      padding-bottom: 107px;
+      padding-bottom: 127px;
     }
   }
 `;

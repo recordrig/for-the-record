@@ -54,8 +54,9 @@ const StyledInfo = styled.div`
 
 const StyledFooter = styled.div`
   display: flex;
-  margin: 0 auto;
+  margin: 64px auto 0;
   max-width: 1216px;
+  opacity: 0.65;
   padding-left: 32px;
   padding-right: 32px;
 
@@ -87,12 +88,13 @@ const Footer: FunctionComponent = () => (
       </StyledAddress>
       <span
         style={{
-          color: "#50565b",
-          fontSize: "14px",
+          color: "#4d5358",
+          fontSize: "12px",
           paddingBottom: "32px"
         }}
       >
-        Registered with the Netherlands Chamber of Commerce under ID 67196802.
+        RecordRig is registered with the Netherlands Chamber of Commerce - ID
+        67196802.
       </span>
     </StyledInfo>
   </StyledFooter>
