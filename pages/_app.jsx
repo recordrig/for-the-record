@@ -37,23 +37,26 @@ const initialStatePreset = {
 };
 
 /**
- * Creates a Redux store with this app's presets and the devtools.
+ * Creates a an initial Redux store to aid SSR.
  *
- * @param initialState The store's initial state (on the client side, the state of
- * the server-side store is passed here).
+ * NB: The server-side store does not intend to be used as a store on the server.
+ * Rather, it's created in order aid SSR: the initiated server store is passed to
+ * the client, prerendered. But only on the client-side will this store actually
+ * function as a store.
  */
-const makeStore = (initialState = initialStatePreset) => {
-  // Server side, we don't want to attempt to sync state across browser tabs.
-  if (typeof window === "undefined") {
-    return createStore(
-      rootReducer,
-      initialState,
-      composeWithDevTools(applyMiddleware())
-    );
-  }
+const makeInitialStore = (initialState = initialStatePreset) =>
+  createStore(rootReducer, initialState);
 
-  const middlewares = [createStateSyncMiddleware()];
+/**
+ * Creates the Redux store which we'll use to manage client-side global state.
+ *
+ * It'll be enhanced with devtools and mechanisms that'll keep browser tabs synced,
+ * and will fetch some parts of the startup state from localStorage (e.g. the shopping bag).
+ */
+const makeClientStore = (initialState = initialStatePreset) => {
+  const middlewares = [createStateSyncMiddleware({})];
 
+  // TODO: Fetch shopping bag from localStorage for initial state.
   const store = createStore(
     rootReducer,
     initialState,
@@ -64,13 +67,18 @@ const makeStore = (initialState = initialStatePreset) => {
   return store;
 };
 
+// Since the same code is executed on both the server and the client, we'll need to determine
+// where we are in order to create the appropriate store.
+const isClient = !(typeof window === "undefined");
+const makeStore = isClient ? makeClientStore : makeInitialStore;
+
 /**
  * Overrides Next.js' default `App` component which is used for page initialization.
  * `Component` refers to the active page component.
  */
 class RecordRigApp extends App {
   static async getInitialProps({ Component, ctx }) {
-    // We can dispatch from here too;
+    // We can dispatch from here too
     // ctx.store.dispatch({ type: "FOO", payload: "foo" });
 
     const pageProps = Component.getInitialProps
