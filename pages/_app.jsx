@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
 /**
  * The app's state when the store has just been instantiated. It presets some key names.
  */
-const initialStatePreset = {
+const initialAppStatePreset = {
   account: {
     customerId: null
   },
@@ -44,26 +44,73 @@ const initialStatePreset = {
  * the client, prerendered. But only on the client-side will this store actually
  * function as a store.
  */
-const makeInitialStore = (initialState = initialStatePreset) =>
-  createStore(rootReducer, initialState);
+const makeInitialStore = (initialAppState = initialAppStatePreset) =>
+  createStore(rootReducer, initialAppState);
 
 /**
  * Creates the Redux store which we'll use to manage client-side global state.
  *
- * It'll be enhanced with devtools and mechanisms that'll keep browser tabs synced,
+ * NB: This code is assumed to only execute on the client, and as such follows a synchronous style.
+ *
+ * The client store will be enhanced with devtools and mechanisms that'll keep browser tabs synced,
  * and will fetch some parts of the startup state from localStorage (e.g. the shopping bag).
  */
-const makeClientStore = (initialState = initialStatePreset) => {
+const makeClientStore = (initialAppState = initialAppStatePreset) => {
+  // If there's a previously saved Shopping Bag state, we'll load it.
+  const loadPersistedShoppingBagState = () => {
+    // Try-catch, because privacy settings might prevent us from reading localStorage contents.
+    try {
+      const serializedShoppingBagState = localStorage.getItem("shoppingBag");
+
+      if (serializedShoppingBagState === null) {
+        return undefined;
+      }
+      return JSON.parse(serializedShoppingBagState);
+    } catch {
+      return undefined;
+    }
+  };
+
+  // Save Shopping Bag state to localStorage, so that user's shopping bag is recovered upon revisiting.
+  const persistShoppingBagState = shoppingBagState => {
+    // Try-catch, because privacy settings might prevent us from reading localStorage contents.
+    try {
+      const serializedShoppingBagState = JSON.stringify(shoppingBagState);
+      localStorage.setItem("shoppingBag", serializedShoppingBagState);
+    } catch (err) {
+      console.error(
+        `Persisting Shopping Bag state to localStorage failed. Error message: ${err}`
+      );
+    }
+  };
+
+  // Either is a valid Shopping Bag state, or is undefined if there was no (valid) state.
+  const shoppingBag = loadPersistedShoppingBagState();
+
+  // Either is the app state with data recovered from localStorage, or the barebones predefined app state.
+  const initialClientState = shoppingBag
+    ? { ...initialAppState, ...shoppingBag }
+    : initialAppState;
+
+  // createStateSyncMiddleware is needed for browser tab syncing.
   const middlewares = [createStateSyncMiddleware({})];
 
-  // TODO: Fetch shopping bag from localStorage for initial state.
   const store = createStore(
     rootReducer,
-    initialState,
+    initialClientState,
     composeWithDevTools(applyMiddleware(...middlewares))
   );
 
+  // Needed for browser tab syncing.
   initStateWithPrevTab(store);
+
+  // Subscribe to changes so that we can persist the Shopping Bag to localStorage whenever it updates.
+  store.subscribe(() => {
+    persistShoppingBagState({
+      shoppingBag: store.getState().shoppingBag
+    });
+  });
+
   return store;
 };
 
