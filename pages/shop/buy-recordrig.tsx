@@ -49,9 +49,30 @@ interface BuyRecordRigPageProps {
 }
 
 interface BuyRecordRigPageState {
+  /** The page meta description. Depends on the selected color. */
+  readonly description: string;
   /** A Drawer which contains the Shopping Bag state, with links to the checkout and Bag overview. */
   readonly openDrawer: boolean;
+  /** The page title. Depends on the selected color. */
+  readonly title: string;
 }
+
+const getDescription = (color: "black" | "white" | null) => {
+  if (color === "black" || color === "white")
+    return `With RecordRig as your dedicated gameplay streaming and recording
+  PC, you'll share your gameplay in 4K 60FPS and HDR colours
+  with ease. Hook it up to your Xbox, PS4 or even your gaming PC and
+  stream directly to YouTube and Twitch, or save up to hundreds of
+  hours of UHD video for local use.`;
+  return `Record in 4K HDR 60FPS with ease using RecordRig as your dedicated
+  gameplay streaming and recordring PC.`;
+};
+
+const getTitle = (color: "black" | "white" | null) => {
+  if (color === "black") return "Buy RecordRig in Stealth Black.";
+  if (color === "white") return "Buy RecordRig in Pristine White.";
+  return "Buy RecordRig - dedicated gameplay streaming PC.";
+};
 
 const handleRouteChange = url => {
   if (url === "/shop/buy-recordrig") {
@@ -91,7 +112,9 @@ class BuyRecordRigPage extends Component<
   constructor(props) {
     super(props);
     this.state = {
-      openDrawer: false
+      description: getDescription(props.initialSelectedColor),
+      openDrawer: false,
+      title: getTitle(props.initialSelectedColor)
     };
   }
 
@@ -113,39 +136,28 @@ class BuyRecordRigPage extends Component<
 
   render() {
     const { addProduct, initialSelectedColor, shoppingBag } = this.props;
-
-    const { openDrawer } = this.state;
-
-    const toggleDrawer = () => this.setState({ openDrawer: !openDrawer });
-
-    const blackSelected = initialSelectedColor === "black";
-    const whiteSelected = initialSelectedColor === "white";
+    const { description, openDrawer, title } = this.state;
 
     const initialConfiguration = (() => {
-      if (blackSelected) return "black";
-      if (whiteSelected) return "white";
+      if (initialSelectedColor === "black") return "black";
+      if (initialSelectedColor === "white") return "white";
       return undefined;
     })();
 
-    const title = (() => {
-      if (blackSelected) return "Buy RecordRig in Stealth Black.";
-      if (whiteSelected) return "Buy RecordRig in Pristine White.";
-      return "Buy RecordRig - dedicated gameplay streaming PC.";
-    })();
-
-    const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
-    const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
-
     // Update the visible URL whenever the colour changes to that users can favorite/share the page to their
     // configuration of choice.
-    const onSelectColor = color => {
+    const onSelectColor = (color: "black" | "white") => {
       if (color === "black")
-        Router.push(stealthBlackHref, undefined, { shallow: true });
+        Router.push("/shop/buy-recordrig?color=stealth-black", undefined, { shallow: true });
       if (color === "white")
-        Router.push(pristineWhiteHref, undefined, { shallow: true });
+        Router.push("/shop/buy-recordrig?color=pristine-white", undefined, { shallow: true });
+      this.setState({ title: getTitle(color) });
+      this.setState({ description: getDescription(color) });
     };
 
-    const handleAddToBag = color => {
+    const toggleDrawer = () => this.setState({ openDrawer: !openDrawer });
+
+    const handleAddToBag = (color: "black" | "white") => {
       const productId = `RR20-${color}`;
       // Update global state.
       addProduct(productId);
@@ -157,14 +169,7 @@ class BuyRecordRigPage extends Component<
       <StyledBuyRecordRigPage>
         <Head>
           <title>{title}</title>
-          <meta
-            name="description"
-            content="With RecordRig as your dedicated gameplay streaming and recording
-              PC, you'll share your gameplay in 4K 60FPS and HDR colours
-              with ease. Hook it up to your Xbox, PS4 or even your gaming PC and
-              stream directly to YouTube and Twitch, or save up to hundreds of
-              hours of UHD video for local use."
-          />
+          <meta name="description" content={description} />
         </Head>
         <RecordRigConfigurator
           addToBag={handleAddToBag}
