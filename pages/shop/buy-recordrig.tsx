@@ -53,6 +53,13 @@ interface BuyRecordRigPageState {
   readonly openDrawer: boolean;
 }
 
+const handleRouteChange = url => {
+  if (url === "/shop/buy-recordrig") {
+    // eslint-disable-next-line no-restricted-globals
+    location.href = url;
+  }
+};
+
 /**
  * Gives the user various configuration options for RecordRigs, and lets users add their RecordRig
  * of choice to the Shopping Bag.
@@ -88,6 +95,22 @@ class BuyRecordRigPage extends Component<
     };
   }
 
+  componentDidMount() {
+    // Force re-render when navigating to the Shop from one of the colours to keep state in sync with URL.
+    Router.events.on("routeChangeStart", handleRouteChange);
+
+    // Force re-render when the browser's back or forward buttons are used to keep state in sync with URL.
+    Router.beforePopState(({ as }) => {
+      // eslint-disable-next-line no-restricted-globals
+      location.href = as;
+      return true;
+    });
+  }
+
+  componentWillUnmount() {
+    Router.events.off("routeChangeStart", handleRouteChange);
+  }
+
   render() {
     const { addProduct, initialSelectedColor, shoppingBag } = this.props;
 
@@ -109,15 +132,6 @@ class BuyRecordRigPage extends Component<
       if (whiteSelected) return "Buy RecordRig in Pristine White.";
       return "Buy RecordRig - dedicated gameplay streaming PC.";
     })();
-
-    // Force re-render when the browser's back or forward buttons are used to keep state in sync with URL.
-    if (typeof window !== "undefined") {
-      Router.beforePopState(({ as }) => {
-        // eslint-disable-next-line no-restricted-globals
-        location.href = as;
-        return true;
-      });
-    }
 
     const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
     const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
