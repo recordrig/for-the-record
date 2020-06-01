@@ -9,6 +9,7 @@ import {
   createStateSyncMiddleware,
   initStateWithPrevTab
 } from "redux-state-sync";
+import throttle from "lodash.throttle";
 import rootReducer from "../store/_rootReducer";
 import Footer from "../components/Footer";
 import LoaderBar from "../components/LoaderBar";
@@ -105,11 +106,15 @@ const makeClientStore = (initialAppState = initialAppStatePreset) => {
   initStateWithPrevTab(store);
 
   // Subscribe to changes so that we can persist the Shopping Bag to localStorage whenever it updates.
-  store.subscribe(() => {
-    persistShoppingBagState({
-      shoppingBag: store.getState().shoppingBag
-    });
-  });
+  store.subscribe(
+    // JSON.stringify is an expensive operation and the Store might update many times in a row, so we
+    // throttle it to prevent performance issues and needless repetitions.
+    throttle(() => {
+      persistShoppingBagState({
+        shoppingBag: store.getState().shoppingBag
+      });
+    }, 1000)
+  );
 
   return store;
 };
