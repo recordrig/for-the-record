@@ -17,22 +17,9 @@ module.exports = {
     "!./store/_rootReducer.ts",
     "!**/node_modules/**"
   ],
-  coverageThreshold: {
-    global: {
-      lines: 80,
-      statements: 80
-    }
-  },
   coverageDirectory: ".jest/coverage",
-
-  /*
-   * The paths to modules that run some code to configure or set up the testing environment
-   * before each test.
-   */
+  // The paths to modules that run some code to configure or set up the testing environment before each test.
   setupFiles: ["<rootDir>/.jest/setupTests.ts"],
-
-  /*
-   * Print all test descriptions instead of just the name of the test suites.
-   */
+  // Print all test descriptions instead of just the name of the test suites.
   verbose: true
 };
