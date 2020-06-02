@@ -79,18 +79,7 @@ Array [
     >
       ✕
     </button>
-    <div>
-      <p
-        style={
-          Object {
-            "padding": "120px 0",
-            "textAlign": "center",
-          }
-        }
-      >
-        Some drawer content.
-      </p>
-    </div>
+    <div />
   </div>,
 ]
 `;
@@ -174,18 +163,7 @@ Array [
     >
       ✕
     </button>
-    <div>
-      <p
-        style={
-          Object {
-            "padding": "120px 0",
-            "textAlign": "center",
-          }
-        }
-      >
-        Some drawer content.
-      </p>
-    </div>
+    <div />
   </div>,
 ]
 `;
@@ -1165,22 +1143,6 @@ Array [
   max-height: calc(100% - 128px);
 }
 
-.c1 {
-  background-color: #0062ff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
-  margin: 0 16px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: calc(100% - 32px);
-}
-
 @media (max-width:575px) {
   .c0 {
     border-radius: 12px 12px 0 0;
@@ -1220,36 +1182,7 @@ Array [
     >
       ✕
     </button>
-    <div>
-      <p
-        style={
-          Object {
-            "padding": "64px 0 16px",
-            "textAlign": "center",
-          }
-        }
-      >
-        Your Shopping Bag is empty.
-      </p>
-      <a
-        className="c1"
-        href="/shop/buy-recordrig"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Shop RecordRig
-         
-        <span
-          style={
-            Object {
-              "fontSize": "20px",
-            }
-          }
-        >
-           →
-        </span>
-      </a>
-    </div>
+    <div />
   </div>,
 ]
 `;
@@ -1488,85 +1421,6 @@ Array [
   max-height: calc(100% - 128px);
 }
 
-.c1 {
-  max-width: 575px;
-  width: 100%;
-}
-
-.c1 > div {
-  bottom: 28px;
-  position: relative;
-  text-align: center;
-}
-
-.c1 > div > span {
-  background-color: #ffffff;
-  color: #697077;
-  display: inline-block;
-  font-size: 13px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c1 ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.c1 li {
-  border-bottom: 1px solid #dde1e6;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c1 li > div {
-  box-sizing: border-box;
-  padding-left: 24px;
-}
-
-.c1 li p {
-  font-weight: bold;
-  margin: 0;
-}
-
-.c1 li span {
-  color: #697077;
-  font-size: 12px;
-}
-
-.c1 li:first-child {
-  -webkit-animation: none;
-  animation: none;
-  will-change: unset;
-}
-
-.c2 {
-  background-color: #0062ff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
-  margin: 0 16px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: calc(100% - 32px);
-}
-
-.c3 {
-  color: #000000;
-  font-size: 15px;
-  text-align: center;
-}
-
 @media (max-width:575px) {
   .c0 {
     border-radius: 12px 12px 0 0;
@@ -1596,40 +1450,6 @@ Array [
   }
 }
 
-@media (max-width:575px) {
-  .c1 li {
-    height: 92px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .c1 li > div {
-    height: 60px;
-    padding-top: 8px;
-  }
-
-  .c1 li img {
-    height: 60px;
-  }
-}
-
-@media (min-width:576px) {
-  .c1 li {
-    height: 146px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-
-  .c1 li > div {
-    height: 96px;
-    padding-top: 16px;
-  }
-
-  .c1 li img {
-    height: 96px;
-  }
-}
-
 <div
     className="c0"
     open={false}
@@ -1640,98 +1460,7 @@ Array [
     >
       ✕
     </button>
-    <div>
-      <div
-        className="c1"
-      >
-        <ul>
-          <li>
-            <img
-              alt=""
-              src="/recordrig-black.png"
-            />
-            <div>
-              <p>
-                RecordRig -
-                 
-                Stealth Black
-              </p>
-            </div>
-          </li>
-          <li>
-            <img
-              alt=""
-              src="/recordrig.png"
-            />
-            <div>
-              <p>
-                RecordRig -
-                 
-                Pristine White
-              </p>
-            </div>
-          </li>
-          <li>
-            <img
-              alt=""
-              src="/recordrig-black.png"
-            />
-            <div>
-              <p>
-                RecordRig -
-                 
-                Stealth Black
-              </p>
-              <span>
-                3
-                x
-              </span>
-            </div>
-          </li>
-        </ul>
-        <div>
-          <span>
-            3
-             more item
-            s
-             in your Bag
-          </span>
-        </div>
-      </div>
-      <a
-        className="c2"
-        href="/shop/checkout"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Check Out 
-        <span
-          style={
-            Object {
-              "fontSize": "20px",
-            }
-          }
-        >
-           →
-        </span>
-      </a>
-      <p
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
-      >
-        <a
-          className="c3"
-          href="/shop/shopping-bag"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Review Bag
-        </a>
-      </p>
-    </div>
+    <div />
   </div>,
 ]
 `;

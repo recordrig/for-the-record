@@ -147,6 +147,8 @@ const ProductList: FunctionComponent<ProductListProps> = ({
 
   const remainingProductsAmount = products.length > 3 ? products.length - 3 : 0;
 
+  console.log("indicateAddition:", indicateAddition);
+
   return (
     <StyledProductList indicateAddition={indicateAddition}>
       <ul>

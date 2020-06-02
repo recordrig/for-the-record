@@ -98,28 +98,33 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   const handleCloseClick = () => onClose();
   const drawerContentElement = useRef<null | HTMLDivElement>(null);
 
+  // Relevant for rendering to the bottom on small devices. The total height of the Drawer itself will depend on how
+  // much space its contents need.
   const neededHeight =
     drawerContentElement.current !== null
       ? drawerContentElement.current.offsetHeight + 32
       : 0;
 
+  // Disable page scrolling while the drawer is opened.
   if (typeof window !== "undefined") {
     if (open) document.body.style.overflow = "hidden";
     if (!open) document.body.style.overflow = "unset";
   }
 
-  // The darkened BG uses various delays based on the core "open" prop to achieve smooth fade-in and fade-out effects.
-  const [renderBackground, setRenderBackground] = useState(false);
+  // The darkened BG uses various delays based on the core "open" prop to achieve smooth fade-in and fade-out effects,
+  // while the children should also only render once they become active so that each re-open of the Drawer behaves as
+  // a fresh render. This is relevant for e.g. the "green flashing" which indicates product addition.
+  const [mountComponents, setMountComponents] = useState(false);
   const [bgVisible, setBgVisible] = useState(false);
 
   useEffect(() => {
     if (open === true) {
-      setRenderBackground(true); // If opened, immediately mount the component.
+      setMountComponents(true); // If opened, immediately mount the components.
       setTimeout(() => setBgVisible(true), 1); // Wait 1ms so it gets a chance to start at its default state and animate the change.
     }
 
     if (open === false) {
-      setTimeout(() => setRenderBackground(false), 200); // Delay unmount so it has a chance to animate a fade-out.
+      setTimeout(() => setMountComponents(false), 200); // Delay unmount so everything has a chance to animate a fade-out/move outside of the screen.
       setTimeout(() => setBgVisible(false), 1);
     }
   }, [open]);
@@ -130,9 +135,9 @@ const Drawer: FunctionComponent<DrawerProps> = ({
         <button onClick={handleCloseClick} type="button">
           &#x2715;
         </button>
-        <div ref={drawerContentElement}>{children}</div>
+        <div ref={drawerContentElement}>{mountComponents && children}</div>
       </StyledDrawer>
-      {renderBackground && (
+      {mountComponents && (
         <AttentionSeeker onClick={handleCloseClick} visible={bgVisible} />
       )}
     </>
