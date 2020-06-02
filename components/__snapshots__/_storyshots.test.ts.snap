@@ -3364,7 +3364,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         </p>
         <button
           className="c11"
-          disabled={false}
           onClick={[Function]}
         >
           Add to Bag
@@ -3481,589 +3480,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator default 1`] = `
-.c5 {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0.25);
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-}
-
-.c5:hover {
-  -webkit-transform: scale(1.025);
-  -ms-transform: scale(1.025);
-  transform: scale(1.025);
-  z-index: 1;
-}
-
-.c5 >:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c1 h1 {
-  opacity: 1;
-  text-align: center;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.c3 {
-  background-color: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-transition-delay: 0.3s,0.4s;
-  transition-delay: 0.3s,0.4s;
-  -webkit-transition-duration: 0.3s,1s;
-  transition-duration: 0.3s,1s;
-  -webkit-transition-property: background-color,width;
-  transition-property: background-color,width;
-}
-
-.c4 {
-  height: 100%;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
-}
-
-.c4 > div {
-  height: 100%;
-}
-
-.c10 {
-  height: 100%;
-  margin-left: auto;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
-}
-
-.c10 > div {
-  height: 100%;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  box-sizing: border-box;
-  height: inherit;
-  width: 100%;
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
-  transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
-  -webkit-transition-delay: 0.4s,0s;
-  transition-delay: 0.4s,0s;
-  opacity: 1;
-}
-
-.c7 img {
-  display: block;
-  max-height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.c9 {
-  background-color: #0062ff;
-  border-radius: 16px;
-  border-width: 0;
-  color: #ffffff;
-  cursor: pointer;
-  float: right;
-  font-weight: bold;
-  outline: 0;
-  text-transform: uppercase;
-}
-
-.c8 {
-  display: inline-block;
-}
-
-.c0 {
-  margin-top: 64px;
-}
-
-.c0 h2 {
-  display: block;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-@media (min-width:1024px) {
-  .c2 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (max-width:350px) {
-  .c1 {
-    height: 64px;
-  }
-
-  .c1 h1 {
-    font-size: 16px;
-  }
-}
-
-@media (min-width:350px) and (max-width:767px) {
-  .c1 {
-    height: 96px;
-  }
-
-  .c1 h1 {
-    font-size: 18px;
-  }
-}
-
-@media (min-width:768px) and (max-width:1023px) {
-  .c1 {
-    height: 128px;
-  }
-
-  .c1 h1 {
-    font-size: 24px;
-  }
-}
-
-@media (min-width:1024px) and (max-width:1279px) {
-  .c1 {
-    height: 192px;
-  }
-
-  .c1 h1 {
-    font-size: 32px;
-  }
-}
-
-@media (min-width:1280px) {
-  .c1 {
-    height: 128px;
-    max-width: 1216px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 96px;
-    padding-bottom: 64px;
-  }
-
-  .c1 h1 {
-    font-size: 42px;
-  }
-}
-
-@media (max-device-width:767px) and (orientation:portrait) {
-  .c3 {
-    height: calc(100vh - 256px);
-    max-height: 300px;
-    width: 100%;
-  }
-}
-
-@media (max-device-width:767px) and (orientation:landscape) {
-  .c3 {
-    height: 300px;
-    width: 100%;
-  }
-}
-
-@media (min-device-width:768px) {
-  .c3 {
-    height: calc(100vh - 320px);
-    max-height: 512px;
-    width: 100%;
-  }
-}
-
-@media (min-device-width:768px) and (orientation:landscape) {
-  .c3 {
-    min-height: 400px;
-    width: 100%;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    position: relative;
-    top: 0;
-    width: 100%;
-  }
-}
-
-@media (max-width:350px) {
-  .c4 {
-    width: calc(50% - 4px);
-  }
-}
-
-@media (min-width:351px) and (max-width:767px) {
-  .c4 {
-    width: calc(50% - 8px);
-  }
-}
-
-@media (min-width:768px) {
-  .c4 {
-    width: calc(50% - 16px);
-  }
-}
-
-@media (max-width:350px) {
-  .c10 {
-    width: calc(50% - 4px);
-  }
-}
-
-@media (min-width:351px) and (max-width:767px) {
-  .c10 {
-    width: calc(50% - 8px);
-  }
-}
-
-@media (min-width:768px) {
-  .c10 {
-    width: calc(50% - 16px);
-  }
-}
-
-@media (max-width:350px) {
-  .c6 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@media (min-width:350px) and (max-width:767px) {
-  .c6 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media (min-width:768px) {
-  .c6 {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media (max-width:350px) {
-  .c7 {
-    height: calc(100% - 114px);
-  }
-
-  .c7 img {
-    max-width: calc(100% - 8px);
-  }
-}
-
-@media (min-width:350px) and (max-width:767px) {
-  .c7 {
-    height: calc(100% - 148px);
-  }
-
-  .c7 img {
-    max-width: calc(100% - 32px);
-  }
-}
-
-@media (min-width:768px) {
-  .c7 {
-    height: calc(100% - 194px);
-  }
-
-  .c7 img {
-    max-width: calc(100% - 64px);
-  }
-}
-
-@media (max-width:350px) {
-  .c9 {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (min-width:350px) and (max-width:767px) {
-  .c9 {
-    font-size: 11px;
-    height: 24px;
-    margin-top: 28px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (min-width:768px) {
-  .c9 {
-    font-size: 13px;
-    height: 32px;
-    margin-top: 28px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media (max-width:350px) {
-  .c8 {
-    font-size: 11px;
-    margin-top: 26px;
-  }
-}
-
-@media (min-width:350px) and (max-width:767px) {
-  .c8 {
-    font-size: 13px;
-    margin-top: 38px;
-  }
-}
-
-@media (min-width:768px) {
-  .c8 {
-    font-size: 15px;
-    margin-top: 44px;
-  }
-}
-
-@media (max-width:350px) {
-  .c0 {
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-
-  .c0 h2 {
-    font-size: 13px;
-    line-height: 16px;
-    padding-top: 0px;
-    padding-bottom: 8px;
-  }
-}
-
-@media (min-width:350px) and (max-width:767px) {
-  .c0 {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-
-  .c0 h2 {
-    font-size: 14px;
-    line-height: 18px;
-    padding-top: 0px;
-    padding-bottom: 17px;
-  }
-}
-
-@media (min-width:768px) {
-  .c0 {
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-transition: width 0.3s;
-    transition: width 0.3s;
-    -webkit-transition-delay: 0.7s;
-    transition-delay: 0.7s;
-    width: 700px;
-  }
-
-  .c0 h2 {
-    font-size: 18px;
-    line-height: 24px;
-    padding-top: 7px;
-    padding-bottom: 9px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c0 {
-    width: 700px;
-  }
-}
-
-@media (min-width:1248px) {
-  .c0 {
-    width: 700px;
-  }
-}
-
-@media (min-device-width:351px) and (max-device-width:767px) and (orientation:landscape) {
-  .c0 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 350px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <h1>
-      Choose your RecordRig.
-    </h1>
-  </div>
-  <div
-    className="c2"
-  >
-    <div
-      className="c3"
-    >
-      <div
-        className="c4"
-      >
-        <div
-          className="c5"
-          onClick={[Function]}
-        >
-          <div
-            className="c6"
-          >
-            <h2>
-              RecordRig - 
-              <br />
-              <i>
-                Stealth Black
-              </i>
-            </h2>
-            <div
-              className="c7"
-            >
-              <img
-                alt=""
-                src="/recordrig-black.png"
-              />
-            </div>
-            <div>
-              <span
-                className="c8"
-              >
-                € 2399
-              </span>
-              <button
-                className="c9"
-                type="button"
-              >
-                Select
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="c10"
-      >
-        <div
-          className="c5"
-          onClick={[Function]}
-        >
-          <div
-            className="c6"
-          >
-            <h2>
-              RecordRig - 
-              <br />
-              <i>
-                Pristine White
-              </i>
-            </h2>
-            <div
-              className="c7"
-            >
-              <img
-                alt=""
-                src="/recordrig.png"
-              />
-            </div>
-            <div>
-              <span
-                className="c8"
-              >
-                € 2399
-              </span>
-              <button
-                className="c9"
-                type="button"
-              >
-                Select
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots RecordRigConfigurator on select 1`] = `
 .c5 {
   background-color: #fff;
   border-radius: 12px;
@@ -5584,7 +5000,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         </p>
         <button
           className="c11"
-          disabled={false}
           onClick={[Function]}
         >
           Add to Bag
@@ -5695,6 +5110,589 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
       <p>
         2. Opening the case within the first year of buying will void your warranty. Upgradeability is mainly intended to be used after the 1-year mark, to lessen the need to buy an entirely new system when some components start getting noticeably older in terms of performance compared to newer components.
       </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
+.c5 {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0.25);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+}
+
+.c5:hover {
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
+  z-index: 1;
+}
+
+.c5 >:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 h1 {
+  opacity: 1;
+  text-align: center;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.c3 {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition-delay: 0.3s,0.4s;
+  transition-delay: 0.3s,0.4s;
+  -webkit-transition-duration: 0.3s,1s;
+  transition-duration: 0.3s,1s;
+  -webkit-transition-property: background-color,width;
+  transition-property: background-color,width;
+}
+
+.c4 {
+  height: 100%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.c4 > div {
+  height: 100%;
+}
+
+.c10 {
+  height: 100%;
+  margin-left: auto;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.c10 > div {
+  height: 100%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: inherit;
+  width: 100%;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  transition: height 0.4s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition-delay: 0.4s,0s;
+  transition-delay: 0.4s,0s;
+  opacity: 1;
+}
+
+.c7 img {
+  display: block;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c9 {
+  background-color: #0062ff;
+  border-radius: 16px;
+  border-width: 0;
+  color: #ffffff;
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  outline: 0;
+  text-transform: uppercase;
+}
+
+.c8 {
+  display: inline-block;
+}
+
+.c0 {
+  margin-top: 64px;
+}
+
+.c0 h2 {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@media (min-width:1024px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width:350px) {
+  .c1 {
+    height: 64px;
+  }
+
+  .c1 h1 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c1 {
+    height: 96px;
+  }
+
+  .c1 h1 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+  .c1 {
+    height: 128px;
+  }
+
+  .c1 h1 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width:1024px) and (max-width:1279px) {
+  .c1 {
+    height: 192px;
+  }
+
+  .c1 h1 {
+    font-size: 32px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    height: 128px;
+    max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 96px;
+    padding-bottom: 64px;
+  }
+
+  .c1 h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-device-width:767px) and (orientation:portrait) {
+  .c3 {
+    height: calc(100vh - 256px);
+    max-height: 300px;
+    width: 100%;
+  }
+}
+
+@media (max-device-width:767px) and (orientation:landscape) {
+  .c3 {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media (min-device-width:768px) {
+  .c3 {
+    height: calc(100vh - 320px);
+    max-height: 512px;
+    width: 100%;
+  }
+}
+
+@media (min-device-width:768px) and (orientation:landscape) {
+  .c3 {
+    min-height: 400px;
+    width: 100%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width:350px) {
+  .c4 {
+    width: calc(50% - 4px);
+  }
+}
+
+@media (min-width:351px) and (max-width:767px) {
+  .c4 {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width:350px) {
+  .c10 {
+    width: calc(50% - 4px);
+  }
+}
+
+@media (min-width:351px) and (max-width:767px) {
+  .c10 {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (min-width:768px) {
+  .c10 {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width:350px) {
+  .c6 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c6 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:350px) {
+  .c7 {
+    height: calc(100% - 114px);
+  }
+
+  .c7 img {
+    max-width: calc(100% - 8px);
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c7 {
+    height: calc(100% - 148px);
+  }
+
+  .c7 img {
+    max-width: calc(100% - 32px);
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    height: calc(100% - 194px);
+  }
+
+  .c7 img {
+    max-width: calc(100% - 64px);
+  }
+}
+
+@media (max-width:350px) {
+  .c9 {
+    font-size: 11px;
+    height: 24px;
+    margin-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c9 {
+    font-size: 11px;
+    height: 24px;
+    margin-top: 28px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c9 {
+    font-size: 13px;
+    height: 32px;
+    margin-top: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width:350px) {
+  .c8 {
+    font-size: 11px;
+    margin-top: 26px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c8 {
+    font-size: 13px;
+    margin-top: 38px;
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    font-size: 15px;
+    margin-top: 44px;
+  }
+}
+
+@media (max-width:350px) {
+  .c0 {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .c0 h2 {
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 0px;
+    padding-bottom: 8px;
+  }
+}
+
+@media (min-width:350px) and (max-width:767px) {
+  .c0 {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .c0 h2 {
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 0px;
+    padding-bottom: 17px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+    -webkit-transition-delay: 0.7s;
+    transition-delay: 0.7s;
+    width: 700px;
+  }
+
+  .c0 h2 {
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 7px;
+    padding-bottom: 9px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    width: 700px;
+  }
+}
+
+@media (min-width:1248px) {
+  .c0 {
+    width: 700px;
+  }
+}
+
+@media (min-device-width:351px) and (max-device-width:767px) and (orientation:landscape) {
+  .c0 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <h1>
+      Choose your RecordRig.
+    </h1>
+  </div>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+          onClick={[Function]}
+        >
+          <div
+            className="c6"
+          >
+            <h2>
+              RecordRig - 
+              <br />
+              <i>
+                Stealth Black
+              </i>
+            </h2>
+            <div
+              className="c7"
+            >
+              <img
+                alt=""
+                src="/recordrig-black.png"
+              />
+            </div>
+            <div>
+              <span
+                className="c8"
+              >
+                € 2399
+              </span>
+              <button
+                className="c9"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c10"
+      >
+        <div
+          className="c5"
+          onClick={[Function]}
+        >
+          <div
+            className="c6"
+          >
+            <h2>
+              RecordRig - 
+              <br />
+              <i>
+                Pristine White
+              </i>
+            </h2>
+            <div
+              className="c7"
+            >
+              <img
+                alt=""
+                src="/recordrig.png"
+              />
+            </div>
+            <div>
+              <span
+                className="c8"
+              >
+                € 2399
+              </span>
+              <button
+                className="c9"
+                type="button"
+              >
+                Select
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -52,7 +52,9 @@ interface BuyRecordRigPageState {
   /** The page meta description. Depends on the selected color. */
   readonly description: string;
   /** A Drawer which contains the Shopping Bag state, with links to the checkout and Bag overview. */
-  readonly openDrawer: boolean;
+  readonly openAddToBagDrawer: boolean;
+  /** If the disabled Add To Bag button is pressed, we can help the user showing some info and outline potential actions. */
+  readonly openAlreadyAddedDrawer: boolean;
   /** The page title. Depends on the selected color. */
   readonly title: string;
 }
@@ -113,7 +115,8 @@ class BuyRecordRigPage extends Component<
     super(props);
     this.state = {
       description: getDescription(props.initialSelectedColor),
-      openDrawer: false,
+      openAddToBagDrawer: false,
+      openAlreadyAddedDrawer: false,
       title: getTitle(props.initialSelectedColor)
     };
   }
@@ -136,7 +139,12 @@ class BuyRecordRigPage extends Component<
 
   render() {
     const { addProduct, initialSelectedColor, shoppingBag } = this.props;
-    const { description, openDrawer, title } = this.state;
+    const {
+      description,
+      openAddToBagDrawer,
+      openAlreadyAddedDrawer,
+      title
+    } = this.state;
 
     const initialConfiguration = (() => {
       if (initialSelectedColor === "black") return "black";
@@ -148,22 +156,30 @@ class BuyRecordRigPage extends Component<
     // configuration of choice.
     const onSelectColor = (color: "black" | "white") => {
       if (color === "black")
-        Router.push("/shop/buy-recordrig?color=stealth-black", undefined, { shallow: true });
+        Router.push("/shop/buy-recordrig?color=stealth-black", undefined, {
+          shallow: true
+        });
       if (color === "white")
-        Router.push("/shop/buy-recordrig?color=pristine-white", undefined, { shallow: true });
+        Router.push("/shop/buy-recordrig?color=pristine-white", undefined, {
+          shallow: true
+        });
       this.setState({ title: getTitle(color) });
       this.setState({ description: getDescription(color) });
     };
 
-    const toggleDrawer = () => this.setState({ openDrawer: !openDrawer });
+    const toggleAddToBagDrawer = () =>
+      this.setState({ openAddToBagDrawer: !openAddToBagDrawer });
 
     const handleAddToBag = (color: "black" | "white") => {
       const productId = `RR20-${color}`;
       // Update global state.
       addProduct(productId);
       // Open the drawer with links to the Checkout and Shopping Bag overview.
-      toggleDrawer();
+      toggleAddToBagDrawer();
     };
+
+    const toggleAlreadyAddedDrawer = () =>
+      this.setState({ openAlreadyAddedDrawer: !openAlreadyAddedDrawer });
 
     return (
       <StyledBuyRecordRigPage>
@@ -175,16 +191,43 @@ class BuyRecordRigPage extends Component<
           addToBag={handleAddToBag}
           configuration={initialConfiguration}
           onSelectColor={onSelectColor}
+          onAddToBagButtonDisabledClick={toggleAlreadyAddedDrawer}
         />
-        <Drawer onClose={toggleDrawer} open={openDrawer}>
+        <Drawer onClose={toggleAddToBagDrawer} open={openAddToBagDrawer}>
           <ProductList indicateAddition products={shoppingBag} />
           <Link href="/shop/shopping-bag" passHref>
-            <StyledReviewBagLink onClick={() => toggleDrawer()}>
+            <StyledReviewBagLink onClick={() => toggleAddToBagDrawer()}>
               I&apos;m ready to order
             </StyledReviewBagLink>
           </Link>
           <p style={{ textAlign: "center" }}>
-            <StyledContinueShoppingButton onClick={() => toggleDrawer()}>
+            <StyledContinueShoppingButton
+              onClick={() => toggleAddToBagDrawer()}
+            >
+              Continue shopping
+            </StyledContinueShoppingButton>
+          </p>
+        </Drawer>
+        <Drawer
+          onClose={toggleAlreadyAddedDrawer}
+          open={openAlreadyAddedDrawer}
+        >
+          <p
+            style={{ backgroundColor: "f1c21b", margin: "20px 48px 20px 20px" }}
+          >
+            &#9432;&nbsp; This item is already in your Shopping Bag. If
+            you&apos;d like to order multiple, you can do so by
+            reviewing/modifying your Shopping Bag contents.
+          </p>
+          <Link href="/shop/shopping-bag" passHref>
+            <StyledReviewBagLink onClick={() => toggleAlreadyAddedDrawer()}>
+              Review Shopping Bag
+            </StyledReviewBagLink>
+          </Link>
+          <p style={{ textAlign: "center" }}>
+            <StyledContinueShoppingButton
+              onClick={() => toggleAlreadyAddedDrawer()}
+            >
               Continue shopping
             </StyledContinueShoppingButton>
           </p>

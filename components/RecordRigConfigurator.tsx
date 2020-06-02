@@ -794,6 +794,8 @@ interface RecordRigConfiguratorProps {
   readonly addToBag: Function;
   /** Optional configuration starting point. */
   readonly configuration?: "black" | "white";
+  /** After pressing once, the Add To Bag button shows as though it's disabled. Optionally add a handler incase the user clicks anyway. */
+  readonly onAddToBagButtonDisabledClick?: Function;
   /** Optional callback function to be called when the colour changes. */
   readonly onSelectColor?: Function;
 }
@@ -805,7 +807,8 @@ interface RecordRigConfiguratorProps {
 const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   addToBag,
   configuration = undefined,
-  onSelectColor = undefined
+  onSelectColor = undefined,
+  onAddToBagButtonDisabledClick = undefined
 }) => {
   const [selectedColor, setSelectedColor] = useState(configuration);
   const blackChosen = selectedColor === "black";
@@ -833,11 +836,19 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   };
 
   // Visually update the button to indicate to the user that it has indeed been pressed.
-  const [addToBagButtonClicked, setAddToBagButtonClicked] = useState(false);
+  const [addToBagButtonDisabled, setAddToBagButtonDisabled] = useState(false);
 
   const handleAddToBagClick = () => {
-    setAddToBagButtonClicked(true);
-    addToBag(selectedColor);
+    // So long as the button isn't disabled (due to having been clicked previously), perform Add To Bag.
+    if (!addToBagButtonDisabled) {
+      setAddToBagButtonDisabled(true);
+      addToBag(selectedColor);
+    }
+
+    // If the button has already been clicked, and we have a handler defined for this scenario, execute this handler.
+    if (addToBagButtonDisabled && onAddToBagButtonDisabledClick) {
+      onAddToBagButtonDisabledClick(selectedColor);
+    }
   };
 
   const [heading, setHeading] = useState(getHeading(configuration || null));
@@ -849,7 +860,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const [deviceContentVisible, setDeviceContentVisible] = useState(step2);
 
   const handleColorChangeClick = (color: "black" | "white") => {
-    setAddToBagButtonClicked(false); // Back to default visual state.
+    setAddToBagButtonDisabled(false); // Back to default visual state.
     setSelectedColor(color);
     setHeadingVisible(false);
     setTimeout(() => setDeviceContentVisible(true), 300);
@@ -999,11 +1010,10 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                 Expected delivery: within <span>14 days</span>
               </p>
               <StyledAddToBagButton
-                clicked={addToBagButtonClicked}
-                disabled={addToBagButtonClicked}
+                clicked={addToBagButtonDisabled}
                 onClick={() => handleAddToBagClick()}
               >
-                {addToBagButtonClicked ? `✔ Added to Bag` : "Add to Bag"}
+                {addToBagButtonDisabled ? `✔ Added to Bag` : "Add to Bag"}
               </StyledAddToBagButton>
             </StyledAddToBag>
             <h3>Technical specifications</h3>

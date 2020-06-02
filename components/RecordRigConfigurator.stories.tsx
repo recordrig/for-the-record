@@ -4,6 +4,8 @@ import RecordRigConfigurator from "./RecordRigConfigurator";
 
 const addToBag = color => alert(`addToBag called with ${color}`);
 const onSelectColor = color => alert(`onSelectColor called with ${color}`);
+const onAddToBagButtonDisabledClick = color =>
+  alert(`onAddToBagButtonDisabledClick called with ${color}`);
 
 storiesOf("RecordRigConfigurator", module)
   .add("default", () => <RecordRigConfigurator addToBag={addToBag} />)
@@ -13,6 +15,10 @@ storiesOf("RecordRigConfigurator", module)
   .add("white", () => (
     <RecordRigConfigurator addToBag={addToBag} configuration="white" />
   ))
-  .add("on select", () => (
-    <RecordRigConfigurator addToBag={addToBag} onSelectColor={onSelectColor} />
+  .add("with handlers", () => (
+    <RecordRigConfigurator
+      addToBag={addToBag}
+      onAddToBagButtonDisabledClick={onAddToBagButtonDisabledClick}
+      onSelectColor={onSelectColor}
+    />
   ));
