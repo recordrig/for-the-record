@@ -87,40 +87,58 @@ export const updateProductQuantityAction = (
 // Reducer helper functions.
 // -----------------------------------------------------------/
 
-// Add product to Shopping Bag by ID. A new product will put it first in the list.
-// In the case of quantity modifications, the original order is left intact.
+// Add product to Shopping Bag by ID. The product will be added at the top of the list.
 const addProduct = (
   shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
 ): readonly ShoppingBagProduct[] => {
-  // If the shopping bag is empty or if the shopping bag does NOT contain this item yet,
-  // add it to the start of the collection.
-  if (
-    shoppingBag.length === 0 ||
-    !shoppingBag.find(product => product.id === productId)
-  ) {
+  // Find the product in the current Shopping Bag (if it exists).
+  const previousProductEntry = shoppingBag.find(
+    product => product.id === productId
+  );
+
+  // Check if the product was already in the Bag and if so, re-insert with the
+  // updated quantity.
+  if (previousProductEntry !== undefined) {
+    // First remove the product from the array so that we can insert it in the
+    // appropriate place (at the start).
+    const filteredShoppingBag = shoppingBag.filter(
+      product => product.id !== productId
+    );
+
+    // Return a filtered Shopping Bag which no longer contains the original Product
+    // at its previous entry position. Instead, update the product quantity and insert
+    // it at the top.
     return [
       {
         id: productId,
-        quantity: 1
+        quantity: previousProductEntry.quantity + 1
       },
-      ...shoppingBag
+      ...filteredShoppingBag
     ];
   }
 
-  return shoppingBag.map(product =>
-    product.id === productId
-      ? { ...product, quantity: product.quantity + 1 }
-      : product
-  );
+  // So long as the product wasn't in the Shopping Bag yet we can just return the
+  // original Shopping Bag, with the newly added product at the top.
+  return [
+    {
+      id: productId,
+      quantity: 1
+    },
+    ...shoppingBag
+  ];
 };
 
+// Simply returns a new array without the product. Doesn't care if the product was
+// there to begin with.
 const removeProduct = (
   shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
 ): readonly ShoppingBagProduct[] =>
   shoppingBag.filter(product => product.id !== productId);
 
+// Will update the appropriate product entry in the array. Leaves the original
+// order intact.
 const updateProductQuantity = (
   shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"],
