@@ -6,6 +6,7 @@ import Router from "next/router";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
+import CheckmarkIcon from "../../components/CheckmarkIcon";
 import Drawer from "../../components/Drawer";
 import ProductList from "../../components/ProductList";
 import RecordRigConfigurator from "../../components/RecordRigConfigurator";
@@ -194,6 +195,35 @@ class BuyRecordRigPage extends Component<
           onAddToBagButtonDisabledClick={toggleAlreadyAddedDrawer}
         />
         <Drawer onClose={toggleAddToBagDrawer} open={openAddToBagDrawer}>
+          <p
+            style={{
+              fontSize: "13px",
+              fontWeight: "bold",
+              lineHeight: "32px",
+              paddingLeft: "16px",
+              position: "relative",
+              marginBottom: "0",
+              marginRight: "64px",
+              marginTop: "0",
+              textTransform: "uppercase",
+              top: "10px"
+            }}
+          >
+            <span
+              style={{
+                bottom: "2px",
+                display: "inline-block",
+                height: "24px",
+                marginRight: "8px",
+                position: "relative",
+                verticalAlign: "middle",
+                width: "24px"
+              }}
+            >
+              <CheckmarkIcon color="#24a148" type="filled" />
+            </span>
+            Almost yours
+          </p>
           <ProductList indicateAddition products={shoppingBag} />
           <Link href="/shop/shopping-bag" passHref>
             <StyledReviewBagLink onClick={() => toggleAddToBagDrawer()}>

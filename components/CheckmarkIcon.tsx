@@ -5,10 +5,16 @@ interface StyledCheckmarkIconProps {
   readonly color: string;
 }
 
-const StyledCheckmarkIcon = styled.div<StyledCheckmarkIconProps>`
+const StyledCheckmarkIcon = styled.span<StyledCheckmarkIconProps>`
   ${({ color }) => css`
+    height: inherit;
+    display: inline-block;
+    width: inherit;
+
     svg {
       fill: ${color};
+      height: inherit;
+      width: inherit;
     }
   `}
 `;
