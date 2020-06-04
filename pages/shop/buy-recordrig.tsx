@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
 import ArrowRightIcon from "../../components/ArrowRightIcon";
 import CheckmarkIcon from "../../components/CheckmarkIcon";
+import InfoIcon from "../../components/InfoIcon";
 import Drawer from "../../components/Drawer";
 import ProductList from "../../components/ProductList";
 import RecordRigConfigurator from "../../components/RecordRigConfigurator";
@@ -267,15 +268,41 @@ class BuyRecordRigPage extends Component<
           open={openAlreadyAddedDrawer}
         >
           <p
-            style={{ backgroundColor: "f1c21b", margin: "20px 48px 20px 20px" }}
+            style={{
+              display: "flex",
+              fontSize: "15px",
+              margin: "16px 48px 16px 16px"
+            }}
           >
-            <strong>
-              &#9432;&nbsp; This item is already in your Shopping Bag.
-            </strong>{" "}
-            If you&apos;d like to order multiple, you can do so by
-            reviewing/modifying your Shopping Bag contents.
+            <span
+              style={{
+                height: "24px",
+                marginBottom: "8px",
+                width: "24px"
+              }}
+            >
+              <InfoIcon color="#f1c21b" type="filled" />
+            </span>
+            <span style={{ marginLeft: "8px" }}>
+              This item is already in your Shopping Bag. If you&apos;d like to
+              order more, you can{" "}
+              <Link href="/shop/shopping-bag">
+                <a style={{ color: "#0062ff" }}>
+                  review/modify your Shopping Bag.
+                </a>
+              </Link>
+            </span>
           </p>
-          <div style={{ display: "flex", padding: "24px" }}>
+          <div
+            style={{
+              borderBottom: "1px solid #dde1e6",
+              borderTop: "1px solid #dde1e6",
+              display: "flex",
+              padding: "24px",
+              marginTop: "16px",
+              marginBottom: "16px"
+            }}
+          >
             <img
               alt=""
               src={

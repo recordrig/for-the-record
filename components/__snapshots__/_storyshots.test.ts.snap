@@ -1065,6 +1065,127 @@ exports[`Storyshots Form default 1`] = `
 </div>
 `;
 
+exports[`Storyshots InfoIcon color 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #ff0000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#ff0000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+    />
+    <path
+      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+      data-icon-path="inner-path"
+      fill="none"
+    />
+    <title>
+      Information filled
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots InfoIcon default 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+    />
+    <path
+      d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+      data-icon-path="inner-path"
+      fill="none"
+    />
+    <title>
+      Information filled
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots InfoIcon type outline 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+    />
+    <path
+      d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+    />
+    <title>
+      Information
+    </title>
+  </svg>
+</span>
+`;
+
 exports[`Storyshots MainMenu default 1`] = `
 .c1 {
   color: #000;
@@ -1874,6 +1995,10 @@ exports[`Storyshots ProductList 1 more item 1`] = `
 }
 
 .c0 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c0 li:first-child {
   -webkit-animation: none;
   animation: none;
   will-change: unset;
@@ -2021,6 +2146,10 @@ exports[`Storyshots ProductList 3 more items 1`] = `
 .c0 li span {
   color: #697077;
   font-size: 12px;
+}
+
+.c0 li:first-child {
+  border-top: 1px solid #dde1e6;
 }
 
 .c0 li:first-child {
@@ -2175,6 +2304,10 @@ exports[`Storyshots ProductList default 1`] = `
 }
 
 .c0 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c0 li:first-child {
   -webkit-animation: none;
   animation: none;
   will-change: unset;
@@ -2302,6 +2435,10 @@ exports[`Storyshots ProductList indicate addition 1`] = `
 .c0 li span {
   color: #697077;
   font-size: 12px;
+}
+
+.c0 li:first-child {
+  border-top: 1px solid #dde1e6;
 }
 
 .c0 li:first-child {

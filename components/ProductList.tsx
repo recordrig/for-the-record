@@ -50,6 +50,10 @@ const StyledProductList = styled.div<StyledProductListProps>`
       color: #697077;
       font-size: 12px;
     }
+
+    &:first-child {
+      border-top: 1px solid #dde1e6;
+    }
   }
 
   ${({ indicateAddition }) => css`
