@@ -1942,7 +1942,7 @@ Array [
 ]
 `;
 
-exports[`Storyshots ProductList 1 more item 1`] = `
+exports[`Storyshots ProductList additional products 1`] = `
 .c0 {
   max-width: 575px;
   width: 100%;
@@ -2070,173 +2070,6 @@ exports[`Storyshots ProductList 1 more item 1`] = `
            
           Pristine White
         </p>
-      </div>
-    </li>
-    <li>
-      <img
-        alt=""
-        src="/recordrig-black.png"
-      />
-      <div>
-        <p>
-          RecordRig -
-           
-          Stealth Black
-        </p>
-      </div>
-    </li>
-  </ul>
-  <div>
-    <span>
-      1
-       more item
-       in your Bag
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Storyshots ProductList 3 more items 1`] = `
-.c0 {
-  max-width: 575px;
-  width: 100%;
-}
-
-.c0 > div {
-  bottom: 28px;
-  position: relative;
-  text-align: center;
-}
-
-.c0 > div > span {
-  background-color: #ffffff;
-  color: #697077;
-  display: inline-block;
-  font-size: 13px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c0 ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.c0 li {
-  border-bottom: 1px solid #dde1e6;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.c0 li > div {
-  box-sizing: border-box;
-  padding-left: 24px;
-}
-
-.c0 li p {
-  font-weight: bold;
-  margin: 0;
-}
-
-.c0 li span {
-  color: #697077;
-  font-size: 12px;
-}
-
-.c0 li:first-child {
-  border-top: 1px solid #dde1e6;
-}
-
-.c0 li:first-child {
-  -webkit-animation: none;
-  animation: none;
-  will-change: unset;
-}
-
-@media (max-width:575px) {
-  .c0 li {
-    height: 92px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .c0 li > div {
-    height: 60px;
-    padding-top: 8px;
-  }
-
-  .c0 li img {
-    height: 60px;
-  }
-}
-
-@media (min-width:576px) {
-  .c0 li {
-    height: 146px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-
-  .c0 li > div {
-    height: 96px;
-    padding-top: 16px;
-  }
-
-  .c0 li img {
-    height: 96px;
-  }
-}
-
-<div
-  className="c0"
->
-  <ul>
-    <li>
-      <img
-        alt=""
-        src="/recordrig-black.png"
-      />
-      <div>
-        <p>
-          RecordRig -
-           
-          Stealth Black
-        </p>
-      </div>
-    </li>
-    <li>
-      <img
-        alt=""
-        src="/recordrig.png"
-      />
-      <div>
-        <p>
-          RecordRig -
-           
-          Pristine White
-        </p>
-      </div>
-    </li>
-    <li>
-      <img
-        alt=""
-        src="/recordrig-black.png"
-      />
-      <div>
-        <p>
-          RecordRig -
-           
-          Stealth Black
-        </p>
-        <span>
-          3
-          x
-        </span>
       </div>
     </li>
   </ul>
@@ -2516,6 +2349,725 @@ exports[`Storyshots ProductList indicate addition 1`] = `
       </div>
     </li>
   </ul>
+</div>
+`;
+
+exports[`Storyshots ProductList lots of products 1`] = `
+.c0 {
+  max-width: 575px;
+  width: 100%;
+}
+
+.c0 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c0 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c0 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.c0 li {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c0 li > div {
+  box-sizing: border-box;
+  padding-left: 24px;
+}
+
+.c0 li p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c0 li span {
+  color: #697077;
+  font-size: 12px;
+}
+
+.c0 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c0 li:first-child {
+  -webkit-animation: none;
+  animation: none;
+  will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <ul>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+      </div>
+    </li>
+  </ul>
+  <div>
+    <span>
+      28
+       more item
+      s
+       in your Bag
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ProductList show 1 1`] = `
+.c0 {
+  max-width: 575px;
+  width: 100%;
+}
+
+.c0 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c0 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c0 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.c0 li {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c0 li > div {
+  box-sizing: border-box;
+  padding-left: 24px;
+}
+
+.c0 li p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c0 li span {
+  color: #697077;
+  font-size: 12px;
+}
+
+.c0 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c0 li:first-child {
+  -webkit-animation: none;
+  animation: none;
+  will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <ul>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+  </ul>
+  <div>
+    <span>
+      29
+       more item
+      s
+       in your Bag
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ProductList show 100 1`] = `
+.c0 {
+  max-width: 575px;
+  width: 100%;
+}
+
+.c0 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c0 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c0 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.c0 li {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c0 li > div {
+  box-sizing: border-box;
+  padding-left: 24px;
+}
+
+.c0 li p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c0 li span {
+  color: #697077;
+  font-size: 12px;
+}
+
+.c0 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c0 li:first-child {
+  -webkit-animation: none;
+  animation: none;
+  will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <ul>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+        <span>
+          3
+          x
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+        <span>
+          10
+          x
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+        <span>
+          2
+          x
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+        <span>
+          3
+          x
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+        <span>
+          4
+          x
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+        <span>
+          2
+          x
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots ProductList show custom amount 1`] = `
+.c0 {
+  max-width: 575px;
+  width: 100%;
+}
+
+.c0 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c0 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c0 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.c0 li {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c0 li > div {
+  box-sizing: border-box;
+  padding-left: 24px;
+}
+
+.c0 li p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c0 li span {
+  color: #697077;
+  font-size: 12px;
+}
+
+.c0 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c0 li:first-child {
+  -webkit-animation: none;
+  animation: none;
+  will-change: unset;
+}
+
+@media (max-width:575px) {
+  .c0 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c0 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c0 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c0 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c0 li img {
+    height: 96px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <ul>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig-black.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Stealth Black
+        </p>
+        <span>
+          3
+          x
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        alt=""
+        src="/recordrig.png"
+      />
+      <div>
+        <p>
+          RecordRig -
+           
+          Pristine White
+        </p>
+        <span>
+          10
+          x
+        </span>
+      </div>
+    </li>
+  </ul>
+  <div>
+    <span>
+      15
+       more item
+      s
+       in your Bag
+    </span>
+  </div>
 </div>
 `;
 

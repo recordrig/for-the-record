@@ -131,7 +131,10 @@ interface ProductListProps {
    * The most recently added product should be listed at the top.
    */
   readonly products: readonly Product[];
+  /** Brief green flash on the top product. */
   readonly indicateAddition?: boolean;
+  /** The amount to show before cutoff. Defaults to two. */
+  readonly showAmount?: number;
 }
 
 /**
@@ -144,12 +147,19 @@ interface ProductListProps {
  */
 const ProductList: FunctionComponent<ProductListProps> = ({
   products,
-  indicateAddition = false
+  indicateAddition = false,
+  showAmount = 2
 }) => {
-  const productsToRender =
-    products.length > 3 ? [products[0], products[1], products[2]] : products;
+  const productsToRender = products.slice(0, showAmount);
+  const remainingProducts = products.slice(showAmount, products.length);
 
-  const remainingProductsAmount = products.length > 3 ? products.length - 3 : 0;
+  // Sum the quantities of all remaining (non-rendered) products.
+  const remainingProductsAmount = remainingProducts.reduce(
+    (accumulatingTotal, currentProduct) => {
+      return accumulatingTotal + currentProduct.quantity;
+    },
+    0
+  );
 
   return (
     <StyledProductList indicateAddition={indicateAddition}>

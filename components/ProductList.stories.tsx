@@ -2,6 +2,57 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import ProductList from "./ProductList";
 
+const longList = [
+  {
+    id: "RR20-stealth-black",
+    quantity: 1
+  },
+  {
+    id: "RR20-pristine-white",
+    quantity: 1
+  },
+  {
+    id: "RR21-stealth-black",
+    quantity: 3
+  },
+  {
+    id: "RR21-pristine-white",
+    quantity: 10
+  },
+  {
+    id: "RR22-stealth-black",
+    quantity: 1
+  },
+  {
+    id: "RR22-pristine-white",
+    quantity: 2
+  },
+  {
+    id: "RR20-stealth-black",
+    quantity: 1
+  },
+  {
+    id: "RR20-pristine-white",
+    quantity: 1
+  },
+  {
+    id: "RR21-stealth-black",
+    quantity: 3
+  },
+  {
+    id: "RR21-pristine-white",
+    quantity: 4
+  },
+  {
+    id: "RR22-stealth-black",
+    quantity: 1
+  },
+  {
+    id: "RR22-pristine-white",
+    quantity: 2
+  }
+];
+
 storiesOf("ProductList", module)
   .add("default", () => (
     <>
@@ -36,7 +87,7 @@ storiesOf("ProductList", module)
       />
     </>
   ))
-  .add("1 more item", () => (
+  .add("additional products", () => (
     <>
       <ProductList
         products={[
@@ -50,7 +101,7 @@ storiesOf("ProductList", module)
           },
           {
             id: "RR21-stealth-black",
-            quantity: 1
+            quantity: 2
           },
           {
             id: "RR21-pristine-white",
@@ -60,35 +111,23 @@ storiesOf("ProductList", module)
       />
     </>
   ))
-  .add("3 more items", () => (
+  .add("lots of products", () => (
     <>
-      <ProductList
-        products={[
-          {
-            id: "RR20-stealth-black",
-            quantity: 1
-          },
-          {
-            id: "RR20-pristine-white",
-            quantity: 1
-          },
-          {
-            id: "RR21-stealth-black",
-            quantity: 3
-          },
-          {
-            id: "RR21-pristine-white",
-            quantity: 1
-          },
-          {
-            id: "RR22-stealth-black",
-            quantity: 1
-          },
-          {
-            id: "RR22-pristine-white",
-            quantity: 2
-          }
-        ]}
-      />
+      <ProductList products={longList} />
+    </>
+  ))
+  .add("show custom amount", () => (
+    <>
+      <ProductList products={longList} showAmount={4} />
+    </>
+  ))
+  .add("show 1", () => (
+    <>
+      <ProductList products={longList} showAmount={1} />
+    </>
+  ))
+  .add("show 100", () => (
+    <>
+      <ProductList products={longList} showAmount={100} />
     </>
   ));
