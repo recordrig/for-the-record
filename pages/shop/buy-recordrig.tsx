@@ -53,6 +53,8 @@ interface BuyRecordRigPageProps {
 }
 
 interface BuyRecordRigPageState {
+  /** Informative Drawer opens when "Added to Bag" button is clicked again, showing this Product. */
+  readonly alreadyAdded: "black" | "white" | null;
   /** The page meta description. Depends on the selected color. */
   readonly description: string;
   /** A Drawer which contains the Shopping Bag state, with links to the checkout and Bag overview. */
@@ -118,6 +120,7 @@ class BuyRecordRigPage extends Component<
   constructor(props) {
     super(props);
     this.state = {
+      alreadyAdded: null,
       description: getDescription(props.initialSelectedColor),
       openAddToBagDrawer: false,
       openAlreadyAddedDrawer: false,
@@ -144,6 +147,7 @@ class BuyRecordRigPage extends Component<
   render() {
     const { addProduct, initialSelectedColor, shoppingBag } = this.props;
     const {
+      alreadyAdded,
       description,
       openAddToBagDrawer,
       openAlreadyAddedDrawer,
@@ -185,6 +189,11 @@ class BuyRecordRigPage extends Component<
     const toggleAlreadyAddedDrawer = () =>
       this.setState({ openAlreadyAddedDrawer: !openAlreadyAddedDrawer });
 
+    const handleAlreadyAddedClick = (color: "black" | "white") => {
+      this.setState({ alreadyAdded: color });
+      toggleAlreadyAddedDrawer();
+    };
+
     return (
       <StyledBuyRecordRigPage>
         <Head>
@@ -195,7 +204,7 @@ class BuyRecordRigPage extends Component<
           addToBag={handleAddToBag}
           configuration={initialConfiguration}
           onSelectColor={onSelectColor}
-          onAddToBagButtonDisabledClick={toggleAlreadyAddedDrawer}
+          onAddToBagButtonDisabledClick={handleAlreadyAddedClick}
         />
         <Drawer onClose={toggleAddToBagDrawer} open={openAddToBagDrawer}>
           <p
@@ -266,6 +275,29 @@ class BuyRecordRigPage extends Component<
             If you&apos;d like to order multiple, you can do so by
             reviewing/modifying your Shopping Bag contents.
           </p>
+          <div style={{ display: "flex", padding: "24px" }}>
+            <img
+              alt=""
+              src={
+                alreadyAdded === "black"
+                  ? "/recordrig-black.png"
+                  : "/recordrig.png"
+              }
+              style={{ height: "96px" }}
+            />
+            <div
+              style={{
+                boxSizing: "border-box",
+                paddingLeft: "26px",
+                paddingTop: "16px"
+              }}
+            >
+              <p style={{ fontWeight: "bold", margin: 0 }}>
+                RecordRig -{" "}
+                {alreadyAdded === "black" ? "Stealth Black" : "Pristine White"}
+              </p>
+            </div>
+          </div>
           <Link href="/shop/shopping-bag" passHref>
             <StyledButtonLink onClick={() => toggleAlreadyAddedDrawer()}>
               Review Shopping Bag
