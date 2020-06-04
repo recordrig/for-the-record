@@ -125,25 +125,12 @@ module.exports = {
       }
     ],
     /*
-     * Custom rule to support Next.js' present-day Link API.
+     * Looser rules to support Next.js' present-day Link API.
      * See [related issue on GitHub](https://github.com/zeit/next.js/issues/5533).
      */
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "hrefLeft",
-          "hrefRight"
-        ],
-        "aspects": [
-          "invalidHref",
-          "preferButton"
-        ]
-      }
-    ],
+    "jsx-a11y/anchor-is-valid": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
     /*
      * ESLint should error when it finds issues related to the Prettier config which was extended.
      */

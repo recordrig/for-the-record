@@ -287,7 +287,10 @@ class BuyRecordRigPage extends Component<
               This item is already in your Shopping Bag. If you&apos;d like to
               order more, you can{" "}
               <Link href="/shop/shopping-bag">
-                <a style={{ color: "#0062ff" }}>
+                <a
+                  onClick={() => toggleAlreadyAddedDrawer()}
+                  style={{ color: "#0062ff" }}
+                >
                   review/modify your Shopping Bag.
                 </a>
               </Link>
