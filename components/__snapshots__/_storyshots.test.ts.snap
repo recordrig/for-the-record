@@ -2436,11 +2436,24 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   justify-content: center;
 }
 
-.c1 h1 {
+.c1 h1,
+.c1 h2 {
   opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+}
+
+.c1 > div {
+  position: relative;
+  width: 100%;
+}
+
+.c1 > div h2 {
+  color: #a2a9b0;
+  position: absolute;
+  padding-bottom: 0;
+  width: 100%;
 }
 
 .c3 {
@@ -2739,6 +2752,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c1 h1 {
     font-size: 16px;
   }
+
+  .c1 h2 {
+    bottom: -4px;
+    font-size: 10px !important;
+  }
 }
 
 @media (min-width:350px) and (max-width:767px) {
@@ -2748,6 +2766,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
   .c1 h1 {
     font-size: 18px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 11px !important;
   }
 }
 
@@ -2759,6 +2782,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   .c1 h1 {
     font-size: 24px;
   }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 15px !important;
+  }
 }
 
 @media (min-width:1024px) and (max-width:1279px) {
@@ -2768,6 +2796,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
   .c1 h1 {
     font-size: 32px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 18px !important;
   }
 }
 
@@ -2785,6 +2818,11 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
   .c1 h1 {
     font-size: 42px;
+  }
+
+  .c1 h2 {
+    bottom: -3px;
+    font-size: 18px !important;
   }
 }
 
@@ -3483,11 +3521,24 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   justify-content: center;
 }
 
-.c1 h1 {
+.c1 h1,
+.c1 h2 {
   opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+}
+
+.c1 > div {
+  position: relative;
+  width: 100%;
+}
+
+.c1 > div h2 {
+  color: #a2a9b0;
+  position: absolute;
+  padding-bottom: 0;
+  width: 100%;
 }
 
 .c3 {
@@ -3623,6 +3674,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   .c1 h1 {
     font-size: 16px;
   }
+
+  .c1 h2 {
+    bottom: -4px;
+    font-size: 10px !important;
+  }
 }
 
 @media (min-width:350px) and (max-width:767px) {
@@ -3632,6 +3688,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
   .c1 h1 {
     font-size: 18px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 11px !important;
   }
 }
 
@@ -3643,6 +3704,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   .c1 h1 {
     font-size: 24px;
   }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 15px !important;
+  }
 }
 
 @media (min-width:1024px) and (max-width:1279px) {
@@ -3652,6 +3718,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
   .c1 h1 {
     font-size: 32px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 18px !important;
   }
 }
 
@@ -3669,6 +3740,11 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 
   .c1 h1 {
     font-size: 42px;
+  }
+
+  .c1 h2 {
+    bottom: -3px;
+    font-size: 18px !important;
   }
 }
 
@@ -3921,9 +3997,14 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
   <div
     className="c1"
   >
-    <h1>
-      Choose your RecordRig.
-    </h1>
+    <div>
+      <h1>
+        Choose your RecordRig
+      </h1>
+      <h2>
+        Dedicated gameplay streaming PC.
+      </h2>
+    </div>
   </div>
   <div
     className="c2"
@@ -4072,11 +4153,24 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   justify-content: center;
 }
 
-.c1 h1 {
+.c1 h1,
+.c1 h2 {
   opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+}
+
+.c1 > div {
+  position: relative;
+  width: 100%;
+}
+
+.c1 > div h2 {
+  color: #a2a9b0;
+  position: absolute;
+  padding-bottom: 0;
+  width: 100%;
 }
 
 .c3 {
@@ -4376,6 +4470,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c1 h1 {
     font-size: 16px;
   }
+
+  .c1 h2 {
+    bottom: -4px;
+    font-size: 10px !important;
+  }
 }
 
 @media (min-width:350px) and (max-width:767px) {
@@ -4385,6 +4484,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
   .c1 h1 {
     font-size: 18px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 11px !important;
   }
 }
 
@@ -4396,6 +4500,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   .c1 h1 {
     font-size: 24px;
   }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 15px !important;
+  }
 }
 
 @media (min-width:1024px) and (max-width:1279px) {
@@ -4405,6 +4514,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
   .c1 h1 {
     font-size: 32px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 18px !important;
   }
 }
 
@@ -4422,6 +4536,11 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
   .c1 h1 {
     font-size: 42px;
+  }
+
+  .c1 h2 {
+    bottom: -3px;
+    font-size: 18px !important;
   }
 }
 
@@ -5120,11 +5239,24 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
   justify-content: center;
 }
 
-.c1 h1 {
+.c1 h1,
+.c1 h2 {
   opacity: 1;
   text-align: center;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+}
+
+.c1 > div {
+  position: relative;
+  width: 100%;
+}
+
+.c1 > div h2 {
+  color: #a2a9b0;
+  position: absolute;
+  padding-bottom: 0;
+  width: 100%;
 }
 
 .c3 {
@@ -5260,6 +5392,11 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
   .c1 h1 {
     font-size: 16px;
   }
+
+  .c1 h2 {
+    bottom: -4px;
+    font-size: 10px !important;
+  }
 }
 
 @media (min-width:350px) and (max-width:767px) {
@@ -5269,6 +5406,11 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
 
   .c1 h1 {
     font-size: 18px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 11px !important;
   }
 }
 
@@ -5280,6 +5422,11 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
   .c1 h1 {
     font-size: 24px;
   }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 15px !important;
+  }
 }
 
 @media (min-width:1024px) and (max-width:1279px) {
@@ -5289,6 +5436,11 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
 
   .c1 h1 {
     font-size: 32px;
+  }
+
+  .c1 h2 {
+    bottom: -7px;
+    font-size: 18px !important;
   }
 }
 
@@ -5306,6 +5458,11 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
 
   .c1 h1 {
     font-size: 42px;
+  }
+
+  .c1 h2 {
+    bottom: -3px;
+    font-size: 18px !important;
   }
 }
 
@@ -5558,9 +5715,14 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
   <div
     className="c1"
   >
-    <h1>
-      Choose your RecordRig.
-    </h1>
+    <div>
+      <h1>
+        Choose your RecordRig
+      </h1>
+      <h2>
+        Dedicated gameplay streaming PC.
+      </h2>
+    </div>
   </div>
   <div
     className="c2"

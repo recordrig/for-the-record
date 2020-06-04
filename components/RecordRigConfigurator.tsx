@@ -51,10 +51,23 @@ const StyledHeading = styled.div<StyledHeadingProps>`
     align-items: center;
     justify-content: center;
 
-    h1 {
+    h1,
+    h2 {
       opacity: ${visible ? 1 : 0};
       text-align: center;
       transition: opacity 0.2s ease-in-out;
+    }
+
+    > div {
+      position: relative;
+      width: 100%;
+
+      h2 {
+        color: #a2a9b0;
+        position: absolute;
+        padding-bottom: 0;
+        width: 100%;
+      }
     }
 
     @media (max-width: 350px) {
@@ -62,6 +75,11 @@ const StyledHeading = styled.div<StyledHeadingProps>`
 
       h1 {
         font-size: 16px;
+      }
+
+      h2 {
+        bottom: -4px;
+        font-size: 10px !important;
       }
     }
 
@@ -71,6 +89,11 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       h1 {
         font-size: 18px;
       }
+
+      h2 {
+        bottom: -7px;
+        font-size: 11px !important;
+      }
     }
 
     @media (min-width: 768px) and (max-width: 1023px) {
@@ -79,6 +102,11 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       h1 {
         font-size: 24px;
       }
+
+      h2 {
+        bottom: -7px;
+        font-size: 15px !important;
+      }
     }
 
     @media (min-width: 1024px) and (max-width: 1279px) {
@@ -86,6 +114,11 @@ const StyledHeading = styled.div<StyledHeadingProps>`
 
       h1 {
         font-size: 32px;
+      }
+
+      h2 {
+        bottom: -7px;
+        font-size: 18px !important;
       }
     }
 
@@ -101,6 +134,11 @@ const StyledHeading = styled.div<StyledHeadingProps>`
 
       h1 {
         font-size: 42px;
+      }
+
+      h2 {
+        bottom: -3px;
+        font-size: 18px !important;
       }
     }
   `}
@@ -834,7 +872,12 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
           &nbsp;specs&nbsp;and&nbsp;options.
         </h1>
       );
-    return <h1>Choose your RecordRig.</h1>;
+    return (
+      <div>
+        <h1>Choose your RecordRig</h1>
+        <h2>Dedicated gameplay streaming PC.</h2>
+      </div>
+    );
   };
 
   // Visually update the button to indicate to the user that it has indeed been pressed.
