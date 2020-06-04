@@ -175,6 +175,22 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
       <Drawer onClose={toggleDrawer} open={openShoppingBag}>
         {products.length > 0 ? (
           <>
+            <p
+              style={{
+                fontSize: "13px",
+                fontWeight: "bold",
+                lineHeight: "32px",
+                paddingLeft: "16px",
+                position: "relative",
+                marginBottom: "0",
+                marginRight: "64px",
+                marginTop: "0",
+                textTransform: "uppercase",
+                top: "10px"
+              }}
+            >
+              Your Shopping Bag
+            </p>
             <ProductList products={products} />
             <Link href="/shop/checkout" passHref>
               <StyledCheckoutLink onClick={() => toggleDrawer()}>
