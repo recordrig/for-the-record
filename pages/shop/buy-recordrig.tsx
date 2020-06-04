@@ -6,14 +6,16 @@ import Router from "next/router";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
+import ArrowRightIcon from "../../components/ArrowRightIcon";
 import CheckmarkIcon from "../../components/CheckmarkIcon";
 import Drawer from "../../components/Drawer";
 import ProductList from "../../components/ProductList";
 import RecordRigConfigurator from "../../components/RecordRigConfigurator";
 
-const StyledReviewBagLink = styled.a`
+const StyledButtonLink = styled.a`
   background-color: #0062ff;
-  border-radius: 10px;
+  border-radius: 4px;
+  border-bottom: 2px solid #0043ce;
   box-sizing: border-box;
   color: #ffffff;
   display: block;
@@ -30,6 +32,7 @@ const StyledContinueShoppingButton = styled.button`
   color: #000000;
   background: none;
   border: none;
+  cursor: pointer;
   font-size: 15px;
   outline: none;
   text-align: center;
@@ -226,9 +229,21 @@ class BuyRecordRigPage extends Component<
           </p>
           <ProductList indicateAddition products={shoppingBag} />
           <Link href="/shop/shopping-bag" passHref>
-            <StyledReviewBagLink onClick={() => toggleAddToBagDrawer()}>
+            <StyledButtonLink onClick={() => toggleAddToBagDrawer()}>
               I&apos;m ready to order
-            </StyledReviewBagLink>
+              <span
+                style={{
+                  display: "inline-block",
+                  height: "24px",
+                  marginLeft: "8px",
+                  position: "relative",
+                  top: "6px",
+                  width: "24px"
+                }}
+              >
+                <ArrowRightIcon color="#ffffff" />
+              </span>
+            </StyledButtonLink>
           </Link>
           <p style={{ textAlign: "center" }}>
             <StyledContinueShoppingButton
@@ -245,14 +260,28 @@ class BuyRecordRigPage extends Component<
           <p
             style={{ backgroundColor: "f1c21b", margin: "20px 48px 20px 20px" }}
           >
-            &#9432;&nbsp; This item is already in your Shopping Bag. If
-            you&apos;d like to order multiple, you can do so by
+            <strong>
+              &#9432;&nbsp; This item is already in your Shopping Bag.
+            </strong>{" "}
+            If you&apos;d like to order multiple, you can do so by
             reviewing/modifying your Shopping Bag contents.
           </p>
           <Link href="/shop/shopping-bag" passHref>
-            <StyledReviewBagLink onClick={() => toggleAlreadyAddedDrawer()}>
+            <StyledButtonLink onClick={() => toggleAlreadyAddedDrawer()}>
               Review Shopping Bag
-            </StyledReviewBagLink>
+              <span
+                style={{
+                  display: "inline-block",
+                  height: "24px",
+                  marginLeft: "8px",
+                  position: "relative",
+                  top: "6px",
+                  width: "24px"
+                }}
+              >
+                <ArrowRightIcon color="#ffffff" />
+              </span>
+            </StyledButtonLink>
           </Link>
           <p style={{ textAlign: "center" }}>
             <StyledContinueShoppingButton

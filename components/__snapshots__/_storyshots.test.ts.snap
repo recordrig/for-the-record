@@ -1,11 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ArrowRightIcon color 1`] = `
-.c0 svg {
-  fill: #ff0000;
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
 }
 
-<div
+.c0 svg {
+  fill: #ff0000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
   className="c0"
   color="#ff0000"
 >
@@ -25,15 +33,23 @@ exports[`Storyshots ArrowRightIcon color 1`] = `
       Arrow right
     </title>
   </svg>
-</div>
+</span>
 `;
 
 exports[`Storyshots ArrowRightIcon default 1`] = `
-.c0 svg {
-  fill: #000000;
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
 }
 
-<div
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
   className="c0"
   color="#000000"
 >
@@ -53,7 +69,7 @@ exports[`Storyshots ArrowRightIcon default 1`] = `
       Arrow right
     </title>
   </svg>
-</div>
+</span>
 `;
 
 exports[`Storyshots CheckmarkIcon color 1`] = `
@@ -1181,6 +1197,7 @@ Array [
 
 .c2 {
   border: 1px solid #0062ff;
+  border-radius: 4px;
   box-sizing: border-box;
   color: #0062ff;
   display: inline-block;
@@ -1200,7 +1217,7 @@ Array [
 .c3 > button {
   background: none;
   border: 0;
-  border-radius: 0;
+  border-radius: 2px;
   cursor: pointer;
   font-size: 16px;
   line-height: 64px;
@@ -1456,6 +1473,7 @@ Array [
 
 .c2 {
   border: 1px solid #0062ff;
+  border-radius: 4px;
   box-sizing: border-box;
   color: #0062ff;
   display: inline-block;
@@ -1475,7 +1493,7 @@ Array [
 .c3 > button {
   background: none;
   border: 0;
-  border-radius: 0;
+  border-radius: 2px;
   cursor: pointer;
   font-size: 16px;
   line-height: 64px;
@@ -2518,7 +2536,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 
 .c8 button {
   background: none;
-  border: 2px solid #697077;
+  border: 1px solid #a2a9b0;
   border-radius: 8px;
   color: #121619;
   display: inline-block;
@@ -2538,9 +2556,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   content: "";
   display: block;
   height: 54px;
-  left: -8px;
+  left: -6px;
   position: absolute;
-  top: -8px;
+  top: -6px;
   -webkit-transition: border-color 0.2s ease-in-out;
   transition: border-color 0.2s ease-in-out;
   width: 54px;
@@ -2564,7 +2582,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c8 button:first-child:after {
-  border: 2px solid #4589ff;
+  border: 1px solid #0062ff;
 }
 
 .c8 button:first-child > span {
@@ -2577,7 +2595,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 .c8 button:last-child:after {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .c8 button:last-child > span {
@@ -2614,7 +2632,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  font-size: 24px;
   line-height: 64px;
   outline: none;
   padding: 0;
@@ -2623,12 +2640,13 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   transition: 0.2s ease 0s;
   width: 100%;
   background-color: #0f62fe;
-  border-bottom: 4px solid #002d9c;
+  border-bottom: 2px solid #002d9c;
   border-top: 0;
   border-right: 0;
   border-left: 0;
   color: #ffffff;
   cursor: pointer;
+  font-size: 24px;
 }
 
 .c10 h3 {
@@ -4154,7 +4172,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 
 .c8 button {
   background: none;
-  border: 2px solid #697077;
+  border: 1px solid #a2a9b0;
   border-radius: 8px;
   color: #121619;
   display: inline-block;
@@ -4174,9 +4192,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   content: "";
   display: block;
   height: 54px;
-  left: -8px;
+  left: -6px;
   position: absolute;
-  top: -8px;
+  top: -6px;
   -webkit-transition: border-color 0.2s ease-in-out;
   transition: border-color 0.2s ease-in-out;
   width: 54px;
@@ -4200,7 +4218,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c8 button:first-child:after {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .c8 button:first-child > span {
@@ -4213,7 +4231,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 .c8 button:last-child:after {
-  border: 2px solid #4589ff;
+  border: 1px solid #0062ff;
 }
 
 .c8 button:last-child > span {
@@ -4250,7 +4268,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  font-size: 24px;
   line-height: 64px;
   outline: none;
   padding: 0;
@@ -4259,12 +4276,13 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   transition: 0.2s ease 0s;
   width: 100%;
   background-color: #0f62fe;
-  border-bottom: 4px solid #002d9c;
+  border-bottom: 2px solid #002d9c;
   border-top: 0;
   border-right: 0;
   border-left: 0;
   color: #ffffff;
   cursor: pointer;
+  font-size: 24px;
 }
 
 .c10 h3 {

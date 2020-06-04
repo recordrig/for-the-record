@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
+import ArrowRightIcon from "./ArrowRightIcon";
 import Drawer from "./Drawer";
 import ProductList from "./ProductList";
 import ShoppingBagIcon from "./ShoppingBagIcon";
@@ -33,6 +34,7 @@ const StyledLogo = styled.a`
 
 const StyledShopLink = styled.a`
   border: 1px solid #0062ff;
+  border-radius: 4px;
   box-sizing: border-box;
   color: #0062ff;
   display: inline-block;
@@ -44,9 +46,10 @@ const StyledShopLink = styled.a`
   text-decoration: none;
 `;
 
-const StyledCheckoutLink = styled.a`
+const StyledButtonLink = styled.a`
   background-color: #0062ff;
-  border-radius: 10px;
+  border-radius: 4px;
+  border-bottom: 2px solid #0043ce;
   box-sizing: border-box;
   color: #ffffff;
   display: block;
@@ -71,7 +74,7 @@ const ShoppingBagMenuItem = styled.li`
   > button {
     background: none;
     border: 0;
-    border-radius: 0;
+    border-radius: 2px;
     cursor: pointer;
     font-size: 16px;
     line-height: 64px;
@@ -193,9 +196,21 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </p>
             <ProductList products={products} />
             <Link href="/shop/checkout" passHref>
-              <StyledCheckoutLink onClick={() => toggleDrawer()}>
-                Check Out <span style={{ fontSize: "20px" }}>&nbsp;&rarr;</span>
-              </StyledCheckoutLink>
+              <StyledButtonLink onClick={() => toggleDrawer()}>
+                Check Out
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "24px",
+                    marginLeft: "8px",
+                    position: "relative",
+                    top: "6px",
+                    width: "24px"
+                  }}
+                >
+                  <ArrowRightIcon color="#ffffff" />
+                </span>
+              </StyledButtonLink>
             </Link>
             <p style={{ textAlign: "center" }}>
               <Link href="/shop/shopping-bag" passHref>
@@ -206,17 +221,28 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </p>
           </>
         ) : (
-          <>
+          <div style={{ marginBottom: "16px" }}>
             <p style={{ padding: "64px 0 16px", textAlign: "center" }}>
               Your Shopping Bag is empty.
             </p>
             <Link href="/shop/buy-recordrig" passHref>
-              <StyledCheckoutLink onClick={() => toggleDrawer()}>
-                Shop RecordRig{" "}
-                <span style={{ fontSize: "20px" }}>&nbsp;&rarr;</span>
-              </StyledCheckoutLink>
+              <StyledButtonLink onClick={() => toggleDrawer()}>
+                Shop RecordRig
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "24px",
+                    marginLeft: "8px",
+                    position: "relative",
+                    top: "6px",
+                    width: "24px"
+                  }}
+                >
+                  <ArrowRightIcon color="#ffffff" />
+                </span>
+              </StyledButtonLink>
             </Link>
-          </>
+          </div>
         )}
       </Drawer>
     </>

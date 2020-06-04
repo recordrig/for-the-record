@@ -5,10 +5,16 @@ interface StyledArrowRightIconProps {
   readonly color: string;
 }
 
-const StyledArrowRightIcon = styled.div<StyledArrowRightIconProps>`
+const StyledArrowRightIcon = styled.span<StyledArrowRightIconProps>`
   ${({ color }) => css`
+    height: inherit;
+    display: inline-block;
+    width: inherit;
+
     svg {
       fill: ${color};
+      height: inherit;
+      width: inherit;
     }
   `}
 `;

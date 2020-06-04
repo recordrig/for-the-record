@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
+import CheckmarkIcon from "./CheckmarkIcon";
 import Footnotes from "./Footnotes";
 import Tile from "./Tile";
 
@@ -276,7 +277,7 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
 
     button {
       background: none;
-      border: 2px solid #697077;
+      border: 1px solid #a2a9b0;
       border-radius: 8px;
       color: #121619;
       display: inline-block;
@@ -294,9 +295,9 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
         content: "";
         display: block;
         height: 54px;
-        left: -8px;
+        left: -6px;
         position: absolute;
-        top: -8px;
+        top: -6px;
         transition: border-color 0.2s ease-in-out;
         width: 54px;
       }
@@ -318,8 +319,8 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
       cursor: ${selectedColor === "white" ? "pointer" : "default"};
 
       &:after {
-        border: 2px solid
-          ${selectedColor === "white" ? "transparent" : "#4589ff"};
+        border: 1px solid
+          ${selectedColor === "white" ? "transparent" : "#0062ff"};
       }
 
       > span {
@@ -332,8 +333,8 @@ const StyledColorSelector = styled.div<StyledColorSelectorProps>`
       cursor: ${selectedColor === "black" ? "pointer" : "default"};
 
       &:after {
-        border: 2px solid
-          ${selectedColor === "black" ? "transparent" : "#4589ff"};
+        border: 1px solid
+          ${selectedColor === "black" ? "transparent" : "#0062ff"};
       }
 
       > span {
@@ -467,7 +468,6 @@ const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  font-size: 24px;
   line-height: 64px;
   outline: none;
   padding: 0;
@@ -507,12 +507,13 @@ const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
 
   ${({ clicked }) => css`
     background-color: ${clicked ? "transparent" : "#0f62fe"};
-    border-bottom: ${clicked ? "2px solid #a2a9b0" : "4px solid #002d9c"};
-    border-top: ${clicked ? "2px solid #a2a9b0" : 0};
-    border-right: ${clicked ? "2px solid #a2a9b0" : 0};
-    border-left: ${clicked ? "2px solid #a2a9b0" : 0};
+    border-bottom: ${clicked ? "1px solid #24a148" : "2px solid #002d9c"};
+    border-top: ${clicked ? "1px solid #24a148" : 0};
+    border-right: ${clicked ? "1px solid #24a148" : 0};
+    border-left: ${clicked ? "1px solid #24a148" : 0};
     color: ${clicked ? "#24a148" : "#ffffff"};
     cursor: ${clicked ? "default" : "pointer"};
+    font-size: ${clicked ? "21px" : "24px"};
   `}
 `;
 
@@ -1013,7 +1014,25 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                 clicked={addToBagButtonDisabled}
                 onClick={() => handleAddToBagClick()}
               >
-                {addToBagButtonDisabled ? `✔ Added to Bag` : "Add to Bag"}
+                {addToBagButtonDisabled ? (
+                  <>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        height: "32px",
+                        marginRight: "4px",
+                        position: "relative",
+                        top: "8px",
+                        width: "32px"
+                      }}
+                    >
+                      <CheckmarkIcon color="#24a148" />
+                    </span>
+                    Added To Bag
+                  </>
+                ) : (
+                  "Add to Bag"
+                )}
               </StyledAddToBagButton>
             </StyledAddToBag>
             <h3>Technical specifications</h3>
