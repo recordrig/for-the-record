@@ -1086,6 +1086,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </li>
               <li>2TB high-speed SSD storage</li>
               <li>8TB &quot;BigStorage&quot; 7200 RPM HDD</li>
+              <li>16GB (2x8) DDR4 DRAM memory</li>
               <li>
                 GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory
                 Overclocked (&quot;OC&quot;) or equivalent<sup>1</sup>

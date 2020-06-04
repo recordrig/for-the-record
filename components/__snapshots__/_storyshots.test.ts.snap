@@ -3514,6 +3514,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
           8TB "BigStorage" 7200 RPM HDD
         </li>
         <li>
+          16GB (2x8) DDR4 DRAM memory
+        </li>
+        <li>
           GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory Overclocked ("OC") or equivalent
           <sup>
             1
@@ -5230,6 +5233,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         </li>
         <li>
           8TB "BigStorage" 7200 RPM HDD
+        </li>
+        <li>
+          16GB (2x8) DDR4 DRAM memory
         </li>
         <li>
           GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory Overclocked ("OC") or equivalent
