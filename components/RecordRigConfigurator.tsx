@@ -468,6 +468,7 @@ const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
   border-left: 0;
   border-right: 0;
   border-top: 0;
+  box-sizing: border-box;
   line-height: 64px;
   outline: none;
   padding: 0;
