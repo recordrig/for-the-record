@@ -135,23 +135,48 @@ interface ProductListProps {
   readonly indicateAddition?: boolean;
   /** The amount to show before cutoff. Defaults to two. */
   readonly showAmount?: number;
+  /** The product ID to list at the top. */
+  readonly showFirstProductId?: string;
 }
 
 /**
- * The Product List is a compact style list of product pictures, names and quantity
- * of the most recently added products. The most recently added product should be listed
- * at the top.
- *
- * Pass `flash={true}` to make the top (most recently added) product briefly flash so
- * as to indicate it was recently added to the list.
+ * The Product List is a compact style list of product pictures, names and quantity.
  */
 const ProductList: FunctionComponent<ProductListProps> = ({
   products,
   indicateAddition = false,
-  showAmount = 2
+  showAmount = 2,
+  showFirstProductId = undefined
 }) => {
-  const productsToRender = products.slice(0, showAmount);
-  const remainingProducts = products.slice(showAmount, products.length);
+  // The first product that matches `showFirstProductId`, or the the product that was
+  // originally first (if `showFirstProductId` was not defined, or wasn't found).
+  const firstProduct = (() => {
+    const findFirstProduct = () =>
+      products.find(product => product.id === showFirstProductId);
+
+    // If the product that ought to be showed first was specified, we attempt to find it.
+    const firstProductFound = showFirstProductId && findFirstProduct();
+
+    // If indeed the specified product was found, we return it.
+    if (firstProductFound) return firstProductFound;
+
+    // If it wasn't found, we'll return `undefined` to indicate its non-existence.
+    return undefined;
+  })();
+
+  // The list of products without `showFirstProductId`, or the original list of products
+  // without changes if it wasn't found.
+  const filteredProducts = (() =>
+    products.filter(product => !(product.id === showFirstProductId)))();
+
+  // Either a mashed together list of the product that was defined (and found) to be firt,
+  // or the plain original list of products as passed from the parent.
+  const productsToUse = firstProduct
+    ? [firstProduct, ...filteredProducts]
+    : products;
+
+  const productsToRender = productsToUse.slice(0, showAmount);
+  const remainingProducts = productsToUse.slice(showAmount, products.length);
 
   // Sum the quantities of all remaining (non-rendered) products.
   const remainingProductsAmount = remainingProducts.reduce(

@@ -4,51 +4,51 @@ import ProductList from "./ProductList";
 
 const longList = [
   {
-    id: "RR20-stealth-black",
+    id: "RR20-black",
     quantity: 1
   },
   {
-    id: "RR20-pristine-white",
+    id: "RR20-white",
     quantity: 1
   },
   {
-    id: "RR21-stealth-black",
+    id: "RR21-black",
     quantity: 3
   },
   {
-    id: "RR21-pristine-white",
+    id: "RR21-white",
     quantity: 10
   },
   {
-    id: "RR22-stealth-black",
+    id: "RR22-black",
     quantity: 1
   },
   {
-    id: "RR22-pristine-white",
+    id: "RR22-white",
     quantity: 2
   },
   {
-    id: "RR20-stealth-black",
+    id: "RR23-black",
     quantity: 1
   },
   {
-    id: "RR20-pristine-white",
+    id: "RR23-white",
     quantity: 1
   },
   {
-    id: "RR21-stealth-black",
+    id: "RR24-black",
     quantity: 3
   },
   {
-    id: "RR21-pristine-white",
+    id: "RR24-white",
     quantity: 4
   },
   {
-    id: "RR22-stealth-black",
+    id: "RR25-black",
     quantity: 1
   },
   {
-    id: "RR22-pristine-white",
+    id: "RR25-white",
     quantity: 2
   }
 ];
@@ -59,11 +59,11 @@ storiesOf("ProductList", module)
       <ProductList
         products={[
           {
-            id: "RR20-stealth-black",
+            id: "RR20-black",
             quantity: 1
           },
           {
-            id: "RR20-pristine-white",
+            id: "RR20-white",
             quantity: 2
           }
         ]}
@@ -76,11 +76,11 @@ storiesOf("ProductList", module)
         indicateAddition
         products={[
           {
-            id: "RR20-stealth-black",
+            id: "RR20-black",
             quantity: 1
           },
           {
-            id: "RR20-pristine-white",
+            id: "RR20-white",
             quantity: 2
           }
         ]}
@@ -92,22 +92,82 @@ storiesOf("ProductList", module)
       <ProductList
         products={[
           {
-            id: "RR20-stealth-black",
-            quantity: 2
-          },
-          {
-            id: "RR20-pristine-white",
+            id: "RR20-black",
             quantity: 1
           },
           {
-            id: "RR21-stealth-black",
+            id: "RR20-white",
             quantity: 2
           },
           {
-            id: "RR21-pristine-white",
+            id: "RR20-black",
             quantity: 1
+          },
+          {
+            id: "RR20-white",
+            quantity: 2
           }
         ]}
+      />
+    </>
+  ))
+  .add("show first", () => (
+    <>
+      <ProductList
+        products={[
+          {
+            id: "RR20-black",
+            quantity: 1
+          },
+          {
+            id: "RR20-white",
+            quantity: 2
+          }
+        ]}
+        showFirstProductId="RR20-white"
+      />
+    </>
+  ))
+  .add("show first with indicate addition", () => (
+    <>
+      <ProductList
+        indicateAddition
+        products={[
+          {
+            id: "RR20-black",
+            quantity: 1
+          },
+          {
+            id: "RR20-white",
+            quantity: 2
+          }
+        ]}
+        showFirstProductId="RR20-white"
+      />
+    </>
+  ))
+  .add("show first with additional products", () => (
+    <>
+      <ProductList
+        products={[
+          {
+            id: "RR20-black",
+            quantity: 1
+          },
+          {
+            id: "RR20-white",
+            quantity: 2
+          },
+          {
+            id: "RR20-black",
+            quantity: 1
+          },
+          {
+            id: "RR20-white",
+            quantity: 2
+          }
+        ]}
+        showFirstProductId="RR20-white"
       />
     </>
   ))
