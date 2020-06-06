@@ -31,9 +31,6 @@ if (process.env.NODE_ENV === "production") {
  * The app's state when the store has just been instantiated. It presets some key names.
  */
 const initialAppStatePreset = {
-  account: {
-    customerId: null
-  },
   shoppingBag: []
 };
 

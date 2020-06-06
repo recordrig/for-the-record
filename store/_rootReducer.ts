@@ -1,6 +1,5 @@
 import { combineReducers } from "redux";
 import { withReduxStateSync } from "redux-state-sync";
-import account from "./account";
 import shoppingBag from "./shoppingBag";
 
 /**
@@ -10,7 +9,6 @@ import shoppingBag from "./shoppingBag";
  * Each "sub"-reducer only impacts its own section of the state.
  */
 const rootReducer = combineReducers({
-  account,
   shoppingBag
 });
 
