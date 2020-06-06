@@ -292,7 +292,7 @@ class BuyRecordRigPage extends Component<
                 width: "24px"
               }}
             >
-              <InfoIcon color="#f1c21b" type="filled" />
+              <InfoIcon color="#78a9ff" type="filled" />
             </span>
             <span style={{ marginLeft: "8px" }}>
               This item is already in your Shopping Bag. If you&apos;d like to
@@ -300,7 +300,7 @@ class BuyRecordRigPage extends Component<
               <Link href="/shop/shopping-bag">
                 <a
                   onClick={() => toggleAlreadyAddedDrawer()}
-                  style={{ color: "#0062ff" }}
+                  style={{ color: "#0f62fe" }}
                 >
                   review/modify your Shopping Bag.
                 </a>
