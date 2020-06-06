@@ -12,11 +12,11 @@ If it's the first time you're running the application, first install dependencie
 npm install
 ```
 
-Then create a file called `.env` in the root of your project and insert your Stripe TEST API keys:
+Then create a file called `.env` in the root of the project and enter all required environment variables:
 
 ```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyzabcetcbbq
-STRIPE_SECRET_KEY=sk_test_xyzabcetcbbq
+STRIPE_PUBLISHABLE_KEY=YOUR_UNIQUE_API_KEY
+STRIPE_SECRET_KEY=YOUR_UNIQUE_API_KEY
 ```
 
 Now you can run the development server:
@@ -27,11 +27,9 @@ npm run dev
 
 ## CI/CD Pipeline
 
-Pushes to any branch will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. If the QA passes, GitHub will auto-deploy to a unique URL (staging) through Now integration with GitHub.
+The creation of a pull request targeting `master` will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. Additionally, a preview will be deployed to a unique URL through Vercel integration with GitHub.
 
-Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
-
-Any change to the `master` branch will auto-deploy to http://recordrig.com (production).
+Any change to the `master` branch will auto-deploy to http://recordrig.com.
 
 ## Error Monitoring
 
@@ -39,15 +37,13 @@ Any errors occurring on the live site will be logged with [Sentry](https://sentr
 
 ## Core Functionality
 
-Built with [Next.js](https://github.com/zeit/next.js/), a React framework which makes SSR, along with some other things like code splitting, supported out of the box.
+Built with [Next.js](https://github.com/vercel/next.js/), a React framework which makes SSR, along with some other things like code splitting, supported out of the box.
 
-The `.pages/_app.js` file is our application's container, and takes care of anything global, like the importing/fetching of app-wide required data, shared style definitions, and inclusion of components which must be shared by all frontend pages.
+The `.pages/_app.js` file is our application's container, and takes care of anything global, like the instantiation of the Redux store, shared style definitions, and inclusion of components which must be shared by all frontend pages.
 
 Any file or folder under `./pages` will be rendered on its own route, with `./pages/_app.js` and `./pages/_document.js` as notable exceptions.
 
 Server-side functionality and other automations may be put over at `./pages/api`.
-
-Each individual file in the `./pages` folder will be served as a Lambda when using Now.
 
 ## Components
 
@@ -97,7 +93,7 @@ Auto-fix found issues:
 npm run lint:fix
 ```
 
-Configure your IDE of choice to use this project's version of ESLint for in-editor errors and warnings. Most editors have plugins available for both ESLint and Prettier.
+Configure your IDE or text editor to use this project's version of ESLint for in-editor errors and warnings. Most have plugins available for both ESLint and Prettier.
 
 ## Styling
 
