@@ -90,8 +90,11 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
 `;
 
 interface DrawerProps {
+  /** Content. Drawer will adjust its height responsively, and provide a scrollbar if needed. */
   readonly children: ReactNode | ReactNodeArray | Element | void;
-  readonly onClose: Function;
+  /** The parent should manage the Drawer's state, and tell it how to close (set passed `open` prop to `false`). */
+  readonly closeDrawer: Function;
+  /** Initial state of the Drawer when rendering. */
   readonly open: boolean;
 }
 
@@ -106,9 +109,8 @@ interface DrawerProps {
 const Drawer: FunctionComponent<DrawerProps> = ({
   children,
   open,
-  onClose
+  closeDrawer
 }) => {
-  const handleCloseClick = () => onClose();
   const drawerContentElement = useRef<null | HTMLDivElement>(null);
   const isClient = typeof window !== "undefined";
 
@@ -138,6 +140,7 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   const [mountComponents, setMountComponents] = useState(false);
   const [bgVisible, setBgVisible] = useState(false);
 
+  // Manage the mounting and unmounting of components based on the "open" prop, and relevant animations.
   useEffect(() => {
     if (open === true) {
       setMountComponents(true); // If opened, immediately mount the components.
@@ -150,10 +153,44 @@ const Drawer: FunctionComponent<DrawerProps> = ({
     }
   }, [open]);
 
+  const drawerWrapperElement = useRef<null | HTMLDivElement>(null);
+
+  // Manage generic clicks outside the Drawer. This is especially relevant when, for example, a user performs an action
+  // that opens a different drawer. Since ANY click outside of this drawer is caught, it will always close this Drawer,
+  // preventing multiple Drawers from being opened at the same time.
+  const handleInteractionOutside = (event: MouseEvent | TouchEvent) => {
+    if (
+      drawerWrapperElement.current &&
+      !drawerWrapperElement.current.contains(event.target as Node)
+    ) {
+      closeDrawer();
+    }
+  };
+
+  useEffect(() => {
+    if (open === true) {
+      document.addEventListener("click", handleInteractionOutside, true);
+      document.addEventListener("touchstart", handleInteractionOutside, true);
+    }
+
+    if (open === false) {
+      document.removeEventListener("click", handleInteractionOutside, true);
+      document.removeEventListener(
+        "touchstart",
+        handleInteractionOutside,
+        true
+      );
+    }
+  }, [open]);
+
   return (
     <>
-      <StyledDrawer visibleHeight={height} open={open}>
-        <button onClick={handleCloseClick} title="Close" type="button">
+      <StyledDrawer
+        visibleHeight={height}
+        open={open}
+        ref={drawerWrapperElement}
+      >
+        <button onClick={() => closeDrawer()} title="Close" type="button">
           <span
             style={{
               backgroundColor: "#ffffff",
@@ -170,9 +207,7 @@ const Drawer: FunctionComponent<DrawerProps> = ({
           <div ref={drawerContentElement}>{mountComponents && children}</div>
         </div>
       </StyledDrawer>
-      {mountComponents && (
-        <AttentionSeeker onClick={handleCloseClick} visible={bgVisible} />
-      )}
+      {mountComponents && <AttentionSeeker visible={bgVisible} />}
     </>
   );
 };

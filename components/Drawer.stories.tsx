@@ -12,7 +12,7 @@ const DrawerDefaultContainer = () => {
       <button onClick={toggleDrawer} type="button" style={{ fontSize: "24px" }}>
         Open drawer
       </button>
-      <Drawer onClose={toggleDrawer} open={open}>
+      <Drawer closeDrawer={toggleDrawer} open={open}>
         <p style={{ padding: "120px 0 0", textAlign: "center" }}>
           Some drawer content.
           {open}
@@ -32,7 +32,7 @@ const DrawerOpenContainer = () => {
       <button onClick={toggleDrawer} type="button" style={{ fontSize: "24px" }}>
         Open drawer
       </button>
-      <Drawer onClose={toggleDrawer} open={open}>
+      <Drawer closeDrawer={toggleDrawer} open={open}>
         <p style={{ padding: "120px 0 0", textAlign: "center" }}>
           Some drawer content.
           {open}
@@ -52,7 +52,7 @@ const DrawerContentContainer = () => {
       <button onClick={toggleDrawer} type="button" style={{ fontSize: "24px" }}>
         Open drawer
       </button>
-      <Drawer onClose={toggleDrawer} open={open}>
+      <Drawer closeDrawer={toggleDrawer} open={open}>
         <p style={{ padding: "120px 0 0", textAlign: "center" }}>
           Some drawer content that takes up a lot of vertical space. On small
           devices, a max height will be used based on the window size do

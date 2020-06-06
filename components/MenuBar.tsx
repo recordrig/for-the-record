@@ -175,7 +175,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
           </ShoppingBagMenuItem>
         </ul>
       </StyledMenuBar>
-      <Drawer onClose={toggleDrawer} open={openShoppingBag}>
+      <Drawer closeDrawer={toggleDrawer} open={openShoppingBag}>
         {products.length > 0 ? (
           <>
             <p

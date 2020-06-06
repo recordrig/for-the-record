@@ -214,7 +214,7 @@ class BuyRecordRigPage extends Component<
           onSelectColor={onSelectColor}
           onAddToBagButtonDisabledClick={handleAlreadyAddedClick}
         />
-        <Drawer onClose={toggleAddToBagDrawer} open={openAddToBagDrawer}>
+        <Drawer closeDrawer={toggleAddToBagDrawer} open={openAddToBagDrawer}>
           <p
             style={{
               fontSize: "13px",
@@ -275,7 +275,7 @@ class BuyRecordRigPage extends Component<
           </p>
         </Drawer>
         <Drawer
-          onClose={toggleAlreadyAddedDrawer}
+          closeDrawer={toggleAlreadyAddedDrawer}
           open={openAlreadyAddedDrawer}
         >
           <p
