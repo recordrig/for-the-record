@@ -196,6 +196,12 @@ class BuyRecordRigPage extends Component<
       toggleAlreadyAddedDrawer();
     };
 
+    // Determine vertical space for Product List.
+    const isLargeScreen =
+      typeof window !== "undefined"
+        ? window.matchMedia("(min-height: 800px)").matches
+        : false;
+
     return (
       <StyledBuyRecordRigPage>
         <Head>
@@ -238,7 +244,11 @@ class BuyRecordRigPage extends Component<
             </span>
             Almost yours
           </p>
-          <ProductList indicateAddition products={shoppingBag} />
+          <ProductList
+            indicateAddition
+            products={shoppingBag}
+            showAmount={isLargeScreen ? 3 : 2}
+          />
           <Link href="/shop/shopping-bag" passHref>
             <StyledButtonLink onClick={() => toggleAddToBagDrawer()}>
               I&apos;m ready to order
