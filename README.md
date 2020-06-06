@@ -25,22 +25,6 @@ Now you can run the development server:
 npm run dev
 ```
 
-## Optional: Local development with the Now CLI
-
-If you'd like to use [Now's CLI](https://zeit.co/blog/now-dev) to run the application, you will need to define an extra file named `.env.build` and define Stripe's publishable TEST API key in here as well:
-
-```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyzabcetcbbq
-```
-
-This is because `now dev` will use its own mechanism for making env vars available in the application. It doesn't use Dotenv like the ordinary dev server, but instead reads `now.json` to know which env vars to set, and then looks for build-only dev vars inside `.env.build`.
-
-After setting the publishable TEST key in `.env.build`, you will be able to run the application using Now's CLI:
-
-```
-now dev
-```
-
 ## CI/CD Pipeline
 
 Pushes to any branch will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. If the QA passes, GitHub will auto-deploy to a unique URL (staging) through Now integration with GitHub.
