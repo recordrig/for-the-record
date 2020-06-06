@@ -55,7 +55,7 @@ interface BuyRecordRigPageProps {
 
 interface BuyRecordRigPageState {
   /** Informative Drawer opens when "Added to Bag" button is clicked again, showing this Product. */
-  readonly alreadyAdded: "black" | "white" | null;
+  readonly alreadyAddedProductId: string;
   /** The page meta description. Depends on the selected color. */
   readonly description: string;
   /** A Drawer which contains the Shopping Bag state, with links to the checkout and Bag overview. */
@@ -121,7 +121,7 @@ class BuyRecordRigPage extends Component<
   constructor(props) {
     super(props);
     this.state = {
-      alreadyAdded: null,
+      alreadyAddedProductId: "",
       description: getDescription(props.initialSelectedColor),
       openAddToBagDrawer: false,
       openAlreadyAddedDrawer: false,
@@ -148,7 +148,7 @@ class BuyRecordRigPage extends Component<
   render() {
     const { addProduct, initialSelectedColor, shoppingBag } = this.props;
     const {
-      alreadyAdded,
+      alreadyAddedProductId,
       description,
       openAddToBagDrawer,
       openAlreadyAddedDrawer,
@@ -191,7 +191,8 @@ class BuyRecordRigPage extends Component<
       this.setState({ openAlreadyAddedDrawer: !openAlreadyAddedDrawer });
 
     const handleAlreadyAddedClick = (color: "black" | "white") => {
-      this.setState({ alreadyAdded: color });
+      const productId = `RR20-${color}`;
+      this.setState({ alreadyAddedProductId: productId });
       toggleAlreadyAddedDrawer();
     };
 
@@ -296,38 +297,11 @@ class BuyRecordRigPage extends Component<
               </Link>
             </span>
           </p>
-          <div
-            style={{
-              borderBottom: "1px solid #dde1e6",
-              borderTop: "1px solid #dde1e6",
-              display: "flex",
-              padding: "24px",
-              marginTop: "16px",
-              marginBottom: "16px"
-            }}
-          >
-            <img
-              alt=""
-              src={
-                alreadyAdded === "black"
-                  ? "/recordrig-black.png"
-                  : "/recordrig.png"
-              }
-              style={{ height: "96px" }}
-            />
-            <div
-              style={{
-                boxSizing: "border-box",
-                paddingLeft: "26px",
-                paddingTop: "16px"
-              }}
-            >
-              <p style={{ fontWeight: "bold", margin: 0 }}>
-                RecordRig -{" "}
-                {alreadyAdded === "black" ? "Stealth Black" : "Pristine White"}
-              </p>
-            </div>
-          </div>
+          <ProductList
+            products={shoppingBag}
+            showAmount={1}
+            showFirstProductId={alreadyAddedProductId}
+          />
           <Link href="/shop/shopping-bag" passHref>
             <StyledButtonLink onClick={() => toggleAlreadyAddedDrawer()}>
               Review Shopping Bag
