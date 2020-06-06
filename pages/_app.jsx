@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
   const Sentry = require("@sentry/node"); // eslint-disable-line
 
   Sentry.init({
-    dsn: "https://fa43df39e992475094d25e8b0f56d014@sentry.io/1863682"
+    dsn: process.env.SENTRY_DSN
   });
 }
 
