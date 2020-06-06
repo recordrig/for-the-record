@@ -26,12 +26,12 @@ const AttentionSeeker = styled.div<AttentionSeekerProps>`
 `;
 
 interface StyledDrawerProps {
-  readonly neededHeight: number;
+  readonly visibleHeight: number;
   readonly open: boolean;
 }
 
 const StyledDrawer = styled.div<StyledDrawerProps>`
-  ${({ neededHeight, open }) => css`
+  ${({ visibleHeight, open }) => css`
     background-color: #ffffff;
     box-shadow: 0 0 64px 0 rgba(0, 0, 0, ${open ? 0.1 : 0});
     position: fixed;
@@ -44,25 +44,29 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
       border-radius: 8px;
       cursor: pointer;
       display: block;
-      float: right;
       font-size: 32px;
       line-height: 50px;
       outline: none;
       position: absolute;
       right: 0;
+      top: 0;
       width: 50px;
     }
 
     > div {
-      max-height: calc(100% - 128px);
+      overflow: scroll;
     }
 
     @media (max-width: 575px) {
       border-radius: 12px 12px 0 0;
       top: 100%;
-      transform: translateY(${open ? `-${neededHeight}px` : 0});
+      transform: translateY(${open ? `-${visibleHeight}px` : 0});
       transition: transform 0.3s ease-in-out;
       width: 100%;
+
+      > div {
+        height: ${visibleHeight}px;
+      }
     }
 
     @media (min-width: 576px) {
@@ -72,6 +76,10 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
       transform: translateX(${open ? "-500px" : 0});
       transition: transform 0.3s ease-in-out;
       width: 500px;
+
+      > div {
+        height: 100%;
+      }
     }
   `}
 `;
@@ -97,6 +105,7 @@ const Drawer: FunctionComponent<DrawerProps> = ({
 }) => {
   const handleCloseClick = () => onClose();
   const drawerContentElement = useRef<null | HTMLDivElement>(null);
+  const isClient = typeof window !== "undefined";
 
   // Relevant for rendering to the bottom on small devices. The total height of the Drawer itself will depend on how
   // much space its contents need.
@@ -105,8 +114,15 @@ const Drawer: FunctionComponent<DrawerProps> = ({
       ? drawerContentElement.current.offsetHeight + 32
       : 0;
 
+  // The maximum available height. Only relevant on small devices, where the Drawer opens from the bottom.
+  const maxHeight = isClient ? window.innerHeight - 192 : 0;
+
+  // If the needed height, based on Drawer content, is larger than the amoung of vertical space available, we will
+  // use the maxHeight to define the height. Otherwise, if there's plenty of space, using the needed height is fine.
+  const height = neededHeight > maxHeight ? maxHeight : neededHeight;
+
   // Disable page scrolling while the drawer is opened.
-  if (typeof window !== "undefined") {
+  if (isClient) {
     if (open) document.body.style.overflow = "hidden";
     if (!open) document.body.style.overflow = "unset";
   }
@@ -131,11 +147,13 @@ const Drawer: FunctionComponent<DrawerProps> = ({
 
   return (
     <>
-      <StyledDrawer neededHeight={neededHeight} open={open}>
+      <StyledDrawer visibleHeight={height} open={open}>
         <button onClick={handleCloseClick} type="button">
           &#x2715;
         </button>
-        <div ref={drawerContentElement}>{mountComponents && children}</div>
+        <div>
+          <div ref={drawerContentElement}>{mountComponents && children}</div>
+        </div>
       </StyledDrawer>
       {mountComponents && (
         <AttentionSeeker onClick={handleCloseClick} visible={bgVisible} />

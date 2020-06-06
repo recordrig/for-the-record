@@ -251,17 +251,17 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   display: block;
-  float: right;
   font-size: 32px;
   line-height: 50px;
   outline: none;
   position: absolute;
   right: 0;
+  top: 0;
   width: 50px;
 }
 
 .c0 > div {
-  max-height: calc(100% - 128px);
+  overflow: scroll;
 }
 
 @media (max-width:575px) {
@@ -275,6 +275,10 @@ Array [
     -webkit-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
   }
 }
 
@@ -291,6 +295,10 @@ Array [
     transition: transform 0.3s ease-in-out;
     width: 500px;
   }
+
+  .c0 > div {
+    height: 100%;
+  }
 }
 
 <div
@@ -303,7 +311,103 @@ Array [
     >
       ✕
     </button>
-    <div />
+    <div>
+      <div />
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Drawer high vertical content 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "fontSize": "24px",
+      }
+    }
+    type="button"
+  >
+    Open drawer
+  </button>,
+  .c0 {
+  background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0.1);
+  position: fixed;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  font-size: 32px;
+  line-height: 50px;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
+
+.c0 > div {
+  overflow: scroll;
+}
+
+@media (max-width:575px) {
+  .c0 {
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(-0px);
+    -ms-transform: translateY(-0px);
+    transform: translateY(-0px);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(-500px);
+    -ms-transform: translateX(-500px);
+    transform: translateX(-500px);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+
+  .c0 > div {
+    height: 100%;
+  }
+}
+
+<div
+    className="c0"
+    open={true}
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      ✕
+    </button>
+    <div>
+      <div />
+    </div>
   </div>,
 ]
 `;
@@ -335,17 +439,17 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   display: block;
-  float: right;
   font-size: 32px;
   line-height: 50px;
   outline: none;
   position: absolute;
   right: 0;
+  top: 0;
   width: 50px;
 }
 
 .c0 > div {
-  max-height: calc(100% - 128px);
+  overflow: scroll;
 }
 
 @media (max-width:575px) {
@@ -359,6 +463,10 @@ Array [
     -webkit-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
   }
 }
 
@@ -375,6 +483,10 @@ Array [
     transition: transform 0.3s ease-in-out;
     width: 500px;
   }
+
+  .c0 > div {
+    height: 100%;
+  }
 }
 
 <div
@@ -387,7 +499,9 @@ Array [
     >
       ✕
     </button>
-    <div />
+    <div>
+      <div />
+    </div>
   </div>,
 ]
 `;
@@ -1476,17 +1590,17 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   display: block;
-  float: right;
   font-size: 32px;
   line-height: 50px;
   outline: none;
   position: absolute;
   right: 0;
+  top: 0;
   width: 50px;
 }
 
 .c0 > div {
-  max-height: calc(100% - 128px);
+  overflow: scroll;
 }
 
 @media (max-width:575px) {
@@ -1500,6 +1614,10 @@ Array [
     -webkit-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
   }
 }
 
@@ -1516,6 +1634,10 @@ Array [
     transition: transform 0.3s ease-in-out;
     width: 500px;
   }
+
+  .c0 > div {
+    height: 100%;
+  }
 }
 
 <div
@@ -1528,7 +1650,9 @@ Array [
     >
       ✕
     </button>
-    <div />
+    <div>
+      <div />
+    </div>
   </div>,
 ]
 `;
@@ -1755,17 +1879,17 @@ Array [
   border-radius: 8px;
   cursor: pointer;
   display: block;
-  float: right;
   font-size: 32px;
   line-height: 50px;
   outline: none;
   position: absolute;
   right: 0;
+  top: 0;
   width: 50px;
 }
 
 .c0 > div {
-  max-height: calc(100% - 128px);
+  overflow: scroll;
 }
 
 @media (max-width:575px) {
@@ -1779,6 +1903,10 @@ Array [
     -webkit-transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
   }
 }
 
@@ -1795,6 +1923,10 @@ Array [
     transition: transform 0.3s ease-in-out;
     width: 500px;
   }
+
+  .c0 > div {
+    height: 100%;
+  }
 }
 
 <div
@@ -1807,7 +1939,9 @@ Array [
     >
       ✕
     </button>
-    <div />
+    <div>
+      <div />
+    </div>
   </div>,
 ]
 `;
