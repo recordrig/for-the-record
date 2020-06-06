@@ -7,6 +7,7 @@ import React, {
   useState
 } from "react";
 import styled, { css } from "styled-components";
+import CrossIcon from "./CrossIcon";
 
 interface AttentionSeekerProps {
   readonly visible: boolean;
@@ -41,16 +42,20 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
     > button {
       background-color: transparent;
       border: 0;
-      border-radius: 8px;
       cursor: pointer;
       display: block;
-      font-size: 32px;
-      line-height: 50px;
+      height: 50px;
+      padding: 0;
       outline: none;
       position: absolute;
       right: 0;
       top: 0;
       width: 50px;
+
+      svg {
+        /* Disable SVG's "Cross" title so that we can show our button's "Close" instead. */
+        pointer-events: none;
+      }
     }
 
     > div {
@@ -148,8 +153,18 @@ const Drawer: FunctionComponent<DrawerProps> = ({
   return (
     <>
       <StyledDrawer visibleHeight={height} open={open}>
-        <button onClick={handleCloseClick} type="button">
-          &#x2715;
+        <button onClick={handleCloseClick} title="Close" type="button">
+          <span
+            style={{
+              backgroundColor: "#ffffff",
+              borderRadius: "100%",
+              display: "inline-block",
+              height: "32px",
+              width: "32px"
+            }}
+          >
+            <CrossIcon color="#dde1e6" />
+          </span>
         </button>
         <div>
           <div ref={drawerContentElement}>{mountComponents && children}</div>
