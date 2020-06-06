@@ -507,6 +507,7 @@ const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
   border-right: 0;
   border-top: 0;
   box-sizing: border-box;
+  cursor: pointer;
   line-height: 64px;
   outline: none;
   padding: 0;
@@ -551,7 +552,6 @@ const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
     border-right: ${clicked ? "1px solid #24a148" : 0};
     border-left: ${clicked ? "1px solid #24a148" : 0};
     color: ${clicked ? "#24a148" : "#ffffff"};
-    cursor: ${clicked ? "default" : "pointer"};
     font-size: ${clicked ? "21px" : "24px"};
   `}
 `;

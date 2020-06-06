@@ -4271,6 +4271,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   border-right: 0;
   border-top: 0;
   box-sizing: border-box;
+  cursor: pointer;
   line-height: 64px;
   outline: none;
   padding: 0;
@@ -4284,7 +4285,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   border-right: 0;
   border-left: 0;
   color: #ffffff;
-  cursor: pointer;
   font-size: 24px;
 }
 
@@ -5992,6 +5992,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   border-right: 0;
   border-top: 0;
   box-sizing: border-box;
+  cursor: pointer;
   line-height: 64px;
   outline: none;
   padding: 0;
@@ -6005,7 +6006,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   border-right: 0;
   border-left: 0;
   color: #ffffff;
-  cursor: pointer;
   font-size: 24px;
 }
 

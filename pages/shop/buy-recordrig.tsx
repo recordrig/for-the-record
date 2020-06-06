@@ -19,6 +19,7 @@ const StyledButtonLink = styled.a`
   border-bottom: 2px solid #0043ce;
   box-sizing: border-box;
   color: #ffffff;
+  cursor: pointer;
   display: block;
   height: 64px;
   font-size: 19px;
