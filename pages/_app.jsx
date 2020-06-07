@@ -1,7 +1,6 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
-import withRedux from "next-redux-wrapper";
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
@@ -127,9 +126,6 @@ const makeStore = isClient ? makeClientStore : makeInitialStore;
  */
 class RecordRigApp extends App {
   static async getInitialProps({ Component, ctx }) {
-    // We can dispatch from here too
-    // ctx.store.dispatch({ type: "FOO", payload: "foo" });
-
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
       : {};
@@ -147,14 +143,14 @@ class RecordRigApp extends App {
        */
       pageProps,
       /** Used to set a unique key on the page component based on the current route. */
-      router,
-      /** Application's store made available through connecting with Redux. */
-      store
+      router
     } = this.props;
 
     // Workaround for https://github.com/zeit/next.js/issues/8592 (needed for Sentry).
     const { err } = this.props;
     const modifiedPageProps = { ...pageProps, err };
+
+    const store = makeStore();
 
     return (
       <Provider store={store}>
@@ -200,4 +196,4 @@ class RecordRigApp extends App {
   }
 }
 
-export default withRedux(makeStore)(RecordRigApp);
+export default RecordRigApp;
