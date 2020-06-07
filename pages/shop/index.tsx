@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { NextPage } from "next";
 import Router from "next/router";
 import Section from "../../components/Section";
@@ -24,6 +23,4 @@ ShopPage.getInitialProps = async ({ res }) => {
   return {};
 };
 
-const ConnectedShopPage = connect(null, null)(ShopPage);
-
-export default ConnectedShopPage;
+export default ShopPage;

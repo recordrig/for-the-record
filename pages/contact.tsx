@@ -5,7 +5,6 @@ import React, {
   useState
 } from "react";
 import Head from "next/head";
-import { connect } from "react-redux";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
 import Tile, { TileContainer } from "../components/Tile";
@@ -163,6 +162,4 @@ const ContactPage: FunctionComponent = () => {
   );
 };
 
-const ConnectedContactPage = connect(null, null)(ContactPage);
-
-export default ConnectedContactPage;
+export default ContactPage;

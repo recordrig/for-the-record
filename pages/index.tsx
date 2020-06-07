@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import Head from "next/head";
-import { connect } from "react-redux";
 import styled from "styled-components";
 import ReactCompareImage from "react-compare-image";
 import OptimizedMedia, { Image } from "../components/OptimizedMedia";
@@ -649,6 +648,4 @@ const IndexPage: FunctionComponent = () => (
   </StyledIndexPage>
 );
 
-const ConnectedIndexPage = connect(null, null)(IndexPage);
-
-export default ConnectedIndexPage;
+export default IndexPage;
