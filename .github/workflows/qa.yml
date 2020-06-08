@@ -34,3 +34,5 @@ jobs:
     - name: Run unit tests
       run: |
         npm run jest
+    - name: Cypress run
+        uses: cypress-io/github-action@v1

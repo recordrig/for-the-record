@@ -75,7 +75,7 @@ For integration test, first make sure the application is running locally in dev 
 npm run cypress
 ```
 
-Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./.cypress/integration`.
+Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./cypress/integration`.
 
 ## Coding Standards
 
