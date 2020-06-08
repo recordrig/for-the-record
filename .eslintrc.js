@@ -12,10 +12,10 @@ module.exports = {
   ],
   "overrides": [
     /*
-     * Allow jest-specific variabled in test files.
+     * Allow jest-specific variabled in Jest's test files.
      */
     {
-      "files": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"],
+      "files": ["**/*.jest.ts", "**/*.jest.tsx", "**/*.stories.tsx"],
       "env": {
         "jest": true
       }
@@ -120,7 +120,7 @@ module.exports = {
       {
         "devDependencies": [
           "**/*.stories.tsx",
-          "**/*.test.ts",
+          "**/*.jest.ts",
         ]
       }
     ],

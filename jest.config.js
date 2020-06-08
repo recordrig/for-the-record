@@ -20,6 +20,9 @@ module.exports = {
   coverageDirectory: ".jest/coverage",
   // The paths to modules that run some code to configure or set up the testing environment before each test.
   setupFiles: ["<rootDir>/.jest/setupTests.ts"],
+  // Jest wil look for filenames bearing the suffix `.jest`. This also helps us differentiate Jest tests from
+  // other framework's tests, like Cypress.
+  testMatch: ["**/?(*.)+(jest).[jt]s?(x)"],
   // Print all test descriptions instead of just the name of the test suites.
   verbose: true
 };

@@ -33,4 +33,4 @@ jobs:
         npm run lint
     - name: Run unit tests
       run: |
-        npm run test
+        npm run jest

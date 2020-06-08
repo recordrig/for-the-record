@@ -61,10 +61,10 @@ Install the [Redux Devtools for Chrome](https://chrome.google.com/webstore/detai
 
 ## Automated Tests
 
-We use Jest for unit tests. It will run all files bearing the name suffix "`.test`", including snapshots for Storybook stories (as defined in `./components/_storyshots.test.ts`):
+We use Jest for unit tests. It will run all files bearing the name suffix "`.jest`", including snapshots for Storybook stories (as defined in `./components/_storyshots.jest.ts`):
 
 ```bash
-npm run test
+npm run jest
 ```
 
 We only write unit tests for components and store logic, both of which can be adequately tested in isolation. Other code will be tested using integration tests.
