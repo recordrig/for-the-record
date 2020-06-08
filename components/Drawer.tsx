@@ -134,10 +134,9 @@ const Drawer: FunctionComponent<DrawerProps> = ({
     if (!open) document.body.style.overflow = "unset";
   }
 
-  // The darkened BG uses various delays based on the core "open" prop to achieve smooth fade-in and fade-out effects,
-  // while the children should also only render once they become active so that each re-open of the Drawer behaves as
-  // a fresh render. This is relevant for e.g. the "green flashing" which indicates product addition.
   const [mountComponents, setMountComponents] = useState(false);
+
+  // The darkened BG uses various delays based on the core "open" prop to achieve smooth fade-in and fade-out effects.
   const [bgVisible, setBgVisible] = useState(false);
 
   // Manage the mounting and unmounting of components based on the "open" prop, and relevant animations.
@@ -190,7 +189,12 @@ const Drawer: FunctionComponent<DrawerProps> = ({
         open={open}
         ref={drawerWrapperElement}
       >
-        <button onClick={() => closeDrawer()} title="Close" type="button">
+        <button
+          data-cy="close-drawer"
+          onClick={() => closeDrawer()}
+          title="Close"
+          type="button"
+        >
           <span
             style={{
               backgroundColor: "#ffffff",
@@ -204,7 +208,7 @@ const Drawer: FunctionComponent<DrawerProps> = ({
           </span>
         </button>
         <div>
-          <div ref={drawerContentElement}>{mountComponents && children}</div>
+          <div ref={drawerContentElement}>{children}</div>
         </div>
       </StyledDrawer>
       {mountComponents && <AttentionSeeker visible={bgVisible} />}

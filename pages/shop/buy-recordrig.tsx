@@ -217,6 +217,7 @@ class BuyRecordRigPage extends Component<
         />
         <Drawer closeDrawer={toggleAddToBagDrawer} open={openAddToBagDrawer}>
           <p
+            data-cy="almost-yours"
             style={{
               fontSize: "13px",
               fontWeight: "bold",
@@ -251,7 +252,10 @@ class BuyRecordRigPage extends Component<
             showAmount={isLargeScreen ? 3 : 2}
           />
           <Link href="/shop/shopping-bag" passHref>
-            <StyledButtonLink onClick={() => toggleAddToBagDrawer()}>
+            <StyledButtonLink
+              data-cy="ready-to-order"
+              onClick={() => toggleAddToBagDrawer()}
+            >
               I&apos;m ready to order
               <span
                 style={{
@@ -269,6 +273,7 @@ class BuyRecordRigPage extends Component<
           </Link>
           <p style={{ textAlign: "center" }}>
             <StyledContinueShoppingButton
+              data-cy="continue-shopping"
               onClick={() => toggleAddToBagDrawer()}
             >
               Continue shopping
@@ -314,7 +319,10 @@ class BuyRecordRigPage extends Component<
             showFirstProductId={alreadyAddedProductId}
           />
           <Link href="/shop/shopping-bag" passHref>
-            <StyledButtonLink onClick={() => toggleAlreadyAddedDrawer()}>
+            <StyledButtonLink
+              data-cy="review-shopping-bag"
+              onClick={() => toggleAlreadyAddedDrawer()}
+            >
               Review Shopping Bag
               <span
                 style={{

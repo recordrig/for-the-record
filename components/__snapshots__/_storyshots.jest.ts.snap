@@ -452,6 +452,7 @@ Array [
     open={false}
   >
     <button
+      data-cy="close-drawer"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -497,7 +498,18 @@ Array [
       </span>
     </button>
     <div>
-      <div />
+      <div>
+        <p
+          style={
+            Object {
+              "padding": "120px 0 0",
+              "textAlign": "center",
+            }
+          }
+        >
+          Some drawer content.
+        </p>
+      </div>
     </div>
   </div>,
 ]
@@ -608,6 +620,7 @@ Array [
     open={true}
   >
     <button
+      data-cy="close-drawer"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -653,7 +666,48 @@ Array [
       </span>
     </button>
     <div>
-      <div />
+      <div>
+        <p
+          style={
+            Object {
+              "padding": "120px 0 0",
+              "textAlign": "center",
+            }
+          }
+        >
+          Some drawer content that takes up a lot of vertical space. On small devices, a max height will be used based on the window size do determine Drawer size, and the user will be able to scroll to reveal overflowing content.
+        </p>
+        <p
+          style={
+            Object {
+              "padding": "120px 0 0",
+              "textAlign": "center",
+            }
+          }
+        >
+          Some drawer content that takes up a lot of vertical space. On small devices, a max height will be used based on the window size do determine Drawer size, and the user will be able to scroll to reveal overflowing content.
+        </p>
+        <p
+          style={
+            Object {
+              "padding": "120px 0 0",
+              "textAlign": "center",
+            }
+          }
+        >
+          Some drawer content that takes up a lot of vertical space. On small devices, a max height will be used based on the window size do determine Drawer size, and the user will be able to scroll to reveal overflowing content.
+        </p>
+        <p
+          style={
+            Object {
+              "padding": "120px 0 0",
+              "textAlign": "center",
+            }
+          }
+        >
+          Some drawer content that takes up a lot of vertical space. On small devices, a max height will be used based on the window size do determine Drawer size, and the user will be able to scroll to reveal overflowing content.
+        </p>
+      </div>
     </div>
   </div>,
 ]
@@ -764,6 +818,7 @@ Array [
     open={true}
   >
     <button
+      data-cy="close-drawer"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -809,7 +864,18 @@ Array [
       </span>
     </button>
     <div>
-      <div />
+      <div>
+        <p
+          style={
+            Object {
+              "padding": "120px 0 0",
+              "textAlign": "center",
+            }
+          }
+        >
+          Some drawer content.
+        </p>
+      </div>
     </div>
   </div>,
 ]
@@ -1893,7 +1959,19 @@ Array [
       </li>
     </ul>
   </nav>,
-  .c1 {
+  .c3 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c3 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
+}
+
+.c1 {
   height: inherit;
   display: inline-block;
   width: inherit;
@@ -1933,6 +2011,23 @@ Array [
 
 .c0 > div {
   overflow: scroll;
+}
+
+.c2 {
+  background-color: #0062ff;
+  border-radius: 4px;
+  border-bottom: 2px solid #0043ce;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 16px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: calc(100% - 32px);
 }
 
 @media (max-width:575px) {
@@ -1989,6 +2084,7 @@ Array [
     open={false}
   >
     <button
+      data-cy="close-drawer"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -2034,7 +2130,68 @@ Array [
       </span>
     </button>
     <div>
-      <div />
+      <div>
+        <div
+          style={
+            Object {
+              "marginBottom": "16px",
+            }
+          }
+        >
+          <p
+            style={
+              Object {
+                "padding": "64px 0 16px",
+                "textAlign": "center",
+              }
+            }
+          >
+            Your Shopping Bag is empty.
+          </p>
+          <a
+            className="c2"
+            href="/shop/buy-recordrig"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Shop RecordRig
+            <span
+              style={
+                Object {
+                  "display": "inline-block",
+                  "height": "24px",
+                  "marginLeft": "8px",
+                  "position": "relative",
+                  "top": "6px",
+                  "width": "24px",
+                }
+              }
+            >
+              <span
+                className="c3"
+                color="#ffffff"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  height="32"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                  />
+                  <title>
+                    Arrow right
+                  </title>
+                </svg>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>,
 ]
@@ -2179,6 +2336,14 @@ Array [
 
 }
 
+@media (max-width:575px) {
+
+}
+
+@media (min-width:576px) {
+
+}
+
 @media (max-width:767px) {
   .c1 {
     overflow: hidden;
@@ -2256,7 +2421,19 @@ Array [
       </li>
     </ul>
   </nav>,
-  .c1 {
+  .c4 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c4 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
+}
+
+.c1 {
   height: inherit;
   display: inline-block;
   width: inherit;
@@ -2298,6 +2475,90 @@ Array [
   overflow: scroll;
 }
 
+.c2 {
+  max-width: 575px;
+  width: 100%;
+}
+
+.c2 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c2 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c2 ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.c2 li {
+  border-bottom: 1px solid #dde1e6;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.c2 li > div {
+  box-sizing: border-box;
+  padding-left: 24px;
+}
+
+.c2 li p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c2 li span {
+  color: #697077;
+  font-size: 12px;
+}
+
+.c2 li:first-child {
+  border-top: 1px solid #dde1e6;
+}
+
+.c2 li:first-child {
+  -webkit-animation: none;
+  animation: none;
+  will-change: unset;
+}
+
+.c3 {
+  background-color: #0062ff;
+  border-radius: 4px;
+  border-bottom: 2px solid #0043ce;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 64px;
+  font-size: 19px;
+  line-height: 64px;
+  margin: 0 16px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: calc(100% - 32px);
+}
+
+.c5 {
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+}
+
 @media (max-width:575px) {
   .c0 {
     border-radius: 12px 12px 0 0;
@@ -2335,6 +2596,40 @@ Array [
   }
 }
 
+@media (max-width:575px) {
+  .c2 li {
+    height: 92px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .c2 li > div {
+    height: 60px;
+    padding-top: 8px;
+  }
+
+  .c2 li img {
+    height: 60px;
+  }
+}
+
+@media (min-width:576px) {
+  .c2 li {
+    height: 146px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .c2 li > div {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  .c2 li img {
+    height: 96px;
+  }
+}
+
 @media (max-width:767px) {
 
 }
@@ -2352,6 +2647,7 @@ Array [
     open={false}
   >
     <button
+      data-cy="close-drawer"
       onClick={[Function]}
       title="Close"
       type="button"
@@ -2397,7 +2693,124 @@ Array [
       </span>
     </button>
     <div>
-      <div />
+      <div>
+        <p
+          style={
+            Object {
+              "fontSize": "13px",
+              "fontWeight": "bold",
+              "lineHeight": "32px",
+              "marginBottom": "0",
+              "marginRight": "64px",
+              "marginTop": "0",
+              "paddingLeft": "16px",
+              "position": "relative",
+              "textTransform": "uppercase",
+              "top": "10px",
+            }
+          }
+        >
+          Your Shopping Bag
+        </p>
+        <div
+          className="c2"
+        >
+          <ul>
+            <li>
+              <img
+                alt=""
+                src="/recordrig-black.png"
+              />
+              <div>
+                <p>
+                  RecordRig -
+                   
+                  Stealth Black
+                </p>
+              </div>
+            </li>
+            <li>
+              <img
+                alt=""
+                src="/recordrig.png"
+              />
+              <div>
+                <p>
+                  RecordRig -
+                   
+                  Pristine White
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div>
+            <span>
+              7
+               more item
+              s
+               in your Bag
+            </span>
+          </div>
+        </div>
+        <a
+          className="c3"
+          href="/shop/checkout"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Check Out
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "height": "24px",
+                "marginLeft": "8px",
+                "position": "relative",
+                "top": "6px",
+                "width": "24px",
+              }
+            }
+          >
+            <span
+              className="c4"
+              color="#ffffff"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                />
+                <title>
+                  Arrow right
+                </title>
+              </svg>
+            </span>
+          </span>
+        </a>
+        <p
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          <a
+            className="c5"
+            href="/shop/shopping-bag"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Review Bag
+          </a>
+        </p>
+      </div>
     </div>
   </div>,
 ]
@@ -4987,6 +5400,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     >
       <div
         className="c4"
+        data-cy="option-black"
       >
         <div
           className="c5"
@@ -5037,6 +5451,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     </div>
     <div
       className="c9"
+      data-cy="black-device-content"
     >
       <h3>
         Product description
@@ -5046,6 +5461,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
       </p>
       <div
         className="c10"
+        data-cy="black-add-to-bag"
       >
         <h3>
           RecordRig in
@@ -5063,6 +5479,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         </p>
         <button
           className="c11"
+          data-cy="add-to-bag-button"
           onClick={[Function]}
         >
           Add to Bag
@@ -5738,6 +6155,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     >
       <div
         className="c4"
+        data-cy="option-black"
       >
         <div
           className="c5"
@@ -5779,6 +6197,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
       </div>
       <div
         className="c10"
+        data-cy="option-white"
       >
         <div
           className="c5"
@@ -6740,6 +7159,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     >
       <div
         className="c4"
+        data-cy="option-white"
       >
         <div
           className="c5"
@@ -6790,6 +7210,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     </div>
     <div
       className="c9"
+      data-cy="white-device-content"
     >
       <h3>
         Product description
@@ -6799,6 +7220,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
       </p>
       <div
         className="c10"
+        data-cy="white-add-to-bag"
       >
         <h3>
           RecordRig in
@@ -6816,6 +7238,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         </p>
         <button
           className="c11"
+          data-cy="add-to-bag-button"
           onClick={[Function]}
         >
           Add to Bag
@@ -7491,6 +7914,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
     >
       <div
         className="c4"
+        data-cy="option-black"
       >
         <div
           className="c5"
@@ -7532,6 +7956,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
       </div>
       <div
         className="c10"
+        data-cy="option-white"
       >
         <div
           className="c5"

@@ -948,7 +948,11 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       <StyledContent>
         <StyledOptions step2={step2}>
           {renderBlack && (
-            <StyledOption alignRight={false} step2={step2}>
+            <StyledOption
+              alignRight={false}
+              data-cy="option-black"
+              step2={step2}
+            >
               <Tile
                 floating={!step2 && !blackChosen}
                 clickHandler={
@@ -981,7 +985,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             </StyledOption>
           )}
           {renderWhite && (
-            <StyledOption alignRight step2={step2}>
+            <StyledOption alignRight data-cy="option-white" step2={step2}>
               <Tile
                 floating={!step2 && !whiteChosen}
                 clickHandler={
@@ -1036,7 +1040,10 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
           )}
         </StyledOptions>
         {step2 && (
-          <StyledDeviceContent visible={deviceContentVisible}>
+          <StyledDeviceContent
+            data-cy={`${selectedColor}-device-content`}
+            visible={deviceContentVisible}
+          >
             <h3>Product description</h3>
             <p>
               With RecordRig as your dedicated gameplay streaming and recording
@@ -1045,7 +1052,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               stream directly to YouTube and Twitch, or save up to hundreds of
               hours of UHD video for local use.
             </p>
-            <StyledAddToBag>
+            <StyledAddToBag data-cy={`${selectedColor}-add-to-bag`}>
               <h3>
                 RecordRig in{" "}
                 {selectedColor === "black" ? "Stealth Black" : "Pristine White"}
@@ -1056,6 +1063,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </p>
               <StyledAddToBagButton
                 clicked={addToBagButtonDisabled}
+                data-cy="add-to-bag-button"
                 onClick={() => handleAddToBagClick()}
               >
                 {addToBagButtonDisabled ? (
