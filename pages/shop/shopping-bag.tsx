@@ -8,43 +8,7 @@ import {
   removeProductAction,
   updateProductQuantityAction
 } from "../../store/shoppingBag";
-import Section, { SectionIntro } from "../../components/Section";
 import ShoppingBag from "../../components/ShoppingBag";
-import { Heading } from "../../components/Text";
-
-const ShoppingBagContainer = ({
-  removeProduct,
-  updateProductQuantity,
-  shoppingBag
-}) => {
-  // The shoppingBag as received from global state stores ID's and quantity.
-  // The ShoppingBag component additionally needs price information.
-  const products = shoppingBag.map(product => {
-    return {
-      ...product,
-      price: 239900
-    };
-  });
-
-  const prices = products.map(product => product.price * product.quantity);
-  const total = prices.reduce((a, b) => a + b);
-
-  return (
-    <Section>
-      <SectionIntro>
-        <Heading center h={1}>
-          Your bag total is {total}.
-        </Heading>
-        <p>Get free shipping on all EU orders.</p>
-      </SectionIntro>
-      <ShoppingBag
-        products={products}
-        updateProductQuantity={updateProductQuantity}
-        removeProduct={removeProduct}
-      />
-    </Section>
-  );
-};
 
 const StyledShoppingBagPage = styled.div``;
 
@@ -59,6 +23,19 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   updateProductQuantity,
   shoppingBag
 }) => {
+  // The shoppingBag as received from global state stores ID's and quantity.
+  // The ShoppingBag component additionally needs price information.
+  const products = shoppingBag.map(product => ({ ...product, price: 239900 }));
+  const prices = products.map(product => product.price * product.quantity);
+  const total = products.length > 0 && prices.reduce((a, b) => a + b);
+
+  const formatCurrency = (intPrice: number) =>
+    (intPrice / 100).toLocaleString("nl-NL", {
+      currency: "EUR",
+      minimumFractionDigits: 2,
+      style: "currency"
+    });
+
   return (
     <StyledShoppingBagPage>
       <Head>
@@ -66,25 +43,41 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
         <meta name="robots" content="noindex" />
       </Head>
       {shoppingBag.length > 0 ? (
-        <ShoppingBagContainer
-          removeProduct={removeProduct}
-          updateProductQuantity={updateProductQuantity}
-          shoppingBag={shoppingBag}
-        />
+        <div style={{ marginTop: "64px", marginBottom: "256px" }}>
+          <div style={{ paddingTop: "64px", paddingBottom: "64px" }}>
+            <p
+              style={{
+                fontSize: "32px",
+                fontWeight: "bold",
+                textAlign: "center"
+              }}
+            >
+              Your bag total is {formatCurrency(total)}.
+            </p>
+            <p style={{ textAlign: "center" }}>
+              Get free shipping on all EU orders.
+            </p>
+          </div>
+          <ShoppingBag
+            products={products}
+            updateProductQuantity={updateProductQuantity}
+            removeProduct={removeProduct}
+          />
+        </div>
       ) : (
-        <Section>
-          <p>Your bag is empty.</p>
-        </Section>
+        <div style={{ marginTop: "64px", marginBottom: "256px" }}>
+          <div style={{ paddingTop: "64px", paddingBottom: "64px" }}>
+            <p style={{ textAlign: "center" }}>Your bag is empty.</p>
+          </div>
+        </div>
       )}
     </StyledShoppingBagPage>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    shoppingBag: state.shoppingBag
-  };
-};
+const mapStateToProps = ({ shoppingBag }) => ({
+  shoppingBag
+});
 
 const mapDispatchToProps = {
   removeProduct: removeProductAction,
