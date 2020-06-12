@@ -59,6 +59,10 @@ We maintain the application's client side state with Redux in `./store`. We co-l
 
 Install the [Redux Devtools for Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) to aid with debugging.
 
+## Data
+
+Static data that needn't change very often and can be reused in various places, we store in `./_data`.
+
 ## Automated Tests
 
 We use Jest for unit tests. It will run all files bearing the name suffix "`.jest`", including snapshots for Storybook stories (as defined in `./components/_storyshots.jest.ts`):
