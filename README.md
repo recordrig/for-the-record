@@ -12,13 +12,6 @@ If it's the first time you're running the application, first install dependencie
 npm install
 ```
 
-Then create a file called `.env` in the root of the project and enter all required environment variables:
-
-```
-STRIPE_PUBLISHABLE_KEY=YOUR_UNIQUE_API_KEY
-STRIPE_SECRET_KEY=YOUR_UNIQUE_API_KEY
-```
-
 Now you can run the development server:
 
 ```
