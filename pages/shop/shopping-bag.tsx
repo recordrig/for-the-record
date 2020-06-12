@@ -27,7 +27,7 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   // The ShoppingBag component additionally needs price information.
   const products = shoppingBag.map(product => ({ ...product, price: 239900 }));
   const prices = products.map(product => product.price * product.quantity);
-  const total = products.length > 0 && prices.reduce((a, b) => a + b);
+  const total = products.length > 0 ? prices.reduce((a, b) => a + b) : 0;
 
   const formatCurrency = (intPrice: number) =>
     (intPrice / 100).toLocaleString("nl-NL", {
