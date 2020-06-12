@@ -42,7 +42,7 @@ Server-side functionality and other automations may be put over at `./pages/api`
 
 All React components are defined in the `./components` folder. Run Storybook to view component specifications and to develop/debug components in isolation:
 
-```bash
+```
 npm run storybook
 ```
 
@@ -60,7 +60,7 @@ Static data that needn't change very often and can be reused in various places, 
 
 We use Jest for unit tests. It will run all files bearing the name suffix "`.jest`", including snapshots for Storybook stories (as defined in `./components/_storyshots.jest.ts`):
 
-```bash
+```
 npm run jest
 ```
 
@@ -68,7 +68,7 @@ We only write unit tests for components and store logic, both of which can be ad
 
 For integration test, first make sure the application is running locally in dev mode, and then launch Cypress:
 
-```bash
+```
 npm run cypress
 ```
 
@@ -82,13 +82,13 @@ It's recommended to configure your IDE or text editor to use this project's ESLi
 
 Alternatively, you can run ESLint on the command line:
 
-```bash
+```
 npm run lint
 ```
 
 Auto-fix found issues (if possible):
 
-```bash
+```
 npm run lint:fix
 ```
 
