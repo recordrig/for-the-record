@@ -76,21 +76,21 @@ Cypress will use an actual browser to visit the local running app instance and g
 
 ## Coding Standards
 
-We use TypeScript as much as possible and use ESLint combined with Prettier to help us maintain a high standard of code quality and coherent coding style. For Prettier, an ESLint plugin is used, so that the Prettier may be run through ESLint itself. As such, there is no need for a separate step to run Prettier.
+We use TypeScript as much as possible and use ESLint to help us maintain a high standard of code quality and coherent coding style.
 
-Run ESlint:
+It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or built-in).
+
+Alternatively, you can run ESLint on the command line:
 
 ```bash
 npm run lint
 ```
 
-Auto-fix found issues:
+Auto-fix found issues (if possible):
 
 ```bash
 npm run lint:fix
 ```
-
-Configure your IDE or text editor to use this project's version of ESLint for in-editor errors and warnings. Most have plugins available for both ESLint and Prettier.
 
 ## Styling
 
