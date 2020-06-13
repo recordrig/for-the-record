@@ -1,5 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
+import products from "../_data/products";
+import { formatCurrency } from "../utils/prices";
 import CheckmarkIcon from "./CheckmarkIcon";
 import Footnotes from "./Footnotes";
 import Tile from "./Tile";
@@ -854,6 +856,8 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   const blackChosen = selectedColor === "black";
   const whiteChosen = selectedColor === "white";
   const step2 = blackChosen || whiteChosen;
+  const priceBlack = products["RR20-black"].price;
+  const priceWhite = products["RR20-white"].price;
 
   const getHeading = (_configuration: "black" | "white" | null) => {
     if (_configuration === "black")
@@ -974,7 +978,9 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   </StyledImageContainer>
                   {!step2 && (
                     <div>
-                      <StyledPrice>€ 2399</StyledPrice>
+                      <StyledPrice>
+                        {formatCurrency(priceBlack, true)}
+                      </StyledPrice>
                       <StyledSelectButton type="button">
                         Select
                       </StyledSelectButton>
@@ -1007,7 +1013,9 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   </StyledImageContainer>
                   {!step2 && (
                     <div>
-                      <StyledPrice>€ 2399</StyledPrice>
+                      <StyledPrice>
+                        {formatCurrency(priceWhite, true)}
+                      </StyledPrice>
                       <StyledSelectButton type="button">
                         Select
                       </StyledSelectButton>
@@ -1057,7 +1065,11 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                 RecordRig in{" "}
                 {selectedColor === "black" ? "Stealth Black" : "Pristine White"}
               </h3>
-              <p>€ 2399,-</p>
+              <p>
+                {selectedColor === "black"
+                  ? formatCurrency(priceBlack)
+                  : formatCurrency(priceWhite)}
+              </p>
               <p>
                 Expected delivery: within <span>14 days</span>
               </p>

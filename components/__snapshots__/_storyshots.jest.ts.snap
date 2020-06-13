@@ -5469,7 +5469,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
           Stealth Black
         </h3>
         <p>
-          € 2399,-
+          € 2299,00
         </p>
         <p>
           Expected delivery: within 
@@ -6183,7 +6183,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
               <span
                 className="c8"
               >
-                € 2399
+                € 2299
               </span>
               <button
                 className="c9"
@@ -6225,7 +6225,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
               <span
                 className="c8"
               >
-                € 2399
+                € 2299
               </span>
               <button
                 className="c9"
@@ -7228,7 +7228,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
           Pristine White
         </h3>
         <p>
-          € 2399,-
+          € 2299,00
         </p>
         <p>
           Expected delivery: within 
@@ -7942,7 +7942,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
               <span
                 className="c8"
               >
-                € 2399
+                € 2299
               </span>
               <button
                 className="c9"
@@ -7984,7 +7984,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
               <span
                 className="c8"
               >
-                € 2399
+                € 2299
               </span>
               <button
                 className="c9"

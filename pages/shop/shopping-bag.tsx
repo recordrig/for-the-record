@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import productsData from "../../_data/products";
 import {
   ShoppingBagProduct,
   removeProductAction,
@@ -26,7 +27,10 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
 }) => {
   // The shoppingBag as received from global state stores ID's and quantity.
   // The ShoppingBag component additionally needs price information.
-  const products = shoppingBag.map(product => ({ ...product, price: 239900 }));
+  const products = shoppingBag.map(product => ({
+    ...product,
+    price: productsData[product.id].price
+  }));
   const prices = extractPrices(products);
   const total = products.length > 0 ? sumTotal(prices) : 0;
 

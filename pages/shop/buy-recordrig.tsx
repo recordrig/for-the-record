@@ -5,6 +5,7 @@ import Link from "next/link";
 import Router from "next/router";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import productsData from "../../_data/products";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
 import ArrowRightIcon from "../../components/ArrowRightIcon";
 import CheckmarkIcon from "../../components/CheckmarkIcon";
@@ -180,21 +181,33 @@ class BuyRecordRigPage extends Component<
     const toggleAddToBagDrawer = () =>
       this.setState({ openAddToBagDrawer: !openAddToBagDrawer });
 
+    // All available product ID's as defined in our catalogue.
+    const availableProductIds = Object.keys(productsData);
+
     const handleAddToBag = (color: "black" | "white") => {
-      const productId = `RR20-${color}`;
-      // Update global state.
-      addProduct(productId);
-      // Open the drawer with links to the Checkout and Shopping Bag overview.
-      toggleAddToBagDrawer();
+      // Find the appropriate product ID in our catalogue based on passed properties we have
+      // (currently, that's just a color: black or white). Should exist, or we don't add it.
+      const productId = availableProductIds.find(id => id.endsWith(color));
+
+      if (productId !== undefined) {
+        // Update global state.
+        addProduct(productId);
+
+        // Open the drawer with links to the Checkout and Shopping Bag overview.
+        toggleAddToBagDrawer();
+      }
     };
 
     const toggleAlreadyAddedDrawer = () =>
       this.setState({ openAlreadyAddedDrawer: !openAlreadyAddedDrawer });
 
     const handleAlreadyAddedClick = (color: "black" | "white") => {
-      const productId = `RR20-${color}`;
-      this.setState({ alreadyAddedProductId: productId });
-      toggleAlreadyAddedDrawer();
+      const productId = availableProductIds.find(id => id.endsWith(color));
+
+      if (productId !== undefined) {
+        this.setState({ alreadyAddedProductId: productId });
+        toggleAlreadyAddedDrawer();
+      }
     };
 
     // Determine vertical space for Product List.
