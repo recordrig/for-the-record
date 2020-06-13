@@ -1,12 +1,13 @@
 import React, { FunctionComponent, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
-import Link from "next/link";
 import {
   extractPrices,
   formatCurrency,
   priceWithoutTax,
   sumTotal
 } from "../utils/prices";
+import ArrowRightIcon from "./ArrowRightIcon";
+import Button from "./Button";
 
 interface StyledProductProps {
   readonly animateRemoval: boolean;
@@ -185,20 +186,6 @@ const StyledProductList = styled.div`
   }
 `;
 
-const StyledCheckoutLink = styled.a`
-  background-color: #0062ff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-`;
-
 const StyledTotals = styled.div`
   p {
     color: #4d5358;
@@ -354,11 +341,21 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
         <p>
           <span>Total:</span>&nbsp;<span>{formatCurrency(total)}</span>
         </p>
-        <Link href="/shop/checkout" passHref>
-          <StyledCheckoutLink>
-            Check Out <span style={{ fontSize: "20px" }}>&nbsp;&rarr;</span>
-          </StyledCheckoutLink>
-        </Link>
+        <Button href="/shop/checkout">
+          Check Out
+          <span
+            style={{
+              display: "inline-block",
+              height: "24px",
+              marginLeft: "8px",
+              position: "relative",
+              top: "6px",
+              width: "24px"
+            }}
+          >
+            <ArrowRightIcon color="#ffffff" />
+          </span>
+        </Button>
       </StyledTotals>
     </StyledShoppingBag>
   );

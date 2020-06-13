@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
 import ArrowRightIcon from "./ArrowRightIcon";
+import Button from "./Button";
 import Drawer from "./Drawer";
 import ProductList from "./ProductList";
 import ShoppingBagIcon from "./ShoppingBagIcon";
@@ -46,19 +47,8 @@ const StyledShopLink = styled.a`
   text-decoration: none;
 `;
 
-const StyledButtonLink = styled.a`
-  background-color: #0062ff;
-  border-radius: 4px;
-  border-bottom: 2px solid #0043ce;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
+const StyledButtonWrapper = styled.div`
   margin: 0 16px;
-  text-align: center;
-  text-decoration: none;
   width: calc(100% - 32px);
 `;
 
@@ -195,8 +185,8 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
               Your Shopping Bag
             </p>
             <ProductList products={products} />
-            <Link href="/shop/checkout" passHref>
-              <StyledButtonLink onClick={() => toggleDrawer()}>
+            <StyledButtonWrapper>
+              <Button href="/shop/checkout" onClick={() => toggleDrawer()}>
                 Check Out
                 <span
                   style={{
@@ -210,8 +200,8 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
                 >
                   <ArrowRightIcon color="#ffffff" />
                 </span>
-              </StyledButtonLink>
-            </Link>
+              </Button>
+            </StyledButtonWrapper>
             <p style={{ textAlign: "center" }}>
               <Link href="/shop/shopping-bag" passHref>
                 <StyledReviewBagLink onClick={() => toggleDrawer()}>
@@ -225,8 +215,8 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             <p style={{ padding: "64px 0 16px", textAlign: "center" }}>
               Your Shopping Bag is empty.
             </p>
-            <Link href="/shop/buy-recordrig" passHref>
-              <StyledButtonLink onClick={() => toggleDrawer()}>
+            <StyledButtonWrapper>
+              <Button href="/shop/buy-recordrig" onClick={() => toggleDrawer()}>
                 Shop RecordRig
                 <span
                   style={{
@@ -240,8 +230,8 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
                 >
                   <ArrowRightIcon color="#ffffff" />
                 </span>
-              </StyledButtonLink>
-            </Link>
+              </Button>
+            </StyledButtonWrapper>
           </div>
         )}
       </Drawer>

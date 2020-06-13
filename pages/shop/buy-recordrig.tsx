@@ -8,26 +8,15 @@ import { connect } from "react-redux";
 import productsData from "../../_data/products";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
 import ArrowRightIcon from "../../components/ArrowRightIcon";
+import Button from "../../components/Button";
 import CheckmarkIcon from "../../components/CheckmarkIcon";
 import InfoIcon from "../../components/InfoIcon";
 import Drawer from "../../components/Drawer";
 import ProductList from "../../components/ProductList";
 import RecordRigConfigurator from "../../components/RecordRigConfigurator";
 
-const StyledButtonLink = styled.a`
-  background-color: #0062ff;
-  border-radius: 4px;
-  border-bottom: 2px solid #0043ce;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
-  margin: 0 16px;
-  text-align: center;
-  text-decoration: none;
+const StyledButtonWrapper = styled.div`
+  padding-left: 16px;
   width: calc(100% - 32px);
 `;
 
@@ -264,9 +253,10 @@ class BuyRecordRigPage extends Component<
             products={shoppingBag}
             showAmount={isLargeScreen ? 3 : 2}
           />
-          <Link href="/shop/shopping-bag" passHref>
-            <StyledButtonLink
-              data-cy="ready-to-order"
+          <StyledButtonWrapper>
+            <Button
+              cypressId="ready-to-order"
+              href="/shop/shopping-bag"
               onClick={() => toggleAddToBagDrawer()}
             >
               I&apos;m ready to order
@@ -282,8 +272,8 @@ class BuyRecordRigPage extends Component<
               >
                 <ArrowRightIcon color="#ffffff" />
               </span>
-            </StyledButtonLink>
-          </Link>
+            </Button>
+          </StyledButtonWrapper>
           <p style={{ textAlign: "center" }}>
             <StyledContinueShoppingButton
               data-cy="continue-shopping"
@@ -331,9 +321,10 @@ class BuyRecordRigPage extends Component<
             showAmount={1}
             showFirstProductId={alreadyAddedProductId}
           />
-          <Link href="/shop/shopping-bag" passHref>
-            <StyledButtonLink
-              data-cy="review-shopping-bag"
+          <StyledButtonWrapper>
+            <Button
+              cypressId="review-shopping-bag"
+              href="/shop/shopping-bag"
               onClick={() => toggleAlreadyAddedDrawer()}
             >
               Review Shopping Bag
@@ -349,8 +340,8 @@ class BuyRecordRigPage extends Component<
               >
                 <ArrowRightIcon color="#ffffff" />
               </span>
-            </StyledButtonLink>
-          </Link>
+            </Button>
+          </StyledButtonWrapper>
           <p style={{ textAlign: "center" }}>
             <StyledContinueShoppingButton
               onClick={() => toggleAlreadyAddedDrawer()}

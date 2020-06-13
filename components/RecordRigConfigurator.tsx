@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 import products from "../_data/products";
 import { formatCurrency } from "../utils/prices";
+import Button from "./Button";
 import CheckmarkIcon from "./CheckmarkIcon";
 import Footnotes from "./Footnotes";
 import Tile from "./Tile";
@@ -499,63 +500,19 @@ const StyledDeviceContent = styled.div<StyledDeviceContentProps>`
   `}
 `;
 
-interface StyledAddToBagButtonProps {
-  readonly clicked: boolean;
-}
-
-const StyledAddToBagButton = styled.button<StyledAddToBagButtonProps>`
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  line-height: 64px;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  transition: 0.2s ease 0s;
-  width: 100%;
-
+const StyledButtonWrapper = styled.div`
   @media (max-width: 1023px) {
     margin: 0 auto;
     width: calc(100vw - 16px);
   }
 
-  @media (max-width: 449px) {
-    font-size: 18px;
-    line-height: 48px;
-  }
-
-  @media (min-width: 450px) and (max-width: 1023px) {
-    font-size: 18px;
-    line-height: 48px;
-  }
-
-  @media (min-width: 550px) and (max-width: 1023px) {
-    font-size: 24px;
-    line-height: 64px;
-  }
-
   @media (min-width: 700px) and (max-width: 1023px) {
-    font-size: 24px;
     margin-left: auto;
-    line-height: 64px;
     position: absolute;
     top: 40px;
     right: 16px;
     width: calc(100vw - 302px);
   }
-
-  ${({ clicked }) => css`
-    background-color: ${clicked ? "transparent" : "#0f62fe"};
-    border-bottom: ${clicked ? "1px solid #24a148" : "2px solid #002d9c"};
-    border-top: ${clicked ? "1px solid #24a148" : 0};
-    border-right: ${clicked ? "1px solid #24a148" : 0};
-    border-left: ${clicked ? "1px solid #24a148" : 0};
-    color: ${clicked ? "#24a148" : "#ffffff"};
-    font-size: ${clicked ? "21px" : "24px"};
-  `}
 `;
 
 const StyledAddToBag = styled.div`
@@ -1073,31 +1030,33 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <p>
                 Expected delivery: within <span>14 days</span>
               </p>
-              <StyledAddToBagButton
-                clicked={addToBagButtonDisabled}
-                data-cy="add-to-bag-button"
-                onClick={() => handleAddToBagClick()}
-              >
-                {addToBagButtonDisabled ? (
-                  <>
-                    <span
-                      style={{
-                        display: "inline-block",
-                        height: "32px",
-                        marginRight: "4px",
-                        position: "relative",
-                        top: "8px",
-                        width: "32px"
-                      }}
-                    >
-                      <CheckmarkIcon color="#24a148" />
-                    </span>
-                    Added To Bag
-                  </>
-                ) : (
-                  "Add to Bag"
-                )}
-              </StyledAddToBagButton>
+              <StyledButtonWrapper>
+                <Button
+                  clicked={addToBagButtonDisabled}
+                  cypressId="add-to-bag-button"
+                  onClick={() => handleAddToBagClick()}
+                >
+                  {addToBagButtonDisabled ? (
+                    <>
+                      <span
+                        style={{
+                          display: "inline-block",
+                          height: "32px",
+                          marginRight: "4px",
+                          position: "relative",
+                          top: "8px",
+                          width: "32px"
+                        }}
+                      >
+                        <CheckmarkIcon color="#24a148" />
+                      </span>
+                      Added To Bag
+                    </>
+                  ) : (
+                    "Add to Bag"
+                  )}
+                </Button>
+              </StyledButtonWrapper>
             </StyledAddToBag>
             <h3>Technical specifications</h3>
             <ul>

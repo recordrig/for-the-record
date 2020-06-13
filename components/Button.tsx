@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css } from "styled-components";
+import Link from "next/link";
 
 const sharedStyles = (clicked: boolean) => css`
   border-radius: 4px;
@@ -18,23 +19,13 @@ const sharedStyles = (clicked: boolean) => css`
     margin: 0 auto;
   }
 
-  @media (max-width: 449px) {
+  @media (max-width: 549px) {
     font-size: 18px;
     line-height: 48px;
   }
 
-  @media (min-width: 450px) and (max-width: 1023px) {
-    font-size: 18px;
-    line-height: 48px;
-  }
-
-  @media (min-width: 550px) and (max-width: 1023px) {
-    font-size: 24px;
-    line-height: 64px;
-  }
-
-  @media (min-width: 700px) {
-    font-size: 24px;
+  @media (min-width: 550px) {
+    font-size: 21px;
     line-height: 64px;
   }
 
@@ -54,6 +45,7 @@ interface StyledButtonProps {
 const StyledAnchorButton = styled.a<StyledButtonProps>`
   ${({ clicked }) => sharedStyles(clicked)}
   display: inline-block;
+  text-decoration: none;
 `;
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -65,11 +57,11 @@ interface ButtonProps {
   /** Optionally pass `clicked` to make the button appear... clicked. */
   readonly clicked?: boolean;
   /** Optionally pass a custom string to be rendered as an HTML data element `data-cy` to aid integration tests. */
-  readonly dataCy?: string;
+  readonly cypressId?: string;
+  /** Optionally pass a route to use the button as a link. */
+  readonly href?: string;
   /** Optionally define a function to execute when the button is clicked. */
   readonly onClick?: Function;
-  /** Optionally use an `anchor` instead of a `button` element. */
-  readonly isLink?: boolean;
 }
 
 /**
@@ -78,9 +70,9 @@ interface ButtonProps {
 const Button: FunctionComponent<ButtonProps> = ({
   children,
   clicked = false,
-  dataCy = undefined,
-  onClick = undefined,
-  isLink = false
+  cypressId = undefined,
+  href = undefined,
+  onClick = undefined
 }) => {
   const handleClick = () => {
     if (onClick) onClick();
@@ -88,18 +80,20 @@ const Button: FunctionComponent<ButtonProps> = ({
 
   return (
     <>
-      {isLink ? (
-        <StyledAnchorButton
-          clicked={clicked}
-          data-cy={dataCy}
-          onClick={() => handleClick()}
-        >
-          {children}
-        </StyledAnchorButton>
+      {href ? (
+        <Link href={href} passHref>
+          <StyledAnchorButton
+            clicked={clicked}
+            data-cy={cypressId}
+            onClick={() => handleClick()}
+          >
+            {children}
+          </StyledAnchorButton>
+        </Link>
       ) : (
         <StyledButton
           clicked={clicked}
-          data-cy={dataCy}
+          data-cy={cypressId}
           onClick={() => handleClick()}
         >
           {children}

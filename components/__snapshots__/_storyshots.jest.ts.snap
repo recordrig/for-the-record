@@ -72,72 +72,6 @@ exports[`Storyshots ArrowRightIcon default 1`] = `
 </span>
 `;
 
-exports[`Storyshots Button anchor 1`] = `
-.c0 {
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: 0.2s ease 0s;
-  transition: 0.2s ease 0s;
-  width: 100%;
-  background-color: #0f62fe;
-  border-bottom: 2px solid #002d9c;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  color: #ffffff;
-  font-size: 24px;
-  display: inline-block;
-}
-
-@media (max-width:1023px) {
-  .c0 {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width:449px) {
-  .c0 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:450px) and (max-width:1023px) {
-  .c0 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c0 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
-@media (min-width:700px) {
-  .c0 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
-<a
-  className="c0"
-  onClick={[Function]}
->
-  Hello World
-</a>
-`;
-
 exports[`Storyshots Button click handler 1`] = `
 .c0 {
   border-radius: 4px;
@@ -167,30 +101,16 @@ exports[`Storyshots Button click handler 1`] = `
   }
 }
 
-@media (max-width:449px) {
+@media (max-width:549px) {
   .c0 {
     font-size: 18px;
     line-height: 48px;
   }
 }
 
-@media (min-width:450px) and (max-width:1023px) {
+@media (min-width:550px) {
   .c0 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c0 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
-@media (min-width:700px) {
-  .c0 {
-    font-size: 24px;
+    font-size: 21px;
     line-height: 64px;
   }
 }
@@ -232,30 +152,16 @@ exports[`Storyshots Button clicked 1`] = `
   }
 }
 
-@media (max-width:449px) {
+@media (max-width:549px) {
   .c0 {
     font-size: 18px;
     line-height: 48px;
   }
 }
 
-@media (min-width:450px) and (max-width:1023px) {
+@media (min-width:550px) {
   .c0 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c0 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
-@media (min-width:700px) {
-  .c0 {
-    font-size: 24px;
+    font-size: 21px;
     line-height: 64px;
   }
 }
@@ -297,30 +203,16 @@ exports[`Storyshots Button default 1`] = `
   }
 }
 
-@media (max-width:449px) {
+@media (max-width:549px) {
   .c0 {
     font-size: 18px;
     line-height: 48px;
   }
 }
 
-@media (min-width:450px) and (max-width:1023px) {
+@media (min-width:550px) {
   .c0 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c0 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
-@media (min-width:700px) {
-  .c0 {
-    font-size: 24px;
+    font-size: 21px;
     line-height: 64px;
   }
 }
@@ -331,6 +223,62 @@ exports[`Storyshots Button default 1`] = `
 >
   Hello World
 </button>
+`;
+
+exports[`Storyshots Button href 1`] = `
+.c0 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (max-width:1023px) {
+  .c0 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c0 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
+<a
+  className="c0"
+  href="/no-router-is-ok"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  Hello World
+</a>
 `;
 
 exports[`Storyshots CheckmarkIcon color 1`] = `
@@ -2138,6 +2086,18 @@ Array [
   margin-right: auto;
 }
 
+@media (max-width:1023px) {
+
+}
+
+@media (max-width:549px) {
+
+}
+
+@media (min-width:550px) {
+
+}
+
 @media (max-width:575px) {
 
 }
@@ -2220,16 +2180,41 @@ Array [
       </li>
     </ul>
   </nav>,
-  .c3 {
+  .c4 {
   height: inherit;
   display: inline-block;
   width: inherit;
 }
 
-.c3 svg {
+.c4 svg {
   fill: #ffffff;
   height: inherit;
   width: inherit;
+}
+
+.c3 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1 {
@@ -2275,20 +2260,28 @@ Array [
 }
 
 .c2 {
-  background-color: #0062ff;
-  border-radius: 4px;
-  border-bottom: 2px solid #0043ce;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
   margin: 0 16px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: calc(100% - 32px);
+}
+
+@media (max-width:1023px) {
+  .c3 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c3 {
+    font-size: 21px;
+    line-height: 64px;
+  }
 }
 
 @media (max-width:575px) {
@@ -2409,48 +2402,52 @@ Array [
           >
             Your Shopping Bag is empty.
           </p>
-          <a
+          <div
             className="c2"
-            href="/shop/buy-recordrig"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
           >
-            Shop RecordRig
-            <span
-              style={
-                Object {
-                  "display": "inline-block",
-                  "height": "24px",
-                  "marginLeft": "8px",
-                  "position": "relative",
-                  "top": "6px",
-                  "width": "24px",
-                }
-              }
+            <a
+              className="c3"
+              href="/shop/buy-recordrig"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
+              Shop RecordRig
               <span
-                className="c3"
-                color="#ffffff"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "24px",
+                    "marginLeft": "8px",
+                    "position": "relative",
+                    "top": "6px",
+                    "width": "24px",
+                  }
+                }
               >
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  height="32"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width="32"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  className="c4"
+                  color="#ffffff"
                 >
-                  <polygon
-                    points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-                  />
-                  <title>
-                    Arrow right
-                  </title>
-                </svg>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    height="32"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polygon
+                      points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                    />
+                    <title>
+                      Arrow right
+                    </title>
+                  </svg>
+                </span>
               </span>
-            </span>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -2589,6 +2586,18 @@ Array [
   margin-right: auto;
 }
 
+@media (max-width:1023px) {
+
+}
+
+@media (max-width:549px) {
+
+}
+
+@media (min-width:550px) {
+
+}
+
 @media (max-width:575px) {
 
 }
@@ -2682,16 +2691,41 @@ Array [
       </li>
     </ul>
   </nav>,
-  .c4 {
+  .c5 {
   height: inherit;
   display: inline-block;
   width: inherit;
 }
 
-.c4 svg {
+.c5 svg {
   fill: #ffffff;
   height: inherit;
   width: inherit;
+}
+
+.c4 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c1 {
@@ -2798,26 +2832,34 @@ Array [
 }
 
 .c3 {
-  background-color: #0062ff;
-  border-radius: 4px;
-  border-bottom: 2px solid #0043ce;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
   margin: 0 16px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   width: calc(100% - 32px);
 }
 
-.c5 {
+.c6 {
   color: #000000;
   font-size: 15px;
   text-align: center;
+}
+
+@media (max-width:1023px) {
+  .c4 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c4 {
+    font-size: 21px;
+    line-height: 64px;
+  }
 }
 
 @media (max-width:575px) {
@@ -3013,48 +3055,52 @@ Array [
             </span>
           </div>
         </div>
-        <a
+        <div
           className="c3"
-          href="/shop/checkout"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
         >
-          Check Out
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "height": "24px",
-                "marginLeft": "8px",
-                "position": "relative",
-                "top": "6px",
-                "width": "24px",
-              }
-            }
+          <a
+            className="c4"
+            href="/shop/checkout"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
+            Check Out
             <span
-              className="c4"
-              color="#ffffff"
+              style={
+                Object {
+                  "display": "inline-block",
+                  "height": "24px",
+                  "marginLeft": "8px",
+                  "position": "relative",
+                  "top": "6px",
+                  "width": "24px",
+                }
+              }
             >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                height="32"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                className="c5"
+                color="#ffffff"
               >
-                <polygon
-                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-                />
-                <title>
-                  Arrow right
-                </title>
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  height="32"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width="32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                  />
+                  <title>
+                    Arrow right
+                  </title>
+                </svg>
+              </span>
             </span>
-          </span>
-        </a>
+          </a>
+        </div>
         <p
           style={
             Object {
@@ -3063,7 +3109,7 @@ Array [
           }
         >
           <a
-            className="c5"
+            className="c6"
             href="/shop/shopping-bag"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4746,7 +4792,29 @@ exports[`Storyshots ProductList show first with indicate addition 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator black 1`] = `
-.c13 {
+.c12 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.c14 {
   color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
@@ -5003,29 +5071,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   margin-bottom: 12px;
 }
 
-.c11 {
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  line-height: 64px;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: 0.2s ease 0s;
-  transition: 0.2s ease 0s;
-  width: 100%;
-  background-color: #0f62fe;
-  border-bottom: 2px solid #002d9c;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  color: #ffffff;
-  font-size: 24px;
-}
-
 .c10 h3 {
   margin-bottom: 6px;
 }
@@ -5048,23 +5093,23 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   font-weight: bold;
 }
 
-.c12 {
+.c13 {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c12 img {
+.c13 img {
   max-width: 100%;
 }
 
-.c12 ul {
+.c13 ul {
   list-style-type: none;
   margin-top: 32px;
   padding-left: 0;
 }
 
-.c12 ul li {
+.c13 ul li {
   color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
@@ -5080,14 +5125,34 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   margin: 0;
 }
 
+@media (max-width:1023px) {
+  .c12 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c12 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c12 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
 @media (max-width:767px) {
-  .c13 {
+  .c14 {
     font-size: 10px;
   }
 }
 
 @media (min-width:768px) {
-  .c13 {
+  .c14 {
     font-size: 11px;
   }
 }
@@ -5342,32 +5407,9 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   }
 }
 
-@media (max-width:449px) {
-  .c11 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:450px) and (max-width:1023px) {
-  .c11 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c11 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
 @media (min-width:700px) and (max-width:1023px) {
   .c11 {
-    font-size: 24px;
     margin-left: auto;
-    line-height: 64px;
     position: absolute;
     top: 40px;
     right: 16px;
@@ -5480,22 +5522,22 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
 }
 
 @media (max-width:699px) {
-  .c12 {
+  .c13 {
     margin-bottom: 256px;
     width: 100%;
   }
 
-  .c12 h3 {
+  .c13 h3 {
     margin-top: 32px;
   }
 
-  .c12 img {
+  .c13 img {
     width: 100%;
   }
 }
 
 @media (min-width:700px) {
-  .c12 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -5505,12 +5547,12 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     width: 100%;
   }
 
-  .c12 h3 {
+  .c13 h3 {
     margin-top: 0;
     margin-left: 16px;
   }
 
-  .c12 > div:first-child {
+  .c13 > div:first-child {
     -webkit-flex-basis: 288px;
     -ms-flex-preferred-size: 288px;
     flex-basis: 288px;
@@ -5523,7 +5565,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     flex-shrink: 0;
   }
 
-  .c12 > div:last-child {
+  .c13 > div:last-child {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -5531,26 +5573,26 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     padding-right: 16px;
   }
 
-  .c12 img {
+  .c13 img {
     max-width: 696px;
     width: 100%;
   }
 
-  .c12 ul {
+  .c13 ul {
     margin-top: 48px;
   }
 
-  .c12 li {
+  .c13 li {
     font-size: 18px;
   }
 }
 
 @media (min-width:1024px) {
-  .c12 {
+  .c13 {
     margin-top: 448px;
   }
 
-  .c12 h3 {
+  .c13 h3 {
     font-size: 28px;
   }
 }
@@ -5738,13 +5780,17 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
             14 days
           </span>
         </p>
-        <button
+        <div
           className="c11"
-          data-cy="add-to-bag-button"
-          onClick={[Function]}
         >
-          Add to Bag
-        </button>
+          <button
+            className="c12"
+            data-cy="add-to-bag-button"
+            onClick={[Function]}
+          >
+            Add to Bag
+          </button>
+        </div>
       </div>
       <h3>
         Technical specifications
@@ -5811,7 +5857,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className="c13"
   >
     <div>
       <h3>
@@ -5839,7 +5885,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
       style={
@@ -6504,7 +6550,29 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
 `;
 
 exports[`Storyshots RecordRigConfigurator white 1`] = `
-.c13 {
+.c12 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.c14 {
   color: #a2a9b0;
   margin: 0 auto;
   max-width: 1216px;
@@ -6762,29 +6830,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   margin-bottom: 12px;
 }
 
-.c11 {
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  line-height: 64px;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: 0.2s ease 0s;
-  transition: 0.2s ease 0s;
-  width: 100%;
-  background-color: #0f62fe;
-  border-bottom: 2px solid #002d9c;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  color: #ffffff;
-  font-size: 24px;
-}
-
 .c10 h3 {
   margin-bottom: 6px;
 }
@@ -6807,23 +6852,23 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   font-weight: bold;
 }
 
-.c12 {
+.c13 {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
 
-.c12 img {
+.c13 img {
   max-width: 100%;
 }
 
-.c12 ul {
+.c13 ul {
   list-style-type: none;
   margin-top: 32px;
   padding-left: 0;
 }
 
-.c12 ul li {
+.c13 ul li {
   color: #697077;
   font-size: 14px;
   margin-bottom: 12px;
@@ -6839,14 +6884,34 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   margin: 0;
 }
 
+@media (max-width:1023px) {
+  .c12 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c12 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c12 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
 @media (max-width:767px) {
-  .c13 {
+  .c14 {
     font-size: 10px;
   }
 }
 
 @media (min-width:768px) {
-  .c13 {
+  .c14 {
     font-size: 11px;
   }
 }
@@ -7101,32 +7166,9 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   }
 }
 
-@media (max-width:449px) {
-  .c11 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:450px) and (max-width:1023px) {
-  .c11 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) and (max-width:1023px) {
-  .c11 {
-    font-size: 24px;
-    line-height: 64px;
-  }
-}
-
 @media (min-width:700px) and (max-width:1023px) {
   .c11 {
-    font-size: 24px;
     margin-left: auto;
-    line-height: 64px;
     position: absolute;
     top: 40px;
     right: 16px;
@@ -7239,22 +7281,22 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
 }
 
 @media (max-width:699px) {
-  .c12 {
+  .c13 {
     margin-bottom: 256px;
     width: 100%;
   }
 
-  .c12 h3 {
+  .c13 h3 {
     margin-top: 32px;
   }
 
-  .c12 img {
+  .c13 img {
     width: 100%;
   }
 }
 
 @media (min-width:700px) {
-  .c12 {
+  .c13 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -7264,12 +7306,12 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     width: 100%;
   }
 
-  .c12 h3 {
+  .c13 h3 {
     margin-top: 0;
     margin-left: 16px;
   }
 
-  .c12 > div:first-child {
+  .c13 > div:first-child {
     -webkit-flex-basis: 288px;
     -ms-flex-preferred-size: 288px;
     flex-basis: 288px;
@@ -7282,7 +7324,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     flex-shrink: 0;
   }
 
-  .c12 > div:last-child {
+  .c13 > div:last-child {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -7290,26 +7332,26 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     padding-right: 16px;
   }
 
-  .c12 img {
+  .c13 img {
     max-width: 696px;
     width: 100%;
   }
 
-  .c12 ul {
+  .c13 ul {
     margin-top: 48px;
   }
 
-  .c12 li {
+  .c13 li {
     font-size: 18px;
   }
 }
 
 @media (min-width:1024px) {
-  .c12 {
+  .c13 {
     margin-top: 448px;
   }
 
-  .c12 h3 {
+  .c13 h3 {
     font-size: 28px;
   }
 }
@@ -7497,13 +7539,17 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
             14 days
           </span>
         </p>
-        <button
+        <div
           className="c11"
-          data-cy="add-to-bag-button"
-          onClick={[Function]}
         >
-          Add to Bag
-        </button>
+          <button
+            className="c12"
+            data-cy="add-to-bag-button"
+            onClick={[Function]}
+          >
+            Add to Bag
+          </button>
+        </div>
       </div>
       <h3>
         Technical specifications
@@ -7570,7 +7616,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     </div>
   </div>
   <div
-    className="c12"
+    className="c13"
   >
     <div>
       <h3>
@@ -7598,7 +7644,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     </div>
   </div>
   <div
-    className="c13"
+    className="c14"
   >
     <div
       style={
@@ -9847,6 +9893,43 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
+.c5 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c5 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
+}
+
+.c4 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .c2 {
   border-bottom: 1px solid #dde1e6;
   max-height: 500px;
@@ -9938,21 +10021,6 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-left: 0;
 }
 
-.c4 {
-  background-color: #0062ff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 64px;
-  font-size: 19px;
-  line-height: 64px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-}
-
 .c3 p {
   color: #4d5358;
   margin-top: 8px;
@@ -9980,6 +10048,26 @@ exports[`Storyshots ShoppingBag default 1`] = `
 .c0 {
   margin: 0 auto;
   max-width: 758px;
+}
+
+@media (max-width:1023px) {
+  .c4 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c4 {
+    font-size: 21px;
+    line-height: 64px;
+  }
 }
 
 @media (max-width:640px) {
@@ -10211,15 +10299,40 @@ exports[`Storyshots ShoppingBag default 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
-      Check Out 
+      Check Out
       <span
         style={
           Object {
-            "fontSize": "20px",
+            "display": "inline-block",
+            "height": "24px",
+            "marginLeft": "8px",
+            "position": "relative",
+            "top": "6px",
+            "width": "24px",
           }
         }
       >
-         →
+        <span
+          className="c5"
+          color="#ffffff"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            height="32"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon
+              points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+            />
+            <title>
+              Arrow right
+            </title>
+          </svg>
+        </span>
       </span>
     </a>
   </div>
