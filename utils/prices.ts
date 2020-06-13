@@ -23,18 +23,30 @@ export const extractPrices = (
 
 /**
  * Accepts a number assumed to be a monetary value in cents, and returns a formatted string
- * ready to render in the frontend. Passing `round = true` will return the formatted price
+ * ready to render in the frontend. Passing `compact = true` will return the formatted price
  * WITHOUT cents.
  *
  * E.g. if it receives a number `5000`, it will return `"€ 50,00"`.
  */
-export const formatCurrency = (intPrice: number, noCents = false): string => {
+export const formatCurrency = (intPrice: number, compact = false): string => {
   checkInteger(intPrice);
   const strPrice = intPrice.toString();
   const priceWithoutCents = strPrice.slice(0, -2);
   const cents = strPrice.slice(-2);
-  const priceWithCents = `${priceWithoutCents},${cents}`;
-  return `€ ${noCents ? priceWithoutCents : priceWithCents}`;
+
+  if (compact) return `€ ${priceWithoutCents}`;
+
+  // High prices will need a thousands separator.
+  if (priceWithoutCents.length > 3) {
+    const afterSeparator = priceWithoutCents.slice(-3);
+    const beforeSeparator =
+      priceWithoutCents.length === 5
+        ? priceWithoutCents.slice(0, 2)
+        : priceWithoutCents[0];
+    return `€ ${beforeSeparator}.${afterSeparator},${cents}`;
+  }
+
+  return `€ ${priceWithoutCents},${cents}`;
 };
 
 /**
