@@ -30,6 +30,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+button {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
 /*
  * The module `<PageTransition>` component needs these global classes to do its magic. This is
  * an external dependency (`next-page-transitions`) and as such, we do not have a way to circumvent

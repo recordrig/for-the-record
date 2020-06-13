@@ -72,6 +72,267 @@ exports[`Storyshots ArrowRightIcon default 1`] = `
 </span>
 `;
 
+exports[`Storyshots Button anchor 1`] = `
+.c0 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+}
+
+@media (max-width:1023px) {
+  .c0 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:449px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+<a
+  className="c0"
+  onClick={[Function]}
+>
+  Hello World
+</a>
+`;
+
+exports[`Storyshots Button click handler 1`] = `
+.c0 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+@media (max-width:1023px) {
+  .c0 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:449px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Button clicked 1`] = `
+.c0 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid #24a148;
+  border-top: 1px solid #24a148;
+  border-right: 1px solid #24a148;
+  border-left: 1px solid #24a148;
+  color: #24a148;
+  font-size: 21px;
+}
+
+@media (max-width:1023px) {
+  .c0 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:449px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  Hello World
+</button>
+`;
+
+exports[`Storyshots Button default 1`] = `
+.c0 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+@media (max-width:1023px) {
+  .c0 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:449px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:450px) and (max-width:1023px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) and (max-width:1023px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 {
+    font-size: 24px;
+    line-height: 64px;
+  }
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  Hello World
+</button>
+`;
+
 exports[`Storyshots CheckmarkIcon color 1`] = `
 .c0 {
   height: inherit;
