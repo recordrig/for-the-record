@@ -11,6 +11,7 @@ module.exports = {
     // Include:
     "./components/**/*.{ts,tsx}",
     "./store/**/*.{ts,tsx}",
+    "./utils/**/*.{ts,tsx}",
     // Exlude:
     "!./components/**/*.stories.tsx",
     "!./components/**/*Container.tsx",
