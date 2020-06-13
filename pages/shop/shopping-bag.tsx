@@ -9,6 +9,7 @@ import {
   updateProductQuantityAction
 } from "../../store/shoppingBag";
 import ShoppingBag from "../../components/ShoppingBag";
+import { extractPrices, formatCurrency, sumTotal } from "../../utils/prices";
 
 const StyledShoppingBagPage = styled.div``;
 
@@ -26,15 +27,8 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   // The shoppingBag as received from global state stores ID's and quantity.
   // The ShoppingBag component additionally needs price information.
   const products = shoppingBag.map(product => ({ ...product, price: 239900 }));
-  const prices = products.map(product => product.price * product.quantity);
-  const total = products.length > 0 ? prices.reduce((a, b) => a + b) : 0;
-
-  const formatCurrency = (intPrice: number) =>
-    (intPrice / 100).toLocaleString("nl-NL", {
-      currency: "EUR",
-      minimumFractionDigits: 2,
-      style: "currency"
-    });
+  const prices = extractPrices(products);
+  const total = products.length > 0 ? sumTotal(prices) : 0;
 
   return (
     <StyledShoppingBagPage>

@@ -1,6 +1,12 @@
 import React, { FunctionComponent, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
+import {
+  extractPrices,
+  formatCurrency,
+  priceWithoutTax,
+  sumTotal
+} from "../utils/prices";
 
 interface StyledProductProps {
   readonly animateRemoval: boolean;
@@ -270,17 +276,10 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   products,
   removeProduct
 }) => {
-  const prices = products.map(product => product.price * product.quantity);
-  const total = prices.reduce((a, b) => a + b);
-  const preTaxTotal = Math.round(total / 1.21);
+  const prices = extractPrices(products);
+  const total = sumTotal(prices);
+  const preTaxTotal = priceWithoutTax(total);
   const taxTotal = total - preTaxTotal;
-
-  const formatCurrency = (intPrice: number) =>
-    (intPrice / 100).toLocaleString("nl-NL", {
-      currency: "EUR",
-      minimumFractionDigits: 2,
-      style: "currency"
-    });
 
   // Set to a particular Product ID to animate that Product into oblivion.
   const [animateRemoval, setAnimateRemoval] = useState("");
