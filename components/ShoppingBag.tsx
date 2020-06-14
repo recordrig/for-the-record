@@ -132,7 +132,7 @@ const StyledProduct = styled.li<StyledProductProps>`
     img {
       display: block;
       margin: 16px auto;
-      width: 240px;
+      width: 200px;
     }
   }
 

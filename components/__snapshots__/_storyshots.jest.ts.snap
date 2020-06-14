@@ -10094,7 +10094,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   .c1 img {
     display: block;
     margin: 16px auto;
-    width: 240px;
+    width: 200px;
   }
 }
 

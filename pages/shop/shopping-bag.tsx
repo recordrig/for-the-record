@@ -11,10 +11,13 @@ import {
 } from "../../store/shoppingBag";
 import ShoppingBag from "../../components/ShoppingBag";
 import { extractPrices, formatCurrency, sumTotal } from "../../utils/prices";
+import ArrowRightIcon from "../../components/ArrowRightIcon";
+import Button from "../../components/Button";
+import { CapsHeading } from "../../components/Text";
+import Tile, { TileContainer } from "../../components/Tile";
 
 const StyledShoppingBagPage = styled.div`
   > div {
-    background-color: #ffffff;
     min-height: 70vh;
     padding-top: 128px;
     padding-bottom: 256px;
@@ -30,7 +33,7 @@ const StyledShoppingBagPage = styled.div`
   @media (min-width: 768px) {
     > div > div {
       margin: 0 auto;
-      max-width: 750px;
+      max-width: 960px;
     }
   }
 `;
@@ -73,14 +76,40 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
             >
               Your bag total is {formatCurrency(total)}.
             </p>
-            <p style={{ paddingBottom: "64px", textAlign: "center" }}>
+            <p style={{ fontWeight: "bold", textAlign: "center" }}>
               Get free shipping on all EU orders.
             </p>
-            <ShoppingBag
-              products={products}
-              updateProductQuantity={updateProductQuantity}
-              removeProduct={removeProduct}
-            />
+            <div style={{ margin: "0 auto", maxWidth: "450px" }}>
+              <Button href="/shop/checkout">
+                Check Out
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "24px",
+                    marginLeft: "8px",
+                    position: "relative",
+                    top: "6px",
+                    width: "24px"
+                  }}
+                >
+                  <ArrowRightIcon color="#ffffff" />
+                </span>
+              </Button>
+            </div>
+            <div style={{ marginTop: "128px" }}>
+              <Tile>
+                <TileContainer>
+                  <div style={{ marginBottom: "24px" }}>
+                    <CapsHeading>Your Shopping Bag.</CapsHeading>
+                  </div>
+                  <ShoppingBag
+                    products={products}
+                    updateProductQuantity={updateProductQuantity}
+                    removeProduct={removeProduct}
+                  />
+                </TileContainer>
+              </Tile>
+            </div>
           </div>
         ) : (
           <>
