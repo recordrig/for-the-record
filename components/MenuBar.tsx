@@ -167,7 +167,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
       </StyledMenuBar>
       <Drawer closeDrawer={toggleDrawer} open={openShoppingBag}>
         {products.length > 0 ? (
-          <>
+          <span>
             <p
               style={{
                 fontSize: "13px",
@@ -209,7 +209,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
                 </StyledReviewBagLink>
               </Link>
             </p>
-          </>
+          </span>
         ) : (
           <div style={{ marginBottom: "16px" }}>
             <p style={{ padding: "64px 0 16px", textAlign: "center" }}>
