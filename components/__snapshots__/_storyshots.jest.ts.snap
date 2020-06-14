@@ -9893,19 +9893,19 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
-.c5 {
+.c4 {
   height: inherit;
   display: inline-block;
   width: inherit;
 }
 
-.c5 svg {
+.c4 svg {
   fill: #ffffff;
   height: inherit;
   width: inherit;
 }
 
-.c4 {
+.c3 {
   border-radius: 4px;
   border-left: 0;
   border-right: 0;
@@ -9930,7 +9930,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   text-decoration: none;
 }
 
-.c2 {
+.c1 {
   border-bottom: 1px solid #dde1e6;
   max-height: 500px;
   opacity: 1;
@@ -9941,7 +9941,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   animation: 1.2s;
 }
 
-.c2 > div {
+.c1 > div {
   box-sizing: border-box;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -9951,22 +9951,27 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-top: 16px;
 }
 
-.c2 p {
+.c1 p {
   font-weight: bold;
   margin: 0;
 }
 
-.c2 p:nth-child(2) {
+.c1 p:nth-child(2) {
   color: #4d5358;
   font-size: 14px;
   font-weight: normal;
 }
 
-.c2 p:nth-child(4) {
+.c1 p:nth-child(2) > span {
+  color: #24a148;
+  font-weight: bold;
+}
+
+.c1 p:nth-child(4) {
   text-align: right;
 }
 
-.c2 select {
+.c1 select {
   background-color: transparent;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
   background-position: right 4px center;
@@ -9983,7 +9988,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   -webkit-appearance: none;
 }
 
-.c2 button {
+.c1 button {
   background: none;
   border: none;
   clear: both;
@@ -9997,17 +10002,18 @@ exports[`Storyshots ShoppingBag default 1`] = `
   text-decoration: underline;
 }
 
-.c1 {
+.c0 {
+  border-top: 1px solid #dde1e6;
   width: 100%;
 }
 
-.c1 > div {
+.c0 > div {
   bottom: 28px;
   position: relative;
   text-align: center;
 }
 
-.c1 > div > span {
+.c0 > div > span {
   background-color: #ffffff;
   color: #697077;
   display: inline-block;
@@ -10016,27 +10022,28 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-right: 12px;
 }
 
-.c1 ul {
+.c0 ul {
   list-style-type: none;
+  margin-top: 0;
   padding-left: 0;
 }
 
-.c3 p {
+.c2 p {
   color: #4d5358;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
-.c3 p > span {
+.c2 p > span {
   display: block;
   float: left;
 }
 
-.c3 p > span:nth-child(2) {
+.c2 p > span:nth-child(2) {
   float: right;
 }
 
-.c3 p:last-of-type {
+.c2 p:last-of-type {
   border-top: 1px solid #dde1e6;
   color: #000000;
   font-weight: bold;
@@ -10045,42 +10052,37 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-top: 8px;
 }
 
-.c0 {
-  margin: 0 auto;
-  max-width: 758px;
-}
-
 @media (max-width:1023px) {
-  .c4 {
+  .c3 {
     margin: 0 auto;
   }
 }
 
 @media (max-width:549px) {
-  .c4 {
+  .c3 {
     font-size: 18px;
     line-height: 48px;
   }
 }
 
 @media (min-width:550px) {
-  .c4 {
+  .c3 {
     font-size: 21px;
     line-height: 64px;
   }
 }
 
 @media (max-width:640px) {
-  .c2 p,
-  .c2 select {
+  .c1 p,
+  .c1 select {
     font-size: 20px;
   }
 
-  .c2 select {
+  .c1 select {
     top: 24px;
   }
 
-  .c2 img {
+  .c1 img {
     display: block;
     margin: 16px auto;
     width: 240px;
@@ -10088,66 +10090,66 @@ exports[`Storyshots ShoppingBag default 1`] = `
 }
 
 @media (min-width:641px) {
-  .c2 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .c2 > div {
+  .c1 > div {
     padding-left: 32px;
   }
 
-  .c2 p,
-  .c2 select {
+  .c1 p,
+  .c1 select {
     font-size: 24px;
   }
 
-  .c2 select {
+  .c1 select {
     top: 30px;
   }
 
-  .c2 img {
+  .c1 img {
     height: 200px;
   }
 
-  .c2 p:nth-child(2) {
+  .c1 p:nth-child(2) {
     margin-bottom: 32px;
   }
 }
 
 @media (min-width:450px) and (max-width:640px) {
-  .c3 {
+  .c2 {
     padding-left: 33%;
   }
 }
 
 @media (max-width:640px) {
-  .c3 p:last-of-type {
+  .c2 p:last-of-type {
     font-size: 20px;
   }
 }
 
 @media (min-width:641px) {
-  .c3 {
+  .c2 {
     padding-left: 50%;
   }
 
-  .c3 p:last-of-type {
+  .c2 p:last-of-type {
     font-size: 24px;
   }
 }
 
 <div
-  className="c0"
+  className=""
 >
   <div
-    className="c1"
+    className="c0"
   >
     <ul>
       <li
-        className="c2"
+        className="c1"
       >
         <img
           alt=""
@@ -10160,7 +10162,10 @@ exports[`Storyshots ShoppingBag default 1`] = `
             Stealth Black
           </p>
           <p>
-            Estimated delivery: 2 weeks
+            Estimated delivery: within 
+            <span>
+              14 days
+            </span>
           </p>
           <select
             id="RR20-stealth-black-quantity"
@@ -10200,7 +10205,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
         </div>
       </li>
       <li
-        className="c2"
+        className="c1"
       >
         <img
           alt=""
@@ -10213,7 +10218,10 @@ exports[`Storyshots ShoppingBag default 1`] = `
             Pristine White
           </p>
           <p>
-            Estimated delivery: 2 weeks
+            Estimated delivery: within 
+            <span>
+              14 days
+            </span>
           </p>
           <select
             id="RR20-pristine-white-quantity"
@@ -10255,7 +10263,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
     </ul>
   </div>
   <div
-    className="c3"
+    className="c2"
   >
     <p>
       <span>
@@ -10294,7 +10302,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       </span>
     </p>
     <a
-      className="c4"
+      className="c3"
       href="/shop/checkout"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -10313,7 +10321,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
         }
       >
         <span
-          className="c5"
+          className="c4"
           color="#ffffff"
         >
           <svg

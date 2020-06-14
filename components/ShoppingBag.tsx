@@ -83,6 +83,11 @@ const StyledProduct = styled.li<StyledProductProps>`
     color: #4d5358;
     font-size: 14px;
     font-weight: normal;
+
+    > span {
+      color: #24a148;
+      font-weight: bold;
+    }
   }
 
   p:nth-child(4) {
@@ -163,6 +168,7 @@ const StyledProduct = styled.li<StyledProductProps>`
 `;
 
 const StyledProductList = styled.div`
+  border-top: 1px solid #dde1e6;
   width: 100%;
 
   > div {
@@ -182,6 +188,7 @@ const StyledProductList = styled.div`
 
   ul {
     list-style-type: none;
+    margin-top: 0;
     padding-left: 0;
   }
 `;
@@ -230,10 +237,7 @@ const StyledTotals = styled.div`
   }
 `;
 
-const StyledShoppingBag = styled.div`
-  margin: 0 auto;
-  max-width: 758px;
-`;
+const StyledShoppingBag = styled.div``;
 
 interface Product {
   readonly id: string;
@@ -305,7 +309,9 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   RecordRig -{" "}
                   {id.endsWith("black") ? "Stealth Black" : "Pristine White"}
                 </p>
-                <p>Estimated delivery: 2 weeks</p>
+                <p>
+                  Estimated delivery: within <span>14 days</span>
+                </p>
                 <select
                   id={`${id}-quantity`}
                   onChange={e =>
