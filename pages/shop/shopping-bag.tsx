@@ -16,7 +16,7 @@ const StyledShoppingBagPage = styled.div``;
 
 interface ShoppingBagPageProps {
   readonly removeProduct: Function;
-  readonly updateProductQuantity: Function;
+  readonly updateProductQuantity: typeof updateProductQuantityAction;
   readonly shoppingBag: readonly ShoppingBagProduct[];
 }
 

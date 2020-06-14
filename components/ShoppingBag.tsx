@@ -250,7 +250,7 @@ interface ShoppingBagProps {
    */
   readonly products: readonly Product[];
   readonly removeProduct: Function;
-  readonly updateProductQuantity: Function;
+  readonly updateProductQuantity: (productId: string, quantity: number) => any;
 }
 
 /**
@@ -273,7 +273,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
 
   const handleChangeQuantity = (
     productId: Product["id"],
-    desiredQuantity: string
+    desiredQuantity: number
   ) => {
     updateProductQuantity(productId, desiredQuantity);
   };
@@ -309,7 +309,10 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                 <select
                   id={`${id}-quantity`}
                   onChange={e =>
-                    handleChangeQuantity(id, e.currentTarget.value)
+                    handleChangeQuantity(
+                      id,
+                      parseInt(e.currentTarget.value, 10)
+                    )
                   }
                   value={quantity}
                 >
