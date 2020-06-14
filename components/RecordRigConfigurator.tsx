@@ -1067,8 +1067,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               <li>8TB &quot;BigStorage&quot; 7200 RPM HDD</li>
               <li>16GB (2x8) DDR4 DRAM memory</li>
               <li>
-                GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics, Factory
-                Overclocked (&quot;OC&quot;) or equivalent<sup>1</sup>
+                NVIDIA GeForce® graphics card<sup>1</sup>
               </li>
               <li>AVerMedia Live Gamer 4K GC573 internal game capture card</li>
               <li>
@@ -1086,10 +1085,9 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             </ul>
             <h3>Shipment and delivery</h3>
             <p>
-              Our products are shipped from the Netherlands, Germany, Belgium or
-              Luxembourg to any country within the EU. We are usually able to
-              deliver your product within 14 days of ordering. We&apos;ll keep
-              you up-to-date of your order status through email.
+              Our products are shipped to any country within the EU. We are
+              usually able to deliver your product within 14 days of ordering.
+              We&apos;ll keep you up-to-date of your order status through email.
             </p>
             <h3>Warranty and repairs</h3>
             <p>
@@ -1101,8 +1099,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
             <p>
               Sometimes, you and your product simply won’t see eye to eye. In
               this case, you can send the product back within 14 days after
-              receiving the product. You’ll receive your payment back within 7
-              days.
+              receiving the product to receive a full refund.
             </p>
             <p>NB: We accept ‘just because’ as a reason for returning, too.</p>
           </StyledDeviceContent>
@@ -1140,11 +1137,11 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                 4K 60FPS + HDR.
               </p>
               <p>
-                2. Opening the case within the first year of buying will void
-                your warranty. Upgradeability is mainly intended to be used
-                after the 1-year mark, to lessen the need to buy an entirely new
-                system when some components start getting noticeably older in
-                terms of performance compared to newer components.
+                2. Opening the case will void your warranty. Upgradeability is
+                mainly intended to be used when your warranty has expired, to
+                lessen the need to buy an entirely new system when some
+                components start getting noticeably older in terms of
+                performance compared to newer components.
               </p>
             </div>
           </Footnotes>
