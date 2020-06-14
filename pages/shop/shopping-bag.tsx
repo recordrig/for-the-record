@@ -40,9 +40,9 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
         <title>Shopping Bag</title>
         <meta name="robots" content="noindex" />
       </Head>
-      {shoppingBag.length > 0 ? (
-        <div style={{ marginTop: "64px", marginBottom: "256px" }}>
-          <div style={{ paddingTop: "64px", paddingBottom: "64px" }}>
+      <div style={{ marginTop: "64px", marginBottom: "256px" }}>
+        {shoppingBag.length > 0 ? (
+          <>
             <p
               style={{
                 fontSize: "32px",
@@ -55,20 +55,18 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
             <p style={{ textAlign: "center" }}>
               Get free shipping on all EU orders.
             </p>
-          </div>
-          <ShoppingBag
-            products={products}
-            updateProductQuantity={updateProductQuantity}
-            removeProduct={removeProduct}
-          />
-        </div>
-      ) : (
-        <div style={{ marginTop: "64px", marginBottom: "256px" }}>
-          <div style={{ paddingTop: "64px", paddingBottom: "64px" }}>
+            <ShoppingBag
+              products={products}
+              updateProductQuantity={updateProductQuantity}
+              removeProduct={removeProduct}
+            />
+          </>
+        ) : (
+          <div>
             <p style={{ textAlign: "center" }}>Your bag is empty.</p>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </StyledShoppingBagPage>
   );
 };
