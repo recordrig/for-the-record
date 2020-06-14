@@ -10043,13 +10043,22 @@ exports[`Storyshots ShoppingBag default 1`] = `
   float: right;
 }
 
-.c2 p:last-of-type {
+.c2 p:nth-child(2) {
   border-top: 1px solid #dde1e6;
   color: #000000;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   padding-top: 8px;
+}
+
+.c2 p:nth-child(3) {
+  color: #4d5358;
+  font-size: 14px !important;
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-align: right;
 }
 
 @media (max-width:1023px) {
@@ -10267,24 +10276,6 @@ exports[`Storyshots ShoppingBag default 1`] = `
   >
     <p>
       <span>
-        Subtotal:
-      </span>
-       
-      <span>
-        € 5.947,93
-      </span>
-    </p>
-    <p>
-      <span>
-        Tax (21%):
-      </span>
-       
-      <span>
-        € 1.249,07
-      </span>
-    </p>
-    <p>
-      <span>
         Shipping:
       </span>
        
@@ -10300,6 +10291,9 @@ exports[`Storyshots ShoppingBag default 1`] = `
       <span>
         € 7.197,00
       </span>
+    </p>
+    <p>
+      Includes VAT
     </p>
     <a
       className="c3"

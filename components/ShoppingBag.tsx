@@ -1,11 +1,6 @@
 import React, { FunctionComponent, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
-import {
-  extractPrices,
-  formatCurrency,
-  priceWithoutTax,
-  sumTotal
-} from "../utils/prices";
+import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import ArrowRightIcon from "./ArrowRightIcon";
 import Button from "./Button";
 
@@ -209,13 +204,22 @@ const StyledTotals = styled.div`
     }
   }
 
-  p:last-of-type {
+  p:nth-child(2) {
     border-top: 1px solid #dde1e6;
     color: #000000;
+    font-size: 24px;
     font-weight: bold;
     margin-top: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
     padding-top: 8px;
+  }
+
+  p:nth-child(3) {
+    color: #4d5358;
+    font-size: 14px !important;
+    margin-top: 0;
+    margin-bottom: 32px;
+    text-align: right;
   }
 
   @media (min-width: 450px) and (max-width: 640px) {
@@ -269,8 +273,6 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
 }) => {
   const prices = extractPrices(products);
   const total = sumTotal(prices);
-  const preTaxTotal = priceWithoutTax(total);
-  const taxTotal = total - preTaxTotal;
 
   // Set to a particular Product ID to animate that Product into oblivion.
   const [animateRemoval, setAnimateRemoval] = useState("");
@@ -339,17 +341,12 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
       </StyledProductList>
       <StyledTotals>
         <p>
-          <span>Subtotal:</span>&nbsp;<span>{formatCurrency(preTaxTotal)}</span>
-        </p>
-        <p>
-          <span>Tax (21%):</span>&nbsp;<span>{formatCurrency(taxTotal)}</span>
-        </p>
-        <p>
           <span>Shipping:</span>&nbsp;<span>FREE</span>
         </p>
         <p>
           <span>Total:</span>&nbsp;<span>{formatCurrency(total)}</span>
         </p>
+        <p>Includes VAT</p>
         <Button href="/shop/checkout">
           Check Out
           <span
