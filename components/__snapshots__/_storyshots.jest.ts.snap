@@ -3125,6 +3125,134 @@ Array [
 ]
 `;
 
+exports[`Storyshots Notification default (info) 1`] = `
+.c0 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #edf5ff;
+  border-left-color: #0043ce;
+  border-top-color: #a2c0f8;
+  border-right-color: #a2c0f8;
+  border-bottom-color: #a2c0f8;
+}
+
+<div
+  className="c0"
+  type="info"
+>
+  <p
+    style={
+      Object {
+        "fontSize": "14px",
+      }
+    }
+  >
+    Here's a notification. You could pass pretty much anything as children.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Notification error 1`] = `
+.c0 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #fff1f1;
+  border-left-color: #da1e28;
+  border-top-color: #feacb3;
+  border-right-color: #feacb3;
+  border-bottom-color: #feacb3;
+}
+
+<div
+  className="c0"
+  type="error"
+>
+  <p
+    style={
+      Object {
+        "fontSize": "14px",
+      }
+    }
+  >
+    Here's a notification. You could pass pretty much anything as children.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Notification success 1`] = `
+.c0 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #defbe6;
+  border-left-color: #24a148;
+  border-top-color: #90e3b1;
+  border-right-color: #90e3b1;
+  border-bottom-color: #90e3b1;
+}
+
+<div
+  className="c0"
+  type="success"
+>
+  <p
+    style={
+      Object {
+        "fontSize": "14px",
+      }
+    }
+  >
+    Here's a notification. You could pass pretty much anything as children.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Notification warning 1`] = `
+.c0 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: #fdf6dd;
+  border-left-color: #f1c21b;
+  border-top-color: #f9d965;
+  border-right-color: #f9d965;
+  border-bottom-color: #f9d965;
+}
+
+<div
+  className="c0"
+  type="warning"
+>
+  <p
+    style={
+      Object {
+        "fontSize": "14px",
+      }
+    }
+  >
+    Here's a notification. You could pass pretty much anything as children.
+  </p>
+</div>
+`;
+
 exports[`Storyshots OptimizedMedia custom node 1`] = `
 Array [
   <p>
