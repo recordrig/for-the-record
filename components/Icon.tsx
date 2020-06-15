@@ -151,6 +151,59 @@ export const CrossIcon: FunctionComponent<CrossIconProps> = ({
   </StyledIcon>
 );
 
+interface ErrorIconProps {
+  readonly color?: string;
+  readonly type?: "default" | "filled" | "outline";
+}
+
+export const ErrorIcon: FunctionComponent<ErrorIconProps> = ({
+  color = "#000000",
+  type = "default"
+}) => (
+  <StyledIcon color={color}>
+    {(type === "default" || type === "filled") && (
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+      >
+        <path d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z" />
+        <path
+          fill="none"
+          d="M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>Error filled</title>
+      </svg>
+    )}
+    {type === "outline" && (
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+      >
+        <path d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z" />
+        <path
+          d="M14.8 7.3H17V24.900000000000002H14.8z"
+          transform="rotate(-45.001 15.929 16.071)"
+        />
+        <title>Error outline</title>
+      </svg>
+    )}
+  </StyledIcon>
+);
+
 interface InfoIconProps {
   readonly color?: string;
   readonly type?: "default" | "filled" | "outline";
@@ -366,12 +419,12 @@ const StyledWarnIcon = styled(StyledIcon)<StyledIconProps>`
   }
 `;
 
-interface WarningIconProps {
+interface WarnIconProps {
   readonly color?: string;
   readonly type?: "default" | "filled" | "outline";
 }
 
-export const WarningIcon: FunctionComponent<WarningIconProps> = ({
+export const WarnIcon: FunctionComponent<WarnIconProps> = ({
   color = "#999999",
   type = "default"
 }) => (

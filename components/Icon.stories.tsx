@@ -4,9 +4,10 @@ import {
   ArrowRightIcon,
   CheckIcon,
   CrossIcon,
+  ErrorIcon,
   InfoIcon,
   ShoppingBagIcon,
-  WarningIcon
+  WarnIcon
 } from "./Icon";
 
 const ShoppingBagInteractive = () => {
@@ -35,12 +36,15 @@ storiesOf("Icon", module)
   .add("cross: default", () => <CrossIcon />)
   .add("cross: color", () => <CrossIcon color="#ff0000" />)
   .add("cross: type outline", () => <CrossIcon type="outline" />)
+  .add("error: default", () => <ErrorIcon />)
+  .add("error: color", () => <ErrorIcon color="#ff0000" />)
+  .add("error: type outline", () => <ErrorIcon type="outline" />)
   .add("info: default", () => <InfoIcon />)
   .add("info: color", () => <InfoIcon color="#ff0000" />)
   .add("info: type outline", () => <InfoIcon type="outline" />)
   .add("shopping bag: 0", () => <ShoppingBagIcon amount={0} />)
   .add("shopping bag: 2", () => <ShoppingBagIcon amount={2} />)
   .add("shopping bag: interactive", () => <ShoppingBagInteractive />)
-  .add("warning: default", () => <WarningIcon />)
-  .add("warning: color", () => <WarningIcon color="#f1c21b" />)
-  .add("warning: outline", () => <WarningIcon type="outline" />);
+  .add("warn: default", () => <WarnIcon />)
+  .add("warn: color", () => <WarnIcon color="#f1c21b" />)
+  .add("warn: outline", () => <WarnIcon type="outline" />);
