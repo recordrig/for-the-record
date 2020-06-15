@@ -433,9 +433,32 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
             </div>
           </div>
         ) : (
-          <>
-            <p style={{ textAlign: "center" }}>Your Shopping Bag is empty.</p>
-          </>
+          <span
+            style={{
+              display: "inline-block",
+              marginTop: "15vh",
+              width: "100%"
+            }}
+          >
+            <p style={{ textAlign: "center" }}>Your shopping bag is empty.</p>
+            <div style={{ margin: "32px auto", maxWidth: "450px" }}>
+              <Button href="/shop/buy-recordrig">
+                Shop RecordRig
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "24px",
+                    marginLeft: "8px",
+                    position: "relative",
+                    top: "6px",
+                    width: "24px"
+                  }}
+                >
+                  <ArrowRightIcon color="#ffffff" />
+                </span>
+              </Button>
+            </div>
+          </span>
         )}
       </div>
     </StyledShoppingBag>
