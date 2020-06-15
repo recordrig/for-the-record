@@ -357,3 +357,61 @@ export const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
     </StyledShoppingBagIcon>
   );
 };
+
+const StyledWarnIcon = styled(StyledIcon)<StyledIconProps>`
+  /* The exclamation mark is a seperate path. Opacity: 0 could be set to make it translucent should future specs require this. */
+  svg [data-icon-path="inner-path"] {
+    fill: #000000;
+    opacity: 1;
+  }
+`;
+
+interface WarningIconProps {
+  readonly color?: string;
+  readonly type?: "default" | "filled" | "outline";
+}
+
+export const WarningIcon: FunctionComponent<WarningIconProps> = ({
+  color = "#999999",
+  type = "default"
+}) => (
+  <StyledWarnIcon color={color}>
+    {(type === "default" || type === "filled") && (
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+      >
+        <path d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14C30,8.3,23.7,2,16,2z M14.9,8h2.2v11h-2.2V8z M16,25	c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22c0.8,0,1.5,0.7,1.5,1.5S16.8,25,16,25z" />
+        <path
+          fill="blue"
+          d="M17.5,23.5c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22	C16.8,22,17.5,22.7,17.5,23.5z M17.1,8h-2.2v11h2.2V8z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>Warning filled</title>
+      </svg>
+    )}
+    {type === "outline" && (
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+      >
+        <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z" />
+        <path d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z" />
+        <title>Warning</title>
+      </svg>
+    )}
+  </StyledWarnIcon>
+);

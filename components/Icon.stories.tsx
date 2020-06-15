@@ -5,7 +5,8 @@ import {
   CheckIcon,
   CrossIcon,
   InfoIcon,
-  ShoppingBagIcon
+  ShoppingBagIcon,
+  WarningIcon
 } from "./Icon";
 
 const ShoppingBagInteractive = () => {
@@ -39,4 +40,7 @@ storiesOf("Icon", module)
   .add("info: type outline", () => <InfoIcon type="outline" />)
   .add("shopping bag: 0", () => <ShoppingBagIcon amount={0} />)
   .add("shopping bag: 2", () => <ShoppingBagIcon amount={2} />)
-  .add("shopping bag: interactive", () => <ShoppingBagInteractive />);
+  .add("shopping bag: interactive", () => <ShoppingBagInteractive />)
+  .add("warning: default", () => <WarningIcon />)
+  .add("warning: color", () => <WarningIcon color="#f1c21b" />)
+  .add("warning: outline", () => <WarningIcon type="outline" />);
