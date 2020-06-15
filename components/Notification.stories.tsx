@@ -3,8 +3,9 @@ import { storiesOf } from "@storybook/react";
 import Notification from "./Notification";
 
 const content = (
-  <p style={{ fontSize: "14px" }}>
-    Here&apos;s a notification. You could pass pretty much anything as children.
+  <p style={{ fontSize: "14px", marginTop: "15px" }}>
+    <strong>Here&apos;s a notification.</strong> You could pass pretty much
+    anything as children.
   </p>
 );
 

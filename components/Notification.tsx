@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css } from "styled-components";
+import { CheckIcon, ErrorIcon, InfoIcon, WarnIcon } from "./Icon";
 
 interface StyledNotificationProps {
   readonly type: "error" | "info" | "success" | "warning";
@@ -11,8 +12,9 @@ const StyledNotification = styled.div<StyledNotificationProps>`
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
-  padding-left: 32px;
+  padding-left: 46px;
   padding-right: 32px;
+  position: relative;
 
   ${({ type }) =>
     type === "error" &&
@@ -63,6 +65,24 @@ interface NotificationProps {
 const Notification: FunctionComponent<NotificationProps> = ({
   children,
   type = "info"
-}) => <StyledNotification type={type}>{children}</StyledNotification>;
+}) => (
+  <StyledNotification type={type}>
+    {children}
+    <div
+      style={{
+        height: "20px",
+        position: "absolute",
+        left: "13px",
+        top: "15px",
+        width: "20px"
+      }}
+    >
+      {type === "error" && <ErrorIcon color="#da1e28" type="filled" />}
+      {type === "info" && <InfoIcon color="#0043ce" type="filled" />}
+      {type === "success" && <CheckIcon color="#24a148" type="filled" />}
+      {type === "warning" && <WarnIcon color="#f1c21b" type="filled" />}
+    </div>
+  </StyledNotification>
+);
 
 export default Notification;

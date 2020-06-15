@@ -3579,14 +3579,27 @@ Array [
 `;
 
 exports[`Storyshots Notification default (info) 1`] = `
+.c1 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c1 svg {
+  fill: #0043ce;
+  height: inherit;
+  width: inherit;
+}
+
 .c0 {
   border-style: solid;
   border-left-width: 3px;
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
-  padding-left: 32px;
+  padding-left: 46px;
   padding-right: 32px;
+  position: relative;
   background-color: #edf5ff;
   border-left-color: #0043ce;
   border-top-color: #a2c0f8;
@@ -3602,23 +3615,78 @@ exports[`Storyshots Notification default (info) 1`] = `
     style={
       Object {
         "fontSize": "14px",
+        "marginTop": "15px",
       }
     }
   >
-    Here's a notification. You could pass pretty much anything as children.
+    <strong>
+      Here's a notification.
+    </strong>
+     You could pass pretty much anything as children.
   </p>
+  <div
+    style={
+      Object {
+        "height": "20px",
+        "left": "13px",
+        "position": "absolute",
+        "top": "15px",
+        "width": "20px",
+      }
+    }
+  >
+    <span
+      className="c1"
+      color="#0043ce"
+    >
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        height="32"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+        />
+        <path
+          d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+          data-icon-path="inner-path"
+          fill="none"
+        />
+        <title>
+          Information filled
+        </title>
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Notification error 1`] = `
+.c1 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c1 svg {
+  fill: #da1e28;
+  height: inherit;
+  width: inherit;
+}
+
 .c0 {
   border-style: solid;
   border-left-width: 3px;
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
-  padding-left: 32px;
+  padding-left: 46px;
   padding-right: 32px;
+  position: relative;
   background-color: #fff1f1;
   border-left-color: #da1e28;
   border-top-color: #feacb3;
@@ -3634,23 +3702,80 @@ exports[`Storyshots Notification error 1`] = `
     style={
       Object {
         "fontSize": "14px",
+        "marginTop": "15px",
       }
     }
   >
-    Here's a notification. You could pass pretty much anything as children.
+    <strong>
+      Here's a notification.
+    </strong>
+     You could pass pretty much anything as children.
   </p>
+  <div
+    style={
+      Object {
+        "height": "20px",
+        "left": "13px",
+        "position": "absolute",
+        "top": "15px",
+        "width": "20px",
+      }
+    }
+  >
+    <span
+      className="c1"
+      color="#da1e28"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        height="32"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
+        />
+        <path
+          d="M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
+          data-icon-path="inner-path"
+          fill="none"
+          opacity="0"
+        />
+        <title>
+          Error filled
+        </title>
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Notification success 1`] = `
+.c1 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c1 svg {
+  fill: #24a148;
+  height: inherit;
+  width: inherit;
+}
+
 .c0 {
   border-style: solid;
   border-left-width: 3px;
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
-  padding-left: 32px;
+  padding-left: 46px;
   padding-right: 32px;
+  position: relative;
   background-color: #defbe6;
   border-left-color: #24a148;
   border-top-color: #90e3b1;
@@ -3666,23 +3791,83 @@ exports[`Storyshots Notification success 1`] = `
     style={
       Object {
         "fontSize": "14px",
+        "marginTop": "15px",
       }
     }
   >
-    Here's a notification. You could pass pretty much anything as children.
+    <strong>
+      Here's a notification.
+    </strong>
+     You could pass pretty much anything as children.
   </p>
+  <div
+    style={
+      Object {
+        "height": "20px",
+        "left": "13px",
+        "position": "absolute",
+        "top": "15px",
+        "width": "20px",
+      }
+    }
+  >
+    <span
+      className="c1"
+      color="#24a148"
+    >
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        height="32"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
+        />
+        <path
+          d="M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>
+          Checkmark filled
+        </title>
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Notification warning 1`] = `
+.c1 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c1 svg {
+  fill: #f1c21b;
+  height: inherit;
+  width: inherit;
+}
+
+.c1 svg [data-icon-path="inner-path"] {
+  fill: #000000;
+  opacity: 1;
+}
+
 .c0 {
   border-style: solid;
   border-left-width: 3px;
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
-  padding-left: 32px;
+  padding-left: 46px;
   padding-right: 32px;
+  position: relative;
   background-color: #fdf6dd;
   border-left-color: #f1c21b;
   border-top-color: #f9d965;
@@ -3698,11 +3883,55 @@ exports[`Storyshots Notification warning 1`] = `
     style={
       Object {
         "fontSize": "14px",
+        "marginTop": "15px",
       }
     }
   >
-    Here's a notification. You could pass pretty much anything as children.
+    <strong>
+      Here's a notification.
+    </strong>
+     You could pass pretty much anything as children.
   </p>
+  <div
+    style={
+      Object {
+        "height": "20px",
+        "left": "13px",
+        "position": "absolute",
+        "top": "15px",
+        "width": "20px",
+      }
+    }
+  >
+    <span
+      className="Icon__StyledIcon-uhkt2x-0 c1"
+      color="#f1c21b"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        height="32"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14C30,8.3,23.7,2,16,2z M14.9,8h2.2v11h-2.2V8z M16,25	c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22c0.8,0,1.5,0.7,1.5,1.5S16.8,25,16,25z"
+        />
+        <path
+          d="M17.5,23.5c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22	C16.8,22,17.5,22.7,17.5,23.5z M17.1,8h-2.2v11h2.2V8z"
+          data-icon-path="inner-path"
+          fill="blue"
+          opacity="0"
+        />
+        <title>
+          Warning filled
+        </title>
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
