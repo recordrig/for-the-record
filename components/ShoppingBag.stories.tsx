@@ -31,22 +31,20 @@ const ShoppingBagDefaultContainer = () => {
   };
 
   return (
-    <>
-      {products.length > 0 ? (
-        <ShoppingBag
-          products={products}
-          updateProductQuantity={updateProductQuantity}
-          removeProduct={removeProduct}
-        />
-      ) : (
-        <p style={{ margin: "32px" }}>
-          [Render something else incase of empty shopping bag.]
-        </p>
-      )}
-    </>
+    <ShoppingBag
+      products={products}
+      updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
+    />
   );
 };
 
-storiesOf("ShoppingBag", module).add("default", () => (
-  <ShoppingBagDefaultContainer />
-));
+storiesOf("ShoppingBag", module)
+  .add("default", () => <ShoppingBagDefaultContainer />)
+  .add("empty", () => (
+    <ShoppingBag
+      products={[]}
+      updateProductQuantity={() => ""}
+      removeProduct={() => ""}
+    />
+  ));

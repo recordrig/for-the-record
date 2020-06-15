@@ -3,6 +3,8 @@ import styled, { css, keyframes } from "styled-components";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import { ArrowRightIcon } from "./Icon";
 import Button from "./Button";
+import Tile, { TileContainer } from "./Tile";
+import { CapsHeading } from "./Text";
 
 interface StyledProductProps {
   readonly animateRemoval: boolean;
@@ -241,7 +243,27 @@ const StyledTotals = styled.div`
   }
 `;
 
-const StyledShoppingBag = styled.div``;
+const StyledShoppingBag = styled.div`
+  > div {
+    min-height: 70vh;
+    padding-top: 128px;
+    padding-bottom: 256px;
+  }
+
+  @media (max-width: 767px) {
+    > div {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    > div > div {
+      margin: 0 auto;
+      max-width: 960px;
+    }
+  }
+`;
 
 interface Product {
   readonly id: string;
@@ -272,7 +294,6 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   removeProduct
 }) => {
   const prices = extractPrices(products);
-  const total = sumTotal(prices);
 
   // Set to a particular Product ID to animate that Product into oblivion.
   const [animateRemoval, setAnimateRemoval] = useState("");
@@ -291,78 +312,132 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
 
   return (
     <StyledShoppingBag>
-      <StyledProductList>
-        <ul>
-          {products.map(({ id, price, quantity }) => (
-            <StyledProduct
-              animateRemoval={animateRemoval === id}
-              key={`product-${id}`}
+      <div>
+        {products.length > 0 ? (
+          <div>
+            <p
+              style={{
+                fontSize: "32px",
+                fontWeight: "bold",
+                textAlign: "center"
+              }}
             >
-              <img
-                alt=""
-                src={
-                  id.endsWith("black")
-                    ? "/recordrig-black.png"
-                    : "/recordrig.png"
-                }
-              />
-              <div>
-                <p>
-                  RecordRig -{" "}
-                  {id.endsWith("black") ? "Stealth Black" : "Pristine White"}
-                </p>
-                <p>
-                  Estimated delivery: within <span>14 days</span>
-                </p>
-                <select
-                  id={`${id}-quantity`}
-                  onChange={e =>
-                    handleChangeQuantity(
-                      id,
-                      parseInt(e.currentTarget.value, 10)
-                    )
-                  }
-                  value={quantity}
+              Your bag total is {formatCurrency(sumTotal(prices))}.
+            </p>
+            <p style={{ fontWeight: "bold", textAlign: "center" }}>
+              Get free shipping on all EU orders.
+            </p>
+            <div style={{ margin: "0 auto", maxWidth: "450px" }}>
+              <Button href="/shop/checkout">
+                Check Out
+                <span
+                  style={{
+                    display: "inline-block",
+                    height: "24px",
+                    marginLeft: "8px",
+                    position: "relative",
+                    top: "6px",
+                    width: "24px"
+                  }}
                 >
-                  {[1, 2, 3, 4].map(option => (
-                    <option key={`amount-${option}`} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-                <p>{formatCurrency(price * quantity)}</p>
-                <button onClick={() => handleRemoveProduct(id)} type="button">
-                  Remove
-                </button>
-              </div>
-            </StyledProduct>
-          ))}
-        </ul>
-      </StyledProductList>
-      <StyledTotals>
-        <p>
-          <span>Shipping:</span>&nbsp;<span>FREE</span>
-        </p>
-        <p>
-          <span>Total:</span>&nbsp;<span>{formatCurrency(total)}</span>
-        </p>
-        <p>Includes VAT</p>
-        <Button href="/shop/checkout">
-          Check Out
-          <span
-            style={{
-              display: "inline-block",
-              height: "24px",
-              marginLeft: "8px",
-              position: "relative",
-              top: "6px",
-              width: "24px"
-            }}
-          >
-            <ArrowRightIcon color="#ffffff" />
-          </span>
-        </Button>
-      </StyledTotals>
+                  <ArrowRightIcon color="#ffffff" />
+                </span>
+              </Button>
+            </div>
+            <div style={{ marginTop: "128px" }}>
+              <Tile>
+                <TileContainer>
+                  <div style={{ marginBottom: "24px" }}>
+                    <CapsHeading>Your Shopping Bag.</CapsHeading>
+                  </div>
+                  <StyledProductList>
+                    <ul>
+                      {products.map(({ id, price, quantity }) => (
+                        <StyledProduct
+                          animateRemoval={animateRemoval === id}
+                          key={`product-${id}`}
+                        >
+                          <img
+                            alt=""
+                            src={
+                              id.endsWith("black")
+                                ? "/recordrig-black.png"
+                                : "/recordrig.png"
+                            }
+                          />
+                          <div>
+                            <p>
+                              RecordRig -{" "}
+                              {id.endsWith("black")
+                                ? "Stealth Black"
+                                : "Pristine White"}
+                            </p>
+                            <p>
+                              Estimated delivery: within <span>14 days</span>
+                            </p>
+                            <select
+                              id={`${id}-quantity`}
+                              onChange={e =>
+                                handleChangeQuantity(
+                                  id,
+                                  parseInt(e.currentTarget.value, 10)
+                                )
+                              }
+                              value={quantity}
+                            >
+                              {[1, 2, 3, 4].map(option => (
+                                <option key={`amount-${option}`} value={option}>
+                                  {option}
+                                </option>
+                              ))}
+                            </select>
+                            <p>{formatCurrency(price * quantity)}</p>
+                            <button
+                              onClick={() => handleRemoveProduct(id)}
+                              type="button"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </StyledProduct>
+                      ))}
+                    </ul>
+                  </StyledProductList>
+                  <StyledTotals>
+                    <p>
+                      <span>Shipping:</span>&nbsp;<span>FREE</span>
+                    </p>
+                    <p>
+                      <span>Total:</span>&nbsp;
+                      <span>{formatCurrency(sumTotal(prices))}</span>
+                    </p>
+                    <p>Includes VAT</p>
+                    <Button href="/shop/checkout">
+                      Check Out
+                      <span
+                        style={{
+                          display: "inline-block",
+                          height: "24px",
+                          marginLeft: "8px",
+                          position: "relative",
+                          top: "6px",
+                          width: "24px"
+                        }}
+                      >
+                        <ArrowRightIcon color="#ffffff" />
+                      </span>
+                    </Button>
+                  </StyledTotals>
+                </TileContainer>
+              </Tile>
+            </div>
+          </div>
+        ) : (
+          <>
+            <p style={{ textAlign: "center" }}>Your Shopping Bag is empty.</p>
+          </>
+        )}
+      </div>
     </StyledShoppingBag>
   );
 };

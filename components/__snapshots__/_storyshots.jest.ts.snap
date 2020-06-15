@@ -10705,7 +10705,7 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
-.c3 {
+.c1 {
   border-radius: 4px;
   border-left: 0;
   border-right: 0;
@@ -10730,19 +10730,74 @@ exports[`Storyshots ShoppingBag default 1`] = `
   text-decoration: none;
 }
 
-.c4 {
+.c2 {
   height: inherit;
   display: inline-block;
   width: inherit;
 }
 
-.c4 svg {
+.c2 svg {
   fill: #ffffff;
   height: inherit;
   width: inherit;
 }
 
-.c1 {
+.c4 {
+  box-sizing: border-box;
+  padding-bottom: 42px;
+  padding-top: 42px;
+  width: 100%;
+}
+
+.c4 > p {
+  font-weight: bold;
+}
+
+.c3 {
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+}
+
+.c3:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
+}
+
+.c3 >:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 h1,
+.c5 h2,
+.c5 h3,
+.c5 h4,
+.c5 h5,
+.c5 h6 {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.c7 {
   border-bottom: 1px solid #dde1e6;
   max-height: 500px;
   opacity: 1;
@@ -10753,7 +10808,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   animation: 1.2s;
 }
 
-.c1 > div {
+.c7 > div {
   box-sizing: border-box;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -10763,27 +10818,27 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-top: 16px;
 }
 
-.c1 p {
+.c7 p {
   font-weight: bold;
   margin: 0;
 }
 
-.c1 p:nth-child(2) {
+.c7 p:nth-child(2) {
   color: #4d5358;
   font-size: 14px;
   font-weight: normal;
 }
 
-.c1 p:nth-child(2) > span {
+.c7 p:nth-child(2) > span {
   color: #24a148;
   font-weight: bold;
 }
 
-.c1 p:nth-child(4) {
+.c7 p:nth-child(4) {
   text-align: right;
 }
 
-.c1 select {
+.c7 select {
   background-color: transparent;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
   background-position: right 4px center;
@@ -10800,7 +10855,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   -webkit-appearance: none;
 }
 
-.c1 button {
+.c7 button {
   background: none;
   border: none;
   clear: both;
@@ -10814,18 +10869,18 @@ exports[`Storyshots ShoppingBag default 1`] = `
   text-decoration: underline;
 }
 
-.c0 {
+.c6 {
   border-top: 1px solid #dde1e6;
   width: 100%;
 }
 
-.c0 > div {
+.c6 > div {
   bottom: 28px;
   position: relative;
   text-align: center;
 }
 
-.c0 > div > span {
+.c6 > div > span {
   background-color: #ffffff;
   color: #697077;
   display: inline-block;
@@ -10834,28 +10889,28 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-right: 12px;
 }
 
-.c0 ul {
+.c6 ul {
   list-style-type: none;
   margin-top: 0;
   padding-left: 0;
 }
 
-.c2 p {
+.c8 p {
   color: #4d5358;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
-.c2 p > span {
+.c8 p > span {
   display: block;
   float: left;
 }
 
-.c2 p > span:nth-child(2) {
+.c8 p > span:nth-child(2) {
   float: right;
 }
 
-.c2 p:nth-child(2) {
+.c8 p:nth-child(2) {
   border-top: 1px solid #dde1e6;
   color: #000000;
   font-size: 24px;
@@ -10865,7 +10920,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-top: 8px;
 }
 
-.c2 p:nth-child(3) {
+.c8 p:nth-child(3) {
   color: #4d5358;
   font-size: 14px !important;
   margin-top: 0;
@@ -10873,37 +10928,88 @@ exports[`Storyshots ShoppingBag default 1`] = `
   text-align: right;
 }
 
+.c0 > div {
+  min-height: 70vh;
+  padding-top: 128px;
+  padding-bottom: 256px;
+}
+
 @media (max-width:1023px) {
-  .c3 {
+  .c1 {
     margin: 0 auto;
   }
 }
 
 @media (max-width:549px) {
-  .c3 {
+  .c1 {
     font-size: 18px;
     line-height: 48px;
   }
 }
 
 @media (min-width:550px) {
-  .c3 {
+  .c1 {
     font-size: 21px;
     line-height: 64px;
   }
 }
 
+@media (max-width:474px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
+  .c4 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:399px) {
+  .c5 h1,
+  .c5 h2,
+  .c5 h3,
+  .c5 h4,
+  .c5 h5,
+  .c5 h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (min-width:400px) {
+  .c5 h1,
+  .c5 h2,
+  .c5 h3,
+  .c5 h4,
+  .c5 h5,
+  .c5 h6 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
 @media (max-width:640px) {
-  .c1 p,
-  .c1 select {
+  .c7 p,
+  .c7 select {
     font-size: 20px;
   }
 
-  .c1 select {
+  .c7 select {
     top: 24px;
   }
 
-  .c1 img {
+  .c7 img {
     display: block;
     margin: 16px auto;
     width: 200px;
@@ -10911,244 +11017,405 @@ exports[`Storyshots ShoppingBag default 1`] = `
 }
 
 @media (min-width:641px) {
-  .c1 {
+  .c7 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 
-  .c1 > div {
+  .c7 > div {
     padding-left: 32px;
   }
 
-  .c1 p,
-  .c1 select {
+  .c7 p,
+  .c7 select {
     font-size: 24px;
   }
 
-  .c1 select {
+  .c7 select {
     top: 30px;
   }
 
-  .c1 img {
+  .c7 img {
     height: 200px;
   }
 
-  .c1 p:nth-child(2) {
+  .c7 p:nth-child(2) {
     margin-bottom: 32px;
   }
 }
 
 @media (min-width:450px) and (max-width:640px) {
-  .c2 {
+  .c8 {
     padding-left: 33%;
   }
 }
 
 @media (max-width:640px) {
-  .c2 p:last-of-type {
+  .c8 p:last-of-type {
     font-size: 20px;
   }
 }
 
 @media (min-width:641px) {
-  .c2 {
+  .c8 {
     padding-left: 50%;
   }
 
-  .c2 p:last-of-type {
+  .c8 p:last-of-type {
     font-size: 24px;
   }
 }
 
+@media (max-width:767px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 > div > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
 <div
-  className=""
+  className="c0"
 >
-  <div
-    className="c0"
-  >
-    <ul>
-      <li
-        className="c1"
-      >
-        <img
-          alt=""
-          src="/recordrig-black.png"
-        />
-        <div>
-          <p>
-            RecordRig -
-             
-            Stealth Black
-          </p>
-          <p>
-            Estimated delivery: within 
-            <span>
-              14 days
-            </span>
-          </p>
-          <select
-            id="RR20-stealth-black-quantity"
-            onChange={[Function]}
-            value={1}
-          >
-            <option
-              value={1}
-            >
-              1
-            </option>
-            <option
-              value={2}
-            >
-              2
-            </option>
-            <option
-              value={3}
-            >
-              3
-            </option>
-            <option
-              value={4}
-            >
-              4
-            </option>
-          </select>
-          <p>
-            € 2.399,00
-          </p>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            Remove
-          </button>
-        </div>
-      </li>
-      <li
-        className="c1"
-      >
-        <img
-          alt=""
-          src="/recordrig.png"
-        />
-        <div>
-          <p>
-            RecordRig -
-             
-            Pristine White
-          </p>
-          <p>
-            Estimated delivery: within 
-            <span>
-              14 days
-            </span>
-          </p>
-          <select
-            id="RR20-pristine-white-quantity"
-            onChange={[Function]}
-            value={2}
-          >
-            <option
-              value={1}
-            >
-              1
-            </option>
-            <option
-              value={2}
-            >
-              2
-            </option>
-            <option
-              value={3}
-            >
-              3
-            </option>
-            <option
-              value={4}
-            >
-              4
-            </option>
-          </select>
-          <p>
-            € 4.798,00
-          </p>
-          <button
-            onClick={[Function]}
-            type="button"
-          >
-            Remove
-          </button>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="c2"
-  >
-    <p>
-      <span>
-        Shipping:
-      </span>
-       
-      <span>
-        FREE
-      </span>
-    </p>
-    <p>
-      <span>
-        Total:
-      </span>
-       
-      <span>
-        € 7.197,00
-      </span>
-    </p>
-    <p>
-      Includes VAT
-    </p>
-    <a
-      className="c3"
-      href="/shop/checkout"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      Check Out
-      <span
+  <div>
+    <div>
+      <p
         style={
           Object {
-            "display": "inline-block",
-            "height": "24px",
-            "marginLeft": "8px",
-            "position": "relative",
-            "top": "6px",
-            "width": "24px",
+            "fontSize": "32px",
+            "fontWeight": "bold",
+            "textAlign": "center",
           }
         }
       >
-        <span
-          className="c4"
-          color="#ffffff"
+        Your bag total is 
+        € 7.197,00
+        .
+      </p>
+      <p
+        style={
+          Object {
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+      >
+        Get free shipping on all EU orders.
+      </p>
+      <div
+        style={
+          Object {
+            "margin": "0 auto",
+            "maxWidth": "450px",
+          }
+        }
+      >
+        <a
+          className="c1"
+          href="/shop/checkout"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            height="32"
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width="32"
-            xmlns="http://www.w3.org/2000/svg"
+          Check Out
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "height": "24px",
+                "marginLeft": "8px",
+                "position": "relative",
+                "top": "6px",
+                "width": "24px",
+              }
+            }
           >
-            <polygon
-              points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-            />
-            <title>
-              Arrow right
-            </title>
-          </svg>
-        </span>
-      </span>
-    </a>
+            <span
+              className="c2"
+              color="#ffffff"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                />
+                <title>
+                  Arrow right
+                </title>
+              </svg>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div
+        style={
+          Object {
+            "marginTop": "128px",
+          }
+        }
+      >
+        <div
+          className="c3"
+        >
+          <div
+            className="c4"
+          >
+            <div
+              style={
+                Object {
+                  "marginBottom": "24px",
+                }
+              }
+            >
+              <div
+                className="c5"
+              >
+                <h3>
+                  Your Shopping Bag.
+                </h3>
+              </div>
+            </div>
+            <div
+              className="c6"
+            >
+              <ul>
+                <li
+                  className="c7"
+                >
+                  <img
+                    alt=""
+                    src="/recordrig-black.png"
+                  />
+                  <div>
+                    <p>
+                      RecordRig -
+                       
+                      Stealth Black
+                    </p>
+                    <p>
+                      Estimated delivery: within 
+                      <span>
+                        14 days
+                      </span>
+                    </p>
+                    <select
+                      id="RR20-stealth-black-quantity"
+                      onChange={[Function]}
+                      value={1}
+                    >
+                      <option
+                        value={1}
+                      >
+                        1
+                      </option>
+                      <option
+                        value={2}
+                      >
+                        2
+                      </option>
+                      <option
+                        value={3}
+                      >
+                        3
+                      </option>
+                      <option
+                        value={4}
+                      >
+                        4
+                      </option>
+                    </select>
+                    <p>
+                      € 2.399,00
+                    </p>
+                    <button
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+                <li
+                  className="c7"
+                >
+                  <img
+                    alt=""
+                    src="/recordrig.png"
+                  />
+                  <div>
+                    <p>
+                      RecordRig -
+                       
+                      Pristine White
+                    </p>
+                    <p>
+                      Estimated delivery: within 
+                      <span>
+                        14 days
+                      </span>
+                    </p>
+                    <select
+                      id="RR20-pristine-white-quantity"
+                      onChange={[Function]}
+                      value={2}
+                    >
+                      <option
+                        value={1}
+                      >
+                        1
+                      </option>
+                      <option
+                        value={2}
+                      >
+                        2
+                      </option>
+                      <option
+                        value={3}
+                      >
+                        3
+                      </option>
+                      <option
+                        value={4}
+                      >
+                        4
+                      </option>
+                    </select>
+                    <p>
+                      € 4.798,00
+                    </p>
+                    <button
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="c8"
+            >
+              <p>
+                <span>
+                  Shipping:
+                </span>
+                 
+                <span>
+                  FREE
+                </span>
+              </p>
+              <p>
+                <span>
+                  Total:
+                </span>
+                 
+                <span>
+                  € 7.197,00
+                </span>
+              </p>
+              <p>
+                Includes VAT
+              </p>
+              <a
+                className="c1"
+                href="/shop/checkout"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Check Out
+                <span
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "height": "24px",
+                      "marginLeft": "8px",
+                      "position": "relative",
+                      "top": "6px",
+                      "width": "24px",
+                    }
+                  }
+                >
+                  <span
+                    className="c2"
+                    color="#ffffff"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      height="32"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width="32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                      />
+                      <title>
+                        Arrow right
+                      </title>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ShoppingBag empty 1`] = `
+.c0 > div {
+  min-height: 70vh;
+  padding-top: 128px;
+  padding-bottom: 256px;
+}
+
+@media (max-width:767px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 > div > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <p
+      style={
+        Object {
+          "textAlign": "center",
+        }
+      }
+    >
+      Your Shopping Bag is empty.
+    </p>
   </div>
 </div>
 `;
