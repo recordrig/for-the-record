@@ -50,7 +50,7 @@ module.exports = {
      * integrate with 3rd party interfaces/API's.
      */
     {
-      "files": ["./components/**/*.tsx", "./pages/**/*.tsx"],
+      "files": ["./components/**/*.tsx", "./pages/**/*.tsx", "./pages/api/**/*.ts"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off"
       }
