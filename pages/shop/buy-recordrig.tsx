@@ -7,10 +7,8 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import productsData from "../../_data/products";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
-import ArrowRightIcon from "../../components/ArrowRightIcon";
+import { ArrowRightIcon, CheckIcon, InfoIcon } from "../../components/Icon";
 import Button from "../../components/Button";
-import CheckmarkIcon from "../../components/CheckmarkIcon";
-import InfoIcon from "../../components/InfoIcon";
 import Drawer from "../../components/Drawer";
 import ProductList from "../../components/ProductList";
 import RecordRigConfigurator from "../../components/RecordRigConfigurator";
@@ -244,7 +242,7 @@ class BuyRecordRigPage extends Component<
                 width: "24px"
               }}
             >
-              <CheckmarkIcon color="#24a148" type="filled" />
+              <CheckIcon color="#24a148" type="filled" />
             </span>
             Almost yours
           </p>

@@ -1,77 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ArrowRightIcon color 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #ff0000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#ff0000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polygon
-      points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-    />
-    <title>
-      Arrow right
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots ArrowRightIcon default 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #000000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#000000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polygon
-      points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-    />
-    <title>
-      Arrow right
-    </title>
-  </svg>
-</span>
-`;
-
 exports[`Storyshots Button click handler 1`] = `
 .c0 {
   border-radius: 4px;
@@ -279,281 +207,6 @@ exports[`Storyshots Button href 1`] = `
 >
   Hello World
 </a>
-`;
-
-exports[`Storyshots CheckmarkIcon color 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #ff0000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#ff0000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polygon
-      points="12,21.2 4.9,14.1 3.5,15.5 10.6,22.6 12,24 26.1,9.9 24.7,8.4"
-    />
-    <title>
-      Checkmark
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots CheckmarkIcon default 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #000000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#000000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polygon
-      points="12,21.2 4.9,14.1 3.5,15.5 10.6,22.6 12,24 26.1,9.9 24.7,8.4"
-    />
-    <title>
-      Checkmark
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots CheckmarkIcon type filled 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #000000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#000000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
-    />
-    <path
-      d="M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
-      data-icon-path="inner-path"
-      opacity="0"
-    />
-    <title>
-      Checkmark filled
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots CheckmarkIcon type outline 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #000000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#000000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-    />
-    <polygon
-      points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
-    />
-    <title>
-      Checkmark outline
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots CrossIcon color 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #ff0000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#ff0000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9 l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"
-    />
-    <path
-      d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16 l5.4,5.4L21.4,23z"
-      data-icon-path="inner-path"
-      fill="none"
-      opacity="0"
-    />
-    <title>
-      Cross
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots CrossIcon default 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #000000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#000000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9 l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"
-    />
-    <path
-      d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16 l5.4,5.4L21.4,23z"
-      data-icon-path="inner-path"
-      fill="none"
-      opacity="0"
-    />
-    <title>
-      Cross
-    </title>
-  </svg>
-</span>
-`;
-
-exports[`Storyshots CrossIcon type outline 1`] = `
-.c0 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c0 svg {
-  fill: #000000;
-  height: inherit;
-  width: inherit;
-}
-
-<span
-  className="c0"
-  color="#000000"
->
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    height="32"
-    preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 32 32"
-    width="32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12 S22.6,28,16,28z"
-    />
-    <polygon
-      points="21.4,23 16,17.6 10.6,23 9,21.4 14.4,16 9,10.6 10.6,9 16,14.4 21.4,9 23,10.6 17.6,16 23,21.4"
-    />
-    <title>
-      Cross outline
-    </title>
-  </svg>
-</span>
 `;
 
 exports[`Storyshots Drawer default 1`] = `
@@ -1763,7 +1416,354 @@ exports[`Storyshots Form default 1`] = `
 </div>
 `;
 
-exports[`Storyshots InfoIcon color 1`] = `
+exports[`Storyshots Icon arrow: color 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #ff0000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#ff0000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polygon
+      points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+    />
+    <title>
+      Arrow right
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon arrow: default 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polygon
+      points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+    />
+    <title>
+      Arrow right
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon check: color 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #ff0000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#ff0000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polygon
+      points="12,21.2 4.9,14.1 3.5,15.5 10.6,22.6 12,24 26.1,9.9 24.7,8.4"
+    />
+    <title>
+      Checkmark
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon check: default 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <polygon
+      points="12,21.2 4.9,14.1 3.5,15.5 10.6,22.6 12,24 26.1,9.9 24.7,8.4"
+    />
+    <title>
+      Checkmark
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon check: type filled 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
+    />
+    <path
+      d="M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
+      data-icon-path="inner-path"
+      opacity="0"
+    />
+    <title>
+      Checkmark filled
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon check: type outline 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+    />
+    <polygon
+      points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
+    />
+    <title>
+      Checkmark outline
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon cross: color 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #ff0000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#ff0000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9 l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"
+    />
+    <path
+      d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16 l5.4,5.4L21.4,23z"
+      data-icon-path="inner-path"
+      fill="none"
+      opacity="0"
+    />
+    <title>
+      Cross
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon cross: default 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9 l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"
+    />
+    <path
+      d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16 l5.4,5.4L21.4,23z"
+      data-icon-path="inner-path"
+      fill="none"
+      opacity="0"
+    />
+    <title>
+      Cross
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon cross: type outline 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12 S22.6,28,16,28z"
+    />
+    <polygon
+      points="21.4,23 16,17.6 10.6,23 9,21.4 14.4,16 9,10.6 10.6,9 16,14.4 21.4,9 23,10.6 17.6,16 23,21.4"
+    />
+    <title>
+      Cross outline
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon info: color 1`] = `
 .c0 {
   height: inherit;
   display: inline-block;
@@ -1804,7 +1804,7 @@ exports[`Storyshots InfoIcon color 1`] = `
 </span>
 `;
 
-exports[`Storyshots InfoIcon default 1`] = `
+exports[`Storyshots Icon info: default 1`] = `
 .c0 {
   height: inherit;
   display: inline-block;
@@ -1845,7 +1845,7 @@ exports[`Storyshots InfoIcon default 1`] = `
 </span>
 `;
 
-exports[`Storyshots InfoIcon type outline 1`] = `
+exports[`Storyshots Icon info: type outline 1`] = `
 .c0 {
   height: inherit;
   display: inline-block;
@@ -1882,6 +1882,191 @@ exports[`Storyshots InfoIcon type outline 1`] = `
     </title>
   </svg>
 </span>
+`;
+
+exports[`Storyshots Icon shopping bag: 0 1`] = `
+.c1 {
+  bottom: 0;
+  position: absolute;
+  width: 32px;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c0 {
+  height: inherit;
+  min-height: 32px;
+}
+
+.c0 > span {
+  display: inline-block;
+  height: inherit;
+  min-height: 32px;
+  position: relative;
+  width: 0;
+}
+
+.c0 > span > span {
+  -webkit-animation: eJVCEt 1.5s ease;
+  animation: eJVCEt 1.5s ease;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  height: 14px;
+  left: 16px;
+  line-height: 13px;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+<div
+  className="c0"
+>
+  <span>
+    <object
+      aria-label=""
+      className="c1"
+      data="/shopping-bag-still.svg"
+      type="image/svg+xml"
+    />
+  </span>
+</div>
+`;
+
+exports[`Storyshots Icon shopping bag: 2 1`] = `
+.c1 {
+  bottom: 0;
+  position: absolute;
+  width: 32px;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c0 {
+  height: inherit;
+  min-height: 32px;
+}
+
+.c0 > span {
+  display: inline-block;
+  height: inherit;
+  min-height: 32px;
+  position: relative;
+  width: 0;
+}
+
+.c0 > span > span {
+  -webkit-animation: eJVCEt 1.5s ease;
+  animation: eJVCEt 1.5s ease;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  height: 14px;
+  left: 16px;
+  line-height: 13px;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+<div
+  className="c0"
+>
+  <span>
+    <object
+      aria-label=""
+      className="c1"
+      data="/shopping-bag-still.svg"
+      type="image/svg+xml"
+    />
+    <span>
+      2
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Storyshots Icon shopping bag: interactive 1`] = `
+.c1 {
+  bottom: 0;
+  position: absolute;
+  width: 32px;
+  -webkit-animation: 1.4s;
+  animation: 1.4s;
+}
+
+.c0 {
+  height: inherit;
+  min-height: 32px;
+}
+
+.c0 > span {
+  display: inline-block;
+  height: inherit;
+  min-height: 32px;
+  position: relative;
+  width: 0;
+}
+
+.c0 > span > span {
+  -webkit-animation: eJVCEt 1.5s ease;
+  animation: eJVCEt 1.5s ease;
+  background-color: #ff4e28;
+  border-radius: 8px;
+  bottom: 1px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  height: 14px;
+  left: 16px;
+  line-height: 13px;
+  min-width: 12px;
+  padding: 1px 2px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <span>
+      <object
+        aria-label=""
+        className="c1"
+        data="/shopping-bag-still.svg"
+        type="image/svg+xml"
+      />
+    </span>
+  </div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    -1
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    +1
+  </button>
+</div>
 `;
 
 exports[`Storyshots MainMenu default 1`] = `
@@ -2180,19 +2365,7 @@ Array [
       </li>
     </ul>
   </nav>,
-  .c4 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c4 svg {
-  fill: #ffffff;
-  height: inherit;
-  width: inherit;
-}
-
-.c3 {
+  .c3 {
   border-radius: 4px;
   border-left: 0;
   border-right: 0;
@@ -2225,6 +2398,18 @@ Array [
 
 .c1 svg {
   fill: #dde1e6;
+  height: inherit;
+  width: inherit;
+}
+
+.c4 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c4 svg {
+  fill: #ffffff;
   height: inherit;
   width: inherit;
 }
@@ -2691,19 +2876,7 @@ Array [
       </li>
     </ul>
   </nav>,
-  .c5 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c5 svg {
-  fill: #ffffff;
-  height: inherit;
-  width: inherit;
-}
-
-.c4 {
+  .c4 {
   border-radius: 4px;
   border-left: 0;
   border-right: 0;
@@ -2736,6 +2909,18 @@ Array [
 
 .c1 svg {
   fill: #dde1e6;
+  height: inherit;
+  width: inherit;
+}
+
+.c5 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c5 svg {
+  fill: #ffffff;
   height: inherit;
   width: inherit;
 }
@@ -10023,18 +10208,6 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
-.c4 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c4 svg {
-  fill: #ffffff;
-  height: inherit;
-  width: inherit;
-}
-
 .c3 {
   border-radius: 4px;
   border-left: 0;
@@ -10058,6 +10231,18 @@ exports[`Storyshots ShoppingBag default 1`] = `
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
+}
+
+.c4 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c4 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
 }
 
 .c1 {
@@ -10468,209 +10653,6 @@ exports[`Storyshots ShoppingBag default 1`] = `
       </span>
     </a>
   </div>
-</div>
-`;
-
-exports[`Storyshots ShoppingBagIcon 2 items 1`] = `
-.c1 {
-  bottom: 0;
-  position: absolute;
-  width: 32px;
-  -webkit-animation: 1.4s;
-  animation: 1.4s;
-}
-
-.c0 {
-  height: inherit;
-  min-height: 32px;
-}
-
-.c0 > span {
-  display: inline-block;
-  height: inherit;
-  min-height: 32px;
-  position: relative;
-  width: 0;
-}
-
-.c0 > span > span {
-  -webkit-animation: eJVCEt 1.5s ease;
-  animation: eJVCEt 1.5s ease;
-  background-color: #ff4e28;
-  border-radius: 8px;
-  bottom: 1px;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 10px;
-  font-weight: bold;
-  height: 14px;
-  left: 16px;
-  line-height: 13px;
-  min-width: 12px;
-  padding: 1px 2px;
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-}
-
-<div
-  className="c0"
->
-  <span>
-    <object
-      aria-label=""
-      className="c1"
-      data="/shopping-bag-still.svg"
-      type="image/svg+xml"
-    />
-    <span>
-      2
-    </span>
-  </span>
-</div>
-`;
-
-exports[`Storyshots ShoppingBagIcon No items 1`] = `
-.c1 {
-  bottom: 0;
-  position: absolute;
-  width: 32px;
-  -webkit-animation: 1.4s;
-  animation: 1.4s;
-}
-
-.c0 {
-  height: inherit;
-  min-height: 32px;
-}
-
-.c0 > span {
-  display: inline-block;
-  height: inherit;
-  min-height: 32px;
-  position: relative;
-  width: 0;
-}
-
-.c0 > span > span {
-  -webkit-animation: eJVCEt 1.5s ease;
-  animation: eJVCEt 1.5s ease;
-  background-color: #ff4e28;
-  border-radius: 8px;
-  bottom: 1px;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 10px;
-  font-weight: bold;
-  height: 14px;
-  left: 16px;
-  line-height: 13px;
-  min-width: 12px;
-  padding: 1px 2px;
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-}
-
-<div
-  className="c0"
->
-  <span>
-    <object
-      aria-label=""
-      className="c1"
-      data="/shopping-bag-still.svg"
-      type="image/svg+xml"
-    />
-  </span>
-</div>
-`;
-
-exports[`Storyshots ShoppingBagIcon change amount 1`] = `
-.c1 {
-  bottom: 0;
-  position: absolute;
-  width: 32px;
-  -webkit-animation: 1.4s;
-  animation: 1.4s;
-}
-
-.c0 {
-  height: inherit;
-  min-height: 32px;
-}
-
-.c0 > span {
-  display: inline-block;
-  height: inherit;
-  min-height: 32px;
-  position: relative;
-  width: 0;
-}
-
-.c0 > span > span {
-  -webkit-animation: eJVCEt 1.5s ease;
-  animation: eJVCEt 1.5s ease;
-  background-color: #ff4e28;
-  border-radius: 8px;
-  bottom: 1px;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 10px;
-  font-weight: bold;
-  height: 14px;
-  left: 16px;
-  line-height: 13px;
-  min-width: 12px;
-  padding: 1px 2px;
-  position: absolute;
-  text-align: center;
-  z-index: 1;
-}
-
-<div>
-  <div
-    style={
-      Object {
-        "border": "2px solid black",
-        "height": "64px",
-        "overflow": "hidden",
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "height": "50px",
-        }
-      }
-    >
-      <div
-        className="c0"
-      >
-        <span>
-          <object
-            aria-label=""
-            className="c1"
-            data="/shopping-bag-still.svg"
-            type="image/svg+xml"
-          />
-        </span>
-      </div>
-    </div>
-  </div>
-  <button
-    onClick={[Function]}
-    type="button"
-  >
-    -1
-  </button>
-  <button
-    onClick={[Function]}
-    type="button"
-  >
-    +1
-  </button>
 </div>
 `;
 

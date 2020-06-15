@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
-import ArrowRightIcon from "./ArrowRightIcon";
+import { ArrowRightIcon } from "./Icon";
 import Button from "./Button";
 
 interface StyledProductProps {

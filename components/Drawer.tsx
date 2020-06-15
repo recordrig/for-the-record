@@ -7,7 +7,7 @@ import React, {
   useState
 } from "react";
 import styled, { css } from "styled-components";
-import CrossIcon from "./CrossIcon";
+import { CrossIcon } from "./Icon";
 
 interface AttentionSeekerProps {
   readonly visible: boolean;

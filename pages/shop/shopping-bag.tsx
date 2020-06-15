@@ -11,7 +11,7 @@ import {
 } from "../../store/shoppingBag";
 import ShoppingBag from "../../components/ShoppingBag";
 import { extractPrices, formatCurrency, sumTotal } from "../../utils/prices";
-import ArrowRightIcon from "../../components/ArrowRightIcon";
+import { ArrowRightIcon } from "../../components/Icon";
 import Button from "../../components/Button";
 import { CapsHeading } from "../../components/Text";
 import Tile, { TileContainer } from "../../components/Tile";

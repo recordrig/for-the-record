@@ -1,11 +1,10 @@
 import Link from "next/link";
 import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
-import ArrowRightIcon from "./ArrowRightIcon";
+import { ArrowRightIcon, ShoppingBagIcon } from "./Icon";
 import Button from "./Button";
 import Drawer from "./Drawer";
 import ProductList from "./ProductList";
-import ShoppingBagIcon from "./ShoppingBagIcon";
 
 const StyledLogo = styled.a`
   display: block;

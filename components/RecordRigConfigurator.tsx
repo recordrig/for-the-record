@@ -3,7 +3,7 @@ import styled, { createGlobalStyle, css } from "styled-components";
 import products from "../_data/products";
 import { formatCurrency } from "../utils/prices";
 import Button from "./Button";
-import CheckmarkIcon from "./CheckmarkIcon";
+import { CheckIcon } from "./Icon";
 import Footnotes from "./Footnotes";
 import Tile from "./Tile";
 
@@ -1048,7 +1048,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                           width: "32px"
                         }}
                       >
-                        <CheckmarkIcon color="#24a148" />
+                        <CheckIcon color="#24a148" />
                       </span>
                       Added To Bag
                     </>
