@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
-import products from "../_data/products";
+import products from "../data/products";
 import { formatCurrency } from "../utils/prices";
 import Button from "./Button";
 import { CheckIcon } from "./Icon";

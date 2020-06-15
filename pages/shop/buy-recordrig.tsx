@@ -5,7 +5,7 @@ import Link from "next/link";
 import Router from "next/router";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import productsData from "../../_data/products";
+import productsData from "../../data/products";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
 import { ArrowRightIcon, CheckIcon, InfoIcon } from "../../components/Icon";
 import Button from "../../components/Button";
