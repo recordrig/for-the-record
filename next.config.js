@@ -1,14 +1,7 @@
 // Source maps are useful for debugging minified code. Sentry also uses these.
 const withSourceMaps = require("@zeit/next-source-maps")();
 
-// Enable development with env vars using `npm run dev`. (`now dev` does not need Dotenv.)
-require("dotenv").config();
-
 module.exports = withSourceMaps({
-  // Expose keys CLIENT-SIDE.
-  env: {
-    STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY
-  },
   webpack: (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/node. While
     // @sentry/browser will run in a Node.js environment, @sentry/node will use
