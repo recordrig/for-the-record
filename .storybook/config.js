@@ -1,4 +1,16 @@
 import { configure } from "@storybook/react";
+import Router from "next/router";
+
+const actionWithPromise = e => {
+  return new Promise((resolve) => resolve());
+}
+
+// Poor man's router mock, suppresses useless warning about there being no router.
+Router.router = {
+  push: actionWithPromise,
+  replace: actionWithPromise,
+  prefetch: actionWithPromise,
+};
 
 /*
  * This same file is used by both Jest's unit tests and Storybook. We only want to apply global

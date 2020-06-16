@@ -10930,7 +10930,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
 
 .c0 > div {
   min-height: 70vh;
-  padding-top: 128px;
+  padding-top: 80px;
   padding-bottom: 256px;
 }
 
@@ -11422,7 +11422,7 @@ exports[`Storyshots ShoppingBag empty 1`] = `
 
 .c0 > div {
   min-height: 70vh;
-  padding-top: 128px;
+  padding-top: 80px;
   padding-bottom: 256px;
 }
 

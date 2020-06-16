@@ -34,6 +34,14 @@ button {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+p a,
+p a:link,
+p a:visited,
+p a:hover,
+p a:active {
+  color: #0f62fe;
+}
+
 /*
  * The module `<PageTransition>` component needs these global classes to do its magic. This is
  * an external dependency (`next-page-transitions`) and as such, we do not have a way to circumvent

@@ -1,8 +1,11 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
+import Link from "next/link";
+import countries from "../data/countries";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import { ArrowRightIcon } from "./Icon";
 import Button from "./Button";
+import Notification from "./Notification";
 import Tile, { TileContainer } from "./Tile";
 import { CapsHeading } from "./Text";
 
@@ -246,7 +249,7 @@ const StyledTotals = styled.div`
 const StyledShoppingBag = styled.div`
   > div {
     min-height: 70vh;
-    padding-top: 128px;
+    padding-top: 80px;
     padding-bottom: 256px;
   }
 
@@ -310,11 +313,52 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     setTimeout(() => removeProduct(productId), 1000);
   };
 
+  // We only deliver to EU countries. We'd like to show a notification to folks not
+  // located in EU countries so that they needn't be unpleasantly suprised during
+  // checkout. It's something of a nice to have, though, so false positives/negatives
+  // aren't a disaster.
+  const [countrySupported, setCountrySupported] = useState(true);
+
+  useEffect(() => {
+    // In development or test environments we don't want to drag external API's into
+    // the picture. Offline development should be possible, so we'll mock instead.
+    // Note that in Vercel's online preview environment, env is also set to "production"
+    // and as such, the fetch will be performed.
+    if (process.env.NODE_ENV !== "production") {
+      setCountrySupported(false); // We'll show the notification always in dev/test.
+    } else {
+      fetch("https://json.geoiplookup.io")
+        .then(res => res.json())
+        .then(res => {
+          const country = Object.keys(countries).find(
+            key => key === res.country_code
+          );
+          setCountrySupported(country !== undefined);
+        });
+    }
+  }, []);
+
   return (
     <StyledShoppingBag>
       <div>
         {products.length > 0 ? (
           <div>
+            {!countrySupported && (
+              <Notification type="warning">
+                <p style={{ fontSize: "14px" }}>
+                  <strong>
+                    Please note that we can currently ship only to countries
+                    located within the European Union.
+                  </strong>{" "}
+                  If you&apos;d like to get notified when we expand our shipping
+                  area,{" "}
+                  <Link href="/contact">
+                    <a>let us know</a>
+                  </Link>
+                  !
+                </p>
+              </Notification>
+            )}
             <p
               style={{
                 fontSize: "32px",
