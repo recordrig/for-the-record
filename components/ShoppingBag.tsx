@@ -353,7 +353,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   If you&apos;d like to get notified when we expand our shipping
                   area,{" "}
                   <Link href="/contact">
-                    <a>let us know</a>
+                    <a style={{ color: "#0f62fe" }}>let us know</a>
                   </Link>
                   !
                 </p>
