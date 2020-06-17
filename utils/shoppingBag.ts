@@ -1,10 +1,4 @@
-import productsData from "../data/products";
-import { sumTotal } from "./prices";
-
-interface Product {
-  readonly id: string;
-  readonly quantity: number;
-}
+import { extractPrices, sumTotal } from "./prices";
 
 type ErrorIds = "totalPrice" | "productQuantity";
 
@@ -15,7 +9,11 @@ interface QuantityError {
 }
 
 export const checkProductQuantities = (
-  products: readonly Product[]
+  products: readonly {
+    readonly id: string;
+    readonly quantity: number;
+    readonly name: string;
+  }[]
 ): {
   readonly quantitiesAreValid: boolean;
   readonly errors: readonly QuantityError[];
@@ -26,9 +24,7 @@ export const checkProductQuantities = (
   const errors: readonly QuantityError[] = productsWhichExceed.map(product => {
     return {
       id: "productQuantity",
-      description: `The product quantity for ${
-        productsData[product.id].name
-      } exceeds 4. Modify the amount for this products so that it is set between 1 and 4.`,
+      description: `The product quantity for ${product.name} exceeds 4. Modify the amount for this products so that it is set between 1 and 4.`,
       product: product.id
     };
   });
@@ -44,12 +40,15 @@ interface TotalPriceError {
 }
 
 export const checkTotalPrice = (
-  products: readonly Product[]
+  products: readonly {
+    readonly quantity: number;
+    readonly price: number;
+  }[]
 ): {
   readonly totalPriceIsValid: boolean;
   readonly errors: readonly TotalPriceError[];
 } => {
-  const prices = products.map(product => productsData[product.id].price);
+  const prices = extractPrices(products);
   const total = sumTotal(prices);
   if (total <= 10000) return { totalPriceIsValid: true, errors: [] };
   return {
@@ -68,7 +67,12 @@ export const checkTotalPrice = (
  * Checks if Shopping Bag is ok to check out.
  */
 export const validateShoppingBag = (
-  products: readonly Product[]
+  products: readonly {
+    readonly id: string;
+    readonly quantity: number;
+    readonly name: string;
+    readonly price: number;
+  }[]
 ): {
   readonly shoppingBagIsValid: boolean;
   readonly errors: readonly (QuantityError | TotalPriceError)[];
