@@ -34,7 +34,7 @@ export const formatCurrency = (intPrice: number, compact = false): string => {
   const priceWithoutCents = strPrice.slice(0, -2);
   const cents = strPrice.slice(-2);
 
-  if (compact) return `€ ${priceWithoutCents}`;
+  if (compact) return `€${priceWithoutCents}`;
 
   // High prices will need a thousands separator.
   if (priceWithoutCents.length > 3) {
@@ -43,10 +43,10 @@ export const formatCurrency = (intPrice: number, compact = false): string => {
       priceWithoutCents.length === 5
         ? priceWithoutCents.slice(0, 2)
         : priceWithoutCents[0];
-    return `€ ${beforeSeparator}.${afterSeparator},${cents}`;
+    return `€${beforeSeparator}.${afterSeparator},${cents}`;
   }
 
-  return `€ ${priceWithoutCents},${cents}`;
+  return `€${priceWithoutCents},${cents}`;
 };
 
 /**

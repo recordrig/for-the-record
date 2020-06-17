@@ -6643,7 +6643,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
           Stealth Black
         </h3>
         <p>
-          € 2.299,00
+          €2.299,00
         </p>
         <p>
           Expected delivery: within 
@@ -7361,7 +7361,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
               <span
                 className="c8"
               >
-                € 2299
+                €2299
               </span>
               <button
                 className="c9"
@@ -7403,7 +7403,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
               <span
                 className="c8"
               >
-                € 2299
+                €2299
               </span>
               <button
                 className="c9"
@@ -8403,7 +8403,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
           Pristine White
         </h3>
         <p>
-          € 2.299,00
+          €2.299,00
         </p>
         <p>
           Expected delivery: within 
@@ -9121,7 +9121,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
               <span
                 className="c8"
               >
-                € 2299
+                €2299
               </span>
               <button
                 className="c9"
@@ -9163,7 +9163,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
               <span
                 className="c8"
               >
-                € 2299
+                €2299
               </span>
               <button
                 className="c9"
@@ -11265,7 +11265,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
         }
       >
         Your bag total is 
-        € 7.197,00
+        €7.197,00
         .
       </p>
       <p
@@ -11412,7 +11412,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </option>
                     </select>
                     <p>
-                      € 2.399,00
+                      €2.399,00
                     </p>
                     <button
                       onClick={[Function]}
@@ -11473,7 +11473,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </option>
                     </select>
                     <p>
-                      € 4.798,00
+                      €4.798,00
                     </p>
                     <button
                       onClick={[Function]}
@@ -11509,7 +11509,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                     }
                   }
                 >
-                  € 7.197,00
+                  €7.197,00
                 </span>
               </p>
               <p>
@@ -12463,7 +12463,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
         }
       >
         Your bag total is 
-        € 26.389,00
+        €26.389,00
         .
       </p>
       <p
@@ -12608,7 +12608,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </option>
                     </select>
                     <p>
-                      € 23.990,00
+                      €23.990,00
                     </p>
                     <button
                       onClick={[Function]}
@@ -12669,7 +12669,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </option>
                     </select>
                     <p>
-                      € 2.399,00
+                      €2.399,00
                     </p>
                     <button
                       onClick={[Function]}
@@ -12705,7 +12705,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                     }
                   }
                 >
-                  € 26.389,00
+                  €26.389,00
                 </span>
               </p>
               <p>

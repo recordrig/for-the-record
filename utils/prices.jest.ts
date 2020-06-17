@@ -50,7 +50,7 @@ describe("Prices utilities", () => {
     test("Formats the currency per the Netherlands locale", () => {
       const price = 250000;
       const result = formatCurrency(price);
-      const expectedResult = "€ 2.500,00";
+      const expectedResult = "€2.500,00";
 
       expect(result).toEqual(expectedResult);
     });
@@ -58,7 +58,7 @@ describe("Prices utilities", () => {
     test("Does not include cents if this options was passed", () => {
       const price = 250000;
       const result = formatCurrency(price, true);
-      const expectedResult = "€ 2500";
+      const expectedResult = "€2500";
 
       expect(result).toEqual(expectedResult);
     });
@@ -66,7 +66,7 @@ describe("Prices utilities", () => {
     test("Handles single digit prices", () => {
       const price = 100;
       const result = formatCurrency(price);
-      const expectedResult = "€ 1,00";
+      const expectedResult = "€1,00";
 
       expect(result).toEqual(expectedResult);
     });
@@ -74,7 +74,7 @@ describe("Prices utilities", () => {
     test("Handles double digit prices", () => {
       const price = 1000;
       const result = formatCurrency(price);
-      const expectedResult = "€ 10,00";
+      const expectedResult = "€10,00";
 
       expect(result).toEqual(expectedResult);
     });
@@ -82,7 +82,7 @@ describe("Prices utilities", () => {
     test("Handles triple digit prices", () => {
       const price = 10000;
       const result = formatCurrency(price);
-      const expectedResult = "€ 100,00";
+      const expectedResult = "€100,00";
 
       expect(result).toEqual(expectedResult);
     });
@@ -90,7 +90,7 @@ describe("Prices utilities", () => {
     test("Handles large prices", () => {
       const price = 1000000;
       const result = formatCurrency(price);
-      const expectedResult = "€ 10.000,00";
+      const expectedResult = "€10.000,00";
 
       expect(result).toEqual(expectedResult);
     });
