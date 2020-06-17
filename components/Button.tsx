@@ -2,13 +2,14 @@ import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
 
-const sharedStyles = (clicked: boolean) => css`
+const sharedStyles = (appearDisabled: boolean, clicked: boolean) => css`
   border-radius: 4px;
   border-left: 0;
   border-right: 0;
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: ${appearDisabled ? 0.4 : 1};
   outline: none;
   padding: 0;
   text-align: center;
@@ -39,20 +40,22 @@ const sharedStyles = (clicked: boolean) => css`
 `;
 
 interface StyledButtonProps {
+  readonly appearDisabled: boolean;
   readonly clicked: boolean;
 }
 
 const StyledAnchorButton = styled.a<StyledButtonProps>`
-  ${({ clicked }) => sharedStyles(clicked)}
+  ${({ appearDisabled, clicked }) => sharedStyles(appearDisabled, clicked)}
   display: inline-block;
   text-decoration: none;
 `;
 
 const StyledButton = styled.button<StyledButtonProps>`
-  ${({ clicked }) => sharedStyles(clicked)}
+  ${({ appearDisabled, clicked }) => sharedStyles(appearDisabled, clicked)}
 `;
 
 interface ButtonProps {
+  readonly appearDisabled?: boolean;
   readonly children: ReactNode | ReactNodeArray | Element;
   /** Optionally pass `clicked` to make the button appear... clicked. */
   readonly clicked?: boolean;
@@ -68,6 +71,7 @@ interface ButtonProps {
  * Big, blue button.
  */
 const Button: FunctionComponent<ButtonProps> = ({
+  appearDisabled = false,
   children,
   clicked = false,
   cypressId = undefined,
@@ -83,6 +87,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       {href ? (
         <Link href={href} passHref>
           <StyledAnchorButton
+            appearDisabled={appearDisabled}
             clicked={clicked}
             data-cy={cypressId}
             onClick={() => handleClick()}
@@ -92,6 +97,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         </Link>
       ) : (
         <StyledButton
+          appearDisabled={appearDisabled}
           clicked={clicked}
           data-cy={cypressId}
           onClick={() => handleClick()}

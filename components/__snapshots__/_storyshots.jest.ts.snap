@@ -1,5 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button appear disabled 1`] = `
+.c0 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.4;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+@media (max-width:1023px) {
+  .c0 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c0 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c0 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
+<button
+  className="c0"
+  onClick={[Function]}
+>
+  Hello World
+</button>
+`;
+
 exports[`Storyshots Button click handler 1`] = `
 .c0 {
   border-radius: 4px;
@@ -8,6 +60,7 @@ exports[`Storyshots Button click handler 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -59,6 +112,7 @@ exports[`Storyshots Button clicked 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -110,6 +164,7 @@ exports[`Storyshots Button default 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -161,6 +216,7 @@ exports[`Storyshots Button href 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -2640,6 +2696,7 @@ Array [
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -3151,6 +3208,7 @@ Array [
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -5611,6 +5669,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -7369,6 +7428,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -10712,6 +10772,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -11495,6 +11556,7 @@ exports[`Storyshots ShoppingBag empty 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
@@ -11651,6 +11713,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 1;
   outline: none;
   padding: 0;
   text-align: center;
