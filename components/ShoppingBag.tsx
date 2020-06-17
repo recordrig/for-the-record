@@ -500,7 +500,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   </div>
                   <StyledProductList>
                     <ul>
-                      {products.map(({ id, price, quantity }) => (
+                      {products.map(({ id, name, price, quantity }) => (
                         <StyledProduct
                           animateRemoval={animateRemoval === id}
                           key={`product-${id}`}
@@ -514,12 +514,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                             }
                           />
                           <div>
-                            <p>
-                              RecordRig -{" "}
-                              {id.endsWith("black")
-                                ? "Stealth Black"
-                                : "Pristine White"}
-                            </p>
+                            <p>{name}</p>
                             <p>
                               Estimated delivery: within <span>14 days</span>
                             </p>
