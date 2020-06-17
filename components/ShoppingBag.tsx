@@ -110,7 +110,7 @@ const StyledProduct = styled.li<StyledProductProps>`
     font-weight: bold;
     outline: none;
     position: relative;
-    width: 48px;
+    width: 50px;
     -moz-appearance: none;
     -webkit-appearance: none;
   }
@@ -531,8 +531,10 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                                   parseInt(e.currentTarget.value, 10)
                                 )
                               }
-                              value={quantity}
                             >
+                              <option value="none" selected disabled hidden>
+                                {quantity}
+                              </option>
                               {[1, 2, 3, 4].map(option => (
                                 <option key={`amount-${option}`} value={option}>
                                   {option}

@@ -10939,7 +10939,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   font-weight: bold;
   outline: none;
   position: relative;
-  width: 48px;
+  width: 50px;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -11381,8 +11381,15 @@ exports[`Storyshots ShoppingBag default 1`] = `
                     <select
                       id="RR20-black-quantity"
                       onChange={[Function]}
-                      value={1}
                     >
+                      <option
+                        disabled={true}
+                        hidden={true}
+                        selected={true}
+                        value="none"
+                      >
+                        1
+                      </option>
                       <option
                         value={1}
                       >
@@ -11437,8 +11444,15 @@ exports[`Storyshots ShoppingBag default 1`] = `
                     <select
                       id="RR20-white-quantity"
                       onChange={[Function]}
-                      value={2}
                     >
+                      <option
+                        disabled={true}
+                        hidden={true}
+                        selected={true}
+                        value="none"
+                      >
+                        2
+                      </option>
                       <option
                         value={1}
                       >
@@ -11905,7 +11919,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   font-weight: bold;
   outline: none;
   position: relative;
-  width: 48px;
+  width: 50px;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -12438,8 +12452,15 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                     <select
                       id="RR20-black-quantity"
                       onChange={[Function]}
-                      value={10}
                     >
+                      <option
+                        disabled={true}
+                        hidden={true}
+                        selected={true}
+                        value="none"
+                      >
+                        10
+                      </option>
                       <option
                         value={1}
                       >
@@ -12494,8 +12515,15 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                     <select
                       id="RR20-white-quantity"
                       onChange={[Function]}
-                      value={1}
                     >
+                      <option
+                        disabled={true}
+                        hidden={true}
+                        selected={true}
+                        value="none"
+                      >
+                        1
+                      </option>
                       <option
                         value={1}
                       >
