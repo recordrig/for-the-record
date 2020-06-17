@@ -272,6 +272,45 @@ const StyledShoppingBag = styled.div`
   }
 `;
 
+const CheckoutButton = () => (
+  <Button href="/shop/checkout">
+    Check Out
+    <span
+      style={{
+        display: "inline-block",
+        height: "24px",
+        marginLeft: "8px",
+        position: "relative",
+        top: "6px",
+        width: "24px"
+      }}
+    >
+      <ArrowRightIcon color="#ffffff" />
+    </span>
+  </Button>
+);
+
+const DisabledCheckoutButton = () => (
+  <Button
+    appearDisabled
+    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  >
+    Check Out
+    <span
+      style={{
+        display: "inline-block",
+        height: "24px",
+        marginLeft: "8px",
+        position: "relative",
+        top: "6px",
+        width: "24px"
+      }}
+    >
+      <ArrowRightIcon color="#ffffff" />
+    </span>
+  </Button>
+);
+
 interface Product {
   readonly id: string;
   readonly name: string;
@@ -447,21 +486,11 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
               Get free shipping on all EU orders.
             </p>
             <div style={{ margin: "0 auto", maxWidth: "450px" }}>
-              <Button href="/shop/checkout">
-                Check Out
-                <span
-                  style={{
-                    display: "inline-block",
-                    height: "24px",
-                    marginLeft: "8px",
-                    position: "relative",
-                    top: "6px",
-                    width: "24px"
-                  }}
-                >
-                  <ArrowRightIcon color="#ffffff" />
-                </span>
-              </Button>
+              {shoppingBagValidationState.shoppingBagIsValid ? (
+                <CheckoutButton />
+              ) : (
+                <DisabledCheckoutButton />
+              )}
             </div>
             <div style={{ marginTop: "128px" }}>
               <Tile>
@@ -531,21 +560,11 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                       <span>{formatCurrency(sumTotal(prices))}</span>
                     </p>
                     <p>Includes VAT</p>
-                    <Button href="/shop/checkout">
-                      Check Out
-                      <span
-                        style={{
-                          display: "inline-block",
-                          height: "24px",
-                          marginLeft: "8px",
-                          position: "relative",
-                          top: "6px",
-                          width: "24px"
-                        }}
-                      >
-                        <ArrowRightIcon color="#ffffff" />
-                      </span>
-                    </Button>
+                    {shoppingBagValidationState.shoppingBagIsValid ? (
+                      <CheckoutButton />
+                    ) : (
+                      <DisabledCheckoutButton />
+                    )}
                   </StyledTotals>
                 </TileContainer>
               </Tile>
