@@ -3,7 +3,10 @@ import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
 import countries from "../data/countries";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
-import { validateShoppingBag } from "../utils/shoppingBag";
+import {
+  checkProductQuantities,
+  validateShoppingBag
+} from "../utils/shoppingBag";
 import { ArrowRightIcon } from "./Icon";
 import Button from "./Button";
 import Notification from "./Notification";
@@ -330,6 +333,19 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     }
   }, [products]);
 
+  const [isBulkOrder, setIsBulkOrder] = useState(
+    products.length > 0 ? checkProductQuantities(products) : false
+  );
+
+  useEffect(() => {
+    if (products.length > 0) {
+      const isBulk = !checkProductQuantities(products).quantitiesAreValid;
+      setIsBulkOrder(isBulk);
+    } else {
+      setIsBulkOrder(false);
+    }
+  }, [products]);
+
   // We only deliver to EU countries. We'd like to show a notification to folks not
   // located in EU countries so that they needn't be unpleasantly suprised during
   // checkout. It's something of a nice to have, though, so false positives/negatives
@@ -361,43 +377,62 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
         {products.length > 0 ? (
           <div>
             {!countrySupported && (
-              <Notification type="warning">
-                <p style={{ fontSize: "14px" }}>
-                  <strong>
-                    Please note that we can currently ship only to countries
-                    located within the European Union.
-                  </strong>{" "}
-                  If you&apos;d like to get notified when we expand our shipping
-                  area,{" "}
-                  <Link href="/contact">
-                    <a style={{ color: "#0f62fe" }}>let us know</a>
-                  </Link>
-                  !
-                </p>
-              </Notification>
+              <div style={{ marginBottom: "16px" }}>
+                <Notification type="warning">
+                  <p style={{ fontSize: "14px" }}>
+                    <strong>
+                      Please note that we can currently ship only to countries
+                      located within the European Union.
+                    </strong>{" "}
+                    If you&apos;d like to get notified when we expand our
+                    shipping area,{" "}
+                    <Link href="/contact">
+                      <a style={{ color: "#0f62fe" }}>let us know</a>
+                    </Link>
+                    !
+                  </p>
+                </Notification>
+              </div>
             )}
-            <br />
             {!shoppingBagValidationState.shoppingBagIsValid && (
-              <Notification type="error">
-                <p style={{ fontSize: "14px", paddingBottom: "4px" }}>
-                  <strong>
-                    The contents of your Shopping Bag need to be modified before
-                    you can continue to Check Out.
-                  </strong>{" "}
-                  Please modify your Shopping Bag to correct the following
-                  issue(s):
-                </p>
-                <ul style={{ fontSize: "13px" }}>
-                  {shoppingBagValidationState.errors.map(error => (
-                    <li
-                      key={`${error.id}-${error.description.substring(0, 60)}`}
-                      style={{ paddingBottom: "8px" }}
-                    >
-                      {error.description}
-                    </li>
-                  ))}
-                </ul>
-              </Notification>
+              <div style={{ marginBottom: "16px" }}>
+                <Notification type="error">
+                  <p style={{ fontSize: "14px", paddingBottom: "4px" }}>
+                    <strong>
+                      The contents of your Shopping Bag need to be modified
+                      before you can continue to Check Out.
+                    </strong>{" "}
+                    Please modify your Shopping Bag to correct the following
+                    issue(s):
+                  </p>
+                  <ul style={{ fontSize: "13px" }}>
+                    {shoppingBagValidationState.errors.map(error => (
+                      <li
+                        key={`${error.id}-${error.description.substring(
+                          0,
+                          60
+                        )}`}
+                        style={{ paddingBottom: "8px" }}
+                      >
+                        {error.description}
+                      </li>
+                    ))}
+                  </ul>
+                </Notification>
+              </div>
+            )}
+            {isBulkOrder && (
+              <div style={{ marginBottom: "16px" }}>
+                <Notification type="info">
+                  <p style={{ fontSize: "14px" }}>
+                    <strong>For bulk orders, discounts might apply.</strong>{" "}
+                    <Link href="/contact">
+                      <a style={{ color: "#0f62fe" }}>Contact us</a>
+                    </Link>{" "}
+                    for a custom agreement.
+                  </p>
+                </Notification>
+              </div>
             )}
             <p
               style={{

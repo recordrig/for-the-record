@@ -10705,840 +10705,6 @@ exports[`Storyshots Section subsections 1`] = `
 `;
 
 exports[`Storyshots ShoppingBag default 1`] = `
-.c1 {
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: 0.2s ease 0s;
-  transition: 0.2s ease 0s;
-  width: 100%;
-  background-color: #0f62fe;
-  border-bottom: 2px solid #002d9c;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  color: #ffffff;
-  font-size: 24px;
-  display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c2 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c2 svg {
-  fill: #ffffff;
-  height: inherit;
-  width: inherit;
-}
-
-.c4 {
-  box-sizing: border-box;
-  padding-bottom: 42px;
-  padding-top: 42px;
-  width: 100%;
-}
-
-.c4 > p {
-  font-weight: bold;
-}
-
-.c3 {
-  background-color: #fff;
-  border-radius: 0;
-  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
-}
-
-.c3:hover {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  z-index: 1;
-}
-
-.c3 >:last-child {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-.c5 h1,
-.c5 h2,
-.c5 h3,
-.c5 h4,
-.c5 h5,
-.c5 h6 {
-  color: #000;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-}
-
-.c7 {
-  border-bottom: 1px solid #dde1e6;
-  max-height: 500px;
-  opacity: 1;
-  overflow: hidden;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  -webkit-animation: 1.2s;
-  animation: 1.2s;
-}
-
-.c7 > div {
-  box-sizing: border-box;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 64px;
-  padding-top: 16px;
-}
-
-.c7 p {
-  font-weight: bold;
-  margin: 0;
-}
-
-.c7 p:nth-child(2) {
-  color: #4d5358;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.c7 p:nth-child(2) > span {
-  color: #24a148;
-  font-weight: bold;
-}
-
-.c7 p:nth-child(4) {
-  text-align: right;
-}
-
-.c7 select {
-  background-color: transparent;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
-  background-position: right 4px center;
-  background-repeat: no-repeat;
-  background-size: 18px;
-  border: 0;
-  box-shadow: none;
-  cursor: pointer;
-  font-weight: bold;
-  outline: none;
-  position: relative;
-  width: 48px;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
-.c7 button {
-  background: none;
-  border: none;
-  clear: both;
-  cursor: pointer;
-  float: right;
-  font-size: 15px;
-  margin-top: 4px;
-  outline: none;
-  padding: 0;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.c6 {
-  border-top: 1px solid #dde1e6;
-  width: 100%;
-}
-
-.c6 > div {
-  bottom: 28px;
-  position: relative;
-  text-align: center;
-}
-
-.c6 > div > span {
-  background-color: #ffffff;
-  color: #697077;
-  display: inline-block;
-  font-size: 13px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c6 ul {
-  list-style-type: none;
-  margin-top: 0;
-  padding-left: 0;
-}
-
-.c8 p {
-  color: #4d5358;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.c8 p > span {
-  display: block;
-  float: left;
-}
-
-.c8 p > span:nth-child(2) {
-  float: right;
-}
-
-.c8 p:nth-child(2) {
-  border-top: 1px solid #dde1e6;
-  color: #000000;
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 16px;
-  margin-bottom: 0;
-  padding-top: 8px;
-}
-
-.c8 p:nth-child(3) {
-  color: #4d5358;
-  font-size: 14px !important;
-  margin-top: 0;
-  margin-bottom: 32px;
-  text-align: right;
-}
-
-.c0 > div {
-  min-height: 70vh;
-  padding-top: 80px;
-  padding-bottom: 256px;
-}
-
-@media (max-width:1023px) {
-  .c1 {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width:549px) {
-  .c1 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) {
-  .c1 {
-    font-size: 21px;
-    line-height: 64px;
-  }
-}
-
-@media (max-width:474px) {
-  .c4 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media (min-width:475px) and (max-width:767px) {
-  .c4 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media (min-width:768px) {
-  .c4 {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media (max-width:399px) {
-  .c5 h1,
-  .c5 h2,
-  .c5 h3,
-  .c5 h4,
-  .c5 h5,
-  .c5 h6 {
-    font-size: 14px;
-    line-height: 14px;
-  }
-}
-
-@media (min-width:400px) {
-  .c5 h1,
-  .c5 h2,
-  .c5 h3,
-  .c5 h4,
-  .c5 h5,
-  .c5 h6 {
-    font-size: 16px;
-    line-height: 21px;
-  }
-}
-
-@media (max-width:640px) {
-  .c7 p,
-  .c7 select {
-    font-size: 20px;
-  }
-
-  .c7 select {
-    top: 24px;
-  }
-
-  .c7 img {
-    display: block;
-    margin: 16px auto;
-    width: 200px;
-  }
-}
-
-@media (min-width:641px) {
-  .c7 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .c7 > div {
-    padding-left: 32px;
-  }
-
-  .c7 p,
-  .c7 select {
-    font-size: 24px;
-  }
-
-  .c7 select {
-    top: 30px;
-  }
-
-  .c7 img {
-    height: 200px;
-  }
-
-  .c7 p:nth-child(2) {
-    margin-bottom: 32px;
-  }
-}
-
-@media (min-width:450px) and (max-width:640px) {
-  .c8 {
-    padding-left: 33%;
-  }
-}
-
-@media (max-width:640px) {
-  .c8 p:last-of-type {
-    font-size: 20px;
-  }
-}
-
-@media (min-width:641px) {
-  .c8 {
-    padding-left: 50%;
-  }
-
-  .c8 p:last-of-type {
-    font-size: 24px;
-  }
-}
-
-@media (max-width:767px) {
-  .c0 > div {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (min-width:768px) {
-  .c0 > div > div {
-    margin: 0 auto;
-    max-width: 960px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div>
-    <div>
-      <p
-        style={
-          Object {
-            "fontSize": "32px",
-            "fontWeight": "bold",
-            "textAlign": "center",
-          }
-        }
-      >
-        Your bag total is 
-        € 7.197,00
-        .
-      </p>
-      <p
-        style={
-          Object {
-            "fontWeight": "bold",
-            "textAlign": "center",
-          }
-        }
-      >
-        Get free shipping on all EU orders.
-      </p>
-      <div
-        style={
-          Object {
-            "margin": "0 auto",
-            "maxWidth": "450px",
-          }
-        }
-      >
-        <a
-          className="c1"
-          href="/shop/checkout"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Check Out
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "height": "24px",
-                "marginLeft": "8px",
-                "position": "relative",
-                "top": "6px",
-                "width": "24px",
-              }
-            }
-          >
-            <span
-              className="c2"
-              color="#ffffff"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                height="32"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <polygon
-                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-                />
-                <title>
-                  Arrow right
-                </title>
-              </svg>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div
-        style={
-          Object {
-            "marginTop": "128px",
-          }
-        }
-      >
-        <div
-          className="c3"
-        >
-          <div
-            className="c4"
-          >
-            <div
-              style={
-                Object {
-                  "marginBottom": "24px",
-                }
-              }
-            >
-              <div
-                className="c5"
-              >
-                <h3>
-                  Your Shopping Bag.
-                </h3>
-              </div>
-            </div>
-            <div
-              className="c6"
-            >
-              <ul>
-                <li
-                  className="c7"
-                >
-                  <img
-                    alt=""
-                    src="/recordrig-black.png"
-                  />
-                  <div>
-                    <p>
-                      RecordRig -
-                       
-                      Stealth Black
-                    </p>
-                    <p>
-                      Estimated delivery: within 
-                      <span>
-                        14 days
-                      </span>
-                    </p>
-                    <select
-                      id="RR20-stealth-black-quantity"
-                      onChange={[Function]}
-                      value={1}
-                    >
-                      <option
-                        value={1}
-                      >
-                        1
-                      </option>
-                      <option
-                        value={2}
-                      >
-                        2
-                      </option>
-                      <option
-                        value={3}
-                      >
-                        3
-                      </option>
-                      <option
-                        value={4}
-                      >
-                        4
-                      </option>
-                    </select>
-                    <p>
-                      € 2.399,00
-                    </p>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                </li>
-                <li
-                  className="c7"
-                >
-                  <img
-                    alt=""
-                    src="/recordrig.png"
-                  />
-                  <div>
-                    <p>
-                      RecordRig -
-                       
-                      Pristine White
-                    </p>
-                    <p>
-                      Estimated delivery: within 
-                      <span>
-                        14 days
-                      </span>
-                    </p>
-                    <select
-                      id="RR20-pristine-white-quantity"
-                      onChange={[Function]}
-                      value={2}
-                    >
-                      <option
-                        value={1}
-                      >
-                        1
-                      </option>
-                      <option
-                        value={2}
-                      >
-                        2
-                      </option>
-                      <option
-                        value={3}
-                      >
-                        3
-                      </option>
-                      <option
-                        value={4}
-                      >
-                        4
-                      </option>
-                    </select>
-                    <p>
-                      € 4.798,00
-                    </p>
-                    <button
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              className="c8"
-            >
-              <p>
-                <span>
-                  Shipping:
-                </span>
-                 
-                <span>
-                  FREE
-                </span>
-              </p>
-              <p>
-                <span>
-                  Total:
-                </span>
-                 
-                <span>
-                  € 7.197,00
-                </span>
-              </p>
-              <p>
-                Includes VAT
-              </p>
-              <a
-                className="c1"
-                href="/shop/checkout"
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-              >
-                Check Out
-                <span
-                  style={
-                    Object {
-                      "display": "inline-block",
-                      "height": "24px",
-                      "marginLeft": "8px",
-                      "position": "relative",
-                      "top": "6px",
-                      "width": "24px",
-                    }
-                  }
-                >
-                  <span
-                    className="c2"
-                    color="#ffffff"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      focusable="false"
-                      height="32"
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width="32"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <polygon
-                        points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-                      />
-                      <title>
-                        Arrow right
-                      </title>
-                    </svg>
-                  </span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots ShoppingBag empty 1`] = `
-.c1 {
-  border-radius: 4px;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  text-align: center;
-  -webkit-transition: 0.2s ease 0s;
-  transition: 0.2s ease 0s;
-  width: 100%;
-  background-color: #0f62fe;
-  border-bottom: 2px solid #002d9c;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  color: #ffffff;
-  font-size: 24px;
-  display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c2 {
-  height: inherit;
-  display: inline-block;
-  width: inherit;
-}
-
-.c2 svg {
-  fill: #ffffff;
-  height: inherit;
-  width: inherit;
-}
-
-.c0 > div {
-  min-height: 70vh;
-  padding-top: 80px;
-  padding-bottom: 256px;
-}
-
-@media (max-width:1023px) {
-  .c1 {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width:549px) {
-  .c1 {
-    font-size: 18px;
-    line-height: 48px;
-  }
-}
-
-@media (min-width:550px) {
-  .c1 {
-    font-size: 21px;
-    line-height: 64px;
-  }
-}
-
-@media (max-width:767px) {
-  .c0 > div {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (min-width:768px) {
-  .c0 > div > div {
-    margin: 0 auto;
-    max-width: 960px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div>
-    <span
-      style={
-        Object {
-          "display": "inline-block",
-          "marginTop": "15vh",
-          "width": "100%",
-        }
-      }
-    >
-      <p
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
-      >
-        Your shopping bag is empty.
-      </p>
-      <div
-        style={
-          Object {
-            "margin": "32px auto",
-            "maxWidth": "450px",
-          }
-        }
-      >
-        <a
-          className="c1"
-          href="/shop/buy-recordrig"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Shop RecordRig
-          <span
-            style={
-              Object {
-                "display": "inline-block",
-                "height": "24px",
-                "marginLeft": "8px",
-                "position": "relative",
-                "top": "6px",
-                "width": "24px",
-              }
-            }
-          >
-            <span
-              className="c2"
-              color="#ffffff"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                height="32"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width="32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <polygon
-                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
-                />
-                <title>
-                  Arrow right
-                </title>
-              </svg>
-            </span>
-          </span>
-        </a>
-      </div>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Storyshots ShoppingBag invalid 1`] = `
 .c3 {
   border-radius: 4px;
   border-left: 0;
@@ -11571,7 +10737,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
 }
 
 .c2 svg {
-  fill: #da1e28;
+  fill: #0043ce;
   height: inherit;
   width: inherit;
 }
@@ -11640,11 +10806,11 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   padding-left: 46px;
   padding-right: 32px;
   position: relative;
-  background-color: #fff1f1;
-  border-left-color: #da1e28;
-  border-top-color: #feacb3;
-  border-right-color: #feacb3;
-  border-bottom-color: #feacb3;
+  background-color: #edf5ff;
+  border-left-color: #0043ce;
+  border-top-color: #a2c0f8;
+  border-right-color: #a2c0f8;
+  border-bottom-color: #a2c0f8;
 }
 
 .c7 h1,
@@ -11949,90 +11115,81 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
 >
   <div>
     <div>
-      <br />
       <div
-        className="c1"
-        type="error"
+        style={
+          Object {
+            "marginBottom": "16px",
+          }
+        }
       >
-        <p
-          style={
-            Object {
-              "fontSize": "14px",
-              "paddingBottom": "4px",
-            }
-          }
-        >
-          <strong>
-            The contents of your Shopping Bag need to be modified before you can continue to Check Out.
-          </strong>
-           
-          Please modify your Shopping Bag to correct the following issue(s):
-        </p>
-        <ul
-          style={
-            Object {
-              "fontSize": "13px",
-            }
-          }
-        >
-          <li
-            style={
-              Object {
-                "paddingBottom": "8px",
-              }
-            }
-          >
-            The product quantity for RecordRig - Stealth Black exceeds 4. Modify the amount for this product so that it is set between 1 and 4.
-          </li>
-          <li
-            style={
-              Object {
-                "paddingBottom": "8px",
-              }
-            }
-          >
-            The total price for all products exceeds the €10.000 threshold. Modify your shopping bag contents so that the total price remains below this amount.
-          </li>
-        </ul>
         <div
-          style={
-            Object {
-              "height": "20px",
-              "left": "13px",
-              "position": "absolute",
-              "top": "15px",
-              "width": "20px",
-            }
-          }
+          className="c1"
+          type="info"
         >
-          <span
-            className="c2"
-            color="#da1e28"
+          <p
+            style={
+              Object {
+                "fontSize": "14px",
+              }
+            }
           >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              focusable="false"
-              height="32"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width="32"
-              xmlns="http://www.w3.org/2000/svg"
+            <strong>
+              For bulk orders, discounts might apply.
+            </strong>
+             
+            <a
+              href="/contact"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "color": "#0f62fe",
+                }
+              }
             >
-              <path
-                d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
-              />
-              <path
-                d="M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
-                data-icon-path="inner-path"
-                fill="none"
-                opacity="0"
-              />
-              <title>
-                Error filled
-              </title>
-            </svg>
-          </span>
+              Contact us
+            </a>
+             
+            for a custom agreement.
+          </p>
+          <div
+            style={
+              Object {
+                "height": "20px",
+                "left": "13px",
+                "position": "absolute",
+                "top": "15px",
+                "width": "20px",
+              }
+            }
+          >
+            <span
+              className="c2"
+              color="#0043ce"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                />
+                <path
+                  d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                  data-icon-path="inner-path"
+                  fill="none"
+                />
+                <title>
+                  Information filled
+                </title>
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
       <p
@@ -12045,7 +11202,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
         }
       >
         Your bag total is 
-        € 26.389,00
+        € 7.197,00
         .
       </p>
       <p
@@ -12163,6 +11320,1066 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                     <select
                       id="RR20-black-quantity"
                       onChange={[Function]}
+                      value={1}
+                    >
+                      <option
+                        value={1}
+                      >
+                        1
+                      </option>
+                      <option
+                        value={2}
+                      >
+                        2
+                      </option>
+                      <option
+                        value={3}
+                      >
+                        3
+                      </option>
+                      <option
+                        value={4}
+                      >
+                        4
+                      </option>
+                    </select>
+                    <p>
+                      € 2.399,00
+                    </p>
+                    <button
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+                <li
+                  className="c9"
+                >
+                  <img
+                    alt=""
+                    src="/recordrig.png"
+                  />
+                  <div>
+                    <p>
+                      RecordRig -
+                       
+                      Pristine White
+                    </p>
+                    <p>
+                      Estimated delivery: within 
+                      <span>
+                        14 days
+                      </span>
+                    </p>
+                    <select
+                      id="RR20-white-quantity"
+                      onChange={[Function]}
+                      value={2}
+                    >
+                      <option
+                        value={1}
+                      >
+                        1
+                      </option>
+                      <option
+                        value={2}
+                      >
+                        2
+                      </option>
+                      <option
+                        value={3}
+                      >
+                        3
+                      </option>
+                      <option
+                        value={4}
+                      >
+                        4
+                      </option>
+                    </select>
+                    <p>
+                      € 4.798,00
+                    </p>
+                    <button
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="c10"
+            >
+              <p>
+                <span>
+                  Shipping:
+                </span>
+                 
+                <span>
+                  FREE
+                </span>
+              </p>
+              <p>
+                <span>
+                  Total:
+                </span>
+                 
+                <span>
+                  € 7.197,00
+                </span>
+              </p>
+              <p>
+                Includes VAT
+              </p>
+              <a
+                className="c3"
+                href="/shop/checkout"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Check Out
+                <span
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "height": "24px",
+                      "marginLeft": "8px",
+                      "position": "relative",
+                      "top": "6px",
+                      "width": "24px",
+                    }
+                  }
+                >
+                  <span
+                    className="c4"
+                    color="#ffffff"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      height="32"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width="32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                      />
+                      <title>
+                        Arrow right
+                      </title>
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ShoppingBag empty 1`] = `
+.c1 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c2 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
+}
+
+.c0 > div {
+  min-height: 70vh;
+  padding-top: 80px;
+  padding-bottom: 256px;
+}
+
+@media (max-width:1023px) {
+  .c1 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c1 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c1 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
+@media (max-width:767px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 > div > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <span
+      style={
+        Object {
+          "display": "inline-block",
+          "marginTop": "15vh",
+          "width": "100%",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Your shopping bag is empty.
+      </p>
+      <div
+        style={
+          Object {
+            "margin": "32px auto",
+            "maxWidth": "450px",
+          }
+        }
+      >
+        <a
+          className="c1"
+          href="/shop/buy-recordrig"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Shop RecordRig
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "height": "24px",
+                "marginLeft": "8px",
+                "position": "relative",
+                "top": "6px",
+                "width": "24px",
+              }
+            }
+          >
+            <span
+              className="c2"
+              color="#ffffff"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                />
+                <title>
+                  Arrow right
+                </title>
+              </svg>
+            </span>
+          </span>
+        </a>
+      </div>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ShoppingBag invalid 1`] = `
+.c5 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c2 svg {
+  fill: #da1e28;
+  height: inherit;
+  width: inherit;
+}
+
+.c4 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c4 svg {
+  fill: #0043ce;
+  height: inherit;
+  width: inherit;
+}
+
+.c6 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c6 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
+}
+
+.c8 {
+  box-sizing: border-box;
+  padding-bottom: 42px;
+  padding-top: 42px;
+  width: 100%;
+}
+
+.c8 > p {
+  font-weight: bold;
+}
+
+.c7 {
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+}
+
+.c7:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
+}
+
+.c7 >:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c1 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 46px;
+  padding-right: 32px;
+  position: relative;
+  background-color: #fff1f1;
+  border-left-color: #da1e28;
+  border-top-color: #feacb3;
+  border-right-color: #feacb3;
+  border-bottom-color: #feacb3;
+}
+
+.c3 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 46px;
+  padding-right: 32px;
+  position: relative;
+  background-color: #edf5ff;
+  border-left-color: #0043ce;
+  border-top-color: #a2c0f8;
+  border-right-color: #a2c0f8;
+  border-bottom-color: #a2c0f8;
+}
+
+.c9 h1,
+.c9 h2,
+.c9 h3,
+.c9 h4,
+.c9 h5,
+.c9 h6 {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.c11 {
+  border-bottom: 1px solid #dde1e6;
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  -webkit-animation: 1.2s;
+  animation: 1.2s;
+}
+
+.c11 > div {
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 64px;
+  padding-top: 16px;
+}
+
+.c11 p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c11 p:nth-child(2) {
+  color: #4d5358;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c11 p:nth-child(2) > span {
+  color: #24a148;
+  font-weight: bold;
+}
+
+.c11 p:nth-child(4) {
+  text-align: right;
+}
+
+.c11 select {
+  background-color: transparent;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
+  background-position: right 4px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  width: 48px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.c11 button {
+  background: none;
+  border: none;
+  clear: both;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+  margin-top: 4px;
+  outline: none;
+  padding: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
+  border-top: 1px solid #dde1e6;
+  width: 100%;
+}
+
+.c10 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c10 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.c12 p {
+  color: #4d5358;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.c12 p > span {
+  display: block;
+  float: left;
+}
+
+.c12 p > span:nth-child(2) {
+  float: right;
+}
+
+.c12 p:nth-child(2) {
+  border-top: 1px solid #dde1e6;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.c12 p:nth-child(3) {
+  color: #4d5358;
+  font-size: 14px !important;
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-align: right;
+}
+
+.c0 > div {
+  min-height: 70vh;
+  padding-top: 80px;
+  padding-bottom: 256px;
+}
+
+@media (max-width:1023px) {
+  .c5 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c5 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
+@media (max-width:474px) {
+  .c8 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
+  .c8 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:399px) {
+  .c9 h1,
+  .c9 h2,
+  .c9 h3,
+  .c9 h4,
+  .c9 h5,
+  .c9 h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (min-width:400px) {
+  .c9 h1,
+  .c9 h2,
+  .c9 h3,
+  .c9 h4,
+  .c9 h5,
+  .c9 h6 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width:640px) {
+  .c11 p,
+  .c11 select {
+    font-size: 20px;
+  }
+
+  .c11 select {
+    top: 24px;
+  }
+
+  .c11 img {
+    display: block;
+    margin: 16px auto;
+    width: 200px;
+  }
+}
+
+@media (min-width:641px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c11 > div {
+    padding-left: 32px;
+  }
+
+  .c11 p,
+  .c11 select {
+    font-size: 24px;
+  }
+
+  .c11 select {
+    top: 30px;
+  }
+
+  .c11 img {
+    height: 200px;
+  }
+
+  .c11 p:nth-child(2) {
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width:450px) and (max-width:640px) {
+  .c12 {
+    padding-left: 33%;
+  }
+}
+
+@media (max-width:640px) {
+  .c12 p:last-of-type {
+    font-size: 20px;
+  }
+}
+
+@media (min-width:641px) {
+  .c12 {
+    padding-left: 50%;
+  }
+
+  .c12 p:last-of-type {
+    font-size: 24px;
+  }
+}
+
+@media (max-width:767px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 > div > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div>
+      <div
+        style={
+          Object {
+            "marginBottom": "16px",
+          }
+        }
+      >
+        <div
+          className="c1"
+          type="error"
+        >
+          <p
+            style={
+              Object {
+                "fontSize": "14px",
+                "paddingBottom": "4px",
+              }
+            }
+          >
+            <strong>
+              The contents of your Shopping Bag need to be modified before you can continue to Check Out.
+            </strong>
+             
+            Please modify your Shopping Bag to correct the following issue(s):
+          </p>
+          <ul
+            style={
+              Object {
+                "fontSize": "13px",
+              }
+            }
+          >
+            <li
+              style={
+                Object {
+                  "paddingBottom": "8px",
+                }
+              }
+            >
+              The product quantity for RecordRig - Stealth Black exceeds 4. Modify the amount for this product so that it is set between 1 and 4.
+            </li>
+            <li
+              style={
+                Object {
+                  "paddingBottom": "8px",
+                }
+              }
+            >
+              The total price for all products exceeds the €10.000 threshold. Modify your shopping bag contents so that the total price remains below this amount.
+            </li>
+          </ul>
+          <div
+            style={
+              Object {
+                "height": "20px",
+                "left": "13px",
+                "position": "absolute",
+                "top": "15px",
+                "width": "20px",
+              }
+            }
+          >
+            <span
+              className="c2"
+              color="#da1e28"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
+                />
+                <path
+                  d="M21.4,23L9,10.6L10.6,9L23,21.4L21.4,23z"
+                  data-icon-path="inner-path"
+                  fill="none"
+                  opacity="0"
+                />
+                <title>
+                  Error filled
+                </title>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": "16px",
+          }
+        }
+      >
+        <div
+          className="c3"
+          type="info"
+        >
+          <p
+            style={
+              Object {
+                "fontSize": "14px",
+              }
+            }
+          >
+            <strong>
+              For bulk orders, discounts might apply.
+            </strong>
+             
+            <a
+              href="/contact"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "color": "#0f62fe",
+                }
+              }
+            >
+              Contact us
+            </a>
+             
+            for a custom agreement.
+          </p>
+          <div
+            style={
+              Object {
+                "height": "20px",
+                "left": "13px",
+                "position": "absolute",
+                "top": "15px",
+                "width": "20px",
+              }
+            }
+          >
+            <span
+              className="c4"
+              color="#0043ce"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                />
+                <path
+                  d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                  data-icon-path="inner-path"
+                  fill="none"
+                />
+                <title>
+                  Information filled
+                </title>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        style={
+          Object {
+            "fontSize": "32px",
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+      >
+        Your bag total is 
+        € 26.389,00
+        .
+      </p>
+      <p
+        style={
+          Object {
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+      >
+        Get free shipping on all EU orders.
+      </p>
+      <div
+        style={
+          Object {
+            "margin": "0 auto",
+            "maxWidth": "450px",
+          }
+        }
+      >
+        <a
+          className="c5"
+          href="/shop/checkout"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Check Out
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "height": "24px",
+                "marginLeft": "8px",
+                "position": "relative",
+                "top": "6px",
+                "width": "24px",
+              }
+            }
+          >
+            <span
+              className="c6"
+              color="#ffffff"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                />
+                <title>
+                  Arrow right
+                </title>
+              </svg>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div
+        style={
+          Object {
+            "marginTop": "128px",
+          }
+        }
+      >
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            <div
+              style={
+                Object {
+                  "marginBottom": "24px",
+                }
+              }
+            >
+              <div
+                className="c9"
+              >
+                <h3>
+                  Your Shopping Bag.
+                </h3>
+              </div>
+            </div>
+            <div
+              className="c10"
+            >
+              <ul>
+                <li
+                  className="c11"
+                >
+                  <img
+                    alt=""
+                    src="/recordrig-black.png"
+                  />
+                  <div>
+                    <p>
+                      RecordRig -
+                       
+                      Stealth Black
+                    </p>
+                    <p>
+                      Estimated delivery: within 
+                      <span>
+                        14 days
+                      </span>
+                    </p>
+                    <select
+                      id="RR20-black-quantity"
+                      onChange={[Function]}
                       value={10}
                     >
                       <option
@@ -12198,7 +12415,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                   </div>
                 </li>
                 <li
-                  className="c9"
+                  className="c11"
                 >
                   <img
                     alt=""
@@ -12256,7 +12473,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
               </ul>
             </div>
             <div
-              className="c10"
+              className="c12"
             >
               <p>
                 <span>
@@ -12280,7 +12497,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                 Includes VAT
               </p>
               <a
-                className="c3"
+                className="c5"
                 href="/shop/checkout"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -12299,7 +12516,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                   }
                 >
                   <span
-                    className="c4"
+                    className="c6"
                     color="#ffffff"
                   >
                     <svg
