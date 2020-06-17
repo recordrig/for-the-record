@@ -47,7 +47,7 @@ Pushes to any branch will trigger a Quality Assurance GitHub workflow (see `./.g
 
 Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
 
-Any change to the `master` branch will auto-deploy to http://recordrig.com (production).
+Any change to the `master` branch will auto-deploy to production.
 
 ## Error Monitoring
 
