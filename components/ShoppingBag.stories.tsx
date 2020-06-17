@@ -5,14 +5,55 @@ import ShoppingBag from "./ShoppingBag";
 const ShoppingBagDefaultContainer = () => {
   const [products, setProducts] = useState([
     {
-      id: "RR20-stealth-black",
+      id: "RR20-black",
+      name: "RecordRig - Stealth Black",
       price: 239900,
       quantity: 1
     },
     {
-      id: "RR20-pristine-white",
+      id: "RR20-white",
+      name: "RecordRig - Prisine White",
       price: 239900,
       quantity: 2
+    }
+  ]);
+
+  const updateProductQuantity = (productId, desiredQuantity) => {
+    setProducts(
+      products.map(product =>
+        product.id === productId
+          ? { ...product, quantity: desiredQuantity }
+          : product
+      )
+    );
+  };
+
+  const removeProduct = productId => {
+    setProducts(products.filter(product => product.id !== productId));
+  };
+
+  return (
+    <ShoppingBag
+      products={products}
+      updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
+    />
+  );
+};
+
+const ShoppingBagInvalidContainer = () => {
+  const [products, setProducts] = useState([
+    {
+      id: "RR20-black",
+      name: "RecordRig - Stealth Black",
+      price: 239900,
+      quantity: 10
+    },
+    {
+      id: "RR20-white",
+      name: "RecordRig - Prisine White",
+      price: 239900,
+      quantity: 1
     }
   ]);
 
@@ -47,4 +88,5 @@ storiesOf("ShoppingBag", module)
       updateProductQuantity={() => ""}
       removeProduct={() => ""}
     />
-  ));
+  ))
+  .add("invalid", () => <ShoppingBagInvalidContainer />);

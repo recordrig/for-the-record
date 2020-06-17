@@ -55,11 +55,11 @@ describe("Shopping bag utilities", () => {
       const products = [
         {
           quantity: 1,
-          price: 1000
+          price: 100000
         },
         {
           quantity: 2,
-          price: 2000
+          price: 200000
         }
       ];
 
@@ -73,11 +73,11 @@ describe("Shopping bag utilities", () => {
       const products = [
         {
           quantity: 4,
-          price: 1000
+          price: 100000
         },
         {
           quantity: 4,
-          price: 2000
+          price: 200000
         }
       ];
 
@@ -97,13 +97,13 @@ describe("Shopping bag utilities", () => {
           id: "PROD1",
           quantity: 1,
           name: "Product 1",
-          price: 1000
+          price: 100000
         },
         {
           id: "PROD2",
           quantity: 2,
           name: "Product 2",
-          price: 2000
+          price: 200000
         }
       ];
 
@@ -119,13 +119,13 @@ describe("Shopping bag utilities", () => {
           id: "PROD1",
           quantity: 1,
           name: "Product 1",
-          price: 1000
+          price: 100000
         },
         {
           id: "PROD2",
           quantity: 5,
           name: "Product 2",
-          price: 2000
+          price: 200000
         }
       ];
 

@@ -24,7 +24,7 @@ export const checkProductQuantities = (
   const errors: readonly QuantityError[] = productsWhichExceed.map(product => {
     return {
       id: "productQuantity",
-      description: `The product quantity for ${product.name} exceeds 4. Modify the amount for this products so that it is set between 1 and 4.`,
+      description: `The product quantity for ${product.name} exceeds 4. Modify the amount for this product so that it is set between 1 and 4.`,
       product: product.id
     };
   });
@@ -50,7 +50,7 @@ export const checkTotalPrice = (
 } => {
   const prices = extractPrices(products);
   const total = sumTotal(prices);
-  if (total <= 10000) return { totalPriceIsValid: true, errors: [] };
+  if (total <= 1000000) return { totalPriceIsValid: true, errors: [] };
   return {
     totalPriceIsValid: false,
     errors: [

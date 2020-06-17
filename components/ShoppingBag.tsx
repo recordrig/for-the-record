@@ -3,6 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
 import countries from "../data/countries";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
+import { validateShoppingBag } from "../utils/shoppingBag";
 import { ArrowRightIcon } from "./Icon";
 import Button from "./Button";
 import Notification from "./Notification";
@@ -270,6 +271,7 @@ const StyledShoppingBag = styled.div`
 
 interface Product {
   readonly id: string;
+  readonly name: string;
   readonly price: number;
   readonly quantity: number;
 }
@@ -278,8 +280,6 @@ interface ShoppingBagProps {
   /**
    * Pass products as an array in order to guarantee that their order will be correct.
    * The most recently added product should be listed at the top.
-   *
-   * The passed collection should hold at least 1 product.
    */
   readonly products: readonly Product[];
   readonly removeProduct: Function;
@@ -312,6 +312,23 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     setAnimateRemoval(productId);
     setTimeout(() => removeProduct(productId), 1000);
   };
+
+  const defaultValidState = {
+    shoppingBagIsValid: true,
+    errors: []
+  };
+
+  const [shoppingBagValidationState, setShoppingBagValidationState] = useState(
+    products.length > 0 ? validateShoppingBag(products) : defaultValidState
+  );
+
+  useEffect(() => {
+    if (products.length > 0) {
+      setShoppingBagValidationState(validateShoppingBag(products));
+    } else {
+      setShoppingBagValidationState(defaultValidState);
+    }
+  }, [products]);
 
   // We only deliver to EU countries. We'd like to show a notification to folks not
   // located in EU countries so that they needn't be unpleasantly suprised during
@@ -357,6 +374,29 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   </Link>
                   !
                 </p>
+              </Notification>
+            )}
+            <br />
+            {!shoppingBagValidationState.shoppingBagIsValid && (
+              <Notification type="error">
+                <p style={{ fontSize: "14px", paddingBottom: "4px" }}>
+                  <strong>
+                    The contents of your Shopping Bag need to be modified before
+                    you can continue to Check Out.
+                  </strong>{" "}
+                  Please modify your Shopping Bag to correct the following
+                  issue(s):
+                </p>
+                <ul style={{ fontSize: "13px" }}>
+                  {shoppingBagValidationState.errors.map(error => (
+                    <li
+                      key={`${error.id}-${error.description.substring(0, 60)}`}
+                      style={{ paddingBottom: "8px" }}
+                    >
+                      {error.description}
+                    </li>
+                  ))}
+                </ul>
               </Notification>
             )}
             <p

@@ -25,9 +25,10 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   shoppingBag
 }) => {
   // The shoppingBag as received from global state stores ID's and quantity.
-  // The ShoppingBag component additionally needs price information.
+  // The ShoppingBag component additionally needs price & name information.
   const products = shoppingBag.map(product => ({
     ...product,
+    name: productsData[product.id].name,
     price: productsData[product.id].price
   }));
 
