@@ -5,6 +5,7 @@ import countries from "../data/countries";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import {
   checkProductQuantities,
+  checkTotalPrice,
   validateShoppingBag
 } from "../utils/shoppingBag";
 import { ArrowRightIcon } from "./Icon";
@@ -15,6 +16,7 @@ import { CapsHeading } from "./Text";
 
 interface StyledProductProps {
   readonly animateRemoval: boolean;
+  readonly quantityInvalid: boolean;
 }
 
 const removeProductAnimation = keyframes`
@@ -105,6 +107,7 @@ const StyledProduct = styled.li<StyledProductProps>`
     background-repeat: no-repeat;
     background-size: 18px;
     border: 0;
+    border-radius: 0;
     box-shadow: none;
     cursor: pointer;
     font-weight: bold;
@@ -113,6 +116,11 @@ const StyledProduct = styled.li<StyledProductProps>`
     width: 50px;
     -moz-appearance: none;
     -webkit-appearance: none;
+    ${({ quantityInvalid }) => css`
+      background-color: ${quantityInvalid
+        ? "rgba(218, 30, 40, 0.5)"
+        : "transparent"};
+    `}
   }
 
   button {
@@ -372,6 +380,19 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     }
   }, [products]);
 
+  const [totalIsTooHigh, setTotalIsTooHigh] = useState(
+    products.length > 0 ? checkTotalPrice(products) : false
+  );
+
+  useEffect(() => {
+    if (products.length > 0) {
+      const isTooHigh = !checkTotalPrice(products).totalPriceIsValid;
+      setTotalIsTooHigh(isTooHigh);
+    } else {
+      setTotalIsTooHigh(false);
+    }
+  }, [products]);
+
   const [isBulkOrder, setIsBulkOrder] = useState(
     products.length > 0 ? checkProductQuantities(products) : false
   );
@@ -504,6 +525,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                         <StyledProduct
                           animateRemoval={animateRemoval === id}
                           key={`product-${id}`}
+                          quantityInvalid={quantity > 4}
                         >
                           <img
                             alt=""
@@ -554,7 +576,17 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     </p>
                     <p>
                       <span>Total:</span>&nbsp;
-                      <span>{formatCurrency(sumTotal(prices))}</span>
+                      <span
+                        style={{
+                          backgroundColor: `${
+                            totalIsTooHigh
+                              ? "rgba(218, 30, 40, 0.5)"
+                              : "transparent"
+                          }`
+                        }}
+                      >
+                        {formatCurrency(sumTotal(prices))}
+                      </span>
                     </p>
                     <p>Includes VAT</p>
                     {shoppingBagValidationState.shoppingBagIsValid ? (
