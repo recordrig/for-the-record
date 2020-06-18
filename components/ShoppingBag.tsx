@@ -117,9 +117,7 @@ const StyledProduct = styled.li<StyledProductProps>`
     -moz-appearance: none;
     -webkit-appearance: none;
     ${({ quantityInvalid }) => css`
-      background-color: ${quantityInvalid
-        ? "rgba(218, 30, 40, 0.5)"
-        : "transparent"};
+      background-color: ${quantityInvalid ? "#ffb3b8" : "transparent"};
     `}
   }
 
@@ -221,8 +219,7 @@ const StyledTotals = styled.div`
     }
   }
 
-  p:nth-child(2) {
-    border-top: 1px solid #dde1e6;
+  p:nth-child(1) {
     color: #000000;
     font-size: 24px;
     font-weight: bold;
@@ -231,7 +228,7 @@ const StyledTotals = styled.div`
     padding-top: 8px;
   }
 
-  p:nth-child(3) {
+  p:nth-child(2) {
     color: #4d5358;
     font-size: 14px !important;
     margin-top: 0;
@@ -498,10 +495,21 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
               style={{
                 fontSize: "32px",
                 fontWeight: "bold",
+                marginTop: "48px",
                 textAlign: "center"
               }}
             >
-              Your bag total is {formatCurrency(sumTotal(prices))}.
+              Your bag total is{" "}
+              <span
+                style={{
+                  backgroundColor: `${
+                    totalIsTooHigh ? "#ffb3b8" : "transparent"
+                  }`
+                }}
+              >
+                {formatCurrency(sumTotal(prices))}
+              </span>
+              .
             </p>
             <p style={{ fontWeight: "bold", textAlign: "center" }}>
               Get free shipping on all EU orders.
@@ -513,7 +521,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                 <DisabledCheckoutButton />
               )}
             </div>
-            <div style={{ marginTop: "128px" }}>
+            <div style={{ marginTop: "64px" }}>
               <Tile>
                 <TileContainer>
                   <div style={{ marginBottom: "24px" }}>
@@ -572,23 +580,18 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   </StyledProductList>
                   <StyledTotals>
                     <p>
-                      <span>Shipping:</span>&nbsp;<span>FREE</span>
-                    </p>
-                    <p>
                       <span>Total:</span>&nbsp;
                       <span
                         style={{
                           backgroundColor: `${
-                            totalIsTooHigh
-                              ? "rgba(218, 30, 40, 0.5)"
-                              : "transparent"
+                            totalIsTooHigh ? "#ffb3b8" : "transparent"
                           }`
                         }}
                       >
                         {formatCurrency(sumTotal(prices))}
                       </span>
                     </p>
-                    <p>Includes VAT</p>
+                    <p>Includes VAT & shipping</p>
                     {shoppingBagValidationState.shoppingBagIsValid ? (
                       <CheckoutButton />
                     ) : (

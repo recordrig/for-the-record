@@ -11001,8 +11001,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   float: right;
 }
 
-.c10 p:nth-child(2) {
-  border-top: 1px solid #dde1e6;
+.c10 p:nth-child(1) {
   color: #000000;
   font-size: 24px;
   font-weight: bold;
@@ -11011,7 +11010,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   padding-top: 8px;
 }
 
-.c10 p:nth-child(3) {
+.c10 p:nth-child(2) {
   color: #4d5358;
   font-size: 14px !important;
   margin-top: 0;
@@ -11260,12 +11259,22 @@ exports[`Storyshots ShoppingBag default 1`] = `
           Object {
             "fontSize": "32px",
             "fontWeight": "bold",
+            "marginTop": "48px",
             "textAlign": "center",
           }
         }
       >
-        Your bag total is 
-        €7.197,00
+        Your bag total is
+         
+        <span
+          style={
+            Object {
+              "backgroundColor": "#ffb3b8",
+            }
+          }
+        >
+          €7.197,00
+        </span>
         .
       </p>
       <p
@@ -11332,7 +11341,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       <div
         style={
           Object {
-            "marginTop": "128px",
+            "marginTop": "64px",
           }
         }
       >
@@ -11490,22 +11499,13 @@ exports[`Storyshots ShoppingBag default 1`] = `
             >
               <p>
                 <span>
-                  Shipping:
-                </span>
-                 
-                <span>
-                  FREE
-                </span>
-              </p>
-              <p>
-                <span>
                   Total:
                 </span>
                  
                 <span
                   style={
                     Object {
-                      "backgroundColor": "rgba(218, 30, 40, 0.5)",
+                      "backgroundColor": "#ffb3b8",
                     }
                   }
                 >
@@ -11513,7 +11513,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                 </span>
               </p>
               <p>
-                Includes VAT
+                Includes VAT & shipping
               </p>
               <a
                 className="c3"
@@ -11927,7 +11927,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   width: 50px;
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: rgba(218,30,40,0.5);
+  background-color: #ffb3b8;
 }
 
 .c11 button {
@@ -12059,8 +12059,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   float: right;
 }
 
-.c13 p:nth-child(2) {
-  border-top: 1px solid #dde1e6;
+.c13 p:nth-child(1) {
   color: #000000;
   font-size: 24px;
   font-weight: bold;
@@ -12069,7 +12068,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   padding-top: 8px;
 }
 
-.c13 p:nth-child(3) {
+.c13 p:nth-child(2) {
   color: #4d5358;
   font-size: 14px !important;
   margin-top: 0;
@@ -12458,12 +12457,22 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
           Object {
             "fontSize": "32px",
             "fontWeight": "bold",
+            "marginTop": "48px",
             "textAlign": "center",
           }
         }
       >
-        Your bag total is 
-        €26.389,00
+        Your bag total is
+         
+        <span
+          style={
+            Object {
+              "backgroundColor": "#ffb3b8",
+            }
+          }
+        >
+          €26.389,00
+        </span>
         .
       </p>
       <p
@@ -12528,7 +12537,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
       <div
         style={
           Object {
-            "marginTop": "128px",
+            "marginTop": "64px",
           }
         }
       >
@@ -12686,22 +12695,13 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
             >
               <p>
                 <span>
-                  Shipping:
-                </span>
-                 
-                <span>
-                  FREE
-                </span>
-              </p>
-              <p>
-                <span>
                   Total:
                 </span>
                  
                 <span
                   style={
                     Object {
-                      "backgroundColor": "rgba(218, 30, 40, 0.5)",
+                      "backgroundColor": "#ffb3b8",
                     }
                   }
                 >
@@ -12709,7 +12709,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                 </span>
               </p>
               <p>
-                Includes VAT
+                Includes VAT & shipping
               </p>
               <button
                 className="c5"
