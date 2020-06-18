@@ -438,8 +438,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                 <Notification type="warning">
                   <p style={{ fontSize: "14px" }}>
                     <strong>
-                      Please note that we can currently ship only to countries
-                      located within the European Union.
+                      We currently only ship to countries within the EU.
                     </strong>{" "}
                     If you&apos;d like to get notified when we expand our
                     shipping area,{" "}
