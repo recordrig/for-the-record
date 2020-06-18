@@ -3572,7 +3572,7 @@ Array [
           >
             <a
               className="c4"
-              href="/shop/checkout"
+              href="/shop/shopping-bag"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >

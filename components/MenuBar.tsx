@@ -185,7 +185,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </p>
             <ProductList products={products} />
             <StyledButtonWrapper>
-              <Button href="/shop/checkout" onClick={() => toggleDrawer()}>
+              <Button href="/shop/shopping-bag" onClick={() => toggleDrawer()}>
                 Check Out
                 <span
                   style={{
