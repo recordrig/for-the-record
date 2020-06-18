@@ -223,9 +223,9 @@ const StyledTotals = styled.div`
     color: #000000;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 16px;
+    margin-top: 0;
     margin-bottom: 0;
-    padding-top: 8px;
+    padding-top: 0;
   }
 
   p:nth-child(2) {
