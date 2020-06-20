@@ -1,7 +1,13 @@
 module.exports = {
   "extends": [
-    "airbnb",
-    "plugin:prettier/recommended",
+    "../.eslintrc.js",
     "plugin:cypress/recommended"
-  ]
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
 };

@@ -11297,6 +11297,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       >
         <a
           className="c3"
+          data-cy="enabled-checkout-button"
           href="/shop/checkout"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -11372,6 +11373,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
               <ul>
                 <li
                   className="c9"
+                  data-cy="product-RR20-black"
                 >
                   <img
                     alt=""
@@ -11388,7 +11390,8 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </span>
                     </p>
                     <select
-                      id="RR20-black-quantity"
+                      data-cy="quantity-RR20-black"
+                      id="quantity-RR20-black"
                       onChange={[Function]}
                     >
                       <option
@@ -11424,6 +11427,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       €2.399,00
                     </p>
                     <button
+                      data-cy="remove-RR20-black"
                       onClick={[Function]}
                       type="button"
                     >
@@ -11433,6 +11437,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                 </li>
                 <li
                   className="c9"
+                  data-cy="product-RR20-white"
                 >
                   <img
                     alt=""
@@ -11449,7 +11454,8 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </span>
                     </p>
                     <select
-                      id="RR20-white-quantity"
+                      data-cy="quantity-RR20-white"
+                      id="quantity-RR20-white"
                       onChange={[Function]}
                     >
                       <option
@@ -11485,6 +11491,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       €4.798,00
                     </p>
                     <button
+                      data-cy="remove-RR20-white"
                       onClick={[Function]}
                       type="button"
                     >
@@ -11517,6 +11524,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
               </p>
               <a
                 className="c3"
+                data-cy="enabled-checkout-button"
                 href="/shop/checkout"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -11677,6 +11685,7 @@ exports[`Storyshots ShoppingBag empty 1`] = `
       >
         <a
           className="c1"
+          data-cy="to-shop"
           href="/shop/buy-recordrig"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -12308,6 +12317,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
             Please modify your Shopping Bag to correct the following issue(s):
           </p>
           <ul
+            data-cy="errors-list"
             style={
               Object {
                 "fontSize": "13px",
@@ -12495,6 +12505,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
       >
         <button
           className="c5"
+          data-cy="disabled-checkout-button"
           onClick={[Function]}
         >
           Check Out
@@ -12568,6 +12579,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
               <ul>
                 <li
                   className="c11"
+                  data-cy="product-RR20-black"
                 >
                   <img
                     alt=""
@@ -12584,7 +12596,8 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </span>
                     </p>
                     <select
-                      id="RR20-black-quantity"
+                      data-cy="quantity-RR20-black"
+                      id="quantity-RR20-black"
                       onChange={[Function]}
                     >
                       <option
@@ -12620,6 +12633,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       €23.990,00
                     </p>
                     <button
+                      data-cy="remove-RR20-black"
                       onClick={[Function]}
                       type="button"
                     >
@@ -12629,6 +12643,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                 </li>
                 <li
                   className="c12"
+                  data-cy="product-RR20-white"
                 >
                   <img
                     alt=""
@@ -12645,7 +12660,8 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </span>
                     </p>
                     <select
-                      id="RR20-white-quantity"
+                      data-cy="quantity-RR20-white"
+                      id="quantity-RR20-white"
                       onChange={[Function]}
                     >
                       <option
@@ -12681,6 +12697,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       €2.399,00
                     </p>
                     <button
+                      data-cy="remove-RR20-white"
                       onClick={[Function]}
                       type="button"
                     >
@@ -12713,6 +12730,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
               </p>
               <button
                 className="c5"
+                data-cy="disabled-checkout-button"
                 onClick={[Function]}
               >
                 Check Out

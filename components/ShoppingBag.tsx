@@ -278,7 +278,7 @@ const StyledShoppingBag = styled.div`
 `;
 
 const CheckoutButton = () => (
-  <Button href="/shop/checkout">
+  <Button cypressId="enabled-checkout-button" href="/shop/checkout">
     Check Out
     <span
       style={{
@@ -298,6 +298,7 @@ const CheckoutButton = () => (
 const DisabledCheckoutButton = () => (
   <Button
     appearDisabled
+    cypressId="disabled-checkout-button"
     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
   >
     Check Out
@@ -461,7 +462,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     Please modify your Shopping Bag to correct the following
                     issue(s):
                   </p>
-                  <ul style={{ fontSize: "13px" }}>
+                  <ul data-cy="errors-list" style={{ fontSize: "13px" }}>
                     {shoppingBagValidationState.errors.map(error => (
                       <li
                         key={`${error.id}-${error.description.substring(
@@ -531,6 +532,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                       {products.map(({ id, name, price, quantity }) => (
                         <StyledProduct
                           animateRemoval={animateRemoval === id}
+                          data-cy={`product-${id}`}
                           key={`product-${id}`}
                           quantityInvalid={quantity > 4}
                         >
@@ -548,7 +550,8 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                               Estimated delivery: within <span>14 days</span>
                             </p>
                             <select
-                              id={`${id}-quantity`}
+                              data-cy={`quantity-${id}`}
+                              id={`quantity-${id}`}
                               onChange={e =>
                                 handleChangeQuantity(
                                   id,
@@ -567,6 +570,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                             </select>
                             <p>{formatCurrency(price * quantity)}</p>
                             <button
+                              data-cy={`remove-${id}`}
                               onClick={() => handleRemoveProduct(id)}
                               type="button"
                             >
@@ -611,7 +615,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
           >
             <p style={{ textAlign: "center" }}>Your shopping bag is empty.</p>
             <div style={{ margin: "32px auto", maxWidth: "450px" }}>
-              <Button href="/shop/buy-recordrig">
+              <Button cypressId="to-shop" href="/shop/buy-recordrig">
                 Shop RecordRig
                 <span
                   style={{
