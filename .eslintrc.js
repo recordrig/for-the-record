@@ -20,6 +20,15 @@ module.exports = {
         "jest": true
       }
     },
+    /*
+     * Allow alerts in storybook stories (negates the need for extensive mocking).
+     */
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "no-alert": "off"
+      }
+    },
     {
       /*
        * For TypeScript files, we want to be strict. We turned these rules off further
@@ -46,13 +55,21 @@ module.exports = {
       }
     },
     /*
-     * Do not require the explicit definition of return types in these folders where we often
-     * integrate with 3rd party interfaces/API's.
+     * In folders where we might integrate with 3rd party or parent API's, we needn't be so strict.
      */
     {
       "files": ["./components/**/*.tsx", "./pages/**/*.tsx", "./pages/api/**/*.ts"],
       "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        /* 
+         * `any` types make sense in various situations, such as when a component's parent
+         * passes a function handler. The current component should know which parameters to
+         * pass in, but needn't care about how the parent eventually handles it. Thus, if we 
+         * do define a return type at all, it could very well be `any`. E.g. an interface containing:
+         * handleSubmit: (products: { id: string; quantity: number }[]) => any;
+         * Which effectively states: "We'll pass in these params, do what you want with them."
+         */
+        "@typescript-eslint/no-explicit-any": "off"
       }
     },
     /*
@@ -131,6 +148,15 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "warn",
     "jsx-a11y/click-events-have-key-events": "warn",
     "jsx-a11y/no-static-element-interactions": "warn",
+    /*
+     * Allow console errors and warns to aid debugging and development, anywhere, anytime.
+     */
+    "no-console": [
+      "warn", // This is (of course) the ESLint severity rule, not to be confused with the console method (console.warn).
+      {
+        allow: ["error", "warn"] // This is where the allowed methods are at. Note that "log" is not among them.
+      }
+    ],
     /*
      * ESLint should error when it finds issues related to the Prettier config which was extended.
      */

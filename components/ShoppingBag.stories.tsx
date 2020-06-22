@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
 import ShoppingBag from "./ShoppingBag";
 
+const handleCheckout = products =>
+  alert(`onSelectColor called with ${products}`);
+
 const ShoppingBagDefaultContainer = () => {
   const [products, setProducts] = useState([
     {
-      id: "RR20-black",
-      name: "RecordRig - Stealth Black",
-      price: 239900,
+      id: "PRODUCT1",
+      name: "Product 1",
+      price: 200000,
       quantity: 1
     },
     {
-      id: "RR20-white",
-      name: "RecordRig - Prisine White",
-      price: 239900,
+      id: "PRODUCT2",
+      name: "Product 2",
+      price: 100000,
       quantity: 2
     }
   ]);
@@ -34,6 +37,7 @@ const ShoppingBagDefaultContainer = () => {
 
   return (
     <ShoppingBag
+      handleCheckout={handleCheckout}
       products={products}
       updateProductQuantity={updateProductQuantity}
       removeProduct={removeProduct}
@@ -44,16 +48,16 @@ const ShoppingBagDefaultContainer = () => {
 const ShoppingBagInvalidContainer = () => {
   const [products, setProducts] = useState([
     {
-      id: "RR20-black",
-      name: "RecordRig - Stealth Black",
-      price: 239900,
-      quantity: 10
+      id: "PRODUCT1",
+      name: "Product 1",
+      price: 200000,
+      quantity: 6
     },
     {
-      id: "RR20-white",
-      name: "RecordRig - Prisine White",
-      price: 239900,
-      quantity: 1
+      id: "PRODUCT2",
+      name: "Product 2",
+      price: 100000,
+      quantity: 8
     }
   ]);
 
@@ -73,6 +77,7 @@ const ShoppingBagInvalidContainer = () => {
 
   return (
     <ShoppingBag
+      handleCheckout={handleCheckout}
       products={products}
       updateProductQuantity={updateProductQuantity}
       removeProduct={removeProduct}
@@ -84,6 +89,7 @@ storiesOf("ShoppingBag", module)
   .add("default", () => <ShoppingBagDefaultContainer />)
   .add("empty", () => (
     <ShoppingBag
+      handleCheckout={handleCheckout}
       products={[]}
       updateProductQuantity={() => ""}
       removeProduct={() => ""}

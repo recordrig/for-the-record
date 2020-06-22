@@ -10786,9 +10786,6 @@ exports[`Storyshots ShoppingBag default 1`] = `
   border-left: 0;
   color: #ffffff;
   font-size: 24px;
-  display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .c2 {
@@ -11273,7 +11270,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
             }
           }
         >
-          €7.197,00
+          €4.000,00
         </span>
         .
       </p>
@@ -11295,12 +11292,10 @@ exports[`Storyshots ShoppingBag default 1`] = `
           }
         }
       >
-        <a
+        <button
           className="c3"
           data-cy="enabled-checkout-button"
-          href="/shop/checkout"
           onClick={[Function]}
-          onMouseEnter={[Function]}
         >
           Check Out
           <span
@@ -11337,7 +11332,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
               </svg>
             </span>
           </span>
-        </a>
+        </button>
       </div>
       <div
         style={
@@ -11373,15 +11368,15 @@ exports[`Storyshots ShoppingBag default 1`] = `
               <ul>
                 <li
                   className="c9"
-                  data-cy="product-RR20-black"
+                  data-cy="product-PRODUCT1"
                 >
                   <img
                     alt=""
-                    src="/recordrig-black.png"
+                    src="/recordrig.png"
                   />
                   <div>
                     <p>
-                      RecordRig - Stealth Black
+                      Product 1
                     </p>
                     <p>
                       Estimated delivery: within 
@@ -11390,8 +11385,8 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </span>
                     </p>
                     <select
-                      data-cy="quantity-RR20-black"
-                      id="quantity-RR20-black"
+                      data-cy="quantity-PRODUCT1"
+                      id="quantity-PRODUCT1"
                       onChange={[Function]}
                     >
                       <option
@@ -11424,10 +11419,10 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </option>
                     </select>
                     <p>
-                      €2.399,00
+                      €2.000,00
                     </p>
                     <button
-                      data-cy="remove-RR20-black"
+                      data-cy="remove-PRODUCT1"
                       onClick={[Function]}
                       type="button"
                     >
@@ -11437,7 +11432,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                 </li>
                 <li
                   className="c9"
-                  data-cy="product-RR20-white"
+                  data-cy="product-PRODUCT2"
                 >
                   <img
                     alt=""
@@ -11445,7 +11440,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                   />
                   <div>
                     <p>
-                      RecordRig - Prisine White
+                      Product 2
                     </p>
                     <p>
                       Estimated delivery: within 
@@ -11454,8 +11449,8 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </span>
                     </p>
                     <select
-                      data-cy="quantity-RR20-white"
-                      id="quantity-RR20-white"
+                      data-cy="quantity-PRODUCT2"
+                      id="quantity-PRODUCT2"
                       onChange={[Function]}
                     >
                       <option
@@ -11488,10 +11483,10 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       </option>
                     </select>
                     <p>
-                      €4.798,00
+                      €2.000,00
                     </p>
                     <button
-                      data-cy="remove-RR20-white"
+                      data-cy="remove-PRODUCT2"
                       onClick={[Function]}
                       type="button"
                     >
@@ -11516,18 +11511,16 @@ exports[`Storyshots ShoppingBag default 1`] = `
                     }
                   }
                 >
-                  €7.197,00
+                  €4.000,00
                 </span>
               </p>
               <p>
                 Includes VAT & shipping
               </p>
-              <a
+              <button
                 className="c3"
                 data-cy="enabled-checkout-button"
-                href="/shop/checkout"
                 onClick={[Function]}
-                onMouseEnter={[Function]}
               >
                 Check Out
                 <span
@@ -11564,7 +11557,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
                     </svg>
                   </span>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -11953,80 +11946,6 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   text-decoration: underline;
 }
 
-.c12 {
-  border-bottom: 1px solid #dde1e6;
-  max-height: 500px;
-  opacity: 1;
-  overflow: hidden;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  -webkit-animation: 1.2s;
-  animation: 1.2s;
-}
-
-.c12 > div {
-  box-sizing: border-box;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 64px;
-  padding-top: 16px;
-}
-
-.c12 p {
-  font-weight: bold;
-  margin: 0;
-}
-
-.c12 p:nth-child(2) {
-  color: #4d5358;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.c12 p:nth-child(2) > span {
-  color: #24a148;
-  font-weight: bold;
-}
-
-.c12 p:nth-child(4) {
-  text-align: right;
-}
-
-.c12 select {
-  background-color: transparent;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
-  background-position: right 4px center;
-  background-repeat: no-repeat;
-  background-size: 18px;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  cursor: pointer;
-  font-weight: bold;
-  outline: none;
-  position: relative;
-  width: 50px;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-}
-
-.c12 button {
-  background: none;
-  border: none;
-  clear: both;
-  cursor: pointer;
-  float: right;
-  font-size: 15px;
-  margin-top: 4px;
-  outline: none;
-  padding: 0;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
 .c10 {
   border-top: 1px solid #dde1e6;
   width: 100%;
@@ -12053,22 +11972,22 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   padding-left: 0;
 }
 
-.c13 p {
+.c12 p {
   color: #4d5358;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
-.c13 p > span {
+.c12 p > span {
   display: block;
   float: left;
 }
 
-.c13 p > span:nth-child(2) {
+.c12 p > span:nth-child(2) {
   float: right;
 }
 
-.c13 p:nth-child(1) {
+.c12 p:nth-child(1) {
   color: #000000;
   font-size: 24px;
   font-weight: bold;
@@ -12077,7 +11996,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   padding-top: 0;
 }
 
-.c13 p:nth-child(2) {
+.c12 p:nth-child(2) {
   color: #4d5358;
   font-size: 14px !important;
   margin-top: 0;
@@ -12203,71 +12122,24 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
   }
 }
 
-@media (max-width:640px) {
-  .c12 p,
-  .c12 select {
-    font-size: 20px;
-  }
-
-  .c12 select {
-    top: 24px;
-  }
-
-  .c12 img {
-    display: block;
-    margin: 16px auto;
-    width: 200px;
-  }
-}
-
-@media (min-width:641px) {
-  .c12 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .c12 > div {
-    padding-left: 32px;
-  }
-
-  .c12 p,
-  .c12 select {
-    font-size: 24px;
-  }
-
-  .c12 select {
-    top: 30px;
-  }
-
-  .c12 img {
-    height: 200px;
-  }
-
-  .c12 p:nth-child(2) {
-    margin-bottom: 32px;
-  }
-}
-
 @media (min-width:450px) and (max-width:640px) {
-  .c13 {
+  .c12 {
     padding-left: 33%;
   }
 }
 
 @media (max-width:640px) {
-  .c13 p:last-of-type {
+  .c12 p:last-of-type {
     font-size: 20px;
   }
 }
 
 @media (min-width:641px) {
-  .c13 {
+  .c12 {
     padding-left: 50%;
   }
 
-  .c13 p:last-of-type {
+  .c12 p:last-of-type {
     font-size: 24px;
   }
 }
@@ -12331,7 +12203,16 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                 }
               }
             >
-              The product quantity for RecordRig - Stealth Black exceeds 4. Modify the amount for this product so that it is set between 1 and 4.
+              The product quantity for Product 1 exceeds 4. Modify the amount for this product so that it is set between 1 and 4.
+            </li>
+            <li
+              style={
+                Object {
+                  "paddingBottom": "8px",
+                }
+              }
+            >
+              The product quantity for Product 2 exceeds 4. Modify the amount for this product so that it is set between 1 and 4.
             </li>
             <li
               style={
@@ -12481,7 +12362,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
             }
           }
         >
-          €26.389,00
+          €20.000,00
         </span>
         .
       </p>
@@ -12579,15 +12460,15 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
               <ul>
                 <li
                   className="c11"
-                  data-cy="product-RR20-black"
+                  data-cy="product-PRODUCT1"
                 >
                   <img
                     alt=""
-                    src="/recordrig-black.png"
+                    src="/recordrig.png"
                   />
                   <div>
                     <p>
-                      RecordRig - Stealth Black
+                      Product 1
                     </p>
                     <p>
                       Estimated delivery: within 
@@ -12596,8 +12477,8 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </span>
                     </p>
                     <select
-                      data-cy="quantity-RR20-black"
-                      id="quantity-RR20-black"
+                      data-cy="quantity-PRODUCT1"
+                      id="quantity-PRODUCT1"
                       onChange={[Function]}
                     >
                       <option
@@ -12606,7 +12487,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                         selected={true}
                         value="none"
                       >
-                        10
+                        6
                       </option>
                       <option
                         value={1}
@@ -12630,10 +12511,10 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </option>
                     </select>
                     <p>
-                      €23.990,00
+                      €12.000,00
                     </p>
                     <button
-                      data-cy="remove-RR20-black"
+                      data-cy="remove-PRODUCT1"
                       onClick={[Function]}
                       type="button"
                     >
@@ -12642,8 +12523,8 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                   </div>
                 </li>
                 <li
-                  className="c12"
-                  data-cy="product-RR20-white"
+                  className="c11"
+                  data-cy="product-PRODUCT2"
                 >
                   <img
                     alt=""
@@ -12651,7 +12532,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                   />
                   <div>
                     <p>
-                      RecordRig - Prisine White
+                      Product 2
                     </p>
                     <p>
                       Estimated delivery: within 
@@ -12660,8 +12541,8 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </span>
                     </p>
                     <select
-                      data-cy="quantity-RR20-white"
-                      id="quantity-RR20-white"
+                      data-cy="quantity-PRODUCT2"
+                      id="quantity-PRODUCT2"
                       onChange={[Function]}
                     >
                       <option
@@ -12670,7 +12551,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                         selected={true}
                         value="none"
                       >
-                        1
+                        8
                       </option>
                       <option
                         value={1}
@@ -12694,10 +12575,10 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       </option>
                     </select>
                     <p>
-                      €2.399,00
+                      €8.000,00
                     </p>
                     <button
-                      data-cy="remove-RR20-white"
+                      data-cy="remove-PRODUCT2"
                       onClick={[Function]}
                       type="button"
                     >
@@ -12708,7 +12589,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
               </ul>
             </div>
             <div
-              className="c13"
+              className="c12"
             >
               <p>
                 <span>
@@ -12722,7 +12603,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                     }
                   }
                 >
-                  €26.389,00
+                  €20.000,00
                 </span>
               </p>
               <p>

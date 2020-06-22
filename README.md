@@ -46,6 +46,10 @@ All React components are defined in the `./components` folder. Run Storybook to 
 npm run storybook
 ```
 
+As a rule of thumb, keep your components "dumb", meaning they do not depend on external state (e.g. Redux) or globals (e.g. Stripe). This makes developing and testing them in isolation easier as it keeps them self-contained, and prevents us from having to descend into mocking/stubbing hell.
+
+An additional benefit of keeping components self-contained is that these components will depend more on predictable props as a natural consequence, the Storybook stories of which can be seperately defined and automatically snapshotted with Jest, preventing much of the need of manual unit test writing. When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test anyways, and therefore writing a seperate **unit** test could be considered a testing duplicate and waste of effort (especially in early development stages, wherein we find ourselves at the time of writing).
+
 ## Store
 
 We maintain the application's client side state with Redux in `./store`. We co-locate all related logic within the same file and/or folder.
@@ -78,7 +82,7 @@ Cypress will use an actual browser to visit the local running app instance and g
 
 We use TypeScript as much as possible and use ESLint to help us maintain a high standard of code quality and coherent coding style.
 
-It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or built-in).
+It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or support built-in).
 
 Alternatively, you can run ESLint on the command line:
 
@@ -101,3 +105,19 @@ One section of global styles in defined in `./pages/_app.js`. Global styles shou
 The main font is IBM Plex Sans. We include it as an NPM dependency to make sure not to lose it in the future, and to know which version is currently active, but don't import it from the package directly. Rather, we straight-up copy the files found in `node_modules/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff` (only the Bold and Regular types) into our `public` folder, so that we can use them with CSS's @font-face which is well-supported by web browsers.
 
 As for units of measurement, [just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
+
+## External API's
+
+We integrate with various external services, such as Stripe.
+
+While not running in production, we tend not to use any external API's. This is so that we can develop on the go, and so that our integration tests (with Cypress) do not rely on external resources that we cannot control, making them more reliable.
+
+However, while actively developing features which rely on external API's, such as Stripe's, it might be useful to opt-out of this "offline mode" and connect directly to the Stripe API's so that you can get feedback to your code changes quickly, as you are developing.
+
+In those situations, omit the `process.env.NODE_ENV !== "production"` check where you'd normally run your offline mode code, and add the required API keys to your a file in the root of the project named `.env.local`. In the case of Stripe, the file would look something like:
+
+```
+# Stripe keys
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
+STRIPE_SECRET_KEY=sk_12345
+```

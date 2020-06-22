@@ -277,46 +277,6 @@ const StyledShoppingBag = styled.div`
   }
 `;
 
-const CheckoutButton = () => (
-  <Button cypressId="enabled-checkout-button" href="/shop/checkout">
-    Check Out
-    <span
-      style={{
-        display: "inline-block",
-        height: "24px",
-        marginLeft: "8px",
-        position: "relative",
-        top: "6px",
-        width: "24px"
-      }}
-    >
-      <ArrowRightIcon color="#ffffff" />
-    </span>
-  </Button>
-);
-
-const DisabledCheckoutButton = () => (
-  <Button
-    appearDisabled
-    cypressId="disabled-checkout-button"
-    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-  >
-    Check Out
-    <span
-      style={{
-        display: "inline-block",
-        height: "24px",
-        marginLeft: "8px",
-        position: "relative",
-        top: "6px",
-        width: "24px"
-      }}
-    >
-      <ArrowRightIcon color="#ffffff" />
-    </span>
-  </Button>
-);
-
 interface Product {
   readonly id: string;
   readonly name: string;
@@ -325,6 +285,9 @@ interface Product {
 }
 
 interface ShoppingBagProps {
+  readonly handleCheckout: (
+    products: readonly { readonly id: string; readonly quantity: number }[]
+  ) => any;
   /**
    * Pass products as an array in order to guarantee that their order will be correct.
    * The most recently added product should be listed at the top.
@@ -340,6 +303,7 @@ interface ShoppingBagProps {
  * likewise, be managed by the parent.
  */
 const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
+  handleCheckout,
   updateProductQuantity,
   products,
   removeProduct
@@ -428,6 +392,49 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
         });
     }
   }, []);
+
+  const CheckoutButton = () => (
+    <Button
+      cypressId="enabled-checkout-button"
+      onClick={() => handleCheckout(products)}
+    >
+      Check Out
+      <span
+        style={{
+          display: "inline-block",
+          height: "24px",
+          marginLeft: "8px",
+          position: "relative",
+          top: "6px",
+          width: "24px"
+        }}
+      >
+        <ArrowRightIcon color="#ffffff" />
+      </span>
+    </Button>
+  );
+
+  const DisabledCheckoutButton = () => (
+    <Button
+      appearDisabled
+      cypressId="disabled-checkout-button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
+      Check Out
+      <span
+        style={{
+          display: "inline-block",
+          height: "24px",
+          marginLeft: "8px",
+          position: "relative",
+          top: "6px",
+          width: "24px"
+        }}
+      >
+        <ArrowRightIcon color="#ffffff" />
+      </span>
+    </Button>
+  );
 
   return (
     <StyledShoppingBag>
