@@ -393,6 +393,48 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     }
   }, []);
 
+  const [email, setEmail] = useState("");
+
+  // If filled out, the Checkout button will be disabled. This simple measure should prevent
+  // most illigitemate submissions, while still protecting any visitor's privacy.
+  // Note that the invalid value for "autoComplete" is intentional, because some browsers
+  // do not accept the correct "off" value.
+  const Sticky = () => (
+    <form
+      action="/submit"
+      autoComplete="no"
+      data-cy="form"
+      method="post"
+      style={{ position: "absolute", left: "100vw" }}
+      tabIndex={-1}
+    >
+      <label htmlFor="email">
+        Email
+        <input
+          data-cy="email"
+          id="email"
+          name="email"
+          onChange={e => setEmail(e.target.value)}
+          tabIndex={-1}
+          type="text"
+          value={email}
+        />
+      </label>
+      <input type="submit" value="Submit" tabIndex={-1} />
+    </form>
+  );
+
+  // Always start out with a disabled button initially. Enable once mounted & shopping bag is valid.
+  const [checkoutButtonEnabled, setCheckoutButtonEnabled] = useState(false);
+
+  useEffect(() => {
+    if (shoppingBagValidationState.shoppingBagIsValid && email.length === 0) {
+      setCheckoutButtonEnabled(true);
+    } else {
+      setCheckoutButtonEnabled(false);
+    }
+  });
+
   const CheckoutButton = () => (
     <Button
       cypressId="enabled-checkout-button"
@@ -441,6 +483,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
       <div>
         {products.length > 0 ? (
           <div>
+            <Sticky />
             {!countrySupported && (
               <div style={{ marginBottom: "16px" }}>
                 <Notification type="warning">
@@ -522,7 +565,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
               Get free shipping on all EU orders.
             </p>
             <div style={{ margin: "0 auto", maxWidth: "450px" }}>
-              {shoppingBagValidationState.shoppingBagIsValid ? (
+              {checkoutButtonEnabled ? (
                 <CheckoutButton />
               ) : (
                 <DisabledCheckoutButton />
@@ -602,7 +645,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                       </span>
                     </p>
                     <p>Includes VAT & shipping</p>
-                    {shoppingBagValidationState.shoppingBagIsValid ? (
+                    {checkoutButtonEnabled ? (
                       <CheckoutButton />
                     ) : (
                       <DisabledCheckoutButton />

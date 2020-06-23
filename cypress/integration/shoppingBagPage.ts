@@ -19,6 +19,7 @@ describe("Shopping Bag", () => {
   const removeProduct0 = `[data-cy=remove-${Object.keys(products)[0]}]`;
   const removeProduct1 = `[data-cy=remove-${Object.keys(products)[1]}]`;
   const quantityProduct0 = `[data-cy=quantity-${Object.keys(products)[0]}]`;
+  const email = `[data-cy=email]`;
   const enabledCheckoutButton = "[data-cy=enabled-checkout-button";
   const disabledCheckoutButton = "[data-cy=disabled-checkout-button";
   const toShop = "[data-cy=to-shop]";
@@ -71,6 +72,19 @@ describe("Shopping Bag", () => {
       it(`Displays all products correctly and can Check Out`, () => {
         cy.get(`${product0}`).should("be.visible");
         cy.get(`${product1}`).should("be.visible");
+        cy.get(`${enabledCheckoutButton}`).should("be.visible");
+        cy.get(`${disabledCheckoutButton}`).should("not.exist");
+      });
+
+      it(`Disables Check Out button when form is filled`, () => {
+        cy.get(`${enabledCheckoutButton}`).should("be.visible");
+        cy.get(`${email}`).type("it", { force: true });
+        cy.get(`${enabledCheckoutButton}`).should("not.exist");
+        cy.get(`${disabledCheckoutButton}`).should("be.visible");
+        cy.get(`${email}`).type("isi@me.com", { force: true });
+        cy.get(`${enabledCheckoutButton}`).should("not.exist");
+        cy.get(`${disabledCheckoutButton}`).should("be.visible");
+        cy.get(`${email}`).clear({ force: true });
         cy.get(`${enabledCheckoutButton}`).should("be.visible");
         cy.get(`${disabledCheckoutButton}`).should("not.exist");
       });

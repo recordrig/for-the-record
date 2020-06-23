@@ -10772,7 +10772,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
-  opacity: 1;
+  opacity: 0.4;
   outline: none;
   padding: 0;
   text-align: center;
@@ -11174,6 +11174,39 @@ exports[`Storyshots ShoppingBag default 1`] = `
 >
   <div>
     <div>
+      <form
+        action="/submit"
+        autoComplete="no"
+        data-cy="form"
+        method="post"
+        style={
+          Object {
+            "left": "100vw",
+            "position": "absolute",
+          }
+        }
+        tabIndex={-1}
+      >
+        <label
+          htmlFor="email"
+        >
+          Email
+          <input
+            data-cy="email"
+            id="email"
+            name="email"
+            onChange={[Function]}
+            tabIndex={-1}
+            type="text"
+            value=""
+          />
+        </label>
+        <input
+          tabIndex={-1}
+          type="submit"
+          value="Submit"
+        />
+      </form>
       <div
         style={
           Object {
@@ -11294,7 +11327,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
       >
         <button
           className="c3"
-          data-cy="enabled-checkout-button"
+          data-cy="disabled-checkout-button"
           onClick={[Function]}
         >
           Check Out
@@ -11519,7 +11552,7 @@ exports[`Storyshots ShoppingBag default 1`] = `
               </p>
               <button
                 className="c3"
-                data-cy="enabled-checkout-button"
+                data-cy="disabled-checkout-button"
                 onClick={[Function]}
               >
                 Check Out
@@ -12163,6 +12196,39 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
 >
   <div>
     <div>
+      <form
+        action="/submit"
+        autoComplete="no"
+        data-cy="form"
+        method="post"
+        style={
+          Object {
+            "left": "100vw",
+            "position": "absolute",
+          }
+        }
+        tabIndex={-1}
+      >
+        <label
+          htmlFor="email"
+        >
+          Email
+          <input
+            data-cy="email"
+            id="email"
+            name="email"
+            onChange={[Function]}
+            tabIndex={-1}
+            type="text"
+            value=""
+          />
+        </label>
+        <input
+          tabIndex={-1}
+          type="submit"
+          value="Submit"
+        />
+      </form>
       <div
         style={
           Object {
