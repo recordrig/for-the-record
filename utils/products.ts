@@ -26,9 +26,9 @@ export const validateProductIds = (
 /**
  * Accepts an array of products which should have at least an `id` field, along with
  * the valid products data to base the new products list on.
+ *
  * Will return an array of of the original products, but including a `price` field.
  */
-// eslint-disable-next-line import/prefer-default-export
 export const addPriceToProducts = (
   products: readonly {
     readonly id: string;
@@ -42,5 +42,27 @@ export const addPriceToProducts = (
   return products.map(product => ({
     ...product,
     price: productsData[product.id].price
+  }));
+};
+
+/**
+ * Accepts an array of products which should have at least an `id` field, along with
+ * the valid products data to base the new products list on.
+ *
+ * Will return an array of of the original products, but including a `name` field.
+ */
+export const addNameToProducts = (
+  products: readonly {
+    readonly id: string;
+  }[],
+  productsData: DataProducts
+): readonly {
+  readonly id: string;
+  readonly name: string;
+}[] => {
+  validateProductIds(products, productsData);
+  return products.map(product => ({
+    ...product,
+    name: productsData[product.id].name
   }));
 };
