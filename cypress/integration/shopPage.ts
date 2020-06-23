@@ -21,13 +21,13 @@ describe("Shop", () => {
   const whiteDeviceContent = "[data-cy=white-device-content]";
   const whiteOption = "[data-cy=option-white]";
 
-  const addToBagTest = () => {
+  const addToBagTest = (): void => {
     cy.get(`${addToBagButton}`).click();
     cy.get(`${almostYours}`).should("be.visible");
     cy.get(`${readyToOrder}`).should("be.visible");
   };
 
-  const addAndReturnTest = () => {
+  const addAndReturnTest = (): void => {
     cy.get(`${addToBagButton}`).click();
     cy.get(`${continueShopping}`).click();
     cy.get(`${addToBagButton}`).should("have.css", "color", "rgb(36, 161, 72)");
