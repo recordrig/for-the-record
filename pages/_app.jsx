@@ -7,25 +7,11 @@ import LoaderBar from "../components/LoaderBar";
 import ConnectedMenuBar from "../components/MenuBarContainer";
 import "./_appStyles.css";
 
-/*
- * If in prod, initialize Sentry, our error logging tool.
- */
-if (process.env.NODE_ENV === "production") {
-  const Sentry = require("@sentry/node"); // eslint-disable-line
-
-  Sentry.init({
-    dsn: process.env.SENTRY_DSN
-  });
-}
-
 /**
  * Overrides Next.js' default `App` component which is used for page initialization.
  * `Component` refers to the active page component.
  */
-const App = ({ Component, pageProps, err }) => {
-  // Workaround for https://github.com/zeit/next.js/issues/8592 (needed for Sentry).
-  const modifiedPageProps = { ...pageProps, err };
-
+const App = ({ Component, pageProps }) => {
   return (
     <Provider store={makeStore()}>
       <Head>
@@ -57,7 +43,7 @@ const App = ({ Component, pageProps, err }) => {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Component {...modifiedPageProps} />
+      <Component {...pageProps} />
       <Footer />
       <LoaderBar />
       <ConnectedMenuBar />

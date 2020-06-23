@@ -24,10 +24,6 @@ The creation of a pull request targeting `master` will trigger a Quality Assuran
 
 Any change to the `master` branch will auto-deploy to http://recordrig.com.
 
-## Error Monitoring
-
-Any errors occurring on the live site will be logged with [Sentry](https://sentry.io/).
-
 ## Core Functionality
 
 Built with [Next.js](https://github.com/vercel/next.js/), a React framework which makes SSR, along with some other things like code splitting, supported out of the box.
