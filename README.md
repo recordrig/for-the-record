@@ -48,11 +48,11 @@ npm run lint:fix
 
 Built with [Next.js](https://github.com/vercel/next.js/), a React framework which makes SSR, along with some other things like code splitting, supported out of the box.
 
-The `.pages/_app.js` file is our application's container, and takes care of anything global, like the instantiation of the Redux store, shared style definitions, and inclusion of components which must be shared by all frontend pages.
+The `./pages/_app.js` file is our application's container, and takes care of anything global, like the instantiation of the Redux store, shared style definitions, and inclusion of components which must be shared by all frontend pages.
 
 Any file or folder under `./pages` will be rendered on its own route, with `./pages/_app.js` and `./pages/_document.js` as notable exceptions.
 
-Server-side functionality and other automations may be put over at `./pages/api`. Only use server-side functionality when you really need it, as it can be less performant (Static Rendering is much faster than Server Side Rendering) and costs more resources than just offloading things to the client. Server-side should be utilised for things the client can't be "trusted" with, e.g. for fetches to API's utilising secret API keys that should not be exposed to the client.
+Server-side functionality and other automations may be put over at `./pages/api`. Only write server-side code when it's really required, as it can be less performant (pre-building the complete site with Static Site Generation will result in a much faster client experience than performing Server Side Rendering on page requests) and costs more resources than just offloading things to the client. Server-side should be utilised for things the client simply cannot do or be "trusted" with, e.g. for fetches to API's utilising secret API keys that should not be exposed to the client.
 
 ## Components
 
@@ -127,7 +127,7 @@ if (process.env.NODE_ENV !== "production") {
 Note that `process.env.NODE_ENV` will be set to `production` in all these circumstances:
 
 - When the app is running online in production on recordrig.com (auto-deployed from `master`)
-- When the app us running online in preview mode on a unique URL (auto-deployed after you pushed any branch)
+- When the app is running online in preview mode on a unique URL (auto-deployed after you pushed any branch)
 - When the app is running **locally** via `npm run build` and then `npm start` (that's an optimised production build)
 
 While actively developing features which rely on external API's, such as Stripe's, it might be useful to opt-out of this "offline mode" and connect directly to the Stripe testing API's so that you can get feedback to your code changes quickly, as you are developing.
@@ -148,4 +148,3 @@ console.log(process.env.STRIPE_SECRET_KEY); // "sk_12345"
 ```
 
 The `.env.local` file should never be committed as they are unique to your environment _and_ might contain environment variables that should never be made public (like Stripe's secret key), even if these are only used to connect to testing API's. Environment variables used online in production and in previews are managed elsewhere.
-
