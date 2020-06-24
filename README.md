@@ -147,4 +147,4 @@ console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY); // "pk_12345"
 console.log(process.env.STRIPE_SECRET_KEY); // "sk_12345"
 ```
 
-The `.env.local` file should never be committed as they are unique to your environment _and_ might contain environment variables that should never be made public (like Stripe's secret key), even if these are only used to connect to testing API's. Environment variables used online in production and in previews are managed elsewhere.
+The `.env.local` file should never be committed as its contents are unique to your environment _and_ might contain environment variables that should never be made public (like Stripe's secret key), even if these are only used to connect to testing API's. Environment variables used online in production and in previews are managed elsewhere.
