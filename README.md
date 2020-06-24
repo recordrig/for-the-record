@@ -20,13 +20,9 @@ npm run dev
 
 ## Development Guidelines
 
-- **Do**: Put code that's related in the same file
-- **Do**: Write code that can be understood without relying on your personal knowledge of the context or memory
-- **Do**: Create a seperately testable utility (`./utils`) for code that's used in many places and/or is Very Important (e.g. pricing calculations)
-
-- **Do not**: Split up code into seperate files based on arbitrary "kinds of code" (e.g. seperating Styled Components from their parent React Components)
-- **Do not**: Create needless folder hierarchies
-- **Do not**: Create [needless abstractions or dependencies](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
+| ✅ &nbsp;Do                                                                                                                                                                                                                                                                                                                                          | ❌ &nbsp;Do not                                                                                                                                                                                                                                                                                                                                                       |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| - **Do** put code that's related in the same file<br /><br />  - **Do** write code that can be understood without relying on your personal knowledge of the context or memory<br /><br />  - **Do** create a separately testable utility ( ./utils ) for code that's used in many places and/or is Very Important (e.g. pricing calculations) | - **Do not** split up code into seperate files based on arbitrary "kinds of code" (e.g. seperating Styled Components from their parent React Components)<br /><br />  - **Do not** create needless folder hierarchies<br /><br />  - **Do not** create [needless abstractions or dependencies](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction) |
 
 ## Coding Standards
 
