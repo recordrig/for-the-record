@@ -67,8 +67,11 @@ export const completeProductsData = (
 /**
  * Validates that:
  * 1. Products exist (ID match)
- * 2. Product quantities are within config limits
- * 3. Total price is within config limits
+ * 2. Products do not have additional fields
+ * 3. Total price is within limits
+ * 4. Product quantities are within limits
+ *
+ * Throws an error if any of the above is inavlid. Does nothing otherwise.
  */
 export const validateProductsForCheckout = (
   products: {
@@ -89,6 +92,20 @@ export const validateProductsForCheckout = (
 ): void => {
   validateProductIds(products, productsData);
 
+  // We might not control where data is ultimately coming from - the whole reason we
+  // are checking product validity is that we do not trust its source. Product could have
+  // been passed from the frontend. As such, not even their fields are guaranteed to be
+  // correct, therefore we must accept `any` input here and validate manually instead of
+  // relying on type-checking alone.
+  const validFields = ["id", "name", "price", "quantity"];
+
+  products.forEach(product =>
+    Object.keys(product).forEach(field => {
+      if (!validFields.includes(field))
+        throw new Error("Product fields are invalid.");
+    })
+  );
+
   const quantityValidationResults = products.map(product => ({
     product: product.id,
     quantity: product.quantity,
@@ -100,14 +117,14 @@ export const validateProductsForCheckout = (
   const totalPrice = sumTotal(prices);
   const totalPriceIsOk = !(totalPrice > totalPriceLimit);
 
+  if (!totalPriceIsOk) throw new Error("Total price is invalid.");
+
   const productsWithQuantityErrors = quantityValidationResults.filter(
     product => !product.quantityIsOk
   );
 
-  if (!totalPriceIsOk || productsWithQuantityErrors.length > 0) {
-    throw new Error(
-      "Product validation failed. Either the total price is too high, or product quantity limits are exceeded."
-    );
+  if (productsWithQuantityErrors.length > 0) {
+    throw new Error("Product quantities are invalid.");
   }
 };
 
@@ -126,12 +143,12 @@ export const structureProductsForCheckout = (
   return validProducts.map(product => ({
     price_data: {
       currency: "EUR",
+      unit_amount: product.price,
       product_data: {
         name: product.name,
         metadata: {
           id: product.id
-        },
-        unit_amount: product.price
+        }
       }
     },
     quantity: product.quantity

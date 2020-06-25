@@ -2,6 +2,7 @@ interface Product {
   readonly name: string;
   /** Price in cents. */
   readonly price: number;
+  readonly quantityLimit: number;
 }
 
 /** All available products that should be listed. */
@@ -19,11 +20,13 @@ type Products = Record<ProductIds, Product>;
 const products: Products = {
   "RR20-black": {
     name: "RecordRig - Stealth Black",
-    price: 229900
+    price: 229900,
+    quantityLimit: 4
   },
   "RR20-white": {
     name: "RecordRig - Pristine White",
-    price: 229900
+    price: 229900,
+    quantityLimit: 4
   }
 };
 

@@ -1,5 +1,6 @@
 // We are integrating with Stripe in this file, so we'll turn this off.
 /* eslint-disable @typescript-eslint/camelcase */
+import StripeTypes from "stripe";
 import {
   completeProductsData,
   validateProductsForCheckout,
@@ -71,7 +72,7 @@ describe("Stripe utilities", () => {
   });
 
   describe("validateProductsForCheckout", () => {
-    test("Does nothing if total price and quantities are valid", () => {
+    test("Does nothing if all fields are valid", () => {
       const products = [
         {
           id: "PRODUCT1",
@@ -113,37 +114,38 @@ describe("Stripe utilities", () => {
       }).toThrow();
     });
 
-    test("Errors if a product's quantity exceeds its quantity limit", () => {
+    test("Does NOT error if fields are valid, but in a different order", () => {
       const products = [
         {
           id: "PRODUCT1",
+          quantity: 1,
           name: "Product 1",
-          price: 200000,
-          quantity: 8
+          price: 200000
         },
         {
-          id: "PRODUCT9000",
+          id: "PRODUCT2",
+          quantity: 1,
           name: "Product 2",
-          price: 250000,
-          quantity: 1
+          price: 250000
         }
       ];
 
       expect(() => {
         validateProductsForCheckout(products, productsData, 500000);
-      }).toThrow();
+      }).not.toThrow();
     });
 
-    test("Errors if the total price exceeds the total price limit", () => {
+    test("Errors with description if an extra, unexpected field was passed", () => {
       const products = [
         {
           id: "PRODUCT1",
           name: "Product 1",
           price: 200000,
-          quantity: 8
+          quantity: 8,
+          foo: "bar"
         },
         {
-          id: "PRODUCT9000",
+          id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
           quantity: 1
@@ -152,7 +154,49 @@ describe("Stripe utilities", () => {
 
       expect(() => {
         validateProductsForCheckout(products, productsData, 500000);
-      }).toThrow();
+      }).toThrow("Product fields are invalid.");
+    });
+
+    test("Errors with description if the total price exceeds the total price limit", () => {
+      const products = [
+        {
+          id: "PRODUCT1",
+          name: "Product 1",
+          price: 200000,
+          quantity: 8
+        },
+        {
+          id: "PRODUCT2",
+          name: "Product 2",
+          price: 250000,
+          quantity: 1
+        }
+      ];
+
+      expect(() => {
+        validateProductsForCheckout(products, productsData, 500000);
+      }).toThrow("Total price is invalid.");
+    });
+
+    test("Errors with description if a product's quantity exceeds its quantity limit", () => {
+      const products = [
+        {
+          id: "PRODUCT1",
+          name: "Product 1",
+          price: 2,
+          quantity: 3
+        },
+        {
+          id: "PRODUCT2",
+          name: "Product 2",
+          price: 250000,
+          quantity: 1
+        }
+      ];
+
+      expect(() => {
+        validateProductsForCheckout(products, productsData, 500000);
+      }).toThrow("Product quantities are invalid.");
     });
   });
 
@@ -173,16 +217,16 @@ describe("Stripe utilities", () => {
         }
       ];
 
-      const expectedResult = [
+      const expectedResult: StripeTypes.Checkout.SessionCreateParams.LineItem[] = [
         {
           price_data: {
             currency: "EUR",
+            unit_amount: 200000,
             product_data: {
               name: "Product 1",
               metadata: {
                 id: "PRODUCT1"
-              },
-              unit_amount: 200000
+              }
             }
           },
           quantity: 1
@@ -190,12 +234,12 @@ describe("Stripe utilities", () => {
         {
           price_data: {
             currency: "EUR",
+            unit_amount: 250000,
             product_data: {
               name: "Product 2",
               metadata: {
                 id: "PRODUCT2"
-              },
-              unit_amount: 250000
+              }
             }
           },
           quantity: 2

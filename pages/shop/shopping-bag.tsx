@@ -55,12 +55,15 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
     price: productsData[product.id].price
   }));
 
-  const handleCheckout = async (
-    passedProducts: readonly ShoppingBagProduct[]
-  ) => {
+  const handleCheckout = async () => {
+    const strippedProducts = products.map(product => ({
+      id: product.id,
+      quantity: product.quantity
+    }));
+
     // Create a Checkout Session.
     const response = await fetchPostJSON("/api/checkout_sessions", {
-      products: passedProducts
+      products: strippedProducts
     });
 
     if (response.statusCode === 500) {

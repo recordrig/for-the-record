@@ -1,7 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 import productsData from "../../../data/products";
-import { addPriceToProducts, addNameToProducts } from "../../../utils/products";
+import {
+  completeProductsData,
+  validateProductsForCheckout,
+  structureProductsForCheckout
+} from "../../../utils/checkout";
 
 if (!process.env.STRIPE_SECRET_KEY) {
   console.error(
@@ -14,27 +18,25 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   apiVersion: "2020-03-02"
 });
 
-interface PassedProduct {
-  id: string;
-  quantity: number;
-}
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const passedProducts: PassedProduct[] = req.body.products;
     try {
-      // TODO: Validate product ID's
-      // TODO: Validate that all products have a `quantity` field
-      // TODO: Validate that products do not have additional fields
-      // TODO: Convert products to Stripe-compatible LineItems
+      const passedProducts = req.body.products;
+      const completeProducts = completeProductsData(
+        passedProducts,
+        productsData
+      );
+      validateProductsForCheckout(completeProducts, productsData, 1000000);
+      const structuredProducts = structureProductsForCheckout(completeProducts);
 
       // Create Checkout Sessions from body params.
       const params: Stripe.Checkout.SessionCreateParams = {
-        payment_method_types: ["card", "ideal"],
-        line_items: productsWithAllData,
+        payment_method_types: ["card", "ideal", "bancontact", "giropay", "p24"],
+        line_items: structuredProducts,
+        mode: "payment",
         success_url: `${req.headers.origin}/shop/purchase-result?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/shop/purchase-result?session_id={CHECKOUT_SESSION_ID}`
       };
