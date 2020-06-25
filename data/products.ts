@@ -9,6 +9,13 @@ type ProductIds = "RR20-black" | "RR20-white";
 
 type Products = Record<ProductIds, Product>;
 
+/**
+ * Complete list of products currently offered.
+ *
+ * This should be the sole source of truth for all products. Do not keep
+ * an additional administration of products elsewhere, including external
+ * services.
+ */
 const products: Products = {
   "RR20-black": {
     name: "RecordRig - Stealth Black",
