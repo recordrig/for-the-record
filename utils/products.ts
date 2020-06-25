@@ -1,6 +1,6 @@
 interface DataProduct {
-  readonly name: string;
-  readonly price: number;
+  name: string;
+  price: number;
 }
 
 type DataProducts = Record<string, DataProduct>;
@@ -9,8 +9,8 @@ type DataProducts = Record<string, DataProduct>;
  * Validate that products passed actually exist as valid data (by ID).
  */
 export const validateProductIds = (
-  products: readonly {
-    readonly id: string;
+  products: {
+    id: string;
   }[],
   productsData: DataProducts
 ): void => {
@@ -30,13 +30,13 @@ export const validateProductIds = (
  * Will return an array of of the original products, but including a `price` field.
  */
 export const addPriceToProducts = (
-  products: readonly {
-    readonly id: string;
+  products: {
+    id: string;
   }[],
   productsData: DataProducts
-): readonly {
-  readonly id: string;
-  readonly price: number;
+): {
+  id: string;
+  price: number;
 }[] => {
   validateProductIds(products, productsData);
   return products.map(product => ({
@@ -52,13 +52,13 @@ export const addPriceToProducts = (
  * Will return an array of of the original products, but including a `name` field.
  */
 export const addNameToProducts = (
-  products: readonly {
-    readonly id: string;
+  products: {
+    id: string;
   }[],
   productsData: DataProducts
-): readonly {
-  readonly id: string;
-  readonly name: string;
+): {
+  id: string;
+  name: string;
 }[] => {
   validateProductIds(products, productsData);
   return products.map(product => ({

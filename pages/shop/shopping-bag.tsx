@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import getStripe from "../../utils/getStripe";
+import { getStripe } from "../../utils/checkout";
 import productsData from "../../data/products";
 import {
   ShoppingBagProduct,

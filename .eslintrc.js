@@ -110,10 +110,19 @@ module.exports = {
   ],
   "rules": {
     /*
-     * Turn off until we have better alternatives. (Set to "warn" and "error" in TS/TSX files.)
+     * Turn off until we have better alternatives. (Set to "warn" and "error" in TS/TSX
+     * files on a per use-case basis.)
      */
     "functional/immutable-data": "off",
     "functional/no-let": "off",
+    "functional/prefer-readonly-type": [
+      /* 
+       * We initially set "allowMutableReturnType": false to just exclude return types, however
+       * this setting still required nested properties to have the readonly modifier, so we opted
+       * to disabled completely instead.
+       */
+      "off"
+    ],
     /*
      * Airbnb's config assumes `js` and `jsx` files to be supported natively, but doesn't
      * know about `ts` and `tsx` files on its own. We want to allow e.g. `import "./myModule"`
