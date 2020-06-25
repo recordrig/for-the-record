@@ -3,6 +3,7 @@
 import StripeTypes from "stripe";
 import { Stripe } from "@stripe/stripe-js";
 import { loadStripe } from "@stripe/stripe-js/pure";
+import { extractPrices, sumTotal } from "./prices";
 import {
   addNameToProducts,
   addPriceToProducts,
@@ -30,15 +31,10 @@ export const getStripe = (
   return stripePromise;
 };
 
-// TODO: validateProductsForCheckout
-// 1. Validate product quantities
-// 2. Validate total price
-
 /**
- * Fills and morphs the products array so that it is validated and its structure is
- * compatible with Stripe's checkout.
+ * Fills the products array with name and price data based on ID's.
  */
-export const prepareProductsForCheckout = (
+export const completeProductsData = (
   products: {
     id: string;
     quantity: number;
@@ -50,19 +46,84 @@ export const prepareProductsForCheckout = (
       price: number;
     }
   >
-): StripeTypes.Checkout.SessionCreateParams.LineItem[] => {
+): {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}[] => {
   validateProductIds(products, productsData);
 
   const productsWithNames = addNameToProducts(products, productsData);
   const productsWithPrices = addPriceToProducts(products, productsData);
 
-  const completeProducts = products.map((_product, index) => ({
+  return products.map((_product, index) => ({
     ...productsWithNames[index],
     ...productsWithPrices[index],
     ...products[index]
   }));
+};
 
-  return completeProducts.map(product => ({
+/**
+ * Validates that:
+ * 1. Products exist (ID match)
+ * 2. Product quantities are within config limits
+ * 3. Total price is within config limits
+ */
+export const validateProductsForCheckout = (
+  products: {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+  }[],
+  productsData: Record<
+    string,
+    {
+      name: string;
+      price: number;
+      quantityLimit: number;
+    }
+  >,
+  totalPriceLimit: number
+): void => {
+  validateProductIds(products, productsData);
+
+  const quantityValidationResults = products.map(product => ({
+    product: product.id,
+    quantity: product.quantity,
+    quantityLimit: productsData[product.id].quantityLimit,
+    quantityIsOk: !(product.quantity > productsData[product.id].quantityLimit)
+  }));
+
+  const prices = extractPrices(products);
+  const totalPrice = sumTotal(prices);
+  const totalPriceIsOk = !(totalPrice > totalPriceLimit);
+
+  const productsWithQuantityErrors = quantityValidationResults.filter(
+    product => !product.quantityIsOk
+  );
+
+  if (!totalPriceIsOk || productsWithQuantityErrors.length > 0) {
+    throw new Error(
+      "Product validation failed. Either the total price is too high, or product quantity limits are exceeded."
+    );
+  }
+};
+
+/**
+ * Morphs the products array so that its structure is compatible with Stripe's checkout.
+ * **Any data passed in is assumed to be valid and will not be checked.**
+ */
+export const structureProductsForCheckout = (
+  validProducts: {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+  }[]
+): StripeTypes.Checkout.SessionCreateParams.LineItem[] => {
+  return validProducts.map(product => ({
     price_data: {
       currency: "EUR",
       product_data: {
