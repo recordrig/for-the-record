@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
+import { totalLimit } from "../data/checkout";
 import countries from "../data/countries";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import {
@@ -292,7 +293,15 @@ interface ShoppingBagProps {
    * Pass products as an array in order to guarantee that their order will be correct.
    * The most recently added product should be listed at the top.
    */
-  readonly products: readonly Product[];
+  readonly products: Product[];
+  readonly productsData: Record<
+    string,
+    {
+      name: string;
+      price: number;
+      quantityLimit: number;
+    }
+  >;
   readonly removeProduct: Function;
   readonly updateProductQuantity: (productId: string, quantity: number) => any;
 }
@@ -306,6 +315,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   handleCheckout,
   updateProductQuantity,
   products,
+  productsData,
   removeProduct
 }) => {
   const prices = extractPrices(products);
@@ -331,24 +341,29 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   };
 
   const [shoppingBagValidationState, setShoppingBagValidationState] = useState(
-    products.length > 0 ? validateShoppingBag(products) : defaultValidState
+    products.length > 0
+      ? validateShoppingBag(products, productsData, totalLimit)
+      : defaultValidState
   );
 
   useEffect(() => {
     if (products.length > 0) {
-      setShoppingBagValidationState(validateShoppingBag(products));
+      setShoppingBagValidationState(
+        validateShoppingBag(products, productsData, totalLimit)
+      );
     } else {
       setShoppingBagValidationState(defaultValidState);
     }
   }, [products]);
 
   const [totalIsTooHigh, setTotalIsTooHigh] = useState(
-    products.length > 0 ? checkTotalPrice(products) : false
+    products.length > 0 ? checkTotalPrice(products, totalLimit) : false
   );
 
   useEffect(() => {
     if (products.length > 0) {
-      const isTooHigh = !checkTotalPrice(products).totalPriceIsValid;
+      const isTooHigh = !checkTotalPrice(products, totalLimit)
+        .totalPriceIsValid;
       setTotalIsTooHigh(isTooHigh);
     } else {
       setTotalIsTooHigh(false);
@@ -356,12 +371,13 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   }, [products]);
 
   const [isBulkOrder, setIsBulkOrder] = useState(
-    products.length > 0 ? checkProductQuantities(products) : false
+    products.length > 0 ? checkProductQuantities(products, productsData) : false
   );
 
   useEffect(() => {
     if (products.length > 0) {
-      const isBulk = !checkProductQuantities(products).quantitiesAreValid;
+      const isBulk = !checkProductQuantities(products, productsData)
+        .quantitiesAreValid;
       setIsBulkOrder(isBulk);
     } else {
       setIsBulkOrder(false);
@@ -584,7 +600,9 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                           animateRemoval={animateRemoval === id}
                           data-cy={`product-${id}`}
                           key={`product-${id}`}
-                          quantityInvalid={quantity > 4}
+                          quantityInvalid={
+                            quantity > productsData[id].quantityLimit
+                          }
                         >
                           <img
                             alt=""
@@ -612,11 +630,13 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                               <option value="none" selected disabled hidden>
                                 {quantity}
                               </option>
-                              {[1, 2, 3, 4].map(option => (
-                                <option key={`amount-${option}`} value={option}>
-                                  {option}
-                                </option>
-                              ))}
+                              {[...Array(productsData[id].quantityLimit)].map(
+                                (_option, i) => (
+                                  <option key={`amount-${i + 1}`} value={i + 1}>
+                                    {i + 1}
+                                  </option>
+                                )
+                              )}
                             </select>
                             <p>{formatCurrency(price * quantity)}</p>
                             <button

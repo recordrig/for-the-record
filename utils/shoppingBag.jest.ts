@@ -4,9 +4,45 @@ import {
   validateShoppingBag
 } from "./shoppingBag";
 
+const productsData = {
+  PROD1: {
+    name: "Product 1",
+    price: 200000,
+    quantityLimit: 2
+  },
+  PROD2: {
+    name: "Product 2",
+    price: 250000,
+    quantityLimit: 4
+  }
+};
+
+const totalPriceLimit = 500000;
+
 describe("Shopping bag utilities", () => {
   describe("checkProductQuantities", () => {
-    test("Returns no errors incase if none of the quantities exceed 4", () => {
+    test("Throws error if it cannot find a product's ID", () => {
+      const products = [
+        {
+          id: "PROD1",
+          name: "Product 1",
+          price: 200000,
+          quantity: 1
+        },
+        {
+          id: "PROD999",
+          name: "Product 2",
+          price: 250000,
+          quantity: 1
+        }
+      ];
+
+      expect(() => {
+        checkProductQuantities(products, productsData);
+      }).toThrow();
+    });
+
+    test("Returns no errors if product quantities are ok", () => {
       const products = [
         {
           id: "PROD1",
@@ -20,13 +56,13 @@ describe("Shopping bag utilities", () => {
         }
       ];
 
-      const result = checkProductQuantities(products);
+      const result = checkProductQuantities(products, productsData);
 
       expect(result.quantitiesAreValid).toEqual(true);
       expect(result.errors.length).toEqual(0);
     });
 
-    test("Returns errors with appropriate description if a product quantity does exceed 4", () => {
+    test("Returns errors with appropriate description if quantities are NOT ok", () => {
       const products = [
         {
           id: "PROD1",
@@ -40,7 +76,7 @@ describe("Shopping bag utilities", () => {
         }
       ];
 
-      const result = checkProductQuantities(products);
+      const result = checkProductQuantities(products, productsData);
 
       expect(result.quantitiesAreValid).toEqual(false);
       expect(result.errors.length).toEqual(1);
@@ -51,7 +87,7 @@ describe("Shopping bag utilities", () => {
   });
 
   describe("checkTotalPrice", () => {
-    test("Returns no error if total price does not exceed 10K", () => {
+    test("Returns no error if total price does NOT exceed the limit", () => {
       const products = [
         {
           quantity: 1,
@@ -63,13 +99,13 @@ describe("Shopping bag utilities", () => {
         }
       ];
 
-      const result = checkTotalPrice(products);
+      const result = checkTotalPrice(products, totalPriceLimit);
 
       expect(result.totalPriceIsValid).toEqual(true);
       expect(result.errors.length).toEqual(0);
     });
 
-    test("Returns error if total price does exceed 10K", () => {
+    test("Returns error if total price DOES exceed the limit", () => {
       const products = [
         {
           quantity: 4,
@@ -81,7 +117,7 @@ describe("Shopping bag utilities", () => {
         }
       ];
 
-      const result = checkTotalPrice(products);
+      const result = checkTotalPrice(products, totalPriceLimit);
 
       // expect(result.totalPriceIsValid).toEqual(false);
       expect(result.errors.length).toEqual(1);
@@ -107,7 +143,11 @@ describe("Shopping bag utilities", () => {
         }
       ];
 
-      const result = validateShoppingBag(products);
+      const result = validateShoppingBag(
+        products,
+        productsData,
+        totalPriceLimit
+      );
 
       expect(result.shoppingBagIsValid).toEqual(true);
       expect(result.errors.length).toEqual(0);
@@ -129,7 +169,11 @@ describe("Shopping bag utilities", () => {
         }
       ];
 
-      const result = validateShoppingBag(products);
+      const result = validateShoppingBag(
+        products,
+        productsData,
+        totalPriceLimit
+      );
 
       expect(result.shoppingBagIsValid).toEqual(false);
       expect(result.errors.length).toEqual(2);

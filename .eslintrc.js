@@ -44,6 +44,19 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": ["error"]
       }
     },
+    {
+      /*
+       * Preferring a default export makes sense when files generally define something of
+       * a "whole", like a Component or a Page. But in the cases of folders like `data`,
+       * and `utils`, files are usually just collections of somewhat related code instead
+       * of a self-contained piece of functionality, which means a default export doesn't
+       * usually make sense.
+       */
+      "files": ["./data/**/*.ts", "./utils/**/*.ts"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    },
     /*
      * Allow non-camelcase in files that communicate with external API's (and have to
      * abide by their rules).

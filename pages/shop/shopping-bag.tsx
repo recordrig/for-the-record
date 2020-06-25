@@ -111,6 +111,7 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
       <ShoppingBag
         handleCheckout={handleCheckout}
         products={products}
+        productsData={productsData}
         updateProductQuantity={updateProductQuantity}
         removeProduct={removeProduct}
       />

@@ -12287,7 +12287,7 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                 }
               }
             >
-              The total price for all products exceeds the €10.000 threshold. Modify your shopping bag contents so that the total price remains below this amount.
+              The total price for all products exceeds the €10.000,00 threshold. Modify your shopping bag contents so that the total price remains below this amount.
             </li>
           </ul>
           <div

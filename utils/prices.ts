@@ -15,11 +15,11 @@ const checkInteger = (price: number): void => {
  * `quantity` of 2, it will return `[10000]`.
  */
 export const extractPrices = (
-  products: readonly {
-    readonly price: number;
-    readonly quantity: number;
+  products: {
+    price: number;
+    quantity: number;
   }[]
-): readonly number[] => products.map(({ price, quantity }) => price * quantity);
+): number[] => products.map(({ price, quantity }) => price * quantity);
 
 /**
  * Accepts a number assumed to be a monetary value in cents, and returns a formatted string
@@ -61,7 +61,7 @@ export const priceWithoutTax = (priceIncludingTax: number): number => {
 /**
  * Accepts an array of prices and will return the sum total.
  */
-export const sumTotal = (prices: readonly number[]): number =>
+export const sumTotal = (prices: number[]): number =>
   prices.reduce((accumulator, currentValue) => {
     checkInteger(currentValue);
     return accumulator + currentValue;

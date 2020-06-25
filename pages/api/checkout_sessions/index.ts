@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 import productsData from "../../../data/products";
+import { totalLimit } from "../../../data/checkout";
 import {
   completeProductsData,
   validateProductsForCheckout,
@@ -29,12 +30,19 @@ export default async function handler(
         passedProducts,
         productsData
       );
-      validateProductsForCheckout(completeProducts, productsData, 1000000);
+      validateProductsForCheckout(completeProducts, productsData, totalLimit);
       const structuredProducts = structureProductsForCheckout(completeProducts);
 
       // Create Checkout Sessions from body params.
       const params: Stripe.Checkout.SessionCreateParams = {
-        payment_method_types: ["card", "ideal", "bancontact", "giropay", "p24"],
+        payment_method_types: [
+          "giropay", // Germany
+          "ideal", // Netherlands
+          "p24", // Poland
+          "eps", // Austria
+          "bancontact", // Belgium
+          "card" // Other
+        ],
         line_items: structuredProducts,
         mode: "payment",
         success_url: `${req.headers.origin}/shop/purchase-result?session_id={CHECKOUT_SESSION_ID}`,
