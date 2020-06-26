@@ -11,7 +11,7 @@ type CountryCodes =
   | "DE"
   | "EE"
   | "IE"
-  | "EL"
+  | "GR"
   | "ES"
   | "FR"
   | "HR"
@@ -57,7 +57,7 @@ const countries: Countries = {
   IE: {
     name: "Ireland"
   },
-  EL: {
+  GR: {
     name: "Greece"
   },
   ES: {

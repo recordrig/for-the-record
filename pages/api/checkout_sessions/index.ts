@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
+import countriesData from "../../../data/countries";
 import productsData from "../../../data/products";
 import { totalLimit } from "../../../data/checkout";
 import {
@@ -24,6 +25,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
+    const allowedCountries = Object.keys(
+      countriesData
+    ) as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[];
+
     try {
       const passedProducts = req.body.products;
       const completeProducts = completeProductsData(
@@ -35,6 +40,10 @@ export default async function handler(
 
       // Create Checkout Sessions from body params.
       const params: Stripe.Checkout.SessionCreateParams = {
+        billing_address_collection: "required",
+        shipping_address_collection: {
+          allowed_countries: allowedCountries
+        },
         payment_method_types: [
           "giropay", // Germany
           "ideal", // Netherlands
