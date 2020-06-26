@@ -627,12 +627,13 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                                 )
                               }
                             >
-                              <option value="none" selected disabled hidden>
-                                {quantity}
-                              </option>
                               {[...Array(productsData[id].quantityLimit)].map(
                                 (_option, i) => (
-                                  <option key={`amount-${i + 1}`} value={i + 1}>
+                                  <option
+                                    key={`amount-${i + 1}`}
+                                    value={i + 1}
+                                    selected={quantity === i + 1}
+                                  >
                                     {i + 1}
                                   </option>
                                 )

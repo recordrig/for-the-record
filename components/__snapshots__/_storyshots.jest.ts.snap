@@ -11423,29 +11423,25 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       onChange={[Function]}
                     >
                       <option
-                        disabled={true}
-                        hidden={true}
                         selected={true}
-                        value="none"
-                      >
-                        1
-                      </option>
-                      <option
                         value={1}
                       >
                         1
                       </option>
                       <option
+                        selected={false}
                         value={2}
                       >
                         2
                       </option>
                       <option
+                        selected={false}
                         value={3}
                       >
                         3
                       </option>
                       <option
+                        selected={false}
                         value={4}
                       >
                         4
@@ -11487,29 +11483,25 @@ exports[`Storyshots ShoppingBag default 1`] = `
                       onChange={[Function]}
                     >
                       <option
-                        disabled={true}
-                        hidden={true}
-                        selected={true}
-                        value="none"
-                      >
-                        2
-                      </option>
-                      <option
+                        selected={false}
                         value={1}
                       >
                         1
                       </option>
                       <option
+                        selected={true}
                         value={2}
                       >
                         2
                       </option>
                       <option
+                        selected={false}
                         value={3}
                       >
                         3
                       </option>
                       <option
+                        selected={false}
                         value={4}
                       >
                         4
@@ -12548,29 +12540,25 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       onChange={[Function]}
                     >
                       <option
-                        disabled={true}
-                        hidden={true}
-                        selected={true}
-                        value="none"
-                      >
-                        6
-                      </option>
-                      <option
+                        selected={false}
                         value={1}
                       >
                         1
                       </option>
                       <option
+                        selected={false}
                         value={2}
                       >
                         2
                       </option>
                       <option
+                        selected={false}
                         value={3}
                       >
                         3
                       </option>
                       <option
+                        selected={false}
                         value={4}
                       >
                         4
@@ -12612,29 +12600,25 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
                       onChange={[Function]}
                     >
                       <option
-                        disabled={true}
-                        hidden={true}
-                        selected={true}
-                        value="none"
-                      >
-                        8
-                      </option>
-                      <option
+                        selected={false}
                         value={1}
                       >
                         1
                       </option>
                       <option
+                        selected={false}
                         value={2}
                       >
                         2
                       </option>
                       <option
+                        selected={false}
                         value={3}
                       >
                         3
                       </option>
                       <option
+                        selected={false}
                         value={4}
                       >
                         4
