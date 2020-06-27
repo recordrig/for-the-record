@@ -11,6 +11,7 @@ export interface ShoppingBagProduct {
 
 enum ActionTypes {
   ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
+  CHECKOUT = "shoppingBag/CHECKOUT",
   REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT",
   UPDATE_PRODUCT_QUANTITY = "shoppingBag/UPDATE_PRODUCT_QUANTITY"
 }
@@ -36,6 +37,16 @@ export const addProductAction = (
     payload: {
       id
     }
+  };
+};
+
+interface CheckoutAction {
+  readonly type: ActionTypes.CHECKOUT;
+}
+
+export const checkoutAction = (): CheckoutAction => {
+  return {
+    type: ActionTypes.CHECKOUT
   };
 };
 
@@ -129,6 +140,9 @@ const addProduct = (
   ];
 };
 
+// Customer checks out. This empties the Shopping Bag.
+const checkout = (): [] => [];
+
 // Simply returns a new array without the product. Doesn't care if the product was
 // there to begin with.
 const removeProduct = (
@@ -153,6 +167,7 @@ const updateProductQuantity = (
 
 type Action =
   | AddProductAction
+  | CheckoutAction
   | RemoveProductAction
   | UpdateProductQuantityAction;
 
@@ -165,6 +180,8 @@ const shoppingBag = (
   switch (action.type) {
     case ActionTypes.ADD_PRODUCT:
       return addProduct(state, action.payload.id);
+    case ActionTypes.CHECKOUT:
+      return checkout();
     case ActionTypes.REMOVE_PRODUCT:
       return removeProduct(state, action.payload.id);
     case ActionTypes.UPDATE_PRODUCT_QUANTITY:

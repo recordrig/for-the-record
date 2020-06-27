@@ -2,6 +2,8 @@ import React from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import { connect } from "react-redux";
+import { checkoutAction } from "../../store/shoppingBag";
 
 async function fetchGetJSON(url: string) {
   try {
@@ -12,7 +14,14 @@ async function fetchGetJSON(url: string) {
   }
 }
 
-const PurchaseResultPage: NextPage = () => {
+interface PurchaseResultPageProps {
+  /** The addProduct function will empty the shopping bag. */
+  readonly checkout: Function;
+}
+
+const PurchaseResultPage: NextPage<PurchaseResultPageProps> = ({
+  checkout
+}) => {
   const router = useRouter();
 
   const { data, error } = useSWR(
@@ -21,6 +30,10 @@ const PurchaseResultPage: NextPage = () => {
       : null,
     fetchGetJSON
   );
+
+  if (data?.payment_intent?.status === "succeeded") {
+    checkout();
+  }
 
   if (error) return <div>Failed to load.</div>;
 
@@ -36,4 +49,13 @@ const PurchaseResultPage: NextPage = () => {
   );
 };
 
-export default PurchaseResultPage;
+const mapDispatchToProps = {
+  checkout: checkoutAction
+};
+
+const PurchaseResultPageConnected = connect(
+  null,
+  mapDispatchToProps
+)(PurchaseResultPage);
+
+export default PurchaseResultPageConnected;

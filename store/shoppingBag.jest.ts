@@ -1,5 +1,6 @@
 import shoppingBag, {
   addProductAction,
+  checkoutAction,
   removeProductAction,
   updateProductQuantityAction
 } from "./shoppingBag";
@@ -85,6 +86,27 @@ describe("shoppingBag reducer", () => {
           quantity: 1
         }
       ];
+
+      expect(shoppingBag(state, action)).toEqual(newState);
+    });
+  });
+
+  describe("Checkout", () => {
+    test("The shopping bag is emptied", () => {
+      const state = [
+        {
+          id: "PRODUCTID",
+          quantity: 3
+        },
+        {
+          id: "PRODORP",
+          quantity: 1
+        }
+      ];
+
+      const action = checkoutAction();
+
+      const newState = [];
 
       expect(shoppingBag(state, action)).toEqual(newState);
     });
