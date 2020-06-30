@@ -140,15 +140,17 @@ export const structureProductsForCheckout = (
     quantity: number;
   }[]
 ): StripeTypes.Checkout.SessionCreateParams.LineItem[] => {
+  // Since we don't store any product and therefore pricing data inside Stripe, we must create
+  // new Stripe price and product objects inline.
   return validProducts.map(product => ({
     price_data: {
-      currency: "EUR",
+      currency: "eur",
       unit_amount: product.price,
       product_data: {
         name: product.name,
-        metadata: {
-          id: product.id
-        }
+        description: product.id
+        // Metadata is lost in the motions, so we'll use the "description" field to store core
+        // product properties we can also use to identify it later on (years if need be).
       }
     },
     quantity: product.quantity

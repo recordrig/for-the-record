@@ -23,12 +23,17 @@ export default async function handler(
       throw Error("Incorrect CheckoutSession ID.");
     }
 
-    const checkout_session: Stripe.Checkout.Session = await stripe.checkout.sessions.retrieve(
+    const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.retrieve(
       id,
       { expand: ["payment_intent"] }
     );
 
-    res.status(200).json(checkout_session);
+    const lineItems = await stripe.checkout.sessions.listLineItems(id);
+
+    res.status(200).json({
+      checkout_session: checkoutSession,
+      line_items: lineItems
+    });
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message });
   }

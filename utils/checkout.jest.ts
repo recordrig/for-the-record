@@ -220,26 +220,22 @@ describe("Stripe utilities", () => {
       const expectedResult: StripeTypes.Checkout.SessionCreateParams.LineItem[] = [
         {
           price_data: {
-            currency: "EUR",
+            currency: "eur",
             unit_amount: 200000,
             product_data: {
               name: "Product 1",
-              metadata: {
-                id: "PRODUCT1"
-              }
+              description: "PRODUCT1"
             }
           },
           quantity: 1
         },
         {
           price_data: {
-            currency: "EUR",
+            currency: "eur",
             unit_amount: 250000,
             product_data: {
               name: "Product 2",
-              metadata: {
-                id: "PRODUCT2"
-              }
+              description: "PRODUCT2"
             }
           },
           quantity: 2

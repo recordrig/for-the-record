@@ -30,15 +30,22 @@ export default async function handler(
     ) as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[];
 
     try {
+      // Counts on getting an array of ID's and quantity, nothing else.
       const passedProducts = req.body.products;
+
+      // Uses the passed product ID's to collect the appropriate additional data like price, name.
       const completeProducts = completeProductsData(
         passedProducts,
         productsData
       );
+
+      // Errors and prevents checkout if passed products do not match our records.
       validateProductsForCheckout(completeProducts, productsData, totalLimit);
+
+      // Ready products collection for Stripe.
       const structuredProducts = structureProductsForCheckout(completeProducts);
 
-      // Create Checkout Sessions from body params.
+      // Ready all required parameters for Stripe.
       const params: Stripe.Checkout.SessionCreateParams = {
         billing_address_collection: "required",
         shipping_address_collection: {
@@ -55,12 +62,15 @@ export default async function handler(
         line_items: structuredProducts,
         mode: "payment",
         success_url: `${req.headers.origin}/shop/purchase-result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/shop/purchase-result?session_id={CHECKOUT_SESSION_ID}`
+        cancel_url: `${req.headers.origin}/shop/shopping-bag`
       };
+
+      // Create unique checkout session.
       const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(
         params
       );
 
+      // Returns the session if it was successful. This session can then be used to redirect.
       res.status(200).json(checkoutSession);
     } catch (err) {
       res.status(500).json({ statusCode: 500, message: err.message });
