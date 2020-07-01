@@ -2,7 +2,6 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
 import { totalLimit } from "../data/checkout";
-import countries from "../data/countries";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import {
   checkProductQuantities,
