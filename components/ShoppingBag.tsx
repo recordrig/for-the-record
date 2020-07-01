@@ -451,10 +451,20 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     }
   });
 
+  const [checkoutClicked, setCheckoutClicked] = useState(false);
+
+  const handleCheckoutClick = () => {
+    // Prevents multiple clicks in a short timespan.
+    setCheckoutClicked(true);
+    setTimeout(() => setCheckoutClicked(false), 4000);
+    handleCheckout(products);
+  };
+
   const CheckoutButton = () => (
     <Button
+      appearDisabled={checkoutClicked}
       cypressId="enabled-checkout-button"
-      onClick={() => handleCheckout(products)}
+      onClick={checkoutClicked ? undefined : () => handleCheckoutClick()}
     >
       Check Out
       <span
