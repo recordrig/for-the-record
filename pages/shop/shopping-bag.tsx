@@ -1,6 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { getStripe } from "../../utils/checkout";
@@ -47,6 +48,8 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   updateProductQuantity,
   shoppingBag
 }) => {
+  const router = useRouter();
+
   // The shoppingBag as received from global state stores ID's and quantity.
   // The ShoppingBag component additionally needs price & name information.
   const products = shoppingBag.map(product => ({
@@ -56,49 +59,58 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   }));
 
   const handleCheckout = async () => {
-    const strippedProducts = products.map(product => ({
-      id: product.id,
-      quantity: product.quantity
-    }));
-
-    // Create a Checkout Session.
-    const response = await fetchPostJSON("/api/checkout_sessions", {
-      products: strippedProducts
-    });
-
-    if (response.statusCode === 500) {
-      console.error(response.message);
-      return;
-    }
-
-    const stripePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-
-    if (!stripePublishableKey) {
-      console.error(
-        "Stripe publishable key was not found. Is NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY set in the env vars?"
-      );
-    }
-
-    // Redirect to Checkout.
-    const stripe = stripePublishableKey
-      ? await getStripe(stripePublishableKey)
-      : null;
-
-    if (stripe === null) {
-      console.error(
-        "Stripe was not instantiated - cannot redirect to checkout."
-      );
+    // In development or test environments we don't want to drag external API's into
+    // the picture. Offline development should be possible, so we'll redirect straight
+    // to the confirmation page.
+    if (process.env.NODE_ENV !== "production") {
+      // eslint-disable-next-line functional/immutable-data
+      router.push("/shop/purchase-result");
     } else {
-      const { error } = await stripe.redirectToCheckout({
-        // Make the id field from the Checkout Session creation API response
-        // available to this file, so you can provide it as parameter here
-        // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-        sessionId: response.id
+      const strippedProducts = products.map(product => ({
+        id: product.id,
+        quantity: product.quantity
+      }));
+
+      // Create a Checkout Session.
+      const response = await fetchPostJSON("/api/checkout_sessions", {
+        products: strippedProducts
       });
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `error.message`.
-      console.warn(error.message);
+
+      if (response.statusCode === 500) {
+        console.error(response.message);
+        return;
+      }
+
+      const stripePublishableKey =
+        process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+
+      if (!stripePublishableKey) {
+        console.error(
+          "Stripe publishable key was not found. Is NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY set in the env vars?"
+        );
+      }
+
+      // Redirect to Checkout.
+      const stripe = stripePublishableKey
+        ? await getStripe(stripePublishableKey)
+        : null;
+
+      if (stripe === null) {
+        console.error(
+          "Stripe was not instantiated - cannot redirect to checkout."
+        );
+      } else {
+        const { error } = await stripe.redirectToCheckout({
+          // Make the id field from the Checkout Session creation API response
+          // available to this file, so you can provide it as parameter here
+          // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+          sessionId: response.id
+        });
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `error.message`.
+        console.warn(error.message);
+      }
     }
   };
 

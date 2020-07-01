@@ -132,7 +132,7 @@ Note that `process.env.NODE_ENV` will be set to `production` in all these circum
 
 While actively developing features which rely on external API's, such as Stripe's, it might be useful to opt-out of this "offline mode" and connect directly to the Stripe testing API's so that you can get feedback to your code changes quickly, as you are developing.
 
-In those situations, omit the `process.env.NODE_ENV !== "production"` check where you'd normally run your offline mode code, and add the required API keys to a file in the root of the project named `.env.local`. In the case of Stripe, the file would look something like:
+First, add the required API keys to a file in the root of the project named `.env.local`. In the case of Stripe, the file would look something like:
 
 ```
 # Stripe keys
@@ -147,4 +147,6 @@ console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY); // "pk_12345"
 console.log(process.env.STRIPE_SECRET_KEY); // "sk_12345"
 ```
 
-The `.env.local` file should never be committed as its contents are unique to your environment _and_ might contain environment variables that should never be made public (like Stripe's secret key), even if these are only used to connect to testing API's. Environment variables used online in production and in previews are managed elsewhere.
+Then, either omit the `process.env.NODE_ENV !== "production"` section locally in your code where you'd like to connect to the API, or, run the app with `NODE_ENV` set to `production` by first creating an optimised build using `npm run build`, and then launching this build by running `npm start`.
+
+NB: The `.env.local` file should never be committed as its contents are unique to your environment _and_ might contain environment variables that should never be made public (like Stripe's secret key), even if these are only used to connect to testing API's. Environment variables used online in production and in previews are managed elsewhere.
