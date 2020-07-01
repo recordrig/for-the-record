@@ -5661,6 +5661,348 @@ exports[`Storyshots ProductList show first with indicate addition 1`] = `
 </div>
 `;
 
+exports[`Storyshots PurchaseResult default 1`] = `
+.c2 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c2 svg {
+  fill: #24a148;
+  height: inherit;
+  width: inherit;
+}
+
+.c1 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 46px;
+  padding-right: 32px;
+  position: relative;
+  background-color: #defbe6;
+  border-left-color: #24a148;
+  border-top-color: #90e3b1;
+  border-right-color: #90e3b1;
+  border-bottom-color: #90e3b1;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.c3 p {
+  color: #697077;
+}
+
+.c3 > div {
+  border: 1px solid #c1c7cd;
+  box-sizing: border-box;
+}
+
+.c4 {
+  border-top: 1px solid #c1c7cd;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 576px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.c4 div:nth-child(1) {
+  height: 82px;
+  text-align: center;
+  width: 82px;
+}
+
+.c4 div:nth-child(1) img {
+  height: 100%;
+}
+
+.c4 div:nth-child(2) {
+  padding-left: 16px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 p:nth-child(1) {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.c4 p:nth-child(2) {
+  color: #697077;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.c4 p:nth-child(3) {
+  color: #697077;
+  font-size: 18px;
+  margin-top: 0;
+  text-align: right;
+}
+
+.c0 > div {
+  min-height: 70vh;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 80px;
+  padding-bottom: 256px;
+}
+
+.c0 h2 {
+  font-size: 28px;
+  font-weight: normal;
+  margin-top: 64px;
+  margin-bottom: 0;
+  padding-bottom: 8px;
+  max-width: 576px;
+}
+
+@media (max-width:639px) {
+  .c3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .c3 > div {
+    padding: 32px 32px 32px 32px;
+    width: 100%;
+  }
+
+  .c3 > div:nth-child(1) {
+    border-bottom: 0;
+  }
+}
+
+@media (min-width:640px) {
+  .c3 > div {
+    padding: 32px 32px 32px 48px;
+    width: 50%;
+  }
+
+  .c3 > div:nth-child(1) {
+    border-right: 0;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div
+      style={
+        Object {
+          "marginBottom": "16px",
+        }
+      }
+    >
+      <div
+        className="c1"
+        type="success"
+      >
+        <p
+          style={
+            Object {
+              "fontSize": "14px",
+            }
+          }
+        >
+          <strong>
+            Thank you!
+          </strong>
+           Your order has been placed.
+        </p>
+        <div
+          style={
+            Object {
+              "height": "20px",
+              "left": "13px",
+              "position": "absolute",
+              "top": "15px",
+              "width": "20px",
+            }
+          }
+        >
+          <span
+            className="c2"
+            color="#24a148"
+          >
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              height="32"
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
+              />
+              <path
+                d="M14,21.5l-5-5l1.6-1.5l3.4,3.4l7.4-7.4l1.6,1.6L14,21.5z"
+                data-icon-path="inner-path"
+                opacity="0"
+              />
+              <title>
+                Checkmark filled
+              </title>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div>
+        <h3>
+          Shipping Address
+        </h3>
+        <p>
+          Firstname Lastname
+          <br />
+          Somestreet 20
+          <br />
+          ABAB 12
+            
+          Mycity
+          <br />
+          Bestcountry
+        </p>
+      </div>
+      <div>
+        <h3>
+          Billing Address
+        </h3>
+        <p>
+          Firstname Lastname
+          <br />
+          Somestreet 20
+          <br />
+          ABAB 12
+           
+          Mycity
+          <br />
+          Bestcountry
+        </p>
+      </div>
+    </div>
+    <h2>
+      Order Summary
+    </h2>
+    <div
+      className="c4"
+    >
+      <div>
+        <img
+          alt=""
+          src="/recordrig.png"
+        />
+      </div>
+      <div>
+        <p>
+          RecordRig - Stealth Black
+        </p>
+        <p>
+          Qty: 
+          1
+        </p>
+        <p>
+          €3.000,00
+        </p>
+      </div>
+    </div>
+    <div
+      className="c4"
+    >
+      <div>
+        <img
+          alt=""
+          src="/recordrig.png"
+        />
+      </div>
+      <div>
+        <p>
+          RecordRig - Pristine White
+        </p>
+        <p>
+          Qty: 
+          1
+        </p>
+        <p>
+          €3.000,00
+        </p>
+      </div>
+    </div>
+    <p
+      style={
+        Object {
+          "borderTop": "1px solid #c1c7cd",
+          "color": "#697077",
+          "fontSize": "21px",
+          "marginTop": 0,
+          "maxWidth": "576px",
+          "paddingTop": "8px",
+          "position": "relative",
+          "textAlign": "right",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "left": "98px",
+            "position": "absolute",
+          }
+        }
+      >
+        Total: 
+      </span>
+      €6.000,00
+      <span
+        style={
+          Object {
+            "fontSize": "14px",
+            "left": 0,
+            "position": "absolute",
+            "top": "36px",
+            "width": "100%",
+          }
+        }
+      >
+        Includes VAT & shipping
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots RecordRigConfigurator black 1`] = `
 .c12 {
   border-radius: 4px;
