@@ -988,6 +988,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               visible={selectorVisible}
             >
               <button
+                data-cy="switch-to-black"
                 disabled={blackChosen}
                 onClick={() => handleColorChangeClick("black")}
                 type="button"
@@ -995,6 +996,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                 <span>Stealth Black</span>
               </button>
               <button
+                data-cy="switch-to-white"
                 disabled={whiteChosen}
                 onClick={() => handleColorChangeClick("white")}
                 type="button"

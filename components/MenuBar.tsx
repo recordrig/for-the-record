@@ -151,7 +151,9 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
           </li>
           <li>
             <Link href="/shop/buy-recordrig" passHref>
-              <StyledShopLink>Shop</StyledShopLink>
+              <StyledShopLink data-cy="menubar-shop-button">
+                Shop
+              </StyledShopLink>
             </Link>
           </li>
           <ShoppingBagMenuItem>
@@ -185,7 +187,11 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </p>
             <ProductList products={products} />
             <StyledButtonWrapper>
-              <Button href="/shop/shopping-bag" onClick={() => toggleDrawer()}>
+              <Button
+                data-cy="menubar-shop-button"
+                href="/shop/shopping-bag"
+                onClick={() => toggleDrawer()}
+              >
                 Check Out
                 <span
                   style={{

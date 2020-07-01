@@ -5,7 +5,7 @@
 import products from "../../data/products";
 import { ShoppingBagProduct } from "../../store/shoppingBag";
 
-describe("Shopping Bag", () => {
+describe("Shopping Bag Page", () => {
   // Labels aren't EXACT device sizes, but approximations.
   const sizes = [
     { width: 320, height: 480, label: "iPhone 5" },
@@ -49,7 +49,7 @@ describe("Shopping Bag", () => {
     }
   ];
 
-  context(`Shopping Bag - empty bag`, () => {
+  context(`Empty bag`, () => {
     it("Shows a link to the Shop if loaded while empty", () => {
       cy.visit("/shop/shopping-bag");
       cy.get(`${toShop}`).should("be.visible");
@@ -57,7 +57,7 @@ describe("Shopping Bag", () => {
   });
 
   sizes.forEach(({ width, height, label }) => {
-    context(`Shopping Bag - valid bag (${label})`, () => {
+    context(`Valid bag (${label})`, () => {
       beforeEach(() => {
         localStorage.setItem(
           "shoppingBag",
@@ -102,7 +102,7 @@ describe("Shopping Bag", () => {
       });
     });
 
-    context(`Shopping Bag - invalid bag (${label})`, () => {
+    context(`Invalid bag (${label})`, () => {
       beforeEach(() => {
         localStorage.setItem(
           "shoppingBag",

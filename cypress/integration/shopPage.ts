@@ -1,4 +1,4 @@
-describe("Shop", () => {
+describe("Shop Page", () => {
   // Labels aren't EXACT device sizes, but approximations.
   const sizes = [
     { width: 320, height: 480, label: "iPhone 5" },
@@ -50,7 +50,7 @@ describe("Shop", () => {
   });
 
   sizes.forEach(({ width, height, label }) => {
-    context(`Buy RecordRig - select color (${label})`, () => {
+    context(`Select color (${label})`, () => {
       beforeEach(() => {
         cy.viewport(width, height);
         cy.visit("/shop/buy-recordrig");
@@ -78,50 +78,44 @@ describe("Shop", () => {
       });
     });
 
-    context(
-      `Buy RecordRig - add Stealth Black to Shopping Bag (${label})`,
-      () => {
-        beforeEach(() => {
-          cy.viewport(width, height);
-          cy.visit("/shop/buy-recordrig?color=stealth-black");
-        });
+    context(`Add Stealth Black to Shopping Bag (${label})`, () => {
+      beforeEach(() => {
+        cy.viewport(width, height);
+        cy.visit("/shop/buy-recordrig?color=stealth-black");
+      });
 
-        it(`Displays RecordRig - Stealth Black content (${label})`, () => {
-          cy.get(`${blackDeviceContent}`).should("be.visible");
-          cy.get(`${blackAddToBag}`).should("be.visible");
-        });
+      it(`Displays Stealth Black content (${label})`, () => {
+        cy.get(`${blackDeviceContent}`).should("be.visible");
+        cy.get(`${blackAddToBag}`).should("be.visible");
+      });
 
-        it(`Can add RecordRig - Stealth Black to Shopping Bag and shows next steps (${label})`, () => {
-          addToBagTest();
-        });
+      it(`Can add Stealth Black to Shopping Bag and shows next steps (${label})`, () => {
+        addToBagTest();
+      });
 
-        it(`Can add RecordRig - Stealth Black to Shopping Bag, return and re-add (${label})`, () => {
-          addAndReturnTest();
-        });
-      }
-    );
+      it(`Can add Stealth Black to Shopping Bag, return and re-add (${label})`, () => {
+        addAndReturnTest();
+      });
+    });
 
-    context(
-      `Buy RecordRig - add Pristine White to Shopping Bag (${label})`,
-      () => {
-        beforeEach(() => {
-          cy.viewport(width, height);
-          cy.visit("/shop/buy-recordrig?color=pristine-white");
-        });
+    context(`Add Pristine White to Shopping Bag (${label})`, () => {
+      beforeEach(() => {
+        cy.viewport(width, height);
+        cy.visit("/shop/buy-recordrig?color=pristine-white");
+      });
 
-        it(`Displays RecordRig - Pristine White content (${label})`, () => {
-          cy.get(`${whiteDeviceContent}`).should("be.visible");
-          cy.get(`${whiteAddToBag}`).should("be.visible");
-        });
+      it(`Displays Pristine White content (${label})`, () => {
+        cy.get(`${whiteDeviceContent}`).should("be.visible");
+        cy.get(`${whiteAddToBag}`).should("be.visible");
+      });
 
-        it(`Can add RecordRig - Pristine White to Shopping Bag and shows next steps (${label})`, () => {
-          addToBagTest();
-        });
+      it(`Can add Pristine White to Shopping Bag and shows next steps (${label})`, () => {
+        addToBagTest();
+      });
 
-        it(`Can add RecordRig - Pristine White to Shopping Bag, return and re-add (${label})`, () => {
-          addAndReturnTest();
-        });
-      }
-    );
+      it(`Can add Pristine White to Shopping Bag, return and re-add (${label})`, () => {
+        addAndReturnTest();
+      });
+    });
   });
 });

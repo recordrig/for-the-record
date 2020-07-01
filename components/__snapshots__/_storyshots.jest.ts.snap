@@ -2656,6 +2656,7 @@ Array [
       <li>
         <a
           className="c2"
+          data-cy="menubar-shop-button"
           href="/shop/buy-recordrig"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -3165,6 +3166,7 @@ Array [
       <li>
         <a
           className="c2"
+          data-cy="menubar-shop-button"
           href="/shop/buy-recordrig"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -6938,6 +6940,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
         className="c8"
       >
         <button
+          data-cy="switch-to-black"
           disabled={true}
           onClick={[Function]}
           type="button"
@@ -6947,6 +6950,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
           </span>
         </button>
         <button
+          data-cy="switch-to-white"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -8698,6 +8702,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
         className="c8"
       >
         <button
+          data-cy="switch-to-black"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -8707,6 +8712,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
           </span>
         </button>
         <button
+          data-cy="switch-to-white"
           disabled={true}
           onClick={[Function]}
           type="button"
