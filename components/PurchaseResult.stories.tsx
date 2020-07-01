@@ -13,12 +13,12 @@ const address = {
 
 const products = [
   {
-    description: "RecordRig - Stealth Black",
+    name: "RecordRig - Stealth Black",
     quantity: 1,
     price: 300000
   },
   {
-    description: "RecordRig - Pristine White",
+    name: "RecordRig - Pristine White",
     quantity: 1,
     price: 300000
   }

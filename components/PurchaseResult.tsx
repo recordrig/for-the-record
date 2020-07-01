@@ -88,14 +88,6 @@ const StyledProduct = styled.div`
 `;
 
 const StyledPurchaseResult = styled.div`
-  > div {
-    min-height: 70vh;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 80px;
-    padding-bottom: 256px;
-  }
-
   h2 {
     font-size: 28px;
     font-weight: normal;
@@ -130,7 +122,7 @@ interface AddressContent {
 interface PurchaseResultPageProps {
   readonly billingContent: AddressContent;
   readonly products: {
-    description: string;
+    name: string;
     quantity: number;
     price: number;
   }[];
@@ -193,19 +185,19 @@ const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
       </StyledCustomerInfo>
       <h2>Order Summary</h2>
       {products.map(product => (
-        <StyledProduct key={product.description}>
+        <StyledProduct key={product.name}>
           <div>
             <img
               alt=""
               src={
-                product.description.endsWith("black")
+                product.name.endsWith("lack")
                   ? "/recordrig-black.png"
                   : "/recordrig.png"
               }
             />
           </div>
           <div>
-            <p>{product.description}</p>
+            <p>{product.name}</p>
             <p>Qty: {product.quantity}</p>
             <p>{formatCurrency(product.price)}</p>
           </div>

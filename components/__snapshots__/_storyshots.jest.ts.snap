@@ -5758,14 +5758,6 @@ exports[`Storyshots PurchaseResult default 1`] = `
   text-align: right;
 }
 
-.c0 > div {
-  min-height: 70vh;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 80px;
-  padding-bottom: 256px;
-}
-
 .c0 h2 {
   font-size: 28px;
   font-weight: normal;
@@ -5922,7 +5914,7 @@ exports[`Storyshots PurchaseResult default 1`] = `
       <div>
         <img
           alt=""
-          src="/recordrig.png"
+          src="/recordrig-black.png"
         />
       </div>
       <div>
