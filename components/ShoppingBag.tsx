@@ -286,6 +286,7 @@ interface Product {
 }
 
 interface ShoppingBagProps {
+  readonly countrySupported?: boolean;
   readonly handleCheckout: (
     products: readonly { readonly id: string; readonly quantity: number }[]
   ) => any;
@@ -312,6 +313,7 @@ interface ShoppingBagProps {
  * likewise, be managed by the parent.
  */
 const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
+  countrySupported = true,
   handleCheckout,
   updateProductQuantity,
   products,
@@ -383,31 +385,6 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
       setIsBulkOrder(false);
     }
   }, [products]);
-
-  // We only deliver to EU countries. We'd like to show a notification to folks not
-  // located in EU countries so that they needn't be unpleasantly suprised during
-  // checkout. It's something of a nice to have, though, so false positives/negatives
-  // aren't a disaster.
-  const [countrySupported, setCountrySupported] = useState(true);
-
-  useEffect(() => {
-    // In development or test environments we don't want to drag external API's into
-    // the picture. Offline development should be possible, so we'll mock instead.
-    // Note that in Vercel's online preview environment, env is also set to "production"
-    // and as such, the fetch will be performed.
-    if (process.env.NODE_ENV !== "production") {
-      setCountrySupported(false); // We'll show the notification always in dev/test.
-    } else {
-      fetch("https://json.geoiplookup.io")
-        .then(res => res.json())
-        .then(res => {
-          const country = Object.keys(countries).find(
-            key => key === res.country_code
-          );
-          setCountrySupported(country !== undefined);
-        });
-    }
-  }, []);
 
   const [email, setEmail] = useState("");
 

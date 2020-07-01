@@ -59,6 +59,48 @@ const ShoppingBagDefaultContainer = () => {
   );
 };
 
+const ShoppingBagCountryNotSupportedContainer = () => {
+  const [products, setProducts] = useState([
+    {
+      id: "PRODUCT1",
+      name: "Product 1",
+      price: 200000,
+      quantity: 1
+    },
+    {
+      id: "PRODUCT2",
+      name: "Product 2",
+      price: 100000,
+      quantity: 2
+    }
+  ]);
+
+  const updateProductQuantity = (productId, desiredQuantity) => {
+    setProducts(
+      products.map(product =>
+        product.id === productId
+          ? { ...product, quantity: desiredQuantity }
+          : product
+      )
+    );
+  };
+
+  const removeProduct = productId => {
+    setProducts(products.filter(product => product.id !== productId));
+  };
+
+  return (
+    <ShoppingBag
+      countrySupported={false}
+      handleCheckout={handleCheckout}
+      products={products}
+      productsData={productsData}
+      updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
+    />
+  );
+};
+
 const ShoppingBagInvalidContainer = () => {
   const [products, setProducts] = useState([
     {
@@ -102,6 +144,9 @@ const ShoppingBagInvalidContainer = () => {
 
 storiesOf("ShoppingBag", module)
   .add("default", () => <ShoppingBagDefaultContainer />)
+  .add("country not supported", () => (
+    <ShoppingBagCountryNotSupportedContainer />
+  ))
   .add("empty", () => (
     <ShoppingBag
       handleCheckout={handleCheckout}

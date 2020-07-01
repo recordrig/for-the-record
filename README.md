@@ -12,6 +12,14 @@ If it's the first time you're running the application, first install dependencie
 npm install
 ```
 
+The application integrates with various other services. Put your API **test** keys in a file named `.env.local`:
+
+```
+# Stripe keys.
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
+STRIPE_SECRET_KEY=sk_12345
+```
+
 Now you can run the development server:
 
 ```
@@ -107,46 +115,3 @@ A push to any branch will deploy a preview to a unique URL through Vercel integr
 The creation of a pull request targeting `master` will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via GitHub Actions which runs our automated tests.
 
 Any change to the `master` branch will auto-deploy to http://recordrig.com.
-
-## External API's
-
-We integrate with various external services, such as Stripe. While not running in production, we tend not to use any external API's. This is so that we can develop on the go, and so that our integration tests (with Cypress) do not rely on external resources that we cannot control, making them less flaky.
-
-To add offline support, just add an if-else clause like so:
-
-```
-if (process.env.NODE_ENV !== "production") {
-  // Offline mode stuff
-} else {
-  // Fetch from API things
-  // Utilise env vars
-  // Etc
-}
-```
-
-Note that `process.env.NODE_ENV` will be set to `production` in all these circumstances:
-
-- When the app is running online in production on recordrig.com (auto-deployed from `master`)
-- When the app is running online in preview mode on a unique URL (auto-deployed after you pushed any branch)
-- When the app is running **locally** via `npm run build` and then `npm start` (that's an optimised production build)
-
-While actively developing features which rely on external API's, such as Stripe's, it might be useful to opt-out of this "offline mode" and connect directly to the Stripe testing API's so that you can get feedback to your code changes quickly, as you are developing.
-
-First, add the required API keys to a file in the root of the project named `.env.local`. In the case of Stripe, the file would look something like:
-
-```
-# Stripe keys
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
-STRIPE_SECRET_KEY=sk_12345
-```
-
-You'd access these variables like so:
-
-```
-console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY); // "pk_12345"
-console.log(process.env.STRIPE_SECRET_KEY); // "sk_12345"
-```
-
-Then, either omit the `process.env.NODE_ENV !== "production"` section locally in your code where you'd like to connect to the API, or, run the app with `NODE_ENV` set to `production` by first creating an optimised build using `npm run build`, and then launching this build by running `npm start`.
-
-NB: The `.env.local` file should never be committed as its contents are unique to your environment _and_ might contain environment variables that should never be made public (like Stripe's secret key), even if these are only used to connect to testing API's. Environment variables used online in production and in previews are managed elsewhere.

@@ -11098,6 +11098,947 @@ exports[`Storyshots Section subsections 1`] = `
 </div>
 `;
 
+exports[`Storyshots ShoppingBag country not supported 1`] = `
+.c5 {
+  border-radius: 4px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.4;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  -webkit-transition: 0.2s ease 0s;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  background-color: #0f62fe;
+  border-bottom: 2px solid #002d9c;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.c4 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c4 svg {
+  fill: #0043ce;
+  height: inherit;
+  width: inherit;
+}
+
+.c6 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c6 svg {
+  fill: #ffffff;
+  height: inherit;
+  width: inherit;
+}
+
+.c2 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c2 svg {
+  fill: #f1c21b;
+  height: inherit;
+  width: inherit;
+}
+
+.c2 svg [data-icon-path="inner-path"] {
+  fill: #000000;
+  opacity: 1;
+}
+
+.c8 {
+  box-sizing: border-box;
+  padding-bottom: 42px;
+  padding-top: 42px;
+  width: 100%;
+}
+
+.c8 > p {
+  font-weight: bold;
+}
+
+.c7 {
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 8px 8px 32px 0 rgba(0,0,0,0);
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out,border-radius 0.5s ease-in-out,box-shadow 0.5s ease-in-out;
+}
+
+.c7:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 1;
+}
+
+.c7 >:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c1 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 46px;
+  padding-right: 32px;
+  position: relative;
+  background-color: #fdf6dd;
+  border-left-color: #f1c21b;
+  border-top-color: #f9d965;
+  border-right-color: #f9d965;
+  border-bottom-color: #f9d965;
+}
+
+.c3 {
+  border-style: solid;
+  border-left-width: 3px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-left: 46px;
+  padding-right: 32px;
+  position: relative;
+  background-color: #edf5ff;
+  border-left-color: #0043ce;
+  border-top-color: #a2c0f8;
+  border-right-color: #a2c0f8;
+  border-bottom-color: #a2c0f8;
+}
+
+.c9 h1,
+.c9 h2,
+.c9 h3,
+.c9 h4,
+.c9 h5,
+.c9 h6 {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.c11 {
+  border-bottom: 1px solid #dde1e6;
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  -webkit-animation: 1.2s;
+  animation: 1.2s;
+}
+
+.c11 > div {
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 64px;
+  padding-top: 16px;
+}
+
+.c11 p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.c11 p:nth-child(2) {
+  color: #4d5358;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.c11 p:nth-child(2) > span {
+  color: #24a148;
+  font-weight: bold;
+}
+
+.c11 p:nth-child(4) {
+  text-align: right;
+}
+
+.c11 select {
+  background-color: transparent;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAAH/g49WAAAABGdBTUEAALGPC/xhBQAAAbhJREFUSA29ldFVxCAQRYetQdvQIuxk3Rb8di3CP7UTi9A2tIbFvJCXABkmIcHlnF0IM3PnMQQiUmxH70dbPBY8JBOjGwcnf+Yw7WcGTNgsSe1agAnQAlJR9pPr8x/kXt7ct+r66H/Ey02wQcvJ380c4TTTmTtnTi6hwBkyvHz26T5cap85z9KJhAiSSgtKSIUHSHXyGoCo8UWee1erUhorrl63pHRNNeAMxFwpkLMWuABiqA6kNQY7+R1fDHO3GGz1ACs7aoU0tCE76rKn4VgMKwiHCjDU6N3dVnMBu8hXH3eQl7AprE8tNIN1J/087XItVIGFhcZrXAstwOZAzCxBDZgOtKALsDJQg66A2cAcyvu4ezWwmzBrbdplzYo51hTjBRhc1jVAcaKq2tE/qV+WKkgDZ+wVtAzN9Svh7Y9JnD4nD8XvJSNb9xDGjyPZ49UQ38s0XkuoJgwahvcpfQmvKXRB2FQnjuL+P4WuFEY5aQU5y76l0EphlGALpNceoRuFMfU6gfSuEbpTGFPWCWSUJRQ++XWBuY23/DaBSIimCQ2W6X+jMAL2CSRFE7pTGNFtewjFr2H7Ay/aMznqAvP0AAAAAElFTkSuQmCC");
+  background-position: right 4px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  width: 50px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+}
+
+.c11 button {
+  background: none;
+  border: none;
+  clear: both;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+  margin-top: 4px;
+  outline: none;
+  padding: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
+  border-top: 1px solid #dde1e6;
+  width: 100%;
+}
+
+.c10 > div {
+  bottom: 28px;
+  position: relative;
+  text-align: center;
+}
+
+.c10 > div > span {
+  background-color: #ffffff;
+  color: #697077;
+  display: inline-block;
+  font-size: 13px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.c12 p {
+  color: #4d5358;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.c12 p > span {
+  display: block;
+  float: left;
+}
+
+.c12 p > span:nth-child(2) {
+  float: right;
+}
+
+.c12 p:nth-child(1) {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.c12 p:nth-child(2) {
+  color: #4d5358;
+  font-size: 14px !important;
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-align: right;
+}
+
+.c0 > div {
+  min-height: 70vh;
+  padding-top: 80px;
+  padding-bottom: 256px;
+}
+
+@media (max-width:1023px) {
+  .c5 {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:549px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width:550px) {
+  .c5 {
+    font-size: 21px;
+    line-height: 64px;
+  }
+}
+
+@media (max-width:474px) {
+  .c8 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) and (max-width:767px) {
+  .c8 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:399px) {
+  .c9 h1,
+  .c9 h2,
+  .c9 h3,
+  .c9 h4,
+  .c9 h5,
+  .c9 h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+@media (min-width:400px) {
+  .c9 h1,
+  .c9 h2,
+  .c9 h3,
+  .c9 h4,
+  .c9 h5,
+  .c9 h6 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width:640px) {
+  .c11 p,
+  .c11 select {
+    font-size: 20px;
+  }
+
+  .c11 select {
+    top: 24px;
+  }
+
+  .c11 img {
+    display: block;
+    margin: 16px auto;
+    width: 200px;
+  }
+}
+
+@media (min-width:641px) {
+  .c11 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c11 > div {
+    padding-left: 32px;
+  }
+
+  .c11 p,
+  .c11 select {
+    font-size: 24px;
+  }
+
+  .c11 select {
+    top: 30px;
+  }
+
+  .c11 img {
+    height: 200px;
+  }
+
+  .c11 p:nth-child(2) {
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width:450px) and (max-width:640px) {
+  .c12 {
+    padding-left: 33%;
+  }
+}
+
+@media (max-width:640px) {
+  .c12 p:last-of-type {
+    font-size: 20px;
+  }
+}
+
+@media (min-width:641px) {
+  .c12 {
+    padding-left: 50%;
+  }
+
+  .c12 p:last-of-type {
+    font-size: 24px;
+  }
+}
+
+@media (max-width:767px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 > div > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <div>
+      <form
+        action="/submit"
+        autoComplete="no"
+        data-cy="form"
+        method="post"
+        style={
+          Object {
+            "left": "100vw",
+            "position": "absolute",
+          }
+        }
+        tabIndex={-1}
+      >
+        <label
+          htmlFor="email"
+        >
+          Email
+          <input
+            data-cy="email"
+            id="email"
+            name="email"
+            onChange={[Function]}
+            tabIndex={-1}
+            type="text"
+            value=""
+          />
+        </label>
+        <input
+          tabIndex={-1}
+          type="submit"
+          value="Submit"
+        />
+      </form>
+      <div
+        style={
+          Object {
+            "marginBottom": "16px",
+          }
+        }
+      >
+        <div
+          className="c1"
+          type="warning"
+        >
+          <p
+            style={
+              Object {
+                "fontSize": "14px",
+              }
+            }
+          >
+            <strong>
+              We currently only ship to countries within the EU.
+            </strong>
+             
+            If you'd like to get notified when we expand our shipping area,
+             
+            <a
+              href="/contact"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "color": "#0f62fe",
+                }
+              }
+            >
+              let us know
+            </a>
+            !
+          </p>
+          <div
+            style={
+              Object {
+                "height": "20px",
+                "left": "13px",
+                "position": "absolute",
+                "top": "15px",
+                "width": "20px",
+              }
+            }
+          >
+            <span
+              className="c2"
+              color="#f1c21b"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14C30,8.3,23.7,2,16,2z M14.9,8h2.2v11h-2.2V8z M16,25	c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22c0.8,0,1.5,0.7,1.5,1.5S16.8,25,16,25z"
+                />
+                <path
+                  d="M17.5,23.5c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5S15.2,22,16,22	C16.8,22,17.5,22.7,17.5,23.5z M17.1,8h-2.2v11h2.2V8z"
+                  data-icon-path="inner-path"
+                  fill="blue"
+                  opacity="0"
+                />
+                <title>
+                  Warning filled
+                </title>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "marginBottom": "16px",
+          }
+        }
+      >
+        <div
+          className="c3"
+          type="info"
+        >
+          <p
+            style={
+              Object {
+                "fontSize": "14px",
+              }
+            }
+          >
+            <strong>
+              For bulk orders, discounts might apply.
+            </strong>
+             
+            <a
+              href="/contact"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "color": "#0f62fe",
+                }
+              }
+            >
+              Contact us
+            </a>
+             
+            for a custom agreement.
+          </p>
+          <div
+            style={
+              Object {
+                "height": "20px",
+                "left": "13px",
+                "position": "absolute",
+                "top": "15px",
+                "width": "20px",
+              }
+            }
+          >
+            <span
+              className="c4"
+              color="#0043ce"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                />
+                <path
+                  d="M16,7a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,16,7Zm4,17.125h-8v-2.25h2.875v-6.75h-1.875v-2.25h4.125v9h2.875Z"
+                  data-icon-path="inner-path"
+                  fill="none"
+                />
+                <title>
+                  Information filled
+                </title>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <p
+        style={
+          Object {
+            "fontSize": "32px",
+            "fontWeight": "bold",
+            "marginTop": "48px",
+            "textAlign": "center",
+          }
+        }
+      >
+        Your bag total is
+         
+        <span
+          style={
+            Object {
+              "backgroundColor": "#ffb3b8",
+            }
+          }
+        >
+          €4.000,00
+        </span>
+        .
+      </p>
+      <p
+        style={
+          Object {
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+      >
+        Get free shipping on all EU orders.
+      </p>
+      <div
+        style={
+          Object {
+            "margin": "0 auto",
+            "maxWidth": "450px",
+          }
+        }
+      >
+        <button
+          className="c5"
+          data-cy="disabled-checkout-button"
+          onClick={[Function]}
+        >
+          Check Out
+          <span
+            style={
+              Object {
+                "display": "inline-block",
+                "height": "24px",
+                "marginLeft": "8px",
+                "position": "relative",
+                "top": "6px",
+                "width": "24px",
+              }
+            }
+          >
+            <span
+              className="c6"
+              color="#ffffff"
+            >
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                />
+                <title>
+                  Arrow right
+                </title>
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+      <div
+        style={
+          Object {
+            "marginTop": "64px",
+          }
+        }
+      >
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            <div
+              style={
+                Object {
+                  "marginBottom": "24px",
+                }
+              }
+            >
+              <div
+                className="c9"
+              >
+                <h3>
+                  Your Shopping Bag.
+                </h3>
+              </div>
+            </div>
+            <div
+              className="c10"
+            >
+              <ul>
+                <li
+                  className="c11"
+                  data-cy="product-PRODUCT1"
+                >
+                  <img
+                    alt=""
+                    src="/recordrig.png"
+                  />
+                  <div>
+                    <p>
+                      Product 1
+                    </p>
+                    <p>
+                      Estimated delivery: within 
+                      <span>
+                        14 days
+                      </span>
+                    </p>
+                    <select
+                      data-cy="quantity-PRODUCT1"
+                      id="quantity-PRODUCT1"
+                      onChange={[Function]}
+                    >
+                      <option
+                        selected={true}
+                        value={1}
+                      >
+                        1
+                      </option>
+                      <option
+                        selected={false}
+                        value={2}
+                      >
+                        2
+                      </option>
+                      <option
+                        selected={false}
+                        value={3}
+                      >
+                        3
+                      </option>
+                      <option
+                        selected={false}
+                        value={4}
+                      >
+                        4
+                      </option>
+                    </select>
+                    <p>
+                      €2.000,00
+                    </p>
+                    <button
+                      data-cy="remove-PRODUCT1"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+                <li
+                  className="c11"
+                  data-cy="product-PRODUCT2"
+                >
+                  <img
+                    alt=""
+                    src="/recordrig.png"
+                  />
+                  <div>
+                    <p>
+                      Product 2
+                    </p>
+                    <p>
+                      Estimated delivery: within 
+                      <span>
+                        14 days
+                      </span>
+                    </p>
+                    <select
+                      data-cy="quantity-PRODUCT2"
+                      id="quantity-PRODUCT2"
+                      onChange={[Function]}
+                    >
+                      <option
+                        selected={false}
+                        value={1}
+                      >
+                        1
+                      </option>
+                      <option
+                        selected={true}
+                        value={2}
+                      >
+                        2
+                      </option>
+                      <option
+                        selected={false}
+                        value={3}
+                      >
+                        3
+                      </option>
+                      <option
+                        selected={false}
+                        value={4}
+                      >
+                        4
+                      </option>
+                    </select>
+                    <p>
+                      €2.000,00
+                    </p>
+                    <button
+                      data-cy="remove-PRODUCT2"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="c12"
+            >
+              <p>
+                <span>
+                  Total:
+                </span>
+                 
+                <span
+                  style={
+                    Object {
+                      "backgroundColor": "#ffb3b8",
+                    }
+                  }
+                >
+                  €4.000,00
+                </span>
+              </p>
+              <p>
+                Includes VAT & shipping
+              </p>
+              <button
+                className="c5"
+                data-cy="disabled-checkout-button"
+                onClick={[Function]}
+              >
+                Check Out
+                <span
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "height": "24px",
+                      "marginLeft": "8px",
+                      "position": "relative",
+                      "top": "6px",
+                      "width": "24px",
+                    }
+                  }
+                >
+                  <span
+                    className="c6"
+                    color="#ffffff"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      height="32"
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width="32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="18,6 16.6,7.4 24.1,15 3,15 3,17 24.1,17 16.6,24.6 18,26 28,16"
+                      />
+                      <title>
+                        Arrow right
+                      </title>
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots ShoppingBag default 1`] = `
 .c3 {
   border-radius: 4px;
