@@ -16,7 +16,8 @@ describe("Checkout Flow", () => {
       cy.get("[data-cy=switch-to-white]").click();
       cy.get("[data-cy=add-to-bag-button]").click();
       cy.get("[data-cy=ready-to-order]").click();
-      cy.get("[data-cy=enabled-checkout-button]").click({ multiple: true });
+      cy.get("[data-cy=enabled-checkout-button]").should("be.visible");
+      // TODO: Figure out how to test stripe integration appropriately.
       // cy.get("#email").type("cypress@recordrig.com");
       // cy.get("#shippingName").type("Myname Something");
       // cy.get("#shippingAddressLine1").type("Somestreet 12");
