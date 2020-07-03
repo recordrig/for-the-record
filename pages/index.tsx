@@ -640,7 +640,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     frameBorder="0"
-                    src="https://www.youtube-nocookie.com/embed/9NIdIh3f69Q?rel=0"
+                    src="https://www.youtube.com/embed/9NIdIh3f69Q?rel=0"
                     style={{
                       height: "100%",
                       position: "absolute",
