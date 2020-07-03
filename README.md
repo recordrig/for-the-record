@@ -36,7 +36,7 @@ npm run dev
 
 We use TypeScript as much as possible and use ESLint to help us maintain a high standard of code quality and coherent coding style.
 
-Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however: when considering a change to the ESLint configuration, ask yourself if you are considering this change out of laziness ("I just want this to compile!!1") or whether you genuinely do not agree with the rule. In any case, include comments explaning the rationale of the change so that it can be understood and/or discussed.
+Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however, make sure to include comments explaning the rationale of the change so that it can be understood and/or discussed.
 
 It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or support built-in).
 
@@ -60,7 +60,11 @@ The `./pages/_app.js` file is our application's container, and takes care of any
 
 Any file or folder under `./pages` will be rendered on its own route, with `./pages/_app.js` and `./pages/_document.js` as notable exceptions.
 
-Server-side functionality and other automations may be put over at `./pages/api`. Only write server-side code when it's really required, as it can be less performant (pre-building the complete site with Static Site Generation will result in a much faster client experience than performing Server Side Rendering on page requests) and costs more resources than just offloading things to the client. Server-side should be utilised for things the client simply cannot do or be "trusted" with, e.g. for fetches to API's utilising secret API keys that should not be exposed to the client.
+Server-side functionality and other automations may be put over at `./pages/api`.
+
+Only write server-side code when it's really required, as it can be less performant (pre-building the complete site with Static Site Generation will result in a much faster client experience than performing Server Side Rendering on page requests) and costs more resources than just offloading things to the client.
+
+Server-side should be utilised for things the client simply cannot do or be "trusted" with, e.g. for fetches to API's utilising secret API keys that should not be exposed to the client.
 
 ## Components
 
@@ -72,7 +76,9 @@ npm run storybook
 
 As a rule of thumb, keep your components "dumb", meaning they do not depend on external state (e.g. Redux) or globals (e.g. Stripe). This makes developing and testing them in isolation easier as it keeps them self-contained, and prevents us from having to descend into mocking/stubbing hell.
 
-An additional benefit of keeping components self-contained is that these components will depend more on predictable props as a natural consequence, the Storybook stories of which can be seperately defined and automatically snapshotted with Jest, preventing much of the need of manual unit test writing. When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test, and therefore writing a seperate **unit** test could be considered a testing duplicate and waste of effort (especially in early development stages, wherein we find ourselves at the time of writing).
+An additional benefit of keeping components self-contained is that these components will depend more on predictable props as a natural consequence, the Storybook stories of which can be seperately defined and automatically snapshotted with Jest, preventing much of the need of manual unit test writing.
+
+When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test, and therefore writing a seperate **unit** test could be considered a testing duplicate and waste of effort (especially in early development stages, wherein we find ourselves at the time of writing).
 
 ## Store
 
