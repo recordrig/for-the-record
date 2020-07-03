@@ -277,9 +277,9 @@ exports[`Storyshots ConsentWrapper consent given 1`] = `
   <p>
     I'm the 
     <b>
-      content
+      placeholder
     </b>
-    . I'm visible now because consent has been explicitely given for me to load.
+    . I won't show now.
   </p>
 </div>
 `;

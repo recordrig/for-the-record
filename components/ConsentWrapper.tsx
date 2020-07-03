@@ -1,4 +1,9 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, {
+  FunctionComponent,
+  ReactNode,
+  useState,
+  useEffect
+} from "react";
 import styled from "styled-components";
 
 const StyledConsentWrapper = styled.div`
@@ -23,9 +28,22 @@ const ConsentWrapper: FunctionComponent<ConsentWrapperProps> = ({
   consentGiven = false,
   placeholder
 }: ConsentWrapperProps) => {
+  const [consentGivenState, setConsentGivenState] = useState(false);
+
+  // Needed to sync post-mount. E.g. when loading state from localStorage and passing consent
+  // as a prop, if you reload the page, React might not detect the prop change. Adding this
+  // method guarantees that we sync post-mount and use the correct, up-to-date value.
+  useEffect(() => {
+    if (consentGiven === true) {
+      setConsentGivenState(true);
+    } else {
+      setConsentGivenState(false);
+    }
+  }, [consentGiven]);
+
   return (
     <StyledConsentWrapper>
-      {consentGiven ? content : placeholder}
+      {consentGivenState ? content : placeholder}
     </StyledConsentWrapper>
   );
 };
