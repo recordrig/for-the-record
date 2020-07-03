@@ -1,16 +1,6 @@
 import React, { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
 
-const StyledContent = styled.div`
-  height: inherit;
-  width: inherit;
-`;
-
-const StyledPlaceholder = styled.div`
-  height: inherit;
-  width: inherit;
-`;
-
 const StyledConsentWrapper = styled.div`
   height: inherit;
   width: inherit;
@@ -35,11 +25,7 @@ const ConsentWrapper: FunctionComponent<ConsentWrapperProps> = ({
 }: ConsentWrapperProps) => {
   return (
     <StyledConsentWrapper>
-      {consentGiven ? (
-        <StyledContent>{content}</StyledContent>
-      ) : (
-        <StyledPlaceholder>{placeholder}</StyledPlaceholder>
-      )}
+      {consentGiven ? content : placeholder}
     </StyledConsentWrapper>
   );
 };

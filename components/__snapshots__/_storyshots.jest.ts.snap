@@ -266,11 +266,6 @@ exports[`Storyshots Button href 1`] = `
 `;
 
 exports[`Storyshots ConsentWrapper consent given 1`] = `
-.c1 {
-  height: inherit;
-  width: inherit;
-}
-
 .c0 {
   height: inherit;
   width: inherit;
@@ -279,26 +274,17 @@ exports[`Storyshots ConsentWrapper consent given 1`] = `
 <div
   className="c0"
 >
-  <div
-    className="c1"
-  >
-    <p>
-      I'm the 
-      <b>
-        content
-      </b>
-      . I'm visible now because consent has been explicitely given for me to load.
-    </p>
-  </div>
+  <p>
+    I'm the 
+    <b>
+      content
+    </b>
+    . I'm visible now because consent has been explicitely given for me to load.
+  </p>
 </div>
 `;
 
 exports[`Storyshots ConsentWrapper default 1`] = `
-.c1 {
-  height: inherit;
-  width: inherit;
-}
-
 .c0 {
   height: inherit;
   width: inherit;
@@ -307,16 +293,75 @@ exports[`Storyshots ConsentWrapper default 1`] = `
 <div
   className="c0"
 >
+  <p>
+    I'm the 
+    <b>
+      placeholder
+    </b>
+    . Content won't show because consent is false by default.
+  </p>
+</div>
+`;
+
+exports[`Storyshots ConsentWrapper embed example 1`] = `
+.c0 {
+  height: inherit;
+  width: inherit;
+}
+
+<div>
   <div
-    className="c1"
+    className="c0"
   >
-    <p>
-      I'm the 
-      <b>
-        placeholder
-      </b>
-      . Content won't show because consent is false by default.
-    </p>
+    <div
+      style={
+        Object {
+          "maxWidth": "720px",
+          "overflow": "hidden",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "backgroundColor": "rgba(255,255,255,0.8)",
+            "height": "100%",
+            "position": "absolute",
+            "textAlign": "center",
+            "zIndex": 1,
+          }
+        }
+      >
+        <p>
+          Google/YouTube places cookies when you load one of their video'. Please agree with Google's
+           
+          <a
+            href="https://policies.google.com/privacy/google-partners"
+          >
+            Privacy Policy & Terms of Service
+          </a>
+           
+          if you'd like to load this embedded YouTube video.
+        </p>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          I agree
+        </button>
+      </div>
+      <img
+        alt=""
+        src="/god_of_war_4k_hdr_thumb_lowres.jpg?v=1"
+        style={
+          Object {
+            "filter": "blur(16px)",
+            "width": "100%",
+          }
+        }
+      />
+    </div>
   </div>
 </div>
 `;
