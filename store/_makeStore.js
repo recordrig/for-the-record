@@ -11,6 +11,9 @@ import rootReducer from "./_rootReducer";
  * The app's state when the store has just been instantiated. It presets some key names.
  */
 const initialAppStatePreset = {
+  cookieConsent: {
+    YOUTUBE_EMBEDS: false
+  },
   shoppingBag: []
 };
 
@@ -34,40 +37,40 @@ const makeInitialStore = (initialAppState = initialAppStatePreset) =>
  * and will fetch some parts of the startup state from localStorage (e.g. the shopping bag).
  */
 const makeClientStore = (initialAppState = initialAppStatePreset) => {
-  // If there's a previously saved Shopping Bag state, we'll load it.
-  const loadPersistedShoppingBagState = () => {
+  // If there's a persisted state, we'll load it.
+  const loadPersistedState = () => {
     // Try-catch, because privacy settings might prevent us from reading localStorage contents.
     try {
-      const serializedShoppingBagState = localStorage.getItem("shoppingBag");
+      const serializedPersistedState = localStorage.getItem("persistedState");
 
-      if (serializedShoppingBagState === null) {
+      if (serializedPersistedState === null) {
         return undefined;
       }
-      return JSON.parse(serializedShoppingBagState);
+      return JSON.parse(serializedPersistedState);
     } catch {
       return undefined;
     }
   };
 
-  // Save Shopping Bag state to localStorage, so that user's shopping bag is recovered upon revisiting.
-  const persistShoppingBagState = shoppingBagState => {
+  // Save some state to localStorage, so that it might be recovered upon revisiting.
+  const persistState = stateToPersist => {
     // Try-catch, because privacy settings might prevent us from reading localStorage contents.
     try {
-      const serializedShoppingBagState = JSON.stringify(shoppingBagState);
-      localStorage.setItem("shoppingBag", serializedShoppingBagState);
+      const serializedState = JSON.stringify(stateToPersist);
+      localStorage.setItem("persistedState", serializedState);
     } catch (err) {
       console.error(
-        `Persisting Shopping Bag state to localStorage failed. Error message: ${err}`
+        `Persisting state to localStorage failed. Error message: ${err}`
       );
     }
   };
 
-  // Either is a valid Shopping Bag state, or is undefined if there was no (valid) state.
-  const shoppingBag = loadPersistedShoppingBagState();
+  // Either is a valid state, or is undefined if there was no (valid) state.
+  const persistedState = loadPersistedState();
 
   // Either is the app state with data recovered from localStorage, or the barebones predefined app state.
-  const initialClientState = shoppingBag
-    ? { ...initialAppState, ...shoppingBag }
+  const initialClientState = persistedState
+    ? { ...initialAppState, ...persistedState }
     : initialAppState;
 
   // createStateSyncMiddleware is needed for browser tab syncing.
@@ -82,12 +85,13 @@ const makeClientStore = (initialAppState = initialAppStatePreset) => {
   // Needed for browser tab syncing.
   initStateWithPrevTab(store);
 
-  // Subscribe to changes so that we can persist the Shopping Bag to localStorage whenever it updates.
+  // Subscribe to changes so that we can persist state whenever it updates.
   store.subscribe(
     // JSON.stringify is an expensive operation and the Store might update many times in a row, so we
     // throttle it to prevent performance issues and needless repetitions.
     throttle(() => {
-      persistShoppingBagState({
+      persistState({
+        cookieConsent: store.getState().cookieConsent,
         shoppingBag: store.getState().shoppingBag
       });
     }, 1000)

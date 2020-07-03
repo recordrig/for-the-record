@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { withReduxStateSync } from "redux-state-sync";
+import cookieConsent from "./cookieConsent";
 import shoppingBag from "./shoppingBag";
 
 /**
@@ -9,6 +10,7 @@ import shoppingBag from "./shoppingBag";
  * Each "sub"-reducer only impacts its own section of the state.
  */
 const rootReducer = combineReducers({
+  cookieConsent,
   shoppingBag
 });
 

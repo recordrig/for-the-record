@@ -60,7 +60,7 @@ describe("Shopping Bag Page", () => {
     context(`Valid bag (${label})`, () => {
       beforeEach(() => {
         localStorage.setItem(
-          "shoppingBag",
+          "persistedState",
           JSON.stringify({
             shoppingBag: validShoppingBag
           })
@@ -105,7 +105,7 @@ describe("Shopping Bag Page", () => {
     context(`Invalid bag (${label})`, () => {
       beforeEach(() => {
         localStorage.setItem(
-          "shoppingBag",
+          "persistedState",
           JSON.stringify({
             shoppingBag: invalidShoppingBag
           })
