@@ -265,6 +265,62 @@ exports[`Storyshots Button href 1`] = `
 </a>
 `;
 
+exports[`Storyshots ConsentWrapper consent given 1`] = `
+.c1 {
+  height: inherit;
+  width: inherit;
+}
+
+.c0 {
+  height: inherit;
+  width: inherit;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p>
+      I'm the 
+      <b>
+        content
+      </b>
+      . I'm visible now because consent has been explicitely given for me to load.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots ConsentWrapper default 1`] = `
+.c1 {
+  height: inherit;
+  width: inherit;
+}
+
+.c0 {
+  height: inherit;
+  width: inherit;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <p>
+      I'm the 
+      <b>
+        placeholder
+      </b>
+      . Content won't show because consent is false by default.
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Drawer default 1`] = `
 Array [
   @media (max-width:575px) {
