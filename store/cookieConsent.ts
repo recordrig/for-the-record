@@ -9,7 +9,8 @@ type Consent = Record<ConsentCategories, boolean>;
 // -----------------------------------------------------------/
 
 enum ActionTypes {
-  ADD_CONSENT = "cookieConsent/ADD_CONSENT"
+  ADD_CONSENT = "cookieConsent/ADD_CONSENT",
+  REMOVE_CONSENT = "cookieConsent/REMOVE_CONSENT"
 }
 
 // Action creators.
@@ -33,6 +34,24 @@ export const addConsentAction = (
   };
 };
 
+interface RemoveConsentAction {
+  readonly type: ActionTypes.REMOVE_CONSENT;
+  readonly payload: {
+    readonly consentCategory: ConsentCategories;
+  };
+}
+
+export const removeConsentAction = (
+  consentCategory: ConsentCategories
+): RemoveConsentAction => {
+  return {
+    type: ActionTypes.REMOVE_CONSENT,
+    payload: {
+      consentCategory
+    }
+  };
+};
+
 // Reducer helper functions.
 // -----------------------------------------------------------/
 
@@ -46,10 +65,20 @@ const addConsent = (
   };
 };
 
+const removeConsent = (
+  prevConsentState: Consent,
+  consentCategory: ConsentCategories
+): Consent => {
+  return {
+    ...prevConsentState,
+    [consentCategory]: false
+  };
+};
+
 // Reducer.
 // -----------------------------------------------------------/
 
-type Action = AddConsentAction;
+type Action = AddConsentAction | RemoveConsentAction;
 
 const initialState: Consent = {
   YOUTUBE_EMBEDS: false
@@ -59,6 +88,8 @@ const cookieConsent = (state = initialState, action: Action): Consent => {
   switch (action.type) {
     case ActionTypes.ADD_CONSENT:
       return addConsent(state, action.payload.consentCategory);
+    case ActionTypes.REMOVE_CONSENT:
+      return removeConsent(state, action.payload.consentCategory);
     default:
       return state;
   }
