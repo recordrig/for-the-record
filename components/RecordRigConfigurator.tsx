@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 import products from "../data/products";
+import { ShipmentTerms, WarrantyTerms, WithdrawalTerms } from "../data/terms";
 import { formatCurrency } from "../utils/prices";
 import Button from "./Button";
 import { CheckIcon } from "./Icon";
@@ -1085,25 +1086,9 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
               </li>
               <li>Customisable RGB LEDs</li>
             </ul>
-            <h3>Shipment and delivery</h3>
-            <p>
-              Our products are shipped to any country within the EU. We are
-              usually able to deliver your product within 14 days of ordering.
-              We&apos;ll keep you up-to-date of your order status through email.
-            </p>
-            <h3>Warranty and repairs</h3>
-            <p>
-              You&apos;ll have a warranty of at least 1 year on manufacturing
-              defects on all parts. If damage does occur under normal usage,
-              we&apos;ll repair or replace your product free of charge.
-            </p>
-            <h3>Right of withdrawal</h3>
-            <p>
-              Sometimes, you and your product simply won’t see eye to eye. In
-              this case, you can send the product back within 14 days after
-              receiving the product to receive a full refund.
-            </p>
-            <p>NB: We accept ‘just because’ as a reason for returning, too.</p>
+            <ShipmentTerms />
+            <WarrantyTerms />
+            <WithdrawalTerms />
           </StyledDeviceContent>
         )}
       </StyledContent>
