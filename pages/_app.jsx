@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import makeStore from "../store/_makeStore";
 import Footer from "../components/Footer";
 import ConnectedMenuBar from "../components/MenuBarContainer";
+import Section from "../components/Section";
+import Text from "../components/Text";
 import "./_appStyles.css";
 
 /**
@@ -42,7 +44,15 @@ const App = ({ Component, pageProps }) => {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Component {...pageProps} />
+      {Component.isMDXComponent ? (
+        <Section>
+          <Text>
+            <Component {...pageProps} />
+          </Text>
+        </Section>
+      ) : (
+        <Component {...pageProps} />
+      )}
       <Footer />
       <ConnectedMenuBar />
     </Provider>

@@ -14234,6 +14234,17 @@ exports[`Storyshots Text default 1`] = `
   color: #000;
 }
 
+.c0 p,
+.c0 li,
+.c0 h1,
+.c0 h2,
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  max-width: 720px;
+}
+
 @media (max-width:399px) {
   .c0 p,
   .c0 li {
@@ -14271,6 +14282,20 @@ exports[`Storyshots Text default 1`] = `
   .c0 h2 {
     font-size: 32px;
     line-height: 40px;
+  }
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -14847,6 +14872,17 @@ exports[`Storyshots Text text as wrapper 1`] = `
   color: #000;
 }
 
+.c0 p,
+.c0 li,
+.c0 h1,
+.c0 h2,
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  max-width: 720px;
+}
+
 @media (max-width:399px) {
   .c0 p,
   .c0 li {
@@ -14884,6 +14920,20 @@ exports[`Storyshots Text text as wrapper 1`] = `
   .c0 h2 {
     font-size: 32px;
     line-height: 40px;
+  }
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -14930,6 +14980,17 @@ exports[`Storyshots Text text custom color 1`] = `
   color: #d5d9e0;
 }
 
+.c0 p,
+.c0 li,
+.c0 h1,
+.c0 h2,
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  max-width: 720px;
+}
+
 @media (max-width:399px) {
   .c0 p,
   .c0 li {
@@ -14967,6 +15028,20 @@ exports[`Storyshots Text text custom color 1`] = `
   .c0 h2 {
     font-size: 32px;
     line-height: 40px;
+  }
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 

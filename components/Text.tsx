@@ -396,6 +396,17 @@ const StyledText = styled.span<StyledTextProps>`
   ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
     color: ${fontColor};
 
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      max-width: 720px;
+    }
+
     @media (max-width: 399px) {
       p,
       li {
@@ -437,6 +448,16 @@ const StyledText = styled.span<StyledTextProps>`
         font-size: 32px;
         line-height: 40px;
       }
+    }
+
+    @media (max-width: 474px) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    @media (min-width: 475px) {
+      padding-left: 32px;
+      padding-right: 32px;
     }
   `}
 `;
