@@ -396,6 +396,14 @@ const StyledText = styled.span<StyledTextProps>`
   ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
     color: ${fontColor};
 
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+      color: #0f62fe;
+      text-decoration: none;
+    }
+
     p,
     li,
     h1,
@@ -436,6 +444,20 @@ const StyledText = styled.span<StyledTextProps>`
         font-size: 22px;
         line-height: 26px;
       }
+
+      h2 {
+        margin-top: 32px;
+      }
+
+      h3 {
+        margin-top: 32px;
+      }
+
+      h4,
+      h5,
+      h6 {
+        margin-top: 16px;
+      }
     }
 
     @media (min-width: 576px) {
@@ -447,6 +469,20 @@ const StyledText = styled.span<StyledTextProps>`
       h2 {
         font-size: 32px;
         line-height: 40px;
+      }
+
+      h2 {
+        margin-top: 48px;
+      }
+
+      h3 {
+        margin-top: 48px;
+      }
+
+      h4,
+      h5,
+      h6 {
+        margin-top: 24px;
       }
     }
 

@@ -14234,6 +14234,15 @@ exports[`Storyshots Text default 1`] = `
   color: #000;
 }
 
+.c0 a,
+.c0 a:visited,
+.c0 a:hover,
+.c0 a:active {
+  color: #0f62fe;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .c0 p,
 .c0 li,
 .c0 h1,
@@ -14271,6 +14280,20 @@ exports[`Storyshots Text default 1`] = `
     font-size: 22px;
     line-height: 26px;
   }
+
+  .c0 h2 {
+    margin-top: 32px;
+  }
+
+  .c0 h3 {
+    margin-top: 32px;
+  }
+
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    margin-top: 16px;
+  }
 }
 
 @media (min-width:576px) {
@@ -14282,6 +14305,20 @@ exports[`Storyshots Text default 1`] = `
   .c0 h2 {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  .c0 h2 {
+    margin-top: 48px;
+  }
+
+  .c0 h3 {
+    margin-top: 48px;
+  }
+
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    margin-top: 24px;
   }
 }
 
@@ -14872,6 +14909,15 @@ exports[`Storyshots Text text as wrapper 1`] = `
   color: #000;
 }
 
+.c0 a,
+.c0 a:visited,
+.c0 a:hover,
+.c0 a:active {
+  color: #0f62fe;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .c0 p,
 .c0 li,
 .c0 h1,
@@ -14909,6 +14955,20 @@ exports[`Storyshots Text text as wrapper 1`] = `
     font-size: 22px;
     line-height: 26px;
   }
+
+  .c0 h2 {
+    margin-top: 32px;
+  }
+
+  .c0 h3 {
+    margin-top: 32px;
+  }
+
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    margin-top: 16px;
+  }
 }
 
 @media (min-width:576px) {
@@ -14920,6 +14980,20 @@ exports[`Storyshots Text text as wrapper 1`] = `
   .c0 h2 {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  .c0 h2 {
+    margin-top: 48px;
+  }
+
+  .c0 h3 {
+    margin-top: 48px;
+  }
+
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    margin-top: 24px;
   }
 }
 
@@ -14980,6 +15054,15 @@ exports[`Storyshots Text text custom color 1`] = `
   color: #d5d9e0;
 }
 
+.c0 a,
+.c0 a:visited,
+.c0 a:hover,
+.c0 a:active {
+  color: #0f62fe;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
 .c0 p,
 .c0 li,
 .c0 h1,
@@ -15017,6 +15100,20 @@ exports[`Storyshots Text text custom color 1`] = `
     font-size: 22px;
     line-height: 26px;
   }
+
+  .c0 h2 {
+    margin-top: 32px;
+  }
+
+  .c0 h3 {
+    margin-top: 32px;
+  }
+
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    margin-top: 16px;
+  }
 }
 
 @media (min-width:576px) {
@@ -15028,6 +15125,20 @@ exports[`Storyshots Text text custom color 1`] = `
   .c0 h2 {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  .c0 h2 {
+    margin-top: 48px;
+  }
+
+  .c0 h3 {
+    margin-top: 48px;
+  }
+
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    margin-top: 24px;
   }
 }
 
