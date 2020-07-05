@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { connect, useDispatch } from "react-redux";
-import { CapsHeading, Heading, Paragraph } from "../components/Text";
-import Section, {
-  SectionIntro,
-  SectionRow,
-  SubSection
-} from "../components/Section";
+import Text, { Heading, Paragraph } from "../components/Text";
+import Section, { SectionIntro} from "../components/Section";
 
 const StyledCookiesPage = styled.div``;
 
@@ -37,13 +33,13 @@ const CookiesPage: NextPage<IndexPageProps> = ({ cookieConsent }) => {
             Feel free te adjust your cookie settings anytime.
           </Paragraph>
         </SectionIntro>
-        <Heading color="#000000" h={3}>
-          Functional Cookies.
-        </Heading>
-        <Paragraph color="#000000">
-          These are the cookies required for the website to function as
-          expected.
-        </Paragraph>
+        <Text>
+          <h3>Functional Cookies.</h3>
+          <p>
+            These are the cookies required for the website to function as
+            expected.
+          </p>
+        </Text>
       </Section>
     </StyledCookiesPage>
   );

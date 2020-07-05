@@ -397,30 +397,58 @@ const StyledText = styled.span<StyledTextProps>`
     color: ${fontColor};
 
     @media (max-width: 399px) {
-      font-size: 16px;
-      line-height: 21px;
+      p,
+      li {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
 
     @media (min-width: 400px) {
-      font-size: 18px;
-      line-height: 24px;
+      p,
+      li {
+        font-size: 16px;
+        line-height: 21px;
+      }
     }
 
-    @media (max-width: 1023px) {
-      max-width: 656px;
+    /* Headings stay small for longer than other types of text, because due to its
+    relatively large size you quickly get into trouble with words being too long to even
+    fit on the screen. */
+    @media (max-width: 575px) {
+      h1 {
+        font-size: 44px;
+        line-height: 52px;
+      }
+
+      h2 {
+        font-size: 22px;
+        line-height: 26px;
+      }
     }
 
-    @media (min-width: 1024px) {
-      max-width: 720px;
+    @media (min-width: 576px) {
+      h1 {
+        font-size: 56px;
+        line-height: 64px;
+      }
+
+      h2 {
+        font-size: 32px;
+        line-height: 40px;
+      }
     }
   `}
 `;
 
 interface TextProps {
-  readonly children: string;
+  readonly children: HTMLElement | ReactNode | ReactNodeArray;
   readonly color?: string;
 }
 
+/**
+ * Intended to wrap "long form" text blocks. It'll style its children (e.g. `h3`, `p` etc).
+ */
 const Text: FunctionComponent<TextProps> = ({
   children,
   color = "#000"

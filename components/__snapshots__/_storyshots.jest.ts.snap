@@ -14235,28 +14235,42 @@ exports[`Storyshots Text default 1`] = `
 }
 
 @media (max-width:399px) {
-  .c0 {
+  .c0 p,
+  .c0 li {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width:400px) {
+  .c0 p,
+  .c0 li {
     font-size: 16px;
     line-height: 21px;
   }
 }
 
-@media (min-width:400px) {
-  .c0 {
-    font-size: 18px;
-    line-height: 24px;
+@media (max-width:575px) {
+  .c0 h1 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .c0 h2 {
+    font-size: 22px;
+    line-height: 26px;
   }
 }
 
-@media (max-width:1023px) {
-  .c0 {
-    max-width: 656px;
+@media (min-width:576px) {
+  .c0 h1 {
+    font-size: 56px;
+    line-height: 64px;
   }
-}
 
-@media (min-width:1024px) {
-  .c0 {
-    max-width: 720px;
+  .c0 h2 {
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 
@@ -14828,34 +14842,131 @@ exports[`Storyshots Text subheading 1`] = `
 </div>
 `;
 
+exports[`Storyshots Text text as wrapper 1`] = `
+.c0 {
+  color: #000;
+}
+
+@media (max-width:399px) {
+  .c0 p,
+  .c0 li {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width:400px) {
+  .c0 p,
+  .c0 li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width:575px) {
+  .c0 h1 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .c0 h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 h1 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+
+  .c0 h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+<span
+  className="c0"
+>
+  <h1>
+    Biggest h1 heading.
+  </h1>
+  <p>
+    Some text.
+  </p>
+  <h2>
+    Fairly big h2 heading.
+  </h2>
+  <p>
+    Some text.
+  </p>
+  <h3>
+    Smaller h3 subheading.
+  </h3>
+  <p>
+    Some more text.
+  </p>
+  <h4>
+    Even smaller h4.
+  </h4>
+  <p>
+    Even more text.
+  </p>
+  <ul>
+    <li>
+      List item
+    </li>
+    <li>
+      Another list item
+    </li>
+  </ul>
+</span>
+`;
+
 exports[`Storyshots Text text custom color 1`] = `
 .c0 {
   color: #d5d9e0;
 }
 
 @media (max-width:399px) {
-  .c0 {
+  .c0 p,
+  .c0 li {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width:400px) {
+  .c0 p,
+  .c0 li {
     font-size: 16px;
     line-height: 21px;
   }
 }
 
-@media (min-width:400px) {
-  .c0 {
-    font-size: 18px;
-    line-height: 24px;
+@media (max-width:575px) {
+  .c0 h1 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .c0 h2 {
+    font-size: 22px;
+    line-height: 26px;
   }
 }
 
-@media (max-width:1023px) {
-  .c0 {
-    max-width: 656px;
+@media (min-width:576px) {
+  .c0 h1 {
+    font-size: 56px;
+    line-height: 64px;
   }
-}
 
-@media (min-width:1024px) {
-  .c0 {
-    max-width: 720px;
+  .c0 h2 {
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 
