@@ -26,8 +26,6 @@ storiesOf("Text", module)
       <p>Some text.</p>
       <h3>Smaller h3 subheading.</h3>
       <p>Some more text.</p>
-      <h4>Even smaller h4.</h4>
-      <p>Even more text.</p>
       <ul>
         <li>List item</li>
         <li>Another list item</li>

@@ -415,6 +415,15 @@ const StyledText = styled.span<StyledTextProps>`
       max-width: 720px;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
     @media (max-width: 399px) {
       p,
       li {
@@ -441,22 +450,15 @@ const StyledText = styled.span<StyledTextProps>`
       }
 
       h2 {
-        font-size: 22px;
-        line-height: 26px;
-      }
-
-      h2 {
+        font-size: 30px;
+        line-height: 42px;
         margin-top: 32px;
       }
 
       h3 {
+        font-size: 20px;
+        line-height: 24px;
         margin-top: 32px;
-      }
-
-      h4,
-      h5,
-      h6 {
-        margin-top: 16px;
       }
     }
 
@@ -467,22 +469,15 @@ const StyledText = styled.span<StyledTextProps>`
       }
 
       h2 {
-        font-size: 32px;
-        line-height: 40px;
-      }
-
-      h2 {
+        font-size: 40px;
+        line-height: 48px;
         margin-top: 48px;
       }
 
       h3 {
+        font-size: 26px;
+        line-height: 34px;
         margin-top: 48px;
-      }
-
-      h4,
-      h5,
-      h6 {
-        margin-top: 24px;
       }
     }
 
