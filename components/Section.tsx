@@ -51,6 +51,18 @@ const StyledSectionIntro = styled.div`
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  @media (max-width: 1023px) {
+    p {
+      max-width: 656px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      max-width: 720px;
+    }
+  }
 `;
 
 interface SectionIntroProps {
@@ -64,6 +76,106 @@ interface SectionIntroProps {
 export const SectionIntro: FunctionComponent<SectionIntroProps> = ({
   children
 }: SectionIntroProps) => <StyledSectionIntro>{children}</StyledSectionIntro>;
+
+const StyledInfoSection = styled.div`
+  padding-bottom: 64px;
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  @media (max-width: 474px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 475px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (max-width: 739px) {
+    > div:nth-child(2) {
+      h3 {
+        margin-top: 32px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @media (min-width: 740px) and (max-width: 1023px) {
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    > div:nth-child(1) {
+      margin-right: 32px;
+      min-width: 220px;
+      width: 220px;
+    }
+
+    > div:nth-child(2) {
+      > div {
+        width: 100%;
+      }
+
+      > div:nth-child(1) {
+        padding-bottom: 32px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    > div:nth-child(1) {
+      margin-right: 32px;
+      min-width: 260px;
+      width: 260px;
+    }
+
+    > div:nth-child(2) {
+      display: flex;
+
+      > div {
+        width: 50%;
+      }
+
+      > div:nth-child(1) {
+        padding-right: 32px;
+      }
+
+      > div:nth-child(2) {
+        padding-left: 32px;
+      }
+    }
+  }
+`;
+
+interface InfoSectionProps {
+  readonly children: ReactNode | ReactNodeArray;
+}
+
+/**
+ * InfoSection provides an extra padded container, so that its contents align with SectionIntro.
+ * Use as a child of Section. Should have two div children for left-right alignment.
+ */
+export const InfoSection: FunctionComponent<InfoSectionProps> = ({
+  children
+}: InfoSectionProps) => <StyledInfoSection>{children}</StyledInfoSection>;
 
 const StyledSectionRow = styled.div`
   width: 100%;
@@ -82,7 +194,7 @@ const StyledSectionRow = styled.div`
   }
 `;
 
-interface StyledSectionRowProps {
+interface SectionRowProps {
   readonly children: ReactNode | ReactNodeArray;
 }
 
@@ -90,9 +202,9 @@ interface StyledSectionRowProps {
  * SectionRow vertically seperates various parts of a Section. When used with SubSections,
  * it will also make sure that they will reach equal heights when rendered side-by-side.
  */
-export const SectionRow: FunctionComponent<StyledSectionRowProps> = ({
+export const SectionRow: FunctionComponent<SectionRowProps> = ({
   children
-}: StyledSectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
+}: SectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
 
 const PositionedSectionContent = styled.div`
   display: flex;

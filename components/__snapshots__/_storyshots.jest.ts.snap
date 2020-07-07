@@ -9761,18 +9761,6 @@ Array [
   }
 }
 
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
-  }
-}
-
 <div
     className="c0"
   >
@@ -9930,18 +9918,6 @@ Array [
   .c3 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
   }
 }
 
@@ -10110,18 +10086,6 @@ Array [
   }
 }
 
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
-  }
-}
-
 <div
     className="c0"
   >
@@ -10282,18 +10246,6 @@ Array [
   }
 }
 
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
-  }
-}
-
 <div
     className="c0"
   >
@@ -10319,9 +10271,20 @@ Array [
 ]
 `;
 
-exports[`Storyshots Section intro 1`] = `
+exports[`Storyshots Section info section 1`] = `
 .c2 {
   padding-bottom: 64px;
+}
+
+.c5 {
+  padding-bottom: 64px;
+}
+
+.c5 h1,
+.c5 h2,
+.c5 h3,
+.c5 p {
+  margin-top: 0;
 }
 
 .c1 {
@@ -10349,7 +10312,7 @@ exports[`Storyshots Section intro 1`] = `
 .c3 h4,
 .c3 h5,
 .c3 h6 {
-  color: #da1e28;
+  color: #000;
   margin-bottom: 0;
   margin-top: 0;
   text-align: left;
@@ -10374,6 +10337,108 @@ exports[`Storyshots Section intro 1`] = `
   .c2 {
     padding-left: 32px;
     padding-right: 32px;
+  }
+}
+
+@media (max-width:1023px) {
+  .c2 p {
+    max-width: 656px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c2 p {
+    max-width: 720px;
+  }
+}
+
+@media (max-width:474px) {
+  .c5 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c5 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width:739px) {
+  .c5 > div:nth-child(2) h3 {
+    margin-top: 32px;
+  }
+
+  .c5 > div:nth-child(2) p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width:740px) and (max-width:1023px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .c5 > div:nth-child(1) {
+    margin-right: 32px;
+    min-width: 220px;
+    width: 220px;
+  }
+
+  .c5 > div:nth-child(2) > div {
+    width: 100%;
+  }
+
+  .c5 > div:nth-child(2) > div:nth-child(1) {
+    padding-bottom: 32px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .c5 > div:nth-child(1) {
+    margin-right: 32px;
+    min-width: 260px;
+    width: 260px;
+  }
+
+  .c5 > div:nth-child(2) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .c5 > div:nth-child(2) > div {
+    width: 50%;
+  }
+
+  .c5 > div:nth-child(2) > div:nth-child(1) {
+    padding-right: 32px;
+  }
+
+  .c5 > div:nth-child(2) > div:nth-child(2) {
+    padding-left: 32px;
   }
 }
 
@@ -10476,15 +10541,247 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h2>
+          <span>
+            RecordRig dedicated streaming PC tech specs.
+          </span>
+        </h2>
+      </div>
+      <p
+        className="c4"
+      >
+        Each RecordRig dedicated streaming PC is assembled and tested individually, just for you, to make sure that each single unit that we ship can do exactly what it should do, without hiccups. Say goodbye to the many days or weeks of PC parts selection + assemblage, random driver problems and the various compatibility issues involved in building your own PC. A RecordRig is guaranteed to always be delivered with the ready-to-go capability of recording 4K 60FPS + HDR, and to interface well with the PS4 Pro, Xbox One X or your Windows gaming PC.
+      </p>
+    </div>
+    <div
+      className="c5"
+    >
+      <div>
+        <h2>
+          Processor
+        </h2>
+      </div>
+      <div>
+        <p
+          className="c4"
+        >
+          3.7GHz 8‑core AMD Ryzen 2700X, Max Boost up to 4.3GHz, with 4MB L2 cache and 16MB L3 cache, support for 16 threads (multithreading).
+        </p>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div>
+        <h2>
+          Graphics
+        </h2>
+      </div>
+      <div>
+        <div>
+          <h3>
+            Video Card
+          </h3>
+          <p
+            className="c4"
+          >
+            Nvidia GeForce GTX 1050 Ti X with 4GB of GDDR5 memory or equivalent.
+          </p>
+        </div>
+        <div>
+          <h3>
+            Capture Card
+          </h3>
+          <p
+            className="c4"
+          >
+            AVerMedia Live Gamer 4K GC573 internal game capture card with support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR, 1440p144, 1080p240 recording and pass-through (always play on the same or even a higher resolution than you capture).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Section intro 1`] = `
+.c2 {
+  padding-bottom: 64px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1216px;
+  width: 100%;
+}
+
+.c0 {
+  background-color: transparent;
+  margin: 0;
+}
+
+.c3 h1,
+.c3 h2,
+.c3 h3,
+.c3 h4,
+.c3 h5,
+.c3 h6 {
+  color: #da1e28;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: left;
+}
+
+.c3 span {
+  display: inline-block;
+}
+
+.c4 {
+  color: #000;
+}
+
+@media (max-width:474px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c2 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
 @media (max-width:1023px) {
-  .c4 {
+  .c2 p {
     max-width: 656px;
   }
 }
 
 @media (min-width:1024px) {
-  .c4 {
+  .c2 p {
     max-width: 720px;
+  }
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width:734px) {
+  .c0 {
+    display: block;
+    padding-bottom: 128px;
+    padding-top: 128px;
+  }
+}
+
+@media (min-width:735px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    padding-bottom: 256px;
+    padding-top: 256px;
+  }
+}
+
+@media (max-width:575px) {
+  .c3 h1,
+  .c3 h2,
+  .c3 h3,
+  .c3 h4,
+  .c3 h5,
+  .c3 h6 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .c3 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:576px) {
+  .c3 h1,
+  .c3 h2,
+  .c3 h3,
+  .c3 h4,
+  .c3 h5,
+  .c3 h6 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c3 span {
+    max-width: 592px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c3 span {
+    max-width: 640px;
+  }
+}
+
+@media (max-width:399px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width:400px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 
@@ -10721,18 +11018,6 @@ exports[`Storyshots Section rows 1`] = `
   .c6 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c6 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c6 {
-    max-width: 720px;
   }
 }
 
@@ -11085,18 +11370,6 @@ exports[`Storyshots Section subsections 1`] = `
   }
 }
 
-@media (max-width:1023px) {
-  .c7 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c7 {
-    max-width: 720px;
-  }
-}
-
 @media (max-width:399px) {
   .c9 {
     font-size: 16px;
@@ -11108,18 +11381,6 @@ exports[`Storyshots Section subsections 1`] = `
   .c9 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c9 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c9 {
-    max-width: 720px;
   }
 }
 
@@ -14767,18 +15028,6 @@ exports[`Storyshots Text paragraph 1`] = `
   }
 }
 
-@media (max-width:1023px) {
-  .c0 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c0 {
-    max-width: 720px;
-  }
-}
-
 <p
   className="c0"
 >
@@ -14802,18 +15051,6 @@ exports[`Storyshots Text paragraph custom color 1`] = `
   .c0 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c0 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c0 {
-    max-width: 720px;
   }
 }
 
@@ -15269,18 +15506,6 @@ exports[`Storyshots Tile bottom image 1`] = `
   }
 }
 
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
-  }
-}
-
 <div
   style={
     Object {
@@ -15599,18 +15824,6 @@ exports[`Storyshots Tile custom colors 1`] = `
   }
 }
 
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
-  }
-}
-
 <div
   style={
     Object {
@@ -15770,18 +15983,6 @@ exports[`Storyshots Tile default 1`] = `
   }
 }
 
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
-  }
-}
-
 <div
   style={
     Object {
@@ -15892,18 +16093,6 @@ exports[`Storyshots Tile floating 1`] = `
   .c2 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c2 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c2 {
-    max-width: 720px;
   }
 }
 
@@ -16304,18 +16493,6 @@ exports[`Storyshots Tile rounded 1`] = `
   }
 }
 
-@media (max-width:1023px) {
-  .c2 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c2 {
-    max-width: 720px;
-  }
-}
-
 <div
   style={
     Object {
@@ -16456,18 +16633,6 @@ exports[`Storyshots Tile top image 1`] = `
   .c3 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
   }
 }
 
@@ -16635,18 +16800,6 @@ exports[`Storyshots Tile wide panel with contained image 1`] = `
   .c3 {
     font-size: 18px;
     line-height: 24px;
-  }
-}
-
-@media (max-width:1023px) {
-  .c3 {
-    max-width: 656px;
-  }
-}
-
-@media (min-width:1024px) {
-  .c3 {
-    max-width: 720px;
   }
 }
 

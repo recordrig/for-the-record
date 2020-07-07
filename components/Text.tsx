@@ -365,14 +365,6 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
       font-size: 18px;
       line-height: 24px;
     }
-
-    @media (max-width: 1023px) {
-      max-width: 656px;
-    }
-
-    @media (min-width: 1024px) {
-      max-width: 720px;
-    }
   `}
 `;
 
