@@ -369,7 +369,7 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
 `;
 
 interface ParagraphProps {
-  readonly children: string;
+  readonly children: string | HTMLElement | ReactNode | ReactNodeArray;
   readonly color?: string;
 }
 

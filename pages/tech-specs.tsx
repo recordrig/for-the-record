@@ -297,6 +297,26 @@ const TechSpecsPage: FunctionComponent = () => {
             </div>
           </div>
         </InfoSection>
+        <InfoSection>
+          <div>
+            <h2>Streaming platforms</h2>
+          </div>
+          <div>
+            <Paragraph>
+              Support for popular platforms such as YouTube, Twitch, Facebook,
+              Mixer and Smashcast is built into the RECentral gameplay streaming
+              software.
+            </Paragraph>
+            <Paragraph>
+              Optionally stream to a different, custom platform through an{" "}
+              <strong>RTMP token</strong>.
+            </Paragraph>
+            <Paragraph>
+              <strong>Multi-streaming</strong> is supported. Stream to multiple
+              platforms simultanuously.
+            </Paragraph>
+          </div>
+        </InfoSection>
       </Section>
     </>
   );

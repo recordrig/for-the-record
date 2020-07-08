@@ -119,7 +119,7 @@ const StyledInfoSection = styled.div`
 
     > div:nth-child(1) {
       margin-right: 48px;
-      min-width: 200px;
+      min-width: 220px;
       width: 220px;
 
       h2 {
