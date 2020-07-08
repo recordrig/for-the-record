@@ -149,17 +149,18 @@ const StyledInfoSection = styled.div`
 
     > div:nth-child(2) {
       display: flex;
+      flex-wrap: wrap;
 
-      > div {
+      > div:nth-child(1) {
+        flex: 1;
+        padding-right: 32px;
         width: 50%;
       }
 
-      > div:nth-child(1) {
-        padding-right: 32px;
-      }
-
       > div:nth-child(2) {
+        flex: 1;
         padding-left: 32px;
+        width: 50%;
       }
     }
   }
