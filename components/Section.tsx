@@ -134,7 +134,7 @@ const StyledInfoSection = styled.div`
       }
 
       > div:nth-child(1) {
-        padding-bottom: 32px;
+        padding-bottom: 20px;
       }
     }
   }

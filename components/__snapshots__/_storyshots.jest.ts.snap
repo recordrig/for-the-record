@@ -10405,7 +10405,7 @@ exports[`Storyshots Section info section 1`] = `
   }
 
   .c5 > div:nth-child(2) > div:nth-child(1) {
-    padding-bottom: 32px;
+    padding-bottom: 20px;
   }
 }
 
