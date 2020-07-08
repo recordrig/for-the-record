@@ -200,41 +200,43 @@ const TechSpecsPage: FunctionComponent = () => {
               tempered glass removable side panel for easy-access to all core
               components.
             </Paragraph>
-            <span
-              style={{
-                color: "#a2a9b0",
-                backgroundColor: "#ffffff",
-                border: "1px solid #a2a9b0",
-                borderRadius: "3px",
-                display: "inline-block",
-                fontSize: "13px",
-                fontWeight: "bold",
-                padding: "4px",
-                textAlign: "center",
-                textTransform: "uppercase",
-                width: "120px"
-              }}
-            >
-              Pristine White
-            </span>
-            <span
-              style={{
-                color: "#a2a9b0",
-                backgroundColor: "#121619",
-                border: "1px solid #a2a9b0",
-                borderRadius: "3px",
-                display: "inline-block",
-                fontSize: "13px",
-                fontWeight: "bold",
-                marginLeft: "8px",
-                padding: "4px",
-                textAlign: "center",
-                textTransform: "uppercase",
-                width: "120px"
-              }}
-            >
-              Stealth Black
-            </span>
+            <div>
+              <span
+                style={{
+                  color: "#a2a9b0",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #a2a9b0",
+                  borderRadius: "3px",
+                  display: "inline-block",
+                  fontSize: "13px",
+                  fontWeight: "bold",
+                  padding: "4px",
+                  textAlign: "center",
+                  textTransform: "uppercase",
+                  width: "120px"
+                }}
+              >
+                Pristine White
+              </span>
+              <span
+                style={{
+                  color: "#a2a9b0",
+                  backgroundColor: "#121619",
+                  border: "1px solid #a2a9b0",
+                  borderRadius: "3px",
+                  display: "inline-block",
+                  fontSize: "13px",
+                  fontWeight: "bold",
+                  marginLeft: "8px",
+                  padding: "4px",
+                  textAlign: "center",
+                  textTransform: "uppercase",
+                  width: "120px"
+                }}
+              >
+                Stealth Black
+              </span>
+            </div>
           </div>
         </InfoSection>
         <InfoSection>
