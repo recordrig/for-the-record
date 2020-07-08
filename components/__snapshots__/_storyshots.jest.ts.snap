@@ -10390,9 +10390,14 @@ exports[`Storyshots Section info section 1`] = `
   }
 
   .c5 > div:nth-child(1) {
-    margin-right: 32px;
-    min-width: 220px;
+    margin-right: 48px;
+    min-width: 200px;
     width: 220px;
+  }
+
+  .c5 > div:nth-child(1) h2 {
+    font-size: 28px;
+    line-height: 36px;
   }
 
   .c5 > div:nth-child(2) > div {
@@ -10417,9 +10422,14 @@ exports[`Storyshots Section info section 1`] = `
   }
 
   .c5 > div:nth-child(1) {
-    margin-right: 32px;
+    margin-right: 96px;
     min-width: 260px;
     width: 260px;
+  }
+
+  .c5 > div:nth-child(1) h2 {
+    font-size: 32px;
+    line-height: 42px;
   }
 
   .c5 > div:nth-child(2) {
@@ -10427,6 +10437,10 @@ exports[`Storyshots Section info section 1`] = `
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;

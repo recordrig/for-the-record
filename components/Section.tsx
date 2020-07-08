@@ -118,9 +118,14 @@ const StyledInfoSection = styled.div`
     padding-bottom: 32px;
 
     > div:nth-child(1) {
-      margin-right: 32px;
-      min-width: 220px;
+      margin-right: 48px;
+      min-width: 200px;
       width: 220px;
+
+      h2 {
+        font-size: 28px;
+        line-height: 36px;
+      }
     }
 
     > div:nth-child(2) {
@@ -142,13 +147,19 @@ const StyledInfoSection = styled.div`
     padding-bottom: 64px;
 
     > div:nth-child(1) {
-      margin-right: 32px;
+      margin-right: 96px;
       min-width: 260px;
       width: 260px;
+
+      h2 {
+        font-size: 32px;
+        line-height: 42px;
+      }
     }
 
     > div:nth-child(2) {
       display: flex;
+      flex-grow: 1;
       flex-wrap: wrap;
 
       > div:nth-child(1) {

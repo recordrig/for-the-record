@@ -4,6 +4,17 @@ import styled from "styled-components";
 import Section, { SectionIntro, InfoSection } from "../components/Section";
 import { Heading, Paragraph } from "../components/Text";
 
+const StyledList = styled.ul`
+  color: #878d96;
+  font-weight: bold;
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 8px;
+  }
+`;
+
 const StyledCase = styled.span`
   display: flex;
   padding-bottom: 80px;
@@ -242,20 +253,47 @@ const TechSpecsPage: FunctionComponent = () => {
           </div>
           <div>
             <div>
-              <h3>Video Card</h3>
+              <h3>Video card</h3>
               <Paragraph>
                 Nvidia GeForce GTX 1050 Ti X with 4GB of GDDR5 memory or
                 equivalent.
               </Paragraph>
             </div>
             <div>
-              <h3>Capture Card</h3>
+              <h3>Capture card</h3>
               <Paragraph>
                 AVerMedia Live Gamer 4K GC573 internal game capture card with
                 support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR, 1440p144,
                 1080p240 recording and pass-through (always play on the same or
                 even a higher resolution than you capture).
               </Paragraph>
+            </div>
+          </div>
+        </InfoSection>
+        <InfoSection>
+          <div>
+            <h2>Gameplay record max resolutions</h2>
+          </div>
+          <div>
+            <div>
+              <h3>Max record resolutions</h3>
+              <StyledList>
+                <li>2160p (= 4K) 60FPS + HDR colours</li>
+                <li>1440p 60FPS + HDR colours</li>
+                <li>1080p 60FPS + HDR colours</li>
+                <li>1440p 144FPS (HDR off)</li>
+                <li>1080p 240FPS (HDR off)</li>
+              </StyledList>
+            </div>
+            <div>
+              <h3>Max pass-through resolutions</h3>
+              <StyledList>
+                <li>2160p (= 4K) 60FPS + HDR colours</li>
+                <li>1440p 60FPS + HDR colours</li>
+                <li>1080p 60FPS + HDR colours</li>
+                <li>1440p 144FPS (HDR off)</li>
+                <li>1080p 240FPS (HDR off)</li>
+              </StyledList>
             </div>
           </div>
         </InfoSection>
