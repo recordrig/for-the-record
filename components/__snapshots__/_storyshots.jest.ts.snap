@@ -10287,6 +10287,10 @@ exports[`Storyshots Section info section 1`] = `
   margin-top: 0;
 }
 
+.c5 img {
+  max-width: 100%;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;

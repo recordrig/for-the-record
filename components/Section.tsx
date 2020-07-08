@@ -87,6 +87,10 @@ const StyledInfoSection = styled.div`
     margin-top: 0;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   @media (max-width: 474px) {
     padding-left: 12px;
     padding-right: 12px;
