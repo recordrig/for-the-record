@@ -158,20 +158,14 @@ const StyledInfoSection = styled.div`
     }
 
     > div:nth-child(2) {
+      align-items: flex-start;
       display: flex;
       flex-grow: 1;
       flex-wrap: wrap;
+      justify-content: space-between;
 
-      > div:nth-child(1) {
-        flex: 1;
-        padding-right: 32px;
-        width: 50%;
-      }
-
-      > div:nth-child(2) {
-        flex: 1;
-        padding-left: 32px;
-        width: 50%;
+      > div {
+        width: 45%;
       }
     }
   }
