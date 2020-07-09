@@ -12,22 +12,31 @@ If it's the first time you're running the application, first install dependencie
 npm install
 ```
 
-The application integrates with various other services. Put your API **test** keys in a file named `.env.local`:
-
-```
-# Stripe keys.
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
-STRIPE_SECRET_KEY=sk_12345
-
-# SendGrid.
-SENDGRID_API_KEY=abcabcabc
-```
-
 Now you can run the development server:
 
 ```
 npm run dev
 ```
+
+## Advanced Setup
+
+The application integrates with various other services. To use all functionalities including Check Out in your local environment, create some personal test accounts and put the following information in a file named `.env.local`:
+
+```
+# Airtable
+AIRTABLE_API_KEY=defdefdef
+AIRTABLE_BASE_ID=ghighighi
+
+# SendGrid
+SENDGRID_API_KEY=abcabcabc
+
+# Stripe
+# NB make sure to use Stripe's TEST keys.
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
+STRIPE_SECRET_KEY=sk_12345
+```
+
+In Airtable, set up a table called `order_capacity` with a single column named `limit` holding a single record which is a `number` (`integer`).
 
 ## Development Guidelines
 

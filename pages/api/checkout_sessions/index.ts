@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import Airtable from "airtable";
 import Stripe from "stripe";
 import countriesData from "../../../data/countries";
 import productsData from "../../../data/products";
@@ -8,6 +9,10 @@ import {
   validateProductsForCheckout,
   structureProductsForCheckout
 } from "../../../utils/checkout";
+
+const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+  process.env.AIRTABLE_BASE_ID
+);
 
 if (!process.env.STRIPE_SECRET_KEY) {
   console.error(
@@ -44,6 +49,16 @@ export default async function handler(
 
       // Ready products collection for Stripe.
       const structuredProducts = structureProductsForCheckout(completeProducts);
+
+      // Check order capacity. Throw error if 0 to reject order.
+      const records = await base("order_capacity")
+        .select({ maxRecords: 1, view: "Grid view" })
+        .firstPage();
+
+      const limit = records[0].get("limit");
+
+      if (!(limit > 0))
+        throw new Error("There is no capacity for taking on new orders.");
 
       // Ready all required parameters for Stripe.
       const params: Stripe.Checkout.SessionCreateParams = {
