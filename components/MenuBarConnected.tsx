@@ -17,6 +17,6 @@ const mapStateToProps = state => {
   };
 };
 
-const ConnectedMenuBar = connect(mapStateToProps, null)(MenuBarContainer);
+const MenuBarConnected = connect(mapStateToProps, null)(MenuBarContainer);
 
-export default ConnectedMenuBar;
+export default MenuBarConnected;
