@@ -17,8 +17,7 @@ const ContactPage: FunctionComponent = () => {
     subject: "",
     honeypot: "",
     message: "",
-    replyTo: "@",
-    accessKey: "03382db7-b941-4589-893c-399397bb40b3"
+    replyTo: "@"
   });
 
   const [response, setResponse] = useState({
@@ -36,15 +35,16 @@ const ContactPage: FunctionComponent = () => {
   ): Promise<void> => {
     event.preventDefault();
     try {
-      const res = await fetch("https://api.staticforms.xyz/submit", {
+      const res = await fetch("/api/contact/send", {
         method: "POST",
-        body: JSON.stringify(contact),
-        headers: { "Content-Type": "application/json" }
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(contact)
       });
+      const text = await res.text();
 
-      const json = await res.json();
-
-      if (json.success) {
+      if (res.status === 200) {
         setResponse({
           type: "success",
           message: "✅👍 Message sent. Thanks!"
@@ -52,7 +52,7 @@ const ContactPage: FunctionComponent = () => {
       } else {
         setResponse({
           type: "error",
-          message: `❌😵 Hmm... some error occurred on the server. It says: "${json.message}". Your message has NOT been sent.`
+          message: `❌😵 Hmm... some error occurred on the server. It says: "${text}". Your message has NOT been sent.`
         });
       }
     } catch (error) {
@@ -83,11 +83,7 @@ const ContactPage: FunctionComponent = () => {
           <Tile>
             <TileContainer>
               <Form>
-                <form
-                  action="https://api.staticforms.xyz/submit"
-                  method="post"
-                  onSubmit={handleSubmit}
-                >
+                <form onSubmit={handleSubmit}>
                   <FormRow>
                     <label htmlFor="contact-name">
                       Name

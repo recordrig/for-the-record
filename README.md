@@ -18,6 +18,9 @@ The application integrates with various other services. Put your API **test** ke
 # Stripe keys.
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
 STRIPE_SECRET_KEY=sk_12345
+
+# SendGrid.
+SENDGRID_API_KEY=abcabcabc
 ```
 
 Now you can run the development server:
