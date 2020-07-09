@@ -20,23 +20,59 @@ npm run dev
 
 ## Advanced Setup
 
-The application integrates with various other services. To use all functionalities including Check Out in your local environment, create some personal test accounts and put the following information in a file named `.env.local`:
+The application integrates with various other services. To use all functionalities including Check Out in your local environment, you should create personal test accounts for these services and put the following information in a file named `.env.local`:
 
 ```
 # Airtable
-AIRTABLE_API_KEY=defdefdef
-AIRTABLE_BASE_ID=ghighighi
+AIRTABLE_API_KEY=xyzxyzxyz
+AIRTABLE_BASE_ID=kljkljklj
 
 # SendGrid
 SENDGRID_API_KEY=abcabcabc
 
 # Stripe
-# NB make sure to use Stripe's TEST keys.
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
 STRIPE_SECRET_KEY=sk_12345
+STRIPE_WEBHOOK_SECRET=defdefdef
 ```
 
-In Airtable, set up a table called `order_capacity` with a single column named `limit` holding a single record which is a `number` (`integer`).
+### Airtable
+
+The application assumes certain table and field names to exist. So in Airtable, set up a table called `order_capacity` with a single column named `limit` holding a single record which is a `number` (`integer`). Prefill this field with a positive value if you want the application to process new orders via the Check Out.
+
+Additionally, set the API keys and the Airtable Base you'd like to use on your `.env.local` file:
+
+```
+# Airtable
+AIRTABLE_API_KEY=xyzxyzxyz
+AIRTABLE_BASE_ID=kljkljklj
+```
+
+### SendGrid
+
+Generate a SendGrid API key and put it in your `.env.local` file:
+
+```
+# SendGrid
+SENDGRID_API_KEY=abcabcabc
+```
+
+### Stripe
+
+Though most of the Stripe integration will work simply by listing your API keys in the `.env.local` file, some additional setup needs to happen in order to be able to run webhooks locally. [Install the Stripe CLI](https://stripe.com/docs/stripe-cli) and login with your Stripe account. Next, start the webhook forwarding:
+
+```
+stripe listen --forward-to localhost:3000/api/hooks/stripe
+```
+
+The CLI will print a webhook secret key to the console. Set `STRIPE_WEBHOOK_SECRET` to this value in your `.env.local` file, along with the Stripe TEST keys which you can find in the Stripe dashboard:
+
+```
+# Stripe
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_12345
+STRIPE_SECRET_KEY=sk_12345
+STRIPE_WEBHOOK_SECRET=whsec_12345
+```
 
 ## Development Guidelines
 
