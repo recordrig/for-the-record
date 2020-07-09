@@ -270,6 +270,11 @@ const StyledShoppingBag = styled.div`
   }
 
   @media (min-width: 768px) {
+    > div {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
     > div > div {
       margin: 0 auto;
       max-width: 960px;

@@ -11921,6 +11921,11 @@ exports[`Storyshots ShoppingBag country not supported 1`] = `
 }
 
 @media (min-width:768px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
   .c0 > div > div {
     margin: 0 auto;
     max-width: 960px;
@@ -12829,6 +12834,11 @@ exports[`Storyshots ShoppingBag default 1`] = `
 }
 
 @media (min-width:768px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
   .c0 > div > div {
     margin: 0 auto;
     max-width: 960px;
@@ -13331,6 +13341,11 @@ exports[`Storyshots ShoppingBag empty 1`] = `
 }
 
 @media (min-width:768px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
   .c0 > div > div {
     margin: 0 auto;
     max-width: 960px;
@@ -13843,6 +13858,11 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
 }
 
 @media (min-width:768px) {
+  .c0 > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
   .c0 > div > div {
     margin: 0 auto;
     max-width: 960px;
