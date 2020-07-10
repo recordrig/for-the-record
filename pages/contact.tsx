@@ -11,6 +11,7 @@ import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
 import Tile, { TileContainer } from "../components/Tile";
 import Form, { FormRow } from "../components/Form";
+import { CheckIcon } from "../components/Icon";
 
 const ContactPage: FunctionComponent = () => {
   const [contact, setContact] = useState({
@@ -31,15 +32,14 @@ const ContactPage: FunctionComponent = () => {
   ): void =>
     setContact({ ...contact, [event.target.name]: event.target.value });
 
-  const [sendClicked, setSendClicked] = useState(false);
+  const [sendProcessing, setSendProcessing] = useState(false);
+  const [sendSuccess, setSendSuccess] = useState(false);
 
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
-
-    // Prevents multiple clicks in a short timespan.
-    setSendClicked(true);
+    setSendProcessing(true);
 
     try {
       const res = await fetch("/api/contact/send", {
@@ -56,6 +56,7 @@ const ContactPage: FunctionComponent = () => {
           type: "success",
           message: "✅👍 Message sent. Thanks!"
         });
+        setSendSuccess(true);
       } else {
         setResponse({
           type: "error",
@@ -69,7 +70,7 @@ const ContactPage: FunctionComponent = () => {
       });
     }
 
-    setSendClicked(false);
+    setSendProcessing(false);
   };
   return (
     <>
@@ -93,74 +94,91 @@ const ContactPage: FunctionComponent = () => {
             <TileContainer>
               <Form>
                 <form onSubmit={handleSubmit}>
-                  <FormRow>
-                    <label htmlFor="contact-name">
-                      Name
-                      <input
-                        id="contact-name"
-                        name="name"
-                        onChange={handleChange}
-                        required
-                        type="text"
-                      />
-                    </label>
-                    <label htmlFor="contact-email">
-                      Email
-                      <input
-                        id="contact-email"
-                        name="email"
-                        onChange={handleChange}
-                        required
-                        type="email"
-                      />
-                    </label>
-                  </FormRow>
-                  <FormRow>
-                    <label htmlFor="contact-subject">
-                      Subject
-                      <input
-                        id="contact-subject"
-                        name="subject"
-                        onChange={handleChange}
-                        type="text"
-                      />
-                    </label>
-                  </FormRow>
-                  <input
-                    name="honeypot"
-                    style={{ display: "none" }}
-                    onChange={handleChange}
-                    type="text"
-                  />
-                  <FormRow>
-                    <label htmlFor="contact-message">
-                      Message
-                      <textarea
-                        id="contact-message"
-                        name="message"
-                        onChange={handleChange}
-                        required
-                      />
-                    </label>
-                  </FormRow>
-                  <FormRow>
-                    <Button appearDisabled={sendClicked}>
-                      Send{" "}
-                      {sendClicked ? (
-                        <Oval
-                          style={{
-                            height: "24px",
-                            left: "8px",
-                            position: "relative",
-                            top: "4px",
-                            width: "24px"
-                          }}
+                  <fieldset disabled={sendSuccess} style={{ border: 0 }}>
+                    <FormRow>
+                      <label htmlFor="contact-name">
+                        Name
+                        <input
+                          id="contact-name"
+                          name="name"
+                          onChange={handleChange}
+                          required
+                          type="text"
                         />
-                      ) : (
-                        ""
-                      )}
-                    </Button>
-                  </FormRow>
+                      </label>
+                      <label htmlFor="contact-email">
+                        Email
+                        <input
+                          id="contact-email"
+                          name="email"
+                          onChange={handleChange}
+                          required
+                          type="email"
+                        />
+                      </label>
+                    </FormRow>
+                    <FormRow>
+                      <label htmlFor="contact-subject">
+                        Subject
+                        <input
+                          id="contact-subject"
+                          name="subject"
+                          onChange={handleChange}
+                          type="text"
+                        />
+                      </label>
+                    </FormRow>
+                    <input
+                      name="honeypot"
+                      style={{ display: "none" }}
+                      onChange={handleChange}
+                      type="text"
+                    />
+                    <FormRow>
+                      <label htmlFor="contact-message">
+                        Message
+                        <textarea
+                          id="contact-message"
+                          name="message"
+                          onChange={handleChange}
+                          required
+                        />
+                      </label>
+                    </FormRow>
+                    <FormRow>
+                      <Button
+                        appearDisabled={sendProcessing || sendSuccess}
+                        clicked={sendSuccess}
+                      >
+                        {sendSuccess ? "Sent " : "Send "}
+                        {sendProcessing && (
+                          <Oval
+                            style={{
+                              height: "24px",
+                              left: "8px",
+                              position: "relative",
+                              top: "4px",
+                              width: "24px"
+                            }}
+                          />
+                        )}
+                        {sendSuccess && (
+                          <span
+                            style={{
+                              display: "inline-block",
+                              height: "32px",
+                              marginRight: "4px",
+                              position: "relative",
+                              top: "8px",
+                              width: "32px"
+                            }}
+                          >
+                            <CheckIcon color="#24a148" />
+                          </span>
+                        )}
+                      </Button>
+                    </FormRow>
+                  </fieldset>
                   <div style={{ height: "48px", fontWeight: "bold" }}>
                     <span
                       style={

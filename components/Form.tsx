@@ -71,6 +71,19 @@ const StyledForm = styled.div`
     outline: none;
   }
 
+  fieldset:disabled {
+    label,
+    input,
+    select,
+    textarea {
+      opacity: 0.6;
+    }
+
+    button {
+      cursor: default;
+    }
+  }
+
   @media (min-width: 768px) {
     /* We assume labels an buttons to be FormRow's direct children. (Labels are assumed to
     always wrap other form elements). */
@@ -86,7 +99,7 @@ const StyledForm = styled.div`
     button {
       display: inline-block;
       margin-left: auto;
-      min-width: 348px;
+      min-width: 200px;
       padding-left: 32px;
       padding-right: 32px;
       width: unset;
