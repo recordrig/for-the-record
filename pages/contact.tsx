@@ -16,8 +16,7 @@ const ContactPage: FunctionComponent = () => {
     email: "",
     subject: "",
     honeypot: "",
-    message: "",
-    replyTo: "@"
+    message: ""
   });
 
   const [response, setResponse] = useState({
