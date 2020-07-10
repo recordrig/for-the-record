@@ -35,6 +35,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-button {
+button, textarea {
   font-family: "IBM Plex Sans", sans-serif;
 }
