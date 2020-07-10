@@ -5,6 +5,7 @@ import React, {
   useState
 } from "react";
 import Head from "next/head";
+import { Oval } from "svg-loaders-react";
 import Button from "../components/Button";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
@@ -30,10 +31,16 @@ const ContactPage: FunctionComponent = () => {
   ): void =>
     setContact({ ...contact, [event.target.name]: event.target.value });
 
+  const [sendClicked, setSendClicked] = useState(false);
+
   const handleSubmit = async (
     event: FormEvent<HTMLFormElement>
   ): Promise<void> => {
     event.preventDefault();
+
+    // Prevents multiple clicks in a short timespan.
+    setSendClicked(true);
+
     try {
       const res = await fetch("/api/contact/send", {
         method: "POST",
@@ -61,6 +68,8 @@ const ContactPage: FunctionComponent = () => {
         message: `❌😵 Hmm... an error occurred while submitting the form: "${error}". Your message has NOT been sent.`
       });
     }
+
+    setSendClicked(false);
   };
   return (
     <>
@@ -135,7 +144,22 @@ const ContactPage: FunctionComponent = () => {
                     </label>
                   </FormRow>
                   <FormRow>
-                    <Button>Send</Button>
+                    <Button appearDisabled={sendClicked}>
+                      Send{" "}
+                      {sendClicked ? (
+                        <Oval
+                          style={{
+                            height: "24px",
+                            left: "8px",
+                            position: "relative",
+                            top: "4px",
+                            width: "24px"
+                          }}
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </Button>
                   </FormRow>
                   <div style={{ height: "48px", fontWeight: "bold" }}>
                     <span
