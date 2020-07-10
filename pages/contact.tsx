@@ -9,6 +9,7 @@ import { Oval } from "svg-loaders-react";
 import Button from "../components/Button";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
+import Notification from "../components/Notification";
 import Tile, { TileContainer } from "../components/Tile";
 import Form, { FormRow } from "../components/Form";
 import { CheckIcon } from "../components/Icon";
@@ -54,20 +55,22 @@ const ContactPage: FunctionComponent = () => {
       if (res.status === 200) {
         setResponse({
           type: "success",
-          message: "✅👍 Message sent. Thanks!"
+          message: ""
         });
         setSendSuccess(true);
       } else {
         setResponse({
           type: "error",
-          message: `❌😵 Hmm... some error occurred on the server. It says: "${text}". Your message has NOT been sent.`
+          message: text
         });
+        console.error(text);
       }
     } catch (error) {
       setResponse({
         type: "error",
-        message: `❌😵 Hmm... an error occurred while submitting the form: "${error}". Your message has NOT been sent.`
+        message: error
       });
+      console.error(error);
     }
 
     setSendProcessing(false);
@@ -179,17 +182,26 @@ const ContactPage: FunctionComponent = () => {
                       </Button>
                     </FormRow>
                   </fieldset>
-                  <div style={{ height: "48px", fontWeight: "bold" }}>
-                    <span
-                      style={
-                        response.type === "error"
-                          ? { color: "#da1e28" }
-                          : { color: "#24a148" }
-                      }
-                    >
-                      {response.message}
-                    </span>
-                  </div>
+                  {sendSuccess && (
+                    <div style={{ padding: "0 14px" }}>
+                      <Notification type="success">
+                        <p style={{ fontSize: "14px" }}>
+                          <strong>Your message has been sent.</strong> We can
+                          usually get back to you within a couple of days.
+                        </p>
+                      </Notification>
+                    </div>
+                  )}
+                  {response.type === "error" && (
+                    <div style={{ padding: "0 14px" }}>
+                      <Notification type="error">
+                        <p style={{ fontSize: "14px" }}>
+                          <strong>There was a problem.</strong> Your message has
+                          not been sent.
+                        </p>
+                      </Notification>
+                    </div>
+                  )}
                 </form>
               </Form>
             </TileContainer>
