@@ -9,7 +9,7 @@ const sharedStyles = (appearDisabled: boolean, clicked: boolean) => css`
   border-top: 0;
   box-sizing: border-box;
   cursor: pointer;
-  opacity: ${appearDisabled ? 0.4 : 1};
+  opacity: ${appearDisabled ? 0.6 : 1};
   outline: none;
   padding: 0;
   text-align: center;

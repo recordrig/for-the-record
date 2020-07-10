@@ -71,21 +71,6 @@ const StyledForm = styled.div`
     outline: none;
   }
 
-  button {
-    background-color: #0062ff;
-    border-radius: 2px;
-    border: 0;
-    color: #ffffff;
-    cursor: pointer;
-    display: block;
-    font-size: 18px;
-    height: 48px;
-    margin-top: 20px;
-    outline: none;
-    text-decoration: none;
-    width: 100%;
-  }
-
   @media (min-width: 768px) {
     /* We assume labels an buttons to be FormRow's direct children. (Labels are assumed to
     always wrap other form elements). */
@@ -100,6 +85,8 @@ const StyledForm = styled.div`
 
     button {
       display: inline-block;
+      margin-left: auto;
+      min-width: 348px;
       padding-left: 32px;
       padding-right: 32px;
       width: unset;

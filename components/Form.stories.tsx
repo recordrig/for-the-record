@@ -1,5 +1,6 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
+import Button from "./Button";
 import Tile, { TileContainer } from "./Tile";
 import Form, { FormRow } from "./Form";
 
@@ -46,7 +47,7 @@ storiesOf("Form", module).add("default", () => (
               </label>
             </FormRow>
             <FormRow>
-              <button type="button">Send</button>
+              <Button>Send</Button>
             </FormRow>
           </form>
         </Form>

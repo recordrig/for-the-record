@@ -5,6 +5,7 @@ import React, {
   useState
 } from "react";
 import Head from "next/head";
+import Button from "../components/Button";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
 import Tile, { TileContainer } from "../components/Tile";
@@ -134,7 +135,7 @@ const ContactPage: FunctionComponent = () => {
                     </label>
                   </FormRow>
                   <FormRow>
-                    <button type="submit">Send</button>
+                    <Button>Send</Button>
                   </FormRow>
                   <div style={{ height: "48px", fontWeight: "bold" }}>
                     <span

@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
+import { Oval } from "svg-loaders-react";
 import { totalLimit } from "../data/checkout";
 import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import {
@@ -458,7 +459,16 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
           width: "24px"
         }}
       >
-        <ArrowRightIcon color="#ffffff" />
+        {checkoutClicked ? (
+          <Oval
+            style={{
+              height: "24px",
+              width: "24px"
+            }}
+          />
+        ) : (
+          <ArrowRightIcon color="#ffffff" />
+        )}
       </span>
     </Button>
   );
