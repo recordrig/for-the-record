@@ -3,7 +3,7 @@ import sgMail from "@sendgrid/mail";
 export default async function(req, res) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message, sticky } = req.body;
 
   const emailToSupport = {
     to: process.env.SENDGRID_TO_ADDRESS || "",
@@ -38,6 +38,7 @@ export default async function(req, res) {
   };
 
   try {
+    if (sticky.length > 0) throw Error;
     await sgMail.send(emailToSupport);
     await sgMail.send(emailConfirmation);
     res.status(200).send("Message sent successfully.");

@@ -19,7 +19,7 @@ const ContactPage: FunctionComponent = () => {
     name: "",
     email: "",
     subject: "",
-    honeypot: "",
+    sticky: "",
     message: ""
   });
 
@@ -43,6 +43,8 @@ const ContactPage: FunctionComponent = () => {
     setSendProcessing(true);
 
     try {
+      if (contact.sticky.length > 0) throw Error;
+
       const res = await fetch("/api/contact/send", {
         method: "POST",
         headers: {
@@ -132,10 +134,12 @@ const ContactPage: FunctionComponent = () => {
                       </label>
                     </FormRow>
                     <input
-                      name="honeypot"
-                      style={{ display: "none" }}
+                      autoComplete="no"
+                      name="sticky"
+                      style={{ left: "100vw", position: "absolute" }}
                       onChange={handleChange}
                       type="text"
+                      tabIndex={-1}
                     />
                     <FormRow>
                       <label htmlFor="contact-message">
