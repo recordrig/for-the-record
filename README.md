@@ -20,9 +20,25 @@ npm run dev
 
 ## Advanced Setup
 
-If you'd like to use all application features locally, including things like Check Out, you'll need to add a `.env.local` file in the root of this project and fill it with all required information. If you're a registered repository collaborator, you can get a prefilled `.env.local` file and shared Test API keys from the repository maintainer. 
+If you'd like to use all application features locally, including things like Check Out, you'll need to add a `.env.local` file in the root of this project and fill it with all required information. If you're a registered repository collaborator, you can get a prefilled `.env.local` file and shared Test API keys from the repository maintainer.
 
 If you are not a registered repository collaborator, you'll need to manually set up the `.env.local` file using the instructions for [Advanced Setup](./docs/advanced-setup.md).
+
+While working on features which relate to our webhooks, you might want to use the [Stripe CLI](https://stripe.com/docs/stripe-cli) to forward Stripe events to your locally running application:
+
+```
+stripe listen --forward-to localhost:3000/api/hooks/stripe
+```
+
+This command will also generate a `STRIPE_WEBHOOK_SECRET` which you should add to `.env.local`. Now, Stripe will forward all events to this locally running webhook handler instead of the webhook URL defined in the Stripe dashboard.
+
+You can also easily mock events like so: 
+
+```
+stripe trigger payment_intent.succeeded
+```
+
+Stripe will generate mock data and fire the event. This prevents you from having to go through all the UI steps and form manually time and time again.
 
 ## Development Guidelines
 

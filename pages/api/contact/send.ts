@@ -20,7 +20,7 @@ export default async function(req, res) {
   const emailConfirmation = {
     to: email,
     from: {
-      email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain.
+      email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain (so we can't use the customer's email for this).
       name: "RecordRig"
     },
     replyTo: process.env.SENDGRID_FROM_ADDRESS,
