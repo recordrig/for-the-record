@@ -3,7 +3,6 @@
 import StripeTypes from "stripe";
 import { Stripe } from "@stripe/stripe-js";
 import { loadStripe } from "@stripe/stripe-js/pure";
-import * as SendGrid from "@sendgrid/mail";
 import { extractPrices, sumTotal, formatCurrency } from "./prices";
 import {
   addNameToProducts,
