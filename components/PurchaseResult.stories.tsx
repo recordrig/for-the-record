@@ -27,6 +27,7 @@ const products = [
 storiesOf("PurchaseResult", module).add("default", () => (
   <PurchaseResult
     billingContent={address}
+    email="geraldo@rivia.vengerberg"
     products={products}
     shippingContent={address}
     totalPrice={600000}

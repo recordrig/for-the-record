@@ -179,6 +179,10 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
         {data?.checkout_session?.payment_intent?.status === "succeeded" ? (
           <PurchaseResult
             billingContent={billingContent}
+            email={
+              data?.checkout_session?.payment_intent.charges.data[0]
+                .billing_details.email
+            }
             products={products}
             shippingContent={shippingContent}
             totalPrice={data?.checkout_session?.payment_intent.amount}

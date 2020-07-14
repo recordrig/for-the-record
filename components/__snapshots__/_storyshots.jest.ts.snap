@@ -6506,7 +6506,11 @@ exports[`Storyshots PurchaseResult default 1`] = `
           <strong>
             Thank you!
           </strong>
-           Your order has been placed.
+           Your order has been placed. You'll also receive a confirmation by email on 
+          <strong>
+            geraldo@rivia.vengerberg
+          </strong>
+          .
         </p>
         <div
           style={

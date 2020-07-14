@@ -121,6 +121,7 @@ interface AddressContent {
 
 interface PurchaseResultPageProps {
   readonly billingContent: AddressContent;
+  readonly email: string;
   readonly products: {
     name: string;
     quantity: number;
@@ -132,6 +133,7 @@ interface PurchaseResultPageProps {
 
 const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
   billingContent,
+  email,
   products,
   shippingContent,
   totalPrice
@@ -141,7 +143,8 @@ const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
       <div style={{ marginBottom: "16px" }}>
         <Notification type="success">
           <p style={{ fontSize: "14px" }}>
-            <strong>Thank you!</strong> Your order has been placed.
+            <strong>Thank you!</strong> Your order has been placed. You&apos;ll
+            also receive a confirmation by email on <strong>{email}</strong>.
           </p>
         </Notification>
       </div>
