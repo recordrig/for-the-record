@@ -67,36 +67,31 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (event.type === "payment_intent.succeeded") {
       // Reduce order_capacity by 1.
-      // const records = await base("order_capacity")
-      //   .select({ maxRecords: 1, view: "Grid view" })
-      //   .firstPage();
+      const records = await base("order_capacity")
+        .select({ maxRecords: 1, view: "Grid view" })
+        .firstPage();
 
-      // const { id } = records[0];
-      // const limit = records[0].get("limit");
+      const { id } = records[0];
+      const limit = records[0].get("limit");
 
-      // base("order_capacity").update(
-      //   [
-      //     {
-      //       id,
-      //       fields: {
-      //         limit: limit - 1
-      //       }
-      //     }
-      //   ],
-      //   function(err) {
-      //     if (err) {
-      //       console.error(err);
-      //     }
-      //   }
-      // );
-
-      // console.log("event:", event);
+      base("order_capacity").update(
+        [
+          {
+            id,
+            fields: {
+              limit: limit - 1
+            }
+          }
+        ],
+        function(err) {
+          if (err) {
+            console.error(err);
+          }
+        }
+      );
 
       const paymentIntent = event.data.object as Stripe.PaymentIntent;
       const paymentIntentId = paymentIntent.id;
-
-      console.log("paymentIntent:", paymentIntent);
-      console.log("paymentIntentId:", paymentIntentId);
 
       // Find the relevant Checkout Session using the Payment Intent ID.
       // We'll use this to fetch the purchased products.
@@ -104,28 +99,20 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         payment_intent: paymentIntentId
       });
 
-      console.log("checkoutSessions:", checkoutSessions);
-
       const checkoutSessionId = checkoutSessions.data[0].id;
       const lineItems = await stripe.checkout.sessions.listLineItems(
         checkoutSessionId
       );
 
-      console.log("paymentIntent:", paymentIntent);
-      console.log("lineItems:", lineItems);
-
       const total = paymentIntent.amount;
-      console.log("total:", total);
 
       const customerEmail = paymentIntent.charges.data[0].billing_details.email;
-      console.log("customerEmail:", customerEmail);
 
       const shippingName: Stripe.Checkout.Session.Shipping["name"] =
         paymentIntent.shipping?.name;
 
       const shippingAddress: Stripe.Address = paymentIntent.shipping
         ?.address as Stripe.Address;
-      console.log("shippingAddress:", shippingAddress);
 
       const shippingInfo = {
         name: shippingName ?? "",
@@ -138,15 +125,12 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             ? countriesData[shippingAddress.country].name
             : ""
       };
-      console.log("shippingInfo:", shippingInfo);
 
       const billingName: Stripe.Charge.BillingDetails["name"] =
         paymentIntent.charges.data[0].billing_details.name;
-      console.log("billingName:", billingName);
 
       const billingAddress = paymentIntent.charges.data[0].billing_details
         .address as Stripe.Address;
-      console.log("billingAddress:", billingAddress);
 
       const billingInfo = {
         name: billingName ?? "",
@@ -159,10 +143,8 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             ? countriesData[billingAddress.country].name
             : ""
       };
-      console.log("billingInfo:", billingInfo);
 
       const products = lineItems.data;
-      console.log("products:", products);
 
       // Send order confirmation to customer.
       const orderConfirmationEmail = {
