@@ -32,14 +32,6 @@ stripe listen --forward-to localhost:3000/api/hooks/stripe
 
 This command will also generate a `STRIPE_WEBHOOK_SECRET` which you should add to `.env.local`. Now, Stripe will forward all events to this locally running webhook handler instead of the webhook URL defined in the Stripe dashboard.
 
-You can also easily mock events like so: 
-
-```
-stripe trigger payment_intent.succeeded
-```
-
-Stripe will generate mock data and fire the event. This prevents you from having to go through all the UI steps and form manually time and time again.
-
 ## Development Guidelines
 
 | ✅ &nbsp;Do                                                                                                                                                                                                                                                                                                                                          | ❌ &nbsp;Do not                                                                                                                                                                                                                                                                                                                                                       |

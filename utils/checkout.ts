@@ -3,7 +3,8 @@
 import StripeTypes from "stripe";
 import { Stripe } from "@stripe/stripe-js";
 import { loadStripe } from "@stripe/stripe-js/pure";
-import { extractPrices, sumTotal } from "./prices";
+import * as SendGrid from "@sendgrid/mail";
+import { extractPrices, sumTotal, formatCurrency } from "./prices";
 import {
   addNameToProducts,
   addPriceToProducts,
@@ -155,4 +156,73 @@ export const structureProductsForCheckout = (
     },
     quantity: product.quantity
   }));
+};
+
+/**
+ * Takes raw Stripe data and converts it to the data structure needed to send our confirmation
+ * email. Should match the mock data as defined in SendGrid for the dynamic email template
+ * called "Order confirmation".
+ */
+export const createOrderConfirmationEmailTemplate = (
+  products: StripeTypes.ApiList<StripeTypes.LineItem>["data"],
+  total: StripeTypes.PaymentIntent["amount"],
+  customerEmail: StripeTypes.Charge.BillingDetails["email"],
+  shippingInfo: {
+    name: string;
+    line1: string;
+    line2?: string;
+    postalCode: string;
+    city: string;
+    country: string;
+  },
+  billingInfo: {
+    name: string;
+    line1: string;
+    line2?: string;
+    postalCode: string;
+    city: string;
+    country: string;
+  }
+): {
+  products: {
+    name: string;
+    amount: string | number;
+    price: string;
+    img: string;
+  }[];
+  total: string;
+  customerEmail: string;
+  shippingAddress: {
+    name: string;
+    line1: string;
+    line2?: string;
+    postalCode: string;
+    city: string;
+    country: string;
+  };
+  billingAddress: {
+    name: string;
+    line1: string;
+    line2?: string;
+    postalCode: string;
+    city: string;
+    country: string;
+  };
+} => {
+  const convertedProducts = products.map(product => ({
+    name: product.description,
+    amount: product.quantity || 1,
+    price: formatCurrency(product.amount_total || 0),
+    img: product.description.endsWith("lack")
+      ? "https://recordrig.com/recordrig-black.png"
+      : "https://recordrig.com/recordrig.png"
+  }));
+
+  return {
+    products: convertedProducts,
+    total: formatCurrency(total),
+    customerEmail: customerEmail ?? "",
+    shippingAddress: shippingInfo,
+    billingAddress: billingInfo
+  };
 };

@@ -4,6 +4,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Airtable from "airtable";
 import Stripe from "stripe";
 import sgMail from "@sendgrid/mail";
+import countriesData from "../../../data/countries";
+import { createOrderConfirmationEmailTemplate } from "../../../utils/checkout";
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
   process.env.AIRTABLE_BASE_ID
@@ -65,30 +67,102 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (event.type === "payment_intent.succeeded") {
       // Reduce order_capacity by 1.
-      const records = await base("order_capacity")
-        .select({ maxRecords: 1, view: "Grid view" })
-        .firstPage();
+      // const records = await base("order_capacity")
+      //   .select({ maxRecords: 1, view: "Grid view" })
+      //   .firstPage();
 
-      const { id } = records[0];
-      const limit = records[0].get("limit");
+      // const { id } = records[0];
+      // const limit = records[0].get("limit");
 
-      base("order_capacity").update(
-        [
-          {
-            id,
-            fields: {
-              limit: limit - 1
-            }
-          }
-        ],
-        function(err) {
-          if (err) {
-            console.error(err);
-          }
-        }
+      // base("order_capacity").update(
+      //   [
+      //     {
+      //       id,
+      //       fields: {
+      //         limit: limit - 1
+      //       }
+      //     }
+      //   ],
+      //   function(err) {
+      //     if (err) {
+      //       console.error(err);
+      //     }
+      //   }
+      // );
+
+      // console.log("event:", event);
+
+      const paymentIntent = event.data.object as Stripe.PaymentIntent;
+      const paymentIntentId = paymentIntent.id;
+
+      console.log("paymentIntent:", paymentIntent);
+      console.log("paymentIntentId:", paymentIntentId);
+
+      // Find the relevant Checkout Session using the Payment Intent ID.
+      // We'll use this to fetch the purchased products.
+      const checkoutSessions = await stripe.checkout.sessions.list({
+        payment_intent: paymentIntentId
+      });
+
+      console.log("checkoutSessions:", checkoutSessions);
+
+      const checkoutSessionId = checkoutSessions.data[0].id;
+      const lineItems = await stripe.checkout.sessions.listLineItems(
+        checkoutSessionId
       );
 
-      console.log("event:", event);
+      console.log("paymentIntent:", paymentIntent);
+      console.log("lineItems:", lineItems);
+
+      const total = paymentIntent.amount;
+      console.log("total:", total);
+
+      const customerEmail = paymentIntent.charges.data[0].billing_details.email;
+      console.log("customerEmail:", customerEmail);
+
+      const shippingName: Stripe.Checkout.Session.Shipping["name"] =
+        paymentIntent.shipping?.name;
+
+      const shippingAddress: Stripe.Address = paymentIntent.shipping
+        ?.address as Stripe.Address;
+      console.log("shippingAddress:", shippingAddress);
+
+      const shippingInfo = {
+        name: shippingName ?? "",
+        line1: shippingAddress.line1 ?? "",
+        line2: shippingAddress.line2 ?? "",
+        postalCode: shippingAddress.postal_code ?? "",
+        city: shippingAddress.city ?? "",
+        country:
+          typeof shippingAddress.country === "string"
+            ? countriesData[shippingAddress.country].name
+            : ""
+      };
+      console.log("shippingInfo:", shippingInfo);
+
+      const billingName: Stripe.Charge.BillingDetails["name"] =
+        paymentIntent.charges.data[0].billing_details.name;
+      console.log("billingName:", billingName);
+
+      const billingAddress = paymentIntent.charges.data[0].billing_details
+        .address as Stripe.Address;
+      console.log("billingAddress:", billingAddress);
+
+      const billingInfo = {
+        name: billingName ?? "",
+        line1: billingAddress.line1 ?? "",
+        line2: billingAddress.line2 ?? undefined,
+        postalCode: billingAddress.postal_code ?? "",
+        city: billingAddress.city ?? "",
+        country:
+          typeof billingAddress.country === "string"
+            ? countriesData[billingAddress.country].name
+            : ""
+      };
+      console.log("billingInfo:", billingInfo);
+
+      const products = lineItems.data;
+      console.log("products:", products);
 
       // Send order confirmation to customer.
       const orderConfirmationEmail = {
@@ -102,43 +176,17 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
           {
             to: [
               {
-                email: "daniella810@gmail.com",
-                name: "Daniella"
+                email: customerEmail ?? "",
+                name: billingName ?? ""
               }
             ],
-            dynamic_template_data: {
-              products: [
-                {
-                  name: "RecordRig - Stealth Black",
-                  amount: "1",
-                  price: "€ 2.500,00",
-                  img: "https://recordrig.com/recordrig-black.png?v=1"
-                },
-                {
-                  name: "RecordRig - Pristine White",
-                  amount: "2",
-                  price: "€ 5.000,00",
-                  img: "https://recordrig.com/recordrig.png?v=1"
-                }
-              ],
-              total: "€ 7.250,00",
-              customerEmail: "customer@gmail.com",
-              shippingAddress: {
-                name: "Geralt of Rivia",
-                line1: "Somestreet 124",
-                postalCode: "ABABAB 99",
-                city: "Vengerberg",
-                country: "Netherlands"
-              },
-              billingAddress: {
-                name: "Geralt of Rivia",
-                line1: "Billingstrt 124",
-                line2: "Another line",
-                postalCode: "NONO 50",
-                city: "Novigrad",
-                country: "Netherlands"
-              }
-            }
+            dynamic_template_data: createOrderConfirmationEmailTemplate(
+              products,
+              total,
+              customerEmail,
+              shippingInfo,
+              billingInfo
+            )
           }
         ]
       };
