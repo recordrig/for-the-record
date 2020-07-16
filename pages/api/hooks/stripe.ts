@@ -173,7 +173,35 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         ]
       };
 
+      // Send COPY of order confirmation to support.
+      const orderConfirmationEmailCopy = {
+        from: {
+          email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain.
+          name: "RecordRig"
+        },
+        replyTo: process.env.SENDGRID_FROM_ADDRESS || "",
+        templateId: "d-a3990f818fbd431f8421eab7cb53764f", // Order confirmation template.
+        personalizations: [
+          {
+            to: [
+              {
+                email: process.env.SENDGRID_TO_ADDRESS ?? "",
+                name: "RecordRig Support" ?? ""
+              }
+            ],
+            dynamic_template_data: createOrderConfirmationEmailTemplate(
+              products,
+              total,
+              customerEmail,
+              shippingInfo,
+              billingInfo
+            )
+          }
+        ]
+      };
+
       await sgMail.send(orderConfirmationEmail);
+      await sgMail.send(orderConfirmationEmailCopy);
     } else {
       // When testing locally and forwarding all events to this hander using the
       // Stripe CLI, this'll show up a lot in the logs. This is fine - we do not
