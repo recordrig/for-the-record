@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
-import { ArrowRightIcon, ShoppingBagIcon } from "./Icon";
+import { ArrowRightIcon, MenuIcon, ShoppingBagIcon } from "./Icon";
 import Button from "./Button";
 import Drawer from "./Drawer";
+import MainMenu from "./MainMenu";
 import ProductList from "./ProductList";
 
 const StyledLogo = styled.a`
@@ -43,7 +44,7 @@ const StyledTextLink = styled.a`
   text-decoration: none;
 
   @media (max-width: 599px) {
-    padding: 0 10px;
+    padding: 0 8px;
   }
 
   @media (min-width: 600px) {
@@ -63,6 +64,10 @@ const StyledShopLink = styled.a`
   padding: 0 16px;
   text-align: center;
   text-decoration: none;
+
+  @media (max-width: 575px) {
+    margin-right: 8px;
+  }
 `;
 
 const StyledButtonWrapper = styled.div`
@@ -88,7 +93,7 @@ const ShoppingBagMenuItem = styled.li`
     line-height: 64px;
     outline: none;
     margin: 0;
-    padding: 0 16px 0 40px;
+    padding: 0 16px 0 43px;
     text-align: left;
   }
 
@@ -104,7 +109,39 @@ const ShoppingBagMenuItem = styled.li`
   @media (max-width: 575px) {
     button {
       font-size: 0;
-      padding: 0 16px 0 32px;
+      padding: 0 4px 0 42px;
+    }
+  }
+`;
+
+const StyledMenuButton = styled.li`
+  line-height: 64px;
+
+  > button {
+    background: none;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 64px;
+    outline: none;
+    margin: 0;
+    padding: 0 16px 0 10px;
+    text-align: left;
+  }
+
+  > button > span {
+    height: 32px;
+    margin-right: 8px;
+    padding-top: 16px;
+    position: relative;
+    top: 10px;
+  }
+
+  @media (max-width: 575px) {
+    button {
+      font-size: 0;
+      padding: 0 0 0 6px;
     }
   }
 `;
@@ -131,7 +168,8 @@ const StyledMenuBar = styled.nav`
       font-size: 16px;
     }
 
-    li:nth-last-child(3) {
+    /* Shop button */
+    li:nth-last-child(4) {
       margin-right: auto;
     }
 
@@ -176,8 +214,10 @@ interface MenuBarProps {
  */
 const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
   const [openShoppingBag, setOpenShoppingBag] = useState(false);
+  const toggleBagDrawer = () => setOpenShoppingBag(!openShoppingBag);
 
-  const toggleDrawer = () => setOpenShoppingBag(!openShoppingBag);
+  const [openMenu, setOpenMenu] = useState(false);
+  const toggleMenuDrawer = () => setOpenMenu(!openMenu);
 
   const amount = products
     .map(product => product.quantity)
@@ -214,16 +254,24 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </Link>
           </li>
           <ShoppingBagMenuItem>
-            <button onClick={toggleDrawer} type="button">
+            <button onClick={toggleBagDrawer} type="button">
               <span>
                 <ShoppingBagIcon amount={amount} />
               </span>
-              Shopping Bag
+              Bag
             </button>
           </ShoppingBagMenuItem>
+          <StyledMenuButton>
+            <button onClick={toggleMenuDrawer} type="button">
+              <span>
+                <MenuIcon />
+              </span>
+              Menu
+            </button>
+          </StyledMenuButton>
         </ul>
       </StyledMenuBar>
-      <Drawer closeDrawer={toggleDrawer} open={openShoppingBag}>
+      <Drawer closeDrawer={toggleBagDrawer} open={openShoppingBag}>
         {products.length > 0 ? (
           <span>
             <p
@@ -247,7 +295,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
               <Button
                 data-cy="menubar-shop-button"
                 href="/shop/shopping-bag"
-                onClick={() => toggleDrawer()}
+                onClick={() => toggleBagDrawer()}
               >
                 Check Out
                 <span
@@ -266,7 +314,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </StyledButtonWrapper>
             <p style={{ textAlign: "center" }}>
               <Link href="/shop/shopping-bag" passHref>
-                <StyledReviewBagLink onClick={() => toggleDrawer()}>
+                <StyledReviewBagLink onClick={() => toggleBagDrawer()}>
                   Review Bag
                 </StyledReviewBagLink>
               </Link>
@@ -278,7 +326,10 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
               Your Shopping Bag is empty.
             </p>
             <StyledButtonWrapper>
-              <Button href="/shop/buy-recordrig" onClick={() => toggleDrawer()}>
+              <Button
+                href="/shop/buy-recordrig"
+                onClick={() => toggleBagDrawer()}
+              >
                 Shop RecordRig
                 <span
                   style={{
@@ -296,6 +347,11 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
             </StyledButtonWrapper>
           </div>
         )}
+      </Drawer>
+      <Drawer closeDrawer={toggleMenuDrawer} open={openMenu}>
+        <div style={{ margin: "16px" }}>
+          <MainMenu />
+        </div>
       </Drawer>
     </>
   );

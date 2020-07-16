@@ -3215,7 +3215,19 @@ exports[`Storyshots MainMenu default 1`] = `
 
 exports[`Storyshots MenuBar default 1`] = `
 Array [
-  .c6 {
+  .c8 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c8 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+.c6 {
   bottom: 0;
   position: absolute;
   width: 32px;
@@ -3312,7 +3324,7 @@ Array [
   line-height: 64px;
   outline: none;
   margin: 0;
-  padding: 0 16px 0 40px;
+  padding: 0 16px 0 43px;
   text-align: left;
 }
 
@@ -3323,6 +3335,31 @@ Array [
   right: 32px;
   top: 10px;
   z-index: -1;
+}
+
+.c7 {
+  line-height: 64px;
+}
+
+.c7 > button {
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 64px;
+  outline: none;
+  margin: 0;
+  padding: 0 16px 0 10px;
+  text-align: left;
+}
+
+.c7 > button > span {
+  height: 32px;
+  margin-right: 8px;
+  padding-top: 16px;
+  position: relative;
+  top: 10px;
 }
 
 .c0 {
@@ -3353,7 +3390,7 @@ Array [
   font-size: 16px;
 }
 
-.c0 > ul li:nth-last-child(3) {
+.c0 > ul li:nth-last-child(4) {
   margin-right: auto;
 }
 
@@ -3393,7 +3430,7 @@ Array [
 
 @media (max-width:599px) {
   .c2 {
-    padding: 0 10px;
+    padding: 0 8px;
   }
 }
 
@@ -3404,9 +3441,22 @@ Array [
 }
 
 @media (max-width:575px) {
+  .c3 {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:575px) {
   .c4 button {
     font-size: 0;
-    padding: 0 16px 0 32px;
+    padding: 0 4px 0 42px;
+  }
+}
+
+@media (max-width:575px) {
+  .c7 button {
+    font-size: 0;
+    padding: 0 0 0 6px;
   }
 }
 
@@ -3503,7 +3553,41 @@ Array [
               </span>
             </div>
           </span>
-          Shopping Bag
+          Bag
+        </button>
+      </li>
+      <li
+        className="c7"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            <span
+              className="c8"
+              color="#000000"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z"
+                />
+                <title>
+                  Menu
+                </title>
+              </svg>
+            </span>
+          </span>
+          Menu
         </button>
       </li>
     </ul>
@@ -3670,6 +3754,14 @@ Array [
 
 }
 
+@media (max-width:575px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
 @media (max-width:360px) {
 
 }
@@ -3797,12 +3889,282 @@ Array [
       </div>
     </div>
   </div>,
+  .c1 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c1 svg {
+  fill: #dde1e6;
+  height: inherit;
+  width: inherit;
+}
+
+.c0 {
+  background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0);
+  position: fixed;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  padding: 0;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
+
+.c0 > button svg {
+  pointer-events: none;
+}
+
+.c0 > div {
+  overflow: scroll;
+}
+
+.c3 {
+  color: #000;
+  font-size: 24px;
+  height: 64px;
+  line-height: 64px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 > img {
+  height: 16px;
+  margin-left: 8px;
+  width: 19px;
+}
+
+.c3 > span {
+  vertical-align: top;
+}
+
+.c2 {
+  height: 100%;
+  width: 100%;
+}
+
+.c2 > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width:1023px) {
+
+}
+
+@media (max-width:549px) {
+
+}
+
+@media (min-width:550px) {
+
+}
+
+@media (max-width:575px) {
+  .c0 {
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+
+  .c0 > div {
+    height: 100%;
+  }
+}
+
+@media (max-width:767px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (max-width:599px) {
+
+}
+
+@media (min-width:600px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (max-width:360px) {
+
+}
+
+@media (max-width:480px) {
+
+}
+
+<div
+    className="c0"
+    open={false}
+  >
+    <button
+      data-cy="close-drawer"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderRadius": "100%",
+            "display": "inline-block",
+            "height": "32px",
+            "width": "32px",
+          }
+        }
+      >
+        <span
+          className="c1"
+          color="#dde1e6"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            height="32"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9 l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"
+            />
+            <path
+              d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16 l5.4,5.4L21.4,23z"
+              data-icon-path="inner-path"
+              fill="none"
+              opacity="0"
+            />
+            <title>
+              Cross
+            </title>
+          </svg>
+        </span>
+      </span>
+    </button>
+    <div>
+      <div>
+        <div
+          style={
+            Object {
+              "margin": "16px",
+            }
+          }
+        >
+          <nav
+            className="c2"
+          >
+            <ul>
+              <li>
+                <a
+                  className="c3"
+                  href="/"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Home
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/contact"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Contact
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>,
 ]
 `;
 
 exports[`Storyshots MenuBar products 1`] = `
 Array [
-  .c6 {
+  .c8 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c8 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+.c6 {
   bottom: 0;
   position: absolute;
   width: 32px;
@@ -3899,7 +4261,7 @@ Array [
   line-height: 64px;
   outline: none;
   margin: 0;
-  padding: 0 16px 0 40px;
+  padding: 0 16px 0 43px;
   text-align: left;
 }
 
@@ -3910,6 +4272,31 @@ Array [
   right: 32px;
   top: 10px;
   z-index: -1;
+}
+
+.c7 {
+  line-height: 64px;
+}
+
+.c7 > button {
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 64px;
+  outline: none;
+  margin: 0;
+  padding: 0 16px 0 10px;
+  text-align: left;
+}
+
+.c7 > button > span {
+  height: 32px;
+  margin-right: 8px;
+  padding-top: 16px;
+  position: relative;
+  top: 10px;
 }
 
 .c0 {
@@ -3940,7 +4327,7 @@ Array [
   font-size: 16px;
 }
 
-.c0 > ul li:nth-last-child(3) {
+.c0 > ul li:nth-last-child(4) {
   margin-right: auto;
 }
 
@@ -3988,7 +4375,7 @@ Array [
 
 @media (max-width:599px) {
   .c2 {
-    padding: 0 10px;
+    padding: 0 8px;
   }
 }
 
@@ -3999,9 +4386,22 @@ Array [
 }
 
 @media (max-width:575px) {
+  .c3 {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:575px) {
   .c4 button {
     font-size: 0;
-    padding: 0 16px 0 32px;
+    padding: 0 4px 0 42px;
+  }
+}
+
+@media (max-width:575px) {
+  .c7 button {
+    font-size: 0;
+    padding: 0 0 0 6px;
   }
 }
 
@@ -4101,7 +4501,41 @@ Array [
               </span>
             </div>
           </span>
-          Shopping Bag
+          Bag
+        </button>
+      </li>
+      <li
+        className="c7"
+      >
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            <span
+              className="c8"
+              color="#000000"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                focusable="false"
+                height="32"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z"
+                />
+                <title>
+                  Menu
+                </title>
+              </svg>
+            </span>
+          </span>
+          Menu
         </button>
       </li>
     </ul>
@@ -4369,6 +4803,14 @@ Array [
 
 }
 
+@media (max-width:575px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
 @media (max-width:360px) {
 
 }
@@ -4551,6 +4993,272 @@ Array [
             </a>
           </p>
         </span>
+      </div>
+    </div>
+  </div>,
+  .c1 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c1 svg {
+  fill: #dde1e6;
+  height: inherit;
+  width: inherit;
+}
+
+.c0 {
+  background-color: #ffffff;
+  box-shadow: 0 0 64px 0 rgba(0,0,0,0);
+  position: fixed;
+  will-change: transform;
+  z-index: 10;
+}
+
+.c0 > button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  padding: 0;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
+
+.c0 > button svg {
+  pointer-events: none;
+}
+
+.c0 > div {
+  overflow: scroll;
+}
+
+.c3 {
+  color: #000;
+  font-size: 24px;
+  height: 64px;
+  line-height: 64px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3 > img {
+  height: 16px;
+  margin-left: 8px;
+  width: 19px;
+}
+
+.c3 > span {
+  vertical-align: top;
+}
+
+.c2 {
+  height: 100%;
+  width: 100%;
+}
+
+.c2 > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width:1023px) {
+
+}
+
+@media (max-width:549px) {
+
+}
+
+@media (min-width:550px) {
+
+}
+
+@media (max-width:575px) {
+  .c0 {
+    border-radius: 12px 12px 0 0;
+    top: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .c0 > div {
+    height: 0px;
+  }
+}
+
+@media (min-width:576px) {
+  .c0 {
+    height: 100%;
+    left: 100vw;
+    top: 0;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 500px;
+  }
+
+  .c0 > div {
+    height: 100%;
+  }
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (min-width:576px) {
+
+}
+
+@media (max-width:767px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (max-width:599px) {
+
+}
+
+@media (min-width:600px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (max-width:575px) {
+
+}
+
+@media (max-width:360px) {
+
+}
+
+@media (max-width:480px) {
+
+}
+
+<div
+    className="c0"
+    open={false}
+  >
+    <button
+      data-cy="close-drawer"
+      onClick={[Function]}
+      title="Close"
+      type="button"
+    >
+      <span
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderRadius": "100%",
+            "display": "inline-block",
+            "height": "32px",
+            "width": "32px",
+          }
+        }
+      >
+        <span
+          className="c1"
+          color="#dde1e6"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            height="32"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9 l5.4,5.4L21.4,9l1.6,1.6L17.6,16l5.4,5.4L21.4,23z"
+            />
+            <path
+              d="M21.4,23L16,17.6L10.6,23L9,21.4l5.4-5.4L9,10.6L10.6,9l5.4,5.4L21.4,9l1.6,1.6L17.6,16 l5.4,5.4L21.4,23z"
+              data-icon-path="inner-path"
+              fill="none"
+              opacity="0"
+            />
+            <title>
+              Cross
+            </title>
+          </svg>
+        </span>
+      </span>
+    </button>
+    <div>
+      <div>
+        <div
+          style={
+            Object {
+              "margin": "16px",
+            }
+          }
+        >
+          <nav
+            className="c2"
+          >
+            <ul>
+              <li>
+                <a
+                  className="c3"
+                  href="/"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Home
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/contact"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Contact
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </div>,
