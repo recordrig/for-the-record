@@ -11,6 +11,7 @@ const StyledLogo = styled.a`
   height: 32px;
   margin-bottom: 12px;
   margin-top: 12px;
+  margin-right: 8px;
   padding-bottom: 4px;
   padding-top: 4px;
   padding-left: 8px;
@@ -29,6 +30,24 @@ const StyledLogo = styled.a`
 
   @media (min-width: 768px) {
     margin-left: 8px;
+  }
+`;
+
+const StyledTextLink = styled.a`
+  color: #000000;
+  display: inline-block;
+  height: 48px;
+  line-height: 48px;
+  margin: 8px 0px;
+  text-align: center;
+  text-decoration: none;
+
+  @media (max-width: 599px) {
+    padding: 0 10px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 0 16px;
   }
 `;
 
@@ -112,8 +131,35 @@ const StyledMenuBar = styled.nav`
       font-size: 16px;
     }
 
-    li:first-child {
+    li:nth-last-child(3) {
       margin-right: auto;
+    }
+
+    /* Hide some menu text links on small screens. */
+    /* Tech Specs */
+    @media (max-width: 360px) {
+      li:nth-child(2) {
+        visibility: hidden;
+        width: 0;
+
+        a {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    /* Setup */
+    @media (max-width: 480px) {
+      li:nth-child(3) {
+        visibility: hidden;
+        width: 0;
+
+        a {
+          margin: 0;
+          padding: 0;
+        }
+      }
     }
   }
 `;
@@ -148,6 +194,16 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
               <StyledLogo>
                 <img alt="" src="/recordrig-logo.png" />
               </StyledLogo>
+            </Link>
+          </li>
+          <li>
+            <Link href="/tech-specs" passHref>
+              <StyledTextLink>Tech Specs</StyledTextLink>
+            </Link>
+          </li>
+          <li>
+            <Link href="/setup" passHref>
+              <StyledTextLink>Setup Guide</StyledTextLink>
             </Link>
           </li>
           <li>
