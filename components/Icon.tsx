@@ -251,6 +251,30 @@ export const InfoIcon: FunctionComponent<InfoIconProps> = ({
   </StyledIcon>
 );
 
+interface MenuIconProps {
+  readonly color?: string;
+}
+
+export const MenuIcon: FunctionComponent<MenuIconProps> = ({
+  color = "#000000"
+}) => (
+  <StyledIcon color={color}>
+    <svg
+      focusable="false"
+      preserveAspectRatio="xMidYMid meet"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+      <path d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z" />
+      <title>Menu</title>
+    </svg>
+  </StyledIcon>
+);
+
 interface StyledShoppingBagIconProps {
   readonly animate: boolean;
 }

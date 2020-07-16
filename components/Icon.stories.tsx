@@ -6,6 +6,7 @@ import {
   CrossIcon,
   ErrorIcon,
   InfoIcon,
+  MenuIcon,
   ShoppingBagIcon,
   WarnIcon
 } from "./Icon";
@@ -42,6 +43,8 @@ storiesOf("Icon", module)
   .add("info: default", () => <InfoIcon />)
   .add("info: color", () => <InfoIcon color="#ff0000" />)
   .add("info: type outline", () => <InfoIcon type="outline" />)
+  .add("menu: default", () => <MenuIcon />)
+  .add("menu: color", () => <MenuIcon color="#ff0000" />)
   .add("shopping bag: 0", () => <ShoppingBagIcon amount={0} />)
   .add("shopping bag: 2", () => <ShoppingBagIcon amount={2} />)
   .add("shopping bag: interactive", () => <ShoppingBagInteractive />)

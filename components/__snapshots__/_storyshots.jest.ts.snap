@@ -2742,6 +2742,80 @@ exports[`Storyshots Icon info: type outline 1`] = `
 </span>
 `;
 
+exports[`Storyshots Icon menu: color 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #ff0000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#ff0000"
+>
+  <svg
+    aria-hidden="true"
+    fill="currentColor"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z"
+    />
+    <title>
+      Menu
+    </title>
+  </svg>
+</span>
+`;
+
+exports[`Storyshots Icon menu: default 1`] = `
+.c0 {
+  height: inherit;
+  display: inline-block;
+  width: inherit;
+}
+
+.c0 svg {
+  fill: #000000;
+  height: inherit;
+  width: inherit;
+}
+
+<span
+  className="c0"
+  color="#000000"
+>
+  <svg
+    aria-hidden="true"
+    fill="currentColor"
+    focusable="false"
+    height="32"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 32 32"
+    width="32"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 24H28V26H4zM4 12H28V14H4zM4 18H28V20H4zM4 6H28V8H4z"
+    />
+    <title>
+      Menu
+    </title>
+  </svg>
+</span>
+`;
+
 exports[`Storyshots Icon shopping bag: 0 1`] = `
 .c1 {
   bottom: 0;
