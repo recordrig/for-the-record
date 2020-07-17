@@ -224,8 +224,7 @@ describe("Stripe utilities", () => {
             currency: "eur",
             unit_amount: 200000,
             product_data: {
-              name: "Product 1",
-              description: "PRODUCT1"
+              name: "Product 1"
             }
           },
           quantity: 1
@@ -235,8 +234,7 @@ describe("Stripe utilities", () => {
             currency: "eur",
             unit_amount: 250000,
             product_data: {
-              name: "Product 2",
-              description: "PRODUCT2"
+              name: "Product 2"
             }
           },
           quantity: 2

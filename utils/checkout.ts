@@ -147,10 +147,7 @@ export const structureProductsForCheckout = (
       currency: "eur",
       unit_amount: product.price,
       product_data: {
-        name: product.name,
-        description: product.id
-        // Metadata is lost in the motions, so we'll use the "description" field to store core
-        // product properties we can also use to identify it later on (years if need be).
+        name: product.name
       }
     },
     quantity: product.quantity
