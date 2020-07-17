@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 import MainMenu from "./MainMenu";
 
 const StyledAddress = styled.p`
@@ -93,8 +94,28 @@ const Footer: FunctionComponent = () => (
           paddingBottom: "32px"
         }}
       >
-        RecordRig is registered with the Netherlands Chamber of Commerce - ID
-        67196802.
+        <Link href="/terms" passHref>
+          <a>Terms and Conditions</a>
+        </Link>{" "}
+        &nbsp;•&nbsp;
+        <Link href="/privacy" passHref>
+          <a>Privacy</a>
+        </Link>{" "}
+        &nbsp;•&nbsp;
+        <Link href="/cookies" passHref>
+          <a>Cookies</a>
+        </Link>
+      </span>
+      <br />
+      <span
+        style={{
+          color: "#4d5358",
+          fontSize: "12px",
+          paddingBottom: "32px"
+        }}
+      >
+        RecordRig is registered with the Netherlands Chamber of Commerce - KvK
+        ID 67196802 - Tax ID NL002217700B75.
       </span>
     </StyledInfo>
   </StyledFooter>

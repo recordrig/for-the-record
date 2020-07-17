@@ -1468,7 +1468,43 @@ exports[`Storyshots Footer default 1`] = `
         }
       }
     >
-      RecordRig is registered with the Netherlands Chamber of Commerce - ID 67196802.
+      <a
+        href="/terms"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Terms and Conditions
+      </a>
+       
+       • 
+      <a
+        href="/privacy"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Privacy
+      </a>
+       
+       • 
+      <a
+        href="/cookies"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Cookies
+      </a>
+    </span>
+    <br />
+    <span
+      style={
+        Object {
+          "color": "#4d5358",
+          "fontSize": "12px",
+          "paddingBottom": "32px",
+        }
+      }
+    >
+      RecordRig is registered with the Netherlands Chamber of Commerce ("Kamer van Koophandel") - KvK ID 67196802 - Tax ID NL002217700B75.
     </span>
   </div>
 </div>
