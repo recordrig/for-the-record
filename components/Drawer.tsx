@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useState
 } from "react";
+import Router from "next/router";
 import styled, { css } from "styled-components";
 import { CrossIcon } from "./Icon";
 
@@ -182,6 +183,21 @@ const Drawer: FunctionComponent<DrawerProps> = ({
       );
     }
   }, [open]);
+
+  const onNavigate = () => closeDrawer();
+
+  // Close on any navigation event. Whenever navigation to a different page occurs, we can reasonably assume the Drawer
+  // ought to close as the user intends to go elsewhere. It wouldn't make sense to continue to overlay the new screen
+  // with a Drawer.
+  React.useEffect(() => {
+    if (open === true) {
+      Router.events.on("routeChangeStart", onNavigate);
+    }
+
+    return () => {
+      Router.events.off("routeChangeStart", onNavigate);
+    };
+  });
 
   return (
     <>
