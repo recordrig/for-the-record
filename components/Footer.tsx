@@ -4,15 +4,15 @@ import Link from "next/link";
 import MainMenu from "./MainMenu";
 
 const StyledAddress = styled.p`
-  padding-bottom: 64px;
-
   @media (max-width: 767px) {
     margin-left: 40px;
+    padding-bottom: 64px;
   }
 
   @media (min-width: 768px) {
     font-size: 20px;
     line-height: 32px;
+    padding-bottom: 128px;
     margin-left: 82px;
   }
 `;
@@ -57,9 +57,13 @@ const StyledFooter = styled.div`
   display: flex;
   margin: 64px auto 0;
   max-width: 1216px;
-  opacity: 0.65;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  a,
+  a:visited {
+    color: #000000;
+  }
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -67,7 +71,7 @@ const StyledFooter = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row-reverse;
-    padding-bottom: 64px;
+    padding-bottom: 32px;
   }
 `;
 
@@ -114,8 +118,8 @@ const Footer: FunctionComponent = () => (
           paddingBottom: "32px"
         }}
       >
-        RecordRig is registered with the Netherlands Chamber of Commerce - KvK
-        ID 67196802 - Tax ID NL002217700B75.
+        RecordRig is registered with the Netherlands Chamber of Commerce -
+        KvK&nbsp;ID&nbsp;67196802 - Tax&nbsp;ID&nbsp;NL002217700B75.
       </span>
     </StyledInfo>
   </StyledFooter>
