@@ -349,7 +349,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
         )}
       </Drawer>
       <Drawer closeDrawer={toggleMenuDrawer} open={openMenu}>
-        <div style={{ margin: "16px" }}>
+        <div style={{ padding: "16px 32px" }}>
           <MainMenu />
         </div>
       </Drawer>
