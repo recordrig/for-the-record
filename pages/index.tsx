@@ -18,6 +18,23 @@ import Tile, { TileContainer } from "../components/Tile";
 import Features from "../components/Features";
 import Button from "../components/Button";
 
+const StyledHeading = styled.h3`
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0 8px;
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 42px;
+  }
+`;
+
 const StyledSubHeading = styled.h3`
   color: #b9bfc7;
   font-weight: bold;
@@ -25,7 +42,7 @@ const StyledSubHeading = styled.h3`
   text-align: center;
 
   @media (max-width: 767px) {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   @media (min-width: 768px) {
@@ -53,6 +70,48 @@ const StyledProductImage = styled.div`
 
   > img {
     max-width: 100%;
+  }
+`;
+
+const StyledIntroImage = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 374px) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 375px) and (max-width: 767px) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+`;
+
+const StyledIntroWrapper = styled.div`
+  background-color: #000000;
+
+  @media (max-width: 374px) {
+    padding-top: 88px;
+  }
+
+  @media (min-width: 375px) and (max-width: 767px) {
+    padding-top: 112px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 128px;
   }
 `;
 
@@ -236,23 +295,25 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
           content="Recording and streaming 4K HDR on PS4 Pro and Xbox One is finally here - buy RecordRig to share gameplay in UHD."
         />
       </Head>
-      <Section dark>
+      <StyledIntroWrapper>
         <FadeInSubHeading>
           <StyledSubHeading>RecordRig.</StyledSubHeading>
         </FadeInSubHeading>
         <FadeInHeading>
-          <Heading center color="#ffffff" h={1}>
-            Share your gameplay in the highest quality.
-          </Heading>
+          <StyledHeading>
+            Share your gameplay in&nbsp;the&nbsp;highest&nbsp;quality.
+          </StyledHeading>
         </FadeInHeading>
         <FadeInProductImage>
-          <StyledProductImage>
-            <img
-              alt="Gameplay can be recorded in 4K HDR with this streaming PC."
-              src="/recordrig.png"
-              style={{ display: "block", margin: "64px auto" }}
-            />
-          </StyledProductImage>
+          <StyledIntroImage>
+            <StyledProductImage>
+              <img
+                alt="Gameplay can be recorded in 4K HDR with this streaming PC."
+                src="/recordrig.png"
+                style={{ display: "block" }}
+              />
+            </StyledProductImage>
+          </StyledIntroImage>
         </FadeInProductImage>
         <FadeInFeatures>
           <Features
@@ -264,7 +325,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
             ]}
           />
         </FadeInFeatures>
-      </Section>
+      </StyledIntroWrapper>
       <Section dark>
         <SectionIntro>
           <Heading color="#da1e28">4K HDR videos are the future.</Heading>
