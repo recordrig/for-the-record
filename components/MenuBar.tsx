@@ -152,7 +152,7 @@ const StyledMenuBar = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 1; /* Keep in mind Drawer uses 10, while AttentionSeeker (dark overlay for Drawer) uses 9. */
 
   a {
     text-decoration: none;

@@ -20,6 +20,7 @@ const AttentionSeeker = styled.div<AttentionSeekerProps>`
   top: 0;
   width: 100%;
   transition: opacity 0.2s ease-in-out;
+  z-index: 9; /* Keep in mind MenuBar uses 1, while Drawer uses 10. */
 
   ${({ visible }) => css`
     opacity: ${visible ? 0.2 : 0};
@@ -37,7 +38,7 @@ const StyledDrawer = styled.div<StyledDrawerProps>`
     box-shadow: 0 0 64px 0 rgba(0, 0, 0, ${open ? 0.1 : 0});
     position: fixed;
     will-change: transform;
-    z-index: 10;
+    z-index: 10; /* Keep in mind AttentionSeeker (dark overlay) uses 9, while MenuBar uses 1. */
 
     > button {
       background-color: transparent;
