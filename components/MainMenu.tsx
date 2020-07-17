@@ -46,6 +46,22 @@ const MainMenu: FunctionComponent = () => (
         </Link>
       </li>
       <li>
+        <Link href="/tech-specs" passHref>
+          <StyledLink>
+            <span>Tech Specs</span>
+            <img alt="" src="/icon-arrow-right.png" />
+          </StyledLink>
+        </Link>
+      </li>
+      <li>
+        <Link href="/setup" passHref>
+          <StyledLink>
+            <span>Setup Guide</span>
+            <img alt="" src="/icon-arrow-right.png" />
+          </StyledLink>
+        </Link>
+      </li>
+      <li>
         <Link href="/contact" passHref>
           <StyledLink>
             <span>Contact</span>

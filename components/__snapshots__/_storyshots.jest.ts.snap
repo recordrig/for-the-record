@@ -1391,6 +1391,38 @@ exports[`Storyshots Footer default 1`] = `
         <li>
           <a
             className="c3"
+            href="/tech-specs"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Tech Specs
+            </span>
+            <img
+              alt=""
+              src="/icon-arrow-right.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            className="c3"
+            href="/setup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Setup Guide
+            </span>
+            <img
+              alt=""
+              src="/icon-arrow-right.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            className="c3"
             href="/contact"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -3196,6 +3228,38 @@ exports[`Storyshots MainMenu default 1`] = `
     <li>
       <a
         className="c1"
+        href="/tech-specs"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span>
+          Tech Specs
+        </span>
+        <img
+          alt=""
+          src="/icon-arrow-right.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="c1"
+        href="/setup"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span>
+          Setup Guide
+        </span>
+        <img
+          alt=""
+          src="/icon-arrow-right.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="c1"
         href="/contact"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -4118,6 +4182,38 @@ Array [
                 >
                   <span>
                     Home
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/tech-specs"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Tech Specs
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/setup"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Setup Guide
                   </span>
                   <img
                     alt=""
@@ -5233,6 +5329,38 @@ Array [
                 >
                   <span>
                     Home
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/tech-specs"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Tech Specs
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/setup"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Setup Guide
                   </span>
                   <img
                     alt=""
