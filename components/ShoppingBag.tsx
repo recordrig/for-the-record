@@ -406,19 +406,29 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
       style={{ position: "absolute", left: "100vw" }}
       tabIndex={-1}
     >
-      <label htmlFor="email">
-        Email
-        <input
-          data-cy="email"
-          id="email"
-          name="email"
-          onChange={e => setEmail(e.target.value)}
-          tabIndex={-1}
-          type="text"
-          value={email}
-        />
-      </label>
-      <input type="submit" value="Submit" tabIndex={-1} />
+      <div
+        style={{
+          height: 0,
+          left: "0",
+          overflow: "hidden",
+          position: "relative",
+          width: 0
+        }}
+      >
+        <label htmlFor="email">
+          Email
+          <input
+            data-cy="email"
+            id="email"
+            name="email"
+            onChange={e => setEmail(e.target.value)}
+            tabIndex={-1}
+            type="text"
+            value={email}
+          />
+        </label>
+        <input type="submit" value="Submit" tabIndex={-1} />
+      </div>
     </form>
   );
 

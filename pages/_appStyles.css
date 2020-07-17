@@ -22,11 +22,6 @@
   src: url("/IBMPlexSans-Bold.woff") format("woff");
 }
 
-html {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 body {
   background-color: #f2f4f8;
   font-family: "IBM Plex Sans", sans-serif;

@@ -133,14 +133,24 @@ const ContactPage: FunctionComponent = () => {
                         />
                       </label>
                     </FormRow>
-                    <input
-                      autoComplete="no"
-                      name="sticky"
-                      style={{ left: "100vw", position: "absolute" }}
-                      onChange={handleChange}
-                      type="text"
-                      tabIndex={-1}
-                    />
+                    <div
+                      style={{
+                        height: 0,
+                        left: "0",
+                        overflow: "hidden",
+                        position: "relative",
+                        width: 0
+                      }}
+                    >
+                      <input
+                        autoComplete="no"
+                        name="sticky"
+                        style={{ left: "100vw", position: "absolute" }}
+                        onChange={handleChange}
+                        type="text"
+                        tabIndex={-1}
+                      />
+                    </div>
                     <FormRow>
                       <label htmlFor="contact-message">
                         Message

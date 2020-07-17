@@ -13478,25 +13478,37 @@ exports[`Storyshots ShoppingBag country not supported 1`] = `
         }
         tabIndex={-1}
       >
-        <label
-          htmlFor="email"
+        <div
+          style={
+            Object {
+              "height": 0,
+              "left": "0",
+              "overflow": "hidden",
+              "position": "relative",
+              "width": 0,
+            }
+          }
         >
-          Email
+          <label
+            htmlFor="email"
+          >
+            Email
+            <input
+              data-cy="email"
+              id="email"
+              name="email"
+              onChange={[Function]}
+              tabIndex={-1}
+              type="text"
+              value=""
+            />
+          </label>
           <input
-            data-cy="email"
-            id="email"
-            name="email"
-            onChange={[Function]}
             tabIndex={-1}
-            type="text"
-            value=""
+            type="submit"
+            value="Submit"
           />
-        </label>
-        <input
-          tabIndex={-1}
-          type="submit"
-          value="Submit"
-        />
+        </div>
       </form>
       <div
         style={
@@ -14391,25 +14403,37 @@ exports[`Storyshots ShoppingBag default 1`] = `
         }
         tabIndex={-1}
       >
-        <label
-          htmlFor="email"
+        <div
+          style={
+            Object {
+              "height": 0,
+              "left": "0",
+              "overflow": "hidden",
+              "position": "relative",
+              "width": 0,
+            }
+          }
         >
-          Email
+          <label
+            htmlFor="email"
+          >
+            Email
+            <input
+              data-cy="email"
+              id="email"
+              name="email"
+              onChange={[Function]}
+              tabIndex={-1}
+              type="text"
+              value=""
+            />
+          </label>
           <input
-            data-cy="email"
-            id="email"
-            name="email"
-            onChange={[Function]}
             tabIndex={-1}
-            type="text"
-            value=""
+            type="submit"
+            value="Submit"
           />
-        </label>
-        <input
-          tabIndex={-1}
-          type="submit"
-          value="Submit"
-        />
+        </div>
       </form>
       <div
         style={
@@ -15415,25 +15439,37 @@ exports[`Storyshots ShoppingBag invalid 1`] = `
         }
         tabIndex={-1}
       >
-        <label
-          htmlFor="email"
+        <div
+          style={
+            Object {
+              "height": 0,
+              "left": "0",
+              "overflow": "hidden",
+              "position": "relative",
+              "width": 0,
+            }
+          }
         >
-          Email
+          <label
+            htmlFor="email"
+          >
+            Email
+            <input
+              data-cy="email"
+              id="email"
+              name="email"
+              onChange={[Function]}
+              tabIndex={-1}
+              type="text"
+              value=""
+            />
+          </label>
           <input
-            data-cy="email"
-            id="email"
-            name="email"
-            onChange={[Function]}
             tabIndex={-1}
-            type="text"
-            value=""
+            type="submit"
+            value="Submit"
           />
-        </label>
-        <input
-          tabIndex={-1}
-          type="submit"
-          value="Submit"
-        />
+        </div>
       </form>
       <div
         style={
