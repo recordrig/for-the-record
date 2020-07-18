@@ -21,17 +21,29 @@ import Button from "../components/Button";
 const StyledHeading = styled.h3`
   color: #ffffff;
   font-weight: bold;
+  line-height: 1.15em;
   padding: 0 8px;
   margin: 0 auto;
-  max-width: 640px;
   text-align: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: 399px) {
     font-size: 24px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 400px) and (max-width: 599px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 600px) and (max-width: 767px) {
     font-size: 42px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1699px) {
+    font-size: 56px;
+  }
+
+  @media (min-width: 1700px) {
+    font-size: 64px;
   }
 `;
 
@@ -41,8 +53,12 @@ const StyledSubHeading = styled.h3`
   margin: 0;
   text-align: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: 599px) {
     font-size: 14px;
+  }
+
+  @media (min-width: 600px) and (max-width: 767px) {
+    font-size: 18px;
   }
 
   @media (min-width: 768px) {
@@ -89,8 +105,8 @@ const StyledIntroImage = styled.div`
   }
 
   @media (min-width: 375px) and (max-width: 767px) {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 
   @media (min-width: 768px) {
@@ -301,7 +317,9 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
         </FadeInSubHeading>
         <FadeInHeading>
           <StyledHeading>
-            Share your gameplay in&nbsp;the&nbsp;highest&nbsp;quality.
+            Share your gameplay in
+            <br />
+            the highest quality.
           </StyledHeading>
         </FadeInHeading>
         <FadeInProductImage>
