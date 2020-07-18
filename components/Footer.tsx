@@ -118,8 +118,9 @@ const Footer: FunctionComponent = () => (
           paddingBottom: "32px"
         }}
       >
-        RecordRig is registered with the Netherlands Chamber of Commerce -
-        KvK&nbsp;ID&nbsp;67196802 - Tax&nbsp;ID&nbsp;NL002217700B75.
+        RecordRig is a trade name by DC Development, registered with the
+        Netherlands Chamber of Commerce - KvK&nbsp;ID&nbsp;67196802 -
+        Tax&nbsp;ID&nbsp;NL002217700B75.
       </span>
     </StyledInfo>
   </StyledFooter>
