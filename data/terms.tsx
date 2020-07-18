@@ -16,7 +16,7 @@ export const WarrantyTerms = (): JSX.Element => (
     <h3>Warranty and repairs.</h3>
     <p>
       You&apos;ll have a warranty of at least 1 year on manufacturing defects on
-      all parts. If damage does occur under normal usage, we'll repair or
+      all parts. If damage does occur under normal usage, we&apos;ll repair or
       replace your product free of charge.
     </p>
   </>
