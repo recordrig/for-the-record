@@ -91,10 +91,13 @@ describe("Shopping Bag Page", () => {
 
       it(`Can remove product, disabling button to Check Out`, () => {
         cy.get(`${product0}`).should("be.visible");
-        cy.get(`${removeProduct0}`).click();
+        // On small devices, it sometimes complains it cannot click because the element is covered
+        // by the MenuBar. Of course, a real user would just scroll in such a way that things aren't
+        // covered by the MenuBar, so we simply set force: true to make it click.
+        cy.get(`${removeProduct0}`).click({ force: true });
         cy.get(`${product0}`).should("not.exist");
         cy.get(`${product1}`).should("be.visible");
-        cy.get(`${removeProduct1}`).click();
+        cy.get(`${removeProduct1}`).click({ force: true });
         cy.get(`${product1}`).should("not.exist");
         cy.get(`${enabledCheckoutButton}`).should("not.exist");
         cy.get(`${disabledCheckoutButton}`).should("not.exist");
@@ -119,13 +122,13 @@ describe("Shopping Bag Page", () => {
           .children()
           .should("have.length", 3);
         cy.get(`${disabledCheckoutButton}`).should("be.visible");
-        cy.get(`${quantityProduct0}`).select("1");
+        cy.get(`${quantityProduct0}`).select("1", { force: true });
         cy.get(`${quantityProduct0}`).should("have.value", "1");
         cy.get(`${errorsList}`)
           .children()
           .should("have.length", 2);
         cy.get(`${disabledCheckoutButton}`).should("be.visible");
-        cy.get(`${removeProduct1}`).click();
+        cy.get(`${removeProduct1}`).click({ force: true });
         cy.get(`${errorsList}`)
           .children()
           .should("have.length", 0);
