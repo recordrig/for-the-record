@@ -100,14 +100,30 @@ const StyledHeading = styled.div<StyledHeadingProps>`
     /* Headings stay small for longer than other types of text, because due to its
     relatively large size you quickly get into trouble with words being too long to even
     fit on the screen. */
-    @media (max-width: 575px) {
+    @media (max-width: 499px) {
       h1,
       h2,
       h3,
       h4,
       h5,
       h6 {
-        font-size: 44px;
+        font-size: 32px;
+        line-height: 38px;
+      }
+
+      span {
+        max-width: ${center ? "96%" : "480px"};
+      }
+    }
+
+    @media (min-width: 500px) and (max-width: 767px) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 42px;
         line-height: 52px;
       }
 
@@ -116,7 +132,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
     }
 
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
       h1,
       h2,
       h3,

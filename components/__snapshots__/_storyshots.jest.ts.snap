@@ -11403,14 +11403,30 @@ Array [
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
   .c2 h4,
   .c2 h5,
   .c2 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c2 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -11419,7 +11435,7 @@ Array [
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -11563,14 +11579,30 @@ Array [
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
   .c2 h4,
   .c2 h5,
   .c2 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c2 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -11579,7 +11611,7 @@ Array [
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -11728,14 +11760,30 @@ Array [
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
   .c2 h4,
   .c2 h5,
   .c2 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c2 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -11744,7 +11792,7 @@ Array [
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -11888,14 +11936,30 @@ Array [
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
   .c2 h4,
   .c2 h5,
   .c2 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c2 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c2 h1,
+  .c2 h2,
+  .c2 h3,
+  .c2 h4,
+  .c2 h5,
+  .c2 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -11904,7 +11968,7 @@ Array [
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c2 h1,
   .c2 h2,
   .c2 h3,
@@ -12204,14 +12268,30 @@ exports[`Storyshots Section info section 1`] = `
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c3 h1,
   .c3 h2,
   .c3 h3,
   .c3 h4,
   .c3 h5,
   .c3 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c3 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c3 h1,
+  .c3 h2,
+  .c3 h3,
+  .c3 h4,
+  .c3 h5,
+  .c3 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -12220,7 +12300,7 @@ exports[`Storyshots Section info section 1`] = `
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c3 h1,
   .c3 h2,
   .c3 h3,
@@ -12448,14 +12528,30 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c3 h1,
   .c3 h2,
   .c3 h3,
   .c3 h4,
   .c3 h5,
   .c3 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c3 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c3 h1,
+  .c3 h2,
+  .c3 h3,
+  .c3 h4,
+  .c3 h5,
+  .c3 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -12464,7 +12560,7 @@ exports[`Storyshots Section intro 1`] = `
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c3 h1,
   .c3 h2,
   .c3 h3,
@@ -16389,14 +16485,30 @@ exports[`Storyshots Text heading 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
   .c0 h4,
   .c0 h5,
   .c0 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c0 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -16405,7 +16517,7 @@ exports[`Storyshots Text heading 1`] = `
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -16459,14 +16571,30 @@ exports[`Storyshots Text heading centered 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
   .c0 h4,
   .c0 h5,
   .c0 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c0 span {
+    max-width: 96%;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -16475,7 +16603,7 @@ exports[`Storyshots Text heading centered 1`] = `
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -16527,14 +16655,30 @@ exports[`Storyshots Text heading custom color 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
   .c0 h4,
   .c0 h5,
   .c0 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c0 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -16543,7 +16687,7 @@ exports[`Storyshots Text heading custom color 1`] = `
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
@@ -16597,14 +16741,30 @@ exports[`Storyshots Text heading custom selector 1`] = `
   display: inline-block;
 }
 
-@media (max-width:575px) {
+@media (max-width:499px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
   .c0 h4,
   .c0 h5,
   .c0 h6 {
-    font-size: 44px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .c0 span {
+    max-width: 480px;
+  }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+  .c0 h1,
+  .c0 h2,
+  .c0 h3,
+  .c0 h4,
+  .c0 h5,
+  .c0 h6 {
+    font-size: 42px;
     line-height: 52px;
   }
 
@@ -16613,7 +16773,7 @@ exports[`Storyshots Text heading custom selector 1`] = `
   }
 }
 
-@media (min-width:576px) {
+@media (min-width:768px) {
   .c0 h1,
   .c0 h2,
   .c0 h3,
