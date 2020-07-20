@@ -1,11 +1,12 @@
 name: Quality Assurance
 
-# Auto-run when PR's are opened targeted to the master branch.
+on:
+  # Auto-run when PR's are opened targeted to the master branch.
   pull_request:
     branches:
     - master
 
-# Auto-run every day at 03:00 UTC (= 05:00 CEST). Always targets the base branch (= master).
+  # Auto-run every day at 03:00 UTC (= 05:00 CEST). Always targets the base branch (= master).
   schedule:
     - cron:  "0 3 * * *"
 
