@@ -30,9 +30,11 @@ jobs:
         run: npm run lint
       - name: Unit tests
         run: npm run jest
+      - name: Build app
+        run: npm run build
       - name: Integration tests
         uses: percy/exec-action@v0.3.0
         with:
-          command: "npm run build & npm run ci:cypress"
+          command: "npm run cypress:ci"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
