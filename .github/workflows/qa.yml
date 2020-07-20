@@ -27,7 +27,7 @@ jobs:
       - name: Install
         run: npm ci
       - name: Linter
-          run: npm ci
+        run: npm run lint
       - name: Unit tests
         run: npm run jest
       - name: Integration tests
