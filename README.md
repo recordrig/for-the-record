@@ -105,7 +105,7 @@ We only write unit tests for components and store logic, both of which can be ad
 For integration test, first make sure the application is running locally in dev mode, and then launch Cypress:
 
 ```
-npm run cypress
+npm run cypress:open
 ```
 
 Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./cypress/integration`.

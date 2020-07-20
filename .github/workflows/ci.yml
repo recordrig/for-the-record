@@ -10,11 +10,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Start
-        run: npm start
       - name: Integration tests
         uses: percy/exec-action@v0.3.0
         with:
-          command: "cypress run"
+          command: "npm run ci:cypress"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
