@@ -129,3 +129,7 @@ A push to any branch will deploy a preview to a unique URL through Vercel integr
 The creation of a pull request targeting `master` will trigger a Quality Assurance GitHub workflow (see `./.github/workflows/qa.yml`) via GitHub Actions which runs our automated tests. Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in Percy's dashboard. Comment in the PR on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
 
 Any change to the `master` branch will auto-deploy to https://recordrig.com.
+
+## Legal
+
+Copyright © 2020 RecordRig. All rights reserved.
