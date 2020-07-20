@@ -42,6 +42,7 @@
     "@babel/core": "^7.10.2",
     "@babel/runtime-corejs2": "^7.10.2",
     "@ibm/plex": "^4.0.2",
+    "@percy/cypress": "^2.3.1",
     "@storybook/addon-storyshots": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@types/jest": "^24.9.1",

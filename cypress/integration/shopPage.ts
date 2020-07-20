@@ -37,6 +37,7 @@ describe("Shop Page", () => {
 
   it("Can navigate using browser-native controls", () => {
     cy.visit("/shop/buy-recordrig");
+    cy.percySnapshot();
     cy.get(`${blackOption}`).click();
     cy.url().should("include", "stealth-black");
     cy.go("back");

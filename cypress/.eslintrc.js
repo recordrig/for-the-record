@@ -10,4 +10,17 @@ module.exports = {
       }
     }
   },
+  "rules":
+  /*
+    * Allow jest-specific variabled in Jest's test files.
+    */
+  {
+    "import/no-extraneous-dependencies":
+    [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
 };

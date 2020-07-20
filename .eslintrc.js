@@ -160,6 +160,7 @@ module.exports = {
         "devDependencies": [
           "**/*.stories.tsx",
           "**/*.jest.ts",
+          "./cypress"
         ]
       }
     ],
