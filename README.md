@@ -110,6 +110,8 @@ npm run cypress:open
 
 Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./cypress/integration`.
 
+We integrate with Percy for visual regression testing. Percy commands will only run in the CI environment and will be ignored locally.
+
 ## Styling
 
 We use inline styles with help of the Styled Components package. Styling definitions should be co-located with components as they are intrinsically related.
@@ -124,6 +126,6 @@ As for units of measurement, [just use pixels](https://benfrain.com/just-use-pix
 
 A push to any branch will deploy a preview to a unique URL through Vercel integration with GitHub.
 
-The creation of a pull request targeting `master` will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via GitHub Actions which runs our automated tests.
+The creation of a pull request targeting `master` will trigger a Quality Assurance GitHub workflow (see `./.github/workflows/qa.yml`) via GitHub Actions which runs our automated tests. Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in Percy's dashboard. Comment in the PR on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
 
-Any change to the `master` branch will auto-deploy to http://recordrig.com.
+Any change to the `master` branch will auto-deploy to https://recordrig.com.
