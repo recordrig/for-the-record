@@ -391,7 +391,6 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
     }
   }, [products]);
 
-
   // If filled out, the Checkout button will be disabled. This simple measure should prevent
   // most illigitemate submissions, while still protecting any visitor's privacy.
   // Note that the invalid value for "autoComplete" is intentional, because some browsers

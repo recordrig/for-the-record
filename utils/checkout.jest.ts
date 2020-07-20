@@ -325,7 +325,7 @@ describe("Stripe utilities", () => {
         postalCode: "NONO 50",
         city: "Novigrad",
         country: "Netherlands"
-      }
+      };
 
       const expectedResult = {
         products: [
