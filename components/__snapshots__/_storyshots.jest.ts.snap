@@ -1277,11 +1277,45 @@ exports[`Storyshots Footer default 1`] = `
   padding: 0;
 }
 
+.c6 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-bottom: 48px;
+}
+
+.c7 p {
+  color: #4d5358;
+  font-size: 12px;
+  margin-top: 8px;
+  line-height: 1.3em;
+}
+
+.c7 p:first-of-type {
+  margin-bottom: 0;
+}
+
+.c7 p:last-of-type {
+  margin-bottom: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-bottom: 32px;
   margin: 64px auto 0;
   max-width: 1216px;
   padding-left: 16px;
@@ -1296,7 +1330,6 @@ exports[`Storyshots Footer default 1`] = `
 @media (max-width:767px) {
   .c6 {
     margin-left: 40px;
-    padding-bottom: 64px;
   }
 }
 
@@ -1304,8 +1337,13 @@ exports[`Storyshots Footer default 1`] = `
   .c6 {
     font-size: 20px;
     line-height: 32px;
-    padding-bottom: 128px;
     margin-left: 82px;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    padding-right: 96px;
   }
 }
 
@@ -1425,6 +1463,22 @@ exports[`Storyshots Footer default 1`] = `
         <li>
           <a
             className="c3"
+            href="/shop/buy-recordrig"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span>
+              Shop
+            </span>
+            <img
+              alt=""
+              src="/icon-arrow-right.png"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            className="c3"
             href="/contact"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1461,53 +1515,51 @@ exports[`Storyshots Footer default 1`] = `
       <br />
       The Netherlands
     </p>
-    <span
-      style={
-        Object {
-          "color": "#4d5358",
-          "fontSize": "12px",
-          "paddingBottom": "32px",
-        }
-      }
+    <div
+      className="c7"
     >
-      <a
-        href="/terms"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Terms and Conditions
-      </a>
-       
-       • 
-      <a
-        href="/privacy"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Privacy
-      </a>
-       
-       • 
-      <a
-        href="/cookies"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Cookies
-      </a>
-    </span>
-    <br />
-    <span
-      style={
-        Object {
-          "color": "#4d5358",
-          "fontSize": "12px",
-          "paddingBottom": "32px",
+      <span
+        style={
+          Object {
+            "color": "#4d5358",
+            "fontSize": "12px",
+          }
         }
-      }
-    >
-      RecordRig is a trade name by DC Development, registered with the Netherlands Chamber of Commerce - KvK ID 67196802 - Tax ID NL002217700B75.
-    </span>
+      >
+        <a
+          href="/terms"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Terms and Conditions
+        </a>
+         
+         • 
+        <a
+          href="/privacy"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Privacy
+        </a>
+         
+         • 
+        <a
+          href="/cookies"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Cookies
+        </a>
+      </span>
+      <br />
+      <p>
+        RecordRig is a trade name by DC Development, registered with the Netherlands Chamber of Commerce. KvK ID: 67196802. Tax ID: NL002217700B75.
+      </p>
+      <p>
+        Copyright © 2020 RecordRig. All rights reserved.
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -3298,6 +3350,22 @@ exports[`Storyshots MainMenu default 1`] = `
     <li>
       <a
         className="c1"
+        href="/shop/buy-recordrig"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span>
+          Shop
+        </span>
+        <img
+          alt=""
+          src="/icon-arrow-right.png"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        className="c1"
         href="/contact"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -4252,6 +4320,22 @@ Array [
                 >
                   <span>
                     Setup Guide
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/shop/buy-recordrig"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Shop
                   </span>
                   <img
                     alt=""
@@ -5399,6 +5483,22 @@ Array [
                 >
                   <span>
                     Setup Guide
+                  </span>
+                  <img
+                    alt=""
+                    src="/icon-arrow-right.png"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="c3"
+                  href="/shop/buy-recordrig"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span>
+                    Shop
                   </span>
                   <img
                     alt=""
