@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
+  percy: percy/agent@0.1.2
 jobs:
   build-and-test:
     executor:
@@ -11,7 +12,22 @@ jobs:
           steps:
             - run: npm install
             - run: npm run jest
+  run_tests:
+   parallelism: 3
+   steps:
+     - attach_workspace:
+         at: .
+     - run: echo "your tests run here"
+
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build-and-test:
+    jobs:
+      - build-and-test
+
+      version: 2.1
+  test:
+   jobs:
+     - run_tests
+     - percy/finalize_all:
+         requires:
+           - run_tests
