@@ -7,10 +7,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1.0.0
       - name: Install
-        run: yarn
-      - name: Percy Test
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Start
+        run: npm start
+      - name: Integration tests
         uses: percy/exec-action@v0.3.0
         with:
           command: "cypress run"
+          wait-on: 'http://localhost:3000'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
