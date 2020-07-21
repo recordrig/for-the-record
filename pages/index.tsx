@@ -117,6 +117,7 @@ const StyledIntroImage = styled.div`
 
 const StyledIntroWrapper = styled.div`
   background-color: #000000;
+  min-height: 100vh;
 
   @media (max-width: 374px) {
     padding-top: 88px;
