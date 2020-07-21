@@ -145,3 +145,7 @@ Any change to the `master` branch will auto-deploy to Production.
 ## Legal
 
 Copyright © 2020 RecordRig. All rights reserved.
+
+RecordRig is a trade name by DC Development, registered with the Netherlands Chamber of Commerce. KvK&nbsp;ID:&nbsp;67196802. Tax&nbsp;ID:&nbsp;NL002217700B75.
+
+All materials contained in this repository are protected by copyright laws and may not be reproduced, distributed, transmitted, displayed, published or broadcast without the prior written permission of RecordRig. No part of the materials available through the contents of this code repository or its associated domain names and sites may be copied, photocopied, reproduced, translated or reduced to any electronic medium or machine-readable form, in whole or in part, without prior written consent of RecordRig. Any other reproduction in any form without the permission of RecordRig is strictly prohibited. 
