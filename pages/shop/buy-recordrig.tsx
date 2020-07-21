@@ -1,717 +1,353 @@
-import React, { Component, MouseEvent } from "react";
+import React, { Component } from "react";
 import { NextPageContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Router from "next/router";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { connect } from "react-redux";
-import withRedux from "../../store/_withRedux";
+import productsData from "../../data/products";
 import { ShoppingBagProduct, addProductAction } from "../../store/shoppingBag";
-import Section, { SectionIntro } from "../../components/Section";
-import Tile, { TileContainer } from "../../components/Tile";
-import { Heading, SubHeading } from "../../components/Text";
+import { ArrowRightIcon, CheckIcon, InfoIcon } from "../../components/Icon";
+import Button from "../../components/Button";
 import Drawer from "../../components/Drawer";
 import ProductList from "../../components/ProductList";
-import Footnotes from "../../components/Footnotes";
+import RecordRigConfigurator from "../../components/RecordRigConfigurator";
 
-const StyledRecordRigOverview = styled.div`
-  margin-top: 64px;
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    padding-top: 12px;
-
-    li {
-      padding-bottom: 16px;
-    }
-  }
-
-  @media (max-width: 735px) {
-    > div:last-child {
-      margin-top: 192px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-  }
-
-  @media (min-width: 736px) and (max-width: 1023px) {
-    > div:last-child {
-      box-sizing: border-box;
-      display: flex;
-      margin-top: 256px;
-      max-width: 1216px;
-      padding-left: 32px;
-      padding-right: 32px;
-      width: 100%;
-
-      ul {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      > div:first-child {
-        flex-basis: 288px;
-        flex-grow: 0;
-        flex-shrink: 0;
-      }
-    }
-  }
-
-  @media (min-width: 1024px) {
-    display: flex;
-    margin-left: -8px;
-    margin-right: -8px;
-
-    > div {
-      margin-left: 8px;
-      margin-right: 8px;
-      width: 50%;
-    }
-
-    > div:last-child {
-      box-sizing: border-box;
-      padding-left: 42px;
-    }
-  }
+const StyledButtonWrapper = styled.div`
+  padding-left: 16px;
+  width: calc(100% - 32px);
 `;
 
-const StyledInTheBox = styled.div`
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-
-  img {
-    max-width: 100%;
-  }
-
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    padding-top: 32px;
-
-    li {
-      padding-bottom: 16px;
-    }
-  }
-
-  @media (max-width: 735px) {
-    margin-top: 128px;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 100%;
-
-    img {
-      margin-top: 32px;
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 736px) {
-    display: flex;
-    margin-top: 256px;
-    max-width: 1216px;
-    padding-left: 32px;
-    padding-right: 32px;
-    width: 100%;
-
-    > div:first-child {
-      flex-basis: 288px;
-      flex-grow: 0;
-      flex-shrink: 0;
-    }
-
-    > div:last-child {
-      flex-grow: 1;
-    }
-
-    img {
-      max-width: 700px;
-      width: 100%;
-    }
-
-    ul {
-      margin-top: 32px;
-    }
-
-    li {
-      font-size: 18px;
-    }
-  }
+const StyledContinueShoppingButton = styled.button`
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  outline: none;
+  text-align: center;
+  text-decoration: underline;
 `;
 
-const StyledRecordRigOptions = styled.div`
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  p {
-    font-weight: bold;
-  }
-
-  a {
-    background-color: #0062ff;
-    border-radius: 8px;
-    border: 0;
-    color: #ffffff;
-    cursor: pointer;
-    display: block;
-    font-size: 18px;
-    height: 48px;
-    line-height: 48px;
-    margin-top: 12px;
-    outline: none;
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-  }
-
-  @media (max-width: 399px) {
-    p {
-      font-size: 18px;
-    }
-  }
-
-  @media (min-width: 399px) and (max-width: 655px) {
-    p {
-      font-size: 24px;
-    }
-  }
-
-  @media (max-width: 655px) {
-    margin-top: 64px;
-
-    > div {
-      margin-bottom: 12px;
-    }
-
-    img {
-      max-width: 60%;
-    }
-
-    p {
-      font-weight: bold;
-      margin-bottom: 24px;
-    }
-
-    span {
-      margin-top: 24px;
-    }
-  }
-
-  @media (min-width: 656px) {
-    display: flex;
-    margin-top: 64px;
-    margin-left: -8px;
-    margin-right: -8px;
-
-    > div {
-      margin-left: 8px;
-      margin-right: 8px;
-    }
-
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    p {
-      font-weight: bold;
-      margin-bottom: 24px;
-    }
-
-    span {
-      margin-top: 24px;
-    }
-  }
-
-  @media (min-width: 656px) and (max-width: 1023px) {
-    img {
-      height: 240px;
-    }
-
-    p {
-      font-size: 24px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    display: flex;
-    margin-left: -8px;
-    margin-right: -8px;
-
-    > div {
-      margin-left: 8px;
-      margin-right: 8px;
-    }
-
-    img {
-      display: block;
-      height: 350px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    p {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 24px;
-    }
-
-    span {
-      margin-top: 24px;
-    }
-  }
+const StyledBuyRecordRigPage = styled.div`
+  min-height: 100vh;
 `;
-
-interface StyledColorSelectorProps {
-  readonly selectedColor: string;
-}
-
-const StyledColorSelector = styled.a<StyledColorSelectorProps>`
-  ${({ selectedColor }) => css`
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-
-    a {
-      border: 2px solid #697077;
-      border-radius: 8px;
-      color: #121619;
-      display: inline-block;
-      height: 42px;
-      margin-right: 12px;
-      outline: none;
-      position: relative;
-      text-decoration: none;
-      width: 42px;
-
-      &:after {
-        border-style: solid;
-        border-radius: 12px;
-        border-width: 1px;
-        content: "";
-        display: block;
-        height: 54px;
-        left: -8px;
-        position: absolute;
-        top: -8px;
-        width: 54px;
-      }
-
-      > span {
-        display: block;
-        left: -56px;
-        position: relative;
-        text-align: center;
-        top: 60px;
-        width: 150px;
-      }
-    }
-
-    a:first-child {
-      background-color: #121619;
-      cursor: ${selectedColor === "pristine-white" ? "pointer" : "default"};
-
-      &:after {
-        border: 2px solid
-          ${selectedColor === "pristine-white" ? "transparent" : "#4589ff"};
-      }
-
-      > span {
-        opacity: ${selectedColor === "pristine-white" ? 0 : 1};
-      }
-    }
-
-    a:last-child {
-      background-color: #ffffff;
-      cursor: ${selectedColor === "stealth-black" ? "pointer" : "default"};
-
-      &:after {
-        border: 2px solid
-          ${selectedColor === "stealth-black" ? "transparent" : "#4589ff"};
-      }
-
-      > span {
-        opacity: ${selectedColor === "stealth-black" ? 0 : 1};
-      }
-    }
-  `}
-`;
-
-const StyledBuyRecordRigPage = styled.div``;
 
 interface BuyRecordRigPageProps {
+  /** The addProduct function should update the Shopping Bag in global app state. */
   readonly addProduct: Function;
-  readonly description: string;
-  readonly heading: string;
-  readonly selectedColor: string | null;
+  /** The initially selected color, inferred from URL parameters. */
+  readonly initialSelectedColor: string | null;
+  /** Initial state of the Shopping Bag. */
   readonly shoppingBag: readonly ShoppingBagProduct[];
-  readonly title: string;
 }
 
 interface BuyRecordRigPageState {
-  readonly addToBagColor: string;
-  readonly openDrawer: boolean;
+  /** Informative Drawer opens when "Added to Bag" button is clicked again, showing this Product. */
+  readonly alreadyAddedProductId: string;
+  /** The page meta description. Depends on the selected color. */
+  readonly description: string;
+  /** A Drawer which contains the Shopping Bag state, with links to the checkout and Bag overview. */
+  readonly openAddToBagDrawer: boolean;
+  /** If the disabled Add To Bag button is pressed, we can help the user showing some info and outline potential actions. */
+  readonly openAlreadyAddedDrawer: boolean;
+  /** The page title. Depends on the selected color. */
+  readonly title: string;
 }
 
-/**
- * On client-side we link programmatically. Using this instead of Next's `Link` will also
- * prevent the page from auto-scrolling to the top.
- */
-const handleColorChangeClick = (href: string) => (e: MouseEvent) => {
-  e.preventDefault();
-  // eslint-disable-next-line functional/immutable-data
-  Router.push(href);
+const getDescription = (color: "black" | "white" | null) => {
+  if (color === "black" || color === "white")
+    return `With RecordRig as your dedicated gameplay streaming and recording
+  PC, you'll share your gameplay in 4K 60FPS and HDR colours
+  with ease. Hook it up to your Xbox, PS4 or even your gaming PC and
+  stream directly to YouTube and Twitch, or save up to hundreds of
+  hours of UHD video for local use.`;
+  return `Record in 4K HDR 60FPS with ease using RecordRig as your dedicated
+  gameplay streaming and recordring PC.`;
 };
 
+const getTitle = (color: "black" | "white" | null) => {
+  if (color === "black") return "Buy RecordRig in Stealth Black.";
+  if (color === "white") return "Buy RecordRig in Pristine White.";
+  return "Buy RecordRig - dedicated gameplay streaming PC.";
+};
+
+const handleRouteChange = url => {
+  if (url === "/shop/buy-recordrig") {
+    // eslint-disable-next-line no-restricted-globals
+    location.href = url;
+  }
+};
+
+/**
+ * Gives the user various configuration options for RecordRigs, and lets users add their RecordRig
+ * of choice to the Shopping Bag.
+ *
+ * This page supports the use of URL parameters to load the appropriate content.
+ * This is to aid SEO and users favoriting pages. URL's start with `/shop/buy-recordrig`.
+ * Without additional parameters, choices for both black and white are presented.
+ * Additionally, this page might be loaded with either black or white preselected,
+ * through `/shop/buy-recordrig?color=stealth-black` and `/shop/buy-recordrig?color=pristine-white`.
+ */
 class BuyRecordRigPage extends Component<
   BuyRecordRigPageProps,
   BuyRecordRigPageState
 > {
   static async getInitialProps({ query }: NextPageContext) {
-    const blackSelected = query.color === "stealth-black";
-    const whiteSelected = query.color === "pristine-white";
-
-    const getTitle = () => {
-      if (blackSelected) return "Buy RecordRig in Stealth Black.";
-      if (whiteSelected) return "Buy RecordRig in Pristine White.";
-      return "Buy RecordRig - dedicated gameplay streaming PC.";
-    };
-
-    const getDescription = () => {
-      if (blackSelected || whiteSelected)
-        return "Fully customisable LEDs. Always equipped with a premium steel case and tempered glass.";
-      return "Recording and streaming your gameplay in 4K 60FPS + HDR colours is possible with RecordRig high-end dedicated streaming PC. Buy now with free shipping.";
-    };
-
-    const getHeading = () => {
-      if (blackSelected)
-        return "Your new RecordRig - Stealth Black specs and options.";
-      if (whiteSelected)
-        return "Your new RecordRig - Pristine White specs and options.";
-      return "Choose your RecordRig.";
-    };
-
-    const getColor = () => {
-      if (blackSelected) return "stealth-black";
-      if (whiteSelected) return "pristine-white";
+    const getInitialColor = () => {
+      if (query.color === "stealth-black") return "black";
+      if (query.color === "pristine-white") return "white";
       return null;
     };
 
-    // Page contents that we want to be able to render server-side are listed here.
-    // Aids SEO and non-JS browsers.
-    const title = getTitle();
-    const description = getDescription();
-    const heading = getHeading();
-    const selectedColor = getColor();
+    const initialSelectedColor = getInitialColor();
 
     return {
-      description,
-      heading,
-      selectedColor,
-      title
+      initialSelectedColor
     };
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      addToBagColor: "#0062ff",
-      openDrawer: false
+      alreadyAddedProductId: "",
+      description: getDescription(props.initialSelectedColor),
+      openAddToBagDrawer: false,
+      openAlreadyAddedDrawer: false,
+      title: getTitle(props.initialSelectedColor)
     };
   }
 
+  componentDidMount() {
+    // Force re-render when navigating to the Shop from one of the colours to keep state in sync with URL.
+    Router.events.on("routeChangeStart", handleRouteChange);
+
+    // Force re-render when the browser's back or forward buttons are used to keep state in sync with URL.
+    Router.beforePopState(({ as }) => {
+      // eslint-disable-next-line no-restricted-globals
+      location.href = as;
+      return true;
+    });
+  }
+
+  componentWillUnmount() {
+    Router.events.off("routeChangeStart", handleRouteChange);
+  }
+
   render() {
+    const { addProduct, initialSelectedColor, shoppingBag } = this.props;
     const {
-      addProduct,
+      alreadyAddedProductId,
       description,
-      heading,
-      selectedColor,
-      shoppingBag,
+      openAddToBagDrawer,
+      openAlreadyAddedDrawer,
       title
-    } = this.props;
+    } = this.state;
 
-    const { addToBagColor, openDrawer } = this.state;
+    const initialConfiguration = (() => {
+      if (initialSelectedColor === "black") return "black";
+      if (initialSelectedColor === "white") return "white";
+      return undefined;
+    })();
 
-    const toggleDrawer = () => this.setState({ openDrawer: !openDrawer });
-
-    const handleAddToBagClick = () => {
-      this.setState({ addToBagColor: "#a6c8ff" });
-      const productId = `RR20-${selectedColor}`;
-      addProduct(productId);
-
-      // If it's not a quantity update, open the drawer with a link to the shoppingBag overview.
-      if (!shoppingBag.find(product => product.id === productId)) {
-        setTimeout(() => {
-          toggleDrawer();
-        }, 300);
-      }
-
-      setTimeout(() => {
-        this.setState({ addToBagColor: "#0062ff" });
-      }, 400);
+    // Update the visible URL whenever the colour changes to that users can favorite/share the page to their
+    // configuration of choice.
+    const onSelectColor = (color: "black" | "white") => {
+      if (color === "black")
+        Router.push("/shop/buy-recordrig?color=stealth-black", undefined, {
+          shallow: true
+        });
+      if (color === "white")
+        Router.push("/shop/buy-recordrig?color=pristine-white", undefined, {
+          shallow: true
+        });
+      this.setState({ title: getTitle(color) });
+      this.setState({ description: getDescription(color) });
     };
 
-    const stealthBlackHref = "/shop/buy-recordrig?color=stealth-black";
-    const pristineWhiteHref = "/shop/buy-recordrig?color=pristine-white";
+    const toggleAddToBagDrawer = () =>
+      this.setState({ openAddToBagDrawer: !openAddToBagDrawer });
+
+    // All available product ID's as defined in our catalogue.
+    const availableProductIds = Object.keys(productsData);
+
+    const handleAddToBag = (color: "black" | "white") => {
+      // Find the appropriate product ID in our catalogue based on passed properties we have
+      // (currently, that's just a color: black or white). Should exist, or we don't add it.
+      const productId = availableProductIds.find(id => id.endsWith(color));
+
+      if (productId !== undefined) {
+        // Update global state.
+        addProduct(productId);
+
+        // Open the drawer with links to the Checkout and Shopping Bag overview.
+        toggleAddToBagDrawer();
+      }
+    };
+
+    const toggleAlreadyAddedDrawer = () =>
+      this.setState({ openAlreadyAddedDrawer: !openAlreadyAddedDrawer });
+
+    const handleAlreadyAddedClick = (color: "black" | "white") => {
+      const productId = availableProductIds.find(id => id.endsWith(color));
+
+      if (productId !== undefined) {
+        this.setState({ alreadyAddedProductId: productId });
+        toggleAlreadyAddedDrawer();
+      }
+    };
+
+    // Determine vertical space for Product List.
+    const isLargeScreen =
+      typeof window !== "undefined"
+        ? window.matchMedia("(min-height: 800px)").matches
+        : false;
+
     return (
       <StyledBuyRecordRigPage>
         <Head>
           <title>{title}</title>
           <meta name="description" content={description} />
         </Head>
-        <Section>
-          <SectionIntro>
-            <Heading h={1} center={selectedColor === null}>
-              {heading}
-            </Heading>
-          </SectionIntro>
-          {selectedColor === null ? (
-            <StyledRecordRigOptions>
-              <Tile>
-                <TileContainer>
-                  <img alt="" src="/recordrig-black.png" />
-                  <p>
-                    RecordRig -&nbsp;
-                    <br />
-                    <i>Stealth Black</i>
-                  </p>
-                  <span>From € 2399</span>
-                  <Link href={stealthBlackHref}>
-                    <a>Select</a>
-                  </Link>
-                </TileContainer>
-              </Tile>
-              <Tile>
-                <TileContainer>
-                  <img alt="" src="/recordrig.png" />
-                  <p>
-                    RecordRig -&nbsp;
-                    <br />
-                    <i>Pristine White</i>
-                  </p>
-                  <span>From € 2399</span>
-                  <Link href={pristineWhiteHref}>
-                    <a>Select</a>
-                  </Link>
-                </TileContainer>
-              </Tile>
-            </StyledRecordRigOptions>
-          ) : (
-            <>
-              <StyledRecordRigOverview>
-                <div>
-                  <Tile>
-                    <TileContainer>
-                      <img
-                        alt=""
-                        style={{
-                          display: "block",
-                          margin: "0 auto",
-                          maxWidth: "70%"
-                        }}
-                        src={
-                          selectedColor === "stealth-black"
-                            ? "/recordrig-black.png"
-                            : "/recordrig.png"
-                        }
-                      />
-                    </TileContainer>
-                  </Tile>
-                  <StyledColorSelector selectedColor={selectedColor}>
-                    <a
-                      href={stealthBlackHref}
-                      onClick={handleColorChangeClick(stealthBlackHref)}
-                    >
-                      <span>Stealth Black</span>
-                    </a>
-                    <a
-                      href={pristineWhiteHref}
-                      onClick={handleColorChangeClick(pristineWhiteHref)}
-                    >
-                      <span>Pristine White</span>
-                    </a>
-                  </StyledColorSelector>
-                </div>
-                <div>
-                  <div>
-                    <SubHeading>Technical specifications</SubHeading>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>
-                        3.7GHz 8‑core AMD Ryzen 2700X CPU, Max Boost up to
-                        4.3GHz, with 4MB L2 cache and 16MB L3 cache, support for
-                        16 threads (multithreading).
-                      </li>
-                      <li>
-                        2TB high-speed SSD with 530MB/s sequential read speeds
-                        and 500MB/s sequential write speeds.<sup>1</sup>
-                      </li>
-                      <li>
-                        8TB &quot;BigStorage&quot; 7200 RPM HDD, suitable for
-                        storing hundreds of hours of recorded 4K video.
-                      </li>
-                      <li>
-                        Nvidia GeForce® GTX 1650 SUPER™ WINDFORCE 4G Graphics,
-                        Factory Overclocked (&quot;OC&quot;) or equivalent.
-                        <sup>2</sup>
-                      </li>
-                      <li>
-                        AVerMedia Live Gamer 4K GC573 internal game capture card
-                        with support up to 4kp60 HDR, 1440p60 HDR, 1080p60 HDR,
-                        1440p144, 1080p240 recording <em>and</em> pass-through.
-                      </li>
-                      <li>
-                        Intel® 802.11ac WiFi Module, supports IEEE
-                        802.11a/b/g/n/ac, Dual-Band (2.4/5 GHz), high speed
-                        wireless connections up to 433Mbps.
-                      </li>
-                      <li>
-                        Integrated Bluetooth 4.2 and/or 3.0 without need for an
-                        external adapter.
-                      </li>
-                      <li>
-                        Pre-installed and configured Microsoft Windows 10
-                        (English).
-                      </li>
-                      <li>
-                        Pre-installed and configured RECentral 4K 60FPS + HDR
-                        gameplay recording and streaming software.
-                      </li>
-                      <li>
-                        All-steel case body with tempered glass removable side
-                        panel for easy-access to all core components.
-                        <sup>3</sup>
-                      </li>
-                      <li>Customisable RGB LEDs.</li>
-                    </ul>
-                  </div>
-                </div>
-              </StyledRecordRigOverview>
-              <div
+        <RecordRigConfigurator
+          addToBag={handleAddToBag}
+          configuration={initialConfiguration}
+          onSelectColor={onSelectColor}
+          onAddToBagButtonDisabledClick={handleAlreadyAddedClick}
+        />
+        <Drawer closeDrawer={toggleAddToBagDrawer} open={openAddToBagDrawer}>
+          <p
+            data-cy="almost-yours"
+            style={{
+              fontSize: "13px",
+              fontWeight: "bold",
+              lineHeight: "32px",
+              paddingLeft: "16px",
+              position: "relative",
+              marginBottom: "0",
+              marginRight: "64px",
+              marginTop: "0",
+              textTransform: "uppercase",
+              top: "10px"
+            }}
+          >
+            <span
+              style={{
+                bottom: "2px",
+                display: "inline-block",
+                height: "24px",
+                marginRight: "8px",
+                position: "relative",
+                verticalAlign: "middle",
+                width: "24px"
+              }}
+            >
+              <CheckIcon color="#24a148" type="filled" />
+            </span>
+            Almost yours
+          </p>
+          <ProductList
+            indicateAddition
+            products={shoppingBag}
+            showAmount={isLargeScreen ? 3 : 2}
+          />
+          <StyledButtonWrapper>
+            <Button
+              cypressId="ready-to-order"
+              href="/shop/shopping-bag"
+              onClick={() => toggleAddToBagDrawer()}
+            >
+              I&apos;m ready to order
+              <span
                 style={{
-                  marginTop: "128px"
+                  display: "inline-block",
+                  height: "24px",
+                  marginLeft: "8px",
+                  position: "relative",
+                  top: "6px",
+                  width: "24px"
                 }}
               >
-                <Tile>
-                  <TileContainer>
-                    <div
-                      style={{
-                        backgroundImage: "url(/eu.png)",
-                        backgroundPosition: "center 10px",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "236px",
-                        textAlign: "center"
-                      }}
-                    >
-                      <p
-                        style={{
-                          fontSize: "32px",
-                          fontWeight: "bold",
-                          paddingBottom: "92px",
-                          paddingTop: "92px"
-                        }}
-                      >
-                        FREE DELIVERY
-                        <br />
-                        <span style={{ color: "#4d5358", fontSize: "24px" }}>
-                          in the EU
-                        </span>
-                      </p>
-                      <p
-                        style={{
-                          fontSize: "32px",
-                          fontWeight: "bold",
-                          marginBottom: "12px"
-                        }}
-                      >
-                        € 2.399,00
-                      </p>
-                      <button
-                        onClick={handleAddToBagClick}
-                        style={{
-                          backgroundColor: addToBagColor,
-                          borderRadius: "12px",
-                          border: 0,
-                          color: "#ffffff",
-                          cursor: "pointer",
-                          fontSize: "24px",
-                          lineHeight: "64px",
-                          maxWidth: "536px",
-                          outline: "none",
-                          textAlign: "center",
-                          transition: "background-color 0.2s ease",
-                          width: "100%"
-                        }}
-                        type="button"
-                      >
-                        Add to Bag
-                      </button>
-                    </div>
-                  </TileContainer>
-                </Tile>
-              </div>
-              <StyledInTheBox>
-                <div>
-                  <SubHeading>In the box</SubHeading>
-                </div>
-                <div>
-                  <img alt="" src="/in-the-box.svg" />
-                  <ul>
-                    <li>
-                      RecordRig dedicated streaming PC in{" "}
-                      {selectedColor === "stealth-black"
-                        ? "Stealth Black"
-                        : "Pristine White"}
-                    </li>
-                    <li>Power cord for Type F plugs (European)</li>
-                    <li>3 HDMI 2.1 (high-bandwith) cables</li>
-                  </ul>
-                </div>
-              </StyledInTheBox>
-            </>
-          )}
-        </Section>
-        {selectedColor !== null && (
-          <Footnotes>
-            <p>
-              1. Rounded results of independent benchmark testing. Unrounded
-              results are 527.29 MB/s read and 498.90 MB/s write. Supplier
-              reported speeds are 550MB/s read and 520MB/s write. Performance
-              may vary based on system hardware and configuration.
-            </p>
-            <p>
-              2. Slotted graphics cards might vary. Graphics cards are selected
-              based on performance and independent benchmark testing. Some
-              traits are prioritised over others, e.g. Nvidia is our brand of
-              choice due to RECentral&apos;s (gameplay recording software)
-              capability of using these graphics card for better performance
-              when recording. RecordRig always makes sure to slot a graphics
-              card that performs well for RecordRig dedicated streaming
-              PC&apos;s core use cases: recording and streaming in 4K 60FPS +
-              HDR.
-            </p>
-            <p>
-              3. Opening the case within the first year of buying will void your
-              warranty. Upgradeability is mainly intended to be used after the
-              1-year mark, to lessen the need to buy an entirely new system when
-              some components start getting noticeably older in terms of
-              performance compared to newer components.
-            </p>
-          </Footnotes>
-        )}
-        {selectedColor !== null && (
-          <Drawer open={openDrawer} onClose={toggleDrawer}>
-            <ProductList indicateAddition products={shoppingBag} />
-          </Drawer>
-        )}
+                <ArrowRightIcon color="#ffffff" />
+              </span>
+            </Button>
+          </StyledButtonWrapper>
+          <p style={{ textAlign: "center" }}>
+            <StyledContinueShoppingButton
+              data-cy="continue-shopping"
+              onClick={() => toggleAddToBagDrawer()}
+            >
+              Continue shopping
+            </StyledContinueShoppingButton>
+          </p>
+        </Drawer>
+        <Drawer
+          closeDrawer={toggleAlreadyAddedDrawer}
+          open={openAlreadyAddedDrawer}
+        >
+          <p
+            style={{
+              display: "flex",
+              fontSize: "15px",
+              margin: "16px 48px 16px 16px"
+            }}
+          >
+            <span
+              style={{
+                height: "24px",
+                marginBottom: "8px",
+                width: "24px"
+              }}
+            >
+              <InfoIcon color="#78a9ff" type="filled" />
+            </span>
+            <span style={{ marginLeft: "8px" }}>
+              This item is already in your Shopping Bag. If you&apos;d like to
+              order more, you can{" "}
+              <Link href="/shop/shopping-bag">
+                <a
+                  onClick={() => toggleAlreadyAddedDrawer()}
+                  style={{ color: "#0f62fe" }}
+                >
+                  review/modify your Shopping Bag.
+                </a>
+              </Link>
+            </span>
+          </p>
+          <ProductList
+            products={shoppingBag}
+            showAmount={1}
+            showFirstProductId={alreadyAddedProductId}
+          />
+          <StyledButtonWrapper>
+            <Button
+              cypressId="review-shopping-bag"
+              href="/shop/shopping-bag"
+              onClick={() => toggleAlreadyAddedDrawer()}
+            >
+              Review Shopping Bag
+              <span
+                style={{
+                  display: "inline-block",
+                  height: "24px",
+                  marginLeft: "8px",
+                  position: "relative",
+                  top: "6px",
+                  width: "24px"
+                }}
+              >
+                <ArrowRightIcon color="#ffffff" />
+              </span>
+            </Button>
+          </StyledButtonWrapper>
+          <p style={{ textAlign: "center" }}>
+            <StyledContinueShoppingButton
+              onClick={() => toggleAlreadyAddedDrawer()}
+            >
+              Continue shopping
+            </StyledContinueShoppingButton>
+          </p>
+        </Drawer>
       </StyledBuyRecordRigPage>
     );
   }
@@ -732,4 +368,4 @@ const ConnectedBuyRecordRigPage = connect(
   mapDispatchToProps
 )(BuyRecordRigPage);
 
-export default withRedux(ConnectedBuyRecordRigPage);
+export default ConnectedBuyRecordRigPage;

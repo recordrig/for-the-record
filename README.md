@@ -12,66 +12,79 @@ If it's the first time you're running the application, first install dependencie
 npm install
 ```
 
-Then create a file called `.env` in the root of your project and insert your Stripe TEST API keys:
-
-```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyzabcetcbbq
-STRIPE_SECRET_KEY=sk_test_xyzabcetcbbq
-```
-
 Now you can run the development server:
 
 ```
 npm run dev
 ```
 
-## Optional: Local development with the Now CLI
+## Advanced Setup
 
-If you'd like to use [Now's CLI](https://zeit.co/blog/now-dev) to run the application, you will need to define an extra file named `.env.build` and define Stripe's publishable TEST API key in here as well:
+If you'd like to use all application features locally, including things like Check Out, you'll need to add a `.env.local` file in the root of this project and fill it with all required information. If you're a registered repository collaborator, you can get a prefilled `.env.local` file and shared Test API keys from the repository maintainer.
 
-```
-STRIPE_PUBLISHABLE_KEY=pk_test_xyzabcetcbbq
-```
+If you are not a registered repository collaborator, you'll need to manually set up the `.env.local` file using the instructions for [Advanced Setup](./docs/advanced-setup.md).
 
-This is because `now dev` will use its own mechanism for making env vars available in the application. It doesn't use Dotenv like the ordinary dev server, but instead reads `now.json` to know which env vars to set, and then looks for build-only dev vars inside `.env.build`.
-
-After setting the publishable TEST key in `.env.build`, you will be able to run the application using Now's CLI:
+While working on features which relate to our webhooks, you might want to use the [Stripe CLI](https://stripe.com/docs/stripe-cli) to forward Stripe events to your locally running application:
 
 ```
-now dev
+stripe listen --forward-to localhost:3000/api/hooks/stripe
 ```
 
-## CI/CD Pipeline
+This command will also generate a `STRIPE_WEBHOOK_SECRET` which you should add to `.env.local`. Now, Stripe will forward all events to this locally running webhook handler instead of the webhook URL defined in the Stripe dashboard.
 
-Pushes to any branch will trigger a Quality Assurance GitHub workflow (see `./.github/qa.yml`) via [GitHub Actions](https://github.com/DaniellaCocco/recordrig/actions) which runs our automated tests. If the QA passes, GitHub will auto-deploy to a unique URL (staging) through Now integration with GitHub.
+## Development Guidelines
 
-Merge a branch into `master` to create a new release. This can only be done through a pull request in GitHub.
+| ✅ &nbsp;Do                                                                                                                                                                                                                                                                                                                                          | ❌ &nbsp;Do not                                                                                                                                                                                                                                                                                                                                                       |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| - **Do** put code that's related in the same file<br /><br />  - **Do** write code that can be understood without relying on your personal knowledge of the context or memory<br /><br />  - **Do** create a separately testable utility (`./utils`) for code that's used in many places and/or is Very Important (e.g. pricing calculations) | - **Do not** split up code into seperate files based on arbitrary "kinds of code" (e.g. seperating Styled Components from their parent React Components)<br /><br />  - **Do not** create needless folder hierarchies<br /><br />  - **Do not** create [needless abstractions or dependencies](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction) |
 
-Any change to the `master` branch will auto-deploy to production.
+## Coding Standards
 
-## Error Monitoring
+We use TypeScript as much as possible and use ESLint to help us maintain a high standard of code quality and coherent coding style.
 
-Any errors occurring on the live site will be logged with [Sentry](https://sentry.io/).
+Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however, make sure to include comments explaning the rationale of the change so that it can be understood and/or discussed.
+
+It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or support built-in).
+
+Alternatively, you can run ESLint on the command line:
+
+```
+npm run lint
+```
+
+Auto-fix found issues (if possible):
+
+```
+npm run lint:fix
+```
 
 ## Core Functionality
 
-Built with [Next.js](https://github.com/zeit/next.js/), a React framework which makes SSR, along with some other things like code splitting, supported out of the box.
+Built with [Next.js](https://github.com/vercel/next.js/), a React framework which makes SSR, along with some other things like code splitting, supported out of the box.
 
-The `.pages/_app.js` file is our application's container, and takes care of anything global, like the importing/fetching of app-wide required data, shared style definitions, and inclusion of components which must be shared by all frontend pages.
+The `./pages/_app.js` file is our application's container, and takes care of anything global, like the instantiation of the Redux store, shared style definitions, and inclusion of components which must be shared by all frontend pages.
 
 Any file or folder under `./pages` will be rendered on its own route, with `./pages/_app.js` and `./pages/_document.js` as notable exceptions.
 
 Server-side functionality and other automations may be put over at `./pages/api`.
 
-Each individual file in the `./pages` folder will be served as a Lambda when using Now.
+Only write server-side code when it's really required, as it can be less performant (pre-building the complete site with Static Site Generation will result in a much faster client experience than performing Server Side Rendering on page requests) and costs more resources than just offloading things to the client.
+
+Server-side should be utilised for things the client simply cannot do or be "trusted" with, e.g. for fetches to API's utilising secret API keys that should not be exposed to the client.
 
 ## Components
 
 All React components are defined in the `./components` folder. Run Storybook to view component specifications and to develop/debug components in isolation:
 
-```bash
+```
 npm run storybook
 ```
+
+As a rule of thumb, keep your components "dumb", meaning they do not depend on external state (e.g. Redux) or globals (e.g. Stripe). This makes developing and testing them in isolation easier as it keeps them self-contained, and prevents us from having to descend into mocking/stubbing hell.
+
+An additional benefit of keeping components self-contained is that these components will depend more on predictable props as a natural consequence, the Storybook stories of which can be seperately defined and automatically snapshotted with Jest, preventing much of the need of manual unit test writing.
+
+When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test, and therefore writing a seperate **unit** test could be considered a testing duplicate and waste of effort (especially in early development stages, wherein we find ourselves at the time of writing).
 
 ## Store
 
@@ -81,46 +94,42 @@ Install the [Redux Devtools for Chrome](https://chrome.google.com/webstore/detai
 
 ## Automated Tests
 
-We use Jest for unit tests. It will run all files bearing the name suffix "`.test`", including snapshots for Storybook stories (as defined in `./components/_storyshots.test.ts`):
+We use Jest for unit tests. It will run all files bearing the name suffix "`.jest`", including snapshots for Storybook stories (as defined in `./components/_storyshots.jest.ts`):
 
-```bash
-npm run test
+```
+npm run jest
 ```
 
 We only write unit tests for components and store logic, both of which can be adequately tested in isolation. Other code will be tested using integration tests.
 
 For integration test, first make sure the application is running locally in dev mode, and then launch Cypress:
 
-```bash
-npm run cypress
+```
+npm run cypress:open
 ```
 
-Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./.cypress/integration`.
+Cypress will use an actual browser to visit the local running app instance and go through all defined tests in `./cypress/integration`.
 
-## Coding Standards
-
-We use TypeScript as much as possible and use ESLint combined with Prettier to help us maintain a high standard of code quality and coherent coding style. For Prettier, an ESLint plugin is used, so that the Prettier may be run through ESLint itself. As such, there is no need for a separate step to run Prettier.
-
-Run ESlint:
-
-```bash
-npm run lint
-```
-
-Auto-fix found issues:
-
-```bash
-npm run lint:fix
-```
-
-Configure your IDE of choice to use this project's version of ESLint for in-editor errors and warnings. Most editors have plugins available for both ESLint and Prettier.
+We integrate with Percy for visual regression testing. Percy commands will only run in the CI environment and will be ignored locally.
 
 ## Styling
 
 We use inline styles with help of the Styled Components package. Styling definitions should be co-located with components as they are intrinsically related.
 
-One section of global styles in defined in `./pages/_app.js`. Global styles should be kept to a minimum, because we want component definitions to make complete sense on their own. Any global styles that do exist should also be included when running through Storybook. 
+Global, shared styles are defined in `./pages/_appStyles.css`. Global styles should be kept to a minimum, because we want component definitions to make complete sense on their own. Any global styles that do exist should also be included when running through Storybook. 
 
 The main font is IBM Plex Sans. We include it as an NPM dependency to make sure not to lose it in the future, and to know which version is currently active, but don't import it from the package directly. Rather, we straight-up copy the files found in `node_modules/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff` (only the Bold and Regular types) into our `public` folder, so that we can use them with CSS's @font-face which is well-supported by web browsers.
 
-As for units of measurement, [just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a goddamn calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
+As for units of measurement, [just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
+
+## CI/CD Pipeline
+
+A push to any branch will deploy a preview to a unique URL through Vercel integration with GitHub.
+
+The creation of a pull request targeting `master` will trigger a Quality Assurance GitHub workflow (see `./.github/workflows/qa.yml`) via GitHub Actions which runs our automated tests. Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in Percy's dashboard. Comment in the PR on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
+
+Any change to the `master` branch will auto-deploy to https://recordrig.com.
+
+## Legal
+
+Copyright © 2020 RecordRig. All rights reserved.

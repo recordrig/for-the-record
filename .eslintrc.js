@@ -12,12 +12,21 @@ module.exports = {
   ],
   "overrides": [
     /*
-     * Allow jest-specific variabled in test files.
+     * Allow jest-specific variabled in Jest's test files.
      */
     {
-      "files": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"],
+      "files": ["**/*.jest.ts", "**/*.jest.tsx", "**/*.stories.tsx"],
       "env": {
         "jest": true
+      }
+    },
+    /*
+     * Allow alerts in storybook stories (negates the need for extensive mocking).
+     */
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "no-alert": "off"
       }
     },
     {
@@ -35,6 +44,19 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": ["error"]
       }
     },
+    {
+      /*
+       * Preferring a default export makes sense when files generally define something of
+       * a "whole", like a Component or a Page. But in the cases of folders like `data`,
+       * and `utils`, files are usually just collections of somewhat related code instead
+       * of a self-contained piece of functionality, which means a default export doesn't
+       * usually make sense.
+       */
+      "files": ["./data/**/*.ts", "./utils/**/*.ts"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    },
     /*
      * Allow non-camelcase in files that communicate with external API's (and have to
      * abide by their rules).
@@ -46,13 +68,21 @@ module.exports = {
       }
     },
     /*
-     * Do not require the explicit definition of return types in these folders where we often
-     * integrate with 3rd party interfaces/API's.
+     * In folders where we might integrate with 3rd party or parent API's, we needn't be so strict.
      */
     {
-      "files": ["./components/**/*.tsx", "./pages/**/*.tsx"],
+      "files": ["./components/**/*.tsx", "./pages/**/*.tsx", "./pages/api/**/*.ts"],
       "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        /* 
+         * `any` types make sense in various situations, such as when a component's parent
+         * passes a function handler. The current component should know which parameters to
+         * pass in, but needn't care about how the parent eventually handles it. Thus, if we 
+         * do define a return type at all, it could very well be `any`. E.g. an interface containing:
+         * handleSubmit: (products: { id: string; quantity: number }[]) => any;
+         * Which effectively states: "We'll pass in these params, do what you want with them."
+         */
+        "@typescript-eslint/no-explicit-any": "off"
       }
     },
     /*
@@ -93,10 +123,19 @@ module.exports = {
   ],
   "rules": {
     /*
-     * Turn off until we have better alternatives. (Set to "warn" and "error" in TS/TSX files.)
+     * Turn off until we have better alternatives. (Set to "warn" and "error" in TS/TSX
+     * files on a per use-case basis.)
      */
     "functional/immutable-data": "off",
     "functional/no-let": "off",
+    "functional/prefer-readonly-type": [
+      /* 
+       * We initially set "allowMutableReturnType": false to just exclude return types, however
+       * this setting still required nested properties to have the readonly modifier, so we opted
+       * to disabled completely instead.
+       */
+      "off"
+    ],
     /*
      * Airbnb's config assumes `js` and `jsx` files to be supported natively, but doesn't
      * know about `ts` and `tsx` files on its own. We want to allow e.g. `import "./myModule"`
@@ -120,28 +159,25 @@ module.exports = {
       {
         "devDependencies": [
           "**/*.stories.tsx",
-          "**/*.test.ts",
+          "**/*.jest.ts",
+          "./cypress"
         ]
       }
     ],
     /*
-     * Custom rule to support Next.js' present-day Link API.
+     * Looser rules to support Next.js' present-day Link API.
      * See [related issue on GitHub](https://github.com/zeit/next.js/issues/5533).
      */
-    "jsx-a11y/anchor-is-valid": [
-      "error",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    /*
+     * Allow console errors and warns to aid debugging and development, anywhere, anytime.
+     */
+    "no-console": [
+      "warn", // This is (of course) the ESLint severity rule, not to be confused with the console method (console.warn).
       {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "hrefLeft",
-          "hrefRight"
-        ],
-        "aspects": [
-          "invalidHref",
-          "preferButton"
-        ]
+        allow: ["error", "warn"] // This is where the allowed methods are at. Note that "log" is not among them.
       }
     ],
     /*

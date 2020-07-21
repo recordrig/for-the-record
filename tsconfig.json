@@ -28,12 +28,12 @@
     "noImplicitAny": false
   },
   "exclude": [
+    "cypress",
     "node_modules",
     "**/*.js",
     "**/*.jsx"
   ],
   "include": [
-    "global.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"

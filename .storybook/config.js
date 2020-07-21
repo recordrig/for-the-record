@@ -1,29 +1,25 @@
-import { configure } from '@storybook/react';
-import { addDecorator } from '@storybook/react';
-import { createGlobalStyle } from 'styled-components';
-import { fontStyles } from '../pages/_app';
+import { configure } from "@storybook/react";
+import Router from "next/router";
 
-/**
- * Styling defaults aiding consistency. May be overridden at the component level. Inherits `fontStyles`
- * from the main application so that they are always the exact same.
+const actionWithPromise = e => {
+  return new Promise((resolve) => resolve());
+}
+
+// Poor man's router mock, suppresses useless warning about there being no router.
+Router.router = {
+  push: actionWithPromise,
+  replace: actionWithPromise,
+  prefetch: actionWithPromise,
+};
+
+/*
+ * This same file is used by both Jest's unit tests and Storybook. We only want to apply global
+ * CSS in Storybook. (Jest will currently crash if we try to import global CSS without adding support
+ * for it in our Webpack config - but we don't need the global styles in the Jest env anyway.)
  */
-const RecordRigFontStyles = createGlobalStyle`
-  ${fontStyles}
-`;
-
-/**
- * Custom Storybook decorator which will wrap whatever the current story is with our global styles.
- */
-const withRecordRigFontStyles = (story) => (
-  <>
-    {story()}
-    <RecordRigFontStyles />
-  </>
-);
-
-// Add the RecordRig globally required font styles to every story through Storybook's decorator
-// mechanism.
-addDecorator(withRecordRigFontStyles);
+if (process.env.NODE_ENV !== "test") {
+  require("../pages/_appStyles.css");
+}
 
 /**
 * `require.context()` is a special feature supported by webpack's compiler that allows you to get
@@ -35,7 +31,7 @@ addDecorator(withRecordRigFontStyles);
 * See [Explanation on Stackoverflow](https://stackoverflow.com/a/54066904) and/or
 * [Webpack's documentation on the feature](https://webpack.js.org/guides/dependency-management/#require-context)
 */
-const req = require.context('../components', true, /\.stories\.tsx$/);
+const req = require.context("../components", true, /\.stories\.tsx$/);
 
 /**
  * Import all `.stories` files dynamically.

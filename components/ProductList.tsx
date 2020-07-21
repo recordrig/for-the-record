@@ -33,21 +33,12 @@ const StyledProductList = styled.div<StyledProductListProps>`
     border-bottom: 1px solid #dde1e6;
     box-sizing: border-box;
     display: flex;
-    height: 100px;
-    padding-top: 12px;
-    padding-bottom: 12px;
     padding-left: 24px;
     padding-right: 24px;
 
     > div {
       box-sizing: border-box;
-      height: 64px;
-      padding-top: 16px;
       padding-left: 24px;
-    }
-
-    img {
-      height: 64px;
     }
 
     p {
@@ -58,6 +49,10 @@ const StyledProductList = styled.div<StyledProductListProps>`
     span {
       color: #697077;
       font-size: 12px;
+    }
+
+    &:first-child {
+      border-top: 1px solid #dde1e6;
     }
   }
 
@@ -89,6 +84,40 @@ const StyledProductList = styled.div<StyledProductListProps>`
       will-change: ${indicateAddition ? "background-color" : "unset"};
     }
   `}
+
+  @media (max-width: 575px) {
+    li {
+      height: 92px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+
+      > div {
+        height: 60px;
+        padding-top: 8px;
+      }
+
+      img {
+        height: 60px;
+      }
+    }
+  }
+
+  @media (min-width: 576px) {
+    li {
+      height: 146px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+
+      > div {
+        height: 96px;
+        padding-top: 16px;
+      }
+
+      img {
+        height: 96px;
+      }
+    }
+  }
 `;
 
 interface Product {
@@ -102,25 +131,60 @@ interface ProductListProps {
    * The most recently added product should be listed at the top.
    */
   readonly products: readonly Product[];
+  /** Brief green flash on the top product. */
   readonly indicateAddition?: boolean;
+  /** The amount to show before cutoff. Defaults to two. */
+  readonly showAmount?: number;
+  /** The product ID to list at the top. */
+  readonly showFirstProductId?: string;
 }
 
 /**
- * The Product List is a compact style list of product pictures, names and quantity
- * of the most recently added products. The most recently added product should be listed
- * at the top.
- *
- * Pass `flash={true}` to make the top (most recently added) product briefly flash so
- * as to indicate it was recently added to the list.
+ * The Product List is a compact style list of product pictures, names and quantity.
  */
 const ProductList: FunctionComponent<ProductListProps> = ({
   products,
-  indicateAddition = false
+  indicateAddition = false,
+  showAmount = 2,
+  showFirstProductId = undefined
 }) => {
-  const productsToRender =
-    products.length > 3 ? [products[0], products[1], products[2]] : products;
+  // The first product that matches `showFirstProductId`, or the the product that was
+  // originally first (if `showFirstProductId` was not defined, or wasn't found).
+  const firstProduct = (() => {
+    const findFirstProduct = () =>
+      products.find(product => product.id === showFirstProductId);
 
-  const remainingProductsAmount = products.length > 3 ? products.length - 3 : 0;
+    // If the product that ought to be showed first was specified, we attempt to find it.
+    const firstProductFound = showFirstProductId && findFirstProduct();
+
+    // If indeed the specified product was found, we return it.
+    if (firstProductFound) return firstProductFound;
+
+    // If it wasn't found, we'll return `undefined` to indicate its non-existence.
+    return undefined;
+  })();
+
+  // The list of products without `showFirstProductId`, or the original list of products
+  // without changes if it wasn't found.
+  const filteredProducts = (() =>
+    products.filter(product => !(product.id === showFirstProductId)))();
+
+  // Either a mashed together list of the product that was defined (and found) to be firt,
+  // or the plain original list of products as passed from the parent.
+  const productsToUse = firstProduct
+    ? [firstProduct, ...filteredProducts]
+    : products;
+
+  const productsToRender = productsToUse.slice(0, showAmount);
+  const remainingProducts = productsToUse.slice(showAmount, products.length);
+
+  // Sum the quantities of all remaining (non-rendered) products.
+  const remainingProductsAmount = remainingProducts.reduce(
+    (accumulatingTotal, currentProduct) => {
+      return accumulatingTotal + currentProduct.quantity;
+    },
+    0
+  );
 
   return (
     <StyledProductList indicateAddition={indicateAddition}>

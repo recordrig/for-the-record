@@ -18,6 +18,20 @@ storiesOf("Text", module)
       <Text color="#d5d9e0">{text}</Text>
     </div>
   ))
+  .add("text as wrapper", () => (
+    <Text>
+      <h1>Biggest h1 heading.</h1>
+      <p>Some text.</p>
+      <h2>Fairly big h2 heading.</h2>
+      <p>Some text.</p>
+      <h3>Smaller h3 subheading.</h3>
+      <p>Some more text.</p>
+      <ul>
+        <li>List item</li>
+        <li>Another list item</li>
+      </ul>
+    </Text>
+  ))
   .add("paragraph", () => <Paragraph>{text}</Paragraph>)
   .add("paragraph custom color", () => (
     <div style={{ backgroundColor: "#13171a" }}>
