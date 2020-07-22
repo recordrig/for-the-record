@@ -175,7 +175,7 @@ const StyledMenuBar = styled.nav`
 
     /* Hide some menu text links on small screens. */
     /* Tech Specs */
-    @media (max-width: 360px) {
+    @media (max-width: 480px) {
       li:nth-child(2) {
         visibility: hidden;
         width: 0;
@@ -188,7 +188,7 @@ const StyledMenuBar = styled.nav`
     }
 
     /* Setup */
-    @media (max-width: 480px) {
+    @media (max-width: 360px) {
       li:nth-child(3) {
         visibility: hidden;
         width: 0;
