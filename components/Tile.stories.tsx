@@ -2,6 +2,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { CapsHeading, Paragraph } from "./Text";
 import Tile, { TileContainer } from "./Tile";
+import { ArrowRightIcon } from "./Icon";
 
 storiesOf("Tile", module)
   .add("default", () => (
@@ -158,11 +159,23 @@ storiesOf("Tile", module)
             style={{
               color: "#009c98",
               display: "block",
-              fontSize: "18px",
+              fontSize: "20px",
               textAlign: "right"
             }}
           >
             Learn more
+            <span
+              style={{
+                display: "inline-block",
+                height: "24px",
+                marginLeft: "8px",
+                position: "relative",
+                top: "6px",
+                width: "24px"
+              }}
+            >
+              <ArrowRightIcon color="#009c98" />
+            </span>
           </span>
         </TileContainer>
       </Tile>
@@ -192,11 +205,23 @@ storiesOf("Tile", module)
             style={{
               color: "#009c98",
               display: "block",
-              fontSize: "18px",
+              fontSize: "20px",
               textAlign: "right"
             }}
           >
             Learn more
+            <span
+              style={{
+                display: "inline-block",
+                height: "24px",
+                marginLeft: "8px",
+                position: "relative",
+                top: "6px",
+                width: "24px"
+              }}
+            >
+              <ArrowRightIcon color="#009c98" />
+            </span>
           </span>
         </TileContainer>
       </Tile>
