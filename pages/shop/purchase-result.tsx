@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -162,6 +163,10 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
 
   return (
     <StyledPurchaseResult>
+      <Head>
+        <title>Order confirmation</title>
+        <meta name="robots" content="noindex" />
+      </Head>
       <div>
         {error && (
           <div style={{ marginBottom: "16px" }}>
