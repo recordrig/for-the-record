@@ -55,14 +55,30 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   const [countrySupported, setCountrySupported] = useState(true);
 
   useEffect(() => {
-    fetch("https://json.geoiplookup.io")
-      .then(res => res.json())
-      .then(res => {
-        const country = Object.keys(countries).find(
-          key => key === res.country_code
-        );
-        setCountrySupported(country !== undefined);
-      });
+    async function getIp() {
+      const response = await fetch("http://api.ipify.org/?format=json");
+      const data = await response.json();
+      return data;
+    }
+
+    async function getGeo(ip) {
+      const response = await fetch(
+        `https://geo.ipify.org/api/v1?apiKey=at_NJsPac6gNXXrPxSo8r8v2YjB3Ri2Q&ipAddress=${ip}`
+      );
+      const data = await response.json();
+      return data;
+    }
+
+    if (shoppingBag.length > 0) {
+      getIp().then(ipData =>
+        getGeo(ipData.ip).then(geoData => {
+          const customerCountryFound = Object.keys(countries).find(
+            key => key === geoData.location.country
+          );
+          if (customerCountryFound === undefined) setCountrySupported(false);
+        })
+      );
+    }
   }, []);
 
   // The shoppingBag as received from global state stores ID's and quantity.
