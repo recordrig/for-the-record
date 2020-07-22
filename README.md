@@ -39,7 +39,7 @@ npm run dev
 
 We use TypeScript as much as possible and use ESLint to help us maintain a high standard of code quality and coherent coding style.
 
-Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however, make sure to include comments explaning the rationale of the change so that it can be understood and/or discussed.
+Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however, make sure to include comments explaining the rationale of the change so that it can be understood and/or discussed.
 
 It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or support built-in):
 
@@ -83,13 +83,13 @@ As a rule of thumb, keep your components "dumb", meaning they do not depend on e
 
 An additional benefit of keeping components self-contained is that these components will depend more on predictable props as a natural consequence, the Storybook stories of which can be seperately defined and automatically snapshotted with Jest, preventing much of the need of manual unit test writing.
 
-When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test, and therefore writing a seperate **unit** test could be considered a testing duplicate and waste of effort (especially in early development stages, wherein we find ourselves at the time of writing).
+When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test, and therefore we consider writing a seperate **unit** test a testing duplicate and waste of effort.
 
 ## Store
 
 We maintain the application's client side state with Redux in `./store`. We co-locate all related logic within the same file and/or folder.
 
-Install the [Redux Devtools for Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) to aid with debugging.
+Install the Redux Devtools for Chrome or Firefox to aid with debugging.
 
 ## Automated Tests
 
@@ -149,6 +149,8 @@ The stable branch is `master`. We never modify this branch directly.
 
 The default branch is `develop`. This branch contains the most recent version of the app. You should always branch off from this branch when you start developing a new feature or fix.
 
+### 1. Local development
+
 Verify that you are on the `develop` branch:
 
 ```shell
@@ -165,6 +167,10 @@ git checkout -b my-new-branch
 
 # Switched to a new branch 'my-new-branch'
 ```
+
+On this new branch, you can make all required changes.
+
+### 2. Local testing
 
 While developing your feature, it's recommended to continuously run automated tests to prevent [regression bugs](https://en.wikipedia.org/wiki/Software_regression).
 
@@ -187,6 +193,8 @@ If you've configured your IDE with ESLint, you should be warned of Linter issues
 ```shell
 npm run lint
 ```
+
+### 3. Submitting a pull request
 
 Once you are done developing this feature or fix, commit your changes:
 
@@ -228,21 +236,23 @@ git push --set-upstream origin my-new-branch
 # Branch 'my-new-branch' set up to track remote branch 'my-new-branch' from 'origin'.
 ```
 
-You can find your unique Preview URL in [GitHub's Deployment overview](https://github.com/recordrig/recordrig-site/deployments/activity_log?environment=Preview).
+If you consider your changes to be ready for review, visit the supplied link to create a pull request targeting the `develop` branch in GitHub.
 
-If you consider your changes to be ready for review, visit the supplied link to open a pull request targeting the `develop` branch in GitHub.
+Of course, if more changes are needed, you can always add more commits to your branch and re-push the modifications to remote (GitHub).
 
 ## CI/CD Pipeline
 
 A push to any branch will deploy a Unique Preview to a unique URL through Vercel integration with GitHub.
 
+You can find a list of all active Unique Previews in [GitHub's Deployment overview](https://github.com/recordrig/recordrig-site/deployments/activity_log?environment=Preview).
+
 The creation of a pull request targeting `develop` or `master` will trigger a Quality Assurance GitHub workflow (see `./.github/workflows/qa.yml`) via GitHub Actions which runs our automated checks & tests.
 
-Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in Percy's dashboard. Comment in the PR on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
+Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in Percy's dashboard. Comment in the open pull request on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
 
 Any change to the `master` branch will auto-deploy to Production.
 
-## Environment details
+## Environment Details
 
 | Environment         | Description / Notes                                                                       | URL / Domain                                                                | Env Variables                          | Branch                                          |
 |---------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------|-------------------------------------------------|
