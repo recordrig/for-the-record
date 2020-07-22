@@ -39,7 +39,7 @@ npm run dev
 
 We use TypeScript as much as possible and use ESLint to help us maintain a high standard of code quality and coherent coding style.
 
-Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however, make sure to include comments explaning the rationale of the change so that it can be understood and/or discussed.
+Note that our coding "standards" are **always evolving** as some rules make more sense in some settings than others. Feel free to commit changes to the ESLint configuration alongside your code, however, make sure to include comments explaining the rationale of the change so that it can be understood and/or discussed.
 
 It's recommended to configure your IDE or text editor to use this project's ESLint settings (`./eslintrc.js`) for in-editor warnings and "auto-fix" shortcuts (most editors have ESLint plugins available or support built-in):
 
