@@ -2,5 +2,8 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    # Check the npm registry for updates at 2:00 UTC (= 4:00 CEST).
     schedule:
       interval: "daily"
+      time: "02:00"
+    target-branch: "develop"
