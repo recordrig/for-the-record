@@ -225,6 +225,15 @@ module.exports = {
      */
     "react/prop-types": "off",
     /*
+     * Turn off for functional components. We use default parameter assignment in those.
+     */
+    "react/require-default-props": [
+      "error", 
+      {
+        "ignoreFunctionalComponents": true
+      }
+    ],
+    /*
      * Disable lint errors on functional React and Styled components that don't declare a return type.
      * These components shouldn't need to declare this; TypeScript can instead infer them.
      * Community agrees; will be removed from `typescript-eslint` in a future version. See [PR on GitHub](https://github.com/typescript-eslint/typescript-eslint/pull/260).

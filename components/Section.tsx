@@ -272,6 +272,8 @@ const StyledSection = styled.div<StyledSectionProps>`
 
 interface SectionProps {
   readonly children: ReactNode | ReactNodeArray;
+  // ESLint mysteriously says 'dark' is never used, but it clearly is...
+  // eslint-disable-next-line react/no-unused-prop-types
   readonly dark?: boolean;
 }
 
