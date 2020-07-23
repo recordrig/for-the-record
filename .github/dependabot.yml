@@ -7,3 +7,5 @@ updates:
       interval: "daily"
       time: "02:00"
     target-branch: "develop"
+    # Update everything all the time.
+    versioning-strategy: increase
