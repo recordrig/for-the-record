@@ -6,7 +6,8 @@ import { formatCurrency } from "../utils/prices";
 import Button from "./Button";
 import { CheckIcon } from "./Icon";
 import Footnotes from "./Footnotes";
-import Tile from "./Tile";
+import Section, { InfoSection } from "./Section";
+import Tile, { TileContainer } from "./Tile";
 
 // When on small screens, we must reserve bottom space for the overlaying "Add to Bag" section.
 const GlobalStyle = createGlobalStyle`
@@ -32,6 +33,33 @@ const GlobalStyle = createGlobalStyle`
     body {
       padding-bottom: 127px;
     }
+  }
+`;
+
+const StyledList = styled.ul`
+  color: #697077;
+  font-weight: bold;
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 10.5px;
+  }
+
+  @media (min-width: 375px) and (max-width: 449px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 449px) and (max-width: 767px) {
+    font-size: 13px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 14px;
   }
 `;
 
@@ -1094,22 +1122,36 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
       </StyledContent>
       {step2 && (
         <>
-          <StyledInTheBox>
-            <div>
-              <h3>In the box</h3>
-            </div>
-            <div>
-              <img alt="" src="/in-the-box.svg" />
-              <ul>
-                <li>
-                  RecordRig dedicated streaming PC in{" "}
-                  {blackChosen ? "Stealth Black" : "Pristine White"}
-                </li>
-                <li>Power cord for Type F plugs (European)</li>
-                <li>3 HDMI 2.1 (high-bandwidth) cables</li>
-              </ul>
-            </div>
-          </StyledInTheBox>
+          <Section>
+            <Tile backgroundColor="#dde1e6">
+              <TileContainer>
+                <InfoSection>
+                  <div>
+                    <h3>In the box</h3>
+                  </div>
+                  <div>
+                    <img
+                      alt=""
+                      src="/in-the-box.svg"
+                      style={{
+                        marginBottom: "64px",
+                        maxWidth: "600px",
+                        width: "100%"
+                      }}
+                    />
+                    <StyledList>
+                      <li>
+                        RecordRig dedicated streaming PC in{" "}
+                        {blackChosen ? "Stealth Black" : "Pristine White"}
+                      </li>
+                      <li>Power cord for Type F plugs (European)</li>
+                      <li>3 HDMI 2.1 (high-bandwith) cables</li>
+                    </StyledList>
+                  </div>
+                </InfoSection>
+              </TileContainer>
+            </Tile>
+          </Section>
           <Footnotes>
             <div style={{ margin: "0 8px" }}>
               <p>

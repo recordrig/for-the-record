@@ -126,7 +126,8 @@ const StyledInfoSection = styled.div`
       min-width: 220px;
       width: 220px;
 
-      h2 {
+      h2,
+      h3 {
         font-size: 28px;
         line-height: 36px;
       }
@@ -155,7 +156,8 @@ const StyledInfoSection = styled.div`
       min-width: 260px;
       width: 260px;
 
-      h2 {
+      h2,
+      h3 {
         font-size: 32px;
         line-height: 42px;
       }
