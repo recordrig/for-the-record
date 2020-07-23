@@ -8538,6 +8538,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     justify-content: space-between;
     padding-left: 16px;
     padding-right: 16px;
+    padding-bottom: 128px;
   }
 }
 
@@ -9174,7 +9175,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
             <div>
               <img
                 alt=""
-                src="/in-the-box.svg"
+                src="/in-the-box-black.svg"
                 style={
                   Object {
                     "marginBottom": "64px",
@@ -9415,6 +9416,7 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     justify-content: space-between;
     padding-left: 16px;
     padding-right: 16px;
+    padding-bottom: 128px;
   }
 }
 
@@ -10514,6 +10516,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     justify-content: space-between;
     padding-left: 16px;
     padding-right: 16px;
+    padding-bottom: 128px;
   }
 }
 
@@ -11150,7 +11153,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
             <div>
               <img
                 alt=""
-                src="/in-the-box.svg"
+                src="/in-the-box-white.svg"
                 style={
                   Object {
                     "marginBottom": "64px",
@@ -11391,6 +11394,7 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
     justify-content: space-between;
     padding-left: 16px;
     padding-right: 16px;
+    padding-bottom: 128px;
   }
 }
 

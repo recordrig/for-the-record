@@ -273,7 +273,7 @@ const TechSpecsPage: FunctionComponent = () => {
           <div>
             <img
               alt=""
-              src="/multi-stream.png"
+              src="/multi-stream.png?v=2"
               style={{ marginBottom: "64px", maxWidth: "600px", width: "100%" }}
             />
             <Paragraph>
@@ -432,7 +432,7 @@ const TechSpecsPage: FunctionComponent = () => {
           <div>
             <img
               alt=""
-              src="/in-the-box.svg"
+              src="/in-the-box.svg?v=2"
               style={{ marginBottom: "64px", maxWidth: "600px", width: "100%" }}
             />
             <StyledList>

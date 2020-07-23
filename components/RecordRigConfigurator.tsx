@@ -69,6 +69,7 @@ const StyledContent = styled.div`
     justify-content: space-between;
     padding-left: 16px;
     padding-right: 16px;
+    padding-bottom: 128px;
   }
 `;
 
@@ -665,85 +666,6 @@ const StyledAddToBag = styled.div`
   }
 `;
 
-const StyledInTheBox = styled.div`
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-
-  img {
-    max-width: 100%;
-  }
-
-  ul {
-    list-style-type: none;
-    margin-top: 32px;
-    padding-left: 0;
-
-    li {
-      color: #697077;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-  }
-
-  @media (max-width: 699px) {
-    margin-bottom: 256px;
-    width: 100%;
-
-    h3 {
-      margin-top: 32px;
-    }
-
-    img {
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 700px) {
-    display: flex;
-    margin-bottom: 256px;
-    max-width: 1216px;
-    width: 100%;
-
-    h3 {
-      margin-top: 0;
-      margin-left: 16px;
-    }
-
-    > div:first-child {
-      flex-basis: 288px;
-      flex-grow: 0;
-      flex-shrink: 0;
-    }
-
-    > div:last-child {
-      flex-grow: 1;
-      padding-right: 16px;
-    }
-
-    img {
-      max-width: 696px;
-      width: 100%;
-    }
-
-    ul {
-      margin-top: 48px;
-    }
-
-    li {
-      font-size: 18px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    margin-top: 448px;
-
-    h3 {
-      font-size: 28px;
-    }
-  }
-`;
-
 interface StyledRecordRigConfiguratorProps {
   readonly step2: boolean;
 }
@@ -1132,7 +1054,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                   <div>
                     <img
                       alt=""
-                      src="/in-the-box.svg"
+                      src={`/in-the-box-${blackChosen ? "black" : "white"}.svg`}
                       style={{
                         marginBottom: "64px",
                         maxWidth: "600px",
