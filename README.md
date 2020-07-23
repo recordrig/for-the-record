@@ -273,6 +273,19 @@ Any change to the `master` branch will auto-deploy to Production.
 | Staging - PROD&nbsp;data | A merged release candidate. **Test with caution**, as this _does_ affect PRODUCTION data. | https://recordrig-site.now.sh                                               | Vercel PRODUCTION variables            | `develop`                                       |
 | Production          | A stable release.                                                                         | https://recordrig.com, https://www.recordrig.com (redirects to root domain) | Vercel PRODUCTION variables            | `master`                                        |
 
+## Dependencies
+
+All dependencies are auto-updated though [Dependabot](https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically) integration with GitHub. Dependabot will open a pull request anytime a dependency can be updated.
+
+If CI checks do not pass, check out Dependabot's branch (e.g. `dependabot/npm_and_yarn/develop/prettier-2.0.5`) locally:
+
+```
+git fetch
+git checkout dependabot/npm_and_yarn/develop/prettier-2.0.5
+```
+
+Fix issues locally, run automated tests, and `git push` to remote when done.
+
 ## Legal
 
 Copyright © 2020 RecordRig. All rights reserved.
