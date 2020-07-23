@@ -121,7 +121,7 @@ storiesOf("Tile", module)
               display: "block",
               fontSize: "48px",
               lineHeight: "56px",
-              margin: "64px 0"
+              margin: "64px 0",
             }}
           >
             Get the full list of what&apos;s included with RecordRig.
@@ -131,7 +131,7 @@ storiesOf("Tile", module)
               color: "#009c98",
               display: "block",
               fontSize: "18px",
-              textAlign: "right"
+              textAlign: "right",
             }}
           >
             Learn more
@@ -150,7 +150,7 @@ storiesOf("Tile", module)
               display: "block",
               fontSize: "48px",
               lineHeight: "56px",
-              margin: "64px 0"
+              margin: "64px 0",
             }}
           >
             Get the full list of what&apos;s included with RecordRig.
@@ -160,7 +160,7 @@ storiesOf("Tile", module)
               color: "#009c98",
               display: "block",
               fontSize: "20px",
-              textAlign: "right"
+              textAlign: "right",
             }}
           >
             Learn more
@@ -171,7 +171,7 @@ storiesOf("Tile", module)
                 marginLeft: "8px",
                 position: "relative",
                 top: "6px",
-                width: "24px"
+                width: "24px",
               }}
             >
               <ArrowRightIcon color="#009c98" />
@@ -196,7 +196,7 @@ storiesOf("Tile", module)
               display: "block",
               fontSize: "48px",
               lineHeight: "56px",
-              margin: "64px 0"
+              margin: "64px 0",
             }}
           >
             Get the full list of what&apos;s included with RecordRig.
@@ -206,7 +206,7 @@ storiesOf("Tile", module)
               color: "#009c98",
               display: "block",
               fontSize: "20px",
-              textAlign: "right"
+              textAlign: "right",
             }}
           >
             Learn more
@@ -217,7 +217,7 @@ storiesOf("Tile", module)
                 marginLeft: "8px",
                 position: "relative",
                 top: "6px",
-                width: "24px"
+                width: "24px",
               }}
             >
               <ArrowRightIcon color="#009c98" />

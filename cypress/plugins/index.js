@@ -12,6 +12,6 @@
 // the project's config changing)
 import percyHealthCheck from "@percy/cypress/task";
 
-export default on => {
+export default (on) => {
   on("task", percyHealthCheck);
 };

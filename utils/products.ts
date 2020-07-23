@@ -14,8 +14,8 @@ export const validateProductIds = (
   }[],
   productsData: DataProducts
 ): void => {
-  products.forEach(product => {
-    const foundId = Object.keys(productsData).find(key => key === product.id);
+  products.forEach((product) => {
+    const foundId = Object.keys(productsData).find((key) => key === product.id);
     if (!foundId)
       throw new Error(
         `Product with ID ${product.id} was not found in the products data.`
@@ -39,9 +39,9 @@ export const addPriceToProducts = (
   price: number;
 }[] => {
   validateProductIds(products, productsData);
-  return products.map(product => ({
+  return products.map((product) => ({
     ...product,
-    price: productsData[product.id].price
+    price: productsData[product.id].price,
   }));
 };
 
@@ -61,8 +61,8 @@ export const addNameToProducts = (
   name: string;
 }[] => {
   validateProductIds(products, productsData);
-  return products.map(product => ({
+  return products.map((product) => ({
     ...product,
-    name: productsData[product.id].name
+    name: productsData[product.id].name,
   }));
 };

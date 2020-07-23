@@ -6,7 +6,7 @@ describe("Shop Page", () => {
     { width: 1024, height: 675, label: "iPad landscape" },
     { width: 1366, height: 700, label: "Laptop" },
     { width: 1920, height: 1080, label: "HD" },
-    { width: 4096, height: 2160, label: "4K" }
+    { width: 4096, height: 2160, label: "4K" },
   ];
 
   const addToBagButton = "[data-cy=add-to-bag-button]";

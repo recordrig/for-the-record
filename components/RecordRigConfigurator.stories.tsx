@@ -2,9 +2,9 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import RecordRigConfigurator from "./RecordRigConfigurator";
 
-const addToBag = color => alert(`addToBag called with ${color}`);
-const onSelectColor = color => alert(`onSelectColor called with ${color}`);
-const onAddToBagButtonDisabledClick = color =>
+const addToBag = (color) => alert(`addToBag called with ${color}`);
+const onSelectColor = (color) => alert(`onSelectColor called with ${color}`);
+const onAddToBagButtonDisabledClick = (color) =>
   alert(`onAddToBagButtonDisabledClick called with ${color}`);
 
 storiesOf("RecordRigConfigurator", module)

@@ -24,7 +24,7 @@ interface SectionProps {
  * page's Footer.
  */
 const Footnotes: FunctionComponent<SectionProps> = ({
-  children
+  children,
 }: SectionProps) => <StyledFootnotes>{children}</StyledFootnotes>;
 
 export default Footnotes;

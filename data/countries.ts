@@ -37,86 +37,86 @@ type Countries = Record<CountryCodes, Country>;
 /** A list of countries we ship to. */
 const countries: Countries = {
   BE: {
-    name: "Belgium"
+    name: "Belgium",
   },
   BG: {
-    name: "Bulgaria"
+    name: "Bulgaria",
   },
   CZ: {
-    name: "Czechia"
+    name: "Czechia",
   },
   DK: {
-    name: "Denmark"
+    name: "Denmark",
   },
   DE: {
-    name: "Germany"
+    name: "Germany",
   },
   EE: {
-    name: "Estonia"
+    name: "Estonia",
   },
   IE: {
-    name: "Ireland"
+    name: "Ireland",
   },
   GR: {
-    name: "Greece"
+    name: "Greece",
   },
   ES: {
-    name: "Spain"
+    name: "Spain",
   },
   FR: {
-    name: "France"
+    name: "France",
   },
   HR: {
-    name: "Croatia"
+    name: "Croatia",
   },
   IT: {
-    name: "Italy"
+    name: "Italy",
   },
   CY: {
-    name: "Cyprus"
+    name: "Cyprus",
   },
   LV: {
-    name: "Latvia"
+    name: "Latvia",
   },
   LT: {
-    name: "Lithuania"
+    name: "Lithuania",
   },
   LU: {
-    name: "Luxembourg"
+    name: "Luxembourg",
   },
   HU: {
-    name: "Hungary"
+    name: "Hungary",
   },
   MT: {
-    name: "Malta"
+    name: "Malta",
   },
   NL: {
-    name: "Netherlands"
+    name: "Netherlands",
   },
   AT: {
-    name: "Austria"
+    name: "Austria",
   },
   PL: {
-    name: "Poland"
+    name: "Poland",
   },
   PT: {
-    name: "Portugal"
+    name: "Portugal",
   },
   RO: {
-    name: "Romania"
+    name: "Romania",
   },
   SI: {
-    name: "Slovenia"
+    name: "Slovenia",
   },
   SK: {
-    name: "Slovakia"
+    name: "Slovakia",
   },
   FI: {
-    name: "Finland"
+    name: "Finland",
   },
   SE: {
-    name: "Sweden"
-  }
+    name: "Sweden",
+  },
 };
 
 export default countries;

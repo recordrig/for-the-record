@@ -6,16 +6,16 @@ const productsData = {
   PRODUCT1: {
     name: "Product 1",
     price: 200000,
-    quantityLimit: 4
+    quantityLimit: 4,
   },
   PRODUCT2: {
     name: "Product 2",
     price: 100000,
-    quantityLimit: 4
-  }
+    quantityLimit: 4,
+  },
 };
 
-const handleCheckout = products =>
+const handleCheckout = (products) =>
   alert(`onSelectColor called with ${products}`);
 
 const ShoppingBagDefaultContainer = () => {
@@ -24,19 +24,19 @@ const ShoppingBagDefaultContainer = () => {
       id: "PRODUCT1",
       name: "Product 1",
       price: 200000,
-      quantity: 1
+      quantity: 1,
     },
     {
       id: "PRODUCT2",
       name: "Product 2",
       price: 100000,
-      quantity: 2
-    }
+      quantity: 2,
+    },
   ]);
 
   const updateProductQuantity = (productId, desiredQuantity) => {
     setProducts(
-      products.map(product =>
+      products.map((product) =>
         product.id === productId
           ? { ...product, quantity: desiredQuantity }
           : product
@@ -44,8 +44,8 @@ const ShoppingBagDefaultContainer = () => {
     );
   };
 
-  const removeProduct = productId => {
-    setProducts(products.filter(product => product.id !== productId));
+  const removeProduct = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId));
   };
 
   return (
@@ -65,19 +65,19 @@ const ShoppingBagCountryNotSupportedContainer = () => {
       id: "PRODUCT1",
       name: "Product 1",
       price: 200000,
-      quantity: 1
+      quantity: 1,
     },
     {
       id: "PRODUCT2",
       name: "Product 2",
       price: 100000,
-      quantity: 2
-    }
+      quantity: 2,
+    },
   ]);
 
   const updateProductQuantity = (productId, desiredQuantity) => {
     setProducts(
-      products.map(product =>
+      products.map((product) =>
         product.id === productId
           ? { ...product, quantity: desiredQuantity }
           : product
@@ -85,8 +85,8 @@ const ShoppingBagCountryNotSupportedContainer = () => {
     );
   };
 
-  const removeProduct = productId => {
-    setProducts(products.filter(product => product.id !== productId));
+  const removeProduct = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId));
   };
 
   return (
@@ -107,19 +107,19 @@ const ShoppingBagInvalidContainer = () => {
       id: "PRODUCT1",
       name: "Product 1",
       price: 200000,
-      quantity: 6
+      quantity: 6,
     },
     {
       id: "PRODUCT2",
       name: "Product 2",
       price: 100000,
-      quantity: 8
-    }
+      quantity: 8,
+    },
   ]);
 
   const updateProductQuantity = (productId, desiredQuantity) => {
     setProducts(
-      products.map(product =>
+      products.map((product) =>
         product.id === productId
           ? { ...product, quantity: desiredQuantity }
           : product
@@ -127,8 +127,8 @@ const ShoppingBagInvalidContainer = () => {
     );
   };
 
-  const removeProduct = productId => {
-    setProducts(products.filter(product => product.id !== productId));
+  const removeProduct = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId));
   };
 
   return (

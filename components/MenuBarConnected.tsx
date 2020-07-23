@@ -8,12 +8,12 @@ interface MenuBarContainerProps {
 }
 
 const MenuBarContainer: FunctionComponent<MenuBarContainerProps> = ({
-  shoppingBag
+  shoppingBag,
 }) => <MenuBar products={shoppingBag} />;
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    shoppingBag: state.shoppingBag
+    shoppingBag: state.shoppingBag,
   };
 };
 

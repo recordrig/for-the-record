@@ -7,7 +7,7 @@ import { totalLimit } from "../../../data/checkout";
 import {
   completeProductsData,
   validateProductsForCheckout,
-  structureProductsForCheckout
+  structureProductsForCheckout,
 } from "../../../utils/checkout";
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
@@ -22,7 +22,7 @@ if (!process.env.STRIPE_SECRET_KEY) {
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: "2020-03-02"
+  apiVersion: "2020-03-02",
 });
 
 export default async function handler(
@@ -64,7 +64,7 @@ export default async function handler(
       const params: Stripe.Checkout.SessionCreateParams = {
         billing_address_collection: "required",
         shipping_address_collection: {
-          allowed_countries: allowedCountries
+          allowed_countries: allowedCountries,
         },
         payment_method_types: [
           "giropay", // Germany
@@ -72,12 +72,12 @@ export default async function handler(
           "p24", // Poland
           "eps", // Austria
           "bancontact", // Belgium
-          "card" // Other
+          "card", // Other
         ],
         line_items: structuredProducts,
         mode: "payment",
         success_url: `${req.headers.origin}/shop/purchase-result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/shop/shopping-bag`
+        cancel_url: `${req.headers.origin}/shop/shopping-bag`,
       };
 
       // Create unique checkout session.

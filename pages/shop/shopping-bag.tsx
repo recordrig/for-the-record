@@ -8,7 +8,7 @@ import productsData from "../../data/products";
 import {
   ShoppingBagProduct,
   removeProductAction,
-  updateProductQuantityAction
+  updateProductQuantityAction,
 } from "../../store/shoppingBag";
 import ShoppingBag from "../../components/ShoppingBag";
 import countries from "../../data/countries";
@@ -22,12 +22,12 @@ async function fetchPostJSON(url: string, data?: {}) {
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *client
-      body: JSON.stringify(data || {}) // body data type must match "Content-Type" header
+      body: JSON.stringify(data || {}), // body data type must match "Content-Type" header
     });
     return await response.json(); // parses JSON response into native JavaScript objects
   } catch (err) {
@@ -46,7 +46,7 @@ interface ShoppingBagPageProps {
 const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
   removeProduct,
   updateProductQuantity,
-  shoppingBag
+  shoppingBag,
 }) => {
   // We only deliver to EU countries. We'd like to show a notification to folks not
   // located in EU countries so that they needn't be unpleasantly suprised during
@@ -70,10 +70,10 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
     }
 
     if (shoppingBag.length > 0) {
-      getIp().then(ipData =>
-        getGeo(ipData.ip).then(geoData => {
+      getIp().then((ipData) =>
+        getGeo(ipData.ip).then((geoData) => {
           const customerCountryFound = Object.keys(countries).find(
-            key => key === geoData.location.country
+            (key) => key === geoData.location.country
           );
           if (customerCountryFound === undefined) setCountrySupported(false);
         })
@@ -83,21 +83,21 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
 
   // The shoppingBag as received from global state stores ID's and quantity.
   // The ShoppingBag component additionally needs price & name information.
-  const products = shoppingBag.map(product => ({
+  const products = shoppingBag.map((product) => ({
     ...product,
     name: productsData[product.id].name,
-    price: productsData[product.id].price
+    price: productsData[product.id].price,
   }));
 
   const handleCheckout = async () => {
-    const strippedProducts = products.map(product => ({
+    const strippedProducts = products.map((product) => ({
       id: product.id,
-      quantity: product.quantity
+      quantity: product.quantity,
     }));
 
     // Create a Checkout Session.
     const response = await fetchPostJSON("/api/checkout_sessions", {
-      products: strippedProducts
+      products: strippedProducts,
     });
 
     if (response.statusCode === 500) {
@@ -124,7 +124,7 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
       );
     } else {
       const { error } = await stripe.redirectToCheckout({
-        sessionId: response.id
+        sessionId: response.id,
       });
       console.warn(error.message);
     }
@@ -149,12 +149,12 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
 };
 
 const mapStateToProps = ({ shoppingBag }) => ({
-  shoppingBag
+  shoppingBag,
 });
 
 const mapDispatchToProps = {
   removeProduct: removeProductAction,
-  updateProductQuantity: updateProductQuantityAction
+  updateProductQuantity: updateProductQuantityAction,
 };
 
 const ConnectedShoppingBagPage = connect(

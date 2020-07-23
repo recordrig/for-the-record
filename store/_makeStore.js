@@ -2,7 +2,7 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
 import {
   createStateSyncMiddleware,
-  initStateWithPrevTab
+  initStateWithPrevTab,
 } from "redux-state-sync";
 import throttle from "lodash.throttle";
 import rootReducer from "./_rootReducer";
@@ -12,9 +12,9 @@ import rootReducer from "./_rootReducer";
  */
 const initialAppStatePreset = {
   cookieConsent: {
-    YOUTUBE_EMBEDS: false
+    YOUTUBE_EMBEDS: false,
   },
-  shoppingBag: []
+  shoppingBag: [],
 };
 
 /**
@@ -53,7 +53,7 @@ const makeClientStore = (initialAppState = initialAppStatePreset) => {
   };
 
   // Save some state to localStorage, so that it might be recovered upon revisiting.
-  const persistState = stateToPersist => {
+  const persistState = (stateToPersist) => {
     // Try-catch, because privacy settings might prevent us from reading localStorage contents.
     try {
       const serializedState = JSON.stringify(stateToPersist);
@@ -92,7 +92,7 @@ const makeClientStore = (initialAppState = initialAppStatePreset) => {
     throttle(() => {
       persistState({
         cookieConsent: store.getState().cookieConsent,
-        shoppingBag: store.getState().shoppingBag
+        shoppingBag: store.getState().shoppingBag,
       });
     }, 1000)
   );

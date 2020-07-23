@@ -1074,7 +1074,7 @@ type VideoProps = {
 
 const Video: FunctionComponent<VideoProps> = ({
   source,
-  thumbnail
+  thumbnail,
 }: VideoProps) => (
   <StyledVideo>
     <Player playsInline poster={thumbnail} preload="metadata">

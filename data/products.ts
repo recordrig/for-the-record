@@ -21,13 +21,13 @@ const products: Products = {
   "RR20-black": {
     name: "RecordRig - Stealth Black",
     price: 229900,
-    quantityLimit: 4
+    quantityLimit: 4,
   },
   "RR20-white": {
     name: "RecordRig - Pristine White",
     price: 229900,
-    quantityLimit: 4
-  }
+    quantityLimit: 4,
+  },
 };
 
 export default products;

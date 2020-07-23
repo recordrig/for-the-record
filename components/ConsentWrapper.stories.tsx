@@ -34,7 +34,7 @@ const EmbedExample = () => {
           height: "100%",
           position: "absolute",
           textAlign: "center",
-          zIndex: 1
+          zIndex: 1,
         }}
       >
         <p>

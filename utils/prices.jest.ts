@@ -2,7 +2,7 @@ import {
   extractPrices,
   formatCurrency,
   priceWithoutTax,
-  sumTotal
+  sumTotal,
 } from "./prices";
 
 describe("Prices utilities", () => {
@@ -11,12 +11,12 @@ describe("Prices utilities", () => {
       const products = [
         {
           price: 5000,
-          quantity: 1
+          quantity: 1,
         },
         {
           price: 5000,
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const result = extractPrices(products);
@@ -30,13 +30,13 @@ describe("Prices utilities", () => {
         {
           id: "A",
           price: 5000,
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "B",
           price: 5000,
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const result = extractPrices(prices);

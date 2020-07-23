@@ -72,7 +72,7 @@ const getTitle = (color: "black" | "white" | null) => {
   return "Buy RecordRig - dedicated gameplay streaming PC.";
 };
 
-const handleRouteChange = url => {
+const handleRouteChange = (url) => {
   if (url === "/shop/buy-recordrig") {
     // eslint-disable-next-line no-restricted-globals
     location.href = url;
@@ -103,7 +103,7 @@ class BuyRecordRigPage extends Component<
     const initialSelectedColor = getInitialColor();
 
     return {
-      initialSelectedColor
+      initialSelectedColor,
     };
   }
 
@@ -114,7 +114,7 @@ class BuyRecordRigPage extends Component<
       description: getDescription(props.initialSelectedColor),
       openAddToBagDrawer: false,
       openAlreadyAddedDrawer: false,
-      title: getTitle(props.initialSelectedColor)
+      title: getTitle(props.initialSelectedColor),
     };
   }
 
@@ -141,7 +141,7 @@ class BuyRecordRigPage extends Component<
       description,
       openAddToBagDrawer,
       openAlreadyAddedDrawer,
-      title
+      title,
     } = this.state;
 
     const initialConfiguration = (() => {
@@ -155,11 +155,11 @@ class BuyRecordRigPage extends Component<
     const onSelectColor = (color: "black" | "white") => {
       if (color === "black")
         Router.push("/shop/buy-recordrig?color=stealth-black", undefined, {
-          shallow: true
+          shallow: true,
         });
       if (color === "white")
         Router.push("/shop/buy-recordrig?color=pristine-white", undefined, {
-          shallow: true
+          shallow: true,
         });
       this.setState({ title: getTitle(color) });
       this.setState({ description: getDescription(color) });
@@ -174,7 +174,7 @@ class BuyRecordRigPage extends Component<
     const handleAddToBag = (color: "black" | "white") => {
       // Find the appropriate product ID in our catalogue based on passed properties we have
       // (currently, that's just a color: black or white). Should exist, or we don't add it.
-      const productId = availableProductIds.find(id => id.endsWith(color));
+      const productId = availableProductIds.find((id) => id.endsWith(color));
 
       if (productId !== undefined) {
         // Update global state.
@@ -189,7 +189,7 @@ class BuyRecordRigPage extends Component<
       this.setState({ openAlreadyAddedDrawer: !openAlreadyAddedDrawer });
 
     const handleAlreadyAddedClick = (color: "black" | "white") => {
-      const productId = availableProductIds.find(id => id.endsWith(color));
+      const productId = availableProductIds.find((id) => id.endsWith(color));
 
       if (productId !== undefined) {
         this.setState({ alreadyAddedProductId: productId });
@@ -228,7 +228,7 @@ class BuyRecordRigPage extends Component<
               marginRight: "64px",
               marginTop: "0",
               textTransform: "uppercase",
-              top: "10px"
+              top: "10px",
             }}
           >
             <span
@@ -239,7 +239,7 @@ class BuyRecordRigPage extends Component<
                 marginRight: "8px",
                 position: "relative",
                 verticalAlign: "middle",
-                width: "24px"
+                width: "24px",
               }}
             >
               <CheckIcon color="#24a148" type="filled" />
@@ -265,7 +265,7 @@ class BuyRecordRigPage extends Component<
                   marginLeft: "8px",
                   position: "relative",
                   top: "6px",
-                  width: "24px"
+                  width: "24px",
                 }}
               >
                 <ArrowRightIcon color="#ffffff" />
@@ -289,14 +289,14 @@ class BuyRecordRigPage extends Component<
             style={{
               display: "flex",
               fontSize: "15px",
-              margin: "16px 48px 16px 16px"
+              margin: "16px 48px 16px 16px",
             }}
           >
             <span
               style={{
                 height: "24px",
                 marginBottom: "8px",
-                width: "24px"
+                width: "24px",
               }}
             >
               <InfoIcon color="#78a9ff" type="filled" />
@@ -333,7 +333,7 @@ class BuyRecordRigPage extends Component<
                   marginLeft: "8px",
                   position: "relative",
                   top: "6px",
-                  width: "24px"
+                  width: "24px",
                 }}
               >
                 <ArrowRightIcon color="#ffffff" />
@@ -353,14 +353,14 @@ class BuyRecordRigPage extends Component<
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    shoppingBag: state.shoppingBag
+    shoppingBag: state.shoppingBag,
   };
 };
 
 const mapDispatchToProps = {
-  addProduct: addProductAction
+  addProduct: addProductAction,
 };
 
 const ConnectedBuyRecordRigPage = connect(

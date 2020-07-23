@@ -1,18 +1,18 @@
 import {
   validateProductIds,
   addPriceToProducts,
-  addNameToProducts
+  addNameToProducts,
 } from "./products";
 
 const productsData = {
   PRODUCT1: {
     name: "Product 1",
-    price: 5000
+    price: 5000,
   },
   PRODUCT2: {
     name: "Product 2",
-    price: 4000
-  }
+    price: 4000,
+  },
 };
 
 describe("Products utilities", () => {
@@ -20,11 +20,11 @@ describe("Products utilities", () => {
     test("Does nothing if valid", () => {
       const products = [
         {
-          id: "PRODUCT1"
+          id: "PRODUCT1",
         },
         {
-          id: "PRODUCT2"
-        }
+          id: "PRODUCT2",
+        },
       ];
 
       expect(() => {
@@ -35,11 +35,11 @@ describe("Products utilities", () => {
     test("Errors if it cannot find a product's ID", () => {
       const products = [
         {
-          id: "PRODUCT1"
+          id: "PRODUCT1",
         },
         {
-          id: "PRODUCT 2020"
-        }
+          id: "PRODUCT 2020",
+        },
       ];
 
       expect(() => {
@@ -52,22 +52,22 @@ describe("Products utilities", () => {
     test("Adds the appropriate price field to valid products", () => {
       const products = [
         {
-          id: "PRODUCT1"
+          id: "PRODUCT1",
         },
         {
-          id: "PRODUCT2"
-        }
+          id: "PRODUCT2",
+        },
       ];
 
       const expectedResult = [
         {
           id: "PRODUCT1",
-          price: 5000
+          price: 5000,
         },
         {
           id: "PRODUCT2",
-          price: 4000
-        }
+          price: 4000,
+        },
       ];
 
       const result = addPriceToProducts(products, productsData);
@@ -78,23 +78,23 @@ describe("Products utilities", () => {
       const products = [
         {
           id: "PRODUCT1",
-          additionalField: "content"
+          additionalField: "content",
         },
         {
-          id: "PRODUCT2"
-        }
+          id: "PRODUCT2",
+        },
       ];
 
       const expectedResult = [
         {
           id: "PRODUCT1",
           price: 5000,
-          additionalField: "content"
+          additionalField: "content",
         },
         {
           id: "PRODUCT2",
-          price: 4000
-        }
+          price: 4000,
+        },
       ];
 
       const result = addPriceToProducts(products, productsData);
@@ -105,22 +105,22 @@ describe("Products utilities", () => {
       const products = [
         {
           id: "PRODUCT1",
-          price: 2000
+          price: 2000,
         },
         {
-          id: "PRODUCT2"
-        }
+          id: "PRODUCT2",
+        },
       ];
 
       const expectedResult = [
         {
           id: "PRODUCT1",
-          price: 5000
+          price: 5000,
         },
         {
           id: "PRODUCT2",
-          price: 4000
-        }
+          price: 4000,
+        },
       ];
 
       const result = addPriceToProducts(products, productsData);
@@ -130,11 +130,11 @@ describe("Products utilities", () => {
     test("Errors when a product ID is invalid, halting execution", () => {
       const products = [
         {
-          id: "PRODUCT1"
+          id: "PRODUCT1",
         },
         {
-          id: "PRODUCT 2020"
-        }
+          id: "PRODUCT 2020",
+        },
       ];
 
       expect(() => {
@@ -147,22 +147,22 @@ describe("Products utilities", () => {
     test("Adds the appropriate name field to valid products", () => {
       const products = [
         {
-          id: "PRODUCT1"
+          id: "PRODUCT1",
         },
         {
-          id: "PRODUCT2"
-        }
+          id: "PRODUCT2",
+        },
       ];
 
       const expectedResult = [
         {
           id: "PRODUCT1",
-          name: "Product 1"
+          name: "Product 1",
         },
         {
           id: "PRODUCT2",
-          name: "Product 2"
-        }
+          name: "Product 2",
+        },
       ];
 
       const result = addNameToProducts(products, productsData);
@@ -173,23 +173,23 @@ describe("Products utilities", () => {
       const products = [
         {
           id: "PRODUCT1",
-          additionalField: "content"
+          additionalField: "content",
         },
         {
-          id: "PRODUCT2"
-        }
+          id: "PRODUCT2",
+        },
       ];
 
       const expectedResult = [
         {
           id: "PRODUCT1",
           name: "Product 1",
-          additionalField: "content"
+          additionalField: "content",
         },
         {
           id: "PRODUCT2",
-          name: "Product 2"
-        }
+          name: "Product 2",
+        },
       ];
 
       const result = addNameToProducts(products, productsData);
@@ -200,23 +200,23 @@ describe("Products utilities", () => {
       const products = [
         {
           id: "PRODUCT1",
-          name: "Product 1010"
+          name: "Product 1010",
         },
         {
           id: "PRODUCT2",
-          name: "Product 2020"
-        }
+          name: "Product 2020",
+        },
       ];
 
       const expectedResult = [
         {
           id: "PRODUCT1",
-          name: "Product 1"
+          name: "Product 1",
         },
         {
           id: "PRODUCT2",
-          name: "Product 2"
-        }
+          name: "Product 2",
+        },
       ];
 
       const result = addNameToProducts(products, productsData);
@@ -226,11 +226,11 @@ describe("Products utilities", () => {
     test("Errors when a product ID is invalid, halting execution", () => {
       const products = [
         {
-          id: "PRODUCT1"
+          id: "PRODUCT1",
         },
         {
-          id: "PRODUCT3"
-        }
+          id: "PRODUCT3",
+        },
       ];
 
       expect(() => {

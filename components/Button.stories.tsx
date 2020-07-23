@@ -22,7 +22,7 @@ storiesOf("Button", module)
           marginLeft: "8px",
           position: "relative",
           top: "6px",
-          width: "24px"
+          width: "24px",
         }}
       >
         <ArrowRightIcon color="#ffffff" />
@@ -38,7 +38,7 @@ storiesOf("Button", module)
           marginLeft: "8px",
           position: "relative",
           top: "4px",
-          width: "24px"
+          width: "24px",
         }}
       />
     </Button>

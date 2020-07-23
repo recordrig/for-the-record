@@ -220,7 +220,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
   const toggleMenuDrawer = () => setOpenMenu(!openMenu);
 
   const amount = products
-    .map(product => product.quantity)
+    .map((product) => product.quantity)
     .reduce((acc, cur) => {
       return acc + cur;
     }, 0);
@@ -285,7 +285,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
                 marginRight: "64px",
                 marginTop: "0",
                 textTransform: "uppercase",
-                top: "10px"
+                top: "10px",
               }}
             >
               Your Shopping Bag
@@ -305,7 +305,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
                     marginLeft: "8px",
                     position: "relative",
                     top: "6px",
-                    width: "24px"
+                    width: "24px",
                   }}
                 >
                   <ArrowRightIcon color="#ffffff" />
@@ -338,7 +338,7 @@ const MenuBar: FunctionComponent<MenuBarProps> = ({ products }) => {
                     marginLeft: "8px",
                     position: "relative",
                     top: "6px",
-                    width: "24px"
+                    width: "24px",
                   }}
                 >
                   <ArrowRightIcon color="#ffffff" />

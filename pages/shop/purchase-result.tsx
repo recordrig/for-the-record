@@ -14,7 +14,7 @@ import PurchaseResult from "../../components/PurchaseResult";
 
 async function fetchGetJSON(url: string) {
   try {
-    const data = await fetch(url).then(res => res.json());
+    const data = await fetch(url).then((res) => res.json());
     return data;
   } catch (err) {
     throw new Error(err.message);
@@ -76,7 +76,7 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
     line2: "",
     postalCode: "",
     city: "",
-    country: ""
+    country: "",
   };
 
   const [shippingContent, setShippingContent] = useState(initialAddress);
@@ -117,7 +117,7 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
         country:
           typeof shippingAddress.country === "string"
             ? countriesData[shippingAddress.country].name
-            : ""
+            : "",
       });
     }
   }, [data]);
@@ -144,7 +144,7 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
         country:
           typeof billingAddress.country === "string"
             ? countriesData[billingAddress.country].name
-            : ""
+            : "",
       });
     }
   }, [data]);
@@ -152,10 +152,10 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
   useEffect(() => {
     if (data?.line_items.data) {
       setProducts(
-        data?.line_items.data.map(product => ({
+        data?.line_items.data.map((product) => ({
           name: product.description,
           quantity: product.quantity,
-          price: product.amount_total
+          price: product.amount_total,
         }))
       );
     }

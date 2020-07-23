@@ -758,7 +758,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
   addToBag,
   configuration = undefined,
   onSelectColor = undefined,
-  onAddToBagButtonDisabledClick = undefined
+  onAddToBagButtonDisabledClick = undefined,
 }) => {
   const [selectedColor, setSelectedColor] = useState(configuration);
   const blackChosen = selectedColor === "black";
@@ -998,7 +998,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                           marginRight: "4px",
                           position: "relative",
                           top: "8px",
-                          width: "32px"
+                          width: "32px",
                         }}
                       >
                         <CheckIcon color="#24a148" />
@@ -1058,7 +1058,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                       style={{
                         marginBottom: "64px",
                         maxWidth: "600px",
-                        width: "100%"
+                        width: "100%",
                       }}
                     />
                     <StyledList>

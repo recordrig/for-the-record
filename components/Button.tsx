@@ -76,7 +76,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   clicked = false,
   cypressId = undefined,
   href = undefined,
-  onClick = undefined
+  onClick = undefined,
 }) => {
   const handleClick = () => {
     if (onClick) onClick();

@@ -1,6 +1,6 @@
 import sgMail from "@sendgrid/mail";
 
-export default async function(req, res) {
+export default async function (req, res) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
   const { name, email, subject, message, sticky } = req.body;
@@ -9,19 +9,19 @@ export default async function(req, res) {
     to: process.env.SENDGRID_TO_ADDRESS || "",
     from: {
       email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain.
-      name
+      name,
     },
     replyTo: email,
     subject,
     text: message,
-    html: `<p>${message}</p>`
+    html: `<p>${message}</p>`,
   };
 
   const emailConfirmation = {
     to: email,
     from: {
       email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain (so we can't use the customer's email for this).
-      name: "RecordRig"
+      name: "RecordRig",
     },
     replyTo: process.env.SENDGRID_FROM_ADDRESS,
     subject: `Your message to RecordRig ("${subject}")`,
@@ -34,7 +34,7 @@ export default async function(req, res) {
       <p>---</p>
       <p>Speak soon,</p>
       <p>RecordRig.</p>
-    `
+    `,
   };
 
   try {

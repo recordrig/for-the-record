@@ -9,7 +9,7 @@ describe("Shopping Bag Page", () => {
   // Labels aren't EXACT device sizes, but approximations.
   const sizes = [
     { width: 320, height: 480, label: "iPhone 5" },
-    { width: 1366, height: 700, label: "Laptop" }
+    { width: 1366, height: 700, label: "Laptop" },
   ];
 
   // Products we've imported from real data and assigned to our shopping bags should
@@ -28,12 +28,12 @@ describe("Shopping Bag Page", () => {
   const validShoppingBag: readonly ShoppingBagProduct[] = [
     {
       id: Object.keys(products)[0],
-      quantity: 1
+      quantity: 1,
     },
     {
       id: Object.keys(products)[1],
-      quantity: 2
-    }
+      quantity: 2,
+    },
   ];
 
   // NB only remains invalid so long as the first two products in our catalogue remain
@@ -41,12 +41,12 @@ describe("Shopping Bag Page", () => {
   const invalidShoppingBag: readonly ShoppingBagProduct[] = [
     {
       id: Object.keys(products)[0],
-      quantity: 8
+      quantity: 8,
     },
     {
       id: Object.keys(products)[1],
-      quantity: 8
-    }
+      quantity: 8,
+    },
   ];
 
   context(`Empty bag`, () => {
@@ -62,7 +62,7 @@ describe("Shopping Bag Page", () => {
         localStorage.setItem(
           "persistedState",
           JSON.stringify({
-            shoppingBag: validShoppingBag
+            shoppingBag: validShoppingBag,
           })
         );
         cy.viewport(width, height);
@@ -110,7 +110,7 @@ describe("Shopping Bag Page", () => {
         localStorage.setItem(
           "persistedState",
           JSON.stringify({
-            shoppingBag: invalidShoppingBag
+            shoppingBag: invalidShoppingBag,
           })
         );
         cy.viewport(width, height);
@@ -118,20 +118,14 @@ describe("Shopping Bag Page", () => {
       });
 
       it(`Displays all errors and can correct them, enabling Check Out`, () => {
-        cy.get(`${errorsList}`)
-          .children()
-          .should("have.length", 3);
+        cy.get(`${errorsList}`).children().should("have.length", 3);
         cy.get(`${disabledCheckoutButton}`).should("be.visible");
         cy.get(`${quantityProduct0}`).select("1", { force: true });
         cy.get(`${quantityProduct0}`).should("have.value", "1");
-        cy.get(`${errorsList}`)
-          .children()
-          .should("have.length", 2);
+        cy.get(`${errorsList}`).children().should("have.length", 2);
         cy.get(`${disabledCheckoutButton}`).should("be.visible");
         cy.get(`${removeProduct1}`).click({ force: true });
-        cy.get(`${errorsList}`)
-          .children()
-          .should("have.length", 0);
+        cy.get(`${errorsList}`).children().should("have.length", 0);
         cy.get(`${enabledCheckoutButton}`).should("be.visible");
       });
     });

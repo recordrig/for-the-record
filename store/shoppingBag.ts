@@ -13,7 +13,7 @@ enum ActionTypes {
   ADD_PRODUCT = "shoppingBag/ADD_PRODUCT",
   CHECKOUT = "shoppingBag/CHECKOUT",
   REMOVE_PRODUCT = "shoppingBag/REMOVE_PRODUCT",
-  UPDATE_PRODUCT_QUANTITY = "shoppingBag/UPDATE_PRODUCT_QUANTITY"
+  UPDATE_PRODUCT_QUANTITY = "shoppingBag/UPDATE_PRODUCT_QUANTITY",
 }
 
 // Action creators.
@@ -35,8 +35,8 @@ export const addProductAction = (
   return {
     type: ActionTypes.ADD_PRODUCT,
     payload: {
-      id
-    }
+      id,
+    },
   };
 };
 
@@ -46,7 +46,7 @@ interface CheckoutAction {
 
 export const checkoutAction = (): CheckoutAction => {
   return {
-    type: ActionTypes.CHECKOUT
+    type: ActionTypes.CHECKOUT,
   };
 };
 
@@ -66,8 +66,8 @@ export const removeProductAction = (
   return {
     type: ActionTypes.REMOVE_PRODUCT,
     payload: {
-      id
-    }
+      id,
+    },
   };
 };
 
@@ -90,8 +90,8 @@ export const updateProductQuantityAction = (
     type: ActionTypes.UPDATE_PRODUCT_QUANTITY,
     payload: {
       id,
-      newQuantity
-    }
+      newQuantity,
+    },
   };
 };
 
@@ -105,7 +105,7 @@ const addProduct = (
 ): readonly ShoppingBagProduct[] => {
   // Find the product in the current Shopping Bag (if it exists).
   const previousProductEntry = shoppingBag.find(
-    product => product.id === productId
+    (product) => product.id === productId
   );
 
   // Check if the product was already in the Bag and if so, re-insert with the
@@ -114,7 +114,7 @@ const addProduct = (
     // First remove the product from the array so that we can insert it in the
     // appropriate place (at the start).
     const filteredShoppingBag = shoppingBag.filter(
-      product => product.id !== productId
+      (product) => product.id !== productId
     );
 
     // Return a filtered Shopping Bag which no longer contains the original Product
@@ -123,9 +123,9 @@ const addProduct = (
     return [
       {
         id: productId,
-        quantity: previousProductEntry.quantity + 1
+        quantity: previousProductEntry.quantity + 1,
       },
-      ...filteredShoppingBag
+      ...filteredShoppingBag,
     ];
   }
 
@@ -134,9 +134,9 @@ const addProduct = (
   return [
     {
       id: productId,
-      quantity: 1
+      quantity: 1,
     },
-    ...shoppingBag
+    ...shoppingBag,
   ];
 };
 
@@ -149,7 +149,7 @@ const removeProduct = (
   shoppingBag: readonly ShoppingBagProduct[],
   productId: ShoppingBagProduct["id"]
 ): readonly ShoppingBagProduct[] =>
-  shoppingBag.filter(product => product.id !== productId);
+  shoppingBag.filter((product) => product.id !== productId);
 
 // Will update the appropriate product entry in the array. Leaves the original
 // order intact.
@@ -158,7 +158,7 @@ const updateProductQuantity = (
   productId: ShoppingBagProduct["id"],
   newQuantity: ShoppingBagProduct["quantity"]
 ): readonly ShoppingBagProduct[] =>
-  shoppingBag.map(product =>
+  shoppingBag.map((product) =>
     product.id === productId ? { ...product, quantity: newQuantity } : product
   );
 

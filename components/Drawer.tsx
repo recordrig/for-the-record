@@ -4,7 +4,7 @@ import React, {
   ReactNodeArray,
   useRef,
   useEffect,
-  useState
+  useState,
 } from "react";
 import Router from "next/router";
 import styled, { css } from "styled-components";
@@ -111,7 +111,7 @@ interface DrawerProps {
 const Drawer: FunctionComponent<DrawerProps> = ({
   children,
   open,
-  closeDrawer
+  closeDrawer,
 }) => {
   const drawerContentElement = useRef<null | HTMLDivElement>(null);
   const isClient = typeof window !== "undefined";
@@ -218,7 +218,7 @@ const Drawer: FunctionComponent<DrawerProps> = ({
               borderRadius: "100%",
               display: "inline-block",
               height: "32px",
-              width: "32px"
+              width: "32px",
             }}
           >
             <CrossIcon color="#dde1e6" />

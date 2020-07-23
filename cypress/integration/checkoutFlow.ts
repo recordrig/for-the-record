@@ -2,7 +2,7 @@ describe("Checkout Flow", () => {
   // Labels aren't EXACT device sizes, but approximations.
   const sizes = [
     { width: 320, height: 480, label: "iPhone 5" },
-    { width: 1366, height: 700, label: "Laptop" }
+    { width: 1366, height: 700, label: "Laptop" },
   ];
 
   sizes.forEach(({ width, height, label }) => {

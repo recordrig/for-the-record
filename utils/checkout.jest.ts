@@ -5,20 +5,20 @@ import {
   completeProductsData,
   validateProductsForCheckout,
   structureProductsForCheckout,
-  createOrderConfirmationEmailTemplate
+  createOrderConfirmationEmailTemplate,
 } from "./checkout";
 
 const productsData = {
   PRODUCT1: {
     name: "Product 1",
     price: 200000,
-    quantityLimit: 2
+    quantityLimit: 2,
   },
   PRODUCT2: {
     name: "Product 2",
     price: 250000,
-    quantityLimit: 4
-  }
+    quantityLimit: 4,
+  },
 };
 
 describe("Stripe utilities", () => {
@@ -27,12 +27,12 @@ describe("Stripe utilities", () => {
       const products = [
         {
           id: "PRODUCT1",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCT2",
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const expectedResult = [
@@ -40,14 +40,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           name: "Product 1",
           price: 200000,
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const result = completeProductsData(products, productsData);
@@ -58,12 +58,12 @@ describe("Stripe utilities", () => {
       const products = [
         {
           id: "PRODUCT1",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCT 2020",
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       expect(() => {
@@ -79,14 +79,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           name: "Product 1",
           price: 200000,
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(() => {
@@ -100,14 +100,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           name: "Product 1",
           price: 200000,
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCT9000",
           name: "Product 2",
           price: 250000,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(() => {
@@ -121,14 +121,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           quantity: 1,
           name: "Product 1",
-          price: 200000
+          price: 200000,
         },
         {
           id: "PRODUCT2",
           quantity: 1,
           name: "Product 2",
-          price: 250000
-        }
+          price: 250000,
+        },
       ];
 
       expect(() => {
@@ -143,14 +143,14 @@ describe("Stripe utilities", () => {
           name: "Product 1",
           price: 200000,
           quantity: 8,
-          foo: "bar"
+          foo: "bar",
         },
         {
           id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(() => {
@@ -164,14 +164,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           name: "Product 1",
           price: 200000,
-          quantity: 8
+          quantity: 8,
         },
         {
           id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(() => {
@@ -185,14 +185,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           name: "Product 1",
           price: 2,
-          quantity: 3
+          quantity: 3,
         },
         {
           id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(() => {
@@ -208,14 +208,14 @@ describe("Stripe utilities", () => {
           id: "PRODUCT1",
           name: "Product 1",
           price: 200000,
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCT2",
           name: "Product 2",
           price: 250000,
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const expectedResult: StripeTypes.Checkout.SessionCreateParams.LineItem[] = [
@@ -224,21 +224,21 @@ describe("Stripe utilities", () => {
             currency: "eur",
             unit_amount: 200000,
             product_data: {
-              name: "Product 1"
-            }
+              name: "Product 1",
+            },
           },
-          quantity: 1
+          quantity: 1,
         },
         {
           price_data: {
             currency: "eur",
             unit_amount: 250000,
             product_data: {
-              name: "Product 2"
-            }
+              name: "Product 2",
+            },
           },
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const result = structureProductsForCheckout(products);
@@ -273,9 +273,9 @@ describe("Stripe utilities", () => {
             transform_quantity: null,
             type: "one_time",
             unit_amount: 250000,
-            unit_amount_decimal: "250000"
+            unit_amount_decimal: "250000",
           },
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "li_12345",
@@ -301,10 +301,10 @@ describe("Stripe utilities", () => {
             transform_quantity: null,
             type: "one_time",
             unit_amount: 250000,
-            unit_amount_decimal: "250000"
+            unit_amount_decimal: "250000",
           },
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ] as StripeTypes.ApiList<StripeTypes.LineItem>["data"];
 
       const total = 750000;
@@ -315,7 +315,7 @@ describe("Stripe utilities", () => {
         line1: "Somestreet 124",
         postalCode: "ABABAB 99",
         city: "Vengerberg",
-        country: "Netherlands"
+        country: "Netherlands",
       };
 
       const billingInfo = {
@@ -324,7 +324,7 @@ describe("Stripe utilities", () => {
         line2: "Another line",
         postalCode: "NONO 50",
         city: "Novigrad",
-        country: "Netherlands"
+        country: "Netherlands",
       };
 
       const expectedResult = {
@@ -333,14 +333,14 @@ describe("Stripe utilities", () => {
             name: "RecordRig - Stealth Black",
             amount: 1,
             price: "€2.500,00",
-            img: "https://recordrig.com/recordrig-black.png"
+            img: "https://recordrig.com/recordrig-black.png",
           },
           {
             name: "RecordRig - Pristine White",
             amount: 2,
             price: "€5.000,00",
-            img: "https://recordrig.com/recordrig.png"
-          }
+            img: "https://recordrig.com/recordrig.png",
+          },
         ],
         total: "€7.500,00",
         customerEmail: "geraldo@rivia.vengerberg",
@@ -349,7 +349,7 @@ describe("Stripe utilities", () => {
           line1: "Somestreet 124",
           postalCode: "ABABAB 99",
           city: "Vengerberg",
-          country: "Netherlands"
+          country: "Netherlands",
         },
         billingAddress: {
           name: "Geralt of Rivia",
@@ -357,8 +357,8 @@ describe("Stripe utilities", () => {
           line2: "Another line",
           postalCode: "NONO 50",
           city: "Novigrad",
-          country: "Netherlands"
-        }
+          country: "Netherlands",
+        },
       };
 
       const result = createOrderConfirmationEmailTemplate(

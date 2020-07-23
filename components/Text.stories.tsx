@@ -5,7 +5,7 @@ import Text, {
   SubHeading,
   InlineHeading,
   CapsHeading,
-  Paragraph
+  Paragraph,
 } from "./Text";
 
 const text =

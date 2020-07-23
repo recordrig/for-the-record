@@ -54,7 +54,7 @@ interface CapsHeadingProps {
 export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
   children,
   color = "#000",
-  h = 3
+  h = 3,
 }: CapsHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -79,7 +79,7 @@ interface StyledHeadingProps {
 const StyledHeading = styled.div<StyledHeadingProps>`
   ${({
     center,
-    fontColor
+    fontColor,
   }: StyledHeadingProps): FlattenSimpleInterpolation => css`
     h1,
     h2,
@@ -222,7 +222,7 @@ interface SubHeadingProps {
 
 export const SubHeading: FunctionComponent<SubHeadingProps> = ({
   children,
-  h = 3
+  h = 3,
 }: InlineHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -315,7 +315,7 @@ interface InlineHeadingProps {
 
 export const InlineHeading: FunctionComponent<InlineHeadingProps> = ({
   children,
-  h = 4
+  h = 4,
 }: InlineHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -345,7 +345,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({
   center = false,
   children,
   color = "#000",
-  h = 2
+  h = 2,
 }: HeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -391,7 +391,7 @@ interface ParagraphProps {
 
 export const Paragraph: FunctionComponent<ParagraphProps> = ({
   children,
-  color = "#000"
+  color = "#000",
 }: ParagraphProps) => (
   <StyledParagraph fontColor={color}>{children}</StyledParagraph>
 );
@@ -511,7 +511,7 @@ interface TextProps {
  */
 const Text: FunctionComponent<TextProps> = ({
   children,
-  color = "#000"
+  color = "#000",
 }: TextProps) => <StyledText fontColor={color}>{children}</StyledText>;
 
 export default Text;

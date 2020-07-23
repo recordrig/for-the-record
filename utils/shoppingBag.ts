@@ -37,24 +37,24 @@ export const checkProductQuantities = (
   validateProductIds(products, productsData);
 
   const productsWhichExceed = products.filter(
-    product => product.quantity > productsData[product.id].quantityLimit
+    (product) => product.quantity > productsData[product.id].quantityLimit
   );
 
   if (productsWhichExceed.length === 0)
     return { quantitiesAreValid: true, errors: [] };
 
-  const errors: QuantityError[] = productsWhichExceed.map(product => {
+  const errors: QuantityError[] = productsWhichExceed.map((product) => {
     const limit = productsData[product.id].quantityLimit;
     return {
       id: "productQuantity",
       description: `The product quantity for ${product.name} exceeds ${limit}. Modify the amount for this product so that it is set between 1 and ${limit}.`,
-      product: product.id
+      product: product.id,
     };
   });
 
   return {
     quantitiesAreValid: false,
-    errors
+    errors,
   };
 };
 
@@ -89,9 +89,9 @@ export const checkTotalPrice = (
         id: "totalPrice",
         description: `The total price for all products exceeds the ${formatCurrency(
           totalPriceLimit
-        )} threshold. Modify your shopping bag contents so that the total price remains below this amount.`
-      }
-    ]
+        )} threshold. Modify your shopping bag contents so that the total price remains below this amount.`,
+      },
+    ],
   };
 };
 
@@ -125,6 +125,6 @@ export const validateShoppingBag = (
   return {
     shoppingBagIsValid:
       quantitiesResult.quantitiesAreValid && priceResult.totalPriceIsValid,
-    errors: [...quantitiesResult.errors, ...priceResult.errors]
+    errors: [...quantitiesResult.errors, ...priceResult.errors],
   };
 };

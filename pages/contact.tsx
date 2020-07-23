@@ -2,7 +2,7 @@ import React, {
   ChangeEvent,
   FormEvent,
   FunctionComponent,
-  useState
+  useState,
 } from "react";
 import Head from "next/head";
 import { Oval } from "svg-loaders-react";
@@ -20,12 +20,12 @@ const ContactPage: FunctionComponent = () => {
     email: "",
     subject: "",
     sticky: "",
-    message: ""
+    message: "",
   });
 
   const [response, setResponse] = useState({
     type: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (
@@ -48,29 +48,29 @@ const ContactPage: FunctionComponent = () => {
       const res = await fetch("/api/contact/send", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(contact)
+        body: JSON.stringify(contact),
       });
       const text = await res.text();
 
       if (res.status === 200) {
         setResponse({
           type: "success",
-          message: ""
+          message: "",
         });
         setSendSuccess(true);
       } else {
         setResponse({
           type: "error",
-          message: text
+          message: text,
         });
         console.error(text);
       }
     } catch (error) {
       setResponse({
         type: "error",
-        message: error
+        message: error,
       });
       console.error(error);
     }
@@ -139,7 +139,7 @@ const ContactPage: FunctionComponent = () => {
                         left: "0",
                         overflow: "hidden",
                         position: "relative",
-                        width: 0
+                        width: 0,
                       }}
                     >
                       <input
@@ -175,7 +175,7 @@ const ContactPage: FunctionComponent = () => {
                               left: "8px",
                               position: "relative",
                               top: "4px",
-                              width: "24px"
+                              width: "24px",
                             }}
                           />
                         )}
@@ -187,7 +187,7 @@ const ContactPage: FunctionComponent = () => {
                               marginRight: "4px",
                               position: "relative",
                               top: "8px",
-                              width: "32px"
+                              width: "32px",
                             }}
                           >
                             <CheckIcon color="#24a148" />

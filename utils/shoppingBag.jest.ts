@@ -1,20 +1,20 @@
 import {
   checkProductQuantities,
   checkTotalPrice,
-  validateShoppingBag
+  validateShoppingBag,
 } from "./shoppingBag";
 
 const productsData = {
   PROD1: {
     name: "Product 1",
     price: 200000,
-    quantityLimit: 2
+    quantityLimit: 2,
   },
   PROD2: {
     name: "Product 2",
     price: 250000,
-    quantityLimit: 4
-  }
+    quantityLimit: 4,
+  },
 };
 
 const totalPriceLimit = 500000;
@@ -27,14 +27,14 @@ describe("Shopping bag utilities", () => {
           id: "PROD1",
           name: "Product 1",
           price: 200000,
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PROD999",
           name: "Product 2",
           price: 250000,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(() => {
@@ -47,13 +47,13 @@ describe("Shopping bag utilities", () => {
         {
           id: "PROD1",
           quantity: 1,
-          name: "Product 1"
+          name: "Product 1",
         },
         {
           id: "PROD2",
           quantity: 2,
-          name: "Product 2"
-        }
+          name: "Product 2",
+        },
       ];
 
       const result = checkProductQuantities(products, productsData);
@@ -67,13 +67,13 @@ describe("Shopping bag utilities", () => {
         {
           id: "PROD1",
           quantity: 1,
-          name: "Product 1"
+          name: "Product 1",
         },
         {
           id: "PROD2",
           quantity: 5,
-          name: "Product 2"
-        }
+          name: "Product 2",
+        },
       ];
 
       const result = checkProductQuantities(products, productsData);
@@ -91,12 +91,12 @@ describe("Shopping bag utilities", () => {
       const products = [
         {
           quantity: 1,
-          price: 100000
+          price: 100000,
         },
         {
           quantity: 2,
-          price: 200000
-        }
+          price: 200000,
+        },
       ];
 
       const result = checkTotalPrice(products, totalPriceLimit);
@@ -109,12 +109,12 @@ describe("Shopping bag utilities", () => {
       const products = [
         {
           quantity: 4,
-          price: 100000
+          price: 100000,
         },
         {
           quantity: 4,
-          price: 200000
-        }
+          price: 200000,
+        },
       ];
 
       const result = checkTotalPrice(products, totalPriceLimit);
@@ -133,14 +133,14 @@ describe("Shopping bag utilities", () => {
           id: "PROD1",
           quantity: 1,
           name: "Product 1",
-          price: 100000
+          price: 100000,
         },
         {
           id: "PROD2",
           quantity: 2,
           name: "Product 2",
-          price: 200000
-        }
+          price: 200000,
+        },
       ];
 
       const result = validateShoppingBag(
@@ -159,14 +159,14 @@ describe("Shopping bag utilities", () => {
           id: "PROD1",
           quantity: 1,
           name: "Product 1",
-          price: 100000
+          price: 100000,
         },
         {
           id: "PROD2",
           quantity: 5,
           name: "Product 2",
-          price: 200000
-        }
+          price: 200000,
+        },
       ];
 
       const result = validateShoppingBag(

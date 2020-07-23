@@ -64,7 +64,7 @@ interface NotificationProps {
 
 const Notification: FunctionComponent<NotificationProps> = ({
   children,
-  type = "info"
+  type = "info",
 }) => (
   <StyledNotification type={type}>
     {children}
@@ -74,7 +74,7 @@ const Notification: FunctionComponent<NotificationProps> = ({
         position: "absolute",
         left: "13px",
         top: "15px",
-        width: "20px"
+        width: "20px",
       }}
     >
       {type === "error" && <ErrorIcon color="#da1e28" type="filled" />}
