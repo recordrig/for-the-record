@@ -16,7 +16,7 @@ module.exports = {
     "!./components/**/*.stories.tsx",
     "!./components/**/*Container.tsx",
     "!./store/_rootReducer.ts",
-    "!**/node_modules/**"
+    "!**/node_modules/**",
   ],
   coverageDirectory: ".jest/coverage",
   // The paths to modules that run some code to configure or set up the testing environment before each test.
@@ -25,5 +25,5 @@ module.exports = {
   // other framework's tests, like Cypress.
   testMatch: ["**/?(*.)+(jest).[jt]s?(x)"],
   // Print all test descriptions instead of just the name of the test suites.
-  verbose: true
+  verbose: true,
 };

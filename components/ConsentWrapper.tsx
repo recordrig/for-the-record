@@ -2,7 +2,7 @@ import React, {
   FunctionComponent,
   ReactNode,
   useState,
-  useEffect
+  useEffect,
 } from "react";
 import styled from "styled-components";
 
@@ -26,7 +26,7 @@ interface ConsentWrapperProps {
 const ConsentWrapper: FunctionComponent<ConsentWrapperProps> = ({
   content,
   consentGiven = false,
-  placeholder
+  placeholder,
 }: ConsentWrapperProps) => {
   const [consentGivenState, setConsentGivenState] = useState(false);
 

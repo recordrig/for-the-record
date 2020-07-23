@@ -12,7 +12,7 @@ import { CapsHeading, Heading, Paragraph } from "../components/Text";
 import Section, {
   SectionIntro,
   SectionRow,
-  SubSection
+  SubSection,
 } from "../components/Section";
 import Tile, { TileContainer } from "../components/Tile";
 import Features from "../components/Features";
@@ -341,7 +341,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
               "RecordRig is your dedicated gameplay recording PC.",
               "Hook it up to your Xbox, PS4 or even your gaming PC.",
               "Capture your gameplay videos in immersive 4K HDR quality.",
-              "Stream directly to YouTube and Twitch, or save for later."
+              "Stream directly to YouTube and Twitch, or save for later.",
             ]}
           />
         </FadeInFeatures>
@@ -484,7 +484,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                   margin: "0 auto",
                   maxWidth: "506px",
                   padding: "0 16px",
-                  width: "100%"
+                  width: "100%",
                 }}
               >
                 <OptimizedMedia
@@ -515,7 +515,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                   margin: "0 auto",
                   maxWidth: "506px",
                   padding: "0 16px",
-                  width: "100%"
+                  width: "100%",
                 }}
               >
                 <OptimizedMedia
@@ -611,7 +611,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                   style={{
                     height: "52px",
                     marginBottom: "23px",
-                    marginTop: "3px"
+                    marginTop: "3px",
                   }}
                 />
                 <CapsHeading color="#408bfc">
@@ -657,7 +657,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                   flexDirection: "column",
                   justifyContent: "flex-end",
                   margin: "0 auto 64px",
-                  maxWidth: "320px"
+                  maxWidth: "320px",
                 }}
               >
                 <StyledProductImage>
@@ -689,7 +689,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                   flexDirection: "column",
                   justifyContent: "flex-end",
                   margin: "0 auto 64px",
-                  maxWidth: "320px"
+                  maxWidth: "320px",
                 }}
               >
                 <StyledProductImage>
@@ -725,7 +725,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                     style={{
                       height: "100%",
                       position: "absolute",
-                      width: "100%"
+                      width: "100%",
                     }}
                     title="God of War intro in 4K HDR, recorded with RecordRig on PS4 Pro"
                   />
@@ -748,7 +748,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                     position: "absolute",
                     textAlign: "center",
                     width: "100%",
-                    zIndex: 1
+                    zIndex: 1,
                   }}
                 >
                   <p
@@ -756,7 +756,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                       color: "#d5d9e0",
                       fontSize: "13px",
                       marginBottom: "18px",
-                      maxWidth: "560px"
+                      maxWidth: "560px",
                     }}
                   >
                     Google/YouTube places cookies when you load one of their
@@ -809,7 +809,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                     margin: "0 auto",
                     padding: "4px 8px",
                     textAlign: "center",
-                    textTransform: "uppercase"
+                    textTransform: "uppercase",
                   }}
                 >
                   Available Now
@@ -825,7 +825,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                 color: "#0062ff",
                 display: "block",
                 fontSize: "22px",
-                textAlign: "right"
+                textAlign: "right",
               }}
             >
               Shop
@@ -836,7 +836,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                   marginLeft: "8px",
                   position: "relative",
                   top: "6px",
-                  width: "24px"
+                  width: "24px",
                 }}
               >
                 <ArrowRightIcon color="#0062ff" />
@@ -850,7 +850,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
 };
 
 const mapStateToProps = ({ cookieConsent }) => ({
-  youtubeConsent: cookieConsent.YOUTUBE_EMBEDS
+  youtubeConsent: cookieConsent.YOUTUBE_EMBEDS,
 });
 
 const IndexPageConnected = connect(mapStateToProps, null)(IndexPage);

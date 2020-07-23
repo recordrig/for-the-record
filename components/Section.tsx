@@ -36,7 +36,7 @@ interface SubSectionProps {
  * the same height.
  */
 export const SubSection: FunctionComponent<SubSectionProps> = ({
-  children
+  children,
 }: SectionProps) => <StyledSubSection>{children}</StyledSubSection>;
 
 const StyledSectionIntro = styled.div`
@@ -74,7 +74,7 @@ interface SectionIntroProps {
  * and Paragraph. Does not need any additional wrappers; use as a direct child of Section.
  */
 export const SectionIntro: FunctionComponent<SectionIntroProps> = ({
-  children
+  children,
 }: SectionIntroProps) => <StyledSectionIntro>{children}</StyledSectionIntro>;
 
 const StyledInfoSection = styled.div`
@@ -186,7 +186,7 @@ interface InfoSectionProps {
  * Use as a child of Section. Should have two div children for left-right alignment.
  */
 export const InfoSection: FunctionComponent<InfoSectionProps> = ({
-  children
+  children,
 }: InfoSectionProps) => <StyledInfoSection>{children}</StyledInfoSection>;
 
 const StyledSectionRow = styled.div`
@@ -215,7 +215,7 @@ interface SectionRowProps {
  * it will also make sure that they will reach equal heights when rendered side-by-side.
  */
 export const SectionRow: FunctionComponent<SectionRowProps> = ({
-  children
+  children,
 }: SectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
 
 const PositionedSectionContent = styled.div`
@@ -233,7 +233,7 @@ interface StyledSectionProps {
 
 const StyledSection = styled.div<StyledSectionProps>`
   ${({
-    backgroundColor
+    backgroundColor,
   }: StyledSectionProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     margin: 0;
@@ -283,7 +283,7 @@ interface SectionProps {
  */
 const Section: FunctionComponent<SectionProps> = ({
   children,
-  dark = false
+  dark = false,
 }: SectionProps) => (
   <StyledSection backgroundColor={dark ? "#000000" : "transparent"}>
     <PositionedSectionContent>{children}</PositionedSectionContent>

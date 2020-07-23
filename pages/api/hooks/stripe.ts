@@ -15,7 +15,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: "2020-03-02"
+  apiVersion: "2020-03-02",
 });
 
 const webhookSecret: string = process.env.STRIPE_WEBHOOK_SECRET || "";
@@ -23,12 +23,12 @@ const webhookSecret: string = process.env.STRIPE_WEBHOOK_SECRET || "";
 // Stripe requires the raw body to construct the event.
 export const config = {
   api: {
-    bodyParser: false
-  }
+    bodyParser: false,
+  },
 };
 
 const cors = Cors({
-  allowMethods: ["POST", "HEAD"]
+  allowMethods: ["POST", "HEAD"],
 });
 
 const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -79,11 +79,11 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
           {
             id,
             fields: {
-              limit: limit - 1
-            }
-          }
+              limit: limit - 1,
+            },
+          },
         ],
-        function(err) {
+        function (err) {
           if (err) {
             console.error(err);
           }
@@ -96,7 +96,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
       // Find the relevant Checkout Session using the Payment Intent ID.
       // We'll use this to fetch the purchased products.
       const checkoutSessions = await stripe.checkout.sessions.list({
-        payment_intent: paymentIntentId
+        payment_intent: paymentIntentId,
       });
 
       const checkoutSessionId = checkoutSessions.data[0].id;
@@ -123,7 +123,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         country:
           typeof shippingAddress.country === "string"
             ? countriesData[shippingAddress.country].name
-            : ""
+            : "",
       };
 
       const billingName: Stripe.Charge.BillingDetails["name"] =
@@ -141,7 +141,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         country:
           typeof billingAddress.country === "string"
             ? countriesData[billingAddress.country].name
-            : ""
+            : "",
       };
 
       const products = lineItems.data;
@@ -150,7 +150,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
       const orderConfirmationEmail = {
         from: {
           email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain.
-          name: "RecordRig"
+          name: "RecordRig",
         },
         replyTo: process.env.SENDGRID_FROM_ADDRESS || "",
         templateId: "d-a3990f818fbd431f8421eab7cb53764f", // Order confirmation template.
@@ -159,8 +159,8 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             to: [
               {
                 email: customerEmail ?? "",
-                name: billingName ?? ""
-              }
+                name: billingName ?? "",
+              },
             ],
             dynamic_template_data: createOrderConfirmationEmailTemplate(
               products,
@@ -168,16 +168,16 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
               customerEmail,
               shippingInfo,
               billingInfo
-            )
-          }
-        ]
+            ),
+          },
+        ],
       };
 
       // Send COPY of order confirmation to support.
       const orderConfirmationEmailCopy = {
         from: {
           email: process.env.SENDGRID_FROM_ADDRESS || "", // Needs to be a verified email address or domain.
-          name: "RecordRig"
+          name: "RecordRig",
         },
         replyTo: process.env.SENDGRID_FROM_ADDRESS || "",
         templateId: "d-a3990f818fbd431f8421eab7cb53764f", // Order confirmation template.
@@ -186,8 +186,8 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
             to: [
               {
                 email: process.env.SENDGRID_TO_ADDRESS ?? "",
-                name: "RecordRig Support" ?? ""
-              }
+                name: "RecordRig Support" ?? "",
+              },
             ],
             dynamic_template_data: createOrderConfirmationEmailTemplate(
               products,
@@ -195,9 +195,9 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
               customerEmail,
               shippingInfo,
               billingInfo
-            )
-          }
-        ]
+            ),
+          },
+        ],
       };
 
       await sgMail.send(orderConfirmationEmail);

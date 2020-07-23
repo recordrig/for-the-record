@@ -121,7 +121,7 @@ const Footer: FunctionComponent = () => (
         <span
           style={{
             color: "#4d5358",
-            fontSize: "12px"
+            fontSize: "12px",
           }}
         >
           <Link href="/terms" passHref>

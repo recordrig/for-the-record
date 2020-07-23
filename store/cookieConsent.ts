@@ -10,7 +10,7 @@ type Consent = Record<ConsentCategories, boolean>;
 
 enum ActionTypes {
   ADD_CONSENT = "cookieConsent/ADD_CONSENT",
-  REMOVE_CONSENT = "cookieConsent/REMOVE_CONSENT"
+  REMOVE_CONSENT = "cookieConsent/REMOVE_CONSENT",
 }
 
 // Action creators.
@@ -29,8 +29,8 @@ export const addConsentAction = (
   return {
     type: ActionTypes.ADD_CONSENT,
     payload: {
-      consentCategory
-    }
+      consentCategory,
+    },
   };
 };
 
@@ -47,8 +47,8 @@ export const removeConsentAction = (
   return {
     type: ActionTypes.REMOVE_CONSENT,
     payload: {
-      consentCategory
-    }
+      consentCategory,
+    },
   };
 };
 
@@ -61,7 +61,7 @@ const addConsent = (
 ): Consent => {
   return {
     ...prevConsentState,
-    [consentCategory]: true
+    [consentCategory]: true,
   };
 };
 
@@ -71,7 +71,7 @@ const removeConsent = (
 ): Consent => {
   return {
     ...prevConsentState,
-    [consentCategory]: false
+    [consentCategory]: false,
   };
 };
 
@@ -81,7 +81,7 @@ const removeConsent = (
 type Action = AddConsentAction | RemoveConsentAction;
 
 const initialState: Consent = {
-  YOUTUBE_EMBEDS: false
+  YOUTUBE_EMBEDS: false,
 };
 
 const cookieConsent = (state = initialState, action: Action): Consent => {

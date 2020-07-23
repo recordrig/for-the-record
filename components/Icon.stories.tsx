@@ -8,7 +8,7 @@ import {
   InfoIcon,
   MenuIcon,
   ShoppingBagIcon,
-  WarnIcon
+  WarnIcon,
 } from "./Icon";
 
 const ShoppingBagInteractive = () => {

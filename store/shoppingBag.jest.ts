@@ -2,7 +2,7 @@ import shoppingBag, {
   addProductAction,
   checkoutAction,
   removeProductAction,
-  updateProductQuantityAction
+  updateProductQuantityAction,
 } from "./shoppingBag";
 
 describe("shoppingBag reducer", () => {
@@ -15,8 +15,8 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODUCTID",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(shoppingBag(state, action)).toEqual(newState);
@@ -26,12 +26,12 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       const action = addProductAction("PRODUCTID");
@@ -39,16 +39,16 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODUCTID",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(shoppingBag(state, action)).toEqual(newState);
@@ -58,16 +58,16 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTID",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       const action = addProductAction("PRODUCTID");
@@ -75,16 +75,16 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODUCTID",
-          quantity: 2
+          quantity: 2,
         },
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(shoppingBag(state, action)).toEqual(newState);
@@ -96,12 +96,12 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODUCTID",
-          quantity: 3
+          quantity: 3,
         },
         {
           id: "PRODORP",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       const action = checkoutAction();
@@ -117,8 +117,8 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODUCTID",
-          quantity: 2
-        }
+          quantity: 2,
+        },
       ];
 
       const action = removeProductAction("PRODUCTID");
@@ -132,16 +132,16 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTID",
-          quantity: 2
+          quantity: 2,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       const action = removeProductAction("PRODUCTID");
@@ -149,12 +149,12 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(shoppingBag(state, action)).toEqual(newState);
@@ -164,12 +164,12 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       const action = removeProductAction("PRODUCTID");
@@ -177,12 +177,12 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODORP",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODUCTTT",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(shoppingBag(state, action)).toEqual(newState);
@@ -204,12 +204,12 @@ describe("shoppingBag reducer", () => {
       const state = [
         {
           id: "PRODUCTID",
-          quantity: 3
+          quantity: 3,
         },
         {
           id: "PRODORP",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       const action = updateProductQuantityAction("PRODUCTID", 1);
@@ -217,12 +217,12 @@ describe("shoppingBag reducer", () => {
       const newState = [
         {
           id: "PRODUCTID",
-          quantity: 1
+          quantity: 1,
         },
         {
           id: "PRODORP",
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ];
 
       expect(shoppingBag(state, action)).toEqual(newState);

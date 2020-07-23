@@ -7,7 +7,7 @@ import { extractPrices, sumTotal, formatCurrency } from "./prices";
 import {
   addNameToProducts,
   addPriceToProducts,
-  validateProductIds
+  validateProductIds,
 } from "./products";
 
 // To make sure that we don't reinstate Stripe on every render, we use the singleton
@@ -60,7 +60,7 @@ export const completeProductsData = (
   return products.map((_product, index) => ({
     ...productsWithNames[index],
     ...productsWithPrices[index],
-    ...products[index]
+    ...products[index],
   }));
 };
 
@@ -99,18 +99,18 @@ export const validateProductsForCheckout = (
   // relying on type-checking alone.
   const validFields = ["id", "name", "price", "quantity"];
 
-  products.forEach(product =>
-    Object.keys(product).forEach(field => {
+  products.forEach((product) =>
+    Object.keys(product).forEach((field) => {
       if (!validFields.includes(field))
         throw new Error("Product fields are invalid.");
     })
   );
 
-  const quantityValidationResults = products.map(product => ({
+  const quantityValidationResults = products.map((product) => ({
     product: product.id,
     quantity: product.quantity,
     quantityLimit: productsData[product.id].quantityLimit,
-    quantityIsOk: !(product.quantity > productsData[product.id].quantityLimit)
+    quantityIsOk: !(product.quantity > productsData[product.id].quantityLimit),
   }));
 
   const prices = extractPrices(products);
@@ -120,7 +120,7 @@ export const validateProductsForCheckout = (
   if (!totalPriceIsOk) throw new Error("Total price is invalid.");
 
   const productsWithQuantityErrors = quantityValidationResults.filter(
-    product => !product.quantityIsOk
+    (product) => !product.quantityIsOk
   );
 
   if (productsWithQuantityErrors.length > 0) {
@@ -142,15 +142,15 @@ export const structureProductsForCheckout = (
 ): StripeTypes.Checkout.SessionCreateParams.LineItem[] => {
   // Since we don't store any product and therefore pricing data inside Stripe, we must create
   // new Stripe price and product objects inline.
-  return validProducts.map(product => ({
+  return validProducts.map((product) => ({
     price_data: {
       currency: "eur",
       unit_amount: product.price,
       product_data: {
-        name: product.name
-      }
+        name: product.name,
+      },
     },
-    quantity: product.quantity
+    quantity: product.quantity,
   }));
 };
 
@@ -205,13 +205,13 @@ export const createOrderConfirmationEmailTemplate = (
     country: string;
   };
 } => {
-  const convertedProducts = products.map(product => ({
+  const convertedProducts = products.map((product) => ({
     name: product.description,
     amount: product.quantity || 1,
     price: formatCurrency(product.amount_total || 0),
     img: product.description.endsWith("lack")
       ? "https://recordrig.com/recordrig-black.png"
-      : "https://recordrig.com/recordrig.png"
+      : "https://recordrig.com/recordrig.png",
   }));
 
   return {
@@ -219,6 +219,6 @@ export const createOrderConfirmationEmailTemplate = (
     total: formatCurrency(total),
     customerEmail: customerEmail ?? "",
     shippingAddress: shippingInfo,
-    billingAddress: billingInfo
+    billingAddress: billingInfo,
   };
 };

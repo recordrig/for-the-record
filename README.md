@@ -277,14 +277,20 @@ Any change to the `master` branch will auto-deploy to Production.
 
 All dependencies are auto-updated though [Dependabot](https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically) integration with GitHub. Dependabot will open a pull request anytime a dependency can be updated.
 
-If CI checks do not pass, check out Dependabot's branch (e.g. `dependabot/npm_and_yarn/develop/prettier-2.0.5`) locally:
+If QA checks do not pass, check out Dependabot's branch (e.g. `dependabot/npm_and_yarn/develop/prettier-2.0.5`) locally:
 
 ```
 git fetch
 git checkout dependabot/npm_and_yarn/develop/prettier-2.0.5
 ```
 
-Fix issues locally, run automated tests, and `git push` to remote when done.
+Don't forget to also re-install all dependencies to make sure you've got the same versions locally:
+
+```
+npm install
+```
+
+Now you can fix issues locally, run automated tests, and `git push` to remote when done. The pull request will update, and re-run QA checks.
 
 ## Legal
 

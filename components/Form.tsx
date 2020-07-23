@@ -112,7 +112,7 @@ interface FormRowProps {
 }
 
 export const FormRow: FunctionComponent<FormRowProps> = ({
-  children
+  children,
 }: FormRowProps) => <StyledFormRow>{children}</StyledFormRow>;
 
 interface FormProps {

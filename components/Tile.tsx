@@ -33,7 +33,7 @@ interface TileContainerProps {
 }
 
 export const TileContainer: FunctionComponent<TileContainerProps> = ({
-  children
+  children,
 }: TileContainerProps) => <StyledTileContainer>{children}</StyledTileContainer>;
 
 interface StyledLinkTileProps {
@@ -48,7 +48,7 @@ const StyledLinkTile = styled.a<StyledLinkTileProps>`
     accentColor,
     backgroundColor,
     floating,
-    rounded
+    rounded,
   }: StyledLinkTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-bottom: 8px solid ${accentColor};
@@ -79,7 +79,7 @@ const StyledTile = styled.div<StyledTileProps>`
     backgroundColor,
     floating,
     hoverState,
-    rounded
+    rounded,
   }: StyledTileProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     border-radius: ${rounded ? "12px" : 0};
@@ -123,7 +123,7 @@ const Tile: FunctionComponent<TileProps> = ({
   clickHandler,
   floating = false,
   link,
-  rounded = false
+  rounded = false,
 }: TileProps) => (
   <>
     {link ? (

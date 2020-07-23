@@ -7,7 +7,7 @@ import { extractPrices, formatCurrency, sumTotal } from "../utils/prices";
 import {
   checkProductQuantities,
   checkTotalPrice,
-  validateShoppingBag
+  validateShoppingBag,
 } from "../utils/shoppingBag";
 import { ArrowRightIcon } from "./Icon";
 import Button from "./Button";
@@ -323,7 +323,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
   updateProductQuantity,
   products,
   productsData,
-  removeProduct
+  removeProduct,
 }) => {
   const prices = extractPrices(products);
 
@@ -344,7 +344,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
 
   const defaultValidState = {
     shoppingBagIsValid: true,
-    errors: []
+    errors: [],
   };
 
   const [shoppingBagValidationState, setShoppingBagValidationState] = useState(
@@ -431,14 +431,14 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
           marginLeft: "8px",
           position: "relative",
           top: "6px",
-          width: "24px"
+          width: "24px",
         }}
       >
         {checkoutClicked ? (
           <Oval
             style={{
               height: "24px",
-              width: "24px"
+              width: "24px",
             }}
           />
         ) : (
@@ -462,7 +462,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
           marginLeft: "8px",
           position: "relative",
           top: "6px",
-          width: "24px"
+          width: "24px",
         }}
       >
         <ArrowRightIcon color="#ffffff" />
@@ -489,7 +489,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                   left: "0",
                   overflow: "hidden",
                   position: "relative",
-                  width: 0
+                  width: 0,
                 }}
               >
                 <label htmlFor="email">
@@ -498,7 +498,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     data-cy="email"
                     id="email"
                     name="email"
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                     tabIndex={-1}
                     type="text"
                     value={email}
@@ -536,7 +536,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     issue(s):
                   </p>
                   <ul data-cy="errors-list" style={{ fontSize: "13px" }}>
-                    {shoppingBagValidationState.errors.map(error => (
+                    {shoppingBagValidationState.errors.map((error) => (
                       <li
                         key={`${error.id}-${error.description.substring(
                           0,
@@ -569,7 +569,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                 fontSize: "32px",
                 fontWeight: "bold",
                 marginTop: "48px",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
               Your bag total is{" "}
@@ -577,7 +577,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                 style={{
                   backgroundColor: `${
                     totalIsTooHigh ? "#ffb3b8" : "transparent"
-                  }`
+                  }`,
                 }}
               >
                 {formatCurrency(sumTotal(prices))}
@@ -627,7 +627,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                             <select
                               data-cy={`quantity-${id}`}
                               id={`quantity-${id}`}
-                              onChange={e =>
+                              onChange={(e) =>
                                 handleChangeQuantity(
                                   id,
                                   parseInt(e.currentTarget.value, 10)
@@ -666,7 +666,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                         style={{
                           backgroundColor: `${
                             totalIsTooHigh ? "#ffb3b8" : "transparent"
-                          }`
+                          }`,
                         }}
                       >
                         {formatCurrency(sumTotal(prices))}
@@ -688,7 +688,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
             style={{
               display: "inline-block",
               marginTop: "15vh",
-              width: "100%"
+              width: "100%",
             }}
           >
             <p style={{ textAlign: "center" }}>Your shopping bag is empty.</p>
@@ -702,7 +702,7 @@ const ShoppingBag: FunctionComponent<ShoppingBagProps> = ({
                     marginLeft: "8px",
                     position: "relative",
                     top: "6px",
-                    width: "24px"
+                    width: "24px",
                   }}
                 >
                   <ArrowRightIcon color="#ffffff" />

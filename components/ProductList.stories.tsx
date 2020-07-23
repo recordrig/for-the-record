@@ -5,52 +5,52 @@ import ProductList from "./ProductList";
 const longList = [
   {
     id: "RR20-black",
-    quantity: 1
+    quantity: 1,
   },
   {
     id: "RR20-white",
-    quantity: 1
+    quantity: 1,
   },
   {
     id: "RR21-black",
-    quantity: 3
+    quantity: 3,
   },
   {
     id: "RR21-white",
-    quantity: 10
+    quantity: 10,
   },
   {
     id: "RR22-black",
-    quantity: 1
+    quantity: 1,
   },
   {
     id: "RR22-white",
-    quantity: 2
+    quantity: 2,
   },
   {
     id: "RR23-black",
-    quantity: 1
+    quantity: 1,
   },
   {
     id: "RR23-white",
-    quantity: 1
+    quantity: 1,
   },
   {
     id: "RR24-black",
-    quantity: 3
+    quantity: 3,
   },
   {
     id: "RR24-white",
-    quantity: 4
+    quantity: 4,
   },
   {
     id: "RR25-black",
-    quantity: 1
+    quantity: 1,
   },
   {
     id: "RR25-white",
-    quantity: 2
-  }
+    quantity: 2,
+  },
 ];
 
 storiesOf("ProductList", module)
@@ -60,12 +60,12 @@ storiesOf("ProductList", module)
         products={[
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
-          }
+            quantity: 2,
+          },
         ]}
       />
     </>
@@ -77,12 +77,12 @@ storiesOf("ProductList", module)
         products={[
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
-          }
+            quantity: 2,
+          },
         ]}
       />
     </>
@@ -93,20 +93,20 @@ storiesOf("ProductList", module)
         products={[
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
+            quantity: 2,
           },
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
-          }
+            quantity: 2,
+          },
         ]}
       />
     </>
@@ -117,12 +117,12 @@ storiesOf("ProductList", module)
         products={[
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
-          }
+            quantity: 2,
+          },
         ]}
         showFirstProductId="RR20-white"
       />
@@ -135,12 +135,12 @@ storiesOf("ProductList", module)
         products={[
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
-          }
+            quantity: 2,
+          },
         ]}
         showFirstProductId="RR20-white"
       />
@@ -152,20 +152,20 @@ storiesOf("ProductList", module)
         products={[
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
+            quantity: 2,
           },
           {
             id: "RR20-black",
-            quantity: 1
+            quantity: 1,
           },
           {
             id: "RR20-white",
-            quantity: 2
-          }
+            quantity: 2,
+          },
         ]}
         showFirstProductId="RR20-white"
       />

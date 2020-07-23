@@ -146,13 +146,13 @@ const ProductList: FunctionComponent<ProductListProps> = ({
   products,
   indicateAddition = false,
   showAmount = 2,
-  showFirstProductId = undefined
+  showFirstProductId = undefined,
 }) => {
   // The first product that matches `showFirstProductId`, or the the product that was
   // originally first (if `showFirstProductId` was not defined, or wasn't found).
   const firstProduct = (() => {
     const findFirstProduct = () =>
-      products.find(product => product.id === showFirstProductId);
+      products.find((product) => product.id === showFirstProductId);
 
     // If the product that ought to be showed first was specified, we attempt to find it.
     const firstProductFound = showFirstProductId && findFirstProduct();
@@ -167,7 +167,7 @@ const ProductList: FunctionComponent<ProductListProps> = ({
   // The list of products without `showFirstProductId`, or the original list of products
   // without changes if it wasn't found.
   const filteredProducts = (() =>
-    products.filter(product => !(product.id === showFirstProductId)))();
+    products.filter((product) => !(product.id === showFirstProductId)))();
 
   // Either a mashed together list of the product that was defined (and found) to be firt,
   // or the plain original list of products as passed from the parent.
@@ -189,7 +189,7 @@ const ProductList: FunctionComponent<ProductListProps> = ({
   return (
     <StyledProductList indicateAddition={indicateAddition}>
       <ul>
-        {productsToRender.map(product => (
+        {productsToRender.map((product) => (
           <li key={product.id}>
             <img
               alt=""

@@ -136,7 +136,7 @@ const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
   email,
   products,
   shippingContent,
-  totalPrice
+  totalPrice,
 }) => (
   <StyledPurchaseResult>
     <div>
@@ -187,7 +187,7 @@ const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
         </div>
       </StyledCustomerInfo>
       <h2>Order Summary</h2>
-      {products.map(product => (
+      {products.map((product) => (
         <StyledProduct key={product.name}>
           <div>
             <img
@@ -215,7 +215,7 @@ const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
           maxWidth: "576px",
           paddingTop: "8px",
           position: "relative",
-          textAlign: "right"
+          textAlign: "right",
         }}
       >
         <span style={{ left: "98px", position: "absolute" }}>Total: </span>
@@ -226,7 +226,7 @@ const PurchaseResult: NextPage<PurchaseResultPageProps> = ({
             left: 0,
             position: "absolute",
             top: "36px",
-            width: "100%"
+            width: "100%",
           }}
         >
           Includes VAT & shipping

@@ -9,7 +9,7 @@ if (!process.env.STRIPE_SECRET_KEY) {
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: "2020-03-02"
+  apiVersion: "2020-03-02",
 });
 
 export default async function handler(
@@ -32,7 +32,7 @@ export default async function handler(
 
     res.status(200).json({
       checkout_session: checkoutSession,
-      line_items: lineItems
+      line_items: lineItems,
     });
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message });

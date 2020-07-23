@@ -4,7 +4,7 @@ import Section, {
   SectionIntro,
   InfoSection,
   SectionRow,
-  SubSection
+  SubSection,
 } from "./Section";
 import { CapsHeading, Heading, Paragraph } from "./Text";
 import Tile, { TileContainer } from "./Tile";

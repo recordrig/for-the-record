@@ -213,7 +213,7 @@ const TechSpecsPage: FunctionComponent = () => {
                   padding: "4px",
                   textAlign: "center",
                   textTransform: "uppercase",
-                  width: "120px"
+                  width: "120px",
                 }}
               >
                 Pristine White
@@ -231,7 +231,7 @@ const TechSpecsPage: FunctionComponent = () => {
                   padding: "4px",
                   textAlign: "center",
                   textTransform: "uppercase",
-                  width: "120px"
+                  width: "120px",
                 }}
               >
                 Stealth Black

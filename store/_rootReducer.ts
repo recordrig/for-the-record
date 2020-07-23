@@ -11,7 +11,7 @@ import shoppingBag from "./shoppingBag";
  */
 const rootReducer = combineReducers({
   cookieConsent,
-  shoppingBag
+  shoppingBag,
 });
 
 export default withReduxStateSync(rootReducer);

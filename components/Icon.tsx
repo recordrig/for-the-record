@@ -24,7 +24,7 @@ interface ArrowRightIconProps {
 }
 
 export const ArrowRightIcon: FunctionComponent<ArrowRightIconProps> = ({
-  color = "#000000"
+  color = "#000000",
 }) => (
   <StyledIcon color={color}>
     <svg
@@ -49,7 +49,7 @@ interface CheckIconProps {
 
 export const CheckIcon: FunctionComponent<CheckIconProps> = ({
   color = "#000000",
-  type = "default"
+  type = "default",
 }) => (
   <StyledIcon color={color}>
     {type === "default" && (
@@ -110,7 +110,7 @@ interface CrossIconProps {
 
 export const CrossIcon: FunctionComponent<CrossIconProps> = ({
   color = "#000000",
-  type = "default"
+  type = "default",
 }) => (
   <StyledIcon color={color}>
     {(type === "default" || type === "filled") && (
@@ -158,7 +158,7 @@ interface ErrorIconProps {
 
 export const ErrorIcon: FunctionComponent<ErrorIconProps> = ({
   color = "#000000",
-  type = "default"
+  type = "default",
 }) => (
   <StyledIcon color={color}>
     {(type === "default" || type === "filled") && (
@@ -211,7 +211,7 @@ interface InfoIconProps {
 
 export const InfoIcon: FunctionComponent<InfoIconProps> = ({
   color = "#000000",
-  type = "default"
+  type = "default",
 }) => (
   <StyledIcon color={color}>
     {(type === "default" || type === "filled") && (
@@ -256,7 +256,7 @@ interface MenuIconProps {
 }
 
 export const MenuIcon: FunctionComponent<MenuIconProps> = ({
-  color = "#000000"
+  color = "#000000",
 }) => (
   <StyledIcon color={color}>
     <svg
@@ -392,7 +392,7 @@ interface ShoppingBagIconProps {
  * Animates whenever an addition is made. Inherits parent height and aligns to its bottom side.
  */
 export const ShoppingBagIcon: FunctionComponent<ShoppingBagIconProps> = ({
-  amount
+  amount,
 }) => {
   // Set the local amount once from props.
   const [stateAmount, setStateAmount] = useState(amount);
@@ -450,7 +450,7 @@ interface WarnIconProps {
 
 export const WarnIcon: FunctionComponent<WarnIconProps> = ({
   color = "#999999",
-  type = "default"
+  type = "default",
 }) => (
   <StyledWarnIcon color={color}>
     {(type === "default" || type === "filled") && (
