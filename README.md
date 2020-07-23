@@ -45,17 +45,7 @@ It's recommended to configure your IDE or text editor to use this project's ESLi
 
 - [VSCode ESLint Plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-Alternatively, you can run ESLint on the command line:
-
-```shell
-npm run lint
-```
-
-Auto-fix found issues (if possible):
-
-```shell
-npm run lint:fix
-```
+Alternatively, you can run ESLint on the command line using `npm run lint`, and fix found issues (if possible) with `npm run lint:fix`.
 
 ## Core Functionality
 
@@ -71,7 +61,7 @@ Only write server-side code when it's really required, as it can be less perform
 
 Server-side should be utilised for things the client simply cannot do or be "trusted" with, e.g. for fetches to API's utilising secret API keys that should not be exposed to the client.
 
-## Components
+## React Components
 
 All React components are defined in the `./components` folder. Run Storybook to view component specifications and to develop/debug components in isolation:
 
@@ -85,11 +75,11 @@ An additional benefit of keeping components self-contained is that these compone
 
 When a component's user interactions (changes of state) are important, it can be reasonably assumed that these would be tested as part of a Cypress **integration** test, and therefore we consider writing a seperate **unit** test a testing duplicate and waste of effort.
 
-## Store
+## Redux Store
 
 We maintain the application's client side state with Redux in `./store`. We co-locate all related logic within the same file and/or folder.
 
-Install the Redux Devtools for Chrome or Firefox to aid with debugging.
+Install the [Redux Devtools](https://github.com/zalmoxisus/redux-devtools-extension) for Chrome or Firefox to aid with debugging.
 
 ## Automated Tests
 
@@ -123,11 +113,32 @@ We integrate with Percy for visual regression testing. Percy commands will only 
 
 We use inline styles with help of the Styled Components package. Styling definitions should be co-located with components as they are intrinsically related.
 
-Global, shared styles are defined in `./pages/_appStyles.css`. Global styles should be kept to a minimum, because we want component definitions to make complete sense on their own. Any global styles that do exist should also be included when running through Storybook. 
+### Global style definitions
+
+Global, shared styles are defined in `./pages/_appStyles.css`. Global styles should be kept to a minimum, because we want component definitions to make complete sense on their own.
+
+Any global styles that do exist should also be included when running through Storybook - this can be achieved by a simple import of needed `.css` files inside `./.storybook/config.js`. Storybook's Webpack will pick up any imported files.
+
+### Look & feel & resources
+
+Though we do not follow any strict design system, our current look & feel _is_ inspired by IBM's [Carbon Design System](https://www.carbondesignsystem.com/):
+
+- [Colors](https://www.ibm.com/design/language/color/) (use "cool" varieties for greys)
+- [Icons](https://www.ibm.com/design/language/iconography/ui-icons/library) (adopt SVG's inside `./components/Icon.svg`)
 
 The main font is IBM Plex Sans. We include it as an NPM dependency to make sure not to lose it in the future, and to know which version is currently active, but don't import it from the package directly. Rather, we straight-up copy the files found in `node_modules/@ibm/plex/IBM-Plex-Sans/fonts/complete/woff` (only the Bold and Regular types) into our `public` folder, so that we can use them with CSS's @font-face which is well-supported by web browsers.
 
-As for units of measurement, [just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
+### Images
+
+When replacing images with new versions, make sure to use a `?v=1` suffix where it's linked to prevent image caching issues. By supplying a unique suffix, we can be certain browsers will load the new image instead of an outdated one from a cache.
+
+Be careful about removing images from the repository. Even if they are not linked from within this repository, they might still be used by external sources. For example, the product image located in `./public/recordrig.png` is also used in the emails we send out for order confirmations. Removing it would break these images. When in doubt, leave the image present (they're not hurting anyone by sticking around in our repo sometime longer). 
+
+When creating new images, make sure that they are large enough in terms of width and height for screens with a high pixel density, optimised for web, and compressed to a reasonable margin to save unnecessary bandwidth. Protip: [ImageOptim](https://imageoptim.com/).
+
+### Units of measurement
+
+[Just use pixels](https://benfrain.com/just-use-pixels/). Rem + em is nice in theory, when you're still naive enough to think that it is possible to devise one grand, coherent styling and spacing system, until you realise that such an interconnected codebase is horribly unmaintainable (because everything now depends on the rem instead of the px which, in essence, is just some arbitrary value several times larger than a px (OR depends on 1001 spacing variables which you have to look up & change/add to every time you _just_ want to change the distance between two elements/resize something) AND you have to get out a calculator every. single. time.) and find out that there are so many exceptions to your "coherent" sizing system (often due to HTML & CSS's [quirk](https://mor10.com/removing-white-space-image-elements-inline-elements-descenders/)s, but also often enough because things simply visually LOOK "un[balance](https://visualhierarchy.co/blog/balance-in-web-design-and-why-it-is-important/)d" due to all sorts of things nothing to do with inconsistent spacings and sizes, but instead with where the brightest colors are located in an image, for example, or how your custom font of choice HAPPENS to have extra-long [descenders](https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align), and so on) that you are robbed of your innocence forever.
 
 ## Advanced Setup
 
