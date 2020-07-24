@@ -4,6 +4,33 @@ Website for RecordRig - dedicated gameplay streaming PC.
 
 Familiarise yourself with the entirety of this README before starting development.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Getting Started](#getting-started)
+- [Development Guidelines](#development-guidelines)
+- [Coding Standards](#coding-standards)
+- [Core Functionality](#core-functionality)
+- [React Components](#react-components)
+- [Redux Store](#redux-store)
+- [Automated Tests](#automated-tests)
+- [Styling](#styling)
+  - [Global style definitions](#global-style-definitions)
+  - [Look & feel & resources](#look--feel--resources)
+  - [Images](#images)
+  - [Units of measurement](#units-of-measurement)
+- [Advanced Setup](#advanced-setup)
+- [Development Workflow](#development-workflow)
+  - [1. Local development](#1-local-development)
+  - [2. Local testing](#2-local-testing)
+  - [3. Submitting a pull request](#3-submitting-a-pull-request)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Environment Details](#environment-details)
+- [Legal](#legal)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Getting Started
 
 Clone this repository to your local machine and navigate to its folder. We assume you can [connect to GitHub using SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
