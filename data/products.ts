@@ -20,12 +20,12 @@ type Products = Record<ProductIds, Product>;
 const products: Products = {
   "RR20-black": {
     name: "RecordRig - Stealth Black",
-    price: 229900,
-    quantityLimit: 4,
+    price: 1,
+    quantityLimit: 25,
   },
   "RR20-white": {
     name: "RecordRig - Pristine White",
-    price: 229900,
+    price: 25,
     quantityLimit: 4,
   },
 };
