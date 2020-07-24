@@ -4,6 +4,9 @@ Website for RecordRig - dedicated gameplay streaming PC.
 
 Familiarise yourself with the entirety of this README before starting development.
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## Getting Started
 
 Clone this repository to your local machine and navigate to its folder. We assume you can [connect to GitHub using SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
