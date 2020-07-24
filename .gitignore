@@ -1,5 +1,4 @@
-.env
-.env.build
+.env*
 .next
 .DS_Store
 .jest/coverage

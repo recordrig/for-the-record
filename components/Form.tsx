@@ -71,19 +71,17 @@ const StyledForm = styled.div`
     outline: none;
   }
 
-  button {
-    background-color: #0062ff;
-    border-radius: 2px;
-    border: 0;
-    color: #ffffff;
-    cursor: pointer;
-    display: block;
-    font-size: 18px;
-    height: 48px;
-    margin-top: 20px;
-    outline: none;
-    text-decoration: none;
-    width: 100%;
+  fieldset:disabled {
+    label,
+    input,
+    select,
+    textarea {
+      opacity: 0.6;
+    }
+
+    button {
+      cursor: default;
+    }
   }
 
   @media (min-width: 768px) {
@@ -100,6 +98,8 @@ const StyledForm = styled.div`
 
     button {
       display: inline-block;
+      margin-left: auto;
+      min-width: 200px;
       padding-left: 32px;
       padding-right: 32px;
       width: unset;
@@ -112,7 +112,7 @@ interface FormRowProps {
 }
 
 export const FormRow: FunctionComponent<FormRowProps> = ({
-  children
+  children,
 }: FormRowProps) => <StyledFormRow>{children}</StyledFormRow>;
 
 interface FormProps {

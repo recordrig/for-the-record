@@ -54,7 +54,7 @@ interface CapsHeadingProps {
 export const CapsHeading: FunctionComponent<CapsHeadingProps> = ({
   children,
   color = "#000",
-  h = 3
+  h = 3,
 }: CapsHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -79,7 +79,7 @@ interface StyledHeadingProps {
 const StyledHeading = styled.div<StyledHeadingProps>`
   ${({
     center,
-    fontColor
+    fontColor,
   }: StyledHeadingProps): FlattenSimpleInterpolation => css`
     h1,
     h2,
@@ -100,14 +100,30 @@ const StyledHeading = styled.div<StyledHeadingProps>`
     /* Headings stay small for longer than other types of text, because due to its
     relatively large size you quickly get into trouble with words being too long to even
     fit on the screen. */
-    @media (max-width: 575px) {
+    @media (max-width: 499px) {
       h1,
       h2,
       h3,
       h4,
       h5,
       h6 {
-        font-size: 44px;
+        font-size: 32px;
+        line-height: 38px;
+      }
+
+      span {
+        max-width: ${center ? "96%" : "480px"};
+      }
+    }
+
+    @media (min-width: 500px) and (max-width: 767px) {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 42px;
         line-height: 52px;
       }
 
@@ -116,7 +132,7 @@ const StyledHeading = styled.div<StyledHeadingProps>`
       }
     }
 
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
       h1,
       h2,
       h3,
@@ -206,7 +222,7 @@ interface SubHeadingProps {
 
 export const SubHeading: FunctionComponent<SubHeadingProps> = ({
   children,
-  h = 3
+  h = 3,
 }: InlineHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -299,7 +315,7 @@ interface InlineHeadingProps {
 
 export const InlineHeading: FunctionComponent<InlineHeadingProps> = ({
   children,
-  h = 4
+  h = 4,
 }: InlineHeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -329,7 +345,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({
   center = false,
   children,
   color = "#000",
-  h = 2
+  h = 2,
 }: HeadingProps) => {
   /*
    * NOTE: Dynamic elements currently throw type errors - no good fix as of typescript@3.5.2.
@@ -365,25 +381,17 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
       font-size: 18px;
       line-height: 24px;
     }
-
-    @media (max-width: 1023px) {
-      max-width: 656px;
-    }
-
-    @media (min-width: 1024px) {
-      max-width: 720px;
-    }
   `}
 `;
 
 interface ParagraphProps {
-  readonly children: string;
+  readonly children: string | HTMLElement | ReactNode | ReactNodeArray;
   readonly color?: string;
 }
 
 export const Paragraph: FunctionComponent<ParagraphProps> = ({
   children,
-  color = "#000"
+  color = "#000",
 }: ParagraphProps) => (
   <StyledParagraph fontColor={color}>{children}</StyledParagraph>
 );
@@ -396,34 +404,114 @@ const StyledText = styled.span<StyledTextProps>`
   ${({ fontColor }: StyledParagraphProps): FlattenSimpleInterpolation => css`
     color: ${fontColor};
 
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+      color: #0f62fe;
+      text-decoration: none;
+    }
+
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      max-width: 720px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
     @media (max-width: 399px) {
-      font-size: 16px;
-      line-height: 21px;
+      p,
+      li {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
 
     @media (min-width: 400px) {
-      font-size: 18px;
-      line-height: 24px;
+      p,
+      li {
+        font-size: 16px;
+        line-height: 21px;
+      }
     }
 
-    @media (max-width: 1023px) {
-      max-width: 656px;
+    /* Headings stay small for longer than other types of text, because due to its
+    relatively large size you quickly get into trouble with words being too long to even
+    fit on the screen. */
+    @media (max-width: 575px) {
+      h1 {
+        font-size: 44px;
+        line-height: 52px;
+      }
+
+      h2 {
+        font-size: 30px;
+        line-height: 42px;
+        margin-top: 32px;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 32px;
+      }
     }
 
-    @media (min-width: 1024px) {
-      max-width: 720px;
+    @media (min-width: 576px) {
+      h1 {
+        font-size: 56px;
+        line-height: 64px;
+      }
+
+      h2 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-top: 48px;
+      }
+
+      h3 {
+        font-size: 26px;
+        line-height: 34px;
+        margin-top: 48px;
+      }
+    }
+
+    @media (max-width: 474px) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    @media (min-width: 475px) {
+      padding-left: 32px;
+      padding-right: 32px;
     }
   `}
 `;
 
 interface TextProps {
-  readonly children: string;
+  readonly children: HTMLElement | ReactNode | ReactNodeArray;
   readonly color?: string;
 }
 
+/**
+ * Intended to wrap "long form" text blocks. It'll style its children (e.g. `h3`, `p` etc).
+ */
 const Text: FunctionComponent<TextProps> = ({
   children,
-  color = "#000"
+  color = "#000",
 }: TextProps) => <StyledText fontColor={color}>{children}</StyledText>;
 
 export default Text;

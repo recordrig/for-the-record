@@ -2,23 +2,41 @@ import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
 import ShoppingBag from "./ShoppingBag";
 
+const productsData = {
+  PRODUCT1: {
+    name: "Product 1",
+    price: 200000,
+    quantityLimit: 4,
+  },
+  PRODUCT2: {
+    name: "Product 2",
+    price: 100000,
+    quantityLimit: 4,
+  },
+};
+
+const handleCheckout = (products) =>
+  alert(`onSelectColor called with ${products}`);
+
 const ShoppingBagDefaultContainer = () => {
   const [products, setProducts] = useState([
     {
-      id: "RR20-stealth-black",
-      price: 239900,
-      quantity: 1
+      id: "PRODUCT1",
+      name: "Product 1",
+      price: 200000,
+      quantity: 1,
     },
     {
-      id: "RR20-pristine-white",
-      price: 239900,
-      quantity: 2
-    }
+      id: "PRODUCT2",
+      name: "Product 2",
+      price: 100000,
+      quantity: 2,
+    },
   ]);
 
   const updateProductQuantity = (productId, desiredQuantity) => {
     setProducts(
-      products.map(product =>
+      products.map((product) =>
         product.id === productId
           ? { ...product, quantity: desiredQuantity }
           : product
@@ -26,27 +44,116 @@ const ShoppingBagDefaultContainer = () => {
     );
   };
 
-  const removeProduct = productId => {
-    setProducts(products.filter(product => product.id !== productId));
+  const removeProduct = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId));
   };
 
   return (
-    <>
-      {products.length > 0 ? (
-        <ShoppingBag
-          products={products}
-          updateProductQuantity={updateProductQuantity}
-          removeProduct={removeProduct}
-        />
-      ) : (
-        <p style={{ margin: "32px" }}>
-          [Render something else incase of empty shopping bag.]
-        </p>
-      )}
-    </>
+    <ShoppingBag
+      handleCheckout={handleCheckout}
+      products={products}
+      productsData={productsData}
+      updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
+    />
   );
 };
 
-storiesOf("ShoppingBag", module).add("default", () => (
-  <ShoppingBagDefaultContainer />
-));
+const ShoppingBagCountryNotSupportedContainer = () => {
+  const [products, setProducts] = useState([
+    {
+      id: "PRODUCT1",
+      name: "Product 1",
+      price: 200000,
+      quantity: 1,
+    },
+    {
+      id: "PRODUCT2",
+      name: "Product 2",
+      price: 100000,
+      quantity: 2,
+    },
+  ]);
+
+  const updateProductQuantity = (productId, desiredQuantity) => {
+    setProducts(
+      products.map((product) =>
+        product.id === productId
+          ? { ...product, quantity: desiredQuantity }
+          : product
+      )
+    );
+  };
+
+  const removeProduct = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId));
+  };
+
+  return (
+    <ShoppingBag
+      countrySupported={false}
+      handleCheckout={handleCheckout}
+      products={products}
+      productsData={productsData}
+      updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
+    />
+  );
+};
+
+const ShoppingBagInvalidContainer = () => {
+  const [products, setProducts] = useState([
+    {
+      id: "PRODUCT1",
+      name: "Product 1",
+      price: 200000,
+      quantity: 6,
+    },
+    {
+      id: "PRODUCT2",
+      name: "Product 2",
+      price: 100000,
+      quantity: 8,
+    },
+  ]);
+
+  const updateProductQuantity = (productId, desiredQuantity) => {
+    setProducts(
+      products.map((product) =>
+        product.id === productId
+          ? { ...product, quantity: desiredQuantity }
+          : product
+      )
+    );
+  };
+
+  const removeProduct = (productId) => {
+    setProducts(products.filter((product) => product.id !== productId));
+  };
+
+  return (
+    <ShoppingBag
+      handleCheckout={handleCheckout}
+      products={products}
+      productsData={productsData}
+      updateProductQuantity={updateProductQuantity}
+      removeProduct={removeProduct}
+    />
+  );
+};
+
+storiesOf("ShoppingBag", module)
+  .add("default", () => <ShoppingBagDefaultContainer />)
+  .add("country not supported", () => (
+    <ShoppingBagCountryNotSupportedContainer />
+  ))
+  .add("empty", () => (
+    <ShoppingBag
+      handleCheckout={handleCheckout}
+      products={[]}
+      productsData={productsData}
+      updateProductQuantity={() => ""}
+      removeProduct={() => ""}
+    />
+  ))
+  .add("invalid", () => <ShoppingBagInvalidContainer />);

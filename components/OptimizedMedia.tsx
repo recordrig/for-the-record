@@ -26,7 +26,7 @@ interface ImageProps {
  */
 export const Image: FunctionComponent<ImageProps> = ({
   alt = "",
-  src
+  src,
 }: ImageProps) => (
   <StyledImage>
     <img alt={alt} src={src} />
@@ -60,7 +60,7 @@ interface OptimizedMediaProps {
  */
 const OptimizedMedia: FunctionComponent<OptimizedMediaProps> = ({
   hires,
-  lowres
+  lowres,
 }: OptimizedMediaProps) => (
   <StyledOptimizedMedia>
     <StyledLowresOptimizedMedia>{lowres}</StyledLowresOptimizedMedia>

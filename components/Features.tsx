@@ -30,7 +30,7 @@ interface FeatureProps {
 
 const Feature: FunctionComponent<FeatureProps> = ({
   description,
-  number
+  number,
 }: FeatureProps) => (
   <StyledFeature>
     <StyledFeatureNumber>{number}</StyledFeatureNumber>
@@ -118,7 +118,7 @@ interface FeaturesProps {
  * screens; beneath each other on small ones.
  */
 const Features: FunctionComponent<FeaturesProps> = ({
-  texts
+  texts,
 }: FeaturesProps) => (
   <StyledFeatures>
     {texts.map((text, i) => (

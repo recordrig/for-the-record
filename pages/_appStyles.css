@@ -1,0 +1,35 @@
+/*
+ * These styles may be assumed to be included on all pages, so that font availability and rendering
+ * is guaranteed to be consistent. Additionally, these styles should be inserted Storybook to guarantee
+ * consistend component rendering across environments.
+ *
+ * NB - injecting @font-face styles using Styled Component`s global injection tools causes a
+ * re-requesting of webfonts whenever styles are changed anywhere on the page, which motivated the
+ * move to an ordinary `.css`-file. See https://github.com/styled-components/styled-components/issues/2205.
+ */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/IBMPlexSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/IBMPlexSans-Bold.woff") format("woff");
+}
+
+body {
+  background-color: #f2f4f8;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, textarea {
+  font-family: "IBM Plex Sans", sans-serif;
+}

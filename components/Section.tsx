@@ -36,7 +36,7 @@ interface SubSectionProps {
  * the same height.
  */
 export const SubSection: FunctionComponent<SubSectionProps> = ({
-  children
+  children,
 }: SectionProps) => <StyledSubSection>{children}</StyledSubSection>;
 
 const StyledSectionIntro = styled.div`
@@ -51,6 +51,18 @@ const StyledSectionIntro = styled.div`
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  @media (max-width: 1023px) {
+    p {
+      max-width: 656px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      max-width: 720px;
+    }
+  }
 `;
 
 interface SectionIntroProps {
@@ -62,8 +74,120 @@ interface SectionIntroProps {
  * and Paragraph. Does not need any additional wrappers; use as a direct child of Section.
  */
 export const SectionIntro: FunctionComponent<SectionIntroProps> = ({
-  children
+  children,
 }: SectionIntroProps) => <StyledSectionIntro>{children}</StyledSectionIntro>;
+
+const StyledInfoSection = styled.div`
+  padding-bottom: 64px;
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @media (max-width: 474px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (min-width: 475px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (max-width: 739px) {
+    > div:nth-child(2) {
+      h3 {
+        margin-top: 32px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @media (min-width: 740px) and (max-width: 1023px) {
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    > div:nth-child(1) {
+      margin-right: 48px;
+      min-width: 220px;
+      width: 220px;
+
+      h2,
+      h3 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+
+    > div:nth-child(2) {
+      > div {
+        width: 100%;
+      }
+
+      > div:nth-child(1) {
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    > div:nth-child(1) {
+      margin-right: 96px;
+      min-width: 260px;
+      width: 260px;
+
+      h2,
+      h3 {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+
+    > div:nth-child(2) {
+      align-items: flex-start;
+      display: flex;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      > div {
+        width: 45%;
+      }
+    }
+  }
+`;
+
+interface InfoSectionProps {
+  readonly children: ReactNode | ReactNodeArray;
+}
+
+/**
+ * InfoSection provides an extra padded container, so that its contents align with SectionIntro.
+ * Use as a child of Section. Should have two div children for left-right alignment.
+ */
+export const InfoSection: FunctionComponent<InfoSectionProps> = ({
+  children,
+}: InfoSectionProps) => <StyledInfoSection>{children}</StyledInfoSection>;
 
 const StyledSectionRow = styled.div`
   width: 100%;
@@ -82,7 +206,7 @@ const StyledSectionRow = styled.div`
   }
 `;
 
-interface StyledSectionRowProps {
+interface SectionRowProps {
   readonly children: ReactNode | ReactNodeArray;
 }
 
@@ -90,9 +214,9 @@ interface StyledSectionRowProps {
  * SectionRow vertically seperates various parts of a Section. When used with SubSections,
  * it will also make sure that they will reach equal heights when rendered side-by-side.
  */
-export const SectionRow: FunctionComponent<StyledSectionRowProps> = ({
-  children
-}: StyledSectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
+export const SectionRow: FunctionComponent<SectionRowProps> = ({
+  children,
+}: SectionRowProps) => <StyledSectionRow>{children}</StyledSectionRow>;
 
 const PositionedSectionContent = styled.div`
   display: flex;
@@ -109,7 +233,7 @@ interface StyledSectionProps {
 
 const StyledSection = styled.div<StyledSectionProps>`
   ${({
-    backgroundColor
+    backgroundColor,
   }: StyledSectionProps): FlattenSimpleInterpolation => css`
     background-color: ${backgroundColor};
     margin: 0;
@@ -148,6 +272,8 @@ const StyledSection = styled.div<StyledSectionProps>`
 
 interface SectionProps {
   readonly children: ReactNode | ReactNodeArray;
+  // ESLint mysteriously says 'dark' is never used, but it clearly is...
+  // eslint-disable-next-line react/no-unused-prop-types
   readonly dark?: boolean;
 }
 
@@ -157,7 +283,7 @@ interface SectionProps {
  */
 const Section: FunctionComponent<SectionProps> = ({
   children,
-  dark = false
+  dark = false,
 }: SectionProps) => (
   <StyledSection backgroundColor={dark ? "#000000" : "transparent"}>
     <PositionedSectionContent>{children}</PositionedSectionContent>

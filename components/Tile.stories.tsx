@@ -2,6 +2,7 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { CapsHeading, Paragraph } from "./Text";
 import Tile, { TileContainer } from "./Tile";
+import { ArrowRightIcon } from "./Icon";
 
 storiesOf("Tile", module)
   .add("default", () => (
@@ -106,9 +107,13 @@ storiesOf("Tile", module)
       </Tile>
     </div>
   ))
-  .add("link", () => (
+  .add("click handler", () => (
     <div style={{ maxWidth: "488px" }}>
-      <Tile accentColor="#009c98" backgroundColor="#f2f4f8" link="/tech-specs">
+      <Tile
+        accentColor="#009c98"
+        backgroundColor="#ffffff"
+        clickHandler={() => alert("Clicked!")}
+      >
         <TileContainer>
           <CapsHeading color="#009c98">Technical specifications</CapsHeading>
           <span
@@ -116,7 +121,7 @@ storiesOf("Tile", module)
               display: "block",
               fontSize: "48px",
               lineHeight: "56px",
-              margin: "64px 0"
+              margin: "64px 0",
             }}
           >
             Get the full list of what&apos;s included with RecordRig.
@@ -126,11 +131,126 @@ storiesOf("Tile", module)
               color: "#009c98",
               display: "block",
               fontSize: "18px",
-              textAlign: "right"
+              textAlign: "right",
             }}
           >
             Learn more
           </span>
+        </TileContainer>
+      </Tile>
+    </div>
+  ))
+  .add("link", () => (
+    <div style={{ maxWidth: "488px" }}>
+      <Tile accentColor="#009c98" backgroundColor="#ffffff" link="/tech-specs">
+        <TileContainer>
+          <CapsHeading color="#009c98">Technical specifications</CapsHeading>
+          <span
+            style={{
+              display: "block",
+              fontSize: "48px",
+              lineHeight: "56px",
+              margin: "64px 0",
+            }}
+          >
+            Get the full list of what&apos;s included with RecordRig.
+          </span>
+          <span
+            style={{
+              color: "#009c98",
+              display: "block",
+              fontSize: "20px",
+              textAlign: "right",
+            }}
+          >
+            Learn more
+            <span
+              style={{
+                display: "inline-block",
+                height: "24px",
+                marginLeft: "8px",
+                position: "relative",
+                top: "6px",
+                width: "24px",
+              }}
+            >
+              <ArrowRightIcon color="#009c98" />
+            </span>
+          </span>
+        </TileContainer>
+      </Tile>
+    </div>
+  ))
+  .add("link and click handler", () => (
+    <div style={{ maxWidth: "488px" }}>
+      <Tile
+        accentColor="#009c98"
+        backgroundColor="#ffffff"
+        clickHandler={() => alert("Clicked!")}
+        link="/tech-specs"
+      >
+        <TileContainer>
+          <CapsHeading color="#009c98">Technical specifications</CapsHeading>
+          <span
+            style={{
+              display: "block",
+              fontSize: "48px",
+              lineHeight: "56px",
+              margin: "64px 0",
+            }}
+          >
+            Get the full list of what&apos;s included with RecordRig.
+          </span>
+          <span
+            style={{
+              color: "#009c98",
+              display: "block",
+              fontSize: "20px",
+              textAlign: "right",
+            }}
+          >
+            Learn more
+            <span
+              style={{
+                display: "inline-block",
+                height: "24px",
+                marginLeft: "8px",
+                position: "relative",
+                top: "6px",
+                width: "24px",
+              }}
+            >
+              <ArrowRightIcon color="#009c98" />
+            </span>
+          </span>
+        </TileContainer>
+      </Tile>
+    </div>
+  ))
+  .add("rounded", () => (
+    <div style={{ maxWidth: "992px", padding: "64px" }}>
+      <Tile backgroundColor="#ffffff" rounded>
+        <TileContainer>
+          <Paragraph color="#000000">
+            Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec
+            quis mauris risus. Quisque sodales diam ut elementum ultricies.
+            Pellentesque laoreet commodo mauris, ut condimentum nisis cursus
+            eget. In scelerisque at elit vitae dictum.
+          </Paragraph>
+        </TileContainer>
+      </Tile>
+    </div>
+  ))
+  .add("floating", () => (
+    <div style={{ maxWidth: "992px", padding: "64px" }}>
+      <Tile backgroundColor="#ffffff" floating rounded>
+        <TileContainer>
+          <Paragraph color="#000000">
+            Maecenas nec neque facilisis, aliquet sem sed, placerat lorem. Donec
+            quis mauris risus. Quisque sodales diam ut elementum ultricies.
+            Pellentesque laoreet commodo mauris, ut condimentum nisis cursus
+            eget. In scelerisque at elit vitae dictum.
+          </Paragraph>
         </TileContainer>
       </Tile>
     </div>
