@@ -56,7 +56,7 @@ const ShoppingBagPage: NextPage<ShoppingBagPageProps> = ({
 
   useEffect(() => {
     async function getIp() {
-      const response = await fetch("http://api.ipify.org/?format=json");
+      const response = await fetch("https://api.ipify.org/?format=json");
       const data = await response.json();
       return data;
     }
