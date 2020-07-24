@@ -3,7 +3,6 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import makeStore from "../store/_makeStore";
 import Footer from "../components/Footer";
-import MenuBar from "../components/MenuBarConnected";
 import Section from "../components/Section";
 import Text from "../components/Text";
 import "./_appStyles.css";
@@ -54,7 +53,6 @@ const App = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       )}
       <Footer />
-      <MenuBar />
     </Provider>
   );
 };

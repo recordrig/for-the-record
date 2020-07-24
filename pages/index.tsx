@@ -17,7 +17,6 @@ import Section, {
 import Tile, { TileContainer } from "../components/Tile";
 import Features from "../components/Features";
 import Button from "../components/Button";
-import { ArrowRightIcon } from "../components/Icon";
 
 const StyledHeading = styled.h3`
   color: #ffffff;
@@ -789,11 +788,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
         </div>
       </Section>
       <Section>
-        <Tile
-          accentColor="#0062ff"
-          backgroundColor="#ffffff"
-          link="/shop/buy-recordrig"
-        >
+        <Tile accentColor="#0062ff" backgroundColor="#ffffff">
           <TileContainer>
             <div style={{ marginBottom: "32px", marginTop: "64px" }}>
               <Heading center>RecordRig.</Heading>
@@ -812,7 +807,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  Available Now
+                  AVAILABLE JUL 2020
                 </span>
               </div>
             </div>
@@ -820,28 +815,6 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
               <img alt="" src="/recordrig.png" />
               <img alt="" src="/recordrig-black.png" />
             </StyledSideBySideProducts>
-            <span
-              style={{
-                color: "#0062ff",
-                display: "block",
-                fontSize: "22px",
-                textAlign: "right",
-              }}
-            >
-              Shop
-              <span
-                style={{
-                  display: "inline-block",
-                  height: "24px",
-                  marginLeft: "8px",
-                  position: "relative",
-                  top: "6px",
-                  width: "24px",
-                }}
-              >
-                <ArrowRightIcon color="#0062ff" />
-              </span>
-            </span>
           </TileContainer>
         </Tile>
       </Section>

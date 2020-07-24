@@ -1463,22 +1463,6 @@ exports[`Storyshots Footer default 1`] = `
         <li>
           <a
             className="c3"
-            href="/shop/buy-recordrig"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <span>
-              Shop
-            </span>
-            <img
-              alt=""
-              src="/icon-arrow-right.png"
-            />
-          </a>
-        </li>
-        <li>
-          <a
-            className="c3"
             href="/contact"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -3350,22 +3334,6 @@ exports[`Storyshots MainMenu default 1`] = `
     <li>
       <a
         className="c1"
-        href="/shop/buy-recordrig"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <span>
-          Shop
-        </span>
-        <img
-          alt=""
-          src="/icon-arrow-right.png"
-        />
-      </a>
-    </li>
-    <li>
-      <a
-        className="c1"
         href="/contact"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -4320,22 +4288,6 @@ Array [
                 >
                   <span>
                     Setup Guide
-                  </span>
-                  <img
-                    alt=""
-                    src="/icon-arrow-right.png"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  className="c3"
-                  href="/shop/buy-recordrig"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  <span>
-                    Shop
                   </span>
                   <img
                     alt=""
@@ -5483,22 +5435,6 @@ Array [
                 >
                   <span>
                     Setup Guide
-                  </span>
-                  <img
-                    alt=""
-                    src="/icon-arrow-right.png"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  className="c3"
-                  href="/shop/buy-recordrig"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                >
-                  <span>
-                    Shop
                   </span>
                   <img
                     alt=""
