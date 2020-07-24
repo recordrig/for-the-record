@@ -15,6 +15,9 @@ Familiarise yourself with the entirety of this README before starting developmen
 - [React Components](#react-components)
 - [Redux Store](#redux-store)
 - [Automated Tests](#automated-tests)
+  - [Unit tests](#unit-tests)
+  - [Integration tests](#integration-tests)
+  - [Visual tests](#visual-tests)
 - [Styling](#styling)
   - [Global style definitions](#global-style-definitions)
   - [Look & feel & resources](#look--feel--resources)
@@ -27,6 +30,7 @@ Familiarise yourself with the entirety of this README before starting developmen
   - [3. Submitting a pull request](#3-submitting-a-pull-request)
 - [CI/CD Pipeline](#cicd-pipeline)
 - [Environment Details](#environment-details)
+- [Dependencies](#dependencies)
 - [Legal](#legal)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -110,6 +114,8 @@ Install the [Redux Devtools](https://github.com/zalmoxisus/redux-devtools-extens
 
 ## Automated Tests
 
+### Unit tests
+
 We use Jest for unit tests. It will run all files bearing the name suffix "`.jest`", including snapshots for Storybook stories (as defined in `./components/_storyshots.jest.ts`):
 
 ```shell
@@ -117,6 +123,8 @@ npm run jest
 ```
 
 We only write unit tests for components and store logic, both of which can be adequately tested in isolation. Other code will be tested using integration tests.
+
+### Integration tests
 
 For integration test, first make sure the application is running locally in dev mode, and then launch Cypress:
 
@@ -134,7 +142,9 @@ Alternatively, you can run Cypress on the command line:
 npm run cypress
 ```
 
-We integrate with Percy for visual regression testing. Percy commands will only run in the CI environment and will be ignored locally.
+### Visual tests
+
+We integrate with [Percy](https://percy.io/0117db51/recordrig-site) for visual regression testing. Percy commands will only run in the CI environment and will be ignored locally.
 
 ## Styling
 
@@ -286,7 +296,7 @@ You can find a list of all active Unique Previews in [GitHub's Deployment overvi
 
 The creation of a pull request targeting `develop` or `master` will trigger a Quality Assurance GitHub workflow (see `./.github/workflows/qa.yml`) via GitHub Actions which runs our automated checks & tests.
 
-Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in Percy's dashboard. Comment in the open pull request on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
+Note that visual diffing with Percy does NOT throw errors in the CI logs and will NOT prevent a branch from being merged. Visual changes can be reviewed by a human in [Percy's dashboard](https://percy.io/0117db51/recordrig-site). Comment in the open pull request on GitHub and link/upload screenshots from Percy to collaborate on visual issues.
 
 Any change to the `master` branch will auto-deploy to Production.
 
@@ -296,8 +306,8 @@ Any change to the `master` branch will auto-deploy to Production.
 |---------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------|-------------------------------------------------|
 | Local               | The app running locally, on your&nbsp;machine.                                                 | http://localhost:3000                                                       | Your local project's root `.env.local` | Any you check out locally using `git checkout ` |
 | Unique Preview      | A unique version of the app running online, after pushing to remote&nbsp;(GitHub).             | Follows pattern `https://recordrig-site-<RANDOM_STRING>.vercel.app/`.       | Vercel PREVIEW variables               | Any that was pushed to remote&nbsp;(GitHub)          |
-| Staging - TEST&nbsp;data | A merged release candidate. Only uses TEST data, so go wild when testing.                 | https://recordrig-site-git-develop.dcdev1.vercel.app/                       | Vercel PREVIEW variables               | `develop`                                       |
-| Staging - PROD&nbsp;data | A merged release candidate. **Test with caution**, as this _does_ affect PRODUCTION data. | https://recordrig-site.now.sh                                               | Vercel PRODUCTION variables            | `develop`                                       |
+| Preview - TEST&nbsp;data | A merged release candidate. Only uses TEST data, so go wild when testing.                 | https://recordrig-site-git-develop.dcdev1.vercel.app/                       | Vercel PREVIEW variables               | `develop`                                       |
+| Preview - PROD&nbsp;data | A merged release candidate. **Test with caution**, as this _does_ affect PRODUCTION data. | https://recordrig-site.now.sh                                               | Vercel PRODUCTION variables            | `develop`                                       |
 | Production          | A stable release.                                                                         | https://recordrig.com, https://www.recordrig.com (redirects to root domain) | Vercel PRODUCTION variables            | `master`                                        |
 
 ## Dependencies

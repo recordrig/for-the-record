@@ -8805,7 +8805,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     padding: 4px 8px;
     position: fixed;
     width: 100vw;
-    z-index: 1;
+    z-index: 2;
   }
 
   .c10 h3 {
@@ -8964,22 +8964,6 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
     margin-right: auto;
     width: 350px;
   }
-}
-
-@media (max-width:449px) {
-
-}
-
-@media (min-width:450px) and (max-width:549px) {
-
-}
-
-@media (min-width:550px) and (max-width:699px) {
-
-}
-
-@media (min-width:700px) and (max-width:1023px) {
-
 }
 
 <div
@@ -9204,7 +9188,7 @@ exports[`Storyshots RecordRigConfigurator black 1`] = `
                   Power cord for Type F plugs (European)
                 </li>
                 <li>
-                  3 HDMI 2.1 (high-bandwith) cables
+                  3 HDMI 2.1 (high-bandwidth) cables
                 </li>
               </ul>
             </div>
@@ -9751,22 +9735,6 @@ exports[`Storyshots RecordRigConfigurator default 1`] = `
     margin-right: auto;
     width: 350px;
   }
-}
-
-@media (max-width:449px) {
-
-}
-
-@media (min-width:450px) and (max-width:549px) {
-
-}
-
-@media (min-width:550px) and (max-width:699px) {
-
-}
-
-@media (min-width:700px) and (max-width:1023px) {
-
 }
 
 <div
@@ -10783,7 +10751,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     padding: 4px 8px;
     position: fixed;
     width: 100vw;
-    z-index: 1;
+    z-index: 2;
   }
 
   .c10 h3 {
@@ -10942,22 +10910,6 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
     margin-right: auto;
     width: 350px;
   }
-}
-
-@media (max-width:449px) {
-
-}
-
-@media (min-width:450px) and (max-width:549px) {
-
-}
-
-@media (min-width:550px) and (max-width:699px) {
-
-}
-
-@media (min-width:700px) and (max-width:1023px) {
-
 }
 
 <div
@@ -11182,7 +11134,7 @@ exports[`Storyshots RecordRigConfigurator white 1`] = `
                   Power cord for Type F plugs (European)
                 </li>
                 <li>
-                  3 HDMI 2.1 (high-bandwith) cables
+                  3 HDMI 2.1 (high-bandwidth) cables
                 </li>
               </ul>
             </div>
@@ -11729,22 +11681,6 @@ exports[`Storyshots RecordRigConfigurator with handlers 1`] = `
     margin-right: auto;
     width: 350px;
   }
-}
-
-@media (max-width:449px) {
-
-}
-
-@media (min-width:450px) and (max-width:549px) {
-
-}
-
-@media (min-width:550px) and (max-width:699px) {
-
-}
-
-@media (min-width:700px) and (max-width:1023px) {
-
 }
 
 <div

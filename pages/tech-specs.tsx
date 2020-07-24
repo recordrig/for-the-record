@@ -441,7 +441,7 @@ const TechSpecsPage: FunctionComponent = () => {
                 White
               </li>
               <li>Power cord for Type F plugs (European)</li>
-              <li>3 HDMI 2.1 (high-bandwith) cables in black or white</li>
+              <li>3 HDMI 2.1 (high-bandwidth) cables in black or white</li>
             </StyledList>
           </div>
         </InfoSection>

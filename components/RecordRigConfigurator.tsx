@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { css } from "styled-components";
 import products from "../data/products";
 import { ShipmentTerms, WarrantyTerms, WithdrawalTerms } from "../data/terms";
 import { formatCurrency } from "../utils/prices";
@@ -8,33 +8,6 @@ import { CheckIcon } from "./Icon";
 import Footnotes from "./Footnotes";
 import Section, { InfoSection } from "./Section";
 import Tile, { TileContainer } from "./Tile";
-
-// When on small screens, we must reserve bottom space for the overlaying "Add to Bag" section.
-const GlobalStyle = createGlobalStyle`
-  @media (max-width: 449px) {
-    body {
-      padding-bottom: 129px;
-    }
-  }
-
-  @media (min-width: 450px) and (max-width: 549px) {
-    body {
-      padding-bottom: 138px;
-    }
-  }
-
-  @media (min-width: 550px) and (max-width: 699px) {
-    body {
-      padding-bottom: 154px;
-    }
-  }
-
-  @media (min-width: 700px) and (max-width: 1023px) {
-    body {
-      padding-bottom: 127px;
-    }
-  }
-`;
 
 const StyledList = styled.ul`
   color: #697077;
@@ -577,7 +550,7 @@ const StyledAddToBag = styled.div`
     padding: 4px 8px;
     position: fixed;
     width: 100vw;
-    z-index: 1;
+    z-index: 2;
 
     h3 {
       margin-top: 12px;
@@ -852,6 +825,19 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
     }
   }, [step2]);
 
+  // Reserve some bottom space for the 'Add to Bag' section on mobile.
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentPadding =
+        parseInt(document.body.style.paddingBottom, 10) || 0;
+      const isSmallDevice = window.matchMedia("(max-width: 1024px)").matches;
+      if (isSmallDevice) {
+        const newPadding = currentPadding + 157;
+        document.body.style.paddingBottom = `${newPadding}px`;
+      }
+    }
+  }, []);
+
   return (
     <StyledRecordRigConfigurator step2={step2}>
       <StyledHeading step2={step2} visible={headingVisible}>
@@ -1067,7 +1053,7 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
                         {blackChosen ? "Stealth Black" : "Pristine White"}
                       </li>
                       <li>Power cord for Type F plugs (European)</li>
-                      <li>3 HDMI 2.1 (high-bandwith) cables</li>
+                      <li>3 HDMI 2.1 (high-bandwidth) cables</li>
                     </StyledList>
                   </div>
                 </InfoSection>
@@ -1098,7 +1084,6 @@ const RecordRigConfigurator: FunctionComponent<RecordRigConfiguratorProps> = ({
           </Footnotes>
         </>
       )}
-      <GlobalStyle />
     </StyledRecordRigConfigurator>
   );
 };
