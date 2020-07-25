@@ -1,5 +1,9 @@
 # RecordRig
 
+![Quality Assurance](https://github.com/recordrig/recordrig-site/workflows/Quality%20Assurance/badge.svg?branch=master)&nbsp;(`master`)
+&nbsp;|&nbsp;
+![Quality Assurance](https://github.com/recordrig/recordrig-site/workflows/Quality%20Assurance/badge.svg?branch=develop)&nbsp;(`develop`)
+
 Website for RecordRig - dedicated gameplay streaming PC.
 
 Familiarise yourself with the entirety of this README before starting development.
@@ -302,13 +306,12 @@ Any change to the `master` branch will auto-deploy to Production.
 
 ## Environment Details
 
-| Environment         | Description / Notes                                                                       | URL / Domain                                                                | Env Variables                          | Branch                                          |
-|---------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------|-------------------------------------------------|
-| Local               | The app running locally, on your&nbsp;machine.                                                 | http://localhost:3000                                                       | Your local project's root `.env.local` | Any you check out locally using `git checkout ` |
-| Unique Preview      | A unique version of the app running online, after pushing to remote&nbsp;(GitHub).             | Follows pattern `https://recordrig-site-<RANDOM_STRING>.vercel.app/`.       | Vercel PREVIEW variables               | Any that was pushed to remote&nbsp;(GitHub)          |
-| Preview - TEST&nbsp;data | A merged release candidate. Only uses TEST data, so go wild when testing.                 | https://recordrig-site-git-develop.dcdev1.vercel.app/                       | Vercel PREVIEW variables               | `develop`                                       |
-| Preview - PROD&nbsp;data | A merged release candidate. **Test with caution**, as this _does_ affect PRODUCTION data. | https://recordrig-site.now.sh                                               | Vercel PRODUCTION variables            | `develop`                                       |
-| Production          | A stable release.                                                                         | https://recordrig.com, https://www.recordrig.com (redirects to root domain) | Vercel PRODUCTION variables            | `master`                                        |
+| Environment    | Description / Notes                        | URL / Domain                                                                                                             | Env Variables                          | Branch                                          |
+|----------------|--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|----------------------------------------|-------------------------------------------------|
+| Local          | The app running locally, on your machine   | http://localhost:3000                                                                                                    | Your local project's root `.env.local` | Any you check out locally using `git checkout ` |
+| Unique Preview | A unique version of the app running online | Generated. Check [Deployments](https://github.com/recordrig/recordrig-site/deployments/activity_log?environment=Preview) | Vercel PREVIEW variables               | Any that was pushed to remote (GitHub)          |
+| Shared Preview | A merged release candidate.                | https://recordrig-site.now.sh                                                                                            | Vercel PREVIEW variables               | `develop`                                       |
+| Production     | A stable release.                          | https://recordrig.com                                                                                                    | Vercel PRODUCTION variables            | `master`                                        |
 
 ## Dependencies
 
