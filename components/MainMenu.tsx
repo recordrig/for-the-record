@@ -62,6 +62,14 @@ const MainMenu: FunctionComponent = () => (
         </Link>
       </li>
       <li>
+        <Link href="/shop/buy-recordrig" passHref>
+          <StyledLink>
+            <span>Shop</span>
+            <img alt="" src="/icon-arrow-right.png" />
+          </StyledLink>
+        </Link>
+      </li>
+      <li>
         <Link href="/contact" passHref>
           <StyledLink>
             <span>Contact</span>
