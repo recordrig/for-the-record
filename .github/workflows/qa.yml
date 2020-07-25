@@ -7,7 +7,7 @@ on:
     - master
     - develop
 
-  # Auto-run every day at 03:00 UTC (= 05:00 CEST). Always targets the base branch (= master).
+  # Auto-run every day at 03:00 UTC (= 05:00 CEST). Always targets the default branch (= develop).
   schedule:
     - cron:  "0 3 * * *"
 
