@@ -1,7 +1,8 @@
 # RecordRig
 
-![Quality Assurance](https://github.com/recordrig/recordrig-site/workflows/Quality%20Assurance/badge.svg?branch=master) (`master`)
-![Quality Assurance](https://github.com/recordrig/recordrig-site/workflows/Quality%20Assurance/badge.svg?branch=develop) (`develop`)
+![Quality Assurance](https://github.com/recordrig/recordrig-site/workflows/Quality%20Assurance/badge.svg?branch=master)&nbsp;(`master`)
+&nbsp;|&nbsp;
+![Quality Assurance](https://github.com/recordrig/recordrig-site/workflows/Quality%20Assurance/badge.svg?branch=develop)&nbsp;(`develop`)
 
 Website for RecordRig - dedicated gameplay streaming PC.
 
