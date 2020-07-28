@@ -162,4 +162,12 @@ const ConnectedShoppingBagPage = connect(
   mapDispatchToProps
 )(ShoppingBagPage);
 
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}
+
 export default ConnectedShoppingBagPage;

@@ -13,3 +13,11 @@ When you _do_ share your personal data with us, for example when you share your 
 We use [Stripe](https://stripe.com)'s payment platform to process payments. As such, we do not store or process your payment information ourselves. For example, when you use our Check Out and decide to pay by credit card, we'll have no idea what your credit card information was. We'll only know that your payment was successful, and will then carry on fulfilling your order. Your card details will only be handled by Stripe, who specialise in secure transactions and handling of sensitive data.
 
 If you have any questions or concerns, please don't hesitate to contact us at [privacy@recordrig.com](mailto:privacy@recordrig.com).
+
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}

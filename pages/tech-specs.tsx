@@ -464,4 +464,12 @@ const TechSpecsPage: FunctionComponent = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}
+
 export default TechSpecsPage;

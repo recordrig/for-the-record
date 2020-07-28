@@ -6,7 +6,6 @@ import React, {
 } from "react";
 import Head from "next/head";
 import { Oval } from "svg-loaders-react";
-import SiteLayout from "../components/SiteLayout";
 import Button from "../components/Button";
 import { Heading, Paragraph } from "../components/Text";
 import Section, { SectionIntro } from "../components/Section";
@@ -227,6 +226,12 @@ const ContactPage: FunctionComponent = () => {
   );
 };
 
-ContactPage.Layout = SiteLayout;
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}
 
 export default ContactPage;

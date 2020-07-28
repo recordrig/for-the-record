@@ -202,4 +202,12 @@ const PurchaseResultPage: NextPage<PurchaseResultPageProps> = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}
+
 export default PurchaseResultPage;

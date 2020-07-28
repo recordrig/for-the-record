@@ -104,6 +104,7 @@ class BuyRecordRigPage extends Component<
 
     return {
       initialSelectedColor,
+      layout: "Site",
     };
   }
 

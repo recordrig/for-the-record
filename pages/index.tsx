@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { connect, useDispatch } from "react-redux";
 import ReactCompareImage from "react-compare-image";
 import { addConsentAction } from "../store/cookieConsent";
-import SiteLayout from "../components/SiteLayout";
 import OptimizedMedia, { Image } from "../components/OptimizedMedia";
 import Video from "../components/Video";
 import ConsentWrapper from "../components/ConsentWrapper";
@@ -848,12 +847,18 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
   );
 };
 
-IndexPage.Layout = SiteLayout;
-
 const mapStateToProps = ({ cookieConsent }) => ({
   youtubeConsent: cookieConsent.YOUTUBE_EMBEDS,
 });
 
 const IndexPageConnected = connect(mapStateToProps, null)(IndexPage);
+
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}
 
 export default IndexPageConnected;

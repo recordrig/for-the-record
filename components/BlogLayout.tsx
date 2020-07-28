@@ -5,6 +5,7 @@ import MenuBarConnected from "./MenuBarConnected";
 
 const StyledBlogLayout = styled.div`
   background: blue;
+  padding-top: 300px;
 `;
 
 interface BlogLayoutProps {

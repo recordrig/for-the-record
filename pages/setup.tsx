@@ -188,4 +188,12 @@ const SetupPage: FunctionComponent = () => {
   );
 };
 
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Site",
+    },
+  };
+}
+
 export default SetupPage;

@@ -10,7 +10,7 @@ interface SiteLayoutProps {
 const SiteLayout: FunctionComponent<SiteLayoutProps> = ({
   children,
 }: SiteLayoutProps) => (
-  <div style={{ paddingTop: "300px" }}>
+  <>
     <Head>
       <link
         rel="apple-touch-icon"
@@ -39,7 +39,7 @@ const SiteLayout: FunctionComponent<SiteLayoutProps> = ({
     {children}
     <Footer />
     <MenuBarConnected />
-  </div>
+  </>
 );
 
 export default SiteLayout;

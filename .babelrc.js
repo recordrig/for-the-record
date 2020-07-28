@@ -13,6 +13,10 @@ module.exports = {
         "ssr": true
       },
     ],
+    /*
+     * Temporary patch, see file for details.
+     */
+    "./babel-plugin-nextjs-mdx-patch"
   ],
   "env": {
     "test": {
