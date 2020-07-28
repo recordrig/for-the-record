@@ -19,7 +19,6 @@ const getLayout = (pageProps) => {
  */
 const App = ({ Component, pageProps }) => {
   const Layout = getLayout(pageProps);
-  console.log("pageProps", pageProps);
 
   return (
     <Provider store={makeStore()}>

@@ -88,7 +88,23 @@ Built with [Next.js](https://github.com/vercel/next.js/), a React framework whic
 
 The `./pages/_app.js` file is our application's container, and takes care of anything global, like the instantiation of the Redux store, shared style definitions, and inclusion of components which must be shared by all frontend pages.
 
+This app container will also have access to page props defined by `getInitialProps()` and `getStaticProps()`. We can use `getStaticProps()` to define which layout to use:
+
+```
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Blog",
+    },
+  };
+}
+```
+
+## Pages
+
 Any file or folder under `./pages` will be rendered on its own route, with `./pages/_app.js` and `./pages/_document.js` as notable exceptions.
+
+## API Routes
 
 Server-side functionality and other automations may be put over at `./pages/api`.
 
