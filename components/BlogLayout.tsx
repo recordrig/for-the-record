@@ -1,24 +1,29 @@
-import React from "react";
+import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
+import styled from "styled-components";
 import Link from "next/link";
 import MenuBarConnected from "./MenuBarConnected";
 
-export default function BlogLayout(frontMatter) {
-  return ({ children: content }) => {
-    // React hooks, for example `useState` or `useEffect`, go here.
-    return (
-      <div>
-        <Link href="/blog" passHref>
-          <a>Index</a>
-        </Link>
-        <Link href="/blog/page2" passHref>
-          <a>Page2</a>
-        </Link>
-        <div>
-          <h1>{frontMatter.title}</h1>
-          {content}
-        </div>
-        <MenuBarConnected />
-      </div>
-    );
-  };
+const StyledBlogLayout = styled.div`
+  background: blue;
+`;
+
+interface BlogLayoutProps {
+  readonly children: ReactNode | ReactNodeArray;
 }
+
+const BlogLayout: FunctionComponent<BlogLayoutProps> = ({
+  children,
+}: BlogLayoutProps) => (
+  <StyledBlogLayout>
+    <Link href="/blog" passHref>
+      <a>Index</a>
+    </Link>
+    <Link href="/blog/page2" passHref>
+      <a>Page2</a>
+    </Link>
+    <div>{children}</div>
+    <MenuBarConnected />
+  </StyledBlogLayout>
+);
+
+export default BlogLayout;
