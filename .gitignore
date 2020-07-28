@@ -1,6 +1,7 @@
+.DS_Store
 .env*
 .next
-.DS_Store
+.mdx-data
 .jest/coverage
 cypress/videos
 cypress/screenshots

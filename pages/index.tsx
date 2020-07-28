@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { connect, useDispatch } from "react-redux";
 import ReactCompareImage from "react-compare-image";
 import { addConsentAction } from "../store/cookieConsent";
+import SiteLayout from "../components/SiteLayout";
 import OptimizedMedia, { Image } from "../components/OptimizedMedia";
 import Video from "../components/Video";
 import ConsentWrapper from "../components/ConsentWrapper";
@@ -272,8 +273,6 @@ const StyledSideBySideProducts = styled.div`
   }
 `;
 
-const StyledIndexPage = styled.div``;
-
 interface IndexPageProps {
   /** Made available through `connect()`. */
   readonly youtubeConsent: boolean;
@@ -302,7 +301,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
   };
 
   return (
-    <StyledIndexPage>
+    <>
       <Head>
         <title>
           Record 4K HDR gameplay on PS4, Xbox and PC with RecordRig, your
@@ -845,9 +844,11 @@ const IndexPage: NextPage<IndexPageProps> = ({ youtubeConsent }) => {
           </TileContainer>
         </Tile>
       </Section>
-    </StyledIndexPage>
+    </>
   );
 };
+
+IndexPage.Layout = SiteLayout;
 
 const mapStateToProps = ({ cookieConsent }) => ({
   youtubeConsent: cookieConsent.YOUTUBE_EMBEDS,
