@@ -17798,6 +17798,192 @@ exports[`Storyshots Text text custom color 1`] = `
 </div>
 `;
 
+exports[`Storyshots TextPage default 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1216px;
+  width: 100%;
+}
+
+.c0 {
+  background-color: transparent;
+  margin: 0;
+}
+
+.c2 {
+  color: #000;
+}
+
+.c2 a,
+.c2 a:visited,
+.c2 a:hover,
+.c2 a:active {
+  color: #0f62fe;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c2 p,
+.c2 li,
+.c2 h1,
+.c2 h2,
+.c2 h3,
+.c2 h4,
+.c2 h5,
+.c2 h6 {
+  max-width: 720px;
+}
+
+.c2 h1,
+.c2 h2,
+.c2 h3,
+.c2 h4,
+.c2 h5,
+.c2 h6 {
+  font-weight: normal;
+}
+
+@media (max-width:474px) {
+  .c0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:475px) {
+  .c0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width:734px) {
+  .c0 {
+    display: block;
+    padding-bottom: 128px;
+    padding-top: 128px;
+  }
+}
+
+@media (min-width:735px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:735px) and (max-width:1023px) {
+  .c0 {
+    padding-bottom: 192px;
+    padding-top: 192px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 {
+    padding-bottom: 256px;
+    padding-top: 256px;
+  }
+}
+
+@media (max-width:399px) {
+  .c2 p,
+  .c2 li {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width:400px) {
+  .c2 p,
+  .c2 li {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width:575px) {
+  .c2 h1 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .c2 h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-top: 32px;
+  }
+
+  .c2 h3 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 32px;
+  }
+}
+
+@media (min-width:576px) {
+  .c2 h1 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+
+  .c2 h2 {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 48px;
+  }
+
+  .c2 h3 {
+    font-size: 26px;
+    line-height: 34px;
+    margin-top: 48px;
+  }
+}
+
+@media (max-width:474px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (min-width:475px) {
+  .c2 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      <h1>
+        Heading
+      </h1>
+      <p>
+        Demand for high-quality gameplay videos is booming. Now, with RecordRig, recording games in the same high quality you play them is easier than ever. Capture your gameplay in its full glory and give your audience the complete, immersive experience that they crave.
+      </p>
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Tile bottom image 1`] = `
 .c1 {
   box-sizing: border-box;

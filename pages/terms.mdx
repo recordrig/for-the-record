@@ -1,7 +1,10 @@
-import Head from "next/head";
 import { ShipmentTerms, WarrantyTerms, WithdrawalTerms } from "../data/terms";
+import TextPage from "../components/TextPage";
 
-<Head><title>Terms</title></Head>
+export const metadata = {
+  title: "Terms and Conditions",
+  description: "The fine print."
+}
 
 # Terms and Conditions.
 
@@ -72,3 +75,9 @@ export function getStaticProps() {
     },
   };
 }
+
+export default ({ children }) => (
+  <TextPage metadata={metadata}>
+    {children}
+  </TextPage>
+);

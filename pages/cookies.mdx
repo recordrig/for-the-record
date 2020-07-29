@@ -1,6 +1,9 @@
-import Head from "next/head";
+import TextPage from "../components/TextPage";
 
-<Head><title>Cookies</title></Head>
+export const metadata = {
+  title: "Cookies",
+  description: "About RecordRig's cookie use."
+}
 
 # Cookies.
 
@@ -56,3 +59,9 @@ export function getStaticProps() {
     },
   };
 }
+
+export default ({ children }) => (
+  <TextPage metadata={metadata}>
+    {children}
+  </TextPage>
+);

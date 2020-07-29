@@ -1,6 +1,9 @@
-import Head from "next/head";
+import TextPage from "../components/TextPage";
 
-<Head><title>Privacy</title></Head>
+export const metadata = {
+  title: "Privacy",
+  description: "About how RecordRig handles your data."
+}
 
 # Privacy.
 
@@ -21,3 +24,9 @@ export function getStaticProps() {
     },
   };
 }
+
+export default ({ children }) => (
+  <TextPage metadata={metadata}>
+    {children}
+  </TextPage>
+);
