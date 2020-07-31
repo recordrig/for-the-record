@@ -35,7 +35,7 @@ export async function getStaticProps() {
     return files.concat(getFiles(path));
   };
 
-  const files = getFilesRecursively("./pages/blog/posts");
+  const files = getFilesRecursively("./pages/blog/for-the-record/posts");
   const postLinks = files.map((fileName) =>
     fileName.replace(".mdx", "").replace("/index", "").replace("pages", "")
   );
