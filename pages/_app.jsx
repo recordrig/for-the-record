@@ -5,12 +5,10 @@ import "./_appStyles.css";
 import BlogLayout from "../components/BlogLayout";
 import SiteLayout from "../components/SiteLayout";
 
-const Noop = ({ children }) => children;
-
 const getLayout = (pageProps) => {
   if (pageProps.layout === "Blog") return BlogLayout;
   if (pageProps.layout === "Site") return SiteLayout;
-  return Noop;
+  return ({ children }) => children;
 };
 
 /**
