@@ -315,7 +315,7 @@ Our blog (For The Record) is added as a `git subtree`. This is so that the blog 
 Blog posts can be updated right here from the core repository, as any other file. To publish changes from this core repository to the subtree, use:
 
 ```
-git subtree push --prefix pages/blog/for-the-record https://github.com/recordrig/for-the-record.git master
+git subtree push --prefix pages/blog/for-the-record https://github.com/recordrig/for-the-record.git master --squash
 ```
 
 If there have been changes in the [For The Record repository](https://github.com/recordrig/for-the-record), and you'd like to pull in those changes, use:
