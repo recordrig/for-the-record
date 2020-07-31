@@ -308,6 +308,22 @@ If you consider your changes to be ready for review, visit the supplied link to 
 
 Of course, if more changes are needed, you can always add more commits to your branch and re-push the modifications to remote (GitHub).
 
+## Blogging Workflow
+
+Our blog (For The Record) is added as a `git subtree`. This is so that the blog posts themselves can sit in a public repository, benefiting from community contributions, while our core repository remains private.
+
+Blog posts can be updated right here from the core repository, as any other file. To publish changes from this core repository to the subtree, use:
+
+```
+git subtree push --prefix pages/blog/for-the-record https://github.com/recordrig/for-the-record.git master
+```
+
+If there have been changes in the [For The Record repository](https://github.com/recordrig/for-the-record), and you'd like to pull in those changes, use:
+
+```
+git subtree pull --prefix pages/blog/for-the-record https://github.com/recordrig/for-the-record.git master
+```
+
 ## CI/CD Pipeline
 
 A push to any branch will deploy a Unique Preview to a unique URL through Vercel integration with GitHub.
