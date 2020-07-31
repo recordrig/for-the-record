@@ -2,12 +2,12 @@ import React from "react";
 import { statSync, readdirSync } from "fs";
 import { join } from "path";
 
-export default function Blog({ posts }) {
+export default function Blog({ postLinks }) {
   return (
     <div>
-      {posts.map((post) => (
-        <article key={post}>
-          <p>{post}</p>
+      {postLinks.map((postLink) => (
+        <article key={postLink}>
+          <p>{postLink}</p>
         </article>
       ))}
     </div>
@@ -36,12 +36,13 @@ export async function getStaticProps() {
   };
 
   const files = getFilesRecursively("./pages/blog/posts");
-  console.log("files:", files);
-  const posts = files.map((fileName) => fileName.replace(".mdx", ""));
+  const postLinks = files.map((fileName) =>
+    fileName.replace(".mdx", "").replace("/index", "").replace("pages", "")
+  );
 
   return {
     props: {
-      posts,
+      postLinks,
     },
   };
 }

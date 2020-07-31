@@ -10,8 +10,8 @@ interface BlogPageProps {
 }
 
 const BlogPage: FunctionComponent<BlogPageProps> = ({
-  metadata,
   children,
+  metadata,
 }: BlogPageProps) => (
   <>
     <Head>
