@@ -2,7 +2,6 @@ import BlogPost from "@/components/BlogPage";
 
 export const metadata = {
   datePublished: "20200730",
-  layout: "Blog",
   lang: "FR",
   title: "Ceci n'est pas une pipe"
 }
@@ -10,6 +9,15 @@ export const metadata = {
 # Ceci n’est pas une pipe
 
 C'est ça.
+
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Blog",
+      metadata,
+    },
+  };
+}
 
 export default ({ children }) => (
   <BlogPost metadata={metadata}>{children}</BlogPost>

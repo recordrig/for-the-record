@@ -324,6 +324,18 @@ If there have been changes in the [For The Record repository](https://github.com
 git subtree pull --prefix pages/blog/for-the-record https://github.com/recordrig/for-the-record.git master
 ```
 
+### Translations
+
+We consider English as the default, which is why any `index` page will be English. Additionally, any extra content should appear in at least English. The addition of other languages is supplementary.
+
+It's fine if menu's and other "interfaces" remain English, while the main article appears in a different language. We assume our visitor has at least a basic understanding of English.
+
+Though Google Translate can be used as a starting point for adding content in other languages, the purpose should be to get content translated by a native speaker. This is also why the posts reside in a public repository.
+
+In order to get the most out of automated as well as human translations, follow [these translation guidelines by Google](https://developers.google.com/style/translation).
+
+Always use the [ISO_639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letter code when defining languages.
+
 ## CI/CD Pipeline
 
 A push to any branch will deploy a Unique Preview to a unique URL through Vercel integration with GitHub.

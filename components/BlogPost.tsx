@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode, ReactNodeArray } from "react";
 import Head from "next/head";
 
-interface BlogPageProps {
+interface BlogPostProps {
   readonly children: ReactNode | ReactNodeArray;
   readonly metadata: {
     readonly title: string;
@@ -9,10 +9,10 @@ interface BlogPageProps {
   };
 }
 
-const BlogPage: FunctionComponent<BlogPageProps> = ({
+const BlogPost: FunctionComponent<BlogPostProps> = ({
   children,
   metadata,
-}: BlogPageProps) => (
+}: BlogPostProps) => (
   <>
     <Head>
       <title>{metadata.title}</title>
@@ -22,4 +22,4 @@ const BlogPage: FunctionComponent<BlogPageProps> = ({
   </>
 );
 
-export default BlogPage;
+export default BlogPost;
