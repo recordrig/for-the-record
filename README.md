@@ -324,6 +324,23 @@ If there have been changes in the [For The Record repository](https://github.com
 git subtree pull --prefix pages/blog/ https://github.com/recordrig/for-the-record.git master
 ```
 
+You might get this error when both repos have modifications, and pulling in the subtree doesn't fix it like it normally would:
+
+```
+ ! [rejected]        abcabcabcabc -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:recordrig/for-the-record.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+We can fix this by force pushing the subtree. However, **make sure that indeed all remote changes have been incorporated to your local repository, first**, or they will be lost.
+
+```
+TODO
+```
+
 ### Translations
 
 We consider English as the default, which is why any `index` page will be English. Additionally, any extra content should appear in at least English. The addition of other languages is supplementary.
