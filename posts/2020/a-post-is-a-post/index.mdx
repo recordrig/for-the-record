@@ -1,0 +1,24 @@
+import BlogPost from "@/components/BlogPost";
+
+export const metadata = {
+  datePublished: "20200730",
+  lang: "EN",
+  title: "A post is a post"
+}
+
+# A post is a post
+
+And that's that.
+
+export function getStaticProps() {
+  return {
+    props: {
+      layout: "Blog",
+      metadata,
+    },
+  };
+}
+
+export default ({ children }) => (
+  <BlogPost metadata={metadata}>{children}</BlogPost>
+);
